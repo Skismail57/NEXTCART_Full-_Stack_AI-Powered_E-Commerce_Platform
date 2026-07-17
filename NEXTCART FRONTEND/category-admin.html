@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>NEXCART Admin - Category Manager</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1f68f9",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#0f1623",
+                        "charcoal": "#0f0f12",
+                        "panel-dark": "#1a1a1e",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .glass-panel {
+            background: rgba(26, 26, 30, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-white font-display min-h-screen flex flex-col">
+    <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-white/10 bg-charcoal/80 backdrop-blur-md px-6 py-3 sticky top-0 z-50">
+        <div class="flex items-center gap-8">
+            <div class="flex items-center gap-3">
+                <div class="size-6 text-primary">
+                    <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+                    </svg>
+                </div>
+                <h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">NEXCART Admin</h2>
+            </div>
+            <nav class="hidden lg:flex items-center gap-6">
+                <a class="text-[#9ba6bb] hover:text-white text-sm font-medium transition-colors" href="product-admin.html">Products</a>
+                <a class="text-white text-sm font-medium border-b-2 border-primary pb-4 mt-4" href="#">Categories</a>
+                <a class="text-[#9ba6bb] hover:text-white text-sm font-medium transition-colors" href="hero-banner-admin.html">Hero Banners</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-1 p-8 max-w-7xl mx-auto">
+        <div class="flex items-center justify-between mb-6">
+            <h1 class="text-3xl font-bold text-white">Category Manager</h1>
+            <button id="addCategoryBtn" class="px-4 py-2 bg-primary text-white rounded-lg text-sm font-bold hover:bg-primary/80 transition-all shadow-lg shadow-primary/20">
+                <span class="material-symbols-outlined mr-2 text-lg">add</span>
+                Add Category
+            </button>
+        </div>
+
+        <div id="categoryList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Categories will be inserted here -->
+        </div>
+    </main>
+
+    <!-- Add/Edit Category Modal -->
+    <div id="categoryModal" class="fixed inset-0 bg-black/50 hidden items-center justify-center z-[100]">
+        <div class="glass-panel rounded-2xl w-full max-w-2xl p-6">
+            <div class="flex items-center justify-between mb-4">
+                <h3 id="modalTitle" class="text-xl font-bold text-white">Add New Category</h3>
+                <button id="closeModalBtn" class="text-white/60 hover:text-white text-2xl">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <form id="categoryForm" class="space-y-4">
+                <input type="hidden" id="categoryId">
+                <div>
+                    <label class="text-sm font-semibold text-[#9ba6bb]">Category Name</label>
+                    <input type="text" id="name" class="w-full mt-2 bg-[#1a1a1e] border border-white/10 rounded-lg text-sm text-white p-3 focus:ring-1 focus:ring-primary focus:border-primary" required>
+                </div>
+                <div>
+                    <label class="text-sm font-semibold text-[#9ba6bb]">Description</label>
+                    <textarea id="description" class="w-full mt-2 bg-[#1a1a1e] border border-white/10 rounded-lg text-sm text-white p-3 focus:ring-1 focus:ring-primary focus:border-primary min-h-[100px]"></textarea>
+                </div>
+                <div>
+                    <label class="text-sm font-semibold text-[#9ba6bb]">Image URL</label>
+                    <input type="text" id="image" class="w-full mt-2 bg-[#1a1a1e] border border-white/10 rounded-lg text-sm text-white p-3 focus:ring-1 focus:ring-primary focus:border-primary">
+                </div>
+                <div>
+                    <label class="text-sm font-semibold text-[#9ba6bb]">Status</label>
+                    <select id="status" class="w-full mt-2 bg-[#1a1a1e] border border-white/10 rounded-lg text-sm text-white p-3 focus:ring-1 focus:ring-primary focus:border-primary">
+                        <option value="ACTIVE">ACTIVE</option>
+                        <option value="INACTIVE">INACTIVE</option>
+                    </select>
+                </div>
+                <div class="flex justify-end gap-3 mt-6">
+                    <button type="button" id="cancelBtn" class="px-4 py-2 bg-white/10 text-white rounded-lg text-sm font-semibold hover:bg-white/20 transition-all">Cancel</button>
+                    <button type="submit" class="px-4 py-2 bg-primary text-white rounded-lg text-sm font-bold hover:bg-primary/80 transition-all shadow-lg shadow-primary/20">Save Category</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://localhost:8081';
+
+        // Load categories on page load
+        async function loadCategories() {
+            try {
+                const response = await fetch(`${API_BASE}/categories`);
+                const result = await response.json();
+                const categories = result.data;
+
+                const categoryList = document.getElementById('categoryList');
+                categoryList.innerHTML = '';
+
+                if (!categories || categories.length === 0) {
+                    categoryList.innerHTML = '<p class="text-[#9ba6bb] text-center py-12 col-span-3">No categories yet! Click "Add Category" to create one.</p>';
+                    return;
+                }
+
+                categories.forEach(category => {
+                    const categoryCard = `
+                        <div class="glass-panel rounded-2xl p-4 flex gap-4 items-center">
+                            <img src="${category.image || 'https://via.placeholder.com/150x150'}" class="w-24 h-24 object-cover rounded-lg border border-white/10">
+                            <div class="flex-1">
+                                <h3 class="text-xl font-bold text-white">${category.name || 'Untitled'}</h3>
+                                <p class="text-sm text-[#9ba6bb] mt-1">${category.description || ''}</p>
+                                <div class="flex gap-2 mt-3">
+                                    <span class="px-2 py-1 ${category.status === 'ACTIVE' ? 'bg-emerald-500/20 text-emerald-500' : 'bg-rose-500/20 text-rose-500'} rounded-full text-xs font-semibold">${category.status}</span>
+                                </div>
+                            </div>
+                            <div class="flex gap-2">
+                                <button onclick="editCategory(${category.categoryId})" class="p-2 bg-white/10 text-white rounded-lg hover:bg-white/20 transition-all">
+                                    <span class="material-symbols-outlined">edit</span>
+                                </button>
+                                <button onclick="deleteCategory(${category.categoryId})" class="p-2 bg-rose-500/20 text-rose-500 rounded-lg hover:bg-rose-500/30 transition-all">
+                                    <span class="material-symbols-outlined">delete</span>
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                    categoryList.innerHTML += categoryCard;
+                });
+
+            } catch (error) {
+                console.error('Error loading categories:', error);
+                alert('Error loading categories!');
+            }
+        }
+
+        // Show modal for adding
+        document.getElementById('addCategoryBtn').onclick = () => {
+            document.getElementById('modalTitle').innerText = 'Add New Category';
+            document.getElementById('categoryForm').reset();
+            document.getElementById('categoryId').value = '';
+            document.getElementById('categoryModal').classList.remove('hidden');
+            document.getElementById('categoryModal').classList.add('flex');
+        };
+
+        // Close modal
+        document.getElementById('closeModalBtn').onclick = () => {
+            document.getElementById('categoryModal').classList.add('hidden');
+            document.getElementById('categoryModal').classList.remove('flex');
+        };
+        document.getElementById('cancelBtn').onclick = () => {
+            document.getElementById('categoryModal').classList.add('hidden');
+            document.getElementById('categoryModal').classList.remove('flex');
+        };
+
+        // Handle form submission
+        document.getElementById('categoryForm').onsubmit = async (e) => {
+            e.preventDefault();
+            const categoryId = document.getElementById('categoryId').value;
+            const category = {
+                name: document.getElementById('name').value,
+                description: document.getElementById('description').value,
+                image: document.getElementById('image').value,
+                status: document.getElementById('status').value
+            };
+
+            try {
+                let response;
+                if (categoryId) {
+                    // Update existing
+                    response = await fetch(`${API_BASE}/categories/admin/${categoryId}`, {
+                        method: 'PUT',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(category)
+                    });
+                } else {
+                    // Create new
+                    category.slug = category.name.toLowerCase().replaceAll(' ', '-').replaceAll(/[^a-z0-9-]/g, '');
+                    response = await fetch(`${API_BASE}/categories/admin/create`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(category)
+                    });
+                }
+                await response.json();
+                document.getElementById('categoryModal').classList.add('hidden');
+                document.getElementById('categoryModal').classList.remove('flex');
+                loadCategories();
+            } catch (error) {
+                console.error('Error saving category:', error);
+                alert('Error saving category!');
+            }
+        };
+
+        // Edit a category
+        async function editCategory(id) {
+            try {
+                const response = await fetch(`${API_BASE}/categories/${id}`);
+                const result = await response.json();
+                const category = result.data;
+                document.getElementById('modalTitle').innerText = 'Edit Category';
+                document.getElementById('categoryId').value = category.categoryId;
+                document.getElementById('name').value = category.name || '';
+                document.getElementById('description').value = category.description || '';
+                document.getElementById('image').value = category.image || '';
+                document.getElementById('status').value = category.status || 'ACTIVE';
+                document.getElementById('categoryModal').classList.remove('hidden');
+                document.getElementById('categoryModal').classList.add('flex');
+            } catch (error) {
+                console.error('Error loading category:', error);
+                alert('Error loading category!');
+            }
+        }
+
+        // Delete a category
+        async function deleteCategory(id) {
+            if (!confirm('Are you sure you want to delete this category?')) return;
+            try {
+                await fetch(`${API_BASE}/categories/admin/${id}`, { method: 'DELETE' });
+                loadCategories();
+            } catch (error) {
+                console.error('Error deleting category:', error);
+                alert('Error deleting category!');
+            }
+        }
+
+        // Load categories on initial page load
+        loadCategories();
+    </script>
+</body>
+</html>

@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEXCART | Sports, Auto &amp; Industrial Hub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2525f4",
+                        "background-light": "#f5f5f8",
+                        "background-dark": "#101022",
+                        "success-green": "#388e3c"
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "sans": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Space Grotesk', sans-serif; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#111118] dark:text-white transition-colors duration-200">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 w-full bg-white dark:bg-background-dark border-b border-solid border-[#f0f0f5] dark:border-slate-800">
+<div class="max-w-[1440px] mx-auto px-4 lg:px-10 py-3 flex items-center justify-between gap-8">
+<div class="flex items-center gap-8 flex-1">
+<!-- Logo -->
+<div class="flex items-center gap-3 text-primary">
+<div class="size-8">
+<svg class="w-full h-full" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-[#111118] dark:text-white text-2xl font-bold leading-tight tracking-tight">NEXCART</h2>
+</div>
+<!-- Search Bar -->
+<div class="hidden md:flex flex-1 max-w-2xl">
+<div class="relative w-full">
+<div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-[#60608a]">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-2 border-none bg-[#f0f0f5] dark:bg-slate-800 rounded-lg text-sm focus:ring-2 focus:ring-primary placeholder:text-[#60608a] dark:text-slate-200" placeholder="Search 450+ high-quality supplies..." type="text"/>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden lg:flex items-center gap-6 text-sm font-medium">
+<a class="hover:text-primary transition-colors" href="#">Sports</a>
+<a class="hover:text-primary transition-colors" href="#">Auto</a>
+<a class="hover:text-primary transition-colors" href="#">Industrial</a>
+<a class="hover:text-primary transition-colors" href="#">Medical</a>
+<a class="text-red-500 font-bold" href="#">Offers</a>
+</nav>
+<div class="flex items-center gap-3">
+<button class="flex items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold">
+                        Account
+                    </button>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-[#f0f0f5] dark:bg-slate-800 text-[#111118] dark:text-white">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-[1440px] mx-auto px-4 lg:px-10 py-6">
+<!-- Hero Section -->
+<section class="mb-10">
+<div class="bg-white dark:bg-slate-900 rounded-xl overflow-hidden flex flex-col lg:flex-row shadow-sm border border-[#f0f0f5] dark:border-slate-800">
+<div class="lg:w-1/2 p-8 lg:p-12 flex flex-col justify-center">
+<span class="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full mb-4 uppercase tracking-wider">Professional Hub</span>
+<h1 class="text-4xl lg:text-5xl font-bold mb-6 leading-tight">Professional Grade Sports &amp; Industrial Hub</h1>
+<p class="text-[#60608a] dark:text-slate-400 text-lg mb-8 max-w-lg">
+                        Explore our massive library of 450+ premium supplies for Auto, Lab, and Medical needs. Verified quality for industrial performance.
+                    </p>
+<div class="flex gap-4">
+<button class="bg-primary text-white px-8 py-3 rounded-lg font-bold hover:shadow-lg transition-all">Shop All Products</button>
+<button class="bg-[#f0f0f5] dark:bg-slate-800 px-8 py-3 rounded-lg font-bold">Explore Lab Tech</button>
+</div>
+</div>
+<div class="lg:w-1/2 min-h-[400px] bg-center bg-cover" data-alt="Modern high-tech industrial laboratory setting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCibooNk8zhS5_ZxfdfHSbTI7v8Yet8SQvlWaLDyh_Gcmc_Jdr2FsiYX5QT_bwhOXEWvZBux8-PgsQFWXl8SDjUSFRjp2wIeCn9Y935atvcv8g2HMPyqzJADV2bojX_8Frgs_ZFmnlrF2vgD2TlCdwDzT_xRE88CkDEyQNexCLO05vK2ihVYaQMEzqzumtyFaSP5M21YL3QnJPUH-_7XNpAcyUKuMyMGWOPYVnaEGfQ8OT0udS3TG9ZZt3Nun5nbk-qK8QZDO1e6tAx');">
+<div class="w-full h-full bg-gradient-to-r from-white dark:from-slate-900 to-transparent lg:block hidden"></div>
+</div>
+</div>
+</section>
+<div class="flex flex-col lg:flex-row gap-8">
+<!-- Left Sidebar Navigation -->
+<aside class="w-full lg:w-64 flex-shrink-0">
+<div class="bg-white dark:bg-slate-900 rounded-xl p-5 border border-[#f0f0f5] dark:border-slate-800 sticky top-24 shadow-sm">
+<h3 class="font-bold text-lg mb-4">Departments</h3>
+<p class="text-xs text-[#60608a] mb-6">450+ Supplies Available</p>
+<div class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary font-semibold" href="#">
+<span class="material-symbols-outlined text-xl">directions_car</span>
+<span class="text-sm">Auto &amp; Riding</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#60608a] dark:text-slate-400 hover:bg-[#f0f0f5] dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">build</span>
+<span class="text-sm">Industrial Tools</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#60608a] dark:text-slate-400 hover:bg-[#f0f0f5] dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">science</span>
+<span class="text-sm">Lab Equipment</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#60608a] dark:text-slate-400 hover:bg-[#f0f0f5] dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">medical_services</span>
+<span class="text-sm">Medical Essentials</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#60608a] dark:text-slate-400 hover:bg-[#f0f0f5] dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">health_and_safety</span>
+<span class="text-sm">Safety Kits</span>
+</a>
+</div>
+<div class="mt-8 border-t border-[#f0f0f5] dark:border-slate-800 pt-6">
+<h4 class="font-bold text-sm mb-4">Trending Tags</h4>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-gray-100 dark:bg-slate-800 text-[10px] rounded font-medium">#HELMETS</span>
+<span class="px-2 py-1 bg-gray-100 dark:bg-slate-800 text-[10px] rounded font-medium">#LAB_TECH</span>
+<span class="px-2 py-1 bg-gray-100 dark:bg-slate-800 text-[10px] rounded font-medium">#FIRST_AID</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<div class="flex-1">
+<!-- Auto & Riding Gear Section -->
+<section class="mb-12">
+<div class="flex items-center justify-between mb-6">
+<h2 class="text-2xl font-bold flex items-center gap-2">
+                            Auto &amp; Riding Gear - Helmets &amp; Bike Care
+                            <span class="text-sm font-normal text-[#60608a] ml-2">(30 Real Images)</span>
+</h2>
+<a class="text-primary text-sm font-bold hover:underline" href="#">View All</a>
+</div>
+<!-- 5-Column Grid -->
+<div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4">
+<!-- Product Card 1 -->
+<div class="bg-white dark:bg-slate-900 border border-[#f0f0f5] dark:border-slate-800 rounded-lg p-3 group cursor-pointer hover:shadow-md transition-shadow">
+<div class="relative w-full aspect-square bg-[#f8f9fa] dark:bg-slate-800 rounded-md overflow-hidden mb-3">
+<div class="w-full h-full bg-center bg-cover group-hover:scale-105 transition-transform duration-300" data-alt="High-end aerodynamic motorcycle helmet black and neon" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBuJbsIiaqvI3YFzdhBeL0LZaAcwQ26l-QFH3UxvFy23SEUCZFVxa8nrt1wakY9TwYQPNK2KuTSDzrJNmTr7Ktg9-fczKBEWxLBu9vQeptk2WlYR774fICKVGjfPrZbNSp6Nx1zla7-nSc8_88Iz3prGw3ddENHtS0rQcGK6PTswAMEeVSWsG26GA4SQCnlHHD6bL_OlrSdpHyPGvnSEnolUiFCaftHfgsI-qBMCKgRb3WkaNRLERKImGURmlWw4tVrdh5IVbdJjlFC');"></div>
+<div class="absolute top-2 left-2 flex flex-col gap-1">
+<span class="bg-success-green text-white text-[10px] font-bold px-1.5 py-0.5 rounded flex items-center gap-0.5">
+                                        4.8 <span class="material-symbols-outlined text-[10px] fill-1">star</span>
+</span>
+</div>
+<button class="absolute top-2 right-2 text-[#60608a] hover:text-red-500 bg-white dark:bg-slate-700 rounded-full p-1 shadow-sm">
+<span class="material-symbols-outlined text-lg">favorite</span>
+</button>
+</div>
+<div class="flex items-center gap-1 mb-1">
+<span class="text-[10px] bg-primary/10 text-primary font-bold px-1 rounded">NEXCART Assured</span>
+</div>
+<h3 class="text-sm font-medium mb-1 line-clamp-1">Steelbird SBA-7 Wings Air</h3>
+<div class="flex items-center gap-2 mb-1">
+<span class="font-bold text-lg">₹1,899</span>
+<span class="text-xs text-[#60608a] line-through">₹2,499</span>
+<span class="text-xs text-success-green font-bold">24% off</span>
+</div>
+<p class="text-[10px] text-[#60608a]">Free delivery by Mon, Oct 24</p>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-white dark:bg-slate-900 border border-[#f0f0f5] dark:border-slate-800 rounded-lg p-3 group cursor-pointer hover:shadow-md transition-shadow">
+<div class="relative w-full aspect-square bg-[#f8f9fa] dark:bg-slate-800 rounded-md overflow-hidden mb-3">
+<div class="w-full h-full bg-center bg-cover group-hover:scale-105 transition-transform duration-300" data-alt="Professional bike chain cleaning and lubrication kit" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAMTfzeJNNoR_1WbdUSi3JrXU32luQ4B1isQI2mcEIgkHdlf7FtnwBBg9wNCJi8kqacTTGoyviw0-_-OY7yVV0bbHEFj6MImQbWySC8N0Izw3OzFhoAKwSSAjKIeUfHKHHEdVFGWOBFu81nyKuoClSZmuwdsh9Kdko2DtG3C9PLABI9AmN9bHga98NhhD5ZNCgUuf5zL8K2FgsIGtq8dJSzc7t3tBn70_d7kBbR672xDNw0n39RHxam-AoD2gL6fa_44OsqQyZOFDf8');"></div>
+<div class="absolute top-2 left-2 flex flex-col gap-1">
+<span class="bg-success-green text-white text-[10px] font-bold px-1.5 py-0.5 rounded flex items-center gap-0.5">
+                                        4.5 <span class="material-symbols-outlined text-[10px] fill-1">star</span>
+</span>
+</div>
+</div>
+<div class="flex items-center gap-1 mb-1">
+<span class="text-[10px] bg-primary/10 text-primary font-bold px-1 rounded">NEXCART Assured</span>
+</div>
+<h3 class="text-sm font-medium mb-1 line-clamp-1">Motul C2 Chain Lube Combo</h3>
+<div class="flex items-center gap-2 mb-1">
+<span class="font-bold text-lg">₹520</span>
+<span class="text-xs text-[#60608a] line-through">₹650</span>
+<span class="text-xs text-success-green font-bold">20% off</span>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="bg-white dark:bg-slate-900 border border-[#f0f0f5] dark:border-slate-800 rounded-lg p-3 group cursor-pointer hover:shadow-md transition-shadow">
+<div class="relative w-full aspect-square bg-[#f8f9fa] dark:bg-slate-800 rounded-md overflow-hidden mb-3">
+<div class="w-full h-full bg-center bg-cover group-hover:scale-105 transition-transform duration-300" data-alt="Full face matte black motorcycle helmet" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBazckbdRB_dQzOKbwWYxKv3QfBpybYIlI7_eG9MkhSXRUNPy-XnYWFOEud_5Lap4KgUkSkLNchdr4E2kcUAOZG_aOL-egmVVvp4p1tWoA2fEVFWd5jGZyBK9IughTmXmLqn1FUKhsHcCmyA3JqG7nKfhut1KZzRsxW2o5riEApXJIfGT3sHDKHIwIgicA-Gp69i0P4Ki_mkjnZNxgwc21kd8edahvSFHHDu8DaxqHVaoboTCdtcvW207xlMCg4dIlOHVbz1qwNKKFs');"></div>
+<div class="absolute top-2 left-2 flex flex-col gap-1">
+<span class="bg-success-green text-white text-[10px] font-bold px-1.5 py-0.5 rounded flex items-center gap-0.5">
+                                        4.2 <span class="material-symbols-outlined text-[10px] fill-1">star</span>
+</span>
+</div>
+</div>
+<h3 class="text-sm font-medium mb-1 line-clamp-1">Vega Crux Dual Visor</h3>
+<div class="flex items-center gap-2 mb-1">
+<span class="font-bold text-lg">₹1,445</span>
+<span class="text-xs text-success-green font-bold">15% off</span>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="bg-white dark:bg-slate-900 border border-[#f0f0f5] dark:border-slate-800 rounded-lg p-3 group cursor-pointer hover:shadow-md transition-shadow">
+<div class="relative w-full aspect-square bg-[#f8f9fa] dark:bg-slate-800 rounded-md overflow-hidden mb-3">
+<div class="w-full h-full bg-center bg-cover group-hover:scale-105 transition-transform duration-300" data-alt="Microfiber detailing cloth set for vehicles" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAmcpZwfIhSuP_qYXrvEembwkBvy_-5PXxbihyphMDWE_9OrDSjOiCKKXhQYPfEbiP9bBdTLc7h53hTbnxEgET9MPD0hcYSyfzWID3tV6IhG0PdHfRe0VvetwJ3-r8nTQqNSCC5jeM6y6B7npNANWEP8_6hj25189280xU7z2wMBvjpMn6MWRD2CwEscQfqs3SvdbERJaS-Yk7RHVlYXYzv2DvmSDCcwQFlo7JCuwU9zXDkeRltBijdXKrYG4tRbUs6O8bvisnnv-ZI');"></div>
+<div class="absolute top-2 left-2 flex flex-col gap-1">
+<span class="bg-success-green text-white text-[10px] font-bold px-1.5 py-0.5 rounded flex items-center gap-0.5">
+                                        4.9 <span class="material-symbols-outlined text-[10px] fill-1">star</span>
+</span>
+</div>
+</div>
+<div class="flex items-center gap-1 mb-1">
+<span class="text-[10px] bg-primary/10 text-primary font-bold px-1 rounded">NEXCART Assured</span>
+</div>
+<h3 class="text-sm font-medium mb-1 line-clamp-1">3M Microfiber Polish Cloth (4pk)</h3>
+<div class="flex items-center gap-2 mb-1">
+<span class="font-bold text-lg">₹399</span>
+<span class="text-xs text-[#60608a] line-through">₹599</span>
+<span class="text-xs text-success-green font-bold">33% off</span>
+</div>
+</div>
+<!-- Product Card 5 -->
+<div class="bg-white dark:bg-slate-900 border border-[#f0f0f5] dark:border-slate-800 rounded-lg p-3 group cursor-pointer hover:shadow-md transition-shadow">
+<div class="relative w-full aspect-square bg-[#f8f9fa] dark:bg-slate-800 rounded-md overflow-hidden mb-3">
+<div class="w-full h-full bg-center bg-cover group-hover:scale-105 transition-transform duration-300" data-alt="Racing motorcycle leather gloves with armor" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAUF4mhjA-cOD0TTFcCopXXYaeQkZCXmlyCI3DLhPc33Zl6wlCwZn8qY1HzyByTK0h2EtC2vbBkW69nXHg_84HeI8FMB5bvJMZJq00NEjVIWiojtYa8rC_VFXYiP2IKZybAMyWOhHeenaPwqlTKoz9FwqIklQTTl2NO1BFX-wU4Mc8BfG3RWiCz8SJXxCO4y-YUD-nzldRdWl59hWqwaTJ_cQ0BnBB6VoG84pOaGUeC2fuFHz2NvC0Wzxh1JbVCI0TdIDA52k3NNupF');"></div>
+<div class="absolute top-2 left-2 flex flex-col gap-1">
+<span class="bg-success-green text-white text-[10px] font-bold px-1.5 py-0.5 rounded flex items-center gap-0.5">
+                                        4.6 <span class="material-symbols-outlined text-[10px] fill-1">star</span>
+</span>
+</div>
+</div>
+<h3 class="text-sm font-medium mb-1 line-clamp-1">Rynox Air GT Gloves</h3>
+<div class="flex items-center gap-2 mb-1">
+<span class="font-bold text-lg">₹2,850</span>
+<span class="text-xs text-success-green font-bold">Top Rated</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Industrial & Lab Section -->
+<section class="mb-12">
+<div class="flex items-center justify-between mb-6">
+<h2 class="text-2xl font-bold">Industrial &amp; Lab Tech</h2>
+<a class="text-primary text-sm font-bold hover:underline" href="#">See More Equipment</a>
+</div>
+<div class="bg-white dark:bg-slate-900 border border-[#f0f0f5] dark:border-slate-800 rounded-xl overflow-hidden">
+<div class="flex overflow-x-auto hide-scrollbar p-4 gap-6">
+<!-- Lab Item 1 -->
+<div class="min-w-[280px] flex flex-col gap-3">
+<div class="w-full aspect-[4/3] bg-[#f8f9fa] dark:bg-slate-800 rounded-lg bg-center bg-cover" data-alt="Precision digital industrial weighing scale" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAK_LKt0ofEH0kRMN7K2G-f1W8VY04fHerQCYu1k7IkVDEzcavqDj9Uk0w3v-kgRcnPrKZSwFmaK4bqwGDKeFzSqJYAUpZIxrft9VGctyg_i_Zfhykabh-dYOpKxs8vQ6h-nCToYr_axo13h2jYKGqMkAz6ddVTbRGi_baX89Y9ITtKk2F_FkNt-T3LPHknikWKd3fGRbyL8ZGlsGlcnh1dNfI1nw0v5zrTVbG7s5cB577p5un8yJZrjqR5EO8xl5q6lZHzfXHFQeQa');"></div>
+<div>
+<p class="text-[10px] text-primary font-bold uppercase tracking-widest">Precision Tools</p>
+<h4 class="font-bold text-base">Digital Precision Lab Balance</h4>
+<p class="text-sm text-[#60608a] dark:text-slate-400 mb-2">0.001g Accuracy | 500g Cap</p>
+<div class="flex items-center justify-between">
+<span class="font-bold text-lg">₹12,400</span>
+<button class="bg-[#f0f0f5] dark:bg-slate-800 p-2 rounded-lg">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Lab Item 2 -->
+<div class="min-w-[280px] flex flex-col gap-3">
+<div class="w-full aspect-[4/3] bg-[#f8f9fa] dark:bg-slate-800 rounded-lg bg-center bg-cover" data-alt="Professional laser temperature gun for industrial use" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAxJWY6-Mjy5v3O2RfyCNmlyFpHOdN-0sxBGBx1bIJMFZjx5zqdH42PkyEe7rjAdm2ZDvX1BVL9Z6UOvuO58SgRD3PVi3jkMFkphpOAua8tnix9Ptn8j2ijoYR2c5GZ-YkHuUnPz2qGHe24NqEVlPFPaOIJMHsqvoW2bb501WW3ZhnJthxIZrQzTYgyehd-ikrbaH7Pzxx7D5zJ4gfmUDAo_QcxBxBGTK5wCkHDMShszl56xLeA8EYuQtR66xUEZ396D6JBeMOQHtk6');"></div>
+<div>
+<p class="text-[10px] text-primary font-bold uppercase tracking-widest">Testing Devices</p>
+<h4 class="font-bold text-base">Industrial Infrared Thermometer</h4>
+<p class="text-sm text-[#60608a] dark:text-slate-400 mb-2">-50°C to 1500°C Range</p>
+<div class="flex items-center justify-between">
+<span class="font-bold text-lg">₹4,250</span>
+<button class="bg-[#f0f0f5] dark:bg-slate-800 p-2 rounded-lg">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Lab Item 3 -->
+<div class="min-w-[280px] flex flex-col gap-3">
+<div class="w-full aspect-[4/3] bg-[#f8f9fa] dark:bg-slate-800 rounded-lg bg-center bg-cover" data-alt="Advanced binocular microscope for laboratory" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCdPjOUYX6kmGnN3yWebiV3znnRizjhWnVsiUQ59CjT3zMIFSpdVND1KmGVL3f1Aso5XFaRF0x5nQ0-VOt1t1wlI-NtGV5wO02bIMz8ciznq6C1kMKfbAKaxlG8V8pICs_XBXaGt7SslrLQRQ9dCF7VUIMKdFH6CN86-XDC8Q254Ar3_LWq_-mPUNxk-kC4_8RxD2OGrGg5-6LKKBGt63JyRio_cBKgiEYjlSfvRwoa-eBArFcZR7MqLZxAlpy_zi_nNgXoTT6NxX7X');"></div>
+<div>
+<p class="text-[10px] text-primary font-bold uppercase tracking-widest">Microscopy</p>
+<h4 class="font-bold text-base">LED Binocular Compound Microscope</h4>
+<p class="text-sm text-[#60608a] dark:text-slate-400 mb-2">40X-2500X Magnification</p>
+<div class="flex items-center justify-between">
+<span class="font-bold text-lg">₹28,900</span>
+<button class="bg-[#f0f0f5] dark:bg-slate-800 p-2 rounded-lg">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Sidebar: Medical Essentials -->
+<aside class="w-full lg:w-80 flex-shrink-0">
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-[#f0f0f5] dark:border-slate-800 overflow-hidden shadow-sm sticky top-24">
+<div class="p-5 border-b border-[#f0f0f5] dark:border-slate-800">
+<h3 class="font-bold text-lg">Medical Essentials</h3>
+<p class="text-xs text-[#60608a]">Safety Products &amp; Kits</p>
+</div>
+<div class="p-5 space-y-6">
+<!-- Sidebar Item 1 -->
+<div class="flex gap-4">
+<div class="size-20 bg-gray-100 dark:bg-slate-800 rounded-lg flex-shrink-0 bg-center bg-cover" data-alt="Fully stocked industrial first aid medical kit box" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC0MjbesoJDBIAdrw9942t6iOK7VJpf_EaDMOPVlyIb7BlIspRARZBc0jxrUVsk5d0px5MI7A-Ne7aJfR6GLkElnxGvtP1xWjlgXEOjaP5rVDDGsytEIzrsy1Ngs3VLidDJdq7E4tbRmod08S0raxfB3wIdjRW1kywqtQEeY3flVqIDZ5qENzobfcp9N0MzKpD8jkRLelwHDHg1myVLUYP75W6ggv2MSg7XurP_9ADQ0oy8MVWS5Qr__wWR6WlM5W-_-MrOwpoGuTm6');"></div>
+<div class="flex flex-col justify-center">
+<h4 class="text-sm font-bold leading-tight">OSHA Compliant First Aid Station</h4>
+<p class="text-xs text-primary font-bold mt-1">₹4,999</p>
+<button class="mt-2 text-[10px] font-bold text-primary flex items-center gap-1">
+                                    QUICK VIEW <span class="material-symbols-outlined text-xs">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Sidebar Item 2 -->
+<div class="flex gap-4">
+<div class="size-20 bg-gray-100 dark:bg-slate-800 rounded-lg flex-shrink-0 bg-center bg-cover" data-alt="N95 medical face masks box" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBMRoCcaeGJLEaEb_CRLv2GPVJKw3biZuasz5hhAy4V0-i01MYWEijlxguTOtXspm0X-xNtelc3A9ky6oMwQMJ0U2LOpDyFKwC1kIBm1gOL6Y6TBMSPlA31YkyU6ZJFWTnGvXhJdQjdhO4CM6v9sqNMBqg3tGoEA51U6cwYt7iegBETdfCjkN8vfbl2tM_AZOzYUIo6fekPz8Mdd7lEpQ5EPEehvqHBV7xTFTgKobFqWj3TA7X2NDQ10oPLJn4uXyA9OnIQdYNdXVow');"></div>
+<div class="flex flex-col justify-center">
+<h4 class="text-sm font-bold leading-tight">3M Aura Particulate Respirator (Pack of 20)</h4>
+<p class="text-xs text-primary font-bold mt-1">₹1,240</p>
+<button class="mt-2 text-[10px] font-bold text-primary flex items-center gap-1">
+                                    QUICK VIEW <span class="material-symbols-outlined text-xs">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Sidebar Item 3 -->
+<div class="flex gap-4">
+<div class="size-20 bg-gray-100 dark:bg-slate-800 rounded-lg flex-shrink-0 bg-center bg-cover" data-alt="Digital fingertip pulse oximeter" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBwLVLuEIQUKXDfndvm3PSEV74-PSUzmgy-3OGXNoKsj4zdW9IEnmqE_mvkEbzbkuXyCAZr7SUWyNmAJ5gxhN_n5JQvPcEmbwRVdwtvI98SLrJgLWg6WUoQzG0GIhfNsfll0mIWCITHAQJ4bRocRZ_e4h-yQdDHPcEiECcZGVAlPa57-74agcRXq4JC_w304sRoh8Ti6JKcML4CLAHJy2swzE-3qxdSZgwD80jnGK4WtntlAu_qmT83YOHtarSO-eW7ulwCaoCRYA2f');"></div>
+<div class="flex flex-col justify-center">
+<h4 class="text-sm font-bold leading-tight">Dr Trust Pulse Oximeter Pro</h4>
+<p class="text-xs text-primary font-bold mt-1">₹1,850</p>
+<button class="mt-2 text-[10px] font-bold text-primary flex items-center gap-1">
+                                    QUICK VIEW <span class="material-symbols-outlined text-xs">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="p-5 bg-[#f0f0f5] dark:bg-slate-800/50">
+<div class="bg-primary text-white p-4 rounded-lg text-center">
+<h4 class="font-bold text-sm mb-1">Corporate Enquiry?</h4>
+<p class="text-[10px] opacity-90 mb-3">Get bulk discounts for your office or lab</p>
+<button class="w-full bg-white text-primary text-xs font-bold py-2 rounded">Contact Sales</button>
+</div>
+</div>
+</div>
+</aside>
+</div>
+<!-- Trust Signals Footer Section -->
+<section class="mt-16 pt-10 border-t border-[#f0f0f5] dark:border-slate-800">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-4xl">verified_user</span>
+<div>
+<h4 class="font-bold text-sm">NEXCART Assured</h4>
+<p class="text-xs text-[#60608a]">100% genuine products only</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-4xl">local_shipping</span>
+<div>
+<h4 class="font-bold text-sm">Industrial Logistics</h4>
+<p class="text-xs text-[#60608a]">Safe handling of heavy equipment</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-4xl">support_agent</span>
+<div>
+<h4 class="font-bold text-sm">Technical Support</h4>
+<p class="text-xs text-[#60608a]">Expert guidance for lab setup</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-4xl">payments</span>
+<div>
+<h4 class="font-bold text-sm">Secure Payments</h4>
+<p class="text-xs text-[#60608a]">EMI &amp; GST Invoicing available</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-white dark:bg-slate-900 border-t border-[#f0f0f5] dark:border-slate-800 mt-20 py-10 px-10">
+<div class="max-w-[1440px] mx-auto flex flex-col md:flex-row justify-between items-start gap-10">
+<div class="max-w-xs">
+<div class="flex items-center gap-3 text-primary mb-6">
+<div class="size-6">
+<svg class="w-full h-full" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-[#111118] dark:text-white text-xl font-bold">NEXCART</h2>
+</div>
+<p class="text-sm text-[#60608a]">The ultimate destination for professional supplies. Serving 5000+ businesses across India with premium Auto, Medical, and Industrial gear.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-16">
+<div>
+<h5 class="font-bold text-sm mb-4">Shop</h5>
+<ul class="text-sm text-[#60608a] space-y-2">
+<li><a class="hover:text-primary" href="#">Auto Gear</a></li>
+<li><a class="hover:text-primary" href="#">Lab Equipment</a></li>
+<li><a class="hover:text-primary" href="#">Medical Tools</a></li>
+<li><a class="hover:text-primary" href="#">Industrial Tech</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold text-sm mb-4">Support</h5>
+<ul class="text-sm text-[#60608a] space-y-2">
+<li><a class="hover:text-primary" href="#">Help Center</a></li>
+<li><a class="hover:text-primary" href="#">Bulk Orders</a></li>
+<li><a class="hover:text-primary" href="#">Shipping Policy</a></li>
+<li><a class="hover:text-primary" href="#">Returns</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold text-sm mb-4">Legal</h5>
+<ul class="text-sm text-[#60608a] space-y-2">
+<li><a class="hover:text-primary" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-primary" href="#">Terms of Service</a></li>
+<li><a class="hover:text-primary" href="#">Compliance</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="max-w-[1440px] mx-auto mt-16 pt-6 border-t border-[#f0f0f5] dark:border-slate-800 text-center text-xs text-[#60608a]">
+            © 2023 NEXCART Industrial Hub. All rights reserved.
+        </div>
+</footer>
+</body></html>

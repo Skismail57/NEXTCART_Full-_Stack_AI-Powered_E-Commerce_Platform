@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEXCART | Lifestyle &amp; Living Explorer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2525f4",
+                        "background-light": "#f5f5f8",
+                        "background-dark": "#101022",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .glass-card {
+            background: rgba(40, 40, 57, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .neon-border-hover:hover {
+            box-shadow: 0 0 15px rgba(37, 37, 244, 0.4);
+            border-color: rgba(37, 37, 244, 0.6);
+        }
+        .masonry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-auto-rows: 200px;
+            gap: 1.5rem;
+        }
+        .masonry-item-tall { grid-row: span 3; }
+        .masonry-item-mid { grid-row: span 2; }
+        .masonry-item-short { grid-row: span 1.5; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-white min-h-screen">
+<div class="layout-container flex flex-col h-full min-h-screen">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-white/5 bg-background-dark/80 backdrop-blur-md px-10 py-3">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-white">
+<div class="size-8 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-white text-xl font-bold leading-tight tracking-[-0.015em] font-display">NEXCART</h2>
+</div>
+<label class="flex flex-col min-w-40 h-10 w-96">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full overflow-hidden">
+<div class="text-[#9c9cba] flex border-none bg-white/5 items-center justify-center pl-4 rounded-l-lg">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 border-none bg-white/5 text-white focus:outline-0 focus:ring-0 focus:border-none h-full placeholder:text-[#9c9cba] px-4 pl-2 text-base font-normal" placeholder="Search artisan showpieces..."/>
+</div>
+</label>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<div class="flex items-center gap-9">
+<a class="text-white text-sm font-medium hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-primary text-sm font-medium" href="#">Lifestyle</a>
+<a class="text-white text-sm font-medium hover:text-primary transition-colors" href="#">Pet Supplies</a>
+<a class="text-white text-sm font-medium hover:text-primary transition-colors" href="#">Artisan</a>
+<a class="text-white text-sm font-medium hover:text-primary transition-colors" href="#">Offers</a>
+</div>
+<div class="flex gap-3">
+<button class="flex size-10 items-center justify-center rounded-lg bg-white/5 text-white hover:bg-white/10 transition-all">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+<button class="flex size-10 items-center justify-center rounded-lg bg-white/5 text-white hover:bg-white/10 transition-all">
+<span class="material-symbols-outlined">shopping_bag</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border border-primary/50 shadow-[0_0_10px_rgba(37,37,244,0.3)]" data-alt="User profile avatar with neon accent" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDtOSB0wX4ofktTfT7bsvka_6QTJAeRu2Qm88cSnWOsx8mZxUztLN2IamJF7xg2xBn7MTuIS_fYjQNygGoL1U9rcn8vko0xY1EFRvHsgB3n0Gs7o24vxMq1tndI4_gszAG_R9gqohVUaDUYYXcaPdee5ZKpwP86Or68SiruZaN4f5C-xfEhc7J6cgkbf3Tw3XDj8iZYa_vyWvLrw2yI0H2vgOAKTDmRHc2IkyyiV1wbKfxJ7aX_XJjAYRWoETMixDBrUKywxwn_3g_x");'></div>
+</div>
+</div>
+</header>
+<main class="flex flex-1 overflow-hidden">
+<!-- Side Navigation Bar -->
+<aside class="w-72 flex flex-col justify-between border-r border-white/5 bg-background-dark p-6 overflow-y-auto">
+<div class="flex flex-col gap-8">
+<div class="flex flex-col gap-4">
+<div class="flex flex-col">
+<h1 class="text-white text-lg font-bold font-display tracking-tight">Room Type</h1>
+<p class="text-[#9c9cba] text-xs font-normal">Explore curated spaces</p>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-white/5 cursor-pointer text-[#9c9cba] hover:text-white transition-all">
+<span class="material-symbols-outlined text-2xl">grid_view</span>
+<p class="text-sm font-medium">All Rooms</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-3 rounded-lg bg-primary text-white shadow-[0_0_20px_rgba(37,37,244,0.2)]">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1">chair</span>
+<p class="text-sm font-medium">Living Room</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-white/5 cursor-pointer text-[#9c9cba] hover:text-white transition-all">
+<span class="material-symbols-outlined text-2xl">bed</span>
+<p class="text-sm font-medium">Bedroom</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-white/5 cursor-pointer text-[#9c9cba] hover:text-white transition-all">
+<span class="material-symbols-outlined text-2xl">light_mode</span>
+<p class="text-sm font-medium">Outdoor</p>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<div class="flex flex-col">
+<h1 class="text-white text-lg font-bold font-display tracking-tight">Artisan Picks</h1>
+<p class="text-[#9c9cba] text-xs font-normal">Filtered by craft</p>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 rounded-full text-xs bg-white/5 text-white border border-white/10">Ceramic</span>
+<span class="px-3 py-1 rounded-full text-xs bg-primary/20 text-primary border border-primary/30 font-bold">Neon Glass</span>
+<span class="px-3 py-1 rounded-full text-xs bg-white/5 text-white border border-white/10">Textiles</span>
+<span class="px-3 py-1 rounded-full text-xs bg-white/5 text-white border border-white/10">Woven</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-2 mt-auto pt-8 border-t border-white/5">
+<div class="flex items-center gap-3 px-3 py-2 text-[#9c9cba] hover:text-white cursor-pointer transition-colors">
+<span class="material-symbols-outlined">settings</span>
+<p class="text-sm font-medium">Dashboard Settings</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 text-[#9c9cba] hover:text-white cursor-pointer transition-colors">
+<span class="material-symbols-outlined">help_center</span>
+<p class="text-sm font-medium">Artisan Support</p>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<div class="flex-1 overflow-y-auto bg-background-dark/50">
+<div class="max-w-[1440px] mx-auto p-10">
+<!-- Page Heading -->
+<div class="flex flex-wrap justify-between items-end gap-6 mb-8">
+<div class="flex flex-col gap-4">
+<p class="text-white text-5xl font-black leading-tight tracking-[-0.033em] font-display">
+                                Lifestyle &amp; <span class="text-primary">Living</span>
+</p>
+<p class="text-[#9c9cba] text-lg max-w-2xl font-normal leading-relaxed">
+                                Curate your space with neon-blue precision. Discover 225+ handpicked artisan showpieces, festive lighting, and modern home essentials.
+                            </p>
+</div>
+<div class="flex gap-4">
+<button class="flex min-w-[120px] items-center justify-center rounded-xl h-12 px-6 bg-white/5 text-white text-sm font-bold border border-white/10 hover:bg-white/10 transition-all">
+<span>Sort by: Trending</span>
+</button>
+<button class="flex min-w-[140px] items-center justify-center rounded-xl h-12 px-6 bg-primary text-white text-sm font-bold shadow-[0_0_20px_rgba(37,37,244,0.3)] hover:scale-[1.02] active:scale-[0.98] transition-all">
+<span>View Trends</span>
+</button>
+</div>
+</div>
+<!-- Category Chips -->
+<div class="flex gap-3 mb-10 overflow-x-auto pb-2 scrollbar-hide">
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-primary px-6 text-white border border-primary shadow-[0_0_15px_rgba(37,37,244,0.2)]">
+<p class="text-sm font-bold">Home Lighting</p>
+<span class="material-symbols-outlined text-xl">keyboard_arrow_down</span>
+</button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-white/5 px-6 text-white border border-white/10 hover:border-white/20 transition-all">
+<p class="text-sm font-medium">Festive Décor</p>
+<span class="material-symbols-outlined text-xl">keyboard_arrow_down</span>
+</button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-white/5 px-6 text-white border border-white/10 hover:border-white/20 transition-all">
+<p class="text-sm font-medium">Showpieces</p>
+<span class="material-symbols-outlined text-xl">keyboard_arrow_down</span>
+</button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-white/5 px-6 text-white border border-white/10 hover:border-white/20 transition-all">
+<p class="text-sm font-medium">Gift Items</p>
+<span class="material-symbols-outlined text-xl">keyboard_arrow_down</span>
+</button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-white/5 px-6 text-white border border-white/10 hover:border-white/20 transition-all">
+<p class="text-sm font-medium">Handmade</p>
+<span class="material-symbols-outlined text-xl">keyboard_arrow_down</span>
+</button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-white/5 px-6 text-white border border-white/10 hover:border-white/20 transition-all">
+<p class="text-sm font-medium">Smart Home</p>
+<span class="material-symbols-outlined text-xl">keyboard_arrow_down</span>
+</button>
+</div>
+<!-- Masonry Image Grid -->
+<div class="masonry-grid pb-20">
+<!-- Item 1: Tall / Featured -->
+<div class="masonry-item-tall group relative overflow-hidden rounded-xl glass-card neon-border-hover transition-all duration-300">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Modern neon blue circular wall lamp" style='background-image: linear-gradient(180deg, rgba(16, 16, 34, 0) 0%, rgba(16, 16, 34, 0.9) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuA555ul_LhxGX9J7zunk-nmXp_vOmpGxXYMOy1DMGz5nKBTHmXwaKVzYPJ2BLbshvUQS9ao-ho6GDrAS_9YUOsrFJcEONNIUxJnTZQY28tfZhFapUPsPoBQiZoCa4Uv73IMUsYxytB7GocffG16ZJPR4LwnI38S8IbS9KpuPzY97vfyZHy5ZP66kggOnahAcDP6t4bkvcuHuX3S7Bvc5T4afgwGuUF9Bc50f0rBBIeAfEV7Prix-M1F6EgKKTHUknw7xOVsYuw3UbOT");'>
+</div>
+<div class="absolute top-4 left-4">
+<span class="bg-primary px-3 py-1 rounded text-[10px] font-bold tracking-widest uppercase">Limited Edition</span>
+</div>
+<div class="absolute bottom-0 left-0 right-0 p-6">
+<p class="text-primary text-sm font-bold mb-1">HOME LIGHTING</p>
+<h3 class="text-white text-2xl font-bold mb-4">Cybernetic Ring Lamp</h3>
+<div class="flex items-center justify-between">
+<span class="text-xl font-bold">$299.00</span>
+<button class="size-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-lg">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Item 2: Mid -->
+<div class="masonry-item-mid group relative overflow-hidden rounded-xl glass-card neon-border-hover transition-all duration-300">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Artisan ceramic vase with gold inlay" style='background-image: linear-gradient(180deg, rgba(16, 16, 34, 0) 0%, rgba(16, 16, 34, 0.9) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBiOxrA55wjI9k_pMN_gB7H-4cg8IRHZXydodmCA5dCI48b3ssehLfr65CcBOiKylYw3PjURT5Uwe8uOVu-9Kqrekpnn22CLbPwsHpyvWgvJV19HFt9bsmq8Vi7UJDvQ-aI_fbbRABHdqpKfRnwLfeVhZyChNQtk3sCyi-J9_UOkD4pFG0QbTM8t07w8bY8i7g_rMW-HdGrQ97Whw-5aFqfErV2qnJmjUeS87niz_T3KI8XINZFpT8F3hV1Ii6b8gd1DeVSJcJw1tht");'>
+</div>
+<div class="absolute bottom-0 left-0 right-0 p-6">
+<p class="text-[#9c9cba] text-xs font-bold mb-1">SHOWPIECES</p>
+<h3 class="text-white text-lg font-bold">Cracked Gold Vessel</h3>
+<div class="mt-4 flex items-center gap-2">
+<span class="text-white font-bold">$145.00</span>
+<span class="text-[#9c9cba] text-xs line-through">$190.00</span>
+</div>
+</div>
+</div>
+<!-- Item 3: Tall -->
+<div class="masonry-item-tall group relative overflow-hidden rounded-xl glass-card neon-border-hover transition-all duration-300">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Ethereal festive wreath with glowing blue LED lights" style='background-image: linear-gradient(180deg, rgba(16, 16, 34, 0) 0%, rgba(16, 16, 34, 0.9) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuA7J8vefzbI5LyLBfTELdWfCPJHmHEBsA1LTgs7VeUQgS00St6xsPSAORVXyCajKLFb-BGRTsJ4G9X35rG1VCr6cYD5AxeUiT2j13ER4oX294gNAkuxNF79HTJYw9z4Q7pX1zRFb26IFFG8gsm9HHq7KzE6zn738rBsCzgCwX_4O8uRiqloE5oyW8mrugbxJEOmI123-xxp0V12vXrYip1JBT9FJa6MCKwwq5lBngP-DCXMYoASqKjTZmUyqX7L7axCWPzRij3SJfEW");'>
+</div>
+<div class="absolute top-4 right-4">
+<span class="bg-white/10 backdrop-blur-md border border-white/20 px-3 py-1 rounded text-[10px] font-bold tracking-widest uppercase">Festive Pick</span>
+</div>
+<div class="absolute bottom-0 left-0 right-0 p-6">
+<p class="text-primary text-xs font-bold mb-1">FESTIVE DÉCOR</p>
+<h3 class="text-white text-xl font-bold mb-4">Neon Solstice Wreath</h3>
+<p class="text-[#9c9cba] text-xs mb-4 line-clamp-2">Hand-woven with integrated fiber optics for a futuristic holiday feel.</p>
+<button class="w-full py-2 bg-white/5 border border-white/10 rounded text-xs font-bold hover:bg-white/10 transition-colors uppercase tracking-widest">Quick View</button>
+</div>
+</div>
+<!-- Item 4: Short -->
+<div class="masonry-item-short group relative overflow-hidden rounded-xl glass-card neon-border-hover transition-all duration-300">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Minimalist desk accessory set in charcoal" style='background-image: linear-gradient(180deg, rgba(16, 16, 34, 0) 0%, rgba(16, 16, 34, 0.9) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuB865XuajFomc-3aXQSK5eEJNCcFQ5KLdFrQKekK2cGkY-OaCkUIyR7hMoDXmwsyzvRVn_J7a71xg8T10QJM_DcB-ZTP1YgA9n5qZLnwpDzpxSD5k9V7WHSdMV3WgHwhN8RR1sH25LxPTgakcriCVZe1Xfl0PEvS32234cv2gMqzgSzlGzAhDkkzH-PisrRBXYONb02UdB21KO6u9sTkTHLkOZCZARmG1yf4ttElGtnoZ7qtAGp1BMHc81gW8hqnN7t3Kwfeseuc83q");'>
+</div>
+<div class="absolute inset-0 bg-black/40 group-hover:opacity-0 transition-opacity"></div>
+<div class="absolute bottom-4 left-4">
+<h3 class="text-white text-sm font-bold">Slate Desk Set</h3>
+<p class="text-primary text-xs font-bold">$78.00</p>
+</div>
+</div>
+<!-- Item 5: Mid -->
+<div class="masonry-item-mid group relative overflow-hidden rounded-xl glass-card neon-border-hover transition-all duration-300">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="High-end velvet pet bed in deep navy" style='background-image: linear-gradient(180deg, rgba(16, 16, 34, 0) 0%, rgba(16, 16, 34, 0.9) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuD6pKZCKNOkCZN0hw-hyLeSN1nNk2w5oQBobpoFQ-p69bSn53waBRGarwo-hdJWQWMyLEFsVnt44pTdEIOOjQHc3pb_VNqflLIEZfRf-lux0ZZKo5TonRahkYP7ojoTegtnd8J7050cCwq_a5mUYDIiTNSWtkmYORwZdLVH0ZRIv2dw9ruH3fnDGXTRwdSOvVKjGSKYihdCToawIrWzXQxq5wJswaul7gprYRqC507855Gve7-gWHDocnoWj1PhOEHiU_FYsup87AS-");'>
+</div>
+<div class="absolute bottom-0 left-0 right-0 p-6">
+<p class="text-[#9c9cba] text-xs font-bold mb-1">PET SUPPLIES</p>
+<h3 class="text-white text-lg font-bold">Royal Velvet Pet Throne</h3>
+<div class="mt-4 flex items-center justify-between">
+<span class="text-white font-bold">$312.00</span>
+<div class="flex gap-1">
+<div class="size-3 rounded-full bg-[#111118] border border-white/20"></div>
+<div class="size-3 rounded-full bg-primary border border-white/20"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 6: Short -->
+<div class="masonry-item-short group relative overflow-hidden rounded-xl glass-card neon-border-hover transition-all duration-300">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Handcrafted crystal prism paperweight" style='background-image: linear-gradient(180deg, rgba(16, 16, 34, 0) 0%, rgba(16, 16, 34, 0.9) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBsOjj_fLW9RiJlfEZ_Fv9ttqnD09Ep6EmyFQ1OAuD0LKlzq36EjQRPKHXlIwf8wnd3UIIeFhMRpkik1MY05d-eXANHc1-x6JFFubYbsNM3nJSWvC8wdfEyGXgmcRlLFIqaxVTMQxByUqUFyjcwNkkoK511K2VYG0-FaaktElR0HTTzTiedD3GkFwUz0iGLdb10wrLBzRtnhe5JsZC9RQ1Yu4buAK3EJlczQG0s6e_tsJU6sMvrofiYgT5gs4d4mGLFZYeUDwLBAHye");'>
+</div>
+<div class="absolute bottom-4 left-4">
+<h3 class="text-white text-sm font-bold">Prism Orb</h3>
+<p class="text-primary text-xs font-bold">$42.00</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Data Rich Footer Detail (Fixed) -->
+<div class="fixed bottom-6 right-6 flex flex-col gap-2 pointer-events-none">
+<div class="glass-card px-4 py-2 rounded-lg flex items-center gap-3 border-l-4 border-l-primary animate-pulse pointer-events-auto">
+<span class="material-symbols-outlined text-primary text-sm">bolt</span>
+<p class="text-[10px] font-bold tracking-widest text-[#9c9cba] uppercase">Active Explorer Mode: <span class="text-white">Live Data Feed</span></p>
+</div>
+<div class="glass-card px-4 py-2 rounded-lg flex items-center gap-3 pointer-events-auto">
+<div class="flex -space-x-2">
+<div class="size-5 rounded-full border-2 border-background-dark bg-cover" data-alt="Avatar 1" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAVmfmNTajGC9ySCLUTTIg_n8aFUaImCnfnuD6Ed6qrajF4OyLkY64SNi570I-PeImZmmt8P9elWOsnV419WYLzy_9l0Bp1sdLza6JPShI8utZL-PEWSwsfGipmAL9qhrSbMPhcU1qJdPetpDvDF3zx_NQnqt2InLHDBco1Y7Dfzhg_Hsmc88ILjFUCIHlt7Xe5any10npi_e9DdcS9teiUuJG_YXAbPKOG6_RMnf6PJVqakvsJdc0bLbTS9a_ck_hlmTEDOA0VMFnx')"></div>
+<div class="size-5 rounded-full border-2 border-background-dark bg-cover" data-alt="Avatar 2" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCkf0BA0HH0HMeScQ2UpDUREecRHqD3dKKVI5R4oy8zKpxVJROLt6jtbLPwcg40QlTHsYjextn5_IyFQ3COqgVZXxayhdYojGHQmdlhOd8FUtUMI_l3gazvYlMBnhXqHtAw-VnKIC5XNLc1NIg3ufXqMJDSrhDscobSJIVGu-ZbOp9a_xqoM-EDty8nYYnlA7hSf1OKQ7aMpCU14V6WfrW5RlBS8UBeM5ToahjUiEEXUmL1KmcS2qjUVoeNL_iStPQp6ctTHQCjIdvu')"></div>
+<div class="size-5 rounded-full border-2 border-background-dark bg-gray-600 flex items-center justify-center text-[8px] font-bold">+12</div>
+</div>
+<p class="text-[10px] font-bold tracking-widest text-[#9c9cba] uppercase">Viewing Now</p>
+</div>
+</div>
+</body></html>

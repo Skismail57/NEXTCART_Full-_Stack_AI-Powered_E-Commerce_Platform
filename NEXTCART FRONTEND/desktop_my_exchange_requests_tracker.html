@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>My Exchange Requests - NEXCART</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3899fa",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#0f1923",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: "Space Grotesk", sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .step-active {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen">
+<div class="layout-container flex flex-col h-full grow">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[#e5e7eb] dark:border-white/10 bg-white dark:bg-background-dark px-10 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-[#111418] dark:text-white">
+<div class="size-6 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-xl font-bold leading-tight tracking-tight uppercase">NEXCART</h2>
+</div>
+<nav class="hidden md:flex items-center gap-9">
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Shop</a>
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Categories</a>
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Deals</a>
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Support</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end gap-6 items-center">
+<label class="flex flex-col min-w-40 h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-[#5f758c] flex border-none bg-[#f0f2f5] dark:bg-white/5 items-center justify-center pl-4 rounded-l-lg">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 border-none bg-[#f0f2f5] dark:bg-white/5 text-[#111418] dark:text-white focus:ring-0 h-full placeholder:text-[#5f758c] px-4 rounded-r-lg text-sm font-normal" placeholder="Search products..." value=""/>
+</div>
+</label>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-gray-600 dark:text-gray-300 cursor-pointer">shopping_cart</span>
+<span class="material-symbols-outlined text-gray-600 dark:text-gray-300 cursor-pointer">notifications</span>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border border-gray-200" data-alt="User profile avatar image" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBZ9mHWeys0HyPEagTlz8m2rx73m_ZZwjmqWV5NJu6Nv_mg9SuwVjUEhtrHNrDjzimClijnevmFM6g8M2suzvWxcGj4LyO34yuwaFaLK1VMOvQmr6TPtbwRxkZPpYyXQ5luTE6jBovIEe4nHnqtFzZeDng8GRDub5K0I5Sd7Io2dWQCvjBGdCs8IZ-5ECO86-0BYi71OtuD0Gkg-1eoQ-fsTuufSg3wqnrmcsEGFv0uq7pF_7UVTPsDkWqcaJtmELaSx2y416PdbIlv");'></div>
+</div>
+</header>
+<!-- Main Content Area -->
+<div class="flex-1 flex max-w-[1440px] mx-auto w-full px-10 py-8 gap-8">
+<!-- Sidebar Navigation -->
+<aside class="w-64 flex-shrink-0">
+<div class="bg-white dark:bg-background-dark border border-[#e5e7eb] dark:border-white/10 rounded-xl p-6 flex flex-col gap-8 shadow-sm">
+<div class="flex gap-3 items-center">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12 border-2 border-primary/20" data-alt="John Doe profile photo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCS9ciIGrSNrhJ304oXMEb3RuefFgzl3KCwtxPYcuooWpGW7bHkQq5Rw4N-Ly0Qj3zqJXuS1nXayWx8t9SYnfMtU1v6DNv37fHbRho-DlzqvPoUXjsNIdQCXVw6Ee2l6p_6yE91AT0dKAYXegof9JCENcw4ib_TE5MzpX5Zw7-n8RyE2Y4Y7P6ZtXxllSoGN7--K4tFWLCbki5R8_nPTdijqncUlggAuF_zKyGpqKQ8Q4L8rPFL4PBz87BHEqWMBIt0zuESBIrhkpAn");'></div>
+<div class="flex flex-col">
+<h1 class="text-[#111418] dark:text-white text-base font-bold">John Doe</h1>
+<p class="text-[#5f758c] text-xs font-medium uppercase tracking-wider">Premium Member</p>
+</div>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-background-light dark:hover:bg-white/5 transition-all" href="#">
+<span class="material-symbols-outlined">package</span>
+<span class="text-sm font-medium">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-background-light dark:hover:bg-white/5 transition-all" href="#">
+<span class="material-symbols-outlined">favorite</span>
+<span class="text-sm font-medium">Wishlist</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-background-light dark:hover:bg-white/5 transition-all" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="text-sm font-medium">Wallet</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg bg-primary/10 text-primary border border-primary/20" href="#">
+<span class="material-symbols-outlined">swap_horiz</span>
+<span class="text-sm font-semibold">Exchanges</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-background-light dark:hover:bg-white/5 transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-background-light dark:hover:bg-white/5 transition-all" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="text-sm font-medium">Help Center</span>
+</a>
+</nav>
+</div>
+</aside>
+<!-- Content -->
+<main class="flex-1 flex flex-col gap-6">
+<!-- Breadcrumbs -->
+<div class="flex items-center gap-2 text-sm">
+<a class="text-[#5f758c] hover:text-primary transition-colors" href="#">Account</a>
+<span class="material-symbols-outlined text-xs text-[#5f758c]">chevron_right</span>
+<span class="text-[#111418] dark:text-white font-semibold">My Exchange Requests</span>
+</div>
+<!-- Page Header -->
+<div class="flex flex-col gap-4">
+<div class="flex justify-between items-end">
+<div class="flex flex-col gap-1">
+<h2 class="text-[#111418] dark:text-white text-3xl font-black tracking-tight">My Exchange Requests</h2>
+<p class="text-[#5f758c] text-base">Track and manage your device trade-ins in real-time.</p>
+</div>
+<div class="flex gap-4">
+<div class="flex items-center gap-4 bg-white dark:bg-background-dark border border-[#e5e7eb] dark:border-white/10 rounded-xl px-6 py-3 shadow-sm">
+<div>
+<p class="text-xs text-[#5f758c] font-medium uppercase tracking-wider">Active</p>
+<p class="text-xl font-bold text-[#111418] dark:text-white">2</p>
+</div>
+<div class="w-px h-8 bg-gray-200 dark:bg-white/10"></div>
+<div>
+<p class="text-xs text-[#5f758c] font-medium uppercase tracking-wider">Completed</p>
+<p class="text-xl font-bold text-[#111418] dark:text-white">12</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Exchange Card 1 (Active) -->
+<div class="bg-white dark:bg-background-dark border border-[#e5e7eb] dark:border-white/10 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+<div class="p-8">
+<!-- Top Row: Device & Value -->
+<div class="flex justify-between items-start mb-8">
+<div class="flex gap-6">
+<div class="size-24 rounded-lg bg-background-light dark:bg-white/5 flex items-center justify-center p-2 border border-gray-100 dark:border-white/5">
+<img alt="iPhone 13 mockup" class="max-h-full object-contain" data-alt="Photo of a blue iPhone 13" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFYL7HY_9vnsovvHuw6AVdsE9C_FMysO47rcnd_JQnktTqsa6WJMzR_NFKlw8uBbJXNWqfzHtlQ0m0LD1npwMttWGRr6D6HBC5aKEzAPFzgJlKwChqHT4ntWuWLkCPIUrblNyt2uc1SC6P41s_8l6wCX7Tltv7La5VV2wWoxxz7RExOvvBQW2oxMuJS1y2rXh-105PNHlGqlxMd9RweJqayVdmUwO3PUU_ZUicLav2mpgEXS3ee8ATJV5Nq3xKGf1jHahJD5n_iaeu"/>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<h3 class="text-xl font-bold text-[#111418] dark:text-white">iPhone 13, 128GB</h3>
+<span class="bg-blue-50 dark:bg-primary/10 text-primary text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-widest border border-primary/20">Active</span>
+</div>
+<p class="text-sm text-[#5f758c]">Request ID: <span class="text-gray-900 dark:text-gray-300 font-medium">EXC-942105</span></p>
+<p class="text-sm text-[#5f758c]">Initiated on: <span class="text-gray-900 dark:text-gray-300 font-medium">Oct 12, 2023</span></p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-sm text-[#5f758c] font-medium">Estimated Value</p>
+<p class="text-3xl font-black text-primary">$450.00</p>
+<div class="flex items-center gap-1 justify-end mt-1 text-xs text-yellow-600 bg-yellow-50 dark:bg-yellow-500/10 px-2 py-1 rounded">
+<span class="material-symbols-outlined text-sm">info</span>
+<span>Quote expires in 48h</span>
+</div>
+</div>
+</div>
+<!-- Stepper -->
+<div class="relative py-8">
+<div class="absolute top-[52px] left-0 w-full h-[2px] bg-gray-100 dark:bg-white/10 -z-10"></div>
+<div class="absolute top-[52px] left-0 w-1/3 h-[2px] bg-primary -z-10 transition-all duration-500"></div>
+<div class="flex justify-between text-center">
+<!-- Step 1 -->
+<div class="flex flex-col items-center gap-3 w-1/4">
+<div class="size-8 rounded-full bg-primary text-white flex items-center justify-center border-4 border-white dark:border-background-dark shadow-sm">
+<span class="material-symbols-outlined text-lg step-active">check</span>
+</div>
+<div class="flex flex-col">
+<p class="text-sm font-bold text-[#111418] dark:text-white">Request Initiated</p>
+<p class="text-[10px] text-gray-400">Oct 12, 10:30 AM</p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col items-center gap-3 w-1/4">
+<div class="size-8 rounded-full bg-primary text-white flex items-center justify-center border-4 border-white dark:border-background-dark shadow-sm ring-4 ring-primary/20">
+<span class="material-symbols-outlined text-lg">local_shipping</span>
+</div>
+<div class="flex flex-col">
+<p class="text-sm font-bold text-primary">Pickup Scheduled</p>
+<p class="text-[10px] text-gray-400">Oct 14, 02:00 PM</p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col items-center gap-3 w-1/4">
+<div class="size-8 rounded-full bg-gray-100 dark:bg-white/10 text-gray-400 flex items-center justify-center border-4 border-white dark:border-background-dark shadow-sm">
+<span class="material-symbols-outlined text-lg">verified</span>
+</div>
+<div class="flex flex-col">
+<p class="text-sm font-medium text-gray-400">Verification</p>
+<p class="text-[10px] text-gray-400">Pending Pickup</p>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="flex flex-col items-center gap-3 w-1/4">
+<div class="size-8 rounded-full bg-gray-100 dark:bg-white/10 text-gray-400 flex items-center justify-center border-4 border-white dark:border-background-dark shadow-sm">
+<span class="material-symbols-outlined text-lg">payments</span>
+</div>
+<div class="flex flex-col">
+<p class="text-sm font-medium text-gray-400">Exchange Done</p>
+<p class="text-[10px] text-gray-400">Est. Oct 16</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Bar -->
+<div class="flex justify-between items-center mt-6 pt-6 border-t border-gray-100 dark:border-white/5">
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2 text-xs font-semibold text-gray-500">
+<span class="material-symbols-outlined text-red-500">priority_high</span>
+<span>IMEI Proof: <span class="text-red-500">Required</span></span>
+</div>
+<a class="text-xs text-primary font-bold hover:underline" href="#">How to find IMEI?</a>
+</div>
+<div class="flex gap-3">
+<button class="px-6 py-2.5 rounded-lg border border-gray-200 dark:border-white/10 text-sm font-bold text-[#111418] dark:text-white hover:bg-gray-50 dark:hover:bg-white/5 transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">description</span>
+                                    Download Receipt
+                                </button>
+<button class="px-6 py-2.5 rounded-lg bg-primary text-white text-sm font-bold hover:bg-primary/90 transition-all shadow-md shadow-primary/20 flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">upload_file</span>
+                                    Upload Documents
+                                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Exchange Card 2 (Pending) -->
+<div class="bg-white dark:bg-background-dark border border-[#e5e7eb] dark:border-white/10 rounded-xl overflow-hidden shadow-sm opacity-90">
+<div class="p-8">
+<div class="flex justify-between items-start mb-4">
+<div class="flex gap-6">
+<div class="size-20 rounded-lg bg-background-light dark:bg-white/5 flex items-center justify-center p-2 border border-gray-100 dark:border-white/5">
+<img alt="Pixel 6 mockup" class="max-h-full object-contain" data-alt="Photo of a Google Pixel 6 phone" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDT27fovFrkR1kcODkXu5dYDKr_WhztxV4Y-ajBzRTmFCtm_2KLDukmbI1ARrJceCjMcXX3GVjfo9WNCzTiMcySES2XhDXHtlyEaSvsYahvj9mH14es5bJ8IaxkWETEh2VMH9mJbOpe2x_ttq5aGlX9N6dzHU6API_W-hCodxgztIDTu9o49WsjfC9odHx_R-O696SxArxGbYWweOufyBVSouNlv2X4Xn_VNZrXTWjzwdtOBLXYz20Tpg62sPaet0GNqu5aH3BUYSQu"/>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<h3 class="text-lg font-bold text-[#111418] dark:text-white">Google Pixel 6, 128GB</h3>
+<span class="bg-gray-100 dark:bg-white/10 text-gray-500 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-widest">Processing</span>
+</div>
+<p class="text-sm text-[#5f758c]">Request ID: <span class="text-gray-900 dark:text-gray-300 font-medium">EXC-881204</span></p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-sm text-[#5f758c] font-medium">Estimated Value</p>
+<p class="text-2xl font-black text-gray-700 dark:text-gray-200">$210.00</p>
+</div>
+</div>
+<div class="flex justify-between items-center text-sm bg-blue-50/50 dark:bg-primary/5 p-4 rounded-lg">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">info</span>
+<p class="text-gray-600 dark:text-gray-300">We are currently verifying the device details provided by you. This usually takes 24-48 hours.</p>
+</div>
+<button class="text-primary font-bold hover:underline">View Details</button>
+</div>
+</div>
+</div>
+<!-- Past Requests Section -->
+<div class="mt-4">
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-lg font-bold text-[#111418] dark:text-white">Past Requests</h3>
+<button class="text-sm text-primary font-bold flex items-center gap-1">
+                            View All <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-white dark:bg-background-dark border border-[#e5e7eb] dark:border-white/10 p-4 rounded-xl flex justify-between items-center">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-lg bg-gray-50 dark:bg-white/5 flex items-center justify-center p-1">
+<img alt="Old phone" class="max-h-full object-contain grayscale" data-alt="Old smartphone model" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKKuRxZd1o64GfNMgmNEurcyNPF4AOLiUj4ZIXZoARMJkhc9T3SPwWgy7-9XAi8ReN8AaeuGPBOxHAqm4tCZFtymzFy3uVjnBxbxIoF8ozohlIYUYZyUWM1J9Nvle3_UtTm_AVS9l9rxPOZUVs5sy-DokkMexwNEze85xvY-mzuJQW0-TTt724bIWyCdKsmgYPt7n8eFm3b5rdvvJNWn2Ve2S6XS94e9JolWBVuROkbDGExPjHTPX32R8H5ot3-a0r_LIaXBnqerjR"/>
+</div>
+<div>
+<p class="text-sm font-bold text-[#111418] dark:text-white">Samsung Galaxy S20</p>
+<p class="text-xs text-green-600 font-medium">Completed • Sep 2023</p>
+</div>
+</div>
+<p class="text-sm font-bold text-[#111418] dark:text-white">$315.00</p>
+</div>
+<div class="bg-white dark:bg-background-dark border border-[#e5e7eb] dark:border-white/10 p-4 rounded-xl flex justify-between items-center">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-lg bg-gray-50 dark:bg-white/5 flex items-center justify-center p-1">
+<img alt="Old phone" class="max-h-full object-contain grayscale" data-alt="Old iPhone model" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQmB5nDdLwsCycI-T9ZzjctjS5ESC0VW4EscnV3iBa_VdVAF3rL0ljxOghP5v9U5s-sa0C69mg7r2vkcQ1zdnVC4a8polvIS97lsmqRsZRksWdd-LhjbR2dF2CZUwH7O7vRJ9QuqikSoxyy1cvEDAe3ZOTQIFTaGOh0nt-MBlyI0dW5JRZFZPecGK_xxwYbmzNFx9jR6JJ67p3Dm1hnu_lLRvAhNIFeFUldODW-j7tV4jL7hiw4V8C19SRPx89aF4UUWlwLLaEK3vl"/>
+</div>
+<div>
+<p class="text-sm font-bold text-[#111418] dark:text-white">iPhone 11 Pro</p>
+<p class="text-xs text-green-600 font-medium">Completed • Aug 2023</p>
+</div>
+</div>
+<p class="text-sm font-bold text-[#111418] dark:text-white">$280.00</p>
+</div>
+</div>
+</div>
+<!-- Trust Footer -->
+<div class="mt-8 flex justify-center">
+<div class="flex items-center gap-8 py-6 border-t border-gray-200 dark:border-white/10 w-full justify-center">
+<div class="flex items-center gap-2 text-[#5f758c]">
+<span class="material-symbols-outlined text-primary">shield</span>
+<span class="text-sm font-medium">Secure Valuation</span>
+</div>
+<div class="flex items-center gap-2 text-[#5f758c]">
+<span class="material-symbols-outlined text-primary">shutter_speed</span>
+<span class="text-sm font-medium">Fast Payouts</span>
+</div>
+<div class="flex items-center gap-2 text-[#5f758c]">
+<span class="material-symbols-outlined text-primary">support_agent</span>
+<span class="text-sm font-medium">24/7 Expert Support</span>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

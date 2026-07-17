@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEXCART Admin - Homepage Editor</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#1f68f9",
+                "background-light": "#f5f6f8",
+                "background-dark": "#0f1623",
+              },
+              fontFamily: {
+                "display": ["Inter", "sans-serif"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom scrollbar for better UI */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #dbdee6;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111318] dark:text-white antialiased overflow-hidden">
+<div class="flex h-screen flex-col">
+<!-- TopNavBar -->
+<header class="flex h-16 items-center justify-between border-b border-solid border-[#dbdee6] dark:border-slate-800 bg-white dark:bg-slate-900 px-6 z-50">
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-3">
+<div class="size-8 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_330)">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs><clippath id="clip0_6_330"><rect fill="white" height="48" width="48"></rect></clippath></defs>
+</svg>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-tight">NEXCART Admin</h2>
+</div>
+<nav class="hidden md:flex items-center gap-6 ml-4">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="text-primary text-sm font-semibold border-b-2 border-primary py-5" href="#">Storefront</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Products</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Orders</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2 mr-2">
+<span class="flex h-2 w-2 rounded-full bg-green-500"></span>
+<span class="text-xs font-medium text-slate-500">Changes Saved</span>
+</div>
+<button class="flex items-center gap-2 px-4 py-2 bg-[#f0f1f5] dark:bg-slate-800 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors">
+<span class="material-symbols-outlined text-sm">save</span>
+<span>Save Draft</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2 bg-primary text-white text-sm font-bold rounded-lg hover:bg-blue-700 shadow-sm transition-all">
+<span class="material-symbols-outlined text-sm">publish</span>
+<span>Publish Updates</span>
+</button>
+<div class="h-8 w-8 rounded-full bg-slate-200 bg-cover bg-center border border-slate-300" data-alt="Admin user profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDg6_f6TnXUTUVTMmloTnuTYeeorgjhUgVAi5MRUzj3FXhGOVZWF7ZGvg8YnxF7w3_693iH0Oldv-ek5W3tOAgY--VFBREQ34y7XkPlQiugf0w2AmyeZjNacajJiNFv2OsicTUu9srlJZo2g83OheThqddEjORYqLedarvdTgAjeUeuvA7j745qssmfAenLH-sClu-Fn0jRx9oamNRzgQRqb6tj9TyN44qIcnAS5Y2UK_ES4FsYMKuS66hldfCGXBtEyvjehHaOgg4M");'></div>
+</div>
+</header>
+<div class="flex flex-1 overflow-hidden">
+<!-- Sidebar / Control Panel -->
+<aside class="w-[400px] border-r border-[#dbdee6] dark:border-slate-800 bg-white dark:bg-slate-900 overflow-y-auto flex flex-col">
+<!-- Breadcrumbs -->
+<div class="flex flex-wrap gap-2 px-6 pt-6 pb-2">
+<a class="text-[#5f6e8c] text-xs font-medium hover:text-primary" href="#">Home</a>
+<span class="text-[#5f6e8c] text-xs font-medium">/</span>
+<a class="text-[#5f6e8c] text-xs font-medium hover:text-primary" href="#">Storefront</a>
+<span class="text-[#5f6e8c] text-xs font-medium">/</span>
+<span class="text-[#111318] dark:text-slate-300 text-xs font-semibold">Homepage Editor</span>
+</div>
+<div class="px-6 py-4">
+<h1 class="text-xl font-bold text-[#111318] dark:text-white">Homepage Content</h1>
+<p class="text-[#5f6e8c] text-sm mt-1">Configure and manage your storefront modules</p>
+</div>
+<!-- Modular Controls -->
+<div class="flex-1 px-6 space-y-2 pb-10">
+<!-- Section Header Component -->
+<div class="py-2">
+<div class="flex items-center gap-3 px-3 py-3 rounded-lg bg-primary/10 text-primary mb-1">
+<span class="material-symbols-outlined">image</span>
+<span class="font-semibold text-sm">Hero Carousel</span>
+</div>
+<!-- Accordion for Hero Slides -->
+<div class="flex flex-col gap-3 mt-4">
+<details class="group flex flex-col rounded-xl border border-[#dbdee6] bg-white dark:bg-slate-800 dark:border-slate-700 overflow-hidden shadow-sm" open="">
+<summary class="flex cursor-pointer items-center justify-between gap-4 p-4 hover:bg-slate-50 transition-colors list-none">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-400">drag_indicator</span>
+<p class="text-[#111318] dark:text-slate-200 text-sm font-semibold">Slide 1: Summer Collection</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-full bg-green-100 text-green-700 text-[10px] font-bold uppercase tracking-wider">Live Now</span>
+<span class="material-symbols-outlined text-slate-400 group-open:rotate-180 transition-transform">expand_more</span>
+</div>
+</summary>
+<div class="p-4 border-t border-slate-100 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-900/50 space-y-4">
+<div class="space-y-1.5">
+<label class="text-xs font-bold text-slate-500 uppercase tracking-wider">Slide Image</label>
+<div class="relative h-32 w-full rounded-lg border-2 border-dashed border-slate-200 dark:border-slate-700 flex flex-col items-center justify-center bg-white dark:bg-slate-800 group/upload cursor-pointer hover:border-primary transition-colors">
+<div class="flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-slate-400 group-hover/upload:text-primary">cloud_upload</span>
+<span class="text-xs text-slate-500">Change slide image</span>
+</div>
+<div class="absolute inset-0 bg-cover bg-center opacity-10 rounded-lg" data-alt="Placeholder background for hero slide" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDkjnDVruIQPOmpBbb_FOQ7vQPfnpP4ZdBwUe-YI8He6U2CBYmWnqIvDRDkY-NfixaiBOXnNlVnfdUXYZpLgDAZ80Sj0-a2bTEPYNY0FHAJiCPnE3H67efOmmpPoHy3LC2FNKz2Ba9Vb5Y31zOiPDz48tjQlw9unm8earXx6_IbAXLq-bIhEFOaT0RMTeeOkdJHOHfr_67_AZMJpVSuxEK_fPA_IrGELeVgyuHk8m7vY1awhTSWVbsHDKJ20oPH-eUU7ELKAMR7OWdA')"></div>
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-bold text-slate-500 uppercase tracking-wider">Main Title</label>
+<input class="w-full h-10 px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all" type="text" value="Summer Collection 2024"/>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-bold text-slate-500 uppercase tracking-wider">Subtitle</label>
+<input class="w-full h-10 px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all" type="text" value="Up to 50% off on all items"/>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div class="space-y-1.5">
+<label class="text-xs font-bold text-slate-500 uppercase tracking-wider">Button Label</label>
+<input class="w-full h-10 px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all" type="text" value="Shop Now"/>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-bold text-slate-500 uppercase tracking-wider">Link</label>
+<select class="w-full h-10 px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all appearance-none">
+<option>Category: Sale</option>
+<option>Category: New In</option>
+<option>Custom URL</option>
+</select>
+</div>
+</div>
+<div class="pt-2 border-t border-slate-200 dark:border-slate-700">
+<label class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2 block">Scheduling</label>
+<div class="flex items-center gap-2">
+<div class="flex-1 flex items-center gap-2 px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-xs">
+<span class="material-symbols-outlined text-[16px]">calendar_month</span>
+<span>Jun 01, 2024</span>
+</div>
+<span class="text-slate-400 text-xs">to</span>
+<div class="flex-1 flex items-center gap-2 px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-xs">
+<span class="material-symbols-outlined text-[16px]">calendar_month</span>
+<span>Aug 31, 2024</span>
+</div>
+</div>
+</div>
+<div class="flex justify-end gap-2 pt-2">
+<button class="p-2 text-slate-400 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined">delete</span>
+</button>
+<button class="p-2 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+</div>
+</div>
+</details>
+<details class="group flex flex-col rounded-xl border border-[#dbdee6] bg-white dark:bg-slate-800 dark:border-slate-700 overflow-hidden shadow-sm">
+<summary class="flex cursor-pointer items-center justify-between gap-4 p-4 hover:bg-slate-50 transition-colors list-none">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-400">drag_indicator</span>
+<p class="text-[#111318] dark:text-slate-200 text-sm font-semibold">Slide 2: New Arrivals</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-full bg-slate-100 text-slate-500 text-[10px] font-bold uppercase tracking-wider">Scheduled</span>
+<span class="material-symbols-outlined text-slate-400 group-open:rotate-180 transition-transform">expand_more</span>
+</div>
+</summary>
+<div class="p-4 border-t border-slate-100 dark:border-slate-700">
+<p class="text-[#5f6e8c] text-sm">Loading configuration...</p>
+</div>
+</details>
+<button class="flex items-center justify-center gap-2 w-full py-4 border-2 border-dashed border-slate-200 dark:border-slate-700 rounded-xl text-primary font-bold text-sm hover:bg-primary/5 transition-colors">
+<span class="material-symbols-outlined">add_circle</span>
+<span>Add New Slide</span>
+</button>
+</div>
+</div>
+<!-- Other Sections -->
+<div class="py-2 space-y-2">
+<div class="flex items-center justify-between px-3 py-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 group cursor-pointer transition-all">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary">campaign</span>
+<span class="text-sm font-medium">Promotion Banners</span>
+</div>
+<span class="material-symbols-outlined text-slate-300">chevron_right</span>
+</div>
+<div class="flex items-center justify-between px-3 py-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 group cursor-pointer transition-all">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary">category</span>
+<span class="text-sm font-medium">Featured Categories</span>
+</div>
+<span class="material-symbols-outlined text-slate-300">chevron_right</span>
+</div>
+<div class="flex items-center justify-between px-3 py-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 group cursor-pointer transition-all">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary">palette</span>
+<span class="text-sm font-medium">Global Styles</span>
+</div>
+<span class="material-symbols-outlined text-slate-300">chevron_right</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Preview Canvas -->
+<main class="flex-1 bg-[#f5f6f8] dark:bg-slate-950 flex flex-col p-8 overflow-hidden">
+<div class="flex items-center justify-between mb-6">
+<div class="flex items-center gap-2">
+<span class="text-sm font-bold text-slate-600 dark:text-slate-400 uppercase tracking-widest">Live Preview</span>
+<div class="h-2 w-2 rounded-full bg-red-500 animate-pulse"></div>
+</div>
+<!-- Viewport Toggles -->
+<div class="flex bg-white dark:bg-slate-800 p-1 rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm">
+<button class="p-2 rounded-md bg-slate-100 dark:bg-slate-700 text-primary">
+<span class="material-symbols-outlined">desktop_windows</span>
+</button>
+<button class="p-2 rounded-md text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-900">
+<span class="material-symbols-outlined">tablet_mac</span>
+</button>
+<button class="p-2 rounded-md text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-900">
+<span class="material-symbols-outlined">smartphone</span>
+</button>
+</div>
+</div>
+<!-- Preview Frame -->
+<div class="flex-1 bg-white dark:bg-white rounded-xl shadow-2xl overflow-hidden border border-slate-200 flex flex-col max-w-[1200px] mx-auto w-full">
+<!-- Browser Header Mock -->
+<div class="h-10 bg-slate-100 border-b border-slate-200 flex items-center px-4 gap-2">
+<div class="flex gap-1.5">
+<div class="h-2.5 w-2.5 rounded-full bg-slate-300"></div>
+<div class="h-2.5 w-2.5 rounded-full bg-slate-300"></div>
+<div class="h-2.5 w-2.5 rounded-full bg-slate-300"></div>
+</div>
+<div class="flex-1 max-w-[600px] bg-white h-6 rounded-md mx-auto flex items-center px-3 text-[10px] text-slate-400">
+                            https://yourstore.com/home
+                        </div>
+</div>
+<!-- Homepage Content Mock -->
+<div class="flex-1 overflow-y-auto overflow-x-hidden">
+<!-- Preview Navbar -->
+<div class="h-16 flex items-center justify-between px-10 border-b border-slate-100 text-[#111318]">
+<div class="font-black text-xl tracking-tighter">STOREFRONT</div>
+<div class="flex gap-8 text-sm font-medium">
+<span>Shop</span>
+<span>New Arrivals</span>
+<span>Sale</span>
+<span>Blog</span>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined">search</span>
+<span class="material-symbols-outlined">shopping_bag</span>
+</div>
+</div>
+<!-- Preview Hero Section (WYSIWYG Target) -->
+<div class="relative h-[480px] w-full bg-slate-100 overflow-hidden group">
+<!-- Background Gradient Pattern -->
+<div class="absolute inset-0 bg-gradient-to-r from-blue-50 to-indigo-100" data-alt="Soft abstract blue gradient for hero background"></div>
+<img alt="Main hero banner" class="absolute inset-0 w-full h-full object-cover mix-blend-multiply opacity-60" data-alt="High quality fashion photography of summer collection" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8PP74G-a9p6c2hCEJgE8U1m24rMfcR_sdYLqESZOTM9jkm0RxdHu9Ma7BhaSxE7avP41UMLwHlKttNSSSTUlCExKhmKLLkM62O53iTPXy5-k_Bflz_qXelkEgFpCsUUIT7RA8-p_u4gNt_wcw8hWwqp6uCT-U8zpKjJQJkRdjfzZKc8hhPpJQrexaFeI1Wq7jpT9b49lNKRBnGd03D8eHvo36YqtaKyiH67CGeJBGRMnCVW2f1VWuVvYsSIluIUjz1t2OhTYry1No"/>
+<div class="relative h-full flex flex-col justify-center px-16 max-w-[600px] space-y-4">
+<span class="bg-primary text-white text-xs font-bold px-3 py-1 rounded-full w-fit tracking-widest uppercase">Limited Edition</span>
+<h1 class="text-5xl font-extrabold text-[#111318] leading-[1.1]">Summer Collection 2024</h1>
+<p class="text-xl text-slate-600 font-medium leading-relaxed">Up to 50% off on all items. Discover your perfect seasonal look today with our premium selection.</p>
+<div class="pt-4">
+<button class="bg-[#111318] text-white px-8 py-4 rounded-lg font-bold text-base hover:shadow-lg transition-all">Shop Now</button>
+</div>
+</div>
+<!-- Carousel Controls Overlay -->
+<div class="absolute inset-y-0 left-4 flex items-center">
+<button class="h-10 w-10 rounded-full bg-white/80 shadow-lg flex items-center justify-center text-slate-800">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+</div>
+<div class="absolute inset-y-0 right-4 flex items-center">
+<button class="h-10 w-10 rounded-full bg-white/80 shadow-lg flex items-center justify-center text-slate-800">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+<div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
+<div class="h-1.5 w-8 rounded-full bg-[#111318]"></div>
+<div class="h-1.5 w-3 rounded-full bg-slate-300"></div>
+<div class="h-1.5 w-3 rounded-full bg-slate-300"></div>
+</div>
+</div>
+<!-- Grid Mock below Hero -->
+<div class="p-10 grid grid-cols-3 gap-8">
+<div class="space-y-4">
+<div class="aspect-[4/5] bg-slate-50 rounded-lg flex items-center justify-center border border-slate-100" data-alt="Placeholder for category thumbnail">
+<span class="text-slate-300 material-symbols-outlined scale-[2]">image</span>
+</div>
+<h3 class="font-bold">Apparel</h3>
+</div>
+<div class="space-y-4">
+<div class="aspect-[4/5] bg-slate-50 rounded-lg flex items-center justify-center border border-slate-100" data-alt="Placeholder for category thumbnail">
+<span class="text-slate-300 material-symbols-outlined scale-[2]">image</span>
+</div>
+<h3 class="font-bold">Accessories</h3>
+</div>
+<div class="space-y-4">
+<div class="aspect-[4/5] bg-slate-50 rounded-lg flex items-center justify-center border border-slate-100" data-alt="Placeholder for category thumbnail">
+<span class="text-slate-300 material-symbols-outlined scale-[2]">image</span>
+</div>
+<h3 class="font-bold">Footwear</h3>
+</div>
+</div>
+</div>
+</div>
+<!-- Zoom Control -->
+<div class="mt-4 flex items-center justify-center gap-4 text-slate-400 font-medium text-xs">
+<span class="material-symbols-outlined">zoom_out</span>
+<input class="w-32 accent-primary" type="range" value="85"/>
+<span class="material-symbols-outlined">zoom_in</span>
+<span class="bg-white dark:bg-slate-800 px-2 py-1 rounded border border-slate-200 dark:border-slate-700">85%</span>
+</div>
+</main>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEXCART | Price History Analysis</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0df2f2",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#102222",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .glass-card {
+            background: rgba(40, 57, 57, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(13, 242, 242, 0.2);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+        .glow-border:hover {
+            border-color: rgba(13, 242, 242, 0.6);
+            box-shadow: 0 0 15px rgba(13, 242, 242, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-white min-h-screen">
+<div class="layout-container flex flex-col min-h-screen">
+<!-- Top Navigation -->
+<header class="flex items-center justify-between border-b border-solid border-[#283939] px-10 py-4 bg-background-dark/80 sticky top-0 z-50 backdrop-blur-md">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-6">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-white text-xl font-bold leading-tight tracking-tight uppercase">NEXCART</h2>
+</div>
+<label class="flex flex-col min-w-64 h-10">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full overflow-hidden">
+<div class="text-[#9cbaba] flex border-none bg-[#283939] items-center justify-center pl-4">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 border-none bg-[#283939] text-white focus:ring-0 h-full placeholder:text-[#9cbaba] px-4 text-sm font-normal" placeholder="Search product history..."/>
+</div>
+</label>
+</div>
+<div class="flex flex-1 justify-end gap-8 items-center">
+<nav class="flex items-center gap-9">
+<a class="text-[#9cbaba] hover:text-primary transition-colors text-sm font-medium" href="#">Dashboard</a>
+<a class="text-white text-sm font-medium border-b-2 border-primary pb-1" href="#">Products</a>
+<a class="text-[#9cbaba] hover:text-primary transition-colors text-sm font-medium" href="#">Analytics</a>
+<a class="text-[#9cbaba] hover:text-primary transition-colors text-sm font-medium" href="#">Settings</a>
+</nav>
+<button class="flex min-w-[120px] cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-primary text-background-dark text-sm font-bold tracking-tight hover:brightness-110 transition-all shadow-[0_0_15px_rgba(13,242,242,0.3)]">
+<span class="material-symbols-outlined text-lg mr-2">notifications_active</span>
+<span>Set Alert</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-[#283939]" data-alt="User profile avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDVEAm1YKu5oR3x6_ITxZ45Drgkkef7j--eijAPbR7ldY9UqzitqSpdbPAi1ZGaNz9Zwb0W2PZtnd957IKaHEz968u6MrV9_cv7HJz1FjygXYqYLigHP8cLCPpVbfK4bycq9Its1IIoSVNQw5qa1kmbL6S65TF1lHQKnuFqfctW6HpsJZJwBeekh73ylmaj8EzrSjcVu4S5kWGxbbhfqZBNeiFa7wBHTV7UktU8We5lO_0LUG4sbU3GiNuqC-4fg_U1PQxX620x8Tif");'></div>
+</div>
+</header>
+<main class="flex-1 max-w-[1440px] mx-auto w-full px-10 py-8">
+<!-- Breadcrumbs -->
+<div class="flex items-center gap-2 mb-6">
+<a class="text-[#9cbaba] text-sm font-medium flex items-center gap-1 hover:text-white" href="#"><span class="material-symbols-outlined text-sm">home</span> Home</a>
+<span class="text-[#283939] text-sm">/</span>
+<a class="text-[#9cbaba] text-sm font-medium hover:text-white" href="#">Analytics</a>
+<span class="text-[#283939] text-sm">/</span>
+<span class="text-primary text-sm font-medium">Price History Analysis</span>
+</div>
+<!-- Page Heading -->
+<div class="flex flex-wrap justify-between items-end gap-6 mb-8">
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-3">
+<span class="bg-primary/20 text-primary px-3 py-1 rounded text-xs font-bold tracking-widest uppercase">ID: NEX-78921</span>
+<span class="flex items-center gap-1 text-green-400 text-xs font-bold uppercase"><span class="material-symbols-outlined text-xs">trending_down</span> -14.2% Today</span>
+</div>
+<h1 class="text-white text-4xl font-black leading-tight tracking-tight">Ultra-Wide Monitor Pro X-Gen</h1>
+<p class="text-[#9cbaba] text-lg font-normal">Real-time market stability and competitive price tracking</p>
+</div>
+<div class="flex gap-4">
+<button class="flex items-center gap-2 px-6 py-3 rounded-lg bg-[#283939] text-white text-sm font-bold hover:bg-[#344a4a] transition-all">
+<span class="material-symbols-outlined text-lg">download</span>
+                        Export Data
+                    </button>
+<button class="flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-background-dark text-sm font-bold hover:brightness-110 transition-all">
+<span class="material-symbols-outlined text-lg">compare_arrows</span>
+                        Compare Similar
+                    </button>
+</div>
+</div>
+<!-- Metrics Grid -->
+<div class="grid grid-cols-4 gap-6 mb-8">
+<div class="glass-card glow-border p-6 rounded-xl flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<p class="text-[#9cbaba] text-sm font-medium uppercase tracking-wider">Current Price</p>
+<span class="material-symbols-outlined text-primary text-xl">payments</span>
+</div>
+<p class="text-white text-3xl font-bold">$849.00</p>
+<div class="flex items-center gap-2 text-green-400 text-sm">
+<span class="material-symbols-outlined text-sm">arrow_downward</span>
+<span>$150 below average</span>
+</div>
+</div>
+<div class="glass-card glow-border p-6 rounded-xl flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<p class="text-[#9cbaba] text-sm font-medium uppercase tracking-wider">Lowest Ever</p>
+<span class="material-symbols-outlined text-primary text-xl">vertical_align_bottom</span>
+</div>
+<p class="text-white text-3xl font-bold">$799.00</p>
+<p class="text-[#9cbaba] text-sm">Recorded on Mar 12, 2024</p>
+</div>
+<div class="glass-card glow-border p-6 rounded-xl flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<p class="text-[#9cbaba] text-sm font-medium uppercase tracking-wider">Highest Ever</p>
+<span class="material-symbols-outlined text-primary text-xl">vertical_align_top</span>
+</div>
+<p class="text-white text-3xl font-bold">$1,099.00</p>
+<p class="text-[#9cbaba] text-sm">Recorded on Dec 20, 2023</p>
+</div>
+<div class="glass-card glow-border p-6 rounded-xl flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<p class="text-[#9cbaba] text-sm font-medium uppercase tracking-wider">Price Stability</p>
+<span class="material-symbols-outlined text-primary text-xl">analytics</span>
+</div>
+<p class="text-primary text-3xl font-bold">92%</p>
+<div class="w-full bg-[#283939] h-1.5 rounded-full mt-2 overflow-hidden">
+<div class="bg-primary h-full w-[92%] shadow-[0_0_10px_#0df2f2]"></div>
+</div>
+</div>
+</div>
+<!-- Main Chart Area -->
+<div class="glass-card rounded-xl p-8 mb-8">
+<div class="flex justify-between items-center mb-10">
+<div class="flex flex-col gap-1">
+<h3 class="text-xl font-bold text-white">Price Trend Analysis</h3>
+<p class="text-sm text-[#9cbaba]">Comparative visualization: Product Price vs. Category Avg.</p>
+</div>
+<!-- Tabs -->
+<div class="flex bg-background-dark/50 p-1 rounded-lg border border-[#283939]">
+<button class="px-4 py-1.5 rounded-md text-sm font-bold text-[#9cbaba] hover:text-white transition-all">7D</button>
+<button class="px-4 py-1.5 rounded-md text-sm font-bold text-[#9cbaba] hover:text-white transition-all">1M</button>
+<button class="px-4 py-1.5 rounded-md text-sm font-bold bg-primary text-background-dark shadow-sm">6M</button>
+<button class="px-4 py-1.5 rounded-md text-sm font-bold text-[#9cbaba] hover:text-white transition-all">1Y</button>
+<button class="px-4 py-1.5 rounded-md text-sm font-bold text-[#9cbaba] hover:text-white transition-all">ALL</button>
+</div>
+</div>
+<div class="relative h-[400px] w-full group">
+<!-- High Tech Grid Background -->
+<div class="absolute inset-0 grid grid-cols-12 grid-rows-6 pointer-events-none opacity-20">
+<div class="border-b border-r border-[#3b5454] border-dashed"></div><div class="border-b border-r border-[#3b5454] border-dashed"></div><div class="border-b border-r border-[#3b5454] border-dashed"></div><div class="border-b border-r border-[#3b5454] border-dashed"></div><div class="border-b border-r border-[#3b5454] border-dashed"></div><div class="border-b border-r border-[#3b5454] border-dashed"></div><div class="border-b border-r border-[#3b5454] border-dashed"></div><div class="border-b border-r border-[#3b5454] border-dashed"></div><div class="border-b border-r border-[#3b5454] border-dashed"></div><div class="border-b border-r border-[#3b5454] border-dashed"></div><div class="border-b border-r border-[#3b5454] border-dashed"></div><div class="border-b border-[#3b5454] border-dashed"></div>
+<div class="border-b border-r border-[#3b5454] border-dashed"></div><div class="border-b border-r border-[#3b5454] border-dashed"></div><div class="border-b border-r border-[#3b5454] border-dashed"></div><div class="border-b border-r border-[#3b5454] border-dashed"></div><div class="border-b border-r border-[#3b5454] border-dashed"></div><div class="border-b border-r border-[#3b5454] border-dashed"></div><div class="border-b border-r border-[#3b5454] border-dashed"></div><div class="border-b border-r border-[#3b5454] border-dashed"></div><div class="border-b border-r border-[#3b5454] border-dashed"></div><div class="border-b border-r border-[#3b5454] border-dashed"></div><div class="border-b border-r border-[#3b5454] border-dashed"></div><div class="border-b border-[#3b5454] border-dashed"></div>
+<div class="border-b border-r border-[#3b5454] border-dashed"></div><div class="border-b border-r border-[#3b5454] border-dashed"></div><div class="border-b border-r border-[#3b5454] border-dashed"></div><div class="border-b border-r border-[#3b5454] border-dashed"></div><div class="border-b border-r border-[#3b5454] border-dashed"></div><div class="border-b border-r border-[#3b5454] border-dashed"></div><div class="border-b border-r border-[#3b5454] border-dashed"></div><div class="border-b border-r border-[#3b5454] border-dashed"></div><div class="border-b border-r border-[#3b5454] border-dashed"></div><div class="border-b border-r border-[#3b5454] border-dashed"></div><div class="border-b border-r border-[#3b5454] border-dashed"></div><div class="border-b border-[#3b5454] border-dashed"></div>
+<div class="border-b border-r border-[#3b5454] border-dashed"></div><div class="border-b border-r border-[#3b5454] border-dashed"></div><div class="border-b border-r border-[#3b5454] border-dashed"></div><div class="border-b border-r border-[#3b5454] border-dashed"></div><div class="border-b border-r border-[#3b5454] border-dashed"></div><div class="border-b border-r border-[#3b5454] border-dashed"></div><div class="border-b border-r border-[#3b5454] border-dashed"></div><div class="border-b border-r border-[#3b5454] border-dashed"></div><div class="border-b border-r border-[#3b5454] border-dashed"></div><div class="border-b border-r border-[#3b5454] border-dashed"></div><div class="border-b border-r border-[#3b5454] border-dashed"></div><div class="border-b border-[#3b5454] border-dashed"></div>
+<div class="border-b border-r border-[#3b5454] border-dashed"></div><div class="border-b border-r border-[#3b5454] border-dashed"></div><div class="border-b border-r border-[#3b5454] border-dashed"></div><div class="border-b border-r border-[#3b5454] border-dashed"></div><div class="border-b border-r border-[#3b5454] border-dashed"></div><div class="border-b border-r border-[#3b5454] border-dashed"></div><div class="border-b border-r border-[#3b5454] border-dashed"></div><div class="border-b border-r border-[#3b5454] border-dashed"></div><div class="border-b border-r border-[#3b5454] border-dashed"></div><div class="border-b border-r border-[#3b5454] border-dashed"></div><div class="border-b border-r border-[#3b5454] border-dashed"></div><div class="border-b border-[#3b5454] border-dashed"></div>
+<div class="border-r border-[#3b5454] border-dashed"></div><div class="border-r border-[#3b5454] border-dashed"></div><div class="border-r border-[#3b5454] border-dashed"></div><div class="border-r border-[#3b5454] border-dashed"></div><div class="border-r border-[#3b5454] border-dashed"></div><div class="border-r border-[#3b5454] border-dashed"></div><div class="border-r border-[#3b5454] border-dashed"></div><div class="border-r border-[#3b5454] border-dashed"></div><div class="border-r border-[#3b5454] border-dashed"></div><div class="border-r border-[#3b5454] border-dashed"></div><div class="border-r border-[#3b5454] border-dashed"></div><div></div>
+</div>
+<!-- SVG Chart Line (Neon Primary) -->
+<svg class="absolute inset-0" height="100%" preserveaspectratio="none" viewbox="0 0 1000 400" width="100%">
+<defs>
+<lineargradient id="chartGradient" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#0df2f2" stop-opacity="0.3"></stop>
+<stop offset="100%" stop-color="#0df2f2" stop-opacity="0"></stop>
+</lineargradient>
+<filter id="neonGlow">
+<fegaussianblur result="coloredBlur" stddeviation="3"></fegaussianblur>
+<femerge>
+<femergenode in="coloredBlur"></femergenode>
+<femergenode in="SourceGraphic"></femergenode>
+</femerge>
+</filter>
+</defs>
+<!-- Category Average Line (Dashed Grey) -->
+<path d="M0,280 L100,260 L200,270 L300,250 L400,240 L500,260 L600,255 L700,245 L800,230 L900,220 L1000,210" fill="none" opacity="0.5" stroke="#5a7e7e" stroke-dasharray="8,4" stroke-width="2"></path>
+<!-- Product Price Path (Glowing Primary) -->
+<path d="M0,350 L100,320 L200,150 L300,180 L400,200 L500,80 L600,100 L700,220 L800,200 L900,120 L1000,140 L1000,400 L0,400 Z" fill="url(#chartGradient)"></path>
+<path d="M0,350 L100,320 L200,150 L300,180 L400,200 L500,80 L600,100 L700,220 L800,200 L900,120 L1000,140" fill="none" filter="url(#neonGlow)" stroke="#0df2f2" stroke-width="3"></path>
+<!-- Interactive Tooltip Marker (Simulation) -->
+<circle class="animate-pulse shadow-[0_0_15px_#0df2f2]" cx="500" cy="80" fill="#0df2f2" r="6"></circle>
+<line stroke="#0df2f2" stroke-dasharray="4,2" stroke-width="1" x1="500" x2="500" y1="0" y2="400"></line>
+</svg>
+<!-- Tooltip UI -->
+<div class="absolute left-[520px] top-[40px] glass-card p-4 rounded-lg z-10 w-48 shadow-2xl border-primary/40">
+<p class="text-[10px] uppercase text-[#9cbaba] font-bold tracking-widest mb-1">May 14, 2024</p>
+<div class="flex justify-between items-center">
+<span class="text-white font-bold text-lg">$849.00</span>
+<span class="text-xs bg-primary/20 text-primary px-1.5 py-0.5 rounded">Current</span>
+</div>
+<div class="mt-2 pt-2 border-t border-[#3b5454] flex justify-between text-[11px]">
+<span class="text-[#9cbaba]">Category Avg</span>
+<span class="text-white">$994.20</span>
+</div>
+</div>
+<!-- Y-Axis Labels -->
+<div class="absolute left-[-40px] inset-y-0 flex flex-col justify-between text-[10px] text-[#9cbaba] font-bold">
+<span>$1,200</span>
+<span>$1,000</span>
+<span>$800</span>
+<span>$600</span>
+<span>$400</span>
+<span>$200</span>
+</div>
+</div>
+<!-- X-Axis Labels -->
+<div class="flex justify-between mt-6 px-2 text-[11px] text-[#9cbaba] font-bold uppercase tracking-widest">
+<span>Jan</span>
+<span>Feb</span>
+<span>Mar</span>
+<span>Apr</span>
+<span>May</span>
+<span>Jun</span>
+</div>
+</div>
+<!-- Bottom Data Grid -->
+<div class="grid grid-cols-12 gap-8">
+<!-- Market Sentiment & Comparison -->
+<div class="col-span-8 flex flex-col gap-6">
+<div class="glass-card rounded-xl p-6">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-lg font-bold text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">analytics</span>
+                                Price Action History
+                            </h3>
+<button class="text-xs text-primary font-bold uppercase tracking-wider flex items-center gap-1">View Full Log <span class="material-symbols-outlined text-sm">arrow_forward</span></button>
+</div>
+<table class="w-full text-left">
+<thead>
+<tr class="text-[#9cbaba] text-[11px] uppercase tracking-widest border-b border-[#283939]">
+<th class="pb-4">Date &amp; Time</th>
+<th class="pb-4">Store</th>
+<th class="pb-4">Price</th>
+<th class="pb-4">Status</th>
+<th class="pb-4 text-right">Change</th>
+</tr>
+</thead>
+<tbody class="text-sm">
+<tr class="border-b border-[#283939]/50 hover:bg-white/5 transition-colors">
+<td class="py-4 font-medium">May 14, 2024, 09:12 AM</td>
+<td class="py-4">NEXCART Prime</td>
+<td class="py-4 text-white font-bold">$849.00</td>
+<td class="py-4"><span class="px-2 py-0.5 rounded-full bg-green-500/20 text-green-400 text-[10px] font-bold uppercase">In Stock</span></td>
+<td class="py-4 text-right text-green-400 font-bold">-2.1%</td>
+</tr>
+<tr class="border-b border-[#283939]/50 hover:bg-white/5 transition-colors">
+<td class="py-4 font-medium">May 10, 2024, 02:45 PM</td>
+<td class="py-4">Elite Electronics</td>
+<td class="py-4 text-white font-bold">$867.50</td>
+<td class="py-4"><span class="px-2 py-0.5 rounded-full bg-green-500/20 text-green-400 text-[10px] font-bold uppercase">In Stock</span></td>
+<td class="py-4 text-right text-red-400 font-bold">+5.2%</td>
+</tr>
+<tr class="border-b border-[#283939]/50 hover:bg-white/5 transition-colors">
+<td class="py-4 font-medium">May 02, 2024, 11:30 AM</td>
+<td class="py-4">NEXCART Prime</td>
+<td class="py-4 text-white font-bold">$824.00</td>
+<td class="py-4"><span class="px-2 py-0.5 rounded-full bg-red-500/20 text-red-400 text-[10px] font-bold uppercase">Low Stock</span></td>
+<td class="py-4 text-right text-[#9cbaba] font-bold">--</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Market Intelligence Card -->
+<div class="col-span-4 flex flex-col gap-6">
+<div class="glass-card rounded-xl p-6 flex flex-col gap-6 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-6xl text-primary">speed</span>
+</div>
+<h3 class="text-lg font-bold text-white uppercase tracking-tighter italic">Market Velocity</h3>
+<div class="flex justify-center items-center py-4">
+<!-- Circular Gauge Simulation -->
+<div class="relative size-32">
+<svg class="size-full" viewbox="0 0 100 100">
+<circle cx="50" cy="50" fill="none" r="40" stroke="#283939" stroke-width="8"></circle>
+<circle cx="50" cy="50" fill="none" r="40" stroke="#0df2f2" stroke-dasharray="251.2" stroke-dashoffset="60" stroke-linecap="round" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-2xl font-black text-white">HIGH</span>
+<span class="text-[10px] text-[#9cbaba] font-bold uppercase">Demand</span>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-center text-xs">
+<span class="text-[#9cbaba]">Wait Score</span>
+<span class="text-primary font-bold">2.4 / 10 (Buy Now)</span>
+</div>
+<div class="flex justify-between items-center text-xs">
+<span class="text-[#9cbaba]">Restock Prob.</span>
+<span class="text-white font-bold">88% (High)</span>
+</div>
+<div class="flex justify-between items-center text-xs">
+<span class="text-[#9cbaba]">Price Confidence</span>
+<span class="text-white font-bold">Very Stable</span>
+</div>
+</div>
+<button class="w-full py-3 rounded-lg border border-primary/40 text-primary text-xs font-bold uppercase tracking-widest hover:bg-primary/10 transition-all">
+                            Predict Next 30 Days
+                        </button>
+</div>
+<div class="glass-card rounded-xl p-6 border-l-4 border-l-primary">
+<div class="flex gap-4 items-start">
+<span class="material-symbols-outlined text-primary text-3xl">lightbulb</span>
+<div>
+<h4 class="text-white font-bold mb-1">Analyst Insight</h4>
+<p class="text-[#9cbaba] text-xs leading-relaxed">Price is currently at an 8-month low. Historical patterns suggest a potential 12% increase as seasonal demand peaks in June.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="mt-12 border-t border-[#283939] px-10 py-6 bg-background-dark/50">
+<div class="max-w-[1440px] mx-auto flex justify-between items-center text-[#9cbaba] text-xs">
+<p>© 2024 NEXCART Analytics. All data points are updated every 60 seconds.</p>
+<div class="flex gap-6">
+<a class="hover:text-primary transition-colors" href="#">Privacy Engine</a>
+<a class="hover:text-primary transition-colors" href="#">API Documentation</a>
+<a class="hover:text-primary transition-colors" href="#">Data Integrity Policy</a>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

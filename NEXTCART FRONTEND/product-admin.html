@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>NEXCART Admin - Product Manager</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1f68f9",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#0f1623",
+                        "charcoal": "#0f0f12",
+                        "panel-dark": "#1a1a1e",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .glass-panel {
+            background: rgba(26, 26, 30, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-white font-display min-h-screen flex flex-col">
+    <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-white/10 bg-charcoal/80 backdrop-blur-md px-6 py-3 sticky top-0 z-50">
+        <div class="flex items-center gap-8">
+            <div class="flex items-center gap-3">
+                <div class="size-6 text-primary">
+                    <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+                    </svg>
+                </div>
+                <h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">NEXCART Admin</h2>
+            </div>
+            <nav class="hidden lg:flex items-center gap-6">
+                <a class="text-white text-sm font-medium border-b-2 border-primary pb-4 mt-4" href="#">Products</a>
+                <a class="text-[#9ba6bb] hover:text-white text-sm font-medium transition-colors" href="category-admin.html">Categories</a>
+                <a class="text-[#9ba6bb] hover:text-white text-sm font-medium transition-colors" href="hero-banner-admin.html">Hero Banners</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-1 p-8 max-w-7xl mx-auto">
+        <div class="flex items-center justify-between mb-6">
+            <h1 class="text-3xl font-bold text-white">Product Manager</h1>
+            <button id="addProductBtn" class="px-4 py-2 bg-primary text-white rounded-lg text-sm font-bold hover:bg-primary/80 transition-all shadow-lg shadow-primary/20">
+                <span class="material-symbols-outlined mr-2 text-lg">add</span>
+                Add Product
+            </button>
+        </div>
+
+        <div id="productList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Products will be inserted here -->
+        </div>
+    </main>
+
+    <!-- Add/Edit Product Modal -->
+    <div id="productModal" class="fixed inset-0 bg-black/50 hidden items-center justify-center z-[100]">
+        <div class="glass-panel rounded-2xl w-full max-w-3xl p-6 max-h-[90vh] overflow-y-auto">
+            <div class="flex items-center justify-between mb-4">
+                <h3 id="modalTitle" class="text-xl font-bold text-white">Add New Product</h3>
+                <button id="closeModalBtn" class="text-white/60 hover:text-white text-2xl">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <form id="productForm" class="space-y-4">
+                <input type="hidden" id="productId">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="text-sm font-semibold text-[#9ba6bb]">Product Name</label>
+                        <input type="text" id="productName" class="w-full mt-2 bg-[#1a1a1e] border border-white/10 rounded-lg text-sm text-white p-3 focus:ring-1 focus:ring-primary focus:border-primary" required>
+                    </div>
+                    <div>
+                        <label class="text-sm font-semibold text-[#9ba6bb]">SKU</label>
+                        <input type="text" id="sku" class="w-full mt-2 bg-[#1a1a1e] border border-white/10 rounded-lg text-sm text-white p-3 focus:ring-1 focus:ring-primary focus:border-primary">
+                    </div>
+                </div>
+                <div>
+                    <label class="text-sm font-semibold text-[#9ba6bb]">Description</label>
+                    <textarea id="description" class="w-full mt-2 bg-[#1a1a1e] border border-white/10 rounded-lg text-sm text-white p-3 focus:ring-1 focus:ring-primary focus:border-primary min-h-[120px]"></textarea>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="text-sm font-semibold text-[#9ba6bb]">Category ID</label>
+                        <input type="number" id="categoryId" class="w-full mt-2 bg-[#1a1a1e] border border-white/10 rounded-lg text-sm text-white p-3 focus:ring-1 focus:ring-primary focus:border-primary">
+                    </div>
+                    <div>
+                        <label class="text-sm font-semibold text-[#9ba6bb]">Brand ID</label>
+                        <input type="number" id="brandId" class="w-full mt-2 bg-[#1a1a1e] border border-white/10 rounded-lg text-sm text-white p-3 focus:ring-1 focus:ring-primary focus:border-primary">
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="text-sm font-semibold text-[#9ba6bb]">Price</label>
+                        <input type="number" step="0.01" id="price" class="w-full mt-2 bg-[#1a1a1e] border border-white/10 rounded-lg text-sm text-white p-3 focus:ring-1 focus:ring-primary focus:border-primary" required>
+                    </div>
+                    <div>
+                        <label class="text-sm font-semibold text-[#9ba6bb]">Discount Price</label>
+                        <input type="number" step="0.01" id="discountPrice" class="w-full mt-2 bg-[#1a1a1e] border border-white/10 rounded-lg text-sm text-white p-3 focus:ring-1 focus:ring-primary focus:border-primary">
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="text-sm font-semibold text-[#9ba6bb]">Stock</label>
+                        <input type="number" id="stock" class="w-full mt-2 bg-[#1a1a1e] border border-white/10 rounded-lg text-sm text-white p-3 focus:ring-1 focus:ring-primary focus:border-primary" value="0">
+                    </div>
+                    <div>
+                        <label class="text-sm font-semibold text-[#9ba6bb]">Status</label>
+                        <select id="status" class="w-full mt-2 bg-[#1a1a1e] border border-white/10 rounded-lg text-sm text-white p-3 focus:ring-1 focus:ring-primary focus:border-primary">
+                            <option value="ACTIVE">ACTIVE</option>
+                            <option value="INACTIVE">INACTIVE</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3">
+                    <input type="checkbox" id="featured" class="rounded border-white/10 bg-[#1a1a1e] text-primary focus:ring-primary size-4">
+                    <label for="featured" class="text-sm font-semibold text-[#9ba6bb]">Featured</label>
+                </div>
+                <div class="flex justify-end gap-3 mt-6">
+                    <button type="button" id="cancelBtn" class="px-4 py-2 bg-white/10 text-white rounded-lg text-sm font-semibold hover:bg-white/20 transition-all">Cancel</button>
+                    <button type="submit" class="px-4 py-2 bg-primary text-white rounded-lg text-sm font-bold hover:bg-primary/80 transition-all shadow-lg shadow-primary/20">Save Product</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://localhost:8081';
+
+        // Load products on page load
+        async function loadProducts() {
+            try {
+                const response = await fetch(`${API_BASE}/products`);
+                const result = await response.json();
+                const products = result.data.products;
+
+                const productList = document.getElementById('productList');
+                productList.innerHTML = '';
+
+                if (!products || products.length === 0) {
+                    productList.innerHTML = '<p class="text-[#9ba6bb] text-center py-12 col-span-3">No products yet! Click "Add Product" to create one.</p>';
+                    return;
+                }
+
+                products.forEach(product => {
+                    const productImage = product.images && product.images.length > 0 ? product.images[0].imageUrl : 'https://via.placeholder.com/300x300';
+                    const productCard = `
+                        <div class="glass-panel rounded-2xl overflow-hidden">
+                            <img src="${productImage}" class="w-full h-48 object-cover">
+                            <div class="p-4">
+                                <h3 class="text-lg font-bold text-white">${product.productName || 'Untitled'}</h3>
+                                <p class="text-sm text-[#9ba6bb] mt-1 line-clamp-2">${product.shortDescription || product.description || ''}</p>
+                                <div class="flex items-center justify-between mt-3">
+                                    <div>
+                                        <span class="text-xl font-bold text-white">$${product.price}</span>
+                                        ${product.discountPrice ? `<span class="ml-2 text-sm text-rose-500 line-through">$${product.discountPrice}</span>` : ''}
+                                    </div>
+                                    <span class="px-2 py-1 ${product.status === 'ACTIVE' ? 'bg-emerald-500/20 text-emerald-500' : 'bg-rose-500/20 text-rose-500'} rounded-full text-xs font-semibold">${product.status}</span>
+                                </div>
+                                <div class="flex gap-2 mt-3">
+                                    <button onclick="editProduct(${product.productId})" class="flex-1 p-2 bg-white/10 text-white rounded-lg hover:bg-white/20 transition-all">
+                                        <span class="material-symbols-outlined">edit</span>
+                                    </button>
+                                    <button onclick="deleteProduct(${product.productId})" class="flex-1 p-2 bg-rose-500/20 text-rose-500 rounded-lg hover:bg-rose-500/30 transition-all">
+                                        <span class="material-symbols-outlined">delete</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    productList.innerHTML += productCard;
+                });
+
+            } catch (error) {
+                console.error('Error loading products:', error);
+                alert('Error loading products!');
+            }
+        }
+
+        // Show modal for adding
+        document.getElementById('addProductBtn').onclick = () => {
+            document.getElementById('modalTitle').innerText = 'Add New Product';
+            document.getElementById('productForm').reset();
+            document.getElementById('productId').value = '';
+            document.getElementById('productModal').classList.remove('hidden');
+            document.getElementById('productModal').classList.add('flex');
+        };
+
+        // Close modal
+        document.getElementById('closeModalBtn').onclick = () => {
+            document.getElementById('productModal').classList.add('hidden');
+            document.getElementById('productModal').classList.remove('flex');
+        };
+        document.getElementById('cancelBtn').onclick = () => {
+            document.getElementById('productModal').classList.add('hidden');
+            document.getElementById('productModal').classList.remove('flex');
+        };
+
+        // Handle form submission
+        document.getElementById('productForm').onsubmit = async (e) => {
+            e.preventDefault();
+            const productId = document.getElementById('productId').value;
+            const product = {
+                productName: document.getElementById('productName').value,
+                description: document.getElementById('description').value,
+                categoryId: parseInt(document.getElementById('categoryId').value) || null,
+                brandId: parseInt(document.getElementById('brandId').value) || null,
+                sku: document.getElementById('sku').value,
+                price: parseFloat(document.getElementById('price').value),
+                discountPrice: document.getElementById('discountPrice').value ? parseFloat(document.getElementById('discountPrice').value) : null,
+                stock: parseInt(document.getElementById('stock').value) || 0,
+                status: document.getElementById('status').value,
+                featured: document.getElementById('featured').checked
+            };
+
+            try {
+                let response;
+                if (productId) {
+                    // Update existing
+                    response = await fetch(`${API_BASE}/products/admin/${productId}`, {
+                        method: 'PUT',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(product)
+                    });
+                } else {
+                    alert('Creating products with images requires multipart form. For now, edit an existing product.');
+                    return;
+                }
+                await response.json();
+                document.getElementById('productModal').classList.add('hidden');
+                document.getElementById('productModal').classList.remove('flex');
+                loadProducts();
+            } catch (error) {
+                console.error('Error saving product:', error);
+                alert('Error saving product!');
+            }
+        };
+
+        // Edit a product
+        async function editProduct(id) {
+            try {
+                const response = await fetch(`${API_BASE}/products/${id}`);
+                const result = await response.json();
+                const product = result.data;
+                document.getElementById('modalTitle').innerText = 'Edit Product';
+                document.getElementById('productId').value = product.productId;
+                document.getElementById('productName').value = product.productName || '';
+                document.getElementById('sku').value = product.sku || '';
+                document.getElementById('description').value = product.description || '';
+                document.getElementById('categoryId').value = product.categoryId || '';
+                document.getElementById('brandId').value = product.brandId || '';
+                document.getElementById('price').value = product.price || '';
+                document.getElementById('discountPrice').value = product.discountPrice || '';
+                document.getElementById('stock').value = product.stock || 0;
+                document.getElementById('status').value = product.status || 'ACTIVE';
+                document.getElementById('featured').checked = product.featured || false;
+                document.getElementById('productModal').classList.remove('hidden');
+                document.getElementById('productModal').classList.add('flex');
+            } catch (error) {
+                console.error('Error loading product:', error);
+                alert('Error loading product!');
+            }
+        }
+
+        // Delete a product
+        async function deleteProduct(id) {
+            if (!confirm('Are you sure you want to delete this product?')) return;
+            try {
+                await fetch(`${API_BASE}/products/admin/${id}`, { method: 'DELETE' });
+                loadProducts();
+            } catch (error) {
+                console.error('Error deleting product:', error);
+                alert('Error deleting product!');
+            }
+        }
+
+        // Load products on initial page load
+        loadProducts();
+    </script>
+</body>
+</html>

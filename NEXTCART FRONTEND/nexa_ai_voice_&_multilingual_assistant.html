@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEXA AI Voice &amp; Multilingual Assistant</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "sans": ["Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .voice-pulse {
+            box-shadow: 0 0 0 0 rgba(19, 91, 236, 0.7);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(19, 91, 236, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 20px rgba(19, 91, 236, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(19, 91, 236, 0); }
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111318] dark:text-white antialiased">
+<div class="flex h-screen flex-col overflow-hidden">
+<!-- Top Navigation -->
+<header class="flex items-center justify-between border-b border-[#f0f2f4] dark:border-gray-800 bg-white dark:bg-background-dark px-10 py-3 shrink-0">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-6">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-[#111318] dark:text-white text-xl font-bold leading-tight tracking-[-0.015em]">NEXCART</h2>
+</div>
+<div class="flex items-center gap-9">
+<a class="text-[#111318] dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Marketplace</a>
+<a class="text-primary text-sm font-bold leading-normal" href="#">NEXA AI</a>
+<a class="text-[#111318] dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Insights</a>
+</div>
+</div>
+<div class="flex flex-1 justify-end gap-6 items-center">
+<div class="flex items-center gap-2 bg-[#f0f2f4] dark:bg-gray-800 px-3 py-1.5 rounded-lg border border-transparent focus-within:border-primary transition-all">
+<span class="material-symbols-outlined text-sm text-[#616f89]">language</span>
+<select class="bg-transparent border-none text-sm font-medium focus:ring-0 cursor-pointer">
+<option>English</option>
+<option>Hindi (हिन्दी)</option>
+<option selected="">Kannada (ಕನ್ನಡ)</option>
+<option>Tamil (தமிழ்)</option>
+</select>
+</div>
+<div class="flex gap-2">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-[#f0f2f4] dark:bg-gray-800 text-[#111318] dark:text-white hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-[#f0f2f4] dark:bg-gray-800 text-[#111318] dark:text-white hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex flex-1 overflow-hidden">
+<!-- Sidebar Navigation -->
+<aside class="w-64 border-r border-[#f0f2f4] dark:border-gray-800 bg-white dark:bg-background-dark p-4 flex flex-col justify-between shrink-0">
+<div class="flex flex-col gap-6">
+<div class="px-2">
+<h1 class="text-[#111318] dark:text-white text-base font-bold leading-normal">NEXA Assistant</h1>
+<p class="text-[#616f89] text-xs font-normal flex items-center gap-1.5 mt-1">
+<span class="w-2 h-2 rounded-full bg-green-500"></span>
+                            V2.4 Active &amp; Secure
+                        </p>
+</div>
+<nav class="flex flex-col gap-1">
+<div class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined">history</span>
+<p class="text-sm font-semibold">Interaction History</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#616f89] hover:bg-[#f0f2f4] dark:hover:bg-gray-800 cursor-pointer">
+<span class="material-symbols-outlined">bookmark</span>
+<p class="text-sm font-medium">Saved Product Queries</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#616f89] hover:bg-[#f0f2f4] dark:hover:bg-gray-800 cursor-pointer">
+<span class="material-symbols-outlined">monitoring</span>
+<p class="text-sm font-medium">Market Trends</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#616f89] hover:bg-[#f0f2f4] dark:hover:bg-gray-800 cursor-pointer">
+<span class="material-symbols-outlined">settings</span>
+<p class="text-sm font-medium">Assistant Settings</p>
+</div>
+</nav>
+<div class="mt-4 px-3">
+<p class="text-xs font-bold text-[#616f89] uppercase tracking-wider mb-2">Recent Chats</p>
+<ul class="space-y-1">
+<li class="text-sm text-[#111318] dark:text-gray-300 py-1 cursor-pointer truncate">Gaming laptops 2024</li>
+<li class="text-sm text-[#111318] dark:text-gray-300 py-1 cursor-pointer truncate">Noise cancelling headphones</li>
+</ul>
+</div>
+</div>
+<div class="p-3 bg-primary/5 rounded-xl border border-primary/10">
+<p class="text-xs font-medium text-primary">Pro Tip</p>
+<p class="text-[11px] text-[#616f89] mt-1 leading-relaxed">Ask NEXA to compare prices across different regions automatically.</p>
+</div>
+</aside>
+<!-- Chat Interface -->
+<section class="flex-1 flex flex-col bg-white dark:bg-background-dark overflow-hidden">
+<!-- Breadcrumbs -->
+<div class="flex flex-wrap gap-2 px-8 py-3 bg-background-light dark:bg-gray-900/50">
+<a class="text-[#616f89] text-sm font-medium hover:text-primary" href="#">NEXA AI</a>
+<span class="text-[#616f89] text-sm">/</span>
+<span class="text-[#111318] dark:text-white text-sm font-medium">Voice Interaction (Kannada)</span>
+</div>
+<!-- Messages Area -->
+<div class="flex-1 overflow-y-auto px-8 py-6 space-y-6">
+<!-- User Message (Voice Input) -->
+<div class="flex items-start gap-4 justify-end">
+<div class="flex flex-col gap-1 items-end">
+<p class="text-[#616f89] text-[11px] font-medium mr-1">YOU · VOICE</p>
+<div class="flex items-center gap-3 max-w-[500px] rounded-2xl px-5 py-3 bg-primary text-white shadow-lg">
+<p class="text-base font-normal leading-relaxed font-sans">
+                                    ನನಗೆ ಗೇಮಿಂಗ್ ಫೋನ್‌ಗಳನ್ನು ತೋರಿಸಿ (Show me gaming phones)
+                                </p>
+<span class="material-symbols-outlined text-sm">check_circle</span>
+</div>
+</div>
+<div class="bg-primary/20 p-2 rounded-full">
+<span class="material-symbols-outlined text-primary">mic</span>
+</div>
+</div>
+<!-- AI Response -->
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-white text-xl">smart_toy</span>
+</div>
+<div class="flex flex-col gap-3 flex-1">
+<div class="flex flex-col gap-1 items-start">
+<p class="text-[#616f89] text-[11px] font-medium">NEXA AI · PROCESSING 240ms</p>
+<div class="max-w-[600px] rounded-2xl px-5 py-4 bg-[#f0f2f4] dark:bg-gray-800 text-[#111318] dark:text-white shadow-sm border border-gray-100 dark:border-gray-700">
+<p class="text-base font-normal leading-relaxed font-sans mb-2">
+                                        ಖಂಡಿತ, ನಿಮಗಾಗಿ ಕೆಲವು ಪ್ರಮುಖ ಗೇಮಿಂಗ್ ಫೋನ್‌ಗಳು ಇಲ್ಲಿವೆ.
+                                    </p>
+<p class="text-sm text-[#616f89] border-t border-gray-200 dark:border-gray-700 pt-2 italic">
+                                        "Certainly, here are some top gaming phones for you."
+                                    </p>
+</div>
+</div>
+<!-- Product Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl">
+<!-- Card 1 -->
+<div class="bg-white dark:bg-gray-800 border border-[#f0f2f4] dark:border-gray-700 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+<div class="aspect-video bg-[#f6f6f8] bg-center bg-cover" data-alt="high end gaming smartphone with glowing led" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDBM3IIolJG7BSBgG2mivS9F9HS3_BPjAy7_OLvttDixY4TGjhgveEar6RoRuylFv7MO7MliYBGOFfORf7AtG3X4f0J1kad9KFBq9T3rSHFRhbTLbEE19q_yH-CYelBzbI8LIVUe6AH6k7dTEjdVEyqe7HtyPYeseCQXt1FzeRpmrPizez0DU_QCIbGEaVmIMyMyYd7Fk1MOVlCYH7WKGKiRgeyHvC3vz63rX9bYYY45gUdni-Advh3cZSR0QBCCio7uNx_uq_aDd-U");'></div>
+<div class="p-4">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-[#111318] dark:text-white">Titan Pro Max G1</h3>
+<span class="text-primary font-bold">₹74,999</span>
+</div>
+<p class="text-xs text-[#616f89] mb-3 leading-snug">Snapdragon 8 Gen 3, 16GB RAM, 144Hz AMOLED Display</p>
+<div class="flex gap-2">
+<button class="flex-1 bg-primary text-white text-xs font-bold py-2 rounded-lg hover:opacity-90 transition-opacity">Buy Now</button>
+<button class="px-3 py-2 border border-[#f0f2f4] dark:border-gray-700 rounded-lg text-[#616f89] hover:bg-gray-50">
+<span class="material-symbols-outlined text-sm">shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-white dark:bg-gray-800 border border-[#f0f2f4] dark:border-gray-700 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+<div class="aspect-video bg-[#f6f6f8] bg-center bg-cover" data-alt="gaming phone with liquid cooling visual" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCPi66VX4-sN_HUBLxS2NIR5zvXTgIBTarKm_AW2invrEjvcMGSWN4p6llZQ6rzbuJu03fUjRExQYzwuVHXoPb1fuBZGAuwLZMx-4KQMgnReq0oLTJojsJ3IVtmNbERvfNbxvQDarIEPxENYcIiiGir1NEbV_76vZlrCvB1Iz8XvyZXeozO8JyoH6oWUPQ0mrj2fcSMwLYA30_6ZqvAbza_xRRgYXePNRIwCX-LJ3wr5BKON-3RCMgC3TDK6eI8Z3hQBNKr7yjtzCx0");'></div>
+<div class="p-4">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-[#111318] dark:text-white">Nebula X Gaming</h3>
+<span class="text-primary font-bold">₹58,500</span>
+</div>
+<p class="text-xs text-[#616f89] mb-3 leading-snug">Dimensity 9300, 12GB RAM, Vapor Chamber Cooling</p>
+<div class="flex gap-2">
+<button class="flex-1 bg-primary text-white text-xs font-bold py-2 rounded-lg hover:opacity-90 transition-opacity">Buy Now</button>
+<button class="px-3 py-2 border border-[#f0f2f4] dark:border-gray-700 rounded-lg text-[#616f89] hover:bg-gray-50">
+<span class="material-symbols-outlined text-sm">shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Voice Input Action Bar -->
+<div class="p-6 border-t border-[#f0f2f4] dark:border-gray-800 bg-white dark:bg-background-dark flex flex-col items-center gap-4">
+<div class="flex items-center gap-1 w-full max-w-2xl bg-[#f0f2f4] dark:bg-gray-800 rounded-full px-6 py-1 border border-transparent focus-within:border-primary/30 group">
+<span class="material-symbols-outlined text-[#616f89]">keyboard</span>
+<input class="flex-1 bg-transparent border-none focus:ring-0 text-sm py-3 px-3" placeholder="Ask NEXA anything..." type="text"/>
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-[#616f89] cursor-pointer hover:text-primary">attach_file</span>
+<span class="material-symbols-outlined text-[#616f89] cursor-pointer hover:text-primary">emoji_emotions</span>
+</div>
+</div>
+<div class="relative mt-2">
+<button class="voice-pulse flex items-center justify-center w-16 h-16 bg-primary text-white rounded-full shadow-2xl relative z-10">
+<span class="material-symbols-outlined text-3xl">mic</span>
+</button>
+<div class="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap">
+<p class="text-xs font-bold text-primary animate-pulse tracking-widest uppercase">Listening...</p>
+</div>
+</div>
+</div>
+</section>
+<!-- AI Thought Process Sidebar -->
+<aside class="w-[320px] bg-background-light dark:bg-gray-900 border-l border-[#f0f2f4] dark:border-gray-800 p-6 overflow-y-auto shrink-0">
+<div class="flex items-center justify-between mb-8">
+<h3 class="text-sm font-bold uppercase tracking-wider text-[#616f89]">AI Thought Process</h3>
+<span class="material-symbols-outlined text-primary">data_exploration</span>
+</div>
+<div class="grid grid-cols-[40px_1fr] gap-x-2">
+<!-- Layer 1: Translation -->
+<div class="flex flex-col items-center gap-1 pt-1">
+<div class="flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 text-primary">
+<span class="material-symbols-outlined !text-[20px]">translate</span>
+</div>
+<div class="w-[1.5px] bg-primary h-12"></div>
+</div>
+<div class="flex flex-1 flex-col pb-8">
+<p class="text-[#111318] dark:text-white text-sm font-bold">Translation Layer</p>
+<p class="text-[#616f89] text-xs font-medium mt-1 leading-normal">
+                            Detected Language: <span class="text-primary">Kannada</span><br/>
+                            English Mapping: <span class="italic">"Show me gaming phones"</span>
+</p>
+</div>
+<!-- Layer 2: Intent -->
+<div class="flex flex-col items-center gap-1">
+<div class="flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 text-primary">
+<span class="material-symbols-outlined !text-[20px]">psychology</span>
+</div>
+<div class="w-[1.5px] bg-primary h-12"></div>
+</div>
+<div class="flex flex-1 flex-col pb-8">
+<p class="text-[#111318] dark:text-white text-sm font-bold">Intent Extraction (LLM)</p>
+<p class="text-[#616f89] text-xs font-medium mt-1 leading-normal">
+                            Intent: <span class="bg-primary/10 text-primary px-1.5 py-0.5 rounded">PRODUCT_DISCOVERY</span><br/>
+                            Entities: <span class="text-[#111318] dark:text-gray-300">"gaming phones"</span>
+</p>
+</div>
+<!-- Layer 3: Knowledge Graph -->
+<div class="flex flex-col items-center gap-1 pb-3">
+<div class="flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 text-primary">
+<span class="material-symbols-outlined !text-[20px]">hub</span>
+</div>
+<div class="w-[1.5px] bg-[#dbdfe6] dark:bg-gray-700 h-10 border-dashed border-l"></div>
+</div>
+<div class="flex flex-1 flex-col pb-8">
+<p class="text-[#111318] dark:text-white text-sm font-bold">Knowledge Graph Query</p>
+<p class="text-[#616f89] text-xs font-medium mt-1 leading-normal">
+                            Querying Graph DB for:<br/>
+<span class="font-mono text-[10px] block mt-1 bg-gray-50 dark:bg-gray-800 p-2 rounded">
+                                MATCH (p:Product)-[:HAS_SPEC]-&gt;(s:Spec {name: 'Gaming'}) RETURN p LIMIT 5
+                            </span>
+</p>
+</div>
+<!-- Layer 4: Response Generation -->
+<div class="flex flex-col items-center gap-1">
+<div class="flex items-center justify-center w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 text-green-600">
+<span class="material-symbols-outlined !text-[20px]">auto_awesome</span>
+</div>
+</div>
+<div class="flex flex-1 flex-col">
+<p class="text-[#111318] dark:text-white text-sm font-bold">Candidate Generation</p>
+<p class="text-[#616f89] text-xs font-medium mt-1 leading-normal">
+                            Returning 12 matches. Filtering for high rating (&gt;4.5★) and local availability.
+                        </p>
+</div>
+</div>
+<div class="mt-12 p-4 bg-white dark:bg-gray-800 rounded-xl border border-primary/20 shadow-sm">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary text-sm">speed</span>
+<p class="text-xs font-bold text-[#111318] dark:text-white">Performance Metrics</p>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-center">
+<span class="text-[10px] text-[#616f89]">Latency</span>
+<span class="text-[10px] font-bold text-green-600">240ms</span>
+</div>
+<div class="w-full bg-[#f0f2f4] dark:bg-gray-700 h-1 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[15%]"></div>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-[10px] text-[#616f89]">Confidence Score</span>
+<span class="text-[10px] font-bold text-primary">0.98</span>
+</div>
+<div class="w-full bg-[#f0f2f4] dark:bg-gray-700 h-1 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[98%]"></div>
+</div>
+</div>
+</div>
+</aside>
+</main>
+</div>
+</body></html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Add Address - NEXCART</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f9d406",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#121212",
+                        "charcoal": "#1e1e1e",
+                        "border-dark": "#333333",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .glow-effect {
+            box-shadow: 0 0 15px rgba(249, 212, 6, 0.2);
+        }
+        .map-gradient-overlay {
+            background: linear-gradient(to top, #121212, transparent);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-white selection:bg-primary/30">
+<!-- Top Navigation Bar (iOS Style) -->
+<header class="sticky top-0 z-50 flex items-center bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-4 py-4 border-b border-gray-200 dark:border-border-dark">
+<div class="flex-none">
+<span class="material-symbols-outlined text-white cursor-pointer hover:bg-white/10 p-1 rounded-full transition-colors">arrow_back_ios_new</span>
+</div>
+<h1 class="flex-1 text-center text-lg font-bold tracking-tight">Add New Address</h1>
+<div class="w-8"></div> <!-- Spacer for symmetry -->
+</header>
+<main class="pb-32">
+<!-- Map Section -->
+<div class="relative w-full h-[280px]">
+<div class="absolute inset-0 bg-center bg-no-repeat bg-cover" data-alt="Dark themed navigation map with city streets" data-location="New York City" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCCYOzsdIeJ0QcJ-hesrGm0-nYUS30SQh6rZ6flsDYZT9n3rvYqRXXfrxrAhUe9xR5MUz3ym7EeSKflQDPWJhz8fCFsCTS1Gz5_RT6wp9Bft1JD-4nZ1kmaWkLpZiMgkiZw0FC405gBNMhXw-rlLY0yW0822LuLasHU_M878cilcL8bI5oPparFwYAvyfJczCJ0aRjEcBK6pk7Oiti6W-SyNNdF9N-1Qr3VpXDSbAhWujn_Hcz1KiODnhJzfq_zeSuIbqsCpSWP3aU");'>
+<!-- Dark Overlay for Map to match UI -->
+<div class="absolute inset-0 bg-black/40"></div>
+<div class="absolute inset-0 map-gradient-overlay"></div>
+</div>
+<!-- Location Pin -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="relative flex items-center justify-center">
+<div class="absolute w-8 h-8 bg-primary/40 rounded-full animate-ping"></div>
+<span class="material-symbols-outlined text-primary text-5xl drop-shadow-[0_4px_10px_rgba(0,0,0,0.5)]" style="font-variation-settings: 'FILL' 1">location_on</span>
+</div>
+</div>
+</div>
+<!-- Location Action -->
+<div class="px-4 -mt-6 relative z-10">
+<button class="flex w-full items-center justify-center gap-3 rounded-xl bg-charcoal border border-border-dark h-14 px-6 text-white glow-effect hover:bg-charcoal/80 transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined text-primary">my_location</span>
+<span class="font-bold text-sm tracking-wide">Use Current Location</span>
+</button>
+</div>
+<!-- Form Section -->
+<div class="px-4 mt-8 space-y-6">
+<div>
+<h3 class="text-white text-lg font-bold leading-tight tracking-tight mb-4">Contact Details</h3>
+<div class="space-y-4">
+<!-- Full Name -->
+<div class="flex flex-col gap-2">
+<label class="text-gray-400 text-xs font-semibold uppercase tracking-wider ml-1">Full Name</label>
+<input class="w-full rounded-xl bg-charcoal border border-border-dark h-14 px-4 text-white focus:ring-2 focus:ring-primary focus:border-transparent placeholder:text-gray-600 outline-none transition-all" placeholder="Enter your name" type="text" value="Jameson Carter"/>
+</div>
+<!-- Phone Number -->
+<div class="flex flex-col gap-2">
+<label class="text-gray-400 text-xs font-semibold uppercase tracking-wider ml-1">Mobile Number</label>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-sm font-medium">+1</span>
+<input class="w-full rounded-xl bg-charcoal border border-border-dark h-14 pl-10 pr-4 text-white focus:ring-2 focus:ring-primary focus:border-transparent placeholder:text-gray-600 outline-none transition-all" placeholder="000-000-0000" type="tel"/>
+</div>
+</div>
+</div>
+</div>
+<div>
+<h3 class="text-white text-lg font-bold leading-tight tracking-tight mb-4">Address Details</h3>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col gap-2">
+<label class="text-gray-400 text-xs font-semibold uppercase tracking-wider ml-1">Pincode</label>
+<input class="w-full rounded-xl bg-charcoal border border-border-dark h-14 px-4 text-white focus:ring-2 focus:ring-primary focus:border-transparent placeholder:text-gray-600 outline-none transition-all" placeholder="10001" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-gray-400 text-xs font-semibold uppercase tracking-wider ml-1">City</label>
+<input class="w-full rounded-xl bg-charcoal border border-border-dark h-14 px-4 text-white focus:ring-2 focus:ring-primary focus:border-transparent placeholder:text-gray-600 outline-none transition-all" placeholder="New York" type="text"/>
+</div>
+</div>
+<div class="mt-4 flex flex-col gap-2">
+<label class="text-gray-400 text-xs font-semibold uppercase tracking-wider ml-1">House No., Building Name</label>
+<input class="w-full rounded-xl bg-charcoal border border-border-dark h-14 px-4 text-white focus:ring-2 focus:ring-primary focus:border-transparent placeholder:text-gray-600 outline-none transition-all" placeholder="Flat 402, Skyline Apartments" type="text"/>
+</div>
+<div class="mt-4 flex flex-col gap-2">
+<label class="text-gray-400 text-xs font-semibold uppercase tracking-wider ml-1">Road Name, Area, Colony</label>
+<input class="w-full rounded-xl bg-charcoal border border-border-dark h-14 px-4 text-white focus:ring-2 focus:ring-primary focus:border-transparent placeholder:text-gray-600 outline-none transition-all" placeholder="5th Avenue, Manhattan" type="text"/>
+</div>
+</div>
+<div>
+<h3 class="text-white text-sm font-bold leading-tight tracking-tight mb-4">Save Address As</h3>
+<div class="flex gap-3">
+<button class="flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-full bg-primary text-black font-bold text-sm transition-all shadow-lg shadow-primary/10">
+<span class="material-symbols-outlined text-lg">home</span>
+                        Home
+                    </button>
+<button class="flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-full bg-charcoal border border-border-dark text-white font-bold text-sm hover:border-primary/50 transition-all">
+<span class="material-symbols-outlined text-lg">work</span>
+                        Work
+                    </button>
+<button class="flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-full bg-charcoal border border-border-dark text-white font-bold text-sm hover:border-primary/50 transition-all">
+<span class="material-symbols-outlined text-lg">more_horiz</span>
+                        Other
+                    </button>
+</div>
+</div>
+<div class="flex items-center gap-3 py-2">
+<input class="w-5 h-5 rounded border-border-dark bg-charcoal text-primary focus:ring-primary" id="default-address" type="checkbox"/>
+<label class="text-gray-300 text-sm font-medium" for="default-address">Set as default address</label>
+</div>
+</div>
+</main>
+<!-- Footer Action -->
+<footer class="fixed bottom-0 left-0 right-0 p-4 bg-background-dark/95 border-t border-border-dark backdrop-blur-xl z-50">
+<div class="max-w-[480px] mx-auto pb-2">
+<button class="w-full bg-primary text-black font-extrabold h-14 rounded-xl text-lg flex items-center justify-center gap-2 active:scale-[0.97] transition-all">
+                Save and Continue
+            </button>
+</div>
+</footer>
+</body></html>

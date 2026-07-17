@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEXCART | Toys &amp; School Supplies Hub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0d7ff2",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .nexcart-assured-badge {
+            background: linear-gradient(90deg, #0d7ff2 0%, #00c6ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+        }
+        .rating-badge {
+            background-color: #388e3c;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111418] dark:text-white antialiased">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 bg-white/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-[#f0f2f5] dark:border-gray-800">
+<div class="max-w-[1440px] mx-auto px-6 lg:px-10 py-3 flex items-center justify-between gap-8">
+<!-- Logo & Search -->
+<div class="flex items-center gap-8 flex-1">
+<div class="flex items-center gap-3">
+<div class="size-8 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-xl font-extrabold tracking-tight">NEXCART</h2>
+</div>
+<div class="hidden md:flex flex-1 max-w-xl">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">search</span>
+<input class="w-full h-11 pl-12 pr-4 bg-[#f0f2f5] dark:bg-gray-800 border-none rounded-full focus:ring-2 focus:ring-primary/50 text-sm" placeholder="Search for toys, school bags, STEM kits..." type="text"/>
+</div>
+</div>
+</div>
+<!-- Nav Links & Actions -->
+<nav class="hidden xl:flex items-center gap-6">
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Toys</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">School Supplies</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">STEM</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Deals</a>
+</nav>
+<div class="flex items-center gap-3">
+<button class="p-2.5 rounded-full bg-[#f0f2f5] dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+<span class="material-symbols-outlined text-[22px]">favorite</span>
+</button>
+<button class="p-2.5 rounded-full bg-[#f0f2f5] dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors relative">
+<span class="material-symbols-outlined text-[22px]">shopping_cart</span>
+<span class="absolute top-0 right-0 size-4 bg-primary text-white text-[10px] flex items-center justify-center rounded-full font-bold">3</span>
+</button>
+<button class="hidden sm:flex items-center gap-2 p-1 pr-4 rounded-full bg-[#f0f2f5] dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+<div class="size-8 rounded-full bg-cover bg-center" data-alt="User profile avatar" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCCm6DwcWHxs76lFiOA9ZlGMIG6DsZbGZeO30dVHmJDsyyBHL8PlliWsKiC0Vo8NUqYfbX5SvXRm5bh4Fdzn4BtAeYvQjIBzAnoJGH8LS8TKlc13fRlW8ACE6VoBk4yWnKT309ydtP6MUEn6be8gHQ0hwuS8ldn9YoE_NsjP8MQAEcj3z1ZYe0Vhmq6bCP7brWIYdxNt78592hgA3PgpzWU_hoLAvLDvVgAZio2_tUDTmPfwgx4y_ioLGz0cgr7SSA-KAa_lBDKbbBw');"></div>
+<span class="text-sm font-bold">Account</span>
+</button>
+</div>
+</div>
+</header>
+<main class="max-w-[1440px] mx-auto px-4 lg:px-10 py-6 space-y-12">
+<!-- Hero Section -->
+<section class="relative overflow-hidden rounded-xl lg:rounded-xl">
+<div class="flex min-h-[520px] flex-col gap-6 bg-cover bg-center bg-no-repeat items-start justify-center px-8 lg:px-20 text-white" data-alt="Colorful banner featuring advanced STEM building kits and happy children learning" style='background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAnv-HYHaxaOk4aEDRuMdtrGEzrfunoEHcpeoZ_enOO_HZik3FUXeVlm-2EPDQ76DJPz-5UI-jIs4_pGamio8FfW4Giq_14a64rTmXwzUM_MXDkNC1nYogrmGfJ9SesA3pqAHQ6B29dFjOlgcOdW_Ei5pfzp9Lhp3PM1dGoYXMkyUBu7bF073Aam_IedTTIl7C7K1GRzfcNsZJdHHum3I-1LaKT90DmNNufufohximyTwXbHHJ5AY-nKy-aHMwsWWmD3LeEgAQp7D8c");'>
+<div class="max-w-2xl space-y-4">
+<span class="bg-primary px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-widest">Mega Toy Sale</span>
+<h1 class="text-5xl lg:text-7xl font-black leading-tight tracking-[-0.033em]">
+                        Ignite Curiosity: <br/>Educational &amp; STEM
+                    </h1>
+<p class="text-lg opacity-90 max-w-lg font-medium">
+                        Explore our collection of award-winning learning toys designed for future innovators. Up to 40% off this week!
+                    </p>
+<div class="flex gap-4 pt-4">
+<button class="bg-primary hover:bg-blue-600 px-10 py-4 rounded-full text-base font-bold transition-transform active:scale-95 shadow-lg shadow-primary/30">Shop Now</button>
+<button class="bg-white/20 hover:bg-white/30 backdrop-blur-md px-10 py-4 rounded-full text-base font-bold transition-colors">Explore Collections</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Category Circle Tiles -->
+<section>
+<div class="flex items-center justify-between px-2 mb-8">
+<h2 class="text-2xl font-extrabold tracking-tight">Shop by Category</h2>
+<a class="text-primary font-bold text-sm hover:underline" href="#">View All</a>
+</div>
+<div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 lg:gap-8 px-2">
+<!-- Circular Tile 1 -->
+<div class="group cursor-pointer text-center space-y-3">
+<div class="aspect-square rounded-full overflow-hidden border-4 border-white shadow-xl group-hover:border-primary transition-all duration-300 transform group-hover:-translate-y-2">
+<div class="w-full h-full bg-cover bg-center" data-alt="Remote controlled car toy" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAPhgf3vLb-P6hTz4tpC7iNYXxsTqn5fjV4-FU0mSMw0s6J4ORisVyTMefHFU9Hbay20fmDH7b8OqE4SW7CZyTvsYT_PuVScuKegoIaIrCsx4IitBhWvDVBRg6Xn3VCRpVfBbwYp4iFDz5h8RAaISwDp6YOcza1HPBylGgJ4MEbc3MIaIi0dUD5YWXFMhKyrHFgqrrG7x4Qa810Ha9tu1L1byxgFvqiLM3eQSMLKYZQ3f-n5p8dFQx60R2rZeqNql1n1vC7NFBDRXef');"></div>
+</div>
+<h3 class="font-bold text-sm lg:text-base">RC Toys</h3>
+</div>
+<!-- Circular Tile 2 -->
+<div class="group cursor-pointer text-center space-y-3">
+<div class="aspect-square rounded-full overflow-hidden border-4 border-white shadow-xl group-hover:border-primary transition-all duration-300 transform group-hover:-translate-y-2">
+<div class="w-full h-full bg-cover bg-center" data-alt="Soft plush teddy bear" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuADfLJ_VoYltkaMBGOOsYqM3VL9Jdf0Rm5IpT-jsAjebyYJuzPwKUFl0Y4un-Cb5dYOJ4uderTBon_oS5wpRpIL5otk9i92Ff_g09azM9b61ooDP7VgHLpsHfz-a6-u3pvXwR_2yJlsIA6sqZv8haBYCet_UNNOW-xWslJ_944biv6RLpVMf-Y3Z_gHuGNGpz4IvP-Kn-3XbJTNaoZAdd6p48wyU1mIwWg2zdfyBNO1p3jin05bEQBOhM8RKEsLQXpA9E8kO1ZYvC_M');"></div>
+</div>
+<h3 class="font-bold text-sm lg:text-base">Soft Toys</h3>
+</div>
+<!-- Circular Tile 3 -->
+<div class="group cursor-pointer text-center space-y-3">
+<div class="aspect-square rounded-full overflow-hidden border-4 border-white shadow-xl group-hover:border-primary transition-all duration-300 transform group-hover:-translate-y-2">
+<div class="w-full h-full bg-cover bg-center" data-alt="Superhero action figure" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAPYgZsUQrYAMjWrZAtwmz_ucz_y3nz_1bfY_A8VVIYNas8tu41Pc0hPUQtuLe1Qi1LEsRT-aQJ5hK3YCZx0U72mdnRt75suzoPg6L1yk5_7u9C8OljrISG8Tgx6oOmzB6PONwQUmsg-reeXYEYc9pVdfCmXHkhOXu42a4bFR7W2F2UiEMfy0a1M77q-9ZEW_sqXxLrcFJMeNhxKAy08yyFrxzTMSrxm6sOTNJ8Y8sxN_reeGX1s-SemthLjUcwBLbtlYCu93lP8LtJ');"></div>
+</div>
+<h3 class="font-bold text-sm lg:text-base">Action Figures</h3>
+</div>
+<!-- Circular Tile 4 -->
+<div class="group cursor-pointer text-center space-y-3">
+<div class="aspect-square rounded-full overflow-hidden border-4 border-white shadow-xl group-hover:border-primary transition-all duration-300 transform group-hover:-translate-y-2">
+<div class="w-full h-full bg-cover bg-center" data-alt="Fashion doll with accessories" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBiPseSv2I6hJrkdXI3Z69Sk-q-HPScUrCJEjh1Nw_SYsaJY9dN4g4_0Jpqqnp8fJetDqqrNS-BBiGkwQwq43dbRfpUnCqBXTIAOzV01w3Nv85_Acb1jazUKOzGdjGc6CyefGSgJaRdSPCG81eAe0SUDHNhvipIAA93vTYSvA11KOPLS5VxrgEDtsV1332Ub3jZkuEqJTbiePqCuI6P64wiLk8Vk4eXxDx0r9uO24lDLkFuY9obe0ED1uFCgD5TxB6swcdhxKiHGX-Y');"></div>
+</div>
+<h3 class="font-bold text-sm lg:text-base">Dolls</h3>
+</div>
+<!-- Circular Tile 5 -->
+<div class="group cursor-pointer text-center space-y-3">
+<div class="aspect-square rounded-full overflow-hidden border-4 border-white shadow-xl group-hover:border-primary transition-all duration-300 transform group-hover:-translate-y-2">
+<div class="w-full h-full bg-cover bg-center" data-alt="Plastic building block set" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCD_Pg4QUflYFzBWlZxQU5d3YWxAGbdnaTjd2m0Zd7BHAGp-eLyKZCNRTXccXwk4PWWd3QrdXx6U7U3V5ipCRxqZ9tcuND0XE09OGr1nzjb63oHuufol95FyA39Cu53NAg0YxLRohFIhQZXp-AAjECNweVv4Ait0vXOXaeXFbCVTJ9MPzdBl9-DxEicSC0UM-KXK3zZzmtuqe23x_abbuSoIi9yg1nZvNfHkZ7ZtZE7h6WI__oMSf-7M0eWBMAlIMm0xaDoyr9BkliZ');"></div>
+</div>
+<h3 class="font-bold text-sm lg:text-base">Building Blocks</h3>
+</div>
+<!-- Circular Tile 6 -->
+<div class="group cursor-pointer text-center space-y-3">
+<div class="aspect-square rounded-full overflow-hidden border-4 border-white shadow-xl group-hover:border-primary transition-all duration-300 transform group-hover:-translate-y-2">
+<div class="w-full h-full bg-cover bg-center" data-alt="1000 piece jigsaw puzzle" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDrokjmxRtG7CCzvzGrplFmzL8_PeBD6ZLjBxvUmY_-7yfXk0asTSUozCN7DX66lQDD6UnKqAoLslNQyUBjHmz_xzmK7AXfOYz7_t1RF8p_yv9gS7l6cj8zWYf8bK0eFKQtLMtzrvmLaZQnSyEQwCHPaVpECkFxk92vgyZvwoxqIXxb50DdFEFN2YzXSYFZGVklKAu3k9lHVDB56udiI4_VoGRkzy5a0C5xduKK5rd-nq3p9k8bDHL0Y37UY-UKGpa-T4PR3E_fv0uO');"></div>
+</div>
+<h3 class="font-bold text-sm lg:text-base">Puzzles</h3>
+</div>
+</div>
+</section>
+<!-- Back to School Section -->
+<section class="bg-primary/5 dark:bg-primary/10 rounded-xl p-8 lg:p-12">
+<div class="flex flex-col lg:flex-row gap-10 items-center">
+<div class="lg:w-1/3 space-y-6">
+<h2 class="text-3xl lg:text-4xl font-black text-[#111418] dark:text-white leading-tight">Back to School <br/>Ready!</h2>
+<p class="text-gray-600 dark:text-gray-400 font-medium">Equip your little ones with the best. Durability meets style in our new school collection.</p>
+<div class="flex flex-wrap gap-3">
+<span class="px-4 py-2 bg-white dark:bg-gray-800 rounded-full text-xs font-bold border border-primary/20">School Bags</span>
+<span class="px-4 py-2 bg-white dark:bg-gray-800 rounded-full text-xs font-bold border border-primary/20">Lunch Boxes</span>
+<span class="px-4 py-2 bg-white dark:bg-gray-800 rounded-full text-xs font-bold border border-primary/20">Stationery Combo</span>
+</div>
+<button class="bg-primary text-white px-8 py-3 rounded-full font-bold hover:bg-blue-600 transition-colors">Shop All School Supplies</button>
+</div>
+<div class="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- School Feature Card 1 -->
+<div class="bg-white dark:bg-gray-800 p-4 rounded-xl flex gap-4 items-center shadow-sm hover:shadow-md transition-shadow">
+<div class="size-32 rounded-lg bg-cover bg-center flex-shrink-0" data-alt="Ergonomic colorful school backpack" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCRr-gd8aP05wiLmB9QhJ_1t_Q1X7oBk-mvpD75d7Hcf7-umYXCxLg9Z4pH4voDKVVGdiucoWDjTw3_FdEA-IudwheTkCGutFiovQyEFUBj0w3dnB6HAJGdCGQ7M5w4wMPlLA-ISC0QaY64M5HjD4OQxuVXi-Mzm8GXlnS1p_vfMU4m41hhtHnKwzwXkQ04qdA9BX7gs5GYk5wfA-0cblCs-SFz0WoCLEvN6w-iSHgg1PGGDtlVuzBK8LEU9gzTn5R-YbYkYWDbCCux');"></div>
+<div>
+<h4 class="font-extrabold text-[#111418] dark:text-white leading-tight mb-1">Explorer Pro Backpack</h4>
+<p class="text-xs text-gray-500 mb-2">Water-resistant • Ergonomic</p>
+<div class="flex items-center gap-2">
+<span class="text-lg font-bold text-primary">$45.00</span>
+<span class="text-xs line-through text-gray-400">$60.00</span>
+</div>
+</div>
+</div>
+<!-- School Feature Card 2 -->
+<div class="bg-white dark:bg-gray-800 p-4 rounded-xl flex gap-4 items-center shadow-sm hover:shadow-md transition-shadow">
+<div class="size-32 rounded-lg bg-cover bg-center flex-shrink-0" data-alt="Complete stationery set with case" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAV6v_43a-AmcpBY1WnhrHCAkEsT1h6ZTL_KOSFaDI-b0Fpv6IINHCJJeM0Xf2sYelAicKrY635TTa09HZUSoFvY1PS84SCcOedDjHrOIENh-LvJnsADAJ8dynfvdDTiPqCektkiqprNcH_wlK3zOpMiiXx9B-85cEySsr4iYFkBb64bJRuNsiZxDEnbWut87XyH1oxWP31B8oNYt9Mt90kam0og4KFPTpDLx0UFWz7sRLfpiWE6571UP7USFXZKO6oFJr30cpDwrl8');"></div>
+<div>
+<h4 class="font-extrabold text-[#111418] dark:text-white leading-tight mb-1">Mega Art Combo Set</h4>
+<p class="text-xs text-gray-500 mb-2">50+ pieces • Non-toxic</p>
+<div class="flex items-center gap-2">
+<span class="text-lg font-bold text-primary">$24.99</span>
+<span class="text-xs line-through text-gray-400">$35.00</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Trending Products Grid -->
+<section>
+<div class="flex items-center justify-between px-2 mb-8">
+<h2 class="text-2xl font-extrabold tracking-tight">Trending in Toys &amp; Kids World</h2>
+<div class="flex gap-2">
+<button class="size-10 rounded-full border border-gray-200 flex items-center justify-center hover:bg-gray-50 dark:border-gray-700">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="size-10 rounded-full border border-gray-200 flex items-center justify-center hover:bg-gray-50 dark:border-gray-700">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+<!-- Product Card 1 -->
+<div class="group bg-white dark:bg-gray-800 rounded-xl overflow-hidden hover:shadow-2xl transition-all border border-transparent hover:border-primary/20">
+<div class="relative aspect-square overflow-hidden bg-gray-100">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-500" data-alt="Programmable solar robot kit" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDC2jojRy8NEtMZt61jIuqViKBKyPj_l6iOktL8Cub3Rx6sBNAEpJ3dfgei7R2jkeqkjEcfy3bh5XpC6L3htuSurLVRLKjX5kPPW6K61GZ3rkHS3aIVHmfCSv6y72d7lWqJanwL09508uhdU_9yRc_AUnmWX8ohlyOqp5rkDHZZYQBrTC5pCSVlDxyRppiavFGKgj-W3a53S-tXZMKiWNB1vbfK8b7SK5aW3dmdWRQmur7s3-cXvbY1BG6S_G324EQM8M4Qx19-Up3n');"></div>
+<button class="absolute top-3 right-3 p-2 bg-white/80 backdrop-blur rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-gray-600 text-[20px]">favorite</span>
+</button>
+<div class="absolute bottom-2 left-2 flex gap-1">
+<span class="rating-badge text-white text-[10px] font-bold px-1.5 py-0.5 rounded flex items-center gap-1">
+                                4.5 <span class="material-symbols-outlined text-[10px] fill-current">star</span>
+</span>
+<span class="bg-white/90 text-[10px] font-bold px-1.5 py-0.5 rounded text-gray-500">(1.2k)</span>
+</div>
+</div>
+<div class="p-4 space-y-2">
+<div class="flex items-center justify-between">
+<span class="text-[10px] uppercase tracking-widest font-black text-primary">STEM KIT</span>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[14px] font-bold">verified</span>
+<span class="nexcart-assured-badge text-[10px]">ASSURED</span>
+</div>
+</div>
+<h3 class="font-bold text-sm line-clamp-2 leading-snug">SolarPowered Robot 12-in-1 Educational Kit</h3>
+<div class="flex items-end gap-2">
+<span class="text-xl font-black text-[#111418] dark:text-white">$32.99</span>
+<span class="text-xs text-gray-400 line-through mb-1">$49.99</span>
+<span class="text-xs font-bold text-green-600 mb-1">34% off</span>
+</div>
+<button class="w-full mt-2 py-2.5 rounded-full border-2 border-primary text-primary font-bold text-xs hover:bg-primary hover:text-white transition-colors">
+                            Add to Cart
+                        </button>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group bg-white dark:bg-gray-800 rounded-xl overflow-hidden hover:shadow-2xl transition-all border border-transparent hover:border-primary/20">
+<div class="relative aspect-square overflow-hidden bg-gray-100">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-500" data-alt="Magnetic building tiles 100pc" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC5dY410mT_NYk0iFKvrGBiAkn9yebS913vr6D7Svv0F2NQd2h_n4czwdTe0CGsfEn3q1VLnrdRywNedbLCdFVqQ-cgbnQpRQSTusUzsmcGHxc9YE2MSIM74rrGVFqlxCFijTIU3pdWYPHndagJ7_MO6dQEE3uxWhCVgUVJNVKKzEzlSSIv1H5hjQ9Nm1Bn-WoAdDTxB0h91-eoNuPw9xh1dZhObQhUY8PXITyk1wKw96CQQf-eB4xcSjsrjm5NdL59i-Z_GICw5G4Y');"></div>
+<button class="absolute top-3 right-3 p-2 bg-white/80 backdrop-blur rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-gray-600 text-[20px]">favorite</span>
+</button>
+<div class="absolute bottom-2 left-2 flex gap-1">
+<span class="rating-badge text-white text-[10px] font-bold px-1.5 py-0.5 rounded flex items-center gap-1">
+                                4.8 <span class="material-symbols-outlined text-[10px] fill-current">star</span>
+</span>
+<span class="bg-white/90 text-[10px] font-bold px-1.5 py-0.5 rounded text-gray-500">(3.5k)</span>
+</div>
+</div>
+<div class="p-4 space-y-2">
+<div class="flex items-center justify-between">
+<span class="text-[10px] uppercase tracking-widest font-black text-primary">CREATIVE</span>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[14px] font-bold">verified</span>
+<span class="nexcart-assured-badge text-[10px]">ASSURED</span>
+</div>
+</div>
+<h3 class="font-bold text-sm line-clamp-2 leading-snug">Magna-Build 100-Piece Creative Tile Set</h3>
+<div class="flex items-end gap-2">
+<span class="text-xl font-black text-[#111418] dark:text-white">$59.00</span>
+<span class="text-xs text-gray-400 line-through mb-1">$85.00</span>
+<span class="text-xs font-bold text-green-600 mb-1">30% off</span>
+</div>
+<button class="w-full mt-2 py-2.5 rounded-full border-2 border-primary text-primary font-bold text-xs hover:bg-primary hover:text-white transition-colors">
+                            Add to Cart
+                        </button>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group bg-white dark:bg-gray-800 rounded-xl overflow-hidden hover:shadow-2xl transition-all border border-transparent hover:border-primary/20">
+<div class="relative aspect-square overflow-hidden bg-gray-100">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-500" data-alt="High speed remote control racing car" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAmVQurbN99-FUhuZ-w-qUQWxabV-wx5PsQSV6Vtpp6iBJtooxfXMNOKQWLZtAWk1E-5urO60zcTd0z_rPd2SrKXbhTx422JoNavpZFPeFpUZoXG0tgKMdZ2ZmquG0TfwBBziNOaY3eD-qSxV52M45uLMsEsXlGzoUSn6LF0g14IZmBXqRP6RgVr5rjNK6zUzh2V2zD64WYRRgvemCSaKpCUyGJBcxS5Q8DS6EXW1xpPNHBbgq9450FgZdp9qixKaq6f4TIT2mia-Wo');"></div>
+<div class="absolute bottom-2 left-2 flex gap-1">
+<span class="rating-badge text-white text-[10px] font-bold px-1.5 py-0.5 rounded flex items-center gap-1">
+                                4.2 <span class="material-symbols-outlined text-[10px] fill-current">star</span>
+</span>
+</div>
+</div>
+<div class="p-4 space-y-2">
+<div class="flex items-center justify-between">
+<span class="text-[10px] uppercase tracking-widest font-black text-primary">RC VEHICLE</span>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[14px] font-bold">verified</span>
+<span class="nexcart-assured-badge text-[10px]">ASSURED</span>
+</div>
+</div>
+<h3 class="font-bold text-sm line-clamp-2 leading-snug">Thunder-X High Speed Drift RC Car</h3>
+<div class="flex items-end gap-2">
+<span class="text-xl font-black text-[#111418] dark:text-white">$39.99</span>
+<span class="text-xs text-gray-400 line-through mb-1">$55.00</span>
+</div>
+<button class="w-full mt-2 py-2.5 rounded-full border-2 border-primary text-primary font-bold text-xs hover:bg-primary hover:text-white transition-colors">
+                            Add to Cart
+                        </button>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group bg-white dark:bg-gray-800 rounded-xl overflow-hidden hover:shadow-2xl transition-all border border-transparent hover:border-primary/20">
+<div class="relative aspect-square overflow-hidden bg-gray-100">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-500" data-alt="Cute giant stuffed elephant" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBtqiC1LxyNzeY_kICzArMxsi41yG5wdtByiaUN97gA3VbRcR1x-vAvhIsScBogfX29gI4tG8u1UQ3CpXJRFx6QkeXLfC-fp_TyyVdUvy5xXSRrM_vc1eDMDkJ75pS3OPmtPUBrQXiQ-6rK8ZIPKFm7sHPsJJIDm6SgPgX0au76vrAgLzDzLjZ-30R71FkxFvQeCE4awXA1HDjnEaok1PgzfrStPb8wUJFoLfMc4PyJQJ6-Jr7AsPB9UtpSzpFcu-butxc00JzMkIfx');"></div>
+<div class="absolute bottom-2 left-2 flex gap-1">
+<span class="rating-badge text-white text-[10px] font-bold px-1.5 py-0.5 rounded flex items-center gap-1">
+                                4.9 <span class="material-symbols-outlined text-[10px] fill-current">star</span>
+</span>
+</div>
+</div>
+<div class="p-4 space-y-2">
+<div class="flex items-center justify-between">
+<span class="text-[10px] uppercase tracking-widest font-black text-primary">SOFT TOY</span>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[14px] font-bold">verified</span>
+<span class="nexcart-assured-badge text-[10px]">ASSURED</span>
+</div>
+</div>
+<h3 class="font-bold text-sm line-clamp-2 leading-snug">Giant Cuddle-Me Elephant Plush (60cm)</h3>
+<div class="flex items-end gap-2">
+<span class="text-xl font-black text-[#111418] dark:text-white">$19.50</span>
+<span class="text-xs text-gray-400 line-through mb-1">$29.00</span>
+</div>
+<button class="w-full mt-2 py-2.5 rounded-full border-2 border-primary text-primary font-bold text-xs hover:bg-primary hover:text-white transition-colors">
+                            Add to Cart
+                        </button>
+</div>
+</div>
+<!-- Product Card 5 -->
+<div class="group bg-white dark:bg-gray-800 rounded-xl overflow-hidden hover:shadow-2xl transition-all border border-transparent hover:border-primary/20">
+<div class="relative aspect-square overflow-hidden bg-gray-100">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-500" data-alt="Articulated superhero figurine" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDvtWWvV_F260sCaRhAAjwRXPvaCsdGKb7L7xvUnXBOgHDVHY7wIX8UiAzHjfBCoeLntM6xpuzANL7l-F89-n1CcLdIGtSNLXXv5MYA9BfE3oQDdNteleBYu3q7a3YREWZsNLAsborL04YfEDVTOUqzxQqb45MCHf4vvH_8oOtlkZPvC_6A-BfrFW2-N48cOHBhJOS4u5Zmtcxfv_KOFdJsaNmLs-shJP1WsfXltddvBzjBnu3e_GnDamvBEnjDytXG2hCBL9AmUHU2');"></div>
+<div class="absolute bottom-2 left-2 flex gap-1">
+<span class="rating-badge text-white text-[10px] font-bold px-1.5 py-0.5 rounded flex items-center gap-1">
+                                4.6 <span class="material-symbols-outlined text-[10px] fill-current">star</span>
+</span>
+</div>
+</div>
+<div class="p-4 space-y-2">
+<div class="flex items-center justify-between">
+<span class="text-[10px] uppercase tracking-widest font-black text-primary">ACTION FIGURE</span>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[14px] font-bold">verified</span>
+<span class="nexcart-assured-badge text-[10px]">ASSURED</span>
+</div>
+</div>
+<h3 class="font-bold text-sm line-clamp-2 leading-snug">Titan-Warrior Articulated Action Figure</h3>
+<div class="flex items-end gap-2">
+<span class="text-xl font-black text-[#111418] dark:text-white">$15.99</span>
+<span class="text-xs text-gray-400 line-through mb-1">$20.00</span>
+</div>
+<button class="w-full mt-2 py-2.5 rounded-full border-2 border-primary text-primary font-bold text-xs hover:bg-primary hover:text-white transition-colors">
+                            Add to Cart
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Trust Features Bar -->
+<section class="grid grid-cols-2 md:grid-cols-4 gap-4 py-8 border-t border-b border-gray-200 dark:border-gray-800">
+<div class="flex items-center gap-4 px-4 justify-center md:justify-start">
+<div class="size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">local_shipping</span>
+</div>
+<div>
+<h4 class="font-bold text-sm">Fast Delivery</h4>
+<p class="text-xs text-gray-500">Free over $50</p>
+</div>
+</div>
+<div class="flex items-center gap-4 px-4 justify-center md:justify-start border-l border-gray-100 dark:border-gray-800">
+<div class="size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">health_and_safety</span>
+</div>
+<div>
+<h4 class="font-bold text-sm">Safe Materials</h4>
+<p class="text-xs text-gray-500">100% Non-toxic</p>
+</div>
+</div>
+<div class="flex items-center gap-4 px-4 justify-center md:justify-start border-l border-gray-100 dark:border-gray-800">
+<div class="size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">replay</span>
+</div>
+<div>
+<h4 class="font-bold text-sm">Easy Returns</h4>
+<p class="text-xs text-gray-500">30-day window</p>
+</div>
+</div>
+<div class="flex items-center gap-4 px-4 justify-center md:justify-start border-l border-gray-100 dark:border-gray-800">
+<div class="size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">verified</span>
+</div>
+<div>
+<h4 class="font-bold text-sm">NEX Assured</h4>
+<p class="text-xs text-gray-500">Quality Checked</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-white dark:bg-background-dark border-t border-[#f0f2f5] dark:border-gray-800 mt-20">
+<div class="max-w-[1440px] mx-auto px-10 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+<div class="space-y-6">
+<div class="flex items-center gap-3">
+<div class="size-8 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-xl font-extrabold tracking-tight">NEXCART</h2>
+</div>
+<p class="text-sm text-gray-500 dark:text-gray-400">The ultimate destination for curious minds and school essentials. Join 1M+ happy families today.</p>
+<div class="flex gap-4">
+<button class="size-8 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[18px]">social_leaderboard</span>
+</button>
+<button class="size-8 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[18px]">public</span>
+</button>
+<button class="size-8 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[18px]">camera</span>
+</button>
+</div>
+</div>
+<div>
+<h4 class="font-bold mb-6">Categories</h4>
+<ul class="space-y-4 text-sm text-gray-500 dark:text-gray-400">
+<li><a class="hover:text-primary transition-colors" href="#">Educational Toys</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Action Figures</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Outdoor Play</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Puzzles &amp; Board Games</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6">School Hub</h4>
+<ul class="space-y-4 text-sm text-gray-500 dark:text-gray-400">
+<li><a class="hover:text-primary transition-colors" href="#">Backpacks</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Lunch Boxes</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Stationery Sets</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Art Supplies</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6">Newsletter</h4>
+<p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Get the latest updates on new arrivals and sales.</p>
+<div class="flex gap-2">
+<input class="flex-1 rounded-full border-gray-200 dark:border-gray-700 bg-transparent text-sm focus:ring-primary" placeholder="Email address" type="email"/>
+<button class="bg-primary text-white p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-100 dark:border-gray-800 py-6 text-center text-xs text-gray-400">
+            © 2024 NEXCART Marketplace. All rights reserved.
+        </div>
+</footer>
+</body></html>

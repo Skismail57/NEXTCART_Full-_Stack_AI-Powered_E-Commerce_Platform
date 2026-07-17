@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEXCART Admin Fraud Control Center</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2547f4",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101322",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-nav {
+            background-color: #f0f1f5;
+            border-radius: 0.5rem;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111218] min-h-screen">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f0f1f5] bg-white dark:bg-background-dark px-10 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-6">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_330)">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs><clippath id="clip0_6_330"><rect fill="white" height="48" width="48"></rect></clippath></defs>
+</svg>
+</div>
+<h2 class="text-[#111218] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">NEXCART Admin</h2>
+</div>
+<label class="flex flex-col min-w-40 !h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-[#60678a] flex border-none bg-[#f0f1f5] items-center justify-center pl-4 rounded-l-lg border-r-0">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#111218] focus:outline-0 focus:ring-0 border-none bg-[#f0f1f5] focus:border-none h-full placeholder:text-[#60678a] px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal" placeholder="Search incidents, IP, orders..." value=""/>
+</div>
+</label>
+</div>
+<div class="flex flex-1 justify-end gap-4">
+<div class="flex gap-2">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-[#f0f1f5] text-[#111218] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-[#f0f1f5] text-[#111218] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border border-[#dbdde6]" data-alt="Admin user avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuASXcZ7iK1QFHOpe7dxLvOWE2AeIn3PJ6X5bYTQJl9bQdbVuCRlE4-GD0ScVR_U6qRTP7Oy85Iq7ayzu7LG9iEV7CG4952omq0cwXohY7Ee0BiaMRXWA--P0W8zqqb5BulZBZ40OEoKDmDsBXmlM3BiGjQgKz1pKdjLh-2wNP4aUJ7qXaNT8tXoFgBAN-M9t4iR42JDqw5ht9QKKvjlSA2OkAzRnI4iT9oaMz9egYQ_qcr4kT-jqvymCviTErA9AcF8dyuCo-dOtMkW");'></div>
+</div>
+</header>
+<div class="flex">
+<!-- Sidebar Navigation -->
+<aside class="w-64 min-h-[calc(100vh-64px)] bg-white border-r border-[#f0f1f5] p-4 flex flex-col justify-between sticky top-16">
+<div class="flex flex-col gap-4">
+<div class="flex flex-col px-3 pb-4">
+<h1 class="text-[#111218] text-base font-bold leading-normal">Fraud Command</h1>
+<p class="text-[#60678a] text-xs font-normal leading-normal">Enterprise Security Tier</p>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 text-[#60678a] hover:bg-[#f0f1f5] rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<p class="text-sm font-medium leading-normal">Overview</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 active-nav text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">shield_with_heart</span>
+<p class="text-sm font-bold leading-normal">Fraud Control</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-[#60678a] hover:bg-[#f0f1f5] rounded-lg" href="#">
+<span class="material-symbols-outlined">shopping_bag</span>
+<p class="text-sm font-medium leading-normal">Orders</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-[#60678a] hover:bg-[#f0f1f5] rounded-lg" href="#">
+<span class="material-symbols-outlined">group</span>
+<p class="text-sm font-medium leading-normal">Customers</p>
+</a>
+<div class="h-px bg-[#f0f1f5] my-2"></div>
+<a class="flex items-center gap-3 px-3 py-2 text-[#60678a] hover:bg-[#f0f1f5] rounded-lg" href="#">
+<span class="material-symbols-outlined">list_alt</span>
+<p class="text-sm font-medium leading-normal">Audit Logs</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-[#60678a] hover:bg-[#f0f1f5] rounded-lg" href="#">
+<span class="material-symbols-outlined">public</span>
+<p class="text-sm font-medium leading-normal">IP Whitelist</p>
+</a>
+</nav>
+</div>
+<div class="p-3 bg-primary/5 rounded-lg border border-primary/10">
+<p class="text-xs font-bold text-primary mb-1">System Integrity</p>
+<div class="flex items-center justify-between">
+<span class="text-[10px] text-[#60678a]">IMEI DB Sync</span>
+<span class="text-[10px] font-bold text-green-600">ACTIVE</span>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto bg-background-light p-8">
+<!-- Page Heading -->
+<div class="flex flex-wrap justify-between items-end gap-3 pb-6">
+<div class="flex flex-col gap-1">
+<p class="text-[#111218] text-4xl font-black leading-tight tracking-[-0.033em]">Fraud Control Command Center</p>
+<p class="text-[#60678a] text-sm">Monitor threats and manage security rules for NEXCART Global.</p>
+</div>
+<div class="flex gap-3">
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-white border border-[#dbdde6] text-[#111218] text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="material-symbols-outlined mr-2 text-lg">sync</span>
+<span class="truncate">Sync IMEI Database</span>
+</button>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="material-symbols-outlined mr-2 text-lg">description</span>
+<span class="truncate">Export Incident Report</span>
+</button>
+</div>
+</div>
+<!-- Stats Grid -->
+<div class="flex flex-wrap gap-4 pb-8">
+<div class="flex min-w-[240px] flex-1 flex-col gap-2 rounded-xl p-6 bg-white border border-[#dbdde6] shadow-sm">
+<div class="flex justify-between items-start">
+<p class="text-[#60678a] text-sm font-medium leading-normal uppercase tracking-wider">Fraudulent Orders Blocked</p>
+<span class="material-symbols-outlined text-primary bg-primary/10 p-1.5 rounded-lg">block</span>
+</div>
+<p class="text-[#111218] tracking-light text-3xl font-bold leading-tight">1,248</p>
+<div class="flex items-center gap-1">
+<span class="text-[#07883f] text-sm font-bold">+12%</span>
+<span class="text-[#60678a] text-xs">vs last 30d</span>
+</div>
+</div>
+<div class="flex min-w-[240px] flex-1 flex-col gap-2 rounded-xl p-6 bg-white border border-[#dbdde6] shadow-sm">
+<div class="flex justify-between items-start">
+<p class="text-[#60678a] text-sm font-medium leading-normal uppercase tracking-wider">High-Risk COD Alerts</p>
+<span class="material-symbols-outlined text-orange-600 bg-orange-50 p-1.5 rounded-lg">warning</span>
+</div>
+<p class="text-[#111218] tracking-light text-3xl font-bold leading-tight">42</p>
+<div class="flex items-center gap-1">
+<span class="text-[#07883f] text-sm font-bold">+5%</span>
+<span class="text-[#60678a] text-xs">pending review</span>
+</div>
+</div>
+<div class="flex min-w-[240px] flex-1 flex-col gap-2 rounded-xl p-6 bg-white border border-[#dbdde6] shadow-sm">
+<div class="flex justify-between items-start">
+<p class="text-[#60678a] text-sm font-medium leading-normal uppercase tracking-wider">IMEI Blacklist Sync</p>
+<span class="material-symbols-outlined text-green-600 bg-green-50 p-1.5 rounded-lg">check_circle</span>
+</div>
+<p class="text-[#111218] tracking-light text-3xl font-bold leading-tight">99.9%</p>
+<div class="flex items-center gap-1">
+<span class="text-[#e73c08] text-sm font-bold">-0.1%</span>
+<span class="text-[#60678a] text-xs">uptime latency</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Global Fraud Rules (Left Column) -->
+<div class="lg:col-span-1 flex flex-col gap-4">
+<div class="bg-white rounded-xl border border-[#dbdde6] overflow-hidden">
+<h2 class="text-[#111218] text-lg font-bold leading-tight px-6 pt-6 pb-4 border-b border-[#f0f1f5]">Global Fraud Rules</h2>
+<div class="p-6 flex flex-col gap-6">
+<!-- Rule 1 -->
+<div class="flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<p class="text-sm font-bold text-[#111218]">Mandatory OTP for COD &gt; ₹20k</p>
+<div class="relative inline-flex h-6 w-11 items-center rounded-full bg-primary cursor-pointer">
+<span class="translate-x-6 inline-block h-4 w-4 transform rounded-full bg-white transition"></span>
+</div>
+</div>
+<p class="text-xs text-[#60678a]">Requires SMS verification for high-value cash on delivery orders to prevent RTO.</p>
+<a class="text-xs font-bold text-primary hover:underline" href="#">Edit Threshold</a>
+</div>
+<div class="h-px bg-[#f0f1f5]"></div>
+<!-- Rule 2 -->
+<div class="flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<p class="text-sm font-bold text-[#111218]">Block Multiple Failed Logins</p>
+<div class="relative inline-flex h-6 w-11 items-center rounded-full bg-primary cursor-pointer">
+<span class="translate-x-6 inline-block h-4 w-4 transform rounded-full bg-white transition"></span>
+</div>
+</div>
+<p class="text-xs text-[#60678a]">Temporarily ban IP addresses after 5 failed login attempts within 10 minutes.</p>
+<a class="text-xs font-bold text-primary hover:underline" href="#">Config Limits</a>
+</div>
+<div class="h-px bg-[#f0f1f5]"></div>
+<!-- Rule 3 -->
+<div class="flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<p class="text-sm font-bold text-[#111218]">IMEI-Duplicate Exchange Check</p>
+<div class="relative inline-flex h-6 w-11 items-center rounded-full bg-primary cursor-pointer">
+<span class="translate-x-6 inline-block h-4 w-4 transform rounded-full bg-white transition"></span>
+</div>
+</div>
+<p class="text-xs text-[#60678a]">Validate IMEI unique status against global blacklist during exchange programs.</p>
+<div class="flex items-center gap-2">
+<span class="size-2 rounded-full bg-green-500"></span>
+<span class="text-[10px] text-[#60678a]">Last Synced: 14 mins ago</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Suspicious Activity Feed (Right Column) -->
+<div class="lg:col-span-2 flex flex-col gap-4">
+<div class="bg-white rounded-xl border border-[#dbdde6] overflow-hidden">
+<div class="flex items-center justify-between px-6 py-4 border-b border-[#f0f1f5]">
+<h2 class="text-[#111218] text-lg font-bold leading-tight">Suspicious Activity Feed</h2>
+<div class="flex items-center gap-2 text-xs font-bold text-primary cursor-pointer">
+<span class="material-symbols-outlined text-sm">filter_list</span>
+<span>Filter Feed</span>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-[#f5f6f8] text-[10px] uppercase text-[#60678a] font-bold">
+<tr>
+<th class="px-6 py-3">Timestamp</th>
+<th class="px-6 py-3">Identifier / Device ID</th>
+<th class="px-6 py-3">Browser Fingerprint</th>
+<th class="px-6 py-3">Risk Level</th>
+<th class="px-6 py-3">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#f0f1f5]">
+<!-- Row 1 -->
+<tr class="hover:bg-gray-50 transition-colors">
+<td class="px-6 py-4">
+<p class="text-xs font-medium text-[#111218]">Oct 24, 14:22:10</p>
+<p class="text-[10px] text-[#60678a]">IP: 192.168.1.105</p>
+</td>
+<td class="px-6 py-4">
+<code class="text-[11px] bg-gray-100 p-1 rounded">DEVICE_NX_88291</code>
+</td>
+<td class="px-6 py-4">
+<p class="text-[10px] text-[#60678a] truncate max-w-[120px]">Chrome/118.0.0.0 (Win64)...</p>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-red-100 text-red-700">HIGH RISK</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex gap-2">
+<button class="text-primary hover:text-blue-800"><span class="material-symbols-outlined text-lg">visibility</span></button>
+<button class="text-red-600 hover:text-red-800"><span class="material-symbols-outlined text-lg">block</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-gray-50 transition-colors">
+<td class="px-6 py-4">
+<p class="text-xs font-medium text-[#111218]">Oct 24, 14:18:45</p>
+<p class="text-[10px] text-[#60678a]">IP: 45.22.112.9</p>
+</td>
+<td class="px-6 py-4">
+<code class="text-[11px] bg-gray-100 p-1 rounded">DEVICE_NX_00412</code>
+</td>
+<td class="px-6 py-4">
+<p class="text-[10px] text-[#60678a] truncate max-w-[120px]">Safari/17.0 (MacOS)...</p>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-orange-100 text-orange-700">MEDIUM</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex gap-2">
+<button class="text-primary hover:text-blue-800"><span class="material-symbols-outlined text-lg">visibility</span></button>
+<button class="text-red-600 hover:text-red-800"><span class="material-symbols-outlined text-lg">block</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-gray-50 transition-colors">
+<td class="px-6 py-4">
+<p class="text-xs font-medium text-[#111218]">Oct 24, 14:05:12</p>
+<p class="text-[10px] text-[#60678a]">IP: 102.12.8.21</p>
+</td>
+<td class="px-6 py-4">
+<code class="text-[11px] bg-gray-100 p-1 rounded">DEVICE_NX_99120</code>
+</td>
+<td class="px-6 py-4">
+<p class="text-[10px] text-[#60678a] truncate max-w-[120px]">Firefox/119.0 (Linux)...</p>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-100 text-blue-700">LOW</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex gap-2">
+<button class="text-primary hover:text-blue-800"><span class="material-symbols-outlined text-lg">visibility</span></button>
+<button class="text-red-600 hover:text-red-800"><span class="material-symbols-outlined text-lg">block</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-gray-50 transition-colors">
+<td class="px-6 py-4">
+<p class="text-xs font-medium text-[#111218]">Oct 24, 13:59:33</p>
+<p class="text-[10px] text-[#60678a]">IP: 185.92.12.4</p>
+</td>
+<td class="px-6 py-4">
+<code class="text-[11px] bg-gray-100 p-1 rounded">DEVICE_NX_44511</code>
+</td>
+<td class="px-6 py-4">
+<p class="text-[10px] text-[#60678a] truncate max-w-[120px]">Chrome/118.0.0.0 (Android)...</p>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-red-100 text-red-700">HIGH RISK</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex gap-2">
+<button class="text-primary hover:text-blue-800"><span class="material-symbols-outlined text-lg">visibility</span></button>
+<button class="text-red-600 hover:text-red-800"><span class="material-symbols-outlined text-lg">block</span></button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="px-6 py-4 bg-[#fcfcfd] border-t border-[#f0f1f5] flex items-center justify-between">
+<p class="text-xs text-[#60678a]">Showing 4 of 248 incidents detected today</p>
+<div class="flex gap-2">
+<button class="px-3 py-1 text-xs font-bold border border-[#dbdde6] rounded hover:bg-white">Previous</button>
+<button class="px-3 py-1 text-xs font-bold bg-white border border-[#dbdde6] rounded hover:bg-gray-50 shadow-sm">Next</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEXCART | Grocery Availability Checker</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2525f4",
+                        "background-light": "#f5f5f8",
+                        "background-dark": "#0a0a0f",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>.glass-card {
+    background: rgba(16, 16, 34, 0.7);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1)
+    }
+.hero-bg {
+    background-image: linear-gradient(rgba(10, 10, 15, 0.8), rgba(10, 10, 15, 0.8)), url(https://lh3.googleusercontent.com/aida-public/AB6AXuBf2xTq7S5SI2sp_zMfHNYfFOLOHbZuL8Q7qpJ6pXDTa65dZHotMez8YuCOZ4PwMFC5VyKHWgIXMjZjva60JpqpDFR27KA_bUFQfKVSINPA1BBWU5sbRCr4Kbuz12uIEuSHNhUQVZICJdoFxI7gAzCRp0nFuae_NN0eviMmbTWiIVYBlJixPNx_7BNhOndcEyE43k8SQKqf5IAcrW2DRm6C3aRGyfouYRHfgYj4ZQkRBVNFBbaDpY_eDuydhp4G6XtAtbMvyp1j8qF2);
+    background-size: cover;
+    background-position: center
+    }
+.custom-scrollbar::-webkit-scrollbar {
+    width: 4px
+    }
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(40, 40, 57, 0.2)
+    }
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #2525f4;
+    border-radius: 10px
+    }</style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-white min-h-screen hero-bg">
+<div class="layout-container flex flex-col min-h-screen">
+<!-- Top Navigation -->
+<header class="flex items-center justify-between border-b border-white/10 px-6 py-4 bg-background-dark/50 backdrop-blur-md sticky top-0 z-50">
+<div class="flex items-center gap-3">
+<div class="size-8 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-xl font-bold tracking-tight">NEXCART</h2>
+</div>
+<div class="flex items-center gap-8">
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-white/70 hover:text-white text-sm font-medium transition-colors" href="#">Gaming</a>
+<a class="text-white/70 hover:text-white text-sm font-medium transition-colors" href="#">Music</a>
+<a class="text-primary text-sm font-bold border-b-2 border-primary" href="#">Grocery</a>
+</nav>
+<div class="flex items-center gap-4 border-l border-white/10 pl-8">
+<button class="flex h-10 px-5 bg-primary hover:bg-primary/90 rounded-lg items-center justify-center text-sm font-bold transition-all">
+                        Login
+                    </button>
+<div class="size-10 rounded-full border border-white/10 overflow-hidden" data-alt="User profile avatar circle" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA0ZYb5uC50L9fk_186SrsL5ADJmyEclfmSjWnD0TXEJChw6hZq_m0xOnYlMPJpoGFik3k-gairezsp1e2FTZ0eikcaStlNvaBKOS4FscSoDQu8F6Kqc6kp6NkY07ZQsPf5g4_2ORkzFKFZN5Ogvq--p8maDyk63GcTKYpdqQIPKCQe3v8ijqYgeUWYH2L39Fxn5IOEFY5ZHCX3vQPu9xUT6ZSmSchsGf4eZ3IXRtnV0bsLJmGQxT9nYYzWG78bn-4INWs_5PGBAV0f"); background-size: cover;'></div>
+</div>
+</div>
+</header>
+<!-- Breadcrumbs -->
+<div class="max-w-[1200px] mx-auto w-full px-6 pt-6">
+<div class="flex items-center gap-2 text-xs md:text-sm tracking-widest uppercase">
+<a class="text-white/40 hover:text-white/60 transition-colors" href="#">NEXCART</a>
+<span class="text-white/20 material-symbols-outlined text-sm">chevron_right</span>
+<a class="text-white/40 hover:text-white/60 transition-colors" href="#">GROCERY</a>
+<span class="text-white/20 material-symbols-outlined text-sm">chevron_right</span>
+<span class="text-primary font-bold">AVAILABILITY CHECK</span>
+</div>
+</div>
+<!-- Main Logic Hub -->
+<main class="flex-1 flex flex-col items-center justify-center p-6 gap-8">
+<div class="max-w-4xl w-full">
+<!-- Headline -->
+<div class="text-center mb-10">
+<h1 class="text-4xl md:text-5xl font-bold mb-4">Select Your Delivery Zone</h1>
+<p class="text-white/60 text-lg">Fresh groceries delivered in 10 minutes. Check if we're in your neighborhood.</p>
+</div>
+<!-- Glassmorphism Container -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Left Column: Selection -->
+<div class="lg:col-span-8 glass-card rounded-xl p-8 flex flex-col gap-6">
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold text-white/50 uppercase tracking-wider">Quick Search City</label>
+<div class="flex gap-3 flex-wrap">
+<!-- City Chips -->
+<button class="flex h-10 items-center justify-center gap-x-2 rounded-lg bg-primary/20 border border-primary text-primary px-4 hover:bg-primary/30 transition-all">
+<span class="material-symbols-outlined text-sm">near_me</span>
+<p class="text-sm font-bold">Bengaluru</p>
+</button>
+<button class="flex h-10 items-center justify-center gap-x-2 rounded-lg bg-white/5 border border-white/10 px-4 hover:bg-white/10 transition-all">
+<p class="text-white text-sm font-medium">Mumbai</p>
+</button>
+<button class="flex h-10 items-center justify-center gap-x-2 rounded-lg bg-white/5 border border-white/10 px-4 hover:bg-white/10 transition-all">
+<p class="text-white text-sm font-medium">Delhi</p>
+</button>
+<button class="flex h-10 items-center justify-center gap-x-2 rounded-lg bg-white/5 border border-white/10 px-4 hover:bg-white/10 transition-all">
+<p class="text-white text-sm font-medium">Hyderabad</p>
+</button>
+<button class="flex h-10 items-center justify-center gap-x-2 rounded-lg bg-white/5 border border-white/10 px-4 hover:bg-white/10 transition-all">
+<p class="text-white text-sm font-medium">Chennai</p>
+</button>
+<button class="flex h-10 items-center justify-center gap-x-2 rounded-lg bg-white/5 border border-white/10 px-4 hover:bg-white/10 transition-all">
+<p class="text-white text-sm font-medium">Pune</p>
+</button>
+<button class="flex h-10 items-center justify-center gap-x-2 rounded-lg bg-white/5 border border-white/10 px-4 hover:bg-white/10 transition-all">
+<p class="text-white text-sm font-medium">Kolkata</p>
+</button>
+<button class="flex h-10 items-center justify-center gap-x-2 rounded-lg bg-white/5 border border-white/10 px-4 hover:bg-white/10 transition-all">
+<p class="text-white text-sm font-medium">Ahmedabad</p>
+</button>
+<button class="flex h-10 items-center justify-center gap-x-2 rounded-lg bg-white/5 border border-white/10 px-4 hover:bg-white/10 transition-all">
+<p class="text-white text-sm font-medium">Jaipur</p>
+</button>
+<button class="flex h-10 items-center justify-center gap-x-2 rounded-lg bg-white/5 border border-white/10 px-4 hover:bg-white/10 transition-all">
+<p class="text-white text-sm font-medium">Lucknow</p>
+</button>
+<button class="flex h-10 items-center justify-center gap-x-2 rounded-lg bg-white/5 border border-white/10 px-4 hover:bg-white/10 transition-all">
+<p class="text-white text-sm font-medium">Nagpur</p>
+</button>
+<button class="flex h-10 items-center justify-center gap-x-2 rounded-lg bg-white/5 border border-white/10 px-4 hover:bg-white/10 transition-all">
+<p class="text-white text-sm font-medium">Indore</p>
+</button>
+</div>
+</div>
+<div class="relative py-4">
+<div aria-hidden="true" class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-white/10"></div>
+</div>
+<div class="relative flex justify-center">
+<span class="bg-background-dark/80 px-4 text-xs font-bold text-white/30 uppercase">Or Search Pincode</span>
+</div>
+</div>
+<div class="flex gap-3">
+<div class="relative flex-1 group">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-white/40 group-focus-within:text-primary transition-colors">pin_drop</span>
+<input class="w-full bg-white/5 border border-white/10 rounded-lg py-3 pl-12 pr-4 text-white focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none" placeholder="Enter 6-digit Pincode (e.g. 560001)" type="text"/>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-white font-bold px-8 rounded-lg transition-all shadow-lg shadow-primary/20">
+                                Verify
+                            </button>
+</div>
+</div>
+<!-- Right Column: Logic States Visualization -->
+<div class="lg:col-span-4 flex flex-col gap-6">
+<!-- Success State Example -->
+<div class="glass-card rounded-xl p-6 border-l-4 border-l-emerald-500 bg-emerald-500/5">
+<div class="flex items-center gap-3 mb-4">
+<div class="size-10 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-500">
+<span class="material-symbols-outlined">check_circle</span>
+</div>
+<div>
+<h3 class="font-bold text-emerald-500">Bengaluru Active</h3>
+<p class="text-xs text-white/40 uppercase font-bold tracking-tighter">Status: Fully Operational</p>
+</div>
+</div>
+<p class="text-sm text-white/70 mb-5 leading-relaxed">Service available at 560001. Current delivery time: <span class="text-emerald-400 font-bold">12 mins</span>.</p>
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-3 rounded-lg flex items-center justify-center gap-2 transition-all group">
+                                Start Shopping
+                                <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+<!-- Failure/Notify State Example -->
+<div class="glass-card rounded-xl p-6 border-l-4 border-l-amber-500 bg-amber-500/5">
+<div class="flex items-center gap-3 mb-4">
+<div class="size-10 rounded-full bg-amber-500/20 flex items-center justify-center text-amber-500">
+<span class="material-symbols-outlined">schedule</span>
+</div>
+<div>
+<h3 class="font-bold text-amber-500">Patna Pending</h3>
+<p class="text-xs text-white/40 uppercase font-bold tracking-tighter">Status: Launching Q4</p>
+</div>
+</div>
+<p class="text-sm text-white/70 mb-4 leading-relaxed">We're expanding rapidly. Enter your email to receive early access.</p>
+<div class="flex flex-col gap-2">
+<input class="bg-white/5 border border-white/10 rounded-lg py-2 px-3 text-sm focus:ring-1 focus:ring-amber-500 transition-all outline-none" placeholder="email@address.com" type="email"/>
+<button class="w-full bg-white/10 hover:bg-white/20 text-white text-sm font-bold py-2 rounded-lg transition-all">
+                                    Notify Me
+                                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Technical Footer/Log -->
+<div class="mt-12 glass-card rounded-lg p-4 border border-white/5 overflow-hidden">
+<div class="flex items-center gap-2 mb-3">
+<span class="size-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-[10px] uppercase font-bold tracking-widest text-white/30">System Logic Stream</span>
+</div>
+<div class="font-mono text-[10px] md:text-xs text-white/20 h-24 overflow-y-auto custom-scrollbar flex flex-col gap-1">
+<p>&gt; Fetching service_availability_map version 2.4.1...</p>
+<p>&gt; Scanning local_node clusters for [BENGALURU_METRO]...</p>
+<p class="text-primary">&gt; Success: Hub_North_02 validated. Capacity: 84%</p>
+<p>&gt; Scanning local_node clusters for [PATNA_METRO]...</p>
+<p class="text-amber-500/60">&gt; Error: Node_Under_Construction. Redirecting to lead_capture_v2...</p>
+<p>&gt; Waiting for user input [pincode_buffer]...</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Global Platform Footer -->
+<footer class="mt-auto border-t border-white/10 py-8 px-6 bg-background-dark/80">
+<div class="max-w-[1200px] mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="flex items-center gap-6">
+<span class="text-white/30 text-xs font-bold uppercase tracking-widest">Other NEXCART Universes</span>
+<div class="flex gap-4">
+<a class="group flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-white/40 group-hover:text-primary transition-colors">sports_esports</span>
+<span class="text-xs font-bold text-white/40 group-hover:text-white">Gaming</span>
+</a>
+<a class="group flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-white/40 group-hover:text-primary transition-colors">music_note</span>
+<span class="text-xs font-bold text-white/40 group-hover:text-white">Music</span>
+</a>
+</div>
+</div>
+<div class="flex items-center gap-6 text-white/20 text-xs">
+<a class="hover:text-white transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-white transition-colors" href="#">Terms of Service</a>
+<span>© 2024 NEXCART LOGISTICS INC.</span>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

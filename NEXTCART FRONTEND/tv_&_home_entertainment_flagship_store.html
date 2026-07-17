@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TV &amp; Home Entertainment Flagship Store | NEXCART</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2525f4",
+                        "background-light": "#f5f5f8",
+                        "background-dark": "#101022",
+                        "success": "#388e3c",
+                        "rating-green": "#26a541",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .filled {
+            font-variation-settings: 'FILL' 1;
+        }
+        /* Custom Checkbox Tick */
+        .custom-checkbox {
+            --checkbox-tick-svg: url('data:image/svg+xml,%3csvg viewBox=%270 0 16 16%27 fill=%27rgb(255,255,255)%27 xmlns=%27http://www.w3.org/2000/svg%27%3e%3cpath d=%27M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z%27/%3e%3c/svg%3e');
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111118] dark:text-white transition-colors duration-200">
+<!-- Global Header -->
+<header class="sticky top-0 z-50 w-full bg-white dark:bg-background-dark border-b border-[#f0f0f5] dark:border-gray-800">
+<div class="max-w-[1440px] mx-auto px-6 h-16 flex items-center justify-between gap-8">
+<!-- Logo & Search -->
+<div class="flex items-center gap-8 flex-1">
+<div class="flex items-center gap-2 text-primary shrink-0">
+<span class="material-symbols-outlined text-3xl font-bold">shopping_cart_checkout</span>
+<h2 class="text-xl font-bold leading-tight tracking-tight text-[#111118] dark:text-white">NEXCART</h2>
+</div>
+<div class="flex-1 max-w-xl">
+<div class="relative flex items-center w-full h-10 bg-[#f0f0f5] dark:bg-gray-800 rounded-lg overflow-hidden border border-transparent focus-within:border-primary/50 transition-all">
+<span class="material-symbols-outlined px-3 text-[#60608a] dark:text-gray-400">search</span>
+<input class="w-full bg-transparent border-none focus:ring-0 text-sm placeholder:text-[#60608a] dark:placeholder:gray-500" placeholder="Search for TVs, Soundbars and more" type="text"/>
+</div>
+</div>
+</div>
+<!-- Navigation Actions -->
+<nav class="flex items-center gap-6">
+<div class="hidden lg:flex items-center gap-6 text-sm font-medium">
+<a class="hover:text-primary transition-colors" href="#">Smart TVs</a>
+<a class="hover:text-primary transition-colors" href="#">Home Theater</a>
+<a class="hover:text-primary transition-colors" href="#">Accessories</a>
+<a class="hover:text-primary transition-colors" href="#">Offers</a>
+</div>
+<div class="h-6 w-px bg-gray-200 dark:bg-gray-700"></div>
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg text-sm font-bold hover:bg-blue-700 transition-all">
+<span class="material-symbols-outlined text-[20px]">person</span>
+<span>Login</span>
+</button>
+<button class="relative p-2 text-[#111118] dark:text-white hover:bg-[#f0f0f5] dark:hover:bg-gray-800 rounded-lg transition-all">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="absolute top-1 right-1 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-[10px] text-white">2</span>
+</button>
+<button class="p-2 text-[#111118] dark:text-white hover:bg-[#f0f0f5] dark:hover:bg-gray-800 rounded-lg transition-all">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+</nav>
+</div>
+</header>
+<main class="max-w-[1440px] mx-auto px-6 py-4">
+<!-- Breadcrumbs -->
+<nav class="flex items-center gap-2 text-sm text-[#60608a] dark:text-gray-400 mb-6">
+<a class="hover:text-primary" href="#">Home</a>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<a class="hover:text-primary" href="#">Electronics</a>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span class="text-[#111118] dark:text-white font-medium">Televisions</span>
+</nav>
+<div class="flex gap-6">
+<!-- Sidebar Filters -->
+<aside class="w-[280px] shrink-0">
+<div class="bg-white dark:bg-background-dark border border-[#f0f0f5] dark:border-gray-800 rounded-lg overflow-hidden sticky top-20">
+<div class="p-4 border-b border-[#f0f0f5] dark:border-gray-800 flex items-center justify-between">
+<div>
+<h1 class="text-lg font-bold">Filters</h1>
+<p class="text-xs text-[#60608a] dark:text-gray-400">1,248 Results found</p>
+</div>
+<button class="text-xs text-primary font-bold hover:underline">CLEAR ALL</button>
+</div>
+<div class="overflow-y-auto max-h-[calc(100vh-200px)]">
+<!-- Display Tech Section -->
+<div class="p-4 border-b border-[#f0f0f5] dark:border-gray-800">
+<h3 class="text-xs font-bold uppercase tracking-wider text-[#60608a] dark:text-gray-400 mb-3">Display Technology</h3>
+<div class="space-y-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary dark:bg-gray-700 dark:border-gray-600" type="checkbox"/>
+<span class="text-sm group-hover:text-primary transition-colors">OLED</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary dark:bg-gray-700 dark:border-gray-600" type="checkbox"/>
+<span class="text-sm group-hover:text-primary transition-colors">QLED</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary dark:bg-gray-700 dark:border-gray-600" type="checkbox"/>
+<span class="text-sm group-hover:text-primary transition-colors">Mini-LED</span>
+</label>
+</div>
+</div>
+<!-- Screen Size Section -->
+<div class="p-4 border-b border-[#f0f0f5] dark:border-gray-800">
+<h3 class="text-xs font-bold uppercase tracking-wider text-[#60608a] dark:text-gray-400 mb-3">Screen Size</h3>
+<div class="space-y-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary dark:bg-gray-700 dark:border-gray-600" type="checkbox"/>
+<span class="text-sm group-hover:text-primary transition-colors">32 inch</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary dark:bg-gray-700 dark:border-gray-600" type="checkbox"/>
+<span class="text-sm group-hover:text-primary transition-colors">43 inch</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary dark:bg-gray-700 dark:border-gray-600" type="checkbox"/>
+<span class="text-sm group-hover:text-primary transition-colors">55 inch</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary dark:bg-gray-700 dark:border-gray-600" type="checkbox"/>
+<span class="text-sm group-hover:text-primary transition-colors">65 inch &amp; above</span>
+</label>
+</div>
+</div>
+<!-- Resolution Section -->
+<div class="p-4 border-b border-[#f0f0f5] dark:border-gray-800">
+<h3 class="text-xs font-bold uppercase tracking-wider text-[#60608a] dark:text-gray-400 mb-3">Resolution</h3>
+<div class="space-y-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary dark:bg-gray-700 dark:border-gray-600" type="checkbox"/>
+<span class="text-sm group-hover:text-primary transition-colors">4K Ultra HD</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary dark:bg-gray-700 dark:border-gray-600" type="checkbox"/>
+<span class="text-sm group-hover:text-primary transition-colors">8K Ultra HD</span>
+</label>
+</div>
+</div>
+<!-- Connectivity -->
+<div class="p-4">
+<h3 class="text-xs font-bold uppercase tracking-wider text-[#60608a] dark:text-gray-400 mb-3">Connectivity</h3>
+<div class="space-y-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary dark:bg-gray-700 dark:border-gray-600" type="checkbox"/>
+<span class="text-sm group-hover:text-primary transition-colors">3 x HDMI Ports</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary dark:bg-gray-700 dark:border-gray-600" type="checkbox"/>
+<span class="text-sm group-hover:text-primary transition-colors">Wi-Fi Built-in</span>
+</label>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Product Grid Area -->
+<section class="flex-1">
+<!-- Sorting & View Options -->
+<div class="bg-white dark:bg-background-dark p-4 rounded-lg border border-[#f0f0f5] dark:border-gray-800 mb-6 flex items-center justify-between">
+<div class="flex items-center gap-6">
+<span class="text-sm font-bold">Sort By</span>
+<div class="flex items-center gap-6">
+<button class="text-sm text-primary border-b-2 border-primary pb-1 font-bold">Relevance</button>
+<button class="text-sm text-[#60608a] dark:text-gray-400 hover:text-primary pb-1 transition-all">Popularity</button>
+<button class="text-sm text-[#60608a] dark:text-gray-400 hover:text-primary pb-1 transition-all">Price -- Low to High</button>
+<button class="text-sm text-[#60608a] dark:text-gray-400 hover:text-primary pb-1 transition-all">Price -- High to Low</button>
+<button class="text-sm text-[#60608a] dark:text-gray-400 hover:text-primary pb-1 transition-all">Newest First</button>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-xs text-[#60608a] dark:text-gray-400">Page 1 of 32</span>
+</div>
+</div>
+<!-- Product Grid (4 columns) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Product Card 1 -->
+<div class="bg-white dark:bg-background-dark rounded-lg border border-[#f0f0f5] dark:border-gray-800 overflow-hidden hover:shadow-xl transition-all group flex flex-col h-full">
+<div class="relative p-4 flex flex-col items-center">
+<div class="absolute top-2 left-2 z-10">
+<label class="flex items-center gap-1 cursor-pointer">
+<input class="h-3.5 w-3.5 rounded border-gray-300 text-primary focus:ring-0" type="checkbox"/>
+<span class="text-[10px] font-medium text-gray-500">Compare</span>
+</label>
+</div>
+<button class="absolute top-2 right-2 p-1.5 text-gray-300 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+<div class="w-full h-48 mb-4 bg-center bg-no-repeat bg-contain transition-transform group-hover:scale-105" data-alt="Modern 55 inch OLED TV with vibrant display" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAp-ei6I0H64ka93D2ZNmdWmVNOiE07lQf0UnHATlUFFdzNt-5GxDqr51GZygsgkMqNjgzlz9FlaPB1pbvj6irGMINguqMklMvucHL04O6sMAFRH6mQwKwlZipcjDUCZq_pgxawPsRAT_jTHc7yKanhKMALQNowkBw4PzsmZn9yuiZGx_51l33Lt0_WCOD04s0n9v-lX6X0s69YiHFLNJgbMzIy7xrGKrcz_SrmbYFNVCdiudsLAlq26jcKxY0YJwR64ZHa1XjV2_PI");'>
+</div>
+</div>
+<div class="px-4 pb-4 flex flex-col flex-1">
+<h3 class="text-sm font-medium line-clamp-2 mb-2 group-hover:text-primary transition-colors">
+                                SONY Bravia XR 55 inch OLED 4K Ultra HD Smart Google TV
+                            </h3>
+<div class="flex items-center gap-2 mb-3">
+<span class="bg-rating-green text-white text-[11px] font-bold px-1.5 py-0.5 rounded flex items-center gap-0.5">
+                                    4.7 <span class="material-symbols-outlined text-[12px] filled">star</span>
+</span>
+<span class="text-xs text-gray-500 font-medium">(2,450 Ratings)</span>
+</div>
+<ul class="text-[11px] text-gray-500 space-y-1 mb-4">
+<li class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">done</span> Cognitive Processor XR</li>
+<li class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">done</span> Acoustic Surface Audio+</li>
+</ul>
+<div class="mt-auto">
+<div class="flex items-center gap-2">
+<span class="text-lg font-bold">₹1,42,490</span>
+<span class="text-xs text-gray-400 line-through">₹1,99,990</span>
+<span class="text-xs text-success font-bold">28% off</span>
+</div>
+<div class="flex flex-wrap gap-2 mt-2">
+<span class="text-[10px] text-success font-bold bg-success/10 px-1.5 py-0.5 rounded uppercase">Special Price</span>
+<span class="text-[10px] text-blue-600 font-medium bg-blue-50 dark:bg-blue-900/20 px-1.5 py-0.5 rounded">GST Invoice Available</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-white dark:bg-background-dark rounded-lg border border-[#f0f0f5] dark:border-gray-800 overflow-hidden hover:shadow-xl transition-all group flex flex-col h-full">
+<div class="relative p-4 flex flex-col items-center">
+<div class="absolute top-2 left-2 z-10">
+<label class="flex items-center gap-1 cursor-pointer">
+<input class="h-3.5 w-3.5 rounded border-gray-300 text-primary focus:ring-0" type="checkbox"/>
+<span class="text-[10px] font-medium text-gray-500">Compare</span>
+</label>
+</div>
+<button class="absolute top-2 right-2 p-1.5 text-gray-300 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+<div class="w-full h-48 mb-4 bg-center bg-no-repeat bg-contain transition-transform group-hover:scale-105" data-alt="Slim bezel Samsung QLED Television" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAvszP3Tryk9EaR7xKJhXkfmTvz5vTza6t7BYgQhln3lW2CM0CPAww46WBMuu2pp-2sgUlFs8WdD1nMo7_9WZflq8MprZ61uJI7lTcncneU_HatBR-js8bep4UkVdPtyjhqoeCKE5je9ncbgMFIm1znTD-e3_pUrT-FGh4UYTFGUvVmrU0Xk5epwhaa1vhQ9i5k6JPKi_6iaKYLO-GCgwQ9ZmdL1N4Rr1F2Zt1YfpxlgxU2Zm5EYT_rkOUJvMDrAj2l7R2Jtc1023si");'>
+</div>
+</div>
+<div class="px-4 pb-4 flex flex-col flex-1">
+<h3 class="text-sm font-medium line-clamp-2 mb-2 group-hover:text-primary transition-colors">
+                                Samsung Neo QLED 65 inch 8K Ultra HD Smart TV (2024 Model)
+                            </h3>
+<div class="flex items-center gap-2 mb-3">
+<span class="bg-rating-green text-white text-[11px] font-bold px-1.5 py-0.5 rounded flex items-center gap-0.5">
+                                    4.5 <span class="material-symbols-outlined text-[12px] filled">star</span>
+</span>
+<span class="text-xs text-gray-500 font-medium">(1,120 Ratings)</span>
+</div>
+<ul class="text-[11px] text-gray-500 space-y-1 mb-4">
+<li class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">done</span> Quantum Matrix Technology</li>
+<li class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">done</span> Neural Quantum Processor 8K</li>
+</ul>
+<div class="mt-auto">
+<div class="flex items-center gap-2">
+<span class="text-lg font-bold">₹2,89,990</span>
+<span class="text-xs text-gray-400 line-through">₹3,45,000</span>
+<span class="text-xs text-success font-bold">15% off</span>
+</div>
+<div class="flex flex-wrap gap-2 mt-2">
+<span class="text-[10px] text-red-500 font-bold bg-red-50 dark:bg-red-900/20 px-1.5 py-0.5 rounded">Only 3 Left!</span>
+<span class="text-[10px] text-blue-600 font-medium bg-blue-50 dark:bg-blue-900/20 px-1.5 py-0.5 rounded">GST Invoice Available</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="bg-white dark:bg-background-dark rounded-lg border border-[#f0f0f5] dark:border-gray-800 overflow-hidden hover:shadow-xl transition-all group flex flex-col h-full">
+<div class="relative p-4 flex flex-col items-center">
+<div class="absolute top-2 left-2 z-10">
+<label class="flex items-center gap-1 cursor-pointer">
+<input class="h-3.5 w-3.5 rounded border-gray-300 text-primary focus:ring-0" type="checkbox"/>
+<span class="text-[10px] font-medium text-gray-500">Compare</span>
+</label>
+</div>
+<button class="absolute top-2 right-2 p-1.5 text-gray-300 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+<div class="w-full h-48 mb-4 bg-center bg-no-repeat bg-contain transition-transform group-hover:scale-105" data-alt="LG OLED TV with minimalist stand" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB2Ki2VneBDzuHhpJTLlRCu_kjjl0JgjpGf-5eiUqKWua7yAl1jQAlH5zWqq9qIdUjFQPDYCLFTxYBhHGZNum-33ma20vIgu2No4EcuTKelkiJjCe_wpLRfHEqHimk6zpd2MhviU7EBg3r8I_7sD4VL_8k825f9Q5V7ZFbhh4Ej-3meKcvGX3F-kSMEaQXWjkPbxrcr9YAW9DrhcwmQGjObsdZ0Z-KFI7Z25eOkF4Pg66Wr6CiSHBX-oIWDvG7fnNF_1bTgu1Osc7eh");'>
+</div>
+</div>
+<div class="px-4 pb-4 flex flex-col flex-1">
+<h3 class="text-sm font-medium line-clamp-2 mb-2 group-hover:text-primary transition-colors">
+                                LG C3 55 inch OLED evo 4K Smart TV with Dolby Vision
+                            </h3>
+<div class="flex items-center gap-2 mb-3">
+<span class="bg-rating-green text-white text-[11px] font-bold px-1.5 py-0.5 rounded flex items-center gap-0.5">
+                                    4.8 <span class="material-symbols-outlined text-[12px] filled">star</span>
+</span>
+<span class="text-xs text-gray-500 font-medium">(3,842 Ratings)</span>
+</div>
+<ul class="text-[11px] text-gray-500 space-y-1 mb-4">
+<li class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">done</span> α9 AI Processor Gen6</li>
+<li class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">done</span> 120Hz Refresh Rate</li>
+</ul>
+<div class="mt-auto">
+<div class="flex items-center gap-2">
+<span class="text-lg font-bold">₹1,24,990</span>
+<span class="text-xs text-gray-400 line-through">₹1,89,990</span>
+<span class="text-xs text-success font-bold">34% off</span>
+</div>
+<div class="flex flex-wrap gap-2 mt-2">
+<span class="text-[10px] text-success font-bold bg-success/10 px-1.5 py-0.5 rounded uppercase">Lowest Price in 30 Days</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="bg-white dark:bg-background-dark rounded-lg border border-[#f0f0f5] dark:border-gray-800 overflow-hidden hover:shadow-xl transition-all group flex flex-col h-full">
+<div class="relative p-4 flex flex-col items-center">
+<div class="absolute top-2 left-2 z-10">
+<label class="flex items-center gap-1 cursor-pointer">
+<input class="h-3.5 w-3.5 rounded border-gray-300 text-primary focus:ring-0" type="checkbox"/>
+<span class="text-[10px] font-medium text-gray-500">Compare</span>
+</label>
+</div>
+<button class="absolute top-2 right-2 p-1.5 text-gray-300 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+<div class="w-full h-48 mb-4 bg-center bg-no-repeat bg-contain transition-transform group-hover:scale-105" data-alt="Sony Bravia TV front view" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBvKNcQnPV0FGpCssTG2BqB5ZqGpb0sTFC5uHanHMUOm0D2kGRK-pHPWeFskXQslR1trz-RWMLCREpFZ6JI1uc5ubpouop0bu-YzzeA4XRtmNoxT0DPC1_2gic-yot_c5fqwamTEFFuenboO3w0rop2vQ5Ra2GfA3P-9bgYIUcwNlf9D3xRfbCeECwcUWmUg546xsqDF5k9O--GvlKNipSrq726XsahWDc9-CV-Us70-AHCYD-sHC7rBGhZ0xJQPmfVxA2-7oWZwEGf");'>
+</div>
+</div>
+<div class="px-4 pb-4 flex flex-col flex-1">
+<h3 class="text-sm font-medium line-clamp-2 mb-2 group-hover:text-primary transition-colors">
+                                SONY Bravia A80L 65 inch OLED 4K Ultra HD Smart TV
+                            </h3>
+<div class="flex items-center gap-2 mb-3">
+<span class="bg-rating-green text-white text-[11px] font-bold px-1.5 py-0.5 rounded flex items-center gap-0.5">
+                                    4.6 <span class="material-symbols-outlined text-[12px] filled">star</span>
+</span>
+<span class="text-xs text-gray-500 font-medium">(1,520 Ratings)</span>
+</div>
+<ul class="text-[11px] text-gray-500 space-y-1 mb-4">
+<li class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">done</span> XR OLED Contrast Pro</li>
+<li class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">done</span> Google TV &amp; AirPlay 2</li>
+</ul>
+<div class="mt-auto">
+<div class="flex items-center gap-2">
+<span class="text-lg font-bold">₹2,18,490</span>
+<span class="text-xs text-gray-400 line-through">₹2,99,990</span>
+<span class="text-xs text-success font-bold">27% off</span>
+</div>
+<div class="flex flex-wrap gap-2 mt-2">
+<span class="text-[10px] text-primary font-bold bg-primary/10 px-1.5 py-0.5 rounded uppercase">Exchange Available</span>
+<span class="text-[10px] text-blue-600 font-medium bg-blue-50 dark:bg-blue-900/20 px-1.5 py-0.5 rounded">GST Invoice</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Additional Product Rows (Repeat or Simplified for UI density visualization) -->
+<!-- Row 2 Card 1 -->
+<div class="bg-white dark:bg-background-dark rounded-lg border border-[#f0f0f5] dark:border-gray-800 overflow-hidden hover:shadow-xl transition-all group flex flex-col h-full">
+<div class="relative p-4 flex flex-col items-center">
+<div class="w-full h-48 mb-4 bg-center bg-no-repeat bg-contain transition-transform group-hover:scale-105" data-alt="Modern 50 inch Smart TV display" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuATX1JuKv9oufLH5gRlb7k5NWnYrCS7R66xCizyX_8rWYE30KGkj7LmUjSjgW9ktBMj9xd-oQeudIQNcZe5d2dlGjdp13IAhX6uEv_bxsrVnsdLgH3_ER573jVTHXo_p98mo-cfL-Eu1-tcXzZGscMdynR7y2ycTiV0d_E3UFO514mcPEew5b1pBaIYWl26qx-ae2Y-MkFduahkidKgm3xNlmgK7jN69p8gi0SXAhTctg7RwqN_A52SD-rjH-vr8OhjBY3kF2fphIhx");'>
+</div>
+</div>
+<div class="px-4 pb-4 flex flex-col flex-1">
+<h3 class="text-sm font-medium line-clamp-2 mb-2 group-hover:text-primary transition-colors">
+                                Samsung Crystal 4K Vivid Pro 55 inch Ultra HD Smart TV
+                            </h3>
+<div class="flex items-center gap-2 mb-3">
+<span class="bg-rating-green text-white text-[11px] font-bold px-1.5 py-0.5 rounded flex items-center gap-0.5">
+                                    4.3 <span class="material-symbols-outlined text-[12px] filled">star</span>
+</span>
+<span class="text-xs text-gray-500 font-medium">(8,540 Ratings)</span>
+</div>
+<div class="mt-auto">
+<div class="flex items-center gap-2">
+<span class="text-lg font-bold">₹45,990</span>
+<span class="text-xs text-gray-400 line-through">₹68,900</span>
+<span class="text-xs text-success font-bold">33% off</span>
+</div>
+<span class="block mt-2 text-[10px] text-gray-500 italic">No Cost EMI starts from ₹3,833/month</span>
+</div>
+</div>
+</div>
+<!-- Row 2 Card 2 -->
+<div class="bg-white dark:bg-background-dark rounded-lg border border-[#f0f0f5] dark:border-gray-800 overflow-hidden hover:shadow-xl transition-all group flex flex-col h-full opacity-70">
+<div class="relative p-4 flex flex-col items-center">
+<div class="absolute inset-0 bg-white/60 dark:bg-black/40 z-10 flex items-center justify-center">
+<span class="bg-black/80 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Out of Stock</span>
+</div>
+<div class="w-full h-48 mb-4 bg-center bg-no-repeat bg-contain" data-alt="LG G3 OLED TV" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD-GOL4ZAnd9vZ6q557qLZqM6dUIPbS5enZasWFMrIRpTKKSgJqbFeJa2a05-XdUe63HzHyRlCYlTPcd0WWedXdjQ047jcvzt8jdPglChGRtBlwGK_yE2LaD9vF6i7eoa_OwQ_a7CPZkAC8-VuAJxm0uVnGvhnRDNuFicSNxhRJhF18NmoeQKNJg-vJNls7Rbpqfb8dUTMax0hxRjMxO369lBBMVjvjiT4nNeKbWdfNTYjDKwmOWNnyn3fc4JXxadVtWnHY_3H0arRN");'>
+</div>
+</div>
+<div class="px-4 pb-4 flex flex-col flex-1">
+<h3 class="text-sm font-medium line-clamp-2 mb-2">
+                                LG G3 Gallery Series 77 inch OLED 4K Smart TV
+                            </h3>
+<div class="mt-auto">
+<div class="flex items-center gap-2">
+<span class="text-lg font-bold">₹4,24,990</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-10 py-6 border-t border-[#f0f0f5] dark:border-gray-800 flex items-center justify-between">
+<button class="flex items-center gap-2 text-primary font-bold hover:bg-primary/10 px-4 py-2 rounded-lg transition-all">
+<span class="material-symbols-outlined">west</span>
+<span>Previous</span>
+</button>
+<div class="flex items-center gap-2">
+<button class="w-10 h-10 rounded-full bg-primary text-white font-bold">1</button>
+<button class="w-10 h-10 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 font-medium">2</button>
+<button class="w-10 h-10 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 font-medium">3</button>
+<button class="w-10 h-10 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 font-medium">4</button>
+<span class="px-2">...</span>
+<button class="w-10 h-10 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 font-medium">32</button>
+</div>
+<button class="flex items-center gap-2 text-primary font-bold hover:bg-primary/10 px-4 py-2 rounded-lg transition-all">
+<span>Next</span>
+<span class="material-symbols-outlined">east</span>
+</button>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-white dark:bg-background-dark border-t border-[#f0f0f5] dark:border-gray-800 mt-12 py-10">
+<div class="max-w-[1440px] mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+<div>
+<h4 class="text-xs font-bold uppercase tracking-widest text-[#60608a] dark:text-gray-400 mb-4">About</h4>
+<ul class="space-y-2 text-sm">
+<li><a class="hover:text-primary" href="#">Contact Us</a></li>
+<li><a class="hover:text-primary" href="#">About Us</a></li>
+<li><a class="hover:text-primary" href="#">Careers</a></li>
+<li><a class="hover:text-primary" href="#">Press</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-xs font-bold uppercase tracking-widest text-[#60608a] dark:text-gray-400 mb-4">Help</h4>
+<ul class="space-y-2 text-sm">
+<li><a class="hover:text-primary" href="#">Payments</a></li>
+<li><a class="hover:text-primary" href="#">Shipping</a></li>
+<li><a class="hover:text-primary" href="#">Cancellation &amp; Returns</a></li>
+<li><a class="hover:text-primary" href="#">FAQ</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-xs font-bold uppercase tracking-widest text-[#60608a] dark:text-gray-400 mb-4">Policy</h4>
+<ul class="space-y-2 text-sm">
+<li><a class="hover:text-primary" href="#">Return Policy</a></li>
+<li><a class="hover:text-primary" href="#">Terms Of Use</a></li>
+<li><a class="hover:text-primary" href="#">Security</a></li>
+<li><a class="hover:text-primary" href="#">Privacy</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-xs font-bold uppercase tracking-widest text-[#60608a] dark:text-gray-400 mb-4">Social</h4>
+<div class="flex gap-4">
+<button class="p-2 bg-gray-100 dark:bg-gray-800 rounded-lg hover:text-primary transition-all">
+<span class="material-symbols-outlined">language</span>
+</button>
+<button class="p-2 bg-gray-100 dark:bg-gray-800 rounded-lg hover:text-primary transition-all">
+<span class="material-symbols-outlined">share</span>
+</button>
+<button class="p-2 bg-gray-100 dark:bg-gray-800 rounded-lg hover:text-primary transition-all">
+<span class="material-symbols-outlined">public</span>
+</button>
+</div>
+<div class="mt-6">
+<p class="text-[10px] text-gray-500">© 2024 NEXCART Marketplace. All Rights Reserved.</p>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

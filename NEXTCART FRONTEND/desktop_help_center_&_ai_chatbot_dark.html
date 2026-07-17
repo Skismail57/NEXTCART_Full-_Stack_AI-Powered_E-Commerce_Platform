@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEXCART Desktop Help Center &amp; AI Chatbot</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#25c0f4",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#101e22",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-effect {
+            background: rgba(27, 36, 39, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .neon-glow {
+            box-shadow: 0 0 15px rgba(37, 192, 244, 0.3);
+        }
+        .neon-border {
+            border: 1px solid rgba(37, 192, 244, 0.5);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #3b4e54;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-white selection:bg-primary selection:text-background-dark">
+<div class="relative flex min-h-screen flex-col overflow-x-hidden">
+<!-- Top Navigation -->
+<header class="flex items-center justify-between border-b border-[#283539] bg-background-dark/80 backdrop-blur-md px-10 py-4 sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3 text-primary">
+<div class="size-8">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 33.9891 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-xl font-bold tracking-tight">NEXCART <span class="text-white/60 font-normal">Support</span></h2>
+</div>
+<nav class="flex items-center gap-8">
+<a class="text-white hover:text-primary transition-colors text-sm font-medium" href="#">Home</a>
+<a class="text-white/70 hover:text-primary transition-colors text-sm font-medium" href="#">Knowledge Base</a>
+<a class="text-white/70 hover:text-primary transition-colors text-sm font-medium" href="#">Community</a>
+<a class="text-white/70 hover:text-primary transition-colors text-sm font-medium" href="#">API Docs</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end gap-6 items-center">
+<label class="flex flex-col min-w-40 h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-[#9cb2ba] flex border-none bg-[#1b2427] items-center justify-center pl-4 rounded-l-lg">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 border-none bg-[#1b2427] text-white focus:ring-1 focus:ring-primary h-full placeholder:text-[#9cb2ba] px-4 rounded-r-lg text-sm" placeholder="Quick search..."/>
+</div>
+</label>
+<div class="flex gap-3">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-[#1b2427] hover:bg-primary/20 text-white transition-all">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-[#1b2427] hover:bg-primary/20 text-white transition-all">
+<span class="material-symbols-outlined text-[20px]">help</span>
+</button>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border border-primary/30" data-alt="User profile avatar portrait" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAu5vGa1nZQRMTv9VrtNCtP-uU3d1jzc2rrXnVUzQ9zM9n-tYw3QDkMZOcfAlV7cc5VL8jqlC5plIwG-yL39NhC3VArv2gpWD0umzPTEPQIeqtffCNfnZqfxSDPFQ_bPQ7WSPUMRvz1oHAHKje7eGXKwciwe2PgFo5aevQw1AyeFrq8ki6F1QgQzUkTZnXto1mEkNTYe-7fGroETISxP-lsLPwQFZ7MRIJunoazN8UsBd82Hrr3b-c8zlyoVaYwyeQ8MIBDd7qrGRhn");'></div>
+</div>
+</header>
+<main class="flex-1 flex px-10 gap-8 py-8 max-w-[1440px] mx-auto w-full">
+<!-- Left Side: Content -->
+<div class="flex-1 flex flex-col gap-8">
+<!-- Hero Section -->
+<section class="relative overflow-hidden rounded-xl bg-gradient-to-br from-[#1b2427] to-background-dark p-12 border border-[#283539]">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[100px] -mr-32 -mt-32"></div>
+<div class="relative z-10 max-w-2xl">
+<h1 class="text-5xl font-bold leading-tight tracking-tight mb-4">
+                            How can we <span class="text-primary">help</span> you today?
+                        </h1>
+<p class="text-[#9cb2ba] text-lg mb-8">Search our expansive knowledge base or let NEXA AI guide you through our features.</p>
+<div class="flex h-16 w-full max-w-xl group">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full neon-glow transition-shadow">
+<div class="text-primary flex border border-primary/20 bg-[#1b2427] items-center justify-center pl-6 rounded-l-lg border-r-0">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 border border-primary/20 bg-[#1b2427] focus:border-primary focus:ring-0 h-full text-white placeholder:text-[#9cb2ba] px-4 text-lg font-normal" placeholder="Search orders, shipping, accounts..."/>
+<button class="flex min-w-[120px] items-center justify-center rounded-r-lg bg-primary text-background-dark font-bold text-base hover:bg-primary/90 transition-all px-6">
+                                    Search
+                                </button>
+</div>
+</div>
+<div class="mt-6 flex flex-wrap gap-3">
+<span class="text-xs font-bold uppercase tracking-wider text-[#9cb2ba] pt-2 mr-2">Trending:</span>
+<button class="px-4 py-1.5 rounded-full bg-[#1b2427] border border-[#3b4e54] text-sm text-[#9cb2ba] hover:border-primary hover:text-primary transition-all">Gamified Badges</button>
+<button class="px-4 py-1.5 rounded-full bg-[#1b2427] border border-[#3b4e54] text-sm text-[#9cb2ba] hover:border-primary hover:text-primary transition-all">Seller Payouts</button>
+<button class="px-4 py-1.5 rounded-full bg-[#1b2427] border border-[#3b4e54] text-sm text-[#9cb2ba] hover:border-primary hover:text-primary transition-all">NFT Minting</button>
+</div>
+</div>
+</section>
+<!-- Support Grid -->
+<section>
+<div class="flex items-center justify-between mb-6 px-2">
+<h2 class="text-2xl font-bold tracking-tight">Browse by Category</h2>
+<a class="text-primary text-sm font-semibold hover:underline flex items-center gap-1" href="#">
+                            View all topics <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-3 gap-6">
+<div class="flex flex-col gap-4 rounded-xl border border-[#3b4e54] bg-[#1b2427] p-6 hover:border-primary/50 transition-all cursor-pointer group">
+<div class="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:neon-glow transition-all">
+<span class="material-symbols-outlined text-[32px]">package_2</span>
+</div>
+<div>
+<h3 class="text-lg font-bold mb-1 group-hover:text-primary transition-colors">Orders &amp; Returns</h3>
+<p class="text-[#9cb2ba] text-sm leading-relaxed">Track shipments, manage cancellations, or start a hassle-free return.</p>
+</div>
+</div>
+<div class="flex flex-col gap-4 rounded-xl border border-[#3b4e54] bg-[#1b2427] p-6 hover:border-primary/50 transition-all cursor-pointer group">
+<div class="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:neon-glow transition-all">
+<span class="material-symbols-outlined text-[32px]">storefront</span>
+</div>
+<div>
+<h3 class="text-lg font-bold mb-1 group-hover:text-primary transition-colors">Seller Central</h3>
+<p class="text-[#9cb2ba] text-sm leading-relaxed">Advanced analytics, inventory management, and store customization tools.</p>
+</div>
+</div>
+<div class="flex flex-col gap-4 rounded-xl border border-[#3b4e54] bg-[#1b2427] p-6 hover:border-primary/50 transition-all cursor-pointer group">
+<div class="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:neon-glow transition-all">
+<span class="material-symbols-outlined text-[32px]">payments</span>
+</div>
+<div>
+<h3 class="text-lg font-bold mb-1 group-hover:text-primary transition-colors">Payments &amp; Wallet</h3>
+<p class="text-[#9cb2ba] text-sm leading-relaxed">Payout cycles, crypto integration, and secure billing information.</p>
+</div>
+</div>
+<div class="flex flex-col gap-4 rounded-xl border border-[#3b4e54] bg-[#1b2427] p-6 hover:border-primary/50 transition-all cursor-pointer group">
+<div class="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:neon-glow transition-all">
+<span class="material-symbols-outlined text-[32px]">social_leaderboard</span>
+</div>
+<div>
+<h3 class="text-lg font-bold mb-1 group-hover:text-primary transition-colors">Social &amp; Gamification</h3>
+<p class="text-[#9cb2ba] text-sm leading-relaxed">Learn about loyalty levels, guild missions, and community badges.</p>
+</div>
+</div>
+<div class="flex flex-col gap-4 rounded-xl border border-[#3b4e54] bg-[#1b2427] p-6 hover:border-primary/50 transition-all cursor-pointer group">
+<div class="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:neon-glow transition-all">
+<span class="material-symbols-outlined text-[32px]">shield_person</span>
+</div>
+<div>
+<h3 class="text-lg font-bold mb-1 group-hover:text-primary transition-colors">Account Security</h3>
+<p class="text-[#9cb2ba] text-sm leading-relaxed">Two-factor authentication, privacy controls, and login history.</p>
+</div>
+</div>
+<div class="flex flex-col gap-4 rounded-xl border border-[#3b4e54] bg-[#1b2427] p-6 hover:border-primary/50 transition-all cursor-pointer group">
+<div class="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:neon-glow transition-all">
+<span class="material-symbols-outlined text-[32px]">api</span>
+</div>
+<div>
+<h3 class="text-lg font-bold mb-1 group-hover:text-primary transition-colors">Developer Portal</h3>
+<p class="text-[#9cb2ba] text-sm leading-relaxed">Integration guides, webhook documentation, and sandboxing.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Live Status Footer -->
+<section class="mt-auto pt-8 border-t border-[#283539]">
+<div class="bg-[#1b2427] rounded-xl p-6 flex items-center justify-between border border-[#3b4e54]">
+<div class="flex items-center gap-6">
+<div class="flex flex-col">
+<span class="text-xs uppercase tracking-widest text-[#9cb2ba] font-bold">Contact Support</span>
+<span class="text-lg font-bold">Need a human? We're online.</span>
+</div>
+<div class="h-8 w-[1px] bg-[#3b4e54]"></div>
+<div class="flex items-center gap-3">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<div class="size-2 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]"></div>
+<span class="text-sm font-medium">Live Chat</span>
+</div>
+<span class="text-xs text-[#9cb2ba]">Wait time: &lt; 1 min</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<div class="size-2 rounded-full bg-yellow-500 shadow-[0_0_8px_rgba(234,179,8,0.6)]"></div>
+<span class="text-sm font-medium">Phone Support</span>
+</div>
+<span class="text-xs text-[#9cb2ba]">Wait time: 12 min</span>
+</div>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="px-6 py-2.5 rounded-lg border border-primary/40 text-primary font-bold hover:bg-primary hover:text-background-dark transition-all text-sm">Call Support</button>
+<button class="px-6 py-2.5 rounded-lg bg-[#283539] text-white font-bold hover:bg-[#3b4e54] transition-all text-sm">Submit Ticket</button>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Side: NEXA AI Expanded Chatbot -->
+<aside class="w-[400px] flex flex-col glass-effect rounded-2xl border border-primary/20 overflow-hidden sticky top-24 h-[calc(100vh-140px)] neon-glow">
+<!-- Chat Header -->
+<div class="p-6 bg-gradient-to-r from-[#1b2427] to-background-dark border-b border-primary/20 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="relative">
+<div class="size-12 rounded-full bg-primary/20 flex items-center justify-center neon-glow">
+<span class="material-symbols-outlined text-primary text-[28px]">smart_toy</span>
+</div>
+<div class="absolute bottom-0 right-0 size-3 bg-green-500 rounded-full border-2 border-background-dark"></div>
+</div>
+<div>
+<h3 class="text-lg font-bold leading-none mb-1">NEXA AI</h3>
+<span class="text-xs text-primary font-medium tracking-wide flex items-center gap-1">
+<span class="inline-block size-1 bg-primary rounded-full animate-pulse"></span>
+                                ONLINE • READY TO ASSIST
+                            </span>
+</div>
+</div>
+<button class="text-[#9cb2ba] hover:text-white">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<!-- Chat Body -->
+<div class="flex-1 overflow-y-auto p-6 flex flex-col gap-6 custom-scrollbar bg-black/20">
+<div class="flex flex-col gap-2 max-w-[85%]">
+<div class="bg-[#283539] text-white p-4 rounded-tr-xl rounded-br-xl rounded-bl-xl text-sm leading-relaxed border border-[#3b4e54]">
+                            Welcome back, Alex! I see you have a pending shipment for the "Neo-Gamer Pro Desk". Would you like me to track it for you?
+                        </div>
+<span class="text-[10px] text-[#9cb2ba] font-medium ml-1">10:42 AM</span>
+</div>
+<div class="flex flex-col items-end gap-2 max-w-[85%] self-end">
+<div class="bg-primary text-background-dark p-4 rounded-tl-xl rounded-br-xl rounded-bl-xl text-sm font-medium">
+                            Yes, please track that shipment.
+                        </div>
+<span class="text-[10px] text-[#9cb2ba] font-medium mr-1">10:43 AM</span>
+</div>
+<div class="flex flex-col gap-2 max-w-[85%]">
+<div class="bg-[#283539] text-white p-4 rounded-tr-xl rounded-br-xl rounded-bl-xl text-sm leading-relaxed border border-[#3b4e54]">
+<div class="flex items-center gap-3 mb-3 pb-3 border-b border-[#3b4e54]">
+<span class="material-symbols-outlined text-primary">local_shipping</span>
+<div>
+<div class="text-xs text-[#9cb2ba]">ORDER #NX-88219</div>
+<div class="text-sm font-bold">In Transit - Arriving Tomorrow</div>
+</div>
+</div>
+                            The package has left the Neo-City hub. Current status: <span class="text-primary font-bold">On Schedule</span>. Is there anything else you'd like to know?
+                        </div>
+<div class="flex flex-wrap gap-2 mt-2">
+<button class="px-3 py-1.5 rounded-lg border border-primary/30 text-[11px] font-bold text-primary hover:bg-primary/10 transition-all">View Invoice</button>
+<button class="px-3 py-1.5 rounded-lg border border-primary/30 text-[11px] font-bold text-primary hover:bg-primary/10 transition-all">Delivery Instructions</button>
+</div>
+<span class="text-[10px] text-[#9cb2ba] font-medium ml-1">10:43 AM</span>
+</div>
+<!-- Typing Indicator -->
+<div class="flex items-center gap-2 mt-2">
+<div class="size-8 rounded-full bg-primary/10 flex items-center justify-center text-primary text-xs">
+<span class="material-symbols-outlined text-[16px]">smart_toy</span>
+</div>
+<div class="bg-[#1b2427] px-3 py-2 rounded-full flex gap-1">
+<span class="size-1.5 bg-primary/50 rounded-full animate-bounce"></span>
+<span class="size-1.5 bg-primary/50 rounded-full animate-bounce [animation-delay:-0.15s]"></span>
+<span class="size-1.5 bg-primary/50 rounded-full animate-bounce [animation-delay:-0.3s]"></span>
+</div>
+</div>
+</div>
+<!-- Chat Footer -->
+<div class="p-6 bg-[#1b2427] border-t border-primary/20">
+<div class="flex flex-wrap gap-2 mb-4">
+<button class="text-[11px] font-semibold text-primary/80 bg-primary/5 border border-primary/20 px-3 py-1.5 rounded-md hover:bg-primary hover:text-background-dark transition-all">Cancel Order</button>
+<button class="text-[11px] font-semibold text-primary/80 bg-primary/5 border border-primary/20 px-3 py-1.5 rounded-md hover:bg-primary hover:text-background-dark transition-all">Refund Policy</button>
+<button class="text-[11px] font-semibold text-primary/80 bg-primary/5 border border-primary/20 px-3 py-1.5 rounded-md hover:bg-primary hover:text-background-dark transition-all">Talk to Agent</button>
+</div>
+<div class="flex items-center gap-3 relative">
+<textarea class="w-full bg-[#283539] border border-[#3b4e54] focus:border-primary focus:ring-0 rounded-xl px-4 py-3 text-sm text-white placeholder:text-[#9cb2ba] resize-none min-h-[50px] custom-scrollbar" placeholder="Ask NEXA something..."></textarea>
+<button class="absolute right-2 bottom-2 size-9 rounded-lg bg-primary text-background-dark flex items-center justify-center hover:scale-105 transition-all shadow-[0_0_10px_rgba(37,192,244,0.4)]">
+<span class="material-symbols-outlined text-[20px] font-bold">send</span>
+</button>
+</div>
+</div>
+</aside>
+</main>
+</div>
+</body></html>

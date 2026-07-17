@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEXCART AI Intelligence Center</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1f68f9",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#0f1623",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: "Space Grotesk", sans-serif;
+        }
+        .graph-glow {
+            box-shadow: 0 0 15px rgba(31, 104, 249, 0.3);
+        }
+        .stage-gradient {
+            background: linear-gradient(90deg, rgba(31,104,249,0.1) 0%, rgba(31,104,249,0.2) 100%);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col overflow-hidden">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 px-6 py-3 bg-white dark:bg-[#111318]">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-8 flex items-center justify-center bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined text-primary">hub</span>
+</div>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-tight">NEXCART <span class="text-primary">AI</span></h2>
+</div>
+<label class="flex flex-col min-w-40 !h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-slate-400 flex border-none bg-slate-100 dark:bg-[#272d3a] items-center justify-center pl-4 rounded-l-lg" data-icon="search">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-slate-900 dark:text-white focus:outline-0 focus:ring-0 border-none bg-slate-100 dark:bg-[#272d3a] h-full placeholder:text-slate-400 px-4 rounded-l-none pl-2 text-sm font-normal" placeholder="Search node_id or product_name..." value=""/>
+</div>
+</label>
+</div>
+<div class="flex flex-1 justify-end gap-6 items-center">
+<nav class="flex items-center gap-6">
+<a class="text-primary text-sm font-bold border-b-2 border-primary pb-1" href="#">Graph Visualizer</a>
+<a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">LLM Logs</a>
+<a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Pipelines</a>
+</nav>
+<div class="flex gap-2 items-center">
+<div class="flex items-center gap-2 px-3 py-1.5 bg-green-500/10 border border-green-500/20 rounded-lg">
+<div class="size-2 bg-green-500 rounded-full animate-pulse"></div>
+<span class="text-green-500 text-xs font-bold uppercase tracking-wider">Engine: Healthy</span>
+</div>
+<button class="flex size-10 cursor-pointer items-center justify-center rounded-lg bg-slate-100 dark:bg-[#272d3a] text-slate-600 dark:text-white">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<button class="flex size-10 cursor-pointer items-center justify-center rounded-lg bg-slate-100 dark:bg-[#272d3a] text-slate-600 dark:text-white">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary/20" data-alt="User avatar profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD9-KgwT4gDA1nxc8wN0QXtgjqWMmJBMTUroJe9zctEm1cOUjXdjklTNmzO3Wj_f7g3swrH92qTEOK93yD7Kq767Ln0OAmwF_2Org5eJoHiI9rwMGDZ60ZKKSKOazVs9awy2OciMhrReHOB0AwWyNI1sMJHJeATgi6Z_gRgzK2uxrFDacbaKizijEFePTrVcyhL_Fx0Jvl8IGhOwuNwgons_2BTQjAASQNWVPNaxF30iIFDRobD12HXuVymvXmNN3HLXSv5Egn33XzD");'></div>
+</div>
+</header>
+<div class="flex flex-1 overflow-hidden">
+<!-- Left Sidebar: AI Engine Stats -->
+<aside class="w-64 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-[#111318] flex flex-col p-4">
+<div class="flex flex-col mb-8">
+<h1 class="text-slate-900 dark:text-white text-base font-bold uppercase tracking-widest text-[11px]">Core Architecture</h1>
+<p class="text-primary text-sm font-semibold mt-1">v4.2-Stability Engine</p>
+</div>
+<nav class="flex flex-col gap-1">
+<div class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 cursor-pointer transition-all">
+<span class="material-symbols-outlined">dashboard</span>
+<p class="text-sm font-medium">Overview</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary text-white shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined">account_tree</span>
+<p class="text-sm font-medium">Node Explorer</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 cursor-pointer transition-all">
+<span class="material-symbols-outlined">psychology</span>
+<p class="text-sm font-medium">LLM Reasoning</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 cursor-pointer transition-all">
+<span class="material-symbols-outlined">filter_alt</span>
+<p class="text-sm font-medium">Funnel Metrics</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 cursor-pointer transition-all">
+<span class="material-symbols-outlined">history</span>
+<p class="text-sm font-medium">History</p>
+</div>
+</nav>
+<div class="mt-auto pt-6 border-t border-slate-200 dark:border-slate-800">
+<div class="p-3 bg-slate-50 dark:bg-[#1b1f27] rounded-lg border border-slate-200 dark:border-slate-800">
+<p class="text-xs text-slate-500 dark:text-slate-400 font-medium">System Uptime</p>
+<p class="text-lg font-bold text-slate-900 dark:text-white">99.98%</p>
+<div class="w-full bg-slate-200 dark:bg-slate-700 h-1 mt-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[99%]"></div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col relative overflow-hidden">
+<!-- Real-time Stats Bar -->
+<div class="flex flex-wrap gap-4 p-4 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0f1623]/50 backdrop-blur-md">
+<div class="flex min-w-[140px] flex-1 flex-col gap-1 rounded-lg p-3 border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#111318]">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-semibold uppercase">Neo4j Nodes</p>
+<div class="flex items-baseline gap-2">
+<p class="text-slate-900 dark:text-white text-xl font-bold">1.2M</p>
+<p class="text-green-500 text-xs font-bold">+2.4%</p>
+</div>
+</div>
+<div class="flex min-w-[140px] flex-1 flex-col gap-1 rounded-lg p-3 border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#111318]">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-semibold uppercase">LLM Latency</p>
+<div class="flex items-baseline gap-2">
+<p class="text-slate-900 dark:text-white text-xl font-bold">142ms</p>
+<p class="text-orange-500 text-xs font-bold">-5.1%</p>
+</div>
+</div>
+<div class="flex min-w-[140px] flex-1 flex-col gap-1 rounded-lg p-3 border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#111318]">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-semibold uppercase">Active Relations</p>
+<div class="flex items-baseline gap-2">
+<p class="text-slate-900 dark:text-white text-xl font-bold">8.4M</p>
+<p class="text-green-500 text-xs font-bold">+0.8%</p>
+</div>
+</div>
+<div class="flex min-w-[140px] flex-1 flex-col gap-1 rounded-lg p-3 border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#111318]">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-semibold uppercase">Tokens/Sec</p>
+<div class="flex items-baseline gap-2">
+<p class="text-slate-900 dark:text-white text-xl font-bold">1.2k</p>
+<p class="text-green-500 text-xs font-bold">+12%</p>
+</div>
+</div>
+</div>
+<!-- Central Graph Viewport -->
+<div class="flex-1 relative bg-[#0a0c10]">
+<!-- Graph Visualization Background -->
+<div class="absolute inset-0 z-0 bg-cover bg-center opacity-80" data-alt="3D Graph network visualization with glowing nodes and edges" data-location="Graph Workspace" style="background-image: url('https://placeholder.pics/svg/300');">
+<!-- Overlaying SVG for edges simulation -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none opacity-20">
+<line stroke="#1f68f9" stroke-width="1" x1="20%" x2="50%" y1="30%" y2="50%"></line>
+<line stroke="#1f68f9" stroke-width="1" x1="80%" x2="50%" y1="20%" y2="50%"></line>
+<line stroke="#1f68f9" stroke-width="1" x1="30%" x2="50%" y1="80%" y2="50%"></line>
+</svg>
+</div>
+<!-- Floating Node Details (Mockup) -->
+<div class="absolute top-10 left-10 z-10 w-64 bg-slate-900/80 backdrop-blur-lg border border-primary/30 rounded-xl p-4 graph-glow">
+<div class="flex items-center gap-3 mb-3">
+<div class="size-10 rounded-lg bg-primary/20 flex items-center justify-center border border-primary/40">
+<span class="material-symbols-outlined text-primary">shopping_cart</span>
+</div>
+<div>
+<p class="text-white text-sm font-bold">Poco X5 Pro</p>
+<p class="text-primary text-[10px] uppercase font-bold tracking-tighter">Product Node #8821</p>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-[11px]">
+<span class="text-slate-400">Category</span>
+<span class="text-white">Smartphones</span>
+</div>
+<div class="flex justify-between text-[11px]">
+<span class="text-slate-400">In-degree (Views)</span>
+<span class="text-white">12.4k</span>
+</div>
+<div class="flex justify-between text-[11px]">
+<span class="text-slate-400">Conversion Rate</span>
+<span class="text-green-400">4.2%</span>
+</div>
+</div>
+</div>
+<!-- Map-style Controls -->
+<div class="absolute bottom-6 left-6 z-10 flex flex-col gap-3">
+<div class="flex flex-col gap-0.5 overflow-hidden rounded-lg shadow-xl">
+<button class="flex size-10 items-center justify-center bg-white dark:bg-[#1b1f27] text-slate-400 hover:text-primary transition-colors border-b border-slate-200 dark:border-slate-800">
+<span class="material-symbols-outlined">add</span>
+</button>
+<button class="flex size-10 items-center justify-center bg-white dark:bg-[#1b1f27] text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">remove</span>
+</button>
+</div>
+<button class="flex size-10 items-center justify-center rounded-lg bg-white dark:bg-[#1b1f27] text-slate-400 hover:text-primary transition-colors shadow-xl">
+<span class="material-symbols-outlined">explore</span>
+</button>
+</div>
+<!-- Graph Legend -->
+<div class="absolute bottom-6 right-6 z-10 bg-white/5 dark:bg-[#111318]/40 backdrop-blur-md border border-slate-700/50 rounded-lg px-4 py-2 flex gap-4">
+<div class="flex items-center gap-2">
+<div class="size-3 rounded-full bg-primary shadow-[0_0_8px_#1f68f9]"></div>
+<span class="text-[10px] font-bold uppercase tracking-wider text-slate-300">Product</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="size-3 rounded-full bg-purple-500 shadow-[0_0_8px_#a855f7]"></div>
+<span class="text-[10px] font-bold uppercase tracking-wider text-slate-300">User</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-6 h-0.5 bg-primary/40"></div>
+<span class="text-[10px] font-bold uppercase tracking-wider text-slate-300">Bought</span>
+</div>
+</div>
+</div>
+<!-- Candidate Generation Funnel -->
+<div class="h-48 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0f1623] p-4">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-xs font-bold uppercase tracking-widest text-slate-500">Recommendation Pipeline: Stage Analytics</h3>
+<div class="flex gap-4">
+<div class="flex items-center gap-2 text-[11px]">
+<span class="text-slate-500">Total Input:</span>
+<span class="text-white font-bold">12,401</span>
+</div>
+<div class="flex items-center gap-2 text-[11px]">
+<span class="text-slate-500">Output:</span>
+<span class="text-primary font-bold">10 Recommended</span>
+</div>
+</div>
+</div>
+<div class="flex gap-4 h-24">
+<div class="flex-1 rounded-xl border border-primary/20 bg-primary/5 flex flex-col justify-center px-6 relative overflow-hidden group">
+<div class="absolute inset-0 stage-gradient opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<p class="text-primary text-[10px] font-bold uppercase mb-1">Step 01</p>
+<h4 class="text-white text-sm font-bold">Graph Discovery</h4>
+<p class="text-slate-400 text-xs mt-1">10,000+ candidates retrieved from Neo4j</p>
+</div>
+<div class="flex items-center text-slate-600">
+<span class="material-symbols-outlined">double_arrow</span>
+</div>
+<div class="flex-1 rounded-xl border border-slate-700 bg-slate-800/20 flex flex-col justify-center px-6">
+<p class="text-slate-500 text-[10px] font-bold uppercase mb-1">Step 02</p>
+<h4 class="text-white text-sm font-bold">Elastic Filters</h4>
+<p class="text-slate-400 text-xs mt-1">250 items matched stock &amp; category</p>
+</div>
+<div class="flex items-center text-slate-600">
+<span class="material-symbols-outlined">double_arrow</span>
+</div>
+<div class="flex-1 rounded-xl border border-slate-700 bg-slate-800/20 flex flex-col justify-center px-6">
+<p class="text-slate-500 text-[10px] font-bold uppercase mb-1">Step 03</p>
+<h4 class="text-white text-sm font-bold">ML Ranking</h4>
+<p class="text-slate-400 text-xs mt-1">Top 10 sorted by affinity score</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Right Sidebar: LLM Explanation Engine -->
+<aside class="w-96 border-l border-slate-200 dark:border-slate-800 bg-white dark:bg-[#111318] flex flex-col">
+<div class="p-5 border-b border-slate-200 dark:border-slate-800">
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-tight flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">chat_bubble</span>
+                    LLM Explainer
+                </h2>
+<p class="text-slate-400 text-xs mt-1 font-medium">Real-time reasoning logs for recommendations</p>
+</div>
+<div class="flex-1 overflow-y-auto p-4 space-y-4">
+<!-- Log Entry 1 -->
+<div class="p-4 rounded-xl bg-slate-50 dark:bg-[#1b1f27] border border-slate-200 dark:border-slate-800">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<div class="size-6 rounded-full bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px] text-primary">person</span>
+</div>
+<span class="text-[11px] font-bold text-slate-500 dark:text-slate-400">USER_8921</span>
+</div>
+<span class="text-[10px] text-slate-500">2s ago</span>
+</div>
+<p class="text-sm font-bold text-slate-900 dark:text-white mb-2">Recommended Poco X5 Pro</p>
+<div class="p-3 bg-white dark:bg-[#0f1623] rounded-lg border-l-2 border-primary">
+<p class="text-xs leading-relaxed text-slate-600 dark:text-slate-300 italic">
+                            "Identified user's high GPU demand through history of 'Genshin Impact' searches. Poco X5 Pro offers the best Snapdragon performance in the $300 budget segment compared to alternatives."
+                        </p>
+</div>
+<div class="mt-3 flex gap-2">
+<span class="px-2 py-0.5 rounded bg-primary/10 text-primary text-[9px] font-bold uppercase">Gaming Affinity</span>
+<span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 text-[9px] font-bold uppercase">Budget Segment</span>
+</div>
+</div>
+<!-- Log Entry 2 -->
+<div class="p-4 rounded-xl bg-slate-50 dark:bg-[#1b1f27] border border-slate-200 dark:border-slate-800">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<div class="size-6 rounded-full bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px] text-primary">person</span>
+</div>
+<span class="text-[11px] font-bold text-slate-500 dark:text-slate-400">USER_7740</span>
+</div>
+<span class="text-[10px] text-slate-500">14s ago</span>
+</div>
+<p class="text-sm font-bold text-slate-900 dark:text-white mb-2">Recommended Sony WH-1000XM5</p>
+<div class="p-3 bg-white dark:bg-[#0f1623] rounded-lg border-l-2 border-slate-500">
+<p class="text-xs leading-relaxed text-slate-600 dark:text-slate-300 italic">
+                            "User recently purchased 'Travel Backpack'. Cross-graph mapping suggests high correlation between frequent travelers and active noise cancellation needs."
+                        </p>
+</div>
+<div class="mt-3 flex gap-2">
+<span class="px-2 py-0.5 rounded bg-purple-500/10 text-purple-500 text-[9px] font-bold uppercase">Cross-Sell</span>
+<span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 text-[9px] font-bold uppercase">Traveler Archetype</span>
+</div>
+</div>
+<!-- Log Entry 3 -->
+<div class="p-4 rounded-xl bg-slate-50 dark:bg-[#1b1f27] border border-slate-200 dark:border-slate-800 opacity-60">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<div class="size-6 rounded-full bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px] text-primary">person</span>
+</div>
+<span class="text-[11px] font-bold text-slate-500 dark:text-slate-400">USER_4410</span>
+</div>
+<span class="text-[10px] text-slate-500">1m ago</span>
+</div>
+<p class="text-sm font-bold text-slate-900 dark:text-white mb-2">Recommended Logitech MX Master 3S</p>
+<div class="p-3 bg-white dark:bg-[#0f1623] rounded-lg border-l-2 border-primary">
+<p class="text-xs leading-relaxed text-slate-600 dark:text-slate-300 italic">
+                            "Detected 'Productivity' intent through recurring visits to mechanical keyboard category. MX Master 3S is the top-ranked peripheral in the productivity graph cluster."
+                        </p>
+</div>
+</div>
+</div>
+<div class="p-4 border-t border-slate-200 dark:border-slate-800">
+<button class="w-full bg-primary text-white py-3 rounded-lg font-bold text-sm hover:bg-blue-600 transition-colors flex items-center justify-center gap-2 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-[20px]">play_circle</span>
+                    Run Reasoning Batch
+                </button>
+</div>
+</aside>
+</div>
+</body></html>

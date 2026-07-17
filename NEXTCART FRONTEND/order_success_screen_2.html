@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Order Success - NEXCART</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0df20d",
+                        "primary-dark": "#0bc40b",
+                        "background-light": "#f5f8f5",
+                        "background-dark": "#102210",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        body {
+            font-family: "Plus Jakarta Sans", sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }.confetti {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 2px;
+        }
+        @keyframes float-up {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+        }
+        .animate-confetti {
+            animation: float-up 2s ease-out forwards;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen">
+<div class="relative flex h-auto min-h-screen w-full max-w-[430px] mx-auto flex-col bg-white dark:bg-background-dark overflow-x-hidden shadow-2xl shadow-black/10">
+<div class="flex items-center bg-white dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-20">
+<div class="text-[#111811] dark:text-white flex size-12 shrink-0 items-center justify-center cursor-pointer">
+<span class="material-symbols-outlined">arrow_back_ios</span>
+</div>
+<h2 class="text-[#111811] dark:text-white text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-12">Order Placed</h2>
+</div>
+<div class="relative flex flex-col items-center justify-center pt-10 pb-4 overflow-hidden">
+<div class="absolute inset-0 pointer-events-none">
+<div class="confetti animate-confetti bg-yellow-400" style="left: 20%; top: 40%; animation-delay: 0.1s;"></div>
+<div class="confetti animate-confetti bg-primary" style="left: 30%; top: 30%; animation-delay: 0.3s;"></div>
+<div class="confetti animate-confetti bg-blue-400" style="left: 50%; top: 20%; animation-delay: 0s;"></div>
+<div class="confetti animate-confetti bg-pink-400" style="left: 70%; top: 35%; animation-delay: 0.2s;"></div>
+<div class="confetti animate-confetti bg-orange-400" style="left: 80%; top: 45%; animation-delay: 0.4s;"></div>
+<div class="confetti animate-confetti bg-purple-400" style="left: 40%; top: 50%; animation-delay: 0.15s;"></div>
+<div class="confetti animate-confetti bg-red-400" style="left: 60%; top: 25%; animation-delay: 0.35s;"></div>
+</div>
+<div class="relative flex items-center justify-center w-28 h-28 bg-primary/10 rounded-full mb-6">
+<div class="flex items-center justify-center w-20 h-20 bg-primary rounded-full shadow-lg shadow-primary/40 relative z-10">
+<span class="material-symbols-outlined text-white text-5xl font-bold">check</span>
+</div>
+<div class="absolute inset-0 border-2 border-primary/20 rounded-full scale-110"></div>
+<div class="absolute inset-0 border border-primary/10 rounded-full scale-150 opacity-50"></div>
+</div>
+<h1 class="text-[#111811] dark:text-white tracking-tight text-3xl font-extrabold leading-tight px-6 text-center">YAY! Order Success</h1>
+<p class="text-[#111811] dark:text-gray-400 text-base font-medium leading-normal pb-2 pt-2 px-4 text-center">
+                Order ID: <span class="font-bold text-[#111811] dark:text-white">#NX-882910</span>
+</p>
+</div>
+<div class="px-4 py-2">
+<div class="bg-[#e7f9e7] dark:bg-primary/10 border border-primary/20 rounded-2xl p-4 flex items-center gap-4">
+<div class="flex items-center justify-center w-12 h-12 bg-primary rounded-xl shadow-sm">
+<span class="material-symbols-outlined text-white text-2xl fill-[1]">savings</span>
+</div>
+<div>
+<p class="text-[#064e06] dark:text-primary font-extrabold text-lg leading-tight">You saved ₹1,500</p>
+<p class="text-[#064e06]/70 dark:text-primary/70 text-sm font-medium">on this order! Smart shopping.</p>
+</div>
+</div>
+</div>
+<div class="p-4">
+<div class="bg-background-light dark:bg-white/5 border border-black/5 dark:border-white/5 p-5 rounded-2xl shadow-sm">
+<div class="flex items-start justify-between gap-4">
+<div class="flex flex-col gap-2 flex-[2_2_0px]">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-primary text-2xl">local_shipping</span>
+<p class="text-[#111811] dark:text-white text-lg font-bold leading-tight">Arriving by Thursday</p>
+</div>
+<p class="text-[#4a5f4a] dark:text-gray-400 text-sm font-medium leading-relaxed">
+                            October 24th, 2024. Your items are being carefully packed at our warehouse.
+                        </p>
+</div>
+<div class="w-20 h-20 bg-center bg-no-repeat bg-cover rounded-xl shrink-0 border border-black/5 shadow-sm" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDGYIGDmDPmLzw4AbTl98F12QDCnNxYZ5zmI0jrfkfO5bmS2HqTFO2rcMtAD7O-pxmUWpJGOjVd-S76KWe2CDhiL8eEg_rmIj4u8BmmAxFYVSacT1KTq2VdrPNOP8YyTBiNYyXjG_EvjIktGJ0nRuDC_E8AHXOnfZ2_t0imPjd8-7TH5BypVy9bQo6KRXpyUHUnGbpDvUwfJDyDzIGAJ4uihL5fBmwWCKJu2Se-xspNqovE0fqlzuujJ2pF-HCUQj4tKECtbkFKqtY");'></div>
+</div>
+</div>
+</div>
+<div class="px-4 py-4 flex flex-col gap-4">
+<button class="w-full bg-primary hover:bg-primary-dark active:scale-[0.98] py-4 rounded-2xl text-black font-extrabold text-lg transition-all shadow-xl shadow-primary/30 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined font-bold">distance</span>
+                Track Your Order
+            </button>
+<button class="w-full bg-white dark:bg-transparent border-2 border-primary/50 dark:border-primary/30 hover:bg-primary/5 py-4 rounded-2xl text-[#111811] dark:text-white font-bold text-lg transition-all flex items-center justify-center gap-2">
+                Continue Shopping
+                <span class="material-symbols-outlined text-xl">shopping_bag</span>
+</button>
+</div>
+<div class="mt-8 mb-10">
+<div class="px-6 flex justify-between items-center mb-5">
+<h3 class="text-[#111811] dark:text-white text-xl font-extrabold">Recommended for you</h3>
+<span class="text-primary text-sm font-bold cursor-pointer">View all</span>
+</div>
+<div class="flex overflow-x-auto gap-5 px-6 no-scrollbar">
+<div class="flex flex-col min-w-[170px] gap-3">
+<div class="relative w-full aspect-[4/5] bg-center bg-no-repeat bg-cover rounded-2xl shadow-md border border-black/5" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAch7ERajg_i_IuDZ7TfPcGgSy7a9XwgbRa_jtDI4Wto5vc0zGzGTZq9mVYJoEbkFj2SuEupJ_J1df81u0pBF6xR-e2XhGnAUx5J9Dyc3veOauu-3pM78OFzrlF1XeQ8h1ju4CY5L2IEJLnJ3hkB6EVAcb1TBabhsUgLeZesSzCNTYOw7cEXCByFuHUpEh8e-vzHbuD4T-kINonVi6AGnuZ5xzDcgRFJm6hOtWKhTs2xs_2PRCKb1WSYq1CGdCMQGG5-_1tjOK71RU");'>
+<div class="absolute top-2 right-2 bg-white/90 dark:bg-black/80 p-1.5 rounded-full shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-gray-400">favorite</span>
+</div>
+</div>
+<div class="flex flex-col px-1">
+<span class="text-[#111811] dark:text-white text-[15px] font-bold line-clamp-1 leading-tight">Sony WH-1000XM5</span>
+<div class="flex items-center gap-2 mt-1">
+<span class="text-primary font-bold text-base">$349.00</span>
+<span class="text-gray-400 text-xs line-through">$399.00</span>
+</div>
+<div class="flex items-center gap-1 mt-1.5">
+<span class="material-symbols-outlined text-[14px] text-yellow-400 fill-[1]">star</span>
+<span class="text-[12px] text-gray-500 font-semibold">4.9 (2k+)</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col min-w-[170px] gap-3">
+<div class="relative w-full aspect-[4/5] bg-center bg-no-repeat bg-cover rounded-2xl shadow-md border border-black/5" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA-k4Bm1wNs-O0jSZtgPcLw11gv96YxxdmzQc7WU9ioEs6wan8AE7sJJE-DEwHZPJDDn7RGRzYECXuKmvFLBBv1gaXyE9gF4GN3RfWLBhqI5QGxHYvmaiiin1ylvoCRjNwfKZ1RmHJc8wB7ADWSkLDlx_W3tCIpn5oiz8L_Og_C83ZKvN48o_dTQRer5fOqGeLWc6QapyDsSqVKr-5Jp0JSuZzkf7Sds2UTW1sjzrkuAX90SDorseVQT1M0eBYB2lA8BzYSwNirU5Q");'>
+<div class="absolute top-2 right-2 bg-white/90 dark:bg-black/80 p-1.5 rounded-full shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-gray-400">favorite</span>
+</div>
+</div>
+<div class="flex flex-col px-1">
+<span class="text-[#111811] dark:text-white text-[15px] font-bold line-clamp-1 leading-tight">Classic Series 7</span>
+<div class="flex items-center gap-2 mt-1">
+<span class="text-primary font-bold text-base">$189.00</span>
+</div>
+<div class="flex items-center gap-1 mt-1.5">
+<span class="material-symbols-outlined text-[14px] text-yellow-400 fill-[1]">star</span>
+<span class="text-[12px] text-gray-500 font-semibold">4.7 (1.2k)</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col min-w-[170px] gap-3">
+<div class="relative w-full aspect-[4/5] bg-center bg-no-repeat bg-cover rounded-2xl shadow-md border border-black/5" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCxQhUM0n-CVxJNmx6EExNpDs60BJ3IiPsrTpewJEYcHkvvbETXvT7_nAtbZ8mcdos0qjGps6g56qoom9hSPf8J9Z6rL_W6myC6Q9y0V0SpgleMRk9mmu05AgYNasv7WVRdBdZgPJ-j0bGVowe01NSS8INYneCIg58TkEqtaqDxU9At3-GkubiJo_4qpCz_0UnS6z4eA9cSURYzJ9BHnx3mp7Ah14KxcOUZMzh-171eeOA358rG58xBmTNssLbEoRIqGbxeUR53AyQ");'>
+<div class="absolute top-2 right-2 bg-white/90 dark:bg-black/80 p-1.5 rounded-full shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-gray-400">favorite</span>
+</div>
+</div>
+<div class="flex flex-col px-1">
+<span class="text-[#111811] dark:text-white text-[15px] font-bold line-clamp-1 leading-tight">Eco-Leather Case</span>
+<div class="flex items-center gap-2 mt-1">
+<span class="text-primary font-bold text-base">$45.00</span>
+</div>
+<div class="flex items-center gap-1 mt-1.5">
+<span class="material-symbols-outlined text-[14px] text-yellow-400 fill-[1]">star</span>
+<span class="text-[12px] text-gray-500 font-semibold">4.8 (800)</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="h-10 bg-white dark:bg-background-dark"></div>
+</div>
+
+</body></html>

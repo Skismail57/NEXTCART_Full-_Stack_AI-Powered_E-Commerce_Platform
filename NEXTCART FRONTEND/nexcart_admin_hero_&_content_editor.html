@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEXCART Admin - Hero &amp; Content Editor</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1f68f9",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#0f1623",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .preview-container {
+            transition: width 0.3s ease-in-out;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111318]">
+<div class="flex h-screen overflow-hidden">
+<!-- Side Navigation -->
+<aside class="w-64 bg-white border-r border-[#e5e7eb] flex flex-col h-full shrink-0">
+<div class="p-6 flex items-center gap-3">
+<div class="size-10 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined">shopping_bag</span>
+</div>
+<div>
+<h1 class="text-[#111318] text-base font-bold leading-none">NEXCART</h1>
+<p class="text-[#5f6e8c] text-xs font-medium">Admin Portal</p>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-1 mt-4">
+<a class="flex items-center gap-3 px-3 py-2 text-[#5f6e8c] hover:bg-background-light rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-[#5f6e8c] hover:bg-background-light rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="text-sm font-medium">Products</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-[#5f6e8c] hover:bg-background-light rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="text-sm font-medium">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-primary bg-primary/10 rounded-lg" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">edit_note</span>
+<span class="text-sm font-semibold">Content Editor</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-[#5f6e8c] hover:bg-background-light rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+</nav>
+<div class="p-4 border-t border-[#e5e7eb]">
+<div class="flex items-center gap-3 p-2 rounded-lg hover:bg-background-light cursor-pointer">
+<div class="size-8 rounded-full bg-cover bg-center" data-alt="Admin user profile picture" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDVsCbg8iq0Gp6zq1I88uTJXbnkRM5QjBgM35SAna1km5MncNsHXcauY3C1PWJ_230zSkacV_MaT0MJCRXhX1T6KttzUX5DkP4-acFO18lDdHoezA94gvZwW_vtQnZGmrmpxcgHKpISK4fjP7Lm4hvnhh6BO_vyDUXEh3ouxuZuag9D7owKv7wFfa-qTwqsI-hg0savxkFQDgu960ehnXWVNoW6vyLku3NLw9-7A2pmGOJZWWjoMxNGCx6_j--00mgMctVKYjX1v6ri')"></div>
+<div class="flex-1 overflow-hidden">
+<p class="text-xs font-bold truncate">Alex Rivera</p>
+<p class="text-[10px] text-[#5f6e8c] truncate">Store Manager</p>
+</div>
+<span class="material-symbols-outlined text-[#5f6e8c] text-sm">unfold_more</span>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col overflow-hidden">
+<!-- Header -->
+<header class="h-16 bg-white border-b border-[#e5e7eb] flex items-center justify-between px-8 shrink-0">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">auto_awesome_motion</span>
+<h2 class="text-lg font-bold tracking-tight">Hero &amp; Content Editor</h2>
+</div>
+<div class="flex items-center gap-3">
+<button class="px-4 py-2 bg-background-light hover:bg-[#e2e4e9] text-[#111318] text-sm font-bold rounded-lg transition-colors">
+                        Discard
+                    </button>
+<button class="px-4 py-2 bg-primary hover:bg-[#1a56d1] text-white text-sm font-bold rounded-lg flex items-center gap-2 transition-colors">
+<span class="material-symbols-outlined text-[18px]">publish</span>
+                        Publish Changes
+                    </button>
+</div>
+</header>
+<!-- Editor & Preview Split View -->
+<div class="flex-1 flex overflow-hidden">
+<!-- Configuration Section (Scrollable) -->
+<section class="w-1/2 overflow-y-auto p-8 border-r border-[#e5e7eb] bg-white">
+<div class="max-w-2xl mx-auto space-y-8">
+<!-- Hero Carousel Manager Header -->
+<div class="flex items-start justify-between">
+<div>
+<h3 class="text-2xl font-black tracking-tight">Hero Carousel Manager</h3>
+<p class="text-[#5f6e8c] text-sm mt-1">Manage and reorder your storefront's top hero slides.</p>
+</div>
+<button class="flex items-center gap-2 px-3 py-2 bg-primary/10 text-primary text-sm font-bold rounded-lg hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+                                Add Slide
+                            </button>
+</div>
+<!-- Draggable Slide List -->
+<div class="space-y-4">
+<!-- Slide 1 -->
+<div class="border border-primary bg-primary/5 rounded-xl p-4 relative group shadow-sm">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary rounded-l-xl"></div>
+<div class="flex gap-4">
+<div class="flex flex-col items-center justify-center text-[#5f6e8c] cursor-grab active:cursor-grabbing">
+<span class="material-symbols-outlined">drag_indicator</span>
+</div>
+<div class="flex-1 space-y-4">
+<div class="flex gap-4 items-start">
+<div class="w-24 aspect-video bg-cover bg-center rounded-lg border border-[#e5e7eb]" data-alt="Summer Collection hero banner thumbnail" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDth7cOduXLPBnq2QO8ryqFoKxAd-EMaSY_znzjPDWE2fjXNynZ4XiEgw0Gmn-IqM8jGx9h3umAzy69wwm-rSbHxxQKdVHR2Z0kwO2MaRxVviYD0a-HEZbB0wXwpT2T0JFnXGXOMIjkFvNBweZB89UqJCLpkk3qgeUEgpPW2dQ1O5CiDafLYzzsfB0DqFPKW6k_NINEgvpnfpEeKNi9lg28VlEb0tKue-omMtcGbIfHQ-uDZAH8XEt8iCSAvZNpA3k5TiNTHIMY0ipp')"></div>
+<div class="flex-1">
+<label class="block text-[10px] font-bold text-[#5f6e8c] uppercase tracking-wider mb-1">Slide Title</label>
+<input class="w-full border-[#e5e7eb] rounded-lg text-sm focus:ring-primary focus:border-primary" type="text" value="Summer Collection"/>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block text-[10px] font-bold text-[#5f6e8c] uppercase tracking-wider mb-1">Subtitle</label>
+<input class="w-full border-[#e5e7eb] rounded-lg text-sm focus:ring-primary focus:border-primary" type="text" value="Up to 50% off on all summer essentials"/>
+</div>
+<div>
+<label class="block text-[10px] font-bold text-[#5f6e8c] uppercase tracking-wider mb-1">Button Text</label>
+<input class="w-full border-[#e5e7eb] rounded-lg text-sm focus:ring-primary focus:border-primary" type="text" value="Shop Now"/>
+</div>
+</div>
+<div class="pt-2 border-t border-primary/10 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<label class="flex items-center gap-2 cursor-pointer">
+<input checked="" class="w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary" type="checkbox"/>
+<span class="text-xs font-medium text-[#111318]">Schedule Visibility</span>
+</label>
+<div class="flex items-center gap-2 bg-white px-2 py-1 rounded border border-[#e5e7eb]">
+<span class="text-[10px] font-bold text-[#5f6e8c]">START</span>
+<span class="text-[10px] font-medium">June 1, 2024</span>
+</div>
+</div>
+<button class="text-red-500 hover:text-red-700">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Slide 2 -->
+<div class="border border-[#e5e7eb] hover:border-[#d1d5db] bg-white rounded-xl p-4 relative transition-colors shadow-sm">
+<div class="flex gap-4">
+<div class="flex flex-col items-center justify-center text-[#5f6e8c] cursor-grab">
+<span class="material-symbols-outlined">drag_indicator</span>
+</div>
+<div class="flex-1 space-y-4 opacity-70">
+<div class="flex gap-4 items-start">
+<div class="w-24 aspect-video bg-cover bg-center rounded-lg border border-[#e5e7eb]" data-alt="New Arrivals hero banner thumbnail" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuACTxj2R3ktn6KxzuRhyPLCNjR8tr3ovb_OviSCtp3BteIMNLA4GsGgNA0QKOCVAKW-lRjh7J_qQ1-VxouNbhH79zhe2jR_dS4-GyIFdvhnSFdwOY3KTxoX1acDSj4OK1dJxu0cmpFDe0x-MRTcPDRZ0m0Xxy1b-Sao30PcQW6Iq32d6UtoxVomn9xmhiI4EaL75ynkRg1m_vET9z5LRLtCgVqZT4KK7d8YOzqxsrtPvGhkLBFtniJu7RfsqD5uPvNNM7voP8ezHV2q')"></div>
+<div class="flex-1">
+<label class="block text-[10px] font-bold text-[#5f6e8c] uppercase tracking-wider mb-1">Slide Title</label>
+<input class="w-full border-[#e5e7eb] rounded-lg text-sm bg-gray-50 cursor-not-allowed" disabled="" type="text" value="New Arrivals"/>
+</div>
+</div>
+<div class="flex justify-between items-center text-xs text-[#5f6e8c]">
+<span>Slide is currently hidden • Inactive</span>
+<button class="text-primary font-bold hover:underline">Edit Slide</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Additional Content Module -->
+<div class="pt-8 border-t border-[#e5e7eb]">
+<div class="flex items-center justify-between mb-6">
+<div>
+<h3 class="text-xl font-bold tracking-tight">Featured Categories</h3>
+<p class="text-[#5f6e8c] text-sm">Select up to 4 categories to highlight below the hero.</p>
+</div>
+<span class="material-symbols-outlined text-[#5f6e8c]">more_horiz</span>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="p-4 border-2 border-dashed border-[#e5e7eb] rounded-xl flex flex-col items-center justify-center gap-2 hover:bg-background-light transition-colors cursor-pointer group">
+<div class="size-10 rounded-full bg-background-light group-hover:bg-white flex items-center justify-center">
+<span class="material-symbols-outlined text-[#5f6e8c]">add_photo_alternate</span>
+</div>
+<span class="text-xs font-bold text-[#5f6e8c]">Select Category</span>
+</div>
+<div class="p-4 border border-[#e5e7eb] rounded-xl bg-white shadow-sm flex items-center gap-3">
+<div class="size-12 rounded bg-cover bg-center" data-alt="Category icon placeholder" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCOV0Dy4iKFzpA7-lrdZk4VXgUCdw4NqkX3Ev-URYvO2awQjeu3OqSwsft-nuRSRFeEugVqLzQLp6MZs7aNsZYgojSfMjU5UMz92ZJ0We--jaZO4taZddks5ayhZ-kXT4T5FQ0tOtuTbNXsXLtPBUUSbAu44HLmcRgxDtfaVsZeYV1n_oV8lmm7zK1YIRWbT6P2S6NPGwD94m8WsjFaG7Zp6IFoun3Daea5HM08bMUwmyzTH2cz9jSx2YbN8FroYq0Y5xbeCQBgJiiB')"></div>
+<div>
+<p class="text-sm font-bold">Outerwear</p>
+<p class="text-[10px] text-[#5f6e8c]">142 Products</p>
+</div>
+<button class="ml-auto text-[#5f6e8c] hover:text-[#111318]">
+<span class="material-symbols-outlined text-sm">close</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Live Preview Section -->
+<section class="flex-1 bg-background-light flex flex-col items-center">
+<!-- Preview Toolbar -->
+<div class="w-full px-6 py-4 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="size-2 rounded-full bg-green-500 animate-pulse"></span>
+<span class="text-xs font-bold text-[#5f6e8c] uppercase tracking-widest">Live Preview</span>
+</div>
+<!-- Device Toggle -->
+<div class="flex bg-white p-1 rounded-lg border border-[#e5e7eb] shadow-sm">
+<button class="flex items-center justify-center px-4 py-1.5 bg-primary text-white rounded-md shadow-sm transition-all">
+<span class="material-symbols-outlined text-base">desktop_windows</span>
+</button>
+<button class="flex items-center justify-center px-4 py-1.5 text-[#5f6e8c] hover:bg-background-light rounded-md transition-all">
+<span class="material-symbols-outlined text-base">smartphone</span>
+</button>
+</div>
+<div class="flex items-center gap-2 text-[#5f6e8c]">
+<span class="material-symbols-outlined text-sm">refresh</span>
+<span class="text-xs font-medium">Last updated: 14:02 PM</span>
+</div>
+</div>
+<!-- Canvas Container -->
+<div class="flex-1 w-full flex items-start justify-center p-8 overflow-y-auto">
+<div class="preview-container w-full max-w-5xl bg-white rounded-xl shadow-2xl border border-[#e5e7eb] overflow-hidden">
+<!-- Mock Store Header -->
+<div class="px-8 py-4 border-b border-gray-100 flex items-center justify-between">
+<div class="font-black text-xl tracking-tighter">NEXCART <span class="font-light">STORE</span></div>
+<div class="flex gap-6 text-sm font-medium text-gray-600">
+<span>Home</span>
+<span>Shop</span>
+<span>Sale</span>
+<span>Journal</span>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-xl">search</span>
+<span class="material-symbols-outlined text-xl">shopping_bag</span>
+</div>
+</div>
+<!-- Mock Hero Section -->
+<div class="relative w-full aspect-[21/9] bg-cover bg-center" data-alt="High quality summer collection banner preview" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuCDGNXierUNq09-HDrHGwEY7k8cLazhp85vLKrK9bLog-J7zcJo_7lLrue4Ofdh_fNxy-67ZlGdvUALyZ7G4aQOFAWTfYNeM6lTFgu0_rLSWivn6s5J1zO_tOdOi_rE7Xzs-VKayjLuPAMrhguGiTbQJl6SEnJ0gLwbG9oEWBcRbPgjbcQQInNYMUwdiOZdOlTFnHci-Apwg3rW1DJe0Zd17EaPVkApS8s-uDJF23thFw-WUswUff_fRVYhHnq73QuTcQbpi4Lc0fUF')">
+<div class="absolute inset-0 flex flex-col justify-center px-20">
+<div class="max-w-md text-white">
+<span class="text-xs font-black uppercase tracking-[0.3em] bg-white/20 backdrop-blur-md px-3 py-1 rounded inline-block mb-4">Summer 2024</span>
+<h1 class="text-5xl font-black leading-tight mb-4">Summer Collection</h1>
+<p class="text-lg font-medium text-gray-100 mb-8 leading-relaxed">Up to 50% off on all summer essentials. Dive into our curated seasonal picks.</p>
+<button class="px-8 py-4 bg-white text-black font-black uppercase tracking-widest text-xs hover:bg-gray-100 transition-colors">
+                                            Shop Now
+                                        </button>
+</div>
+</div>
+<!-- Carousel dots -->
+<div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
+<span class="size-2 rounded-full bg-white"></span>
+<span class="size-2 rounded-full bg-white/40"></span>
+<span class="size-2 rounded-full bg-white/40"></span>
+</div>
+</div>
+<!-- Mock Content Section -->
+<div class="p-12">
+<div class="flex items-center justify-between mb-8">
+<h2 class="text-2xl font-black">Featured Collection</h2>
+<a class="text-sm font-bold border-b-2 border-black" href="#">View All</a>
+</div>
+<div class="grid grid-cols-4 gap-6">
+<div class="space-y-4">
+<div class="aspect-[4/5] bg-gray-100 rounded-lg overflow-hidden group">
+<div class="w-full h-full bg-cover bg-center transition-transform group-hover:scale-105" data-alt="Sample product thumbnail preview" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBtSLKDfD7nclEhfMlNUb4DswXfNSkjHpYqEwxLWEHXcyLjahcywgMaKiGF3Qvq3n9oqElAO1Z5CpeGjquKRKX1Dpm7oyzec125HjURnO5as3TwZA8k9FsD0IfSoyaqAw4-zqRG9QHSkmDmcGcN9tezJIYn3CEomRy0im4hwflmJbPHrgenERfA2_jF0q1qNkD-CackGA5D-OVYC0prWGt08JGjFYgSGTyo-xwZ3FAdFenW4QiRX5Nw2JYTxThleg8xpn7Mrg1xfHkm')"></div>
+</div>
+<div>
+<p class="text-xs font-bold text-gray-500 uppercase tracking-widest">Apparel</p>
+<h4 class="font-bold">Linen Cotton Shirt</h4>
+<p class="text-sm font-medium text-gray-900">$89.00</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="aspect-[4/5] bg-gray-100 rounded-lg overflow-hidden group">
+<div class="w-full h-full bg-cover bg-center transition-transform group-hover:scale-105" data-alt="Sample product thumbnail preview" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBBIQfugHmlOBPD4c03mTeHTPEd1hVl0A9ioQFgSNEjMpDFlFDsehks7jxBP9Ufr2a-abn47NneRulaosXB_rA1-WrmVrJ_VeSgbxDazHOIpKIrP_VUmAm6rhlreLELvcJHV1Kr5uYD5ZzjYFPQuBNpTVMpCaLI3vhFAu4LAPIRO6KyNTYA0G_zANxZkghTFOWdhD7xQygXjTCAHGRj95xRaIj3ppHy1dGtD7I9azi5JhdnOn1xiLv8svSF8N6UJNvMNk4JhBt6BdDV')"></div>
+</div>
+<div>
+<p class="text-xs font-bold text-gray-500 uppercase tracking-widest">Footwear</p>
+<h4 class="font-bold">Desert Sandals</h4>
+<p class="text-sm font-medium text-gray-900">$120.00</p>
+</div>
+</div>
+<div class="space-y-4 opacity-50">
+<div class="aspect-[4/5] bg-gray-50 border-2 border-dashed border-gray-200 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-gray-300">image</span>
+</div>
+<div class="h-4 bg-gray-100 rounded w-2/3"></div>
+<div class="h-4 bg-gray-50 rounded w-1/3"></div>
+</div>
+<div class="space-y-4 opacity-50">
+<div class="aspect-[4/5] bg-gray-50 border-2 border-dashed border-gray-200 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-gray-300">image</span>
+</div>
+<div class="h-4 bg-gray-100 rounded w-2/3"></div>
+<div class="h-4 bg-gray-50 rounded w-1/3"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+</div>
+<!-- Unsaved Changes Floating Status (Optional UI Detail) -->
+<div class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-[#111318] text-white px-4 py-3 rounded-full shadow-2xl flex items-center gap-4 z-50">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-yellow-400 text-sm">warning</span>
+<span class="text-xs font-bold tracking-wide uppercase">Unsaved Changes</span>
+</div>
+<div class="h-4 w-[1px] bg-white/20"></div>
+<button class="text-primary text-xs font-black uppercase tracking-widest hover:text-white transition-colors">Auto-save: 2m ago</button>
+</div>
+</body></html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>NEXCART Admin - Hero Banner Manager</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1f68f9",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#0f1623",
+                        "charcoal": "#0f0f12",
+                        "panel-dark": "#1a1a1e",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .glass-panel {
+            background: rgba(26, 26, 30, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-white font-display min-h-screen flex flex-col">
+    <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-white/10 bg-charcoal/80 backdrop-blur-md px-6 py-3 sticky top-0 z-50">
+        <div class="flex items-center gap-8">
+            <div class="flex items-center gap-3">
+                <div class="size-6 text-primary">
+                    <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+                    </svg>
+                </div>
+                <h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">NEXCART Admin</h2>
+            </div>
+            <nav class="hidden lg:flex items-center gap-6">
+                <a class="text-[#9ba6bb] hover:text-white text-sm font-medium transition-colors" href="product-admin.html">Products</a>
+                <a class="text-[#9ba6bb] hover:text-white text-sm font-medium transition-colors" href="category-admin.html">Categories</a>
+                <a class="text-white text-sm font-medium border-b-2 border-primary pb-4 mt-4" href="#">Hero Banners</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-1 p-8 max-w-7xl mx-auto">
+        <div class="flex items-center justify-between mb-6">
+            <h1 class="text-3xl font-bold text-white">Hero Banner Manager</h1>
+            <button id="addBannerBtn" class="px-4 py-2 bg-primary text-white rounded-lg text-sm font-bold hover:bg-primary/80 transition-all shadow-lg shadow-primary/20">
+                <span class="material-symbols-outlined mr-2 text-lg">add</span>
+                Add Banner
+            </button>
+        </div>
+
+        <div id="bannerList" class="grid grid-cols-1 gap-6">
+            <!-- Banners will be inserted here -->
+        </div>
+    </main>
+
+    <!-- Add/Edit Banner Modal -->
+    <div id="bannerModal" class="fixed inset-0 bg-black/50 hidden items-center justify-center z-[100]">
+        <div class="glass-panel rounded-2xl w-full max-w-2xl p-6">
+            <div class="flex items-center justify-between mb-4">
+                <h3 id="modalTitle" class="text-xl font-bold text-white">Add New Banner</h3>
+                <button id="closeModalBtn" class="text-white/60 hover:text-white text-2xl">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <form id="bannerForm" class="space-y-4">
+                <input type="hidden" id="bannerId">
+                <div>
+                    <label class="text-sm font-semibold text-[#9ba6bb]">Title</label>
+                    <input type="text" id="title" class="w-full mt-2 bg-[#1a1a1e] border border-white/10 rounded-lg text-sm text-white p-3 focus:ring-1 focus:ring-primary focus:border-primary">
+                </div>
+                <div>
+                    <label class="text-sm font-semibold text-[#9ba6bb]">Subtitle</label>
+                    <textarea id="subtitle" class="w-full mt-2 bg-[#1a1a1e] border border-white/10 rounded-lg text-sm text-white p-3 focus:ring-1 focus:ring-primary focus:border-primary min-h-[80px]"></textarea>
+                </div>
+                <div>
+                    <label class="text-sm font-semibold text-[#9ba6bb]">Image URL</label>
+                    <input type="text" id="imageUrl" class="w-full mt-2 bg-[#1a1a1e] border border-white/10 rounded-lg text-sm text-white p-3 focus:ring-1 focus:ring-primary focus:border-primary">
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="text-sm font-semibold text-[#9ba6bb]">Button Text</label>
+                        <input type="text" id="buttonText" class="w-full mt-2 bg-[#1a1a1e] border border-white/10 rounded-lg text-sm text-white p-3 focus:ring-1 focus:ring-primary focus:border-primary">
+                    </div>
+                    <div>
+                        <label class="text-sm font-semibold text-[#9ba6bb]">Button Link</label>
+                        <input type="text" id="buttonLink" class="w-full mt-2 bg-[#1a1a1e] border border-white/10 rounded-lg text-sm text-white p-3 focus:ring-1 focus:ring-primary focus:border-primary">
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="text-sm font-semibold text-[#9ba6bb]">Display Order</label>
+                        <input type="number" id="displayOrder" class="w-full mt-2 bg-[#1a1a1e] border border-white/10 rounded-lg text-sm text-white p-3 focus:ring-1 focus:ring-primary focus:border-primary" value="1">
+                    </div>
+                    <div>
+                        <label class="text-sm font-semibold text-[#9ba6bb]">Status</label>
+                        <select id="status" class="w-full mt-2 bg-[#1a1a1e] border border-white/10 rounded-lg text-sm text-white p-3 focus:ring-1 focus:ring-primary focus:border-primary">
+                            <option value="ACTIVE">ACTIVE</option>
+                            <option value="INACTIVE">INACTIVE</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="flex justify-end gap-3 mt-6">
+                    <button type="button" id="cancelBtn" class="px-4 py-2 bg-white/10 text-white rounded-lg text-sm font-semibold hover:bg-white/20 transition-all">Cancel</button>
+                    <button type="submit" class="px-4 py-2 bg-primary text-white rounded-lg text-sm font-bold hover:bg-primary/80 transition-all shadow-lg shadow-primary/20">Save Banner</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://localhost:8081';
+
+        // Load banners on page load
+        async function loadBanners() {
+            try {
+                const response = await fetch(`${API_BASE}/hero-banners`);
+                const result = await response.json();
+                const banners = result.data;
+
+                const bannerList = document.getElementById('bannerList');
+                bannerList.innerHTML = '';
+
+                if (banners.length === 0) {
+                    bannerList.innerHTML = '<p class="text-[#9ba6bb] text-center py-12">No banners yet! Click "Add Banner" to create one.</p>';
+                    return;
+                }
+
+                banners.forEach(banner => {
+                    const bannerCard = `
+                        <div class="glass-panel rounded-2xl p-4 flex gap-4 items-center">
+                            <img src="${banner.imageUrl || 'https://via.placeholder.com/300x150'}" class="w-64 h-36 object-cover rounded-lg border border-white/10">
+                            <div class="flex-1">
+                                <h3 class="text-xl font-bold text-white">${banner.title || 'Untitled'}</h3>
+                                <p class="text-sm text-[#9ba6bb] mt-1">${banner.subtitle || ''}</p>
+                                <div class="flex gap-2 mt-3">
+                                    <span class="px-2 py-1 bg-primary/20 text-primary rounded-full text-xs font-semibold">${banner.status}</span>
+                                    <span class="px-2 py-1 bg-white/10 text-white/70 rounded-full text-xs font-semibold">Order: ${banner.displayOrder}</span>
+                                </div>
+                            </div>
+                            <div class="flex gap-2">
+                                <button onclick="editBanner(${banner.heroId})" class="p-2 bg-white/10 text-white rounded-lg hover:bg-white/20 transition-all">
+                                    <span class="material-symbols-outlined">edit</span>
+                                </button>
+                                <button onclick="deleteBanner(${banner.heroId})" class="p-2 bg-rose-500/20 text-rose-500 rounded-lg hover:bg-rose-500/30 transition-all">
+                                    <span class="material-symbols-outlined">delete</span>
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                    bannerList.innerHTML += bannerCard;
+                });
+
+            } catch (error) {
+                console.error('Error loading banners:', error);
+                alert('Error loading banners!');
+            }
+        }
+
+        // Show modal for adding
+        document.getElementById('addBannerBtn').onclick = () => {
+            document.getElementById('modalTitle').innerText = 'Add New Banner';
+            document.getElementById('bannerForm').reset();
+            document.getElementById('bannerId').value = '';
+            document.getElementById('bannerModal').classList.remove('hidden');
+            document.getElementById('bannerModal').classList.add('flex');
+        };
+
+        // Close modal
+        document.getElementById('closeModalBtn').onclick = () => {
+            document.getElementById('bannerModal').classList.add('hidden');
+            document.getElementById('bannerModal').classList.remove('flex');
+        };
+        document.getElementById('cancelBtn').onclick = () => {
+            document.getElementById('bannerModal').classList.add('hidden');
+            document.getElementById('bannerModal').classList.remove('flex');
+        };
+
+        // Handle form submission
+        document.getElementById('bannerForm').onsubmit = async (e) => {
+            e.preventDefault();
+            const bannerId = document.getElementById('bannerId').value;
+            const banner = {
+                title: document.getElementById('title').value,
+                subtitle: document.getElementById('subtitle').value,
+                imageUrl: document.getElementById('imageUrl').value,
+                buttonText: document.getElementById('buttonText').value,
+                buttonLink: document.getElementById('buttonLink').value,
+                displayOrder: parseInt(document.getElementById('displayOrder').value),
+                status: document.getElementById('status').value
+            };
+
+            try {
+                let response;
+                if (bannerId) {
+                    // Update existing
+                    response = await fetch(`${API_BASE}/hero-banners/admin/${bannerId}`, {
+                        method: 'PUT',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(banner)
+                    });
+                } else {
+                    // Create new
+                    response = await fetch(`${API_BASE}/hero-banners/admin/create`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(banner)
+                    });
+                }
+                await response.json();
+                document.getElementById('bannerModal').classList.add('hidden');
+                document.getElementById('bannerModal').classList.remove('flex');
+                loadBanners();
+            } catch (error) {
+                console.error('Error saving banner:', error);
+                alert('Error saving banner!');
+            }
+        };
+
+        // Edit a banner
+        async function editBanner(id) {
+            try {
+                const response = await fetch(`${API_BASE}/hero-banners/${id}`);
+                const result = await response.json();
+                const banner = result.data;
+                document.getElementById('modalTitle').innerText = 'Edit Banner';
+                document.getElementById('bannerId').value = banner.heroId;
+                document.getElementById('title').value = banner.title || '';
+                document.getElementById('subtitle').value = banner.subtitle || '';
+                document.getElementById('imageUrl').value = banner.imageUrl || '';
+                document.getElementById('buttonText').value = banner.buttonText || '';
+                document.getElementById('buttonLink').value = banner.buttonLink || '';
+                document.getElementById('displayOrder').value = banner.displayOrder || 1;
+                document.getElementById('status').value = banner.status || 'ACTIVE';
+                document.getElementById('bannerModal').classList.remove('hidden');
+                document.getElementById('bannerModal').classList.add('flex');
+            } catch (error) {
+                console.error('Error loading banner:', error);
+                alert('Error loading banner!');
+            }
+        }
+
+        // Delete a banner
+        async function deleteBanner(id) {
+            if (!confirm('Are you sure you want to delete this banner?')) return;
+            try {
+                await fetch(`${API_BASE}/hero-banners/admin/${id}`, { method: 'DELETE' });
+                loadBanners();
+            } catch (error) {
+                console.error('Error deleting banner:', error);
+                alert('Error deleting banner!');
+            }
+        }
+
+        // Load banners on initial page load
+        loadBanners();
+    </script>
+</body>
+</html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEXCART | Customer Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1f68f9",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#0f1623",
+                        "glass": "rgba(255, 255, 255, 0.03)",
+                        "glass-border": "rgba(255, 255, 255, 0.08)",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .glass-card {
+            background: rgba(31, 41, 55, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .neon-glow {
+            box-shadow: 0 0 15px rgba(31, 104, 249, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 border-b border-glass-border bg-background-dark/80 backdrop-blur-md">
+<div class="max-w-[1440px] mx-auto px-6 h-16 flex items-center justify-between">
+<div class="flex items-center gap-12">
+<div class="flex items-center gap-3 text-primary">
+<div class="size-8 flex items-center justify-center">
+<svg class="w-full h-full" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-xl font-bold tracking-tight uppercase">NEXCART</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Shop</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Categories</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Deals</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Support</a>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden lg:flex items-center bg-glass-border rounded-lg px-3 py-1.5 w-64">
+<span class="material-symbols-outlined text-slate-400 text-sm">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-full placeholder:text-slate-500" placeholder="Search products..." type="text"/>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center p-2 rounded-lg hover:bg-glass-border transition-colors">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+<button class="text-sm font-bold px-4 py-2 border border-glass-border rounded-lg hover:bg-white/5 transition-colors">
+                        Logout
+                    </button>
+<div class="size-9 rounded-full bg-primary/20 border border-primary/40 p-0.5">
+<div class="w-full h-full rounded-full bg-cover bg-center" data-alt="User profile avatar portrait" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCVz5gfWg0vr7UDj51IoGLbWPebcq9VfKngdcGm0K1xnG8m5INtYtT3TXpb-4HNfPcvSHYr4CWwLTJm9A_1zs4JL5pdx_AgfjeHska5kYqz6YPGdDYqlbwdWahqbtOvNjREwbXubnM74v1fxN-2GsiHcvvodmfiCwruhj87YJhjXFt80SajtBnVV2LtkH3Gg7rwExFA6dzw4WAu7ibbOf0fBHnhzRbO_voW0sPt30DWE3Zq8g7b4_DgzXxzyDqsKOuE-60I4Qiqrsm3');"></div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-[1200px] mx-auto px-6 py-12">
+<!-- Profile Header Section -->
+<div class="glass-card rounded-xl p-8 mb-10 relative overflow-hidden">
+<!-- Decorative Accent -->
+<div class="absolute -top-24 -right-24 w-64 h-64 bg-primary/10 rounded-full blur-[100px]"></div>
+<div class="flex flex-col md:flex-row items-center md:items-start gap-8 relative z-10">
+<div class="relative group">
+<div class="size-32 rounded-2xl bg-primary/20 border-2 border-primary p-1 neon-glow">
+<div class="w-full h-full rounded-xl bg-cover bg-center" data-alt="High resolution professional male portrait" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBp1K9DpkbKwTrog4lYZSxabICUY3exY5gnfPmwuHq2GCpjizUPmkqGv8DuiRYiJw8gdO7PbLgUA4SZErG-Z7FQUsx2itxmg0q6G2DldueAS00BDs7RUXtwjfw1kaImKFlB1X9np9_VUJpj25UPxYr_34dlU5sP7wqpoAc75TyIW9RRjmxGY2uhcSbyoGtJpFxC-va6_3vnWW_u_fkYBwnKiqSaUOWkoGLSMUefCdPUYzrWuhi4Lf5GXjv0XVh6X5qSvMps34axyvCs');"></div>
+</div>
+<button class="absolute -bottom-2 -right-2 size-8 bg-primary rounded-lg flex items-center justify-center shadow-lg border-2 border-background-dark">
+<span class="material-symbols-outlined text-white text-sm">edit</span>
+</button>
+</div>
+<div class="flex-1 text-center md:text-left">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h1 class="text-3xl font-bold text-white mb-1">Alex Harrison</h1>
+<p class="text-slate-400 font-medium">alex.harrison@nexcart.design</p>
+<div class="flex items-center justify-center md:justify-start gap-2 mt-4">
+<span class="px-3 py-1 bg-primary/20 text-primary text-xs font-bold rounded-full border border-primary/30 uppercase tracking-wider">Premium Member</span>
+<span class="text-slate-500 text-xs font-medium">Joined January 2023</span>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-lg text-sm font-bold flex items-center gap-2 transition-all">
+<span class="material-symbols-outlined text-sm">settings</span>
+                                Edit Profile
+                            </button>
+<button class="bg-white/5 hover:bg-white/10 text-white px-6 py-2.5 rounded-lg text-sm font-bold border border-glass-border transition-all">
+                                Change Password
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Navigation Tabs -->
+<div class="mb-10 overflow-x-auto">
+<div class="flex border-b border-glass-border min-w-max">
+<a class="px-6 pb-4 flex items-center gap-2 border-b-2 border-primary text-primary transition-all" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-sm font-bold tracking-wide">Personal Info</span>
+</a>
+<a class="px-6 pb-4 flex items-center gap-2 border-b-2 border-transparent text-slate-500 hover:text-slate-300 transition-all" href="#">
+<span class="material-symbols-outlined">location_on</span>
+<span class="text-sm font-bold tracking-wide">Address Book</span>
+</a>
+<a class="px-6 pb-4 flex items-center gap-2 border-b-2 border-transparent text-slate-500 hover:text-slate-300 transition-all" href="#">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="text-sm font-bold tracking-wide">Order History</span>
+</a>
+<a class="px-6 pb-4 flex items-center gap-2 border-b-2 border-transparent text-slate-500 hover:text-slate-300 transition-all" href="#">
+<span class="material-symbols-outlined">credit_card</span>
+<span class="text-sm font-bold tracking-wide">Payment Methods</span>
+</a>
+<a class="px-6 pb-4 flex items-center gap-2 border-b-2 border-transparent text-slate-500 hover:text-slate-300 transition-all" href="#">
+<span class="material-symbols-outlined">favorite</span>
+<span class="text-sm font-bold tracking-wide">Wishlist</span>
+</a>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Left Content: Profile Info -->
+<div class="lg:col-span-2 flex flex-col gap-8">
+<!-- Shipping Addresses Section -->
+<section>
+<div class="flex items-center justify-between mb-6 px-2">
+<h2 class="text-xl font-bold text-white flex items-center gap-3">
+<span class="w-1.5 h-6 bg-primary rounded-full"></span>
+                            Shipping Addresses
+                        </h2>
+<button class="text-primary text-sm font-bold flex items-center gap-1 hover:underline">
+<span class="material-symbols-outlined text-sm">add</span> Add New
+                        </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Address Card 1 (Default) -->
+<div class="glass-card p-5 rounded-xl border border-primary/30 relative">
+<div class="absolute top-4 right-4 flex gap-2">
+<span class="bg-primary/10 text-primary text-[10px] font-bold px-2 py-0.5 rounded border border-primary/20 uppercase">Default</span>
+</div>
+<div class="mb-4">
+<span class="material-symbols-outlined text-primary mb-2">home</span>
+<h3 class="text-white font-bold">Home Address</h3>
+</div>
+<p class="text-slate-400 text-sm leading-relaxed mb-6">
+                                123 Neon Way, Suite 404<br/>
+                                Indigo City, IC 90210<br/>
+                                United States
+                            </p>
+<div class="flex gap-4 border-t border-glass-border pt-4">
+<button class="text-xs font-bold text-slate-400 hover:text-white transition-colors">Edit</button>
+<button class="text-xs font-bold text-red-400/80 hover:text-red-400 transition-colors">Remove</button>
+</div>
+</div>
+<!-- Address Card 2 -->
+<div class="glass-card p-5 rounded-xl border border-glass-border">
+<div class="mb-4 text-slate-500">
+<span class="material-symbols-outlined mb-2">apartment</span>
+<h3 class="text-white font-bold">Office Address</h3>
+</div>
+<p class="text-slate-400 text-sm leading-relaxed mb-6">
+                                456 Tech Plaza, Floor 12<br/>
+                                Metro City, MC 55401<br/>
+                                United States
+                            </p>
+<div class="flex gap-4 border-t border-glass-border pt-4">
+<button class="text-xs font-bold text-slate-400 hover:text-white transition-colors">Edit</button>
+<button class="text-xs font-bold text-slate-400 hover:text-white transition-colors">Set as Default</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Quick Actions Section -->
+<section>
+<div class="flex items-center justify-between mb-6 px-2">
+<h2 class="text-xl font-bold text-white flex items-center gap-3">
+<span class="w-1.5 h-6 bg-primary rounded-full"></span>
+                            Recent Activity
+                        </h2>
+</div>
+<div class="glass-card rounded-xl overflow-hidden">
+<table class="w-full text-left text-sm">
+<thead class="bg-white/5 text-slate-400 font-bold border-b border-glass-border">
+<tr>
+<th class="px-6 py-4">Order ID</th>
+<th class="px-6 py-4">Date</th>
+<th class="px-6 py-4">Status</th>
+<th class="px-6 py-4 text-right">Total</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-glass-border">
+<tr class="hover:bg-white/5 transition-colors cursor-pointer group">
+<td class="px-6 py-4 font-medium text-white">#NX-9021</td>
+<td class="px-6 py-4 text-slate-400">Oct 24, 2023</td>
+<td class="px-6 py-4">
+<span class="flex items-center gap-1.5 text-emerald-400">
+<span class="size-1.5 rounded-full bg-emerald-400"></span>
+                                            Delivered
+                                        </span>
+</td>
+<td class="px-6 py-4 text-right font-bold text-white group-hover:text-primary transition-colors">$1,240.00</td>
+</tr>
+<tr class="hover:bg-white/5 transition-colors cursor-pointer group">
+<td class="px-6 py-4 font-medium text-white">#NX-8845</td>
+<td class="px-6 py-4 text-slate-400">Oct 12, 2023</td>
+<td class="px-6 py-4">
+<span class="flex items-center gap-1.5 text-primary">
+<span class="size-1.5 rounded-full bg-primary animate-pulse"></span>
+                                            In Transit
+                                        </span>
+</td>
+<td class="px-6 py-4 text-right font-bold text-white group-hover:text-primary transition-colors">$450.00</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+<!-- Right Sidebar: Quick Navigation -->
+<div class="flex flex-col gap-6">
+<div class="glass-card p-6 rounded-xl">
+<h3 class="text-lg font-bold text-white mb-6">Account Summary</h3>
+<div class="space-y-4">
+<div class="flex justify-between items-center p-3 rounded-lg bg-white/5 border border-glass-border">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">shopping_basket</span>
+<span class="text-sm font-medium">Total Orders</span>
+</div>
+<span class="text-white font-bold">24</span>
+</div>
+<div class="flex justify-between items-center p-3 rounded-lg bg-white/5 border border-glass-border">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">savings</span>
+<span class="text-sm font-medium">Rewards Points</span>
+</div>
+<span class="text-white font-bold">1,450</span>
+</div>
+</div>
+</div>
+<div class="glass-card p-6 rounded-xl">
+<h3 class="text-lg font-bold text-white mb-6">Need Assistance?</h3>
+<p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        Our premium support team is available 24/7 for our elite members.
+                    </p>
+<button class="w-full bg-white/5 border border-glass-border hover:bg-primary hover:border-primary text-white py-3 rounded-lg text-sm font-bold transition-all flex items-center justify-center gap-2 group">
+<span class="material-symbols-outlined text-sm group-hover:rotate-12 transition-transform">support_agent</span>
+                        Contact Support
+                    </button>
+</div>
+<!-- Banner/Promo -->
+<div class="relative group rounded-xl overflow-hidden h-48">
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/80 to-purple-600/80 mix-blend-multiply z-10"></div>
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-700" data-alt="Abstract tech background with glowing lines" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC1RX_ry99l0aeqxhdp4mfN2gV5I3ew0qKTWHVWk0FFTpqXyYsHS11g_kt6oT_kWv8Z-qb1hoKtV6nzLaCMjkHSuhf13-WVmZTtu1V-vWhbLQtlh_k6WrK1Yr8EitdQK5-31eEoQNju1lJcDWWLJ2I7OyY9H53dmTlO-WWh9ExsJc5oxQNR4Dhz3C6Q3HvUMVs_kYUsORIyKU4dq77NVHsNludNBtjYtKNK8Vz8N5uZblw8osYoggMpmruhVJxG0Hn3gykqFuOI5Roq');"></div>
+<div class="absolute inset-0 z-20 p-6 flex flex-col justify-end">
+<p class="text-white text-xs font-bold uppercase tracking-widest mb-1 opacity-80">Next Gen Exclusive</p>
+<h4 class="text-white text-xl font-bold leading-tight mb-2">Upgrade to Pro Elite</h4>
+<div class="flex items-center text-white/90 text-xs font-bold group-hover:translate-x-1 transition-transform">
+                            Learn more <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="border-t border-glass-border py-12 bg-background-dark/50">
+<div class="max-w-[1440px] mx-auto px-6 text-center">
+<div class="flex items-center justify-center gap-3 text-slate-500 mb-6 grayscale opacity-60">
+<svg class="size-6" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor"></path>
+</svg>
+<h2 class="text-lg font-bold tracking-tight uppercase">NEXCART</h2>
+</div>
+<p class="text-slate-500 text-sm">© 2024 NEXCART Unified Commerce. All rights reserved.</p>
+</div>
+</footer>
+</body></html>

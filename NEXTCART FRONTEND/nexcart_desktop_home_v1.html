@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEXCART Desktop Home v1</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ef4343",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#0a0a0a",
+                        "card-dark": "#1a1a1a",
+                        "accent-dark": "#2a2a2a",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .mega-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            z-index: 50;
+        }
+        .nav-item:hover .mega-menu {
+            display: block;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            height: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #ef4343;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display transition-colors duration-300">
+<!-- Sticky Header Wrapper -->
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-accent-dark">
+<!-- Top Nav Bar -->
+<div class="max-w-[1440px] mx-auto px-6 lg:px-10 py-4 flex items-center justify-between gap-8">
+<!-- Logo -->
+<div class="flex items-center gap-2 shrink-0">
+<div class="bg-primary p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-2xl">shopping_cart_checkout</span>
+</div>
+<h1 class="text-2xl font-800 tracking-tighter text-slate-900 dark:text-white">NEXCART</h1>
+</div>
+<!-- Search Bar -->
+<div class="flex-1 max-w-2xl relative">
+<div class="flex w-full items-center bg-slate-100 dark:bg-accent-dark rounded-full px-5 py-2.5 border border-transparent focus-within:border-primary/50 transition-all">
+<span class="material-symbols-outlined text-slate-400">search</span>
+<input class="bg-transparent border-none focus:ring-0 w-full text-sm placeholder:text-slate-500" placeholder="Search for brands, products and more..." type="text"/>
+<button class="bg-primary text-white text-xs font-bold px-4 py-1.5 rounded-full hover:bg-primary/90 transition-colors">Search</button>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-6">
+<div class="hidden xl:flex items-center gap-2 group cursor-pointer">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center border border-primary/20">
+<span class="material-symbols-outlined text-primary">auto_awesome</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[10px] uppercase font-bold text-slate-500">NexPoints</span>
+<span class="text-sm font-bold">1,250 PTS</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="relative p-2 hover:bg-slate-100 dark:hover:bg-accent-dark rounded-full transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+<span class="absolute top-1 right-1 w-4 h-4 bg-primary text-[10px] text-white flex items-center justify-center rounded-full">3</span>
+</button>
+<button class="relative p-2 hover:bg-slate-100 dark:hover:bg-accent-dark rounded-full transition-colors">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="absolute top-1 right-1 w-4 h-4 bg-primary text-[10px] text-white flex items-center justify-center rounded-full">5</span>
+</button>
+<div class="w-10 h-10 rounded-full bg-cover bg-center border-2 border-primary" data-alt="User profile avatar of a smiling man" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCquLPSAH7srsx_-gJuOxKSyRz5FmY3SLg2wzbjpbA7Z0Gek1mNfo4dkGhGNd2yK9ACyNb1-_tFkl2n5ME17QZ-cYX-Mavag11IA0en9JeBqo7uZT0kaXxr8GqU1rPELKiR2TQ0hdUTYkrJRPi2Z8_hgsggQOO7XG16ewUIbUNR1Y-I_2YYS0uZUrQaA5fJ27-vxi1xevRB98BO_sgKCMH67jIX_y63CDgGk8Jrk90Pc7JVxswbN9MCi_udv0Mp_20OmLojJnYTGV0h')"></div>
+</div>
+</div>
+</div>
+<!-- Secondary Nav / Mega Menu -->
+<nav class="border-t border-slate-200 dark:border-accent-dark">
+<div class="max-w-[1440px] mx-auto px-10 flex items-center justify-center gap-10 py-3">
+<div class="nav-item group relative py-1">
+<a class="text-sm font-semibold hover:text-primary transition-colors flex items-center gap-1" href="#">Mobiles <span class="material-symbols-outlined text-xs">expand_more</span></a>
+</div>
+<div class="nav-item group relative py-1">
+<a class="text-sm font-semibold hover:text-primary transition-colors flex items-center gap-1" href="#">Fashion <span class="material-symbols-outlined text-xs">expand_more</span></a>
+</div>
+<div class="nav-item group relative py-1">
+<a class="text-sm font-semibold hover:text-primary transition-colors flex items-center gap-1" href="#">Electronics <span class="material-symbols-outlined text-xs">expand_more</span></a>
+</div>
+<div class="nav-item group relative py-1">
+<a class="text-sm font-semibold hover:text-primary transition-colors flex items-center gap-1" href="#">Home &amp; Living <span class="material-symbols-outlined text-xs">expand_more</span></a>
+</div>
+<div class="nav-item group relative py-1">
+<a class="text-sm font-semibold hover:text-primary transition-colors flex items-center gap-1" href="#">Beauty <span class="material-symbols-outlined text-xs">expand_more</span></a>
+</div>
+<div class="nav-item group relative py-1">
+<a class="text-sm font-semibold hover:text-primary transition-colors flex items-center gap-1" href="#">Gaming <span class="material-symbols-outlined text-xs">expand_more</span></a>
+</div>
+<div class="h-4 w-[1px] bg-slate-300 dark:bg-accent-dark"></div>
+<a class="text-sm font-bold text-primary flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-sm">bolt</span> Flash Sale
+                </a>
+</div>
+</nav>
+</header>
+<main class="max-w-[1440px] mx-auto pb-20">
+<!-- Hero Slider Section -->
+<section class="px-6 lg:px-10 py-8">
+<div class="relative w-full aspect-[21/9] rounded-xl overflow-hidden group">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="High-tech sleek modern smartphone product banner" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDwy435-rTdkXppLuCrFNFvFrykFl1WZ24zBhBhRFCxH7CueYA9oMK5BJYjbMYRebY06KkBJu9q3V64Jgo-E7RIGUxF1LRhCPvocJEBuKmO64TZN4OcmxQdwNnDp2hzAWX3giG0XAJffY0nyhRnnMhUGDE255p1mdN9DdH8lGtkPtwpLUZdGuOrM_z_cpYK9rW0sd8qTb-rHFBvwueFwhJTfTB7FtdslbpX-JnAt50G5l20eij4P_pc5hIPsjCEnJ1hK0iMTK3nL9hX')">
+<div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent flex items-center">
+<div class="max-w-2xl pl-20 space-y-6">
+<span class="inline-block bg-primary px-4 py-1 rounded-full text-white text-xs font-bold uppercase tracking-widest">Deal of the Day</span>
+<h2 class="text-6xl font-extrabold text-white leading-tight">Galaxy S24 Ultra<br/><span class="text-primary">Unleash the Future</span></h2>
+<p class="text-slate-300 text-lg max-w-md">Experience AI-powered mobile excellence with the best-in-class camera and display. Save up to $300 on trade-in.</p>
+<div class="flex items-center gap-4 pt-4">
+<button class="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full font-bold transition-all transform hover:scale-105">Shop Now</button>
+<button class="bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 text-white px-8 py-4 rounded-full font-bold transition-all">Learn More</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Slider Nav -->
+<div class="absolute bottom-8 right-20 flex gap-2">
+<div class="w-12 h-1 bg-primary rounded-full"></div>
+<div class="w-12 h-1 bg-white/30 rounded-full"></div>
+<div class="w-12 h-1 bg-white/30 rounded-full"></div>
+</div>
+</div>
+</section>
+<!-- Trust Signals -->
+<section class="px-10 py-6">
+<div class="grid grid-cols-4 gap-6">
+<div class="flex items-center gap-4 p-6 bg-slate-50 dark:bg-card-dark border border-slate-200 dark:border-accent-dark rounded-xl">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">local_shipping</span>
+</div>
+<div>
+<h4 class="font-bold">Fast Delivery</h4>
+<p class="text-sm text-slate-500">Next day shipping nationwide</p>
+</div>
+</div>
+<div class="flex items-center gap-4 p-6 bg-slate-50 dark:bg-card-dark border border-slate-200 dark:border-accent-dark rounded-xl">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">verified_user</span>
+</div>
+<div>
+<h4 class="font-bold">Secure Payment</h4>
+<p class="text-sm text-slate-500">SSL Encrypted Transactions</p>
+</div>
+</div>
+<div class="flex items-center gap-4 p-6 bg-slate-50 dark:bg-card-dark border border-slate-200 dark:border-accent-dark rounded-xl">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">headset_mic</span>
+</div>
+<div>
+<h4 class="font-bold">24/7 Support</h4>
+<p class="text-sm text-slate-500">Expert human assistance</p>
+</div>
+</div>
+<div class="flex items-center gap-4 p-6 bg-slate-50 dark:bg-card-dark border border-slate-200 dark:border-accent-dark rounded-xl">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">auto_fix_high</span>
+</div>
+<div>
+<h4 class="font-bold">NexGen Rewards</h4>
+<p class="text-sm text-slate-500">Gamified shopping experience</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Section Header -->
+<section class="px-10 pt-12 pb-6 flex items-center justify-between">
+<div>
+<h2 class="text-3xl font-extrabold tracking-tight">Featured Products</h2>
+<p class="text-slate-500 mt-1">Discover this week's most-wanted tech and lifestyle items.</p>
+</div>
+<a class="text-primary font-bold flex items-center gap-1 hover:underline" href="#">
+                View All Categories <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</section>
+<!-- 5-Column Product Grid -->
+<section class="px-10">
+<div class="grid grid-cols-5 gap-6">
+<!-- Product Card 1 -->
+<div class="group bg-white dark:bg-card-dark rounded-xl border border-slate-200 dark:border-accent-dark overflow-hidden hover:shadow-2xl hover:shadow-primary/5 transition-all duration-300">
+<div class="relative aspect-square overflow-hidden bg-slate-100 dark:bg-accent-dark">
+<div class="absolute top-4 left-4 z-10">
+<span class="bg-primary text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase">Trending</span>
+</div>
+<button class="absolute top-4 right-4 z-10 w-8 h-8 rounded-full bg-white/80 dark:bg-black/40 backdrop-blur-md flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-sm">favorite</span>
+</button>
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Apple iPhone 15 Pro titanium finish close up" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBnl5CEUcFeL8_ojhoZ5TIFSztIrrj2vPfHsaIL8ijBhZkJp29eBCxUFG_w9zZCAb3cEnmel73UesvOLEmc19BUTpl49OxlmF8tAFTdOabtKa-3JKIg4jer420bGint7QH2eXET2Tzj8MTxJCuayKXkJp-_duBKiIyHgl3y3fPPUC8uMaiYIwDbb6XCmc2hxkmn7w_f5n5NcMSOVWsKWnB0BQw9QKd57v0nYqzaJB7qyggkUNQP_1qAEqz11k-EHhrf5Vw5kBzOtx_F')"></div>
+<!-- Quick View Overlay -->
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
+<button class="bg-white text-black px-4 py-2 rounded-full text-xs font-bold hover:bg-primary hover:text-white transition-all transform translate-y-4 group-hover:translate-y-0">Quick View</button>
+</div>
+</div>
+<div class="p-5">
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Apple</p>
+<h3 class="font-bold text-lg mt-1 group-hover:text-primary transition-colors truncate">iPhone 15 Pro</h3>
+<div class="flex items-center gap-2 mt-2">
+<div class="flex text-amber-400">
+<span class="material-symbols-outlined text-xs fill-current">star</span>
+<span class="material-symbols-outlined text-xs fill-current">star</span>
+<span class="material-symbols-outlined text-xs fill-current">star</span>
+<span class="material-symbols-outlined text-xs fill-current">star</span>
+<span class="material-symbols-outlined text-xs fill-current">star</span>
+</div>
+<span class="text-[10px] text-slate-500 font-medium">(2.4k)</span>
+</div>
+<div class="flex items-center justify-between mt-4">
+<span class="text-xl font-extrabold">$999.00</span>
+<button class="bg-primary/10 hover:bg-primary text-primary hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition-all">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group bg-white dark:bg-card-dark rounded-xl border border-slate-200 dark:border-accent-dark overflow-hidden hover:shadow-2xl hover:shadow-primary/5 transition-all duration-300">
+<div class="relative aspect-square overflow-hidden bg-slate-100 dark:bg-accent-dark">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Samsung Galaxy Z Fold 5 unfolded showing large display" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA3g8wESp5DaMbKx0rDf13hEmOURCVRkDbC_39AtPL6EvtaE-_BbhtPYOHcTifFge6_tof_1FP167wp2fBT0AxcqadwC_fI0NUpvbFzKsPXYVvxkHND01BGs2VzCMuqLNJeWuV1vrJBjdIB_6G7IV69Ck-Uif7TDnp6dXO92XmgeHjYztqcqlL0jrSRzqLNvYwt5hQmKMCNQXcr8Wk14hgZyKn8BHayYBOTMxEvMq_tnSdD1MDEa7k1wIY-9XXS4TMcpJXpCHOJKZOs')"></div>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
+<button class="bg-white text-black px-4 py-2 rounded-full text-xs font-bold hover:bg-primary hover:text-white transition-all transform translate-y-4 group-hover:translate-y-0">Quick View</button>
+</div>
+</div>
+<div class="p-5">
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Samsung</p>
+<h3 class="font-bold text-lg mt-1 group-hover:text-primary transition-colors truncate">Z Fold 5</h3>
+<div class="flex items-center gap-2 mt-2">
+<div class="flex text-amber-400">
+<span class="material-symbols-outlined text-xs fill-current">star</span>
+<span class="material-symbols-outlined text-xs fill-current">star</span>
+<span class="material-symbols-outlined text-xs fill-current">star</span>
+<span class="material-symbols-outlined text-xs fill-current">star</span>
+<span class="material-symbols-outlined text-xs">star</span>
+</div>
+<span class="text-[10px] text-slate-500 font-medium">(1.8k)</span>
+</div>
+<div class="flex items-center justify-between mt-4">
+<span class="text-xl font-extrabold">$1,799.00</span>
+<button class="bg-primary/10 hover:bg-primary text-primary hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition-all">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group bg-white dark:bg-card-dark rounded-xl border border-slate-200 dark:border-accent-dark overflow-hidden hover:shadow-2xl hover:shadow-primary/5 transition-all duration-300">
+<div class="relative aspect-square overflow-hidden bg-slate-100 dark:bg-accent-dark">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Sony WH-1000XM5 headphones in midnight blue" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuArmnJ_ZCQp08vXsAxFMLRY7HiZ6gGGIXY_eQmDofHnWb2kS__1H22DFJUhuYFFFDFm-8DCjishZHXzo3ZI8efafMeoNUU4jiZafnwIjs5O6fXv0Nxv-nUQBMK-rchkfnDKs-0K7iL1bIMJjSH7oBEMPLhJhAjV9Vq8eGzykztTslOKU6oUKAE6ykCYE-SWuRv2fnurcFSoglcZ91_jWJpKszejWW6Ksdm_7nn2-vSiasPsk-j35ozoAaV_4tXscjKc8EkulOKWzOf8')"></div>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
+<button class="bg-white text-black px-4 py-2 rounded-full text-xs font-bold hover:bg-primary hover:text-white transition-all transform translate-y-4 group-hover:translate-y-0">Quick View</button>
+</div>
+</div>
+<div class="p-5">
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Sony</p>
+<h3 class="font-bold text-lg mt-1 group-hover:text-primary transition-colors truncate">WH-1000XM5</h3>
+<div class="flex items-center gap-2 mt-2">
+<div class="flex text-amber-400">
+<span class="material-symbols-outlined text-xs fill-current">star</span>
+<span class="material-symbols-outlined text-xs fill-current">star</span>
+<span class="material-symbols-outlined text-xs fill-current">star</span>
+<span class="material-symbols-outlined text-xs fill-current">star</span>
+<span class="material-symbols-outlined text-xs fill-current">star</span>
+</div>
+<span class="text-[10px] text-slate-500 font-medium">(3.1k)</span>
+</div>
+<div class="flex items-center justify-between mt-4">
+<div class="flex flex-col">
+<span class="text-xs text-slate-400 line-through font-bold">$399</span>
+<span class="text-xl font-extrabold">$349.00</span>
+</div>
+<button class="bg-primary/10 hover:bg-primary text-primary hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition-all">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group bg-white dark:bg-card-dark rounded-xl border border-slate-200 dark:border-accent-dark overflow-hidden hover:shadow-2xl hover:shadow-primary/5 transition-all duration-300">
+<div class="relative aspect-square overflow-hidden bg-slate-100 dark:bg-accent-dark">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Apple Watch Ultra with orange alpine loop" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAK69v5b4okebAvLRMUsZ_2BlRLgFW8pT4bkX9GqJPFr4rAI44ZCeKH48NhxOQmuyvSaM7BCUbLAN-fOCStLJSRi1ej3nSSGoZn5UDF-pQ_ETSOgGzj47fXG8gpKQSjXEObIJOT5iJSJuA68wLnUxnPSRnX7eDsElpv4fAV1pcuJjwUIts_V-jh9_YS_7gs47Qnbgfr_Wj0DfhbVnHvkDXuV29D2gAT2G8aPRidExxOVfn1JiloyKstbeUwM50p960jCofP0VFwV_LO')"></div>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
+<button class="bg-white text-black px-4 py-2 rounded-full text-xs font-bold hover:bg-primary hover:text-white transition-all transform translate-y-4 group-hover:translate-y-0">Quick View</button>
+</div>
+</div>
+<div class="p-5">
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Apple</p>
+<h3 class="font-bold text-lg mt-1 group-hover:text-primary transition-colors truncate">Watch Ultra 2</h3>
+<div class="flex items-center gap-2 mt-2">
+<div class="flex text-amber-400">
+<span class="material-symbols-outlined text-xs fill-current">star</span>
+<span class="material-symbols-outlined text-xs fill-current">star</span>
+<span class="material-symbols-outlined text-xs fill-current">star</span>
+<span class="material-symbols-outlined text-xs fill-current">star</span>
+<span class="material-symbols-outlined text-xs fill-current">star</span>
+</div>
+<span class="text-[10px] text-slate-500 font-medium">(842)</span>
+</div>
+<div class="flex items-center justify-between mt-4">
+<span class="text-xl font-extrabold">$799.00</span>
+<button class="bg-primary/10 hover:bg-primary text-primary hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition-all">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 5 -->
+<div class="group bg-white dark:bg-card-dark rounded-xl border border-slate-200 dark:border-accent-dark overflow-hidden hover:shadow-2xl hover:shadow-primary/5 transition-all duration-300">
+<div class="relative aspect-square overflow-hidden bg-slate-100 dark:bg-accent-dark">
+<div class="absolute top-4 left-4 z-10">
+<span class="bg-blue-500 text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase">Pre-order</span>
+</div>
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="New Apple MacBook Air in starlight finish" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDk-m29IDe3wl78znkWk0wmw3fUvoAGkfZHfdaUVaSG7e0KngvB1if8WQl4t4Xy8l2N7w178pJwPN1FlDb3ZGbqMeVUds4slMpHfVZa8bHafV2Pqf-ZRkxq3xAxJP4P5ZuDy9HL3BoYMyyUsLq5fInORexp3sQ4_mmmLCzytfPncq3M-KMFR4TuWSwCdzjIt3rqzzNouFFR8qhT0ej7IcOTDGDM7rkkPgk1_tDJKqiCA8J3KU6s_OcVmYaRpGPmPmDAsjN5TdfIq56S')"></div>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
+<button class="bg-white text-black px-4 py-2 rounded-full text-xs font-bold hover:bg-primary hover:text-white transition-all transform translate-y-4 group-hover:translate-y-0">Quick View</button>
+</div>
+</div>
+<div class="p-5">
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Apple</p>
+<h3 class="font-bold text-lg mt-1 group-hover:text-primary transition-colors truncate">MacBook Air M3</h3>
+<div class="flex items-center gap-2 mt-2">
+<div class="flex text-amber-400">
+<span class="material-symbols-outlined text-xs fill-current">star</span>
+<span class="material-symbols-outlined text-xs fill-current">star</span>
+<span class="material-symbols-outlined text-xs fill-current">star</span>
+<span class="material-symbols-outlined text-xs fill-current">star</span>
+<span class="material-symbols-outlined text-xs fill-current">star</span>
+</div>
+<span class="text-[10px] text-slate-500 font-medium">(1.2k)</span>
+</div>
+<div class="flex items-center justify-between mt-4">
+<span class="text-xl font-extrabold">$1,099.00</span>
+<button class="bg-primary/10 hover:bg-primary text-primary hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition-all">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Category Chip Section -->
+<section class="px-10 py-16">
+<h2 class="text-2xl font-extrabold mb-8 text-center">Shop by Category</h2>
+<div class="flex items-center justify-center flex-wrap gap-4">
+<div class="group cursor-pointer flex flex-col items-center gap-3">
+<div class="w-20 h-20 rounded-full bg-slate-100 dark:bg-card-dark border-2 border-transparent group-hover:border-primary flex items-center justify-center transition-all overflow-hidden">
+<span class="material-symbols-outlined text-3xl group-hover:scale-110 group-hover:text-primary transition-all">smartphone</span>
+</div>
+<span class="text-sm font-bold">Mobiles</span>
+</div>
+<div class="group cursor-pointer flex flex-col items-center gap-3">
+<div class="w-20 h-20 rounded-full bg-slate-100 dark:bg-card-dark border-2 border-transparent group-hover:border-primary flex items-center justify-center transition-all overflow-hidden">
+<span class="material-symbols-outlined text-3xl group-hover:scale-110 group-hover:text-primary transition-all">laptop_mac</span>
+</div>
+<span class="text-sm font-bold">Laptops</span>
+</div>
+<div class="group cursor-pointer flex flex-col items-center gap-3">
+<div class="w-20 h-20 rounded-full bg-slate-100 dark:bg-card-dark border-2 border-transparent group-hover:border-primary flex items-center justify-center transition-all overflow-hidden">
+<span class="material-symbols-outlined text-3xl group-hover:scale-110 group-hover:text-primary transition-all">watch</span>
+</div>
+<span class="text-sm font-bold">Wearables</span>
+</div>
+<div class="group cursor-pointer flex flex-col items-center gap-3">
+<div class="w-20 h-20 rounded-full bg-slate-100 dark:bg-card-dark border-2 border-transparent group-hover:border-primary flex items-center justify-center transition-all overflow-hidden">
+<span class="material-symbols-outlined text-3xl group-hover:scale-110 group-hover:text-primary transition-all">headphones</span>
+</div>
+<span class="text-sm font-bold">Audio</span>
+</div>
+<div class="group cursor-pointer flex flex-col items-center gap-3">
+<div class="w-20 h-20 rounded-full bg-slate-100 dark:bg-card-dark border-2 border-transparent group-hover:border-primary flex items-center justify-center transition-all overflow-hidden">
+<span class="material-symbols-outlined text-3xl group-hover:scale-110 group-hover:text-primary transition-all">videogame_asset</span>
+</div>
+<span class="text-sm font-bold">Gaming</span>
+</div>
+<div class="group cursor-pointer flex flex-col items-center gap-3">
+<div class="w-20 h-20 rounded-full bg-slate-100 dark:bg-card-dark border-2 border-transparent group-hover:border-primary flex items-center justify-center transition-all overflow-hidden">
+<span class="material-symbols-outlined text-3xl group-hover:scale-110 group-hover:text-primary transition-all">camera_enhance</span>
+</div>
+<span class="text-sm font-bold">Cameras</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Floating Gamification & Support -->
+<div class="fixed bottom-10 right-10 flex flex-col gap-4 z-40">
+<div class="bg-white dark:bg-card-dark shadow-2xl rounded-2xl p-4 border border-slate-200 dark:border-accent-dark flex items-center gap-4 animate-pulse">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined">auto_awesome</span>
+</div>
+<div>
+<p class="text-xs font-bold text-slate-500">DAILY STREAK</p>
+<p class="text-sm font-extrabold text-primary">Day 7: +50 Bonus Pts</p>
+</div>
+</div>
+<button class="w-16 h-16 rounded-full bg-primary text-white shadow-2xl flex items-center justify-center hover:scale-110 transition-transform active:scale-95 group">
+<span class="material-symbols-outlined text-3xl group-hover:rotate-12 transition-transform">support_agent</span>
+</button>
+</div>
+<!-- Footer -->
+<footer class="bg-slate-100 dark:bg-card-dark border-t border-slate-200 dark:border-accent-dark py-20">
+<div class="max-w-[1440px] mx-auto px-10 grid grid-cols-4 gap-12">
+<div class="space-y-6">
+<div class="flex items-center gap-2">
+<div class="bg-primary p-2 rounded-full">
+<span class="material-symbols-outlined text-white text-xl">shopping_cart_checkout</span>
+</div>
+<h2 class="text-2xl font-800 tracking-tighter">NEXCART</h2>
+</div>
+<p class="text-slate-500 text-sm leading-relaxed">The premium ecosystem for buyers and sellers. Experience gamified shopping with NexPoints and elite social features.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-slate-200 dark:bg-accent-dark flex items-center justify-center hover:bg-primary hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">language</span></a>
+<a class="w-10 h-10 rounded-full bg-slate-200 dark:bg-accent-dark flex items-center justify-center hover:bg-primary hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="w-10 h-10 rounded-full bg-slate-200 dark:bg-accent-dark flex items-center justify-center hover:bg-primary hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
+</div>
+</div>
+<div>
+<h4 class="font-bold mb-6">Quick Links</h4>
+<ul class="space-y-4 text-sm text-slate-500">
+<li><a class="hover:text-primary transition-colors" href="#">Track Order</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Flash Sales</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Become a Seller</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">NexPoints Program</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6">Customer Care</h4>
+<ul class="space-y-4 text-sm text-slate-500">
+<li><a class="hover:text-primary transition-colors" href="#">Help Center</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Returns &amp; Refunds</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Shipping Info</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Contact Us</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6">Newsletter</h4>
+<p class="text-sm text-slate-500 mb-4">Subscribe for exclusive early access and NexPoints rewards.</p>
+<div class="flex gap-2">
+<input class="bg-white dark:bg-accent-dark border border-slate-200 dark:border-accent-dark rounded-full px-4 py-2 w-full text-sm" placeholder="Email address" type="email"/>
+<button class="bg-primary text-white p-2 rounded-full flex items-center justify-center"><span class="material-symbols-outlined">send</span></button>
+</div>
+</div>
+</div>
+<div class="max-w-[1440px] mx-auto px-10 mt-20 pt-8 border-t border-slate-200 dark:border-accent-dark flex items-center justify-between text-xs text-slate-400">
+<p>© 2024 NEXCART GLOBAL INC. ALL RIGHTS RESERVED.</p>
+<div class="flex gap-8 font-bold uppercase tracking-widest">
+<a href="#">Privacy Policy</a>
+<a href="#">Terms of Service</a>
+<a href="#">Cookies</a>
+</div>
+</div>
+</footer>
+</body></html>

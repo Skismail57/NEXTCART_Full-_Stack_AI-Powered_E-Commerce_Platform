@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEXCART Admin - Category Manager</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0d7ff2",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .tree-line::before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: #e5e7eb;
+        }
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111418] dark:text-white antialiased">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 w-full bg-white dark:bg-[#1a242d] border-b border-[#f0f2f5] dark:border-gray-800 px-6 py-3 flex items-center justify-between">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3">
+<div class="size-8 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_330)">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs><clippath id="clip0_6_330"><rect fill="white" height="48" width="48"></rect></clippath></defs>
+</svg>
+</div>
+<h2 class="text-lg font-bold tracking-tight">NEXCART Admin</h2>
+</div>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-sm font-medium text-gray-500 hover:text-primary" href="#">Dashboard</a>
+<a class="text-sm font-medium text-gray-500 hover:text-primary" href="#">Orders</a>
+<a class="text-sm font-bold text-primary border-b-2 border-primary pb-1 -mb-1" href="#">Products</a>
+<a class="text-sm font-medium text-gray-500 hover:text-primary" href="#">Customers</a>
+<a class="text-sm font-medium text-gray-500 hover:text-primary" href="#">Analytics</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-[20px]">search</span>
+<input class="w-full bg-[#f0f2f5] dark:bg-gray-800 border-none rounded-lg pl-10 pr-4 py-2 text-sm focus:ring-2 focus:ring-primary/20" placeholder="Global search..." type="text"/>
+</div>
+<button class="p-2 rounded-lg bg-[#f0f2f5] dark:bg-gray-800 hover:bg-gray-200 text-gray-600">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</button>
+<div class="size-8 rounded-full bg-cover bg-center border border-gray-200" data-alt="User profile avatar" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD9vUxcrrW17xckqpeu-yT0_ZXYphH2PKNJ1KmEOli7nPhtBJlcukQfAY0wa-0DIYaWcQXnZsI8Y_PBx012CflRCV0N18rMRr4zSUmhjWAnOxbUVFz6g3M7siM6drW_FY3L7ydMdH2TVgsXVRc2xo6KVIpI9Qt4ZaR77qxSztoopKlI1UDFokRmiBr7goq6-0zmZ_Khz5xfHsqFl7LvGzgFgVU90GN-ZA5tP1pnhntciWTjhPG4YESgJZt4lFjC3_g1S-6yhcZHG8z6')"></div>
+</div>
+</header>
+<div class="flex h-[calc(100vh-64px)] overflow-hidden">
+<!-- Side Navigation (Slim) -->
+<aside class="w-16 lg:w-64 bg-white dark:bg-[#1a242d] border-r border-[#f0f2f5] dark:border-gray-800 flex flex-col py-6">
+<div class="px-4 space-y-2">
+<div class="flex items-center gap-3 px-3 py-2 text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors cursor-pointer">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="hidden lg:block text-sm font-medium">Overview</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 bg-primary/10 text-primary rounded-lg transition-colors cursor-pointer">
+<span class="material-symbols-outlined">category</span>
+<span class="hidden lg:block text-sm font-medium">Category Manager</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors cursor-pointer">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="hidden lg:block text-sm font-medium">Product Inventory</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors cursor-pointer">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="hidden lg:block text-sm font-medium">Manage Orders</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors cursor-pointer">
+<span class="material-symbols-outlined">campaign</span>
+<span class="hidden lg:block text-sm font-medium">Marketing</span>
+</div>
+</div>
+<div class="mt-auto px-4">
+<div class="flex items-center gap-3 px-3 py-2 text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors cursor-pointer">
+<span class="material-symbols-outlined">settings</span>
+<span class="hidden lg:block text-sm font-medium">Settings</span>
+</div>
+</div>
+</aside>
+<!-- Main Workspace -->
+<main class="flex-1 overflow-y-auto bg-white dark:bg-background-dark">
+<div class="p-8">
+<!-- Breadcrumbs & Heading -->
+<div class="flex flex-col gap-1 mb-6">
+<nav class="flex items-center gap-2 text-xs font-medium text-gray-400 uppercase tracking-wider">
+<a class="hover:text-primary" href="#">Catalog</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-gray-600">Category Manager</span>
+</nav>
+<div class="flex justify-between items-center mt-2">
+<div>
+<h1 class="text-3xl font-black text-[#111418] dark:text-white">Product Taxonomy</h1>
+<p class="text-gray-500 mt-1">Organize and manage your hierarchical category structure.</p>
+</div>
+<button class="bg-primary text-white px-6 py-2.5 rounded-lg font-bold text-sm flex items-center gap-2 shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+                            Add Global Category
+                        </button>
+</div>
+</div>
+<!-- Tree View Container -->
+<div class="bg-[#fcfcfc] dark:bg-[#1a242d]/50 border border-gray-100 dark:border-gray-800 rounded-xl overflow-hidden">
+<div class="p-4 border-b border-gray-100 dark:border-gray-800 flex items-center justify-between">
+<div class="relative w-full max-w-sm">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-[18px]">filter_list</span>
+<input class="w-full bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 rounded-lg pl-10 pr-4 py-2 text-sm focus:ring-primary" placeholder="Filter categories..." type="text"/>
+</div>
+<div class="flex gap-2">
+<button class="p-2 text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg"><span class="material-symbols-outlined">unfold_more</span></button>
+<button class="p-2 text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg"><span class="material-symbols-outlined">unfold_less</span></button>
+</div>
+</div>
+<!-- Tree Structure -->
+<div class="p-4 space-y-1">
+<!-- Level 1 Node -->
+<div class="group">
+<div class="flex items-center justify-between p-3 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-lg hover:border-primary/50 transition-all cursor-move ring-offset-2 hover:ring-2 hover:ring-primary/10">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-gray-300 cursor-grab">drag_indicator</span>
+<span class="material-symbols-outlined text-primary">expand_more</span>
+<span class="material-symbols-outlined text-gray-400">devices</span>
+<span class="font-bold text-sm">Electronics</span>
+<span class="bg-gray-100 dark:bg-gray-700 text-[10px] px-1.5 py-0.5 rounded uppercase font-black text-gray-500 tracking-tight">24 Products</span>
+</div>
+<div class="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 hover:bg-primary/10 hover:text-primary rounded text-gray-400" title="Add Sub-category"><span class="material-symbols-outlined text-[18px]">add_box</span></button>
+<button class="p-1.5 hover:bg-primary/10 hover:text-primary rounded text-gray-400" title="Edit"><span class="material-symbols-outlined text-[18px]">edit</span></button>
+<button class="p-1.5 hover:bg-gray-100 dark:hover:bg-gray-700 rounded text-gray-400" title="Hide"><span class="material-symbols-outlined text-[18px]">visibility_off</span></button>
+<button class="p-1.5 hover:bg-red-50 hover:text-red-500 rounded text-gray-400" title="Delete"><span class="material-symbols-outlined text-[18px]">delete</span></button>
+</div>
+</div>
+<!-- Level 2 Node -->
+<div class="ml-12 mt-1 space-y-1 relative border-l-2 border-dashed border-gray-100 dark:border-gray-800 pl-4">
+<div class="group/sub flex items-center justify-between p-3 bg-white dark:bg-gray-800/80 border border-gray-100 dark:border-gray-700 rounded-lg hover:border-primary/50 transition-all cursor-move">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-gray-300 cursor-grab">drag_indicator</span>
+<span class="material-symbols-outlined text-primary">expand_more</span>
+<span class="font-medium text-sm">Mobile Phones</span>
+</div>
+<div class="flex items-center gap-2 opacity-0 group-hover/sub:opacity-100 transition-opacity">
+<button class="p-1.5 hover:bg-primary/10 hover:text-primary rounded text-gray-400"><span class="material-symbols-outlined text-[18px]">add_box</span></button>
+<button class="p-1.5 hover:bg-primary/10 hover:text-primary rounded text-gray-400"><span class="material-symbols-outlined text-[18px]">edit</span></button>
+<button class="p-1.5 hover:bg-red-50 hover:text-red-500 rounded text-gray-400"><span class="material-symbols-outlined text-[18px]">delete</span></button>
+</div>
+</div>
+<!-- Level 3 Node (Active Selection) -->
+<div class="ml-12 mt-1 space-y-1 relative border-l-2 border-dashed border-gray-100 dark:border-gray-800 pl-4">
+<div class="flex items-center justify-between p-3 bg-primary/5 dark:bg-primary/10 border-2 border-primary rounded-lg transition-all cursor-move">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary/40 cursor-grab">drag_indicator</span>
+<span class="material-symbols-outlined text-gray-300">remove</span>
+<span class="font-bold text-sm text-primary">Smartphones</span>
+<span class="bg-primary text-[10px] px-1.5 py-0.5 rounded uppercase font-black text-white tracking-tight">Active</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-1.5 bg-white dark:bg-gray-800 rounded shadow-sm text-primary"><span class="material-symbols-outlined text-[18px]">edit</span></button>
+<button class="p-1.5 bg-white dark:bg-gray-800 rounded shadow-sm text-red-500"><span class="material-symbols-outlined text-[18px]">delete</span></button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Level 1 Node (Closed) -->
+<div class="group">
+<div class="flex items-center justify-between p-3 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-lg hover:border-primary/50 transition-all cursor-move">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-gray-300 cursor-grab">drag_indicator</span>
+<span class="material-symbols-outlined text-gray-400">chevron_right</span>
+<span class="material-symbols-outlined text-gray-400">styler</span>
+<span class="font-bold text-sm">Fashion &amp; Apparel</span>
+<span class="text-gray-400 text-xs">Hidden Category</span>
+</div>
+<div class="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 hover:bg-primary/10 hover:text-primary rounded text-gray-400"><span class="material-symbols-outlined text-[18px]">add_box</span></button>
+<button class="p-1.5 hover:bg-gray-100 dark:hover:bg-gray-700 rounded text-gray-400"><span class="material-symbols-outlined text-[18px]">visibility</span></button>
+<button class="p-1.5 hover:bg-red-50 hover:text-red-500 rounded text-gray-400"><span class="material-symbols-outlined text-[18px]">delete</span></button>
+</div>
+</div>
+</div>
+<!-- Level 1 Node -->
+<div class="group">
+<div class="flex items-center justify-between p-3 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-lg hover:border-primary/50 transition-all cursor-move">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-gray-300 cursor-grab">drag_indicator</span>
+<span class="material-symbols-outlined text-gray-400">chevron_right</span>
+<span class="material-symbols-outlined text-gray-400">chair</span>
+<span class="font-bold text-sm">Home &amp; Garden</span>
+</div>
+<div class="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 hover:bg-primary/10 hover:text-primary rounded text-gray-400"><span class="material-symbols-outlined text-[18px]">add_box</span></button>
+<button class="p-1.5 hover:bg-red-50 hover:text-red-500 rounded text-gray-400"><span class="material-symbols-outlined text-[18px]">delete</span></button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Reorder Preview Line -->
+<div class="h-[2px] w-full bg-primary mt-4 relative after:absolute after:left-0 after:-top-1 after:size-2.5 after:bg-primary after:rounded-full"></div>
+<p class="text-[10px] text-primary font-bold uppercase tracking-widest mt-1">Insert placement preview</p>
+</div>
+</main>
+<!-- Contextual Sidebar: Metadata -->
+<aside class="w-[400px] bg-[#f9fafb] dark:bg-[#151d26] border-l border-gray-200 dark:border-gray-800 flex flex-col">
+<div class="p-6 border-b border-gray-200 dark:border-gray-800">
+<h3 class="text-lg font-black flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">info</span>
+                    Category Settings
+                </h3>
+<p class="text-xs text-gray-500 mt-1 uppercase font-bold tracking-tight">Editing: Smartphones</p>
+</div>
+<div class="flex-1 overflow-y-auto p-6 space-y-6">
+<!-- Thumbnail Uploader -->
+<div class="space-y-2">
+<label class="text-sm font-bold text-gray-700 dark:text-gray-300">Category Icon/Thumbnail</label>
+<div class="border-2 border-dashed border-gray-300 dark:border-gray-700 rounded-xl p-8 flex flex-col items-center justify-center text-center bg-white dark:bg-gray-800/50 hover:border-primary transition-colors group cursor-pointer">
+<div class="size-16 rounded-xl bg-gray-50 dark:bg-gray-700 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-gray-400 text-[32px]">image</span>
+</div>
+<p class="text-xs font-bold text-primary uppercase">Click to upload</p>
+<p class="text-[11px] text-gray-400 mt-1">SVG, PNG or JPG (Max 800x800px)</p>
+</div>
+</div>
+<!-- Form Fields -->
+<div class="space-y-4">
+<div class="space-y-1.5">
+<label class="text-sm font-bold text-gray-700 dark:text-gray-300">Category Name</label>
+<input class="w-full bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 rounded-lg text-sm focus:ring-primary" type="text" value="Smartphones"/>
+</div>
+<div class="space-y-1.5">
+<label class="text-sm font-bold text-gray-700 dark:text-gray-300">URL Slug</label>
+<div class="flex">
+<span class="bg-gray-100 dark:bg-gray-700 border border-r-0 border-gray-200 dark:border-gray-700 px-3 py-2 text-xs text-gray-500 rounded-l-lg flex items-center">nexcart.com/</span>
+<input class="flex-1 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 rounded-r-lg text-sm focus:ring-primary" type="text" value="smartphones"/>
+</div>
+</div>
+<div class="space-y-1.5">
+<div class="flex justify-between items-center">
+<label class="text-sm font-bold text-gray-700 dark:text-gray-300">SEO Meta Title</label>
+<span class="text-[10px] font-bold text-gray-400">11 / 60</span>
+</div>
+<input class="w-full bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 rounded-lg text-sm focus:ring-primary" type="text" value="Smartphones"/>
+</div>
+<div class="space-y-1.5">
+<div class="flex justify-between items-center">
+<label class="text-sm font-bold text-gray-700 dark:text-gray-300">Description</label>
+<span class="text-[10px] font-bold text-gray-400">45 / 160</span>
+</div>
+<textarea class="w-full bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 rounded-lg text-sm focus:ring-primary" rows="4">Browse the latest flagship smartphones and mobile devices from top brands around the globe.</textarea>
+</div>
+<div class="pt-4 border-t border-gray-200 dark:border-gray-800">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-sm font-bold text-gray-700 dark:text-gray-300">Visible on Storefront</span>
+<span class="text-[11px] text-gray-500">Enable this category for customers</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</div>
+</div>
+<div class="p-6 bg-white dark:bg-[#1a242d] border-t border-gray-200 dark:border-gray-800 grid grid-cols-2 gap-3">
+<button class="px-4 py-2.5 rounded-lg border border-gray-200 dark:border-gray-700 text-sm font-bold hover:bg-gray-50 transition-colors">Discard</button>
+<button class="px-4 py-2.5 rounded-lg bg-primary text-white text-sm font-bold hover:shadow-lg hover:shadow-primary/30 transition-all">Save Changes</button>
+</div>
+</aside>
+</div>
+</body></html>

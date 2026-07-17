@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEXCART Admin - Exchange Verification</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2547f4",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101322",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#111218] dark:text-white transition-colors duration-200">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[#dbdde6] dark:border-white/10 bg-white dark:bg-background-dark px-10 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-6">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_330)">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs><clippath id="clip0_6_330"><rect fill="white" height="48" width="48"></rect></clippath></defs>
+</svg>
+</div>
+<h2 class="text-[#111218] dark:text-white text-xl font-bold leading-tight tracking-tight">NEXCART Admin</h2>
+</div>
+<label class="flex flex-col min-w-40 h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-[#60678a] flex border-none bg-[#f0f1f5] dark:bg-white/5 items-center justify-center pl-4 rounded-l-lg">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 border-none bg-[#f0f1f5] dark:bg-white/5 text-[#111218] dark:text-white focus:outline-0 focus:ring-0 h-full placeholder:text-[#60678a] px-4 rounded-r-lg pl-2 text-sm" placeholder="Search exchanges..." value=""/>
+</div>
+</label>
+</div>
+<div class="flex flex-1 justify-end gap-6 items-center">
+<div class="flex items-center gap-6">
+<a class="text-[#111218] dark:text-white text-sm font-medium hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="text-[#111218] dark:text-white text-sm font-medium hover:text-primary transition-colors" href="#">Orders</a>
+<a class="text-[#111218] dark:text-white text-sm font-medium hover:text-primary transition-colors border-b-2 border-primary pb-1" href="#">Exchanges</a>
+</div>
+<div class="flex gap-2">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-[#f0f1f5] dark:bg-white/5 text-[#111218] dark:text-white hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-[#f0f1f5] dark:bg-white/5 text-[#111218] dark:text-white hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary/20" data-alt="Avatar of the admin user" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCsi7bpuV9To1K5ryt51mtHqjZbcB3M5lDh9rOQDOXaL1Nqikjc65mNyqV6TJ3LmMXuuSrIas7tOKOAzTtnQql5XSMFw1WtfhOZg7A9UDwIPUFG0Qf8wMeKedWI_ECv9smnlGlt7LfiIA3HUmZ5sTHGMtHt1vdMKV8QVZH9UIKkP6_jgrq7MfDCGL_VHRSotZOfpgeh7pI8rvanQwITkS2EW8tUlv9SsTsgNzOKyKuWf-JTmKCZypmPXUpykYXlOyVRQYY9z-6wLT9j");'></div>
+</div>
+</header>
+<main class="max-w-[1440px] mx-auto px-10 py-8">
+<!-- Breadcrumbs -->
+<div class="flex flex-wrap gap-2 mb-4">
+<a class="text-[#60678a] text-sm font-medium hover:text-primary" href="#">Exchange Management</a>
+<span class="text-[#60678a] text-sm font-medium">/</span>
+<a class="text-[#60678a] text-sm font-medium hover:text-primary" href="#">Verification Queue</a>
+<span class="text-[#60678a] text-sm font-medium">/</span>
+<span class="text-[#111218] dark:text-white text-sm font-medium">EXCH-99281-IP13</span>
+</div>
+<!-- Page Heading -->
+<div class="flex flex-wrap justify-between items-end gap-3 mb-8">
+<div class="flex flex-col gap-1">
+<h1 class="text-[#111218] dark:text-white text-4xl font-bold tracking-tight">Exchange Verification: iPhone 13 Pro</h1>
+<div class="flex items-center gap-3 mt-1">
+<p class="text-[#60678a] text-base">ID: #EXCH-99281</p>
+<span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400">PENDING REVIEW</span>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center justify-center rounded-lg h-10 px-4 bg-white dark:bg-white/5 border border-[#dbdde6] dark:border-white/10 text-[#111218] dark:text-white text-sm font-bold hover:bg-gray-50 transition-colors">
+<span class="material-symbols-outlined mr-2 text-xl leading-none">history</span>
+                    View Audit Log
+                </button>
+<button class="flex items-center justify-center rounded-lg h-10 px-6 bg-primary text-white text-sm font-bold hover:opacity-90 transition-opacity">
+                    Mark as Urgent
+                </button>
+</div>
+</div>
+<div class="grid grid-cols-12 gap-8">
+<!-- Left Column: Device Info and Evidence -->
+<div class="col-span-8 flex flex-col gap-8">
+<!-- Old Device Summary -->
+<section class="bg-white dark:bg-white/5 rounded-xl border border-[#dbdde6] dark:border-white/10 overflow-hidden shadow-sm">
+<h2 class="text-[#111218] dark:text-white text-xl font-bold px-6 py-4 border-b border-[#dbdde6] dark:border-white/10">Old Device Summary</h2>
+<div class="grid grid-cols-2 p-6 gap-x-12">
+<div class="flex flex-col gap-1 py-4 border-b border-[#f0f1f5] dark:border-white/5">
+<p class="text-[#60678a] text-xs uppercase tracking-wider font-semibold">Brand</p>
+<p class="text-[#111218] dark:text-white text-base font-medium">Apple</p>
+</div>
+<div class="flex flex-col gap-1 py-4 border-b border-[#f0f1f5] dark:border-white/5">
+<p class="text-[#60678a] text-xs uppercase tracking-wider font-semibold">Model</p>
+<p class="text-[#111218] dark:text-white text-base font-medium">iPhone 13 Pro (128GB - Sierra Blue)</p>
+</div>
+<div class="flex flex-col gap-1 py-4 border-b border-[#f0f1f5] dark:border-white/5">
+<p class="text-[#60678a] text-xs uppercase tracking-wider font-semibold">Verified IMEI</p>
+<div class="flex items-center gap-2">
+<p class="text-[#111218] dark:text-white text-base font-medium font-mono">358700102938475</p>
+<span class="material-symbols-outlined text-primary text-lg cursor-pointer">content_copy</span>
+</div>
+</div>
+<div class="flex flex-col gap-1 py-4 border-b border-[#f0f1f5] dark:border-white/5">
+<p class="text-[#60678a] text-xs uppercase tracking-wider font-semibold">Pickup Agent</p>
+<p class="text-[#111218] dark:text-white text-base font-medium">Agent Rahul Sharma (ID: AG-772)</p>
+</div>
+</div>
+</section>
+<!-- Agent Verification Photos -->
+<section class="bg-white dark:bg-white/5 rounded-xl border border-[#dbdde6] dark:border-white/10 overflow-hidden shadow-sm">
+<div class="flex justify-between items-center px-6 py-4 border-b border-[#dbdde6] dark:border-white/10">
+<h2 class="text-[#111218] dark:text-white text-xl font-bold">Agent Verification Report</h2>
+<span class="text-sm text-[#60678a]">Uploaded: Oct 24, 2023 - 11:24 AM</span>
+</div>
+<div class="p-6">
+<p class="text-[#60678a] text-sm mb-4 font-medium uppercase tracking-wider">Device Inspection Gallery (5 High-Res)</p>
+<div class="grid grid-cols-5 gap-3">
+<div class="aspect-[3/4] rounded-lg overflow-hidden bg-gray-100 relative group cursor-pointer">
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-3xl">zoom_in</span>
+</div>
+<img alt="" class="w-full h-full object-cover" data-alt="Front view of iPhone 13 Pro showing screen condition" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsR3tewGXUNfT-UdZWCmhL-CmGxUKL2e83A_gnSjFzkGDo66xKOvP-dWrHOIGf6_-h5J_QTMla6mj_IZuDZzILPdf_w6VlqPGnX4lN-X1wUPpyaDUqBoMFfJSNclJGUMTw3mMhyl8bE6wErBoTpXoXxpV2-Oh0isA1ny9WpPzDMummba80gVB1lI3WCjCitvLtXWMO-vQfe7VeHzCuCBViijmpQevysjhTbjWNvw_zu6yVZlN4SGsEJ4_HicvDY_fg2B06NIfAGxdJ"/>
+<div class="absolute bottom-2 left-2 px-1.5 py-0.5 bg-black/60 text-white text-[10px] rounded uppercase">Front</div>
+</div>
+<div class="aspect-[3/4] rounded-lg overflow-hidden bg-gray-100 relative group cursor-pointer">
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-3xl">zoom_in</span>
+</div>
+<img alt="" class="w-full h-full object-cover" data-alt="Back view of iPhone 13 Pro showing camera and glass" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4K4aPnkix6PsigDgrA7hggdWXcomzT2PXA2ULpT1kzyXzvn3vpnmOMCcoE7Ic4Khg6G4wSFUA23MYNCYuPjuADbz5hJ5lF3RAf3SOXtk2pHCocrISvFUFiIJn5v8e_84BxVFaAt2f2RQ3zhhscq0JAmV6EsRAIvISLg3YI5DrT5aMCveWJq4Y69-ARWJjgttuHSf7fBboy1-lD5OWn-T4--Mng-UZywwsPMenKstZ1ekHp_m5a7PEcxhzZy1wgc0BYNZK4CoZYv_0"/>
+<div class="absolute bottom-2 left-2 px-1.5 py-0.5 bg-black/60 text-white text-[10px] rounded uppercase">Back</div>
+</div>
+<div class="aspect-[3/4] rounded-lg overflow-hidden bg-gray-100 relative group cursor-pointer">
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-3xl">zoom_in</span>
+</div>
+<img alt="" class="w-full h-full object-cover" data-alt="Side profile view showing frame condition" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATw1e0rWE5cdHW0LUthZd8DXlWs_0Sw1zfO-g46CyU3wSwhJE49bIjtVHQO5cTg8eyLAmQx_TpF0z7lP4cJv3fSfYpV7Wk0dQI980T2BkQAOip8vShJktapv1RS11wFgIXxobNi-6ARSF4csGqX-yoqd6hK6VGvvpn6A8DgSNTOLjoeqxDJHcA3_Eum4uHuHBAwYq-TBgDMJFpxRYSUKWqIpGhaOM8fIi0L0g_SGYynZ1JI7P5X_KUeTyP2ZGPNCX4DB-n_hCj3mKg"/>
+<div class="absolute bottom-2 left-2 px-1.5 py-0.5 bg-black/60 text-white text-[10px] rounded uppercase">Left Frame</div>
+</div>
+<div class="aspect-[3/4] rounded-lg overflow-hidden bg-gray-100 relative group cursor-pointer">
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-3xl">zoom_in</span>
+</div>
+<img alt="" class="w-full h-full object-cover" data-alt="Right profile view showing buttons" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZbmhpYki943Gmsv6up3NA6batvUOZNjcJTe_47fByYwxe3pONZcXV5mV4qYg7av6Hegb1Q764aWbrkqbTgfxXagvn8pEsizRg1aN4UFjP3pR7aBMvbt4-KO6GzYFxvNKRRu8u2Bzc3PePixVqpN0XntpXgKc9AwgF6h3wgiYuWkQLUUz-aFEnb6v0RpFci1b9fJ-adh2M0QPIkBnsm3Dh01_ZPFdNaZNWaeW-QGYMfF-VPAFuetIrWfRm3amYxHP3OUkVcS3EXsUU"/>
+<div class="absolute bottom-2 left-2 px-1.5 py-0.5 bg-black/60 text-white text-[10px] rounded uppercase">Right Frame</div>
+</div>
+<div class="aspect-[3/4] rounded-lg overflow-hidden bg-gray-100 relative group cursor-pointer">
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-3xl">zoom_in</span>
+</div>
+<img alt="" class="w-full h-full object-cover" data-alt="Screen turned on showing display functional" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5HcdxKOQsLZKNIA9JqliWs7plVa2euH3EtBmlYqK8Ef1zCw8k19X5BcOGFLM63leqDhtpchSKALwxG0pl_WcBtmHAtzn6rHkmB3uXrMxcuXG5gKIn3ZOe8sPNUvEeUR38Crpzt17vZSW94F0d-EIhEvgFYB2sOxCWDGyVf_9_8fLIxDBFDpMtA_QBaCmJ2ZAL6MX1sx_JxWxud3sv_70hBhFUmJrgX8cGggeGoLC2cC2Az61tJnIj8os-omE5ac2E-Bt7fDBZFPMx"/>
+<div class="absolute bottom-2 left-2 px-1.5 py-0.5 bg-black/60 text-white text-[10px] rounded uppercase">Display On</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Condition Comparison Table -->
+<section class="bg-white dark:bg-white/5 rounded-xl border border-[#dbdde6] dark:border-white/10 overflow-hidden shadow-sm">
+<h2 class="text-[#111218] dark:text-white text-xl font-bold px-6 py-4 border-b border-[#dbdde6] dark:border-white/10">Condition Discrepancy Check</h2>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead class="bg-[#f8f9fa] dark:bg-white/5">
+<tr>
+<th class="px-6 py-4 text-xs font-bold text-[#60678a] uppercase tracking-wider">Inspection Attribute</th>
+<th class="px-6 py-4 text-xs font-bold text-[#60678a] uppercase tracking-wider">Declared (Customer)</th>
+<th class="px-6 py-4 text-xs font-bold text-[#60678a] uppercase tracking-wider">Physical Report (Agent)</th>
+<th class="px-6 py-4 text-xs font-bold text-[#60678a] uppercase tracking-wider">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#f0f1f5] dark:divide-white/5">
+<tr>
+<td class="px-6 py-4 text-sm font-medium">Screen Quality</td>
+<td class="px-6 py-4 text-sm">Flawless (No Scratches)</td>
+<td class="px-6 py-4 text-sm">Light Microwear</td>
+<td class="px-6 py-4">
+<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-100 text-amber-700">MINOR DEVIATION</span>
+</td>
+</tr>
+<tr class="bg-red-50/50 dark:bg-red-900/10">
+<td class="px-6 py-4 text-sm font-medium">Original Display</td>
+<td class="px-6 py-4 text-sm">Yes</td>
+<td class="px-6 py-4 text-sm text-red-600 font-bold">Possible Third-Party Screen</td>
+<td class="px-6 py-4">
+<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-red-100 text-red-700">ALERT</span>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4 text-sm font-medium">Battery Health</td>
+<td class="px-6 py-4 text-sm">85% - 90%</td>
+<td class="px-6 py-4 text-sm">82% (Verified)</td>
+<td class="px-6 py-4">
+<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-green-100 text-green-700">MATCH</span>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4 text-sm font-medium">Face ID / Touch ID</td>
+<td class="px-6 py-4 text-sm">Working</td>
+<td class="px-6 py-4 text-sm">Working</td>
+<td class="px-6 py-4">
+<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-green-100 text-green-700">MATCH</span>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4 text-sm font-medium">Body / Frame</td>
+<td class="px-6 py-4 text-sm">Minor Dents</td>
+<td class="px-6 py-4 text-sm">Minor Dents on bottom edge</td>
+<td class="px-6 py-4">
+<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-green-100 text-green-700">MATCH</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+<!-- Right Column: Decisions & Audit -->
+<div class="col-span-4 flex flex-col gap-8">
+<!-- Pricing Decision Card -->
+<section class="bg-white dark:bg-white/5 rounded-xl border-2 border-primary overflow-hidden shadow-lg">
+<div class="bg-primary px-6 py-4">
+<h2 class="text-white text-xl font-bold">Pricing Decision</h2>
+</div>
+<div class="p-6">
+<div class="mb-6 p-4 bg-primary/5 rounded-lg border border-primary/20">
+<p class="text-[#60678a] text-xs font-semibold uppercase tracking-wider mb-1">Declared Value Estimate</p>
+<p class="text-primary text-3xl font-black">$450.00</p>
+</div>
+<div class="space-y-4">
+<div>
+<label class="block text-sm font-bold text-[#111218] dark:text-white mb-2">Revised Price (USD)</label>
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-[#60678a] font-medium">$</span>
+<input class="w-full pl-8 pr-4 py-2 bg-background-light dark:bg-white/5 border border-[#dbdde6] dark:border-white/10 rounded-lg focus:ring-primary focus:border-primary" placeholder="Enter new value" type="number" value="385"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-bold text-[#111218] dark:text-white mb-2">Adjustment Reason</label>
+<select class="w-full mb-3 px-4 py-2 bg-background-light dark:bg-white/5 border border-[#dbdde6] dark:border-white/10 rounded-lg focus:ring-primary focus:border-primary text-sm">
+<option>Select a common reason</option>
+<option selected="">Non-original parts detected</option>
+<option>OLED Burn-in / Display issues</option>
+<option>Face ID functional failure</option>
+<option>Heavy cosmetic damage</option>
+<option>Other (Specify below)</option>
+</select>
+<textarea class="w-full px-4 py-3 bg-background-light dark:bg-white/5 border border-[#dbdde6] dark:border-white/10 rounded-lg focus:ring-primary focus:border-primary text-sm h-24" placeholder="Detail the adjustment reason for audit trails..."></textarea>
+</div>
+<div class="pt-4 space-y-3">
+<button class="w-full flex items-center justify-center rounded-lg h-12 bg-primary text-white text-base font-bold hover:opacity-95 transition-opacity">
+                                    Approve with Revised Price
+                                </button>
+<button class="w-full flex items-center justify-center rounded-lg h-12 bg-[#f0f1f5] dark:bg-white/10 text-[#111218] dark:text-white text-base font-bold hover:bg-[#e2e3e9] transition-colors">
+                                    Accept Original $450.00
+                                </button>
+<button class="w-full py-2 text-red-500 text-sm font-bold hover:underline">
+                                    Reject Exchange Request
+                                </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Audit Trail Sidebar -->
+<section class="bg-white dark:bg-white/5 rounded-xl border border-[#dbdde6] dark:border-white/10 overflow-hidden shadow-sm">
+<h2 class="text-[#111218] dark:text-white text-lg font-bold px-6 py-4 border-b border-[#dbdde6] dark:border-white/10">Verification Journey</h2>
+<div class="p-6">
+<div class="relative space-y-6 before:absolute before:left-3 before:top-2 before:bottom-2 before:w-[2px] before:bg-[#f0f1f5] dark:before:bg-white/10">
+<div class="relative pl-10">
+<span class="absolute left-0 top-1 w-6 h-6 rounded-full bg-green-500 flex items-center justify-center text-white ring-4 ring-white dark:ring-background-dark">
+<span class="material-symbols-outlined text-sm">check</span>
+</span>
+<p class="text-sm font-bold text-[#111218] dark:text-white">Request Initiated</p>
+<p class="text-xs text-[#60678a]">Oct 22, 2023 - 09:15 AM</p>
+</div>
+<div class="relative pl-10">
+<span class="absolute left-0 top-1 w-6 h-6 rounded-full bg-green-500 flex items-center justify-center text-white ring-4 ring-white dark:ring-background-dark">
+<span class="material-symbols-outlined text-sm">check</span>
+</span>
+<p class="text-sm font-bold text-[#111218] dark:text-white">Agent Dispatched</p>
+<p class="text-xs text-[#60678a]">Oct 24, 2023 - 10:00 AM</p>
+<p class="text-[10px] mt-1 text-primary font-medium">Agent: Rahul Sharma</p>
+</div>
+<div class="relative pl-10">
+<span class="absolute left-0 top-1 w-6 h-6 rounded-full bg-green-500 flex items-center justify-center text-white ring-4 ring-white dark:ring-background-dark">
+<span class="material-symbols-outlined text-sm">check</span>
+</span>
+<p class="text-sm font-bold text-[#111218] dark:text-white">Device Collected &amp; Inspected</p>
+<p class="text-xs text-[#60678a]">Oct 24, 2023 - 11:24 AM</p>
+<div class="mt-2 h-24 w-full rounded-lg bg-gray-100 overflow-hidden" data-location="Mumbai, India" style="https://lh3.googleusercontent.com/aida-public/AB6AXuD7OIvWk9ZJdkApIlDJhwmsTYLhFmY1TTPUql1A-qMhlUZSU4ztJ_ixjmN9jn1wWaaCfwH1xpEm8I4tTfB51lDqhRk5PlWvHlWWDr5y5jpzMbJT3K0amhUBFh2j_5MDRcLIWquR-owc4B4xCOq2dXGluVEI7LiIpvZve_KAljftkyAb-caugWoz4kf1pqbfYrGLhR_3G3q4GDfkdRA-sxJNl9VFzd4ctjByxb5OWnlxyZzbxIptzNo5ptZXvAuK-xp3LnfBdGBzpII-">
+<!-- Simplified map placeholder -->
+<div class="w-full h-full bg-slate-200 relative flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-2xl">location_on</span>
+<span class="text-[10px] absolute bottom-1 right-2 text-slate-500">19.0760° N, 72.8777° E</span>
+</div>
+</div>
+</div>
+<div class="relative pl-10">
+<span class="absolute left-0 top-1 w-6 h-6 rounded-full bg-amber-500 flex items-center justify-center text-white ring-4 ring-white dark:ring-background-dark">
+<span class="material-symbols-outlined text-sm">hourglass_empty</span>
+</span>
+<p class="text-sm font-bold text-[#111218] dark:text-white">Pending Final Admin Approval</p>
+<p class="text-xs text-[#60678a]">Waiting for your review</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+<footer class="mt-12 border-t border-[#dbdde6] dark:border-white/10 bg-white dark:bg-background-dark px-10 py-6">
+<div class="max-w-[1440px] mx-auto flex justify-between items-center text-[#60678a] text-xs">
+<p>© 2023 NEXCART Unified E-Commerce Platform. Confidential Admin Panel.</p>
+<div class="flex gap-4 font-medium uppercase tracking-widest">
+<a class="hover:text-primary" href="#">System Status</a>
+<a class="hover:text-primary" href="#">Help Center</a>
+<a class="hover:text-primary" href="#">Security Policy</a>
+</div>
+</div>
+</footer>
+</body></html>

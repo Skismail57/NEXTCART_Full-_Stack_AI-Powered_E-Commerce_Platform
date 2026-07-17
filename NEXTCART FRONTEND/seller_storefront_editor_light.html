@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEXCART | Seller Storefront Editor</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#25f447",
+                        "background-light": "#f5f8f6",
+                        "background-dark": "#102213",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .preview-canvas { box-shadow: 0 10px 50px -12px rgba(0, 0, 0, 0.1); }
+        .drag-handle:hover { cursor: grab; }
+        .drag-handle:active { cursor: grabbing; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111812] transition-colors duration-200">
+<!-- Global Header -->
+<header class="sticky top-0 z-50 flex items-center justify-between border-b border-[#dbe6dd] bg-white dark:bg-background-dark px-6 py-3">
+<div class="flex items-center gap-4">
+<div class="size-8 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-xl font-extrabold tracking-tight">NEXCART</h2>
+<div class="h-6 w-px bg-[#dbe6dd] mx-2"></div>
+<span class="text-sm font-medium text-[#608a67]">Editor: Lush Garden Florals</span>
+</div>
+<div class="flex items-center gap-6">
+<!-- Viewport Toggle -->
+<div class="flex items-center bg-background-light dark:bg-[#1a2e1d] p-1 rounded-lg">
+<button class="flex h-8 w-10 items-center justify-center rounded-md bg-white dark:bg-background-dark shadow-sm text-primary">
+<span class="material-symbols-outlined">desktop_windows</span>
+</button>
+<button class="flex h-8 w-10 items-center justify-center rounded-md text-[#608a67] hover:text-[#111812]">
+<span class="material-symbols-outlined">smartphone</span>
+</button>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-xs font-medium text-[#608a67]">Last saved at 14:32</span>
+<button class="h-10 px-4 rounded-lg bg-background-light border border-[#dbe6dd] text-sm font-bold hover:bg-[#e8ece9]">Save Draft</button>
+<button class="h-10 px-6 rounded-lg bg-primary text-background-dark text-sm font-bold shadow-sm hover:brightness-105">Publish Changes</button>
+<div class="size-9 rounded-full bg-cover bg-center border border-[#dbe6dd]" data-alt="User profile avatar" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCmudM8Z4raV3hetMOt71k4LtdnMxZs962c424LarXQAMzxkrMd8NFw5hEpuRmpyfi2aijIKEnGSoz_SFOvolAOBjEiVcrAM9V1flcQV0mXexaOXYQ47JKkn7LCZ1GqUfetPvjC64QyVmGR6EZWG2SfS-uClPEs14Rm2Ht5BlhRhMUY3gUEcyM3MAZisARV6aSm0ppmUpjiYoQ8jm_x4dobPJVqj9mC2G2YwDfg0HaxchCePAF7J4hgUksAP85XLGe0GxlkfzGGkIIy')"></div>
+</div>
+</div>
+</header>
+<div class="flex h-[calc(100vh-65px)] overflow-hidden">
+<!-- Sidebar Navigation (Narrow) -->
+<aside class="w-16 flex flex-col items-center py-6 border-r border-[#dbe6dd] bg-white dark:bg-background-dark gap-6">
+<div class="p-2 rounded-xl bg-primary/20 text-primary">
+<span class="material-symbols-outlined">dashboard_customize</span>
+</div>
+<div class="p-2 rounded-xl text-[#608a67] hover:bg-background-light cursor-pointer">
+<span class="material-symbols-outlined">palette</span>
+</div>
+<div class="p-2 rounded-xl text-[#608a67] hover:bg-background-light cursor-pointer">
+<span class="material-symbols-outlined">layers</span>
+</div>
+<div class="p-2 rounded-xl text-[#608a67] hover:bg-background-light cursor-pointer">
+<span class="material-symbols-outlined">settings</span>
+</div>
+<div class="mt-auto p-2 rounded-xl text-[#608a67] hover:bg-background-light cursor-pointer">
+<span class="material-symbols-outlined">help</span>
+</div>
+</aside>
+<!-- Configuration Sidebar -->
+<aside class="w-80 border-r border-[#dbe6dd] bg-white dark:bg-background-dark overflow-y-auto">
+<div class="p-5">
+<h1 class="text-lg font-bold mb-1">Storefront Customization</h1>
+<p class="text-xs text-[#608a67] mb-6">Modify your brand's visual identity</p>
+<div class="flex flex-col gap-3">
+<!-- Banner Upload -->
+<details class="group border border-[#dbe6dd] rounded-xl bg-white dark:bg-[#1a2e1d]" open="">
+<summary class="flex cursor-pointer items-center justify-between p-4 list-none">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#608a67]">image</span>
+<p class="text-sm font-semibold">Banner Image</p>
+</div>
+<span class="material-symbols-outlined text-xs group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-4 pb-5">
+<div class="border-2 border-dashed border-[#dbe6dd] rounded-lg p-6 flex flex-col items-center text-center gap-2 hover:border-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-primary text-3xl">cloud_upload</span>
+<p class="text-xs font-medium">Click to upload or drag and drop</p>
+<p class="text-[10px] text-[#608a67]">Recommended: 1920x600px (Max 5MB)</p>
+</div>
+</div>
+</details>
+<!-- Brand Logo -->
+<details class="group border border-[#dbe6dd] rounded-xl bg-white dark:bg-[#1a2e1d]">
+<summary class="flex cursor-pointer items-center justify-between p-4 list-none">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#608a67]">auto_awesome</span>
+<p class="text-sm font-semibold">Brand Logo</p>
+</div>
+<span class="material-symbols-outlined text-xs group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-4 pb-5 flex flex-col gap-4">
+<label class="block">
+<p class="text-xs font-semibold pb-2">Store Name</p>
+<input class="w-full text-sm rounded-lg border-[#dbe6dd] focus:ring-primary focus:border-primary" type="text" value="Lush Garden Florals"/>
+</label>
+<div class="size-20 bg-background-light rounded-lg border border-[#dbe6dd] flex items-center justify-center">
+<span class="material-symbols-outlined text-[#608a67]">add_a_photo</span>
+</div>
+</div>
+</details>
+<!-- Featured Categories -->
+<details class="group border border-[#dbe6dd] rounded-xl bg-white dark:bg-[#1a2e1d]">
+<summary class="flex cursor-pointer items-center justify-between p-4 list-none">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#608a67]">category</span>
+<p class="text-sm font-semibold">Featured Categories</p>
+</div>
+<span class="material-symbols-outlined text-xs group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-4 pb-5 flex flex-col gap-2">
+<div class="flex items-center justify-between p-2 rounded-lg bg-background-light border border-[#dbe6dd]">
+<span class="text-xs font-medium">Wedding Bouquets</span>
+<span class="material-symbols-outlined text-sm cursor-grab">drag_indicator</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg bg-background-light border border-[#dbe6dd]">
+<span class="text-xs font-medium">Indoor Plants</span>
+<span class="material-symbols-outlined text-sm cursor-grab">drag_indicator</span>
+</div>
+<button class="mt-2 text-xs font-bold text-primary flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-sm">add</span> Add Category
+                            </button>
+</div>
+</details>
+<!-- Brand Story -->
+<details class="group border border-[#dbe6dd] rounded-xl bg-white dark:bg-[#1a2e1d]">
+<summary class="flex cursor-pointer items-center justify-between p-4 list-none">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#608a67]">history_edu</span>
+<p class="text-sm font-semibold">Brand Story</p>
+</div>
+<span class="material-symbols-outlined text-xs group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-4 pb-5">
+<label class="block">
+<p class="text-xs font-semibold pb-2">Headline</p>
+<input class="w-full text-sm rounded-lg border-[#dbe6dd] mb-3" placeholder="Our Story" type="text"/>
+</label>
+<label class="block">
+<p class="text-xs font-semibold pb-2">Biography</p>
+<textarea class="w-full text-sm rounded-lg border-[#dbe6dd]" placeholder="Describe your brand..." rows="3"></textarea>
+</label>
+</div>
+</details>
+</div>
+</div>
+</aside>
+<!-- Main Preview Canvas -->
+<main class="flex-1 bg-background-light dark:bg-[#0a150b] p-8 overflow-y-auto flex flex-col items-center">
+<!-- Canvas Frame -->
+<div class="w-full max-w-[1000px] bg-white dark:bg-[#0d1c0f] min-h-[1400px] preview-canvas rounded-xl flex flex-col overflow-hidden relative border border-[#dbe6dd]">
+<!-- Storefront Hero (Preview Section) -->
+<section class="relative group/section h-[400px] border-b border-transparent hover:border-primary transition-all">
+<!-- Overlay Controls -->
+<div class="absolute top-4 right-4 z-20 flex gap-2 opacity-0 group-hover/section:opacity-100 transition-opacity">
+<button class="p-2 bg-white rounded-lg shadow-md hover:text-primary"><span class="material-symbols-outlined text-lg">edit</span></button>
+<button class="p-2 bg-white rounded-lg shadow-md hover:text-red-500"><span class="material-symbols-outlined text-lg">delete</span></button>
+</div>
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Main hero banner showing flowers" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuA8wAg70KPiq_95aZGWPpvIl58bYyeE3M0NDvEUgj8MecZODzIqq02a-f7P078VaeXfT7nTPsNXrmgfNIxkshiU9L6zDewKdpUc13TJShLvrNcwA5iRiT5TxUWg7jDhiy14tcTPBhl_8U9e5k9mR6EOVCTLEU9hRmfsIef5bRJ5ybbv81obXBob0v2uMMWFpGrXU59yHxtvUT-e0gVJXMPyoGB1fxeDiRUr4KVZZha2N7Q3X2pecfYjM87O7Qop0Kh0ARxoM13VIy-a')"></div>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-white p-10 text-center">
+<h1 class="text-5xl font-black mb-4">Nature's Finest Blooms</h1>
+<p class="text-xl max-w-lg mb-8">Hand-curated floral arrangements delivered to your doorstep.</p>
+<button class="px-8 py-3 bg-primary text-background-dark font-bold rounded-lg">Shop Now</button>
+</div>
+<!-- Section: Featured Categories (Preview) -->
+<section class="group/section p-10 relative border-b border-transparent hover:border-primary transition-all">
+<div class="absolute top-2 right-4 flex gap-2 opacity-0 group-hover/section:opacity-100">
+<div class="drag-handle p-2 text-[#608a67]"><span class="material-symbols-outlined">drag_handle</span></div>
+</div>
+<h3 class="text-center text-2xl font-bold mb-10">Shop by Occasion</h3>
+<div class="grid grid-cols-4 gap-8">
+<div class="flex flex-col items-center gap-4 group cursor-pointer">
+<div class="size-32 rounded-full overflow-hidden border-4 border-background-light group-hover:border-primary transition-all bg-cover" data-alt="Category icon flowers" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCNFmLbwUIRv9wRX5Szvhk65TcpzDNAlmF34WiOJy3JHUQTesX6fCKS3isPG-kbrbiRe6xhGXtdxGiN-iPZ8elg6CZgYBGZwkLAtj0m7mf00_z-t1aCKF-aaIVK6cSRpr3vTRimr6Uj_8QtbNIbnpiYMJ3VuoFeYQx_hY_aOn_IaVeBwRhZf3HUK99PQU3F2tCPl4KD9Qs2ANKh_VN-amMji_cr-VKw2iR_cK78GLB5ZTblMj98liWrvNrEW-S5zESjeiAGihrrLA14')"></div>
+<span class="font-bold">Weddings</span>
+</div>
+<div class="flex flex-col items-center gap-4 group cursor-pointer">
+<div class="size-32 rounded-full overflow-hidden border-4 border-background-light group-hover:border-primary transition-all bg-cover" data-alt="Category icon flowers" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDqcYvS1C2bDGnRnGSF4vb0wa4h2L9X_uzG_WP0sWQQZwFUYKKMHwdABVEHzVkDoaDLdKMhDfYjloWQSaLUDEgclCDUyJXtfKUvUGkTSJMsSO-fu9BM370IBb7ekfa425TIZwEHYzzI69kHQbLz4xrnEzrisusoNXKIcRrokCFFM9Wqq5UB69dYieeQW3UARN_NQYbYrUFZhX9jvf0RzlHQLsWKPPS430IDmlY3-kFiY1kPw6-Lu4R30xQQTmIPhu8z27w7UgjKoSl_')"></div>
+<span class="font-bold">Birthdays</span>
+</div>
+<div class="flex flex-col items-center gap-4 group cursor-pointer">
+<div class="size-32 rounded-full overflow-hidden border-4 border-background-light group-hover:border-primary transition-all bg-cover" data-alt="Category icon flowers" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBO3MciUgzzFEs2J9pyvqL7xe2J7RWWeKUvcxmNZ7T_j2GR3QNKrDlDqHZSJgwIgG6JFgp89GL7SCgtQF6rw8iOPKDhXnQAlMkJq_qtEO36UDZGH_H-l5gLrBKgUGhv0ybT-umbtQnMsWvK7NaOCmMZwhk3SQJOR-pXI1QCGaLR-cvpS_xpEpAjf_pQeOVsi0EMiWXIoue6XAERGx6U9Npv8j37P6bbnuH-5yr4zvZv_KrlVD40IvYBY5J5rxyFOI_B2cMIl8OW1o0J')"></div>
+<span class="font-bold">Anniversary</span>
+</div>
+<div class="flex flex-col items-center gap-4 group cursor-pointer">
+<div class="size-32 rounded-full overflow-hidden border-4 border-background-light group-hover:border-primary transition-all bg-cover" data-alt="Category icon flowers" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA0sEdD9c285Ilu8vxj_vjgrnWqN7__fOJk0QjUYP0f7XEr2PiZhgLgDE-n5daVU8k9lUbEiCpGZGTMuJxiVL8Kg6QHnk6yoD6NxWa9e0yQX6n7TRKpggE4jSIvPbKbp4LEx_ytdp2Xl9imtXA14sWmyOSi7haLsJTGOF9Zr4yIZduVcU7ufZl22IQCGslq034ZEokTekZVZ2xvlORfh5hIoqz3auE-M6RwQSSPl3cDKQgiuops8A9HKeggSvofkwuWzBnstgPpdK8h')"></div>
+<span class="font-bold">Sympathy</span>
+</div>
+</div>
+</section>
+<!-- Section: Product Grid (Preview) -->
+<section class="group/section p-10 relative border-b border-transparent hover:border-primary transition-all bg-background-light/30">
+<div class="absolute top-2 right-4 flex gap-2 opacity-0 group-hover/section:opacity-100">
+<div class="drag-handle p-2 text-[#608a67]"><span class="material-symbols-outlined">drag_handle</span></div>
+</div>
+<div class="flex items-center justify-between mb-8">
+<h3 class="text-2xl font-bold">Best Sellers</h3>
+<a class="text-primary font-bold text-sm" href="#">View All</a>
+</div>
+<div class="grid grid-cols-3 gap-6">
+<div class="flex flex-col bg-white dark:bg-[#1a2e1d] rounded-xl overflow-hidden shadow-sm">
+<div class="h-60 bg-cover" data-alt="Product bouquet image" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAywb9igqXON2jF9jU3GbJjV_eOiDtvVyGt1Yj3g_vrmyJkEOEHLF1i7mfR7MIFSPRIPjNs-IfoRDhFJbXyB_tj56okbnXKgdngEDRs19vnCx5uosjn06_46-64qhZIXHovIe0BYx-3HTyIpjQtj2iknTUG6G-CJ64YJ_bG7rTZt0SYi45pQXzKKFyC-w8S7cffThVu9MyEiGcJONavLLMDtY0DtCLDK50CenSfFi5E6sv4rN3A88V1ldTgXVOx4G1nytisB5sa_ya0')"></div>
+<div class="p-4">
+<p class="text-xs text-[#608a67] uppercase tracking-wider font-bold">Bouquet</p>
+<h4 class="font-bold mt-1 text-lg">The Midnight Rose</h4>
+<div class="flex items-center justify-between mt-4">
+<span class="text-xl font-black">$45.00</span>
+<button class="size-8 bg-primary rounded-lg flex items-center justify-center"><span class="material-symbols-outlined text-background-dark text-sm">add</span></button>
+</div>
+</div>
+</div>
+<div class="flex flex-col bg-white dark:bg-[#1a2e1d] rounded-xl overflow-hidden shadow-sm">
+<div class="h-60 bg-cover" data-alt="Product bouquet image" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCfZcbrRIUt0OQmEsk7U6VesCgcM7_Tvc4xsUVlf0mu8OjaOGeaJwuO-xLHyJzaK3pvwtn9pUuJ0IwKpqub5Hx8s2HB06VVCIyVJQIKvVX6Kh5yDiqa-T0wOS5OhdtSqMhMRY6ULNgTLFa8yJBlhbGAaof_mefYbDpPsoTwUMMQ7b6PniRTPsC_Ej5k0OHlWKKB0VehB29x0brHEIgRhmPT6flY05fns5tuatL9-FFvu0BVFr8pK4gzIyacuINNG80XLvtWcjwRPCua')"></div>
+<div class="p-4">
+<p class="text-xs text-[#608a67] uppercase tracking-wider font-bold">Succulent</p>
+<h4 class="font-bold mt-1 text-lg">Emerald Oasis</h4>
+<div class="flex items-center justify-between mt-4">
+<span class="text-xl font-black">$28.00</span>
+<button class="size-8 bg-primary rounded-lg flex items-center justify-center"><span class="material-symbols-outlined text-background-dark text-sm">add</span></button>
+</div>
+</div>
+</div>
+<div class="flex flex-col bg-white dark:bg-[#1a2e1d] rounded-xl overflow-hidden shadow-sm">
+<div class="h-60 bg-cover" data-alt="Product bouquet image" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB9sRA0iUmKVjLAvan_ZPN8XTvHuyHX-NT7kGv8ct0Uf4eyKXgKzF5N9-1Stf4cvVfVNNwPeQwXZsklIpK2OegffFWpk0hh9R9kqvFtuvQw-Lyumy6NJfW4IU3i7q0FmViGrME0OA8ELuRVT0uzelpAadE436Itn0ZGX_1OxS9d7e1aVjxGi6Fary6msthFlz9dF64Ld7hcdeOOkwaNcttk0oWVZ-dN20eHaRTN5BYZb4l5hj0iu-qm3WltCaRvgT3J8bVptkZH9SS4')"></div>
+<div class="p-4">
+<p class="text-xs text-[#608a67] uppercase tracking-wider font-bold">Basket</p>
+<h4 class="font-bold mt-1 text-lg">Spring Awakening</h4>
+<div class="flex items-center justify-between mt-4">
+<span class="text-xl font-black">$52.00</span>
+<button class="size-8 bg-primary rounded-lg flex items-center justify-center"><span class="material-symbols-outlined text-background-dark text-sm">add</span></button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Brand Story (Preview) -->
+<section class="group/section p-20 relative border-b border-transparent hover:border-primary transition-all text-center">
+<div class="absolute top-2 right-4 flex gap-2 opacity-0 group-hover/section:opacity-100">
+<div class="drag-handle p-2 text-[#608a67]"><span class="material-symbols-outlined">drag_handle</span></div>
+</div>
+<div class="max-w-2xl mx-auto">
+<span class="material-symbols-outlined text-primary text-4xl mb-6">spa</span>
+<h2 class="text-3xl font-black mb-6">Grown with Love</h2>
+<p class="text-[#608a67] text-lg leading-relaxed">
+                            Since 1994, Lush Garden Florals has been a family-owned endeavor dedicated to bringing the freshest, most vibrant flora from sustainable farms directly to your home. Every arrangement is a unique piece of art, hand-tied by our expert florists.
+                        </p>
+<div class="mt-10 flex justify-center gap-8 border-t border-[#dbe6dd] pt-10">
+<div>
+<p class="text-2xl font-black">250k+</p>
+<p class="text-xs text-[#608a67] uppercase font-bold">Happy Clients</p>
+</div>
+<div class="w-px h-10 bg-[#dbe6dd]"></div>
+<div>
+<p class="text-2xl font-black">15+</p>
+<p class="text-xs text-[#608a67] uppercase font-bold">Local Farms</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section Placeholder / Add New -->
+<section class="py-10 flex justify-center border-2 border-dashed border-[#dbe6dd] m-10 rounded-xl hover:border-primary cursor-pointer group">
+<div class="flex items-center gap-2 text-[#608a67] group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">add_circle</span>
+<span class="font-bold text-sm">Add New Storefront Section</span>
+</div>
+</section>
+</section></div>
+<footer class="mt-12 text-center text-[#608a67] text-xs">
+                © 2024 NEXCART Platform. All Rights Reserved. 
+                <span class="mx-2">•</span>
+<a class="hover:text-primary underline" href="#">Privacy Policy</a>
+</footer>
+</main>
+</div>
+</body></html>

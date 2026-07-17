@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEXCART Home Screen v1</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0d59f2",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111318] dark:text-white antialiased">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden max-w-[480px] mx-auto bg-white dark:bg-[#111318] shadow-2xl">
+<!-- Sticky Header Container -->
+<header class="sticky top-0 z-50 bg-white/95 dark:bg-[#111318]/95 backdrop-blur-md border-b border-gray-100 dark:border-gray-800">
+<!-- Top Bar -->
+<div class="flex items-center p-4 pb-2 justify-between">
+<div class="flex items-center gap-2">
+<div class="bg-primary text-white p-1.5 rounded-lg">
+<span class="material-symbols-outlined text-2xl">shopping_bag</span>
+</div>
+<h2 class="text-primary text-xl font-extrabold leading-tight tracking-[-0.03em]">NEXCART</h2>
+</div>
+<div class="flex items-center gap-3">
+<button class="relative flex items-center justify-center p-2 text-[#111318] dark:text-white">
+<span class="material-symbols-outlined text-[28px]">shopping_cart</span>
+<span class="absolute top-1 right-1 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-white border-2 border-white dark:border-[#111318]">3</span>
+</button>
+</div>
+</div>
+<!-- Search Bar -->
+<div class="px-4 py-2">
+<label class="flex flex-col min-w-40 h-12 w-full">
+<div class="flex w-full flex-1 items-stretch rounded-xl h-full shadow-sm">
+<div class="text-[#606e8a] flex border-none bg-[#f0f1f5] dark:bg-gray-800 items-center justify-center pl-4 rounded-l-xl border-r-0">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-xl text-[#111318] dark:text-white focus:outline-0 focus:ring-0 border-none bg-[#f0f1f5] dark:bg-gray-800 focus:border-none h-full placeholder:text-[#606e8a] px-3 text-sm font-medium" placeholder="Search for Products, Brands and More" value=""/>
+<div class="text-primary flex border-none bg-[#f0f1f5] dark:bg-gray-800 items-center justify-center pr-4 rounded-r-xl">
+<span class="material-symbols-outlined">mic</span>
+</div>
+</div>
+</label>
+</div>
+</header>
+<!-- Category Bar -->
+<div class="flex w-full overflow-x-auto [-ms-scrollbar-style:none] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden bg-white dark:bg-[#111318] px-4 py-4 border-b border-gray-50 dark:border-gray-800">
+<div class="flex min-h-min flex-row items-start justify-start gap-6">
+<div class="flex flex-col items-center gap-1.5 min-w-[64px]">
+<div class="w-14 h-14 bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center rounded-full">
+<span class="material-symbols-outlined text-primary">smartphone</span>
+</div>
+<p class="text-[12px] font-semibold">Mobiles</p>
+</div>
+<div class="flex flex-col items-center gap-1.5 min-w-[64px]">
+<div class="w-14 h-14 bg-pink-50 dark:bg-pink-900/20 flex items-center justify-center rounded-full">
+<span class="material-symbols-outlined text-pink-500">apparel</span>
+</div>
+<p class="text-[12px] font-semibold">Fashion</p>
+</div>
+<div class="flex flex-col items-center gap-1.5 min-w-[64px]">
+<div class="w-14 h-14 bg-orange-50 dark:bg-orange-900/20 flex items-center justify-center rounded-full">
+<span class="material-symbols-outlined text-orange-500">laptop_mac</span>
+</div>
+<p class="text-[12px] font-semibold">Electronics</p>
+</div>
+<div class="flex flex-col items-center gap-1.5 min-w-[64px]">
+<div class="w-14 h-14 bg-green-50 dark:bg-green-900/20 flex items-center justify-center rounded-full">
+<span class="material-symbols-outlined text-green-500">home</span>
+</div>
+<p class="text-[12px] font-semibold">Home</p>
+</div>
+<div class="flex flex-col items-center gap-1.5 min-w-[64px]">
+<div class="w-14 h-14 bg-purple-50 dark:bg-purple-900/20 flex items-center justify-center rounded-full">
+<span class="material-symbols-outlined text-purple-500">face</span>
+</div>
+<p class="text-[12px] font-semibold">Beauty</p>
+</div>
+<div class="flex flex-col items-center gap-1.5 min-w-[64px]">
+<div class="w-14 h-14 bg-red-50 dark:bg-red-900/20 flex items-center justify-center rounded-full">
+<span class="material-symbols-outlined text-red-500">oven_gen</span>
+</div>
+<p class="text-[12px] font-semibold">Appliances</p>
+</div>
+</div>
+</div>
+<!-- Hero Slider (Simulated Slider) -->
+<div class="p-4">
+<div class="relative w-full aspect-[21/9] rounded-xl overflow-hidden shadow-lg group">
+<div class="absolute inset-0 bg-gradient-to-r from-primary to-blue-400 opacity-90"></div>
+<div class="absolute inset-0 p-6 flex flex-col justify-center text-white">
+<p class="text-xs font-bold tracking-widest uppercase mb-1">Exclusive Launch</p>
+<h3 class="text-2xl font-bold leading-tight mb-2">End of Season Sale</h3>
+<p class="text-sm font-medium opacity-90 mb-4">Up to 50% Off on Top Brands</p>
+<button class="w-fit px-4 py-2 bg-white text-primary rounded-lg text-xs font-bold uppercase tracking-wider">Shop Now</button>
+</div>
+<!-- Pagination Dots -->
+<div class="absolute bottom-3 left-0 right-0 flex justify-center gap-1.5">
+<div class="h-1.5 w-6 bg-white rounded-full"></div>
+<div class="h-1.5 w-1.5 bg-white/40 rounded-full"></div>
+<div class="h-1.5 w-1.5 bg-white/40 rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Deal of the Day -->
+<div class="mt-2">
+<div class="flex items-center justify-between px-4 mb-4">
+<div class="flex items-center gap-2">
+<h2 class="text-lg font-bold">Deal of the Day</h2>
+<div class="flex items-center gap-1 bg-red-50 dark:bg-red-900/20 text-red-600 px-2 py-0.5 rounded-md text-[11px] font-bold">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span>08h 24m</span>
+</div>
+</div>
+<button class="text-primary text-sm font-bold">View All</button>
+</div>
+<div class="flex overflow-x-auto [-ms-scrollbar-style:none] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden px-4 gap-4 pb-4">
+<div class="flex flex-col min-w-[140px] bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm border border-gray-50 dark:border-gray-700">
+<div class="h-32 bg-gray-50 dark:bg-gray-900 flex items-center justify-center p-4">
+<div class="w-full h-full bg-center bg-contain bg-no-repeat" data-alt="Sony over-ear headphones in charcoal black" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDaUKraLtqVKFbpTJiJ_5A88cnNmeNZnH72PUhKMgkjF46UK3yxbnLDQk8QKx8RwSdGhx7CXgwnBEtwkjFSMPJrvAUCnP45BlrDV0vhupy_E6RJAxUndTERm34r9g-nzKw8aorqmxsucCm-s4T2GWuy_yqrlPh8AOlmbeEo4ccOmTlSh--BaKHfMwnDPofddNgVXvlHlVTWzi0IHEodeqRliaV2BeXR58P1c6ymtcsnHxx0YSYxVr12EDtazSpfTOucpEhKCEGm-OY");'></div>
+</div>
+<div class="p-3">
+<p class="text-xs font-bold text-gray-500 uppercase">Sony</p>
+<p class="text-sm font-semibold truncate">WH-1000XM5</p>
+<p class="text-primary font-bold mt-1">₹24,990</p>
+</div>
+</div>
+<div class="flex flex-col min-w-[140px] bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm border border-gray-50 dark:border-gray-700">
+<div class="h-32 bg-gray-50 dark:bg-gray-900 flex items-center justify-center p-4">
+<div class="w-full h-full bg-center bg-contain bg-no-repeat" data-alt="Apple Watch Series 9 in midnight aluminum" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBPD5JZ4kXy3iYwYGNypPI28UruGtbhCCvbUkuVOJK3aKcK9SOiaTjg5rWLyxObAwMYPXIbWM3cmty7GHpTSym1zDyKGNvem0bse1wypVikATK0teSJDRlgUtpUArgJAEOsetJk5mlwCQ5-CtbUgtnkAZJjmvG8IgUlelioqLbjrNp8xONvuZZHbkYvInqgwdxTg9ubXsouoEPA_XsyDVDlXpmcy3wa7Wg5SwzmKY0B7i0LuyAOWJR_fCDu3I94GIZoTjFy6SxCn6o");'></div>
+</div>
+<div class="p-3">
+<p class="text-xs font-bold text-gray-500 uppercase">Apple</p>
+<p class="text-sm font-semibold truncate">Watch Series 9</p>
+<p class="text-primary font-bold mt-1">₹39,900</p>
+</div>
+</div>
+<div class="flex flex-col min-w-[140px] bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm border border-gray-50 dark:border-gray-700">
+<div class="h-32 bg-gray-50 dark:bg-gray-900 flex items-center justify-center p-4">
+<div class="w-full h-full bg-center bg-contain bg-no-repeat" data-alt="Dyson hair dryer in iron fuchsia" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAaDHVDYHLpt0k-H_ixJjs_BQpZOffa7gu7bjy1dVN_a6pVCxU5M9bVZWxdRXvJ0QCQ2DJ1PCfohSCt3fnQ_vgY4qoPk3BpTLieUv26ou0Xqmz4pk0ftcSa6wwmBC9Fu0R88zN4uYc3_m4pVMyoUsUIxNG6Koae_BmvG_xA41kZlIcwBFHTCrrSgZr2yeLPD9JZ95FAcHsiwod7MgNk-I_qlPt2hPWaxQFIs02IyxtPPzvcd-3dmeuytOCHj36F2j35sEBmYmUB8qw");'></div>
+</div>
+<div class="p-3">
+<p class="text-xs font-bold text-gray-500 uppercase">Dyson</p>
+<p class="text-sm font-semibold truncate">Supersonic</p>
+<p class="text-primary font-bold mt-1">₹32,900</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Featured Products Grid -->
+<div class="mt-4 px-4 pb-24">
+<h2 class="text-lg font-bold mb-4">Featured Products</h2>
+<div class="grid grid-cols-2 gap-4">
+<!-- Product Card 1 -->
+<div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm border border-gray-50 dark:border-gray-700">
+<div class="relative aspect-square bg-gray-50 dark:bg-gray-900 flex items-center justify-center p-4">
+<div class="w-full h-full bg-center bg-contain bg-no-repeat" data-alt="Blue iPhone 15 with titanium finish" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA3a902hR37uDjo_gww6tNfugaTiiNjPq3DjAyd3NSlGfJNI1335lGLEHACTlkSqvBoCvp0YaXVB3YFD5iikkBDZ0viIAqJy8YH8JyDWKxAqyR5vafYYqhoOxkT85_IkvLaF12sopKg2icf7BA_GU_hJ9uY4NGE187Or3u9pzgXlummH5bRPWzqQ02_g9onU4GFjSK6lSUl7GkPmvnJXXYU4X70--h9xzqfPGsQ1AHLNm4DdNsMGG_t2sASxO7RpbaHJTEKa9IHHkE");'></div>
+<button class="absolute top-2 right-2 h-8 w-8 rounded-full bg-white/80 dark:bg-black/20 backdrop-blur shadow-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-lg text-gray-600 dark:text-gray-300">favorite</span>
+</button>
+</div>
+<div class="p-3">
+<p class="text-[10px] font-extrabold text-primary uppercase mb-0.5">Top Choice</p>
+<p class="text-sm font-bold truncate">Apple iPhone 15 (128GB)</p>
+<p class="text-xs text-gray-500 mb-2">Blue Titanium</p>
+<div class="flex items-center gap-1 mb-2">
+<span class="bg-green-600 text-white text-[10px] font-bold px-1.5 py-0.5 rounded flex items-center gap-0.5">
+                                4.8 <span class="material-symbols-outlined text-[10px] fill-current">star</span>
+</span>
+<span class="text-[10px] text-gray-400 font-medium">(4,293)</span>
+</div>
+<div class="flex items-baseline gap-2">
+<p class="text-lg font-extrabold">₹69,999</p>
+<p class="text-[10px] text-gray-400 line-through">₹79,900</p>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm border border-gray-50 dark:border-gray-700">
+<div class="relative aspect-square bg-gray-50 dark:bg-gray-900 flex items-center justify-center p-4">
+<div class="w-full h-full bg-center bg-contain bg-no-repeat" data-alt="Samsung Galaxy S24 Ultra in titanium gray" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAkaxh8PhryNV7ByCp_W8NE0_Poa6cTvlErKWfnv5r349qDVoIHa3nT6u4t1txa3EnnsE0Mwga07bbqdAFqRAPh9LwWrbsAKGQ_IeD4GWv0t0ryjbxdLBXs8-XhonUTNNO46ivUDyqe6RqDXfdGMYjjAltKZb6sCLOCOtLspnLC3eOsJ99TOXoGuyVhSuTAA9vKLovJkbYhM6lUzomUHyKXIz2Sj_6-7vEHbC64hvygz40ajs6z5UWYf0Ab9PZqHlJvDvsXH5YjtHA");'></div>
+<button class="absolute top-2 right-2 h-8 w-8 rounded-full bg-white/80 dark:bg-black/20 backdrop-blur shadow-sm flex items-center justify-center text-red-500">
+<span class="material-symbols-outlined text-lg fill-current">favorite</span>
+</button>
+</div>
+<div class="p-3">
+<p class="text-[10px] font-extrabold text-primary uppercase mb-0.5">New Arrival</p>
+<p class="text-sm font-bold truncate">Samsung Galaxy S24 Ultra</p>
+<p class="text-xs text-gray-500 mb-2">Titanium Gray</p>
+<div class="flex items-center gap-1 mb-2">
+<span class="bg-green-600 text-white text-[10px] font-bold px-1.5 py-0.5 rounded flex items-center gap-0.5">
+                                4.9 <span class="material-symbols-outlined text-[10px] fill-current">star</span>
+</span>
+<span class="text-[10px] text-gray-400 font-medium">(1,120)</span>
+</div>
+<div class="flex items-baseline gap-2">
+<p class="text-lg font-extrabold">₹1,29,999</p>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm border border-gray-50 dark:border-gray-700">
+<div class="relative aspect-square bg-gray-50 dark:bg-gray-900 flex items-center justify-center p-4">
+<div class="w-full h-full bg-center bg-contain bg-no-repeat" data-alt="Nintendo Switch OLED console white" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCr0oX6AOs1lHlLr5drhOslq-4y6JhNIrXZ5M9fFg9Jq5jdQ54Z-HykN1UBexRx1pl_av9Oi2ac5lUV8zCJdW4OjrVXwFXnaJ2isZi7QcuA4ZzqvAKM7GB8dmqj-O1eyHucmSuGc8Eg6mHL_V7QXi1mHs51zan4p13e3J8jfXLr5weDha1PFcxmrXGUOo6tLJS-P7RFGJju7cT0rCsQIpPtvXt7UPtmWNao2xY8V958FRpG-iQRINOVvdSZpK8IDX-tO69LAcKkzes");'></div>
+<button class="absolute top-2 right-2 h-8 w-8 rounded-full bg-white/80 dark:bg-black/20 backdrop-blur shadow-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-lg text-gray-600 dark:text-gray-300">favorite</span>
+</button>
+</div>
+<div class="p-3">
+<p class="text-[10px] font-extrabold text-orange-500 uppercase mb-0.5">Bestseller</p>
+<p class="text-sm font-bold truncate">Nintendo Switch OLED</p>
+<p class="text-xs text-gray-500 mb-2">Neon Joy-Con</p>
+<div class="flex items-center gap-1 mb-2">
+<span class="bg-green-600 text-white text-[10px] font-bold px-1.5 py-0.5 rounded flex items-center gap-0.5">
+                                4.7 <span class="material-symbols-outlined text-[10px] fill-current">star</span>
+</span>
+<span class="text-[10px] text-gray-400 font-medium">(842)</span>
+</div>
+<div class="flex items-baseline gap-2">
+<p class="text-lg font-extrabold">₹32,499</p>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm border border-gray-50 dark:border-gray-700">
+<div class="relative aspect-square bg-gray-50 dark:bg-gray-900 flex items-center justify-center p-4">
+<div class="w-full h-full bg-center bg-contain bg-no-repeat" data-alt="Nespresso coffee machine in black" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDobwhwlDImov1Bfj4o4Ss1JV8uLSYAiJzz60ZXjZxmb270aSUqJS-wnQTOAXh_j8jMyRs67IgQYnmVE5Tq1JMH0yjQ15_z_i8jIfFxGav-rlZhQxBFDCI4Q2AJ9wXhAtGLv61KQ80WV6Vll0FGin8JwbuAp6dBnWkcC1zcIV7iqQQPIBUCgCl_7U7DzST8roETrMfUN7-CYTIc-zwJJz_9yujHgx3tQSnsWJVHYnfV_8j9Va7eEHs_nyithH8Hwr_qudEFwgTM8P0");'></div>
+<button class="absolute top-2 right-2 h-8 w-8 rounded-full bg-white/80 dark:bg-black/20 backdrop-blur shadow-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-lg text-gray-600 dark:text-gray-300">favorite</span>
+</button>
+</div>
+<div class="p-3">
+<p class="text-[10px] font-extrabold text-purple-500 uppercase mb-0.5">Lifestyle</p>
+<p class="text-sm font-bold truncate">Nespresso Vertuo Pop</p>
+<p class="text-xs text-gray-500 mb-2">Midnight Black</p>
+<div class="flex items-center gap-1 mb-2">
+<span class="bg-green-600 text-white text-[10px] font-bold px-1.5 py-0.5 rounded flex items-center gap-0.5">
+                                4.5 <span class="material-symbols-outlined text-[10px] fill-current">star</span>
+</span>
+<span class="text-[10px] text-gray-400 font-medium">(320)</span>
+</div>
+<div class="flex items-baseline gap-2">
+<p class="text-lg font-extrabold">₹12,999</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[480px] bg-white/95 dark:bg-[#111318]/95 backdrop-blur-xl border-t border-gray-100 dark:border-gray-800 flex items-center justify-around py-3 px-6 pb-8 z-50">
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[26px] fill-current">home</span>
+<span class="text-[10px] font-bold">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-gray-400 dark:text-gray-500">
+<span class="material-symbols-outlined text-[26px]">grid_view</span>
+<span class="text-[10px] font-medium">Categories</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-gray-400 dark:text-gray-500">
+<span class="material-symbols-outlined text-[26px]">notifications</span>
+<span class="text-[10px] font-medium">Alerts</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-gray-400 dark:text-gray-500">
+<span class="material-symbols-outlined text-[26px]">person</span>
+<span class="text-[10px] font-medium">Account</span>
+</button>
+</nav>
+</div>
+</body></html>

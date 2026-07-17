@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEXCART Admin Fraud &amp; Rules Manager</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1f68f9",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#0f1623",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 6px;
+            background: #e5e7eb;
+            outline: none;
+            border-radius: 9999px;
+        }
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            background: #1f68f9;
+            cursor: pointer;
+            border-radius: 50%;
+            border: 2px solid white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display min-h-screen text-[#111318]">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 w-full bg-white dark:bg-background-dark border-b border-[#dbdee6] dark:border-gray-800">
+<div class="max-w-[1440px] mx-auto flex items-center justify-between px-6 py-3">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3">
+<div class="text-primary">
+<svg class="size-8" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_330)">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs><clippath id="clip0_6_330"><rect fill="white" height="48" width="48"></rect></clippath></defs>
+</svg>
+</div>
+<h2 class="text-xl font-black tracking-tight">NEXCART <span class="font-normal text-[#5f6e8c]">Admin</span></h2>
+</div>
+<div class="hidden md:flex items-center bg-[#f0f1f5] dark:bg-gray-800 rounded-lg px-3 py-1.5 w-64">
+<span class="material-symbols-outlined text-[#5f6e8c] text-sm">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-full placeholder:text-[#5f6e8c]" placeholder="Search security logs..." type="text"/>
+</div>
+</div>
+<nav class="hidden lg:flex items-center gap-8">
+<a class="text-sm font-semibold text-[#111318] dark:text-white" href="#">Dashboard</a>
+<a class="text-sm font-medium text-[#5f6e8c] hover:text-primary transition-colors" href="#">Orders</a>
+<a class="text-sm font-medium text-[#5f6e8c] hover:text-primary transition-colors" href="#">Customers</a>
+<a class="text-sm font-semibold text-primary border-b-2 border-primary py-4 -mb-4" href="#">Security</a>
+<a class="text-sm font-medium text-[#5f6e8c] hover:text-primary transition-colors" href="#">Settings</a>
+</nav>
+<div class="flex items-center gap-3">
+<button class="p-2 rounded-lg bg-[#f0f1f5] dark:bg-gray-800 text-[#111318] dark:text-white">
+<span class="material-symbols-outlined text-xl">notifications</span>
+</button>
+<button class="p-2 rounded-lg bg-[#f0f1f5] dark:bg-gray-800 text-[#111318] dark:text-white">
+<span class="material-symbols-outlined text-xl">help</span>
+</button>
+<div class="size-10 rounded-full bg-cover bg-center border border-gray-200" data-alt="User avatar of security administrator" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC7A705yctH6G1BskE9mP2K_htLCMITKTmfT8ovENCzc0AM6Cj0izTNvdzqEkLzhkMELMNv5bJyb_VO5YggH_fRuS4KRtfJ-Sqhkgzb7oCDPaSvCBVfswrvZkLcjvQ9tWxFQchTHRKCBiLf7WWLyFmyqSCZHnoJJJC6SkjuKf6zjivRD3H0QwQ9ZQMfW_kiMqNwk3-f4knLj_0Wbp2hTo0LPc8Z6TnMp8lHgcWl50gP5rl2y-dQVXKvwDvJ4UzwFGttaeNkOYdhiNcG");'></div>
+</div>
+</div>
+</header>
+<main class="max-w-[1440px] mx-auto flex gap-6 px-6 py-8">
+<!-- Sidebar -->
+<aside class="w-64 flex-shrink-0 flex flex-col gap-6">
+<div class="bg-white dark:bg-background-dark border border-[#dbdee6] dark:border-gray-800 rounded-xl p-5 shadow-sm">
+<div class="mb-4 flex items-center justify-between">
+<h3 class="font-bold text-sm">Security Health</h3>
+<span class="material-symbols-outlined text-primary text-xl">verified_user</span>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between items-end">
+<p class="text-xs font-medium text-[#5f6e8c]">Fortification Level</p>
+<p class="text-sm font-bold text-[#07883b]">94%</p>
+</div>
+<div class="w-full bg-gray-100 dark:bg-gray-800 rounded-full h-2">
+<div class="bg-[#07883b] h-2 rounded-full" style="width: 94%"></div>
+</div>
+<p class="text-[11px] text-[#5f6e8c] italic">Enterprise Shield Active &amp; Monitoring</p>
+</div>
+</div>
+<nav class="flex flex-col gap-1">
+<div class="flex items-center gap-3 px-3 py-2 text-[#5f6e8c] hover:bg-[#f0f1f5] dark:hover:bg-gray-800 rounded-lg cursor-pointer">
+<span class="material-symbols-outlined">alarm</span>
+<p class="text-sm font-medium">Real-time Alerts</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 text-primary bg-primary/10 rounded-lg cursor-pointer">
+<span class="material-symbols-outlined">rule_settings</span>
+<p class="text-sm font-bold">Rule Engine</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 text-[#5f6e8c] hover:bg-[#f0f1f5] dark:hover:bg-gray-800 rounded-lg cursor-pointer">
+<span class="material-symbols-outlined">history_edu</span>
+<p class="text-sm font-medium">Audit Logs</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 text-[#5f6e8c] hover:bg-[#f0f1f5] dark:hover:bg-gray-800 rounded-lg cursor-pointer">
+<span class="material-symbols-outlined">vpn_lock</span>
+<p class="text-sm font-medium">IP Whitelist</p>
+</div>
+</nav>
+<!-- Alerts Feed -->
+<div class="bg-white dark:bg-background-dark border border-[#dbdee6] dark:border-gray-800 rounded-xl p-5 shadow-sm flex-1">
+<h3 class="font-bold text-sm mb-4">Live Activity</h3>
+<div class="space-y-4">
+<div class="flex gap-3">
+<div class="size-2 mt-1.5 rounded-full bg-red-500 shrink-0"></div>
+<div>
+<p class="text-xs font-bold">Suspicious IP blocked</p>
+<p class="text-[11px] text-[#5f6e8c]">192.168.1.104 • Just now</p>
+</div>
+</div>
+<div class="flex gap-3">
+<div class="size-2 mt-1.5 rounded-full bg-orange-500 shrink-0"></div>
+<div>
+<p class="text-xs font-bold">Velocity trigger: #4452</p>
+<p class="text-[11px] text-[#5f6e8c]">User 'j_doe' • 4m ago</p>
+</div>
+</div>
+<div class="flex gap-3">
+<div class="size-2 mt-1.5 rounded-full bg-primary shrink-0"></div>
+<div>
+<p class="text-xs font-bold">Rule Deployment</p>
+<p class="text-[11px] text-[#5f6e8c]">System admin • 12m ago</p>
+</div>
+</div>
+<div class="flex gap-3">
+<div class="size-2 mt-1.5 rounded-full bg-gray-300 shrink-0"></div>
+<div>
+<p class="text-xs font-bold">Manual approval #4450</p>
+<p class="text-[11px] text-[#5f6e8c]">Verified by Sarah • 25m ago</p>
+</div>
+</div>
+</div>
+<button class="w-full mt-6 py-2 text-xs font-bold text-primary border border-primary/20 rounded-lg hover:bg-primary/5 transition-colors">
+                    View Full Feed
+                </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<div class="flex-1 space-y-6">
+<!-- Heading Area -->
+<div class="flex flex-wrap justify-between items-center gap-4">
+<div>
+<h1 class="text-3xl font-black tracking-tight">Fraud &amp; Rules Manager</h1>
+<p class="text-[#5f6e8c] text-sm mt-1">Stitch Security Framework v4.2 • Last sync 2 mins ago</p>
+</div>
+<div class="flex gap-3">
+<button class="px-4 py-2 bg-white border border-[#dbdee6] dark:border-gray-700 rounded-lg text-sm font-bold text-[#111318] dark:text-white shadow-sm hover:bg-gray-50 transition-colors">
+                        Test Mode
+                    </button>
+<button class="px-4 py-2 bg-primary rounded-lg text-sm font-bold text-white shadow-md hover:opacity-90 transition-opacity flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">rocket_launch</span>
+                        Deploy Rules
+                    </button>
+</div>
+</div>
+<!-- Stats Row -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="bg-white dark:bg-background-dark border border-[#dbdee6] dark:border-gray-800 rounded-xl p-6 shadow-sm flex items-center justify-between">
+<div>
+<p class="text-sm font-medium text-[#5f6e8c] mb-1">Risk Level</p>
+<div class="flex items-baseline gap-2">
+<span class="text-3xl font-black">12%</span>
+<span class="text-xs font-bold text-orange-500">-2% vs last 24h</span>
+</div>
+</div>
+<!-- Mini Gauge Representation -->
+<div class="relative size-16">
+<svg class="size-full transform -rotate-90">
+<circle class="text-gray-100 dark:text-gray-800" cx="32" cy="32" fill="transparent" r="28" stroke="currentColor" stroke-width="4"></circle>
+<circle class="text-primary" cx="32" cy="32" fill="transparent" r="28" stroke="currentColor" stroke-dasharray="175.9" stroke-dashoffset="154.8" stroke-width="4"></circle>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-xl">speed</span>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-background-dark border border-[#dbdee6] dark:border-gray-800 rounded-xl p-6 shadow-sm">
+<p class="text-sm font-medium text-[#5f6e8c] mb-1">Flagged Orders</p>
+<div class="flex items-baseline gap-2">
+<span class="text-3xl font-black">148</span>
+<span class="text-xs font-bold text-[#07883b]">+5% vs last 24h</span>
+</div>
+<div class="mt-4 flex -space-x-2">
+<div class="size-6 rounded-full border-2 border-white bg-blue-100 flex items-center justify-center text-[8px] font-bold">JD</div>
+<div class="size-6 rounded-full border-2 border-white bg-green-100 flex items-center justify-center text-[8px] font-bold">AS</div>
+<div class="size-6 rounded-full border-2 border-white bg-purple-100 flex items-center justify-center text-[8px] font-bold">ML</div>
+<div class="size-6 rounded-full border-2 border-white bg-gray-100 flex items-center justify-center text-[8px] font-bold">+145</div>
+</div>
+</div>
+<div class="bg-white dark:bg-background-dark border border-[#dbdee6] dark:border-gray-800 rounded-xl p-6 shadow-sm">
+<p class="text-sm font-medium text-[#5f6e8c] mb-1">Blocked IPs</p>
+<div class="flex items-baseline gap-2">
+<span class="text-3xl font-black">1,204</span>
+<span class="text-xs font-bold text-[#07883b]">+12% vs last 24h</span>
+</div>
+<div class="mt-4 flex items-center gap-1">
+<div class="h-1 flex-1 bg-red-100 rounded-full overflow-hidden">
+<div class="h-full bg-red-500 w-2/3"></div>
+</div>
+<span class="text-[10px] text-[#5f6e8c] font-bold">Bot Attack Filter Active</span>
+</div>
+</div>
+</div>
+<!-- Rules Engine Section -->
+<div>
+<div class="flex items-center justify-between mb-4 px-1">
+<h2 class="text-xl font-bold tracking-tight flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">security</span>
+                        Fraud Rules Engine
+                    </h2>
+<div class="flex gap-2">
+<button class="p-1.5 rounded bg-white border border-[#dbdee6] text-gray-500">
+<span class="material-symbols-outlined text-lg">filter_list</span>
+</button>
+<button class="p-1.5 rounded bg-white border border-[#dbdee6] text-gray-500">
+<span class="material-symbols-outlined text-lg">grid_view</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 xl:grid-cols-2 gap-4">
+<!-- Rule Card 1 -->
+<div class="bg-white dark:bg-background-dark border border-[#dbdee6] dark:border-gray-800 rounded-xl p-6 shadow-sm hover:border-primary/30 transition-all group">
+<div class="flex justify-between items-start mb-6">
+<div class="flex gap-4">
+<div class="p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg text-primary">
+<span class="material-symbols-outlined">query_stats</span>
+</div>
+<div>
+<h4 class="font-bold text-[#111318] dark:text-white">Velocity Check</h4>
+<p class="text-xs text-[#5f6e8c] mt-0.5">Detects multiple orders from same user in &lt; 5 mins.</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between items-center mb-2">
+<span class="text-xs font-bold uppercase tracking-wider text-[#5f6e8c]">Sensitivity</span>
+<span class="text-xs font-bold text-primary">High (85%)</span>
+</div>
+<input class="slider" type="range" value="85"/>
+</div>
+<div class="pt-4 flex items-center justify-between border-t border-gray-100 dark:border-gray-800">
+<a class="text-xs font-bold text-primary flex items-center gap-1 hover:underline" href="#">
+<span class="material-symbols-outlined text-sm">history</span>
+                                    Audit Log
+                                </a>
+<span class="text-[10px] bg-green-100 text-[#07883b] px-2 py-0.5 rounded-full font-bold">Live</span>
+</div>
+</div>
+</div>
+<!-- Rule Card 2 -->
+<div class="bg-white dark:bg-background-dark border border-[#dbdee6] dark:border-gray-800 rounded-xl p-6 shadow-sm hover:border-primary/30 transition-all group">
+<div class="flex justify-between items-start mb-6">
+<div class="flex gap-4">
+<div class="p-3 bg-orange-50 dark:bg-orange-900/20 rounded-lg text-orange-500">
+<span class="material-symbols-outlined">public</span>
+</div>
+<div>
+<h4 class="font-bold text-[#111318] dark:text-white">IP Geolocation Mismatch</h4>
+<p class="text-xs text-[#5f6e8c] mt-0.5">Flags orders with shipping far from IP location.</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between items-center mb-2">
+<span class="text-xs font-bold uppercase tracking-wider text-[#5f6e8c]">Sensitivity</span>
+<span class="text-xs font-bold text-primary">Medium (50%)</span>
+</div>
+<input class="slider" type="range" value="50"/>
+</div>
+<div class="pt-4 flex items-center justify-between border-t border-gray-100 dark:border-gray-800">
+<a class="text-xs font-bold text-primary flex items-center gap-1 hover:underline" href="#">
+<span class="material-symbols-outlined text-sm">history</span>
+                                    Audit Log
+                                </a>
+<span class="text-[10px] bg-green-100 text-[#07883b] px-2 py-0.5 rounded-full font-bold">Live</span>
+</div>
+</div>
+</div>
+<!-- Rule Card 3 -->
+<div class="bg-white dark:bg-background-dark border border-[#dbdee6] dark:border-gray-800 rounded-xl p-6 shadow-sm hover:border-primary/30 transition-all group">
+<div class="flex justify-between items-start mb-6">
+<div class="flex gap-4">
+<div class="p-3 bg-purple-50 dark:bg-purple-900/20 rounded-lg text-purple-600">
+<span class="material-symbols-outlined">payments</span>
+</div>
+<div>
+<h4 class="font-bold text-[#111318] dark:text-white">High-Value COD Verification</h4>
+<p class="text-xs text-[#5f6e8c] mt-0.5">Manual approval for cash orders over $500.</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between items-center mb-2">
+<span class="text-xs font-bold uppercase tracking-wider text-[#5f6e8c]">Threshold</span>
+<span class="text-xs font-bold text-primary">$500</span>
+</div>
+<input class="slider" max="2000" min="100" step="100" type="range" value="500"/>
+</div>
+<div class="pt-4 flex items-center justify-between border-t border-gray-100 dark:border-gray-800">
+<a class="text-xs font-bold text-primary flex items-center gap-1 hover:underline" href="#">
+<span class="material-symbols-outlined text-sm">history</span>
+                                    Audit Log
+                                </a>
+<span class="text-[10px] bg-yellow-100 text-yellow-700 px-2 py-0.5 rounded-full font-bold">Requires Action</span>
+</div>
+</div>
+</div>
+<!-- Add New Rule Placeholder -->
+<div class="bg-dashed border-2 border-dashed border-[#dbdee6] dark:border-gray-700 rounded-xl p-6 flex flex-col items-center justify-center text-[#5f6e8c] hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors cursor-pointer min-h-[180px]">
+<span class="material-symbols-outlined text-3xl mb-2">add_circle</span>
+<p class="text-sm font-bold">Add Custom Rule</p>
+<p class="text-[10px] mt-1">Stitch API v2 available</p>
+</div>
+</div>
+</div>
+<!-- Audit Log Preview Table -->
+<div class="bg-white dark:bg-background-dark border border-[#dbdee6] dark:border-gray-800 rounded-xl shadow-sm overflow-hidden">
+<div class="px-6 py-4 border-b border-[#dbdee6] dark:border-gray-800 flex justify-between items-center">
+<h3 class="font-bold text-sm">Recent Audit Events</h3>
+<a class="text-xs font-bold text-primary" href="#">View Full Log</a>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left text-sm">
+<thead>
+<tr class="bg-gray-50 dark:bg-gray-800/50 text-[#5f6e8c] text-[10px] uppercase tracking-wider">
+<th class="px-6 py-3 font-bold">Time</th>
+<th class="px-6 py-3 font-bold">Rule Triggered</th>
+<th class="px-6 py-3 font-bold">Entity</th>
+<th class="px-6 py-3 font-bold">Risk Score</th>
+<th class="px-6 py-3 font-bold">Action Taken</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#dbdee6] dark:divide-gray-800">
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/20">
+<td class="px-6 py-4 text-xs">14:22:01</td>
+<td class="px-6 py-4 font-medium">Velocity Check</td>
+<td class="px-6 py-4">User: j_smith_99</td>
+<td class="px-6 py-4">
+<span class="px-2 py-0.5 bg-red-100 text-red-600 rounded-full text-[10px] font-bold">88 / 100</span>
+</td>
+<td class="px-6 py-4 font-bold text-[#111318]">Blocked</td>
+</tr>
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/20">
+<td class="px-6 py-4 text-xs">14:18:45</td>
+<td class="px-6 py-4 font-medium">IP Mismatch</td>
+<td class="px-6 py-4">Order #9921</td>
+<td class="px-6 py-4">
+<span class="px-2 py-0.5 bg-yellow-100 text-yellow-600 rounded-full text-[10px] font-bold">42 / 100</span>
+</td>
+<td class="px-6 py-4 font-bold text-[#111318]">Flagged for Review</td>
+</tr>
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/20">
+<td class="px-6 py-4 text-xs">14:15:12</td>
+<td class="px-6 py-4 font-medium">COD Verification</td>
+<td class="px-6 py-4">Order #9918</td>
+<td class="px-6 py-4">
+<span class="px-2 py-0.5 bg-blue-100 text-blue-600 rounded-full text-[10px] font-bold">65 / 100</span>
+</td>
+<td class="px-6 py-4 font-bold text-[#111318]">Manual Verify</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+<footer class="max-w-[1440px] mx-auto px-6 py-10 mt-10 border-t border-[#dbdee6] dark:border-gray-800 flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#5f6e8c] text-sm">shield</span>
+<p class="text-xs text-[#5f6e8c]">© 2024 NEXCART Enterprise Security. Powered by Stitch Design System.</p>
+</div>
+<div class="flex gap-6">
+<a class="text-xs font-bold text-[#5f6e8c] hover:text-primary" href="#">Documentation</a>
+<a class="text-xs font-bold text-[#5f6e8c] hover:text-primary" href="#">API Reference</a>
+<a class="text-xs font-bold text-[#5f6e8c] hover:text-primary" href="#">Contact Support</a>
+</div>
+</footer>
+</body></html>

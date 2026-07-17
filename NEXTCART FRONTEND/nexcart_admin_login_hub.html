@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEXCART Admin Login Hub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1f68f9",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#0f1623",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "sans": ["Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "2xl": "2rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex flex-col">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e5e7eb] dark:border-b-gray-800 bg-white dark:bg-background-dark px-10 py-3">
+<div class="flex items-center gap-4 text-[#111318] dark:text-white">
+<div class="size-6 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_330)">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs>
+<clippath id="clip0_6_330"><rect fill="white" height="48" width="48"></rect></clippath>
+</defs>
+</svg>
+</div>
+<h2 class="text-[#111318] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] font-display">NEXCART Admin</h2>
+</div>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors">
+<span class="truncate">Customer Site</span>
+</button>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 flex items-center justify-center px-4 py-12">
+<div class="w-full max-w-[480px]">
+<!-- Login Card -->
+<div class="bg-white dark:bg-gray-900 rounded-2xl shadow-xl border border-[#e5e7eb] dark:border-gray-800 overflow-hidden">
+<div class="p-8 md:p-12">
+<!-- Header -->
+<div class="text-center mb-10">
+<div class="inline-flex items-center justify-center size-12 bg-primary/10 rounded-xl mb-4 text-primary">
+<span class="material-symbols-outlined text-3xl">admin_panel_settings</span>
+</div>
+<h1 class="text-[#111318] dark:text-white tracking-tight text-[32px] font-bold leading-tight font-display">Welcome Back</h1>
+<p class="text-[#5f6e8c] dark:text-gray-400 text-base font-normal leading-normal mt-2">Log in to manage your NEXCART store.</p>
+</div>
+<!-- Form -->
+<form class="space-y-6">
+<!-- Email Field -->
+<div class="flex flex-col gap-2">
+<label class="text-[#111318] dark:text-gray-200 text-sm font-semibold leading-normal">Email Address</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-[#5f6e8c] dark:text-gray-500 text-xl">mail</span>
+<input class="flex w-full rounded-xl text-[#111318] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/20 border border-[#dbdee6] dark:border-gray-700 bg-white dark:bg-gray-800 focus:border-primary h-14 placeholder:text-[#5f6e8c] dark:placeholder:text-gray-500 pl-12 pr-4 text-base font-normal leading-normal transition-all" placeholder="admin@nexcart.com" type="email"/>
+</div>
+</div>
+<!-- Password Field -->
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-center">
+<label class="text-[#111318] dark:text-gray-200 text-sm font-semibold leading-normal">Password</label>
+<a class="text-primary text-xs font-bold hover:underline" href="#">Forgot password?</a>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-[#5f6e8c] dark:text-gray-500 text-xl">lock</span>
+<input class="flex w-full rounded-xl text-[#111318] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/20 border border-[#dbdee6] dark:border-gray-700 bg-white dark:bg-gray-800 focus:border-primary h-14 placeholder:text-[#5f6e8c] dark:placeholder:text-gray-500 pl-12 pr-12 text-base font-normal leading-normal transition-all" placeholder="••••••••" type="password"/>
+<button class="absolute right-4 top-1/2 -translate-y-1/2 text-[#5f6e8c] dark:text-gray-500" type="button">
+<span class="material-symbols-outlined text-xl">visibility</span>
+</button>
+</div>
+</div>
+<!-- Primary Action -->
+<div class="pt-2">
+<button class="w-full flex cursor-pointer items-center justify-center rounded-xl h-14 px-4 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-blue-600 transition-colors shadow-lg shadow-primary/20" type="submit">
+<span>Sign In to Dashboard</span>
+</button>
+</div>
+</form>
+<!-- Divider -->
+<div class="relative my-8">
+<div class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-[#e5e7eb] dark:border-gray-800"></div>
+</div>
+<div class="relative flex justify-center text-xs uppercase">
+<span class="bg-white dark:bg-gray-900 px-2 text-[#5f6e8c] dark:text-gray-500 font-medium">Enterprise Security</span>
+</div>
+</div>
+<!-- Trust Badge -->
+<div class="flex items-center justify-center gap-2 text-[#5f6e8c] dark:text-gray-400">
+<span class="material-symbols-outlined text-sm">verified_user</span>
+<span class="text-xs font-medium">256-bit SSL Encrypted Connection</span>
+</div>
+</div>
+</div>
+<!-- Footer Links -->
+<div class="mt-8 text-center space-y-4">
+<p class="text-[#5f6e8c] dark:text-gray-400 text-sm">
+                    Don't have an admin account? 
+                    <a class="text-primary font-bold hover:underline" href="#">Contact System Administrator</a>
+</p>
+<div class="flex justify-center gap-6 text-xs text-[#5f6e8c] dark:text-gray-500 font-medium uppercase tracking-wider">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-primary transition-colors" href="#">Help Center</a>
+</div>
+<p class="text-xs text-[#5f6e8c]/60 dark:text-gray-600 font-medium pt-4">
+                    © 2024 NEXCART Unified Commerce. All rights reserved.
+                </p>
+</div>
+</div>
+</main>
+</body></html>

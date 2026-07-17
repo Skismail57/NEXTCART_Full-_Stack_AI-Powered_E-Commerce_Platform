@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEXCART Developer Portal | API Explorer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2559f4",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101422",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        .code-font { font-family: 'JetBrains Mono', 'Fira Code', monospace; }
+        .erd-line { stroke: #cbd5e1; stroke-width: 2; fill: none; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111318] dark:text-white antialiased">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 bg-white dark:bg-[#1a1f2e] border-b border-[#f0f1f5] dark:border-[#2a2f3e] px-8 py-3 flex items-center justify-between">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3 text-primary">
+<div class="size-8 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined">api</span>
+</div>
+<h2 class="text-[#111318] dark:text-white text-lg font-extrabold tracking-tight">NEXCART <span class="font-light text-[#606b8a]">DevPortal</span></h2>
+</div>
+<div class="relative w-72">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[#606b8a] text-lg">search</span>
+<input class="w-full bg-[#f0f1f5] dark:bg-[#2a2f3e] border-none rounded-lg pl-10 pr-4 py-2 text-sm focus:ring-2 focus:ring-primary/50" placeholder="Search services or endpoints..."/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<nav class="flex items-center gap-6">
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Docs</a>
+<a class="text-sm font-semibold text-primary" href="#">API Explorer</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">System Status</a>
+</nav>
+<div class="h-6 w-[1px] bg-[#dbdee6]"></div>
+<button class="bg-primary text-white px-5 py-2 rounded-lg text-sm font-bold shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all">Console</button>
+<div class="size-9 rounded-full bg-cover bg-center border-2 border-primary/20" data-alt="User avatar placeholder" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBNW0DvYJLsabWObO6pIu_fL_L_kTHsgq-jkJqpxrlZuZdyFGRyPrtKSxlsGrJKnUap-R70Ks-N1X9KwGjsPEM0S2009NSn_fqlYsMljZPiM4db5Pz33iiCUh8nE0jN-TeWHzgmDSbv2yFUzwN_GM55seBc79fYMxmu-iN0EsoRCposMaw_L12VE1cwGmDbK3x17uLBcmfDF0atfhuLRGVlwK05SWD96tkZ8OInxnrDLxKe0iw9bmY9t40DfuBMbwR6evQXAkiD6Tzb')"></div>
+</div>
+</header>
+<div class="flex h-[calc(100vh-64px)] overflow-hidden">
+<!-- Side Navigation Bar: Microservices -->
+<aside class="w-72 bg-white dark:bg-[#1a1f2e] border-r border-[#f0f1f5] dark:border-[#2a2f3e] flex flex-col">
+<div class="p-6">
+<div class="mb-6">
+<h3 class="text-xs font-bold text-[#606b8a] uppercase tracking-wider mb-4">Core Microservices</h3>
+<div class="space-y-1">
+<button class="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#606b8a] hover:bg-[#f5f6f8] dark:hover:bg-[#2a2f3e] transition-all group">
+<span class="material-symbols-outlined text-xl group-hover:text-primary">shield_person</span>
+<span class="text-sm font-medium">Auth Service</span>
+<span class="ml-auto size-2 rounded-full bg-emerald-500"></span>
+</button>
+<button class="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#606b8a] hover:bg-[#f5f6f8] dark:hover:bg-[#2a2f3e] transition-all group">
+<span class="material-symbols-outlined text-xl group-hover:text-primary">group</span>
+<span class="text-sm font-medium">User Service</span>
+<span class="ml-auto size-2 rounded-full bg-emerald-500"></span>
+</button>
+<button class="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary border border-primary/20">
+<span class="material-symbols-outlined text-xl">inventory_2</span>
+<span class="text-sm font-bold">Product Service</span>
+<span class="ml-auto size-2 rounded-full bg-emerald-500 animate-pulse"></span>
+</button>
+<button class="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#606b8a] hover:bg-[#f5f6f8] dark:hover:bg-[#2a2f3e] transition-all group">
+<span class="material-symbols-outlined text-xl group-hover:text-primary">shopping_cart</span>
+<span class="text-sm font-medium">Order Service</span>
+<span class="ml-auto size-2 rounded-full bg-emerald-500"></span>
+</button>
+<button class="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#606b8a] hover:bg-[#f5f6f8] dark:hover:bg-[#2a2f3e] transition-all group">
+<span class="material-symbols-outlined text-xl group-hover:text-primary">payments</span>
+<span class="text-sm font-medium">Payment Service</span>
+<span class="ml-auto size-2 rounded-full bg-amber-400"></span>
+</button>
+</div>
+</div>
+<div class="mb-6">
+<h3 class="text-xs font-bold text-[#606b8a] uppercase tracking-wider mb-4">Analytics &amp; Infrastructure</h3>
+<div class="space-y-1">
+<button class="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#606b8a] hover:bg-[#f5f6f8] dark:hover:bg-[#2a2f3e] transition-all group">
+<span class="material-symbols-outlined text-xl group-hover:text-primary">monitoring</span>
+<span class="text-sm font-medium">Metrics Dashboard</span>
+</button>
+<button class="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#606b8a] hover:bg-[#f5f6f8] dark:hover:bg-[#2a2f3e] transition-all group">
+<span class="material-symbols-outlined text-xl group-hover:text-primary">terminal</span>
+<span class="text-sm font-medium">Log Explorer</span>
+</button>
+</div>
+</div>
+</div>
+<div class="mt-auto p-4 bg-background-light dark:bg-[#151929] border-t border-[#f0f1f5] dark:border-[#2a2f3e]">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm">info</span>
+</div>
+<div>
+<p class="text-xs font-bold">V1.2.4-stable</p>
+<p class="text-[10px] text-[#606b8a]">Last updated 2h ago</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto bg-white dark:bg-[#101422]">
+<!-- Page Heading Section -->
+<div class="px-10 py-8 border-b border-[#f0f1f5] dark:border-[#2a2f3e]">
+<div class="flex justify-between items-start mb-6">
+<div class="space-y-2">
+<div class="flex items-center gap-3">
+<h1 class="text-4xl font-black tracking-tight">Product Service</h1>
+<span class="bg-emerald-100 text-emerald-700 text-xs font-bold px-2.5 py-1 rounded-full border border-emerald-200 uppercase">Healthy</span>
+</div>
+<p class="text-[#606b8a] flex items-center gap-2 font-medium">
+<span class="material-symbols-outlined text-lg">link</span>
+                            Base URL: <code class="bg-[#f0f1f5] dark:bg-[#2a2f3e] px-2 py-0.5 rounded text-primary">https://api.nexcart.io/v1/products</code>
+</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 bg-[#f0f1f5] dark:bg-[#2a2f3e] px-4 py-2 rounded-lg text-sm font-bold hover:bg-[#e2e4eb] transition-all">
+<span class="material-symbols-outlined text-lg">download</span>
+                            Postman Collection
+                        </button>
+<button class="flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-lg text-sm font-bold shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-lg">play_arrow</span>
+                            Try it Out
+                        </button>
+</div>
+</div>
+<!-- Tabs -->
+<div class="flex gap-8 border-b border-[#dbdee6] dark:border-[#2a2f3e]">
+<a class="border-b-2 border-primary text-primary pb-3 font-bold text-sm flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-lg">api</span>
+                        API Endpoints
+                    </a>
+<a class="border-b-2 border-transparent text-[#606b8a] pb-3 font-bold text-sm flex items-center gap-2 hover:text-[#111318] transition-all" href="#">
+<span class="material-symbols-outlined text-lg">database</span>
+                        Database Schema
+                    </a>
+<a class="border-b-2 border-transparent text-[#606b8a] pb-3 font-bold text-sm flex items-center gap-2 hover:text-[#111318] transition-all" href="#">
+<span class="material-symbols-outlined text-lg">history</span>
+                        Change Log
+                    </a>
+</div>
+</div>
+<!-- Content Container -->
+<div class="p-10 max-w-5xl mx-auto space-y-12">
+<!-- Section: API Endpoints -->
+<section>
+<div class="flex items-center justify-between mb-6">
+<h2 class="text-2xl font-bold flex items-center gap-2">
+                            Endpoints
+                            <span class="text-[#606b8a] text-sm font-normal">(8 methods available)</span>
+</h2>
+</div>
+<div class="space-y-4">
+<!-- Endpoint Card: POST -->
+<div class="border border-primary/30 rounded-xl overflow-hidden shadow-sm">
+<div class="bg-primary/5 px-4 py-3 flex items-center gap-4 cursor-pointer">
+<span class="bg-primary text-white text-xs font-black px-3 py-1 rounded w-16 text-center">POST</span>
+<code class="font-bold text-[#111318]">/api/products</code>
+<span class="text-[#606b8a] text-sm">Create a new product record</span>
+<span class="material-symbols-outlined ml-auto text-[#606b8a]">expand_more</span>
+</div>
+<div class="p-6 bg-white dark:bg-[#1a1f2e] border-t border-[#f0f1f5] dark:border-[#2a2f3e] grid grid-cols-2 gap-8">
+<div>
+<h4 class="text-xs font-bold uppercase text-[#606b8a] mb-4 tracking-widest">Request Body</h4>
+<div class="bg-[#f8f9fb] dark:bg-[#101422] rounded-lg p-4 code-font text-sm leading-relaxed border border-[#f0f1f5] dark:border-[#2a2f3e]">
+<div class="flex justify-between items-center mb-2 border-b border-[#e2e4eb] dark:border-[#2a2f3e] pb-2">
+<span class="text-xs text-[#606b8a]">application/json</span>
+<button class="text-primary text-xs hover:underline">Copy JSON</button>
+</div>
+<p class="text-purple-60-">{</p>
+<p class="pl-4"><span class="text-blue-600">"name"</span>: <span class="text-emerald-600">"CloudRunner X1"</span>,</p>
+<p class="pl-4"><span class="text-blue-600">"description"</span>: <span class="text-emerald-600">"Performance shoe"</span>,</p>
+<p class="pl-4"><span class="text-blue-600">"price"</span>: <span class="text-amber-600">129.99</span>,</p>
+<p class="pl-4"><span class="text-blue-600">"category_id"</span>: <span class="text-emerald-600">"cat_882"</span>,</p>
+<p class="pl-4"><span class="text-blue-600">"metadata"</span>: { ... }</p>
+<p>}</p>
+</div>
+</div>
+<div>
+<h4 class="text-xs font-bold uppercase text-[#606b8a] mb-4 tracking-widest">Responses</h4>
+<div class="space-y-3">
+<div class="flex items-center gap-3 p-3 bg-emerald-50 dark:bg-emerald-900/10 border border-emerald-100 dark:border-emerald-800 rounded-lg">
+<span class="font-bold text-emerald-600">201</span>
+<span class="text-sm font-medium">Created Successfully</span>
+</div>
+<div class="flex items-center gap-3 p-3 bg-red-50 dark:bg-red-900/10 border border-red-100 dark:border-red-800 rounded-lg">
+<span class="font-bold text-red-600">400</span>
+<span class="text-sm font-medium">Invalid Input Schema</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Endpoint Card: GET -->
+<div class="border border-[#e2e4eb] dark:border-[#2a2f3e] rounded-xl overflow-hidden">
+<div class="px-4 py-3 flex items-center gap-4 cursor-pointer hover:bg-gray-50 transition-colors">
+<span class="bg-emerald-500 text-white text-xs font-black px-3 py-1 rounded w-16 text-center">GET</span>
+<code class="font-bold text-[#111318]">/api/products/{id}</code>
+<span class="text-[#606b8a] text-sm">Retrieve specific product details</span>
+<span class="material-symbols-outlined ml-auto text-[#606b8a]">expand_more</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Database Schema (ERD) -->
+<section>
+<div class="flex items-center justify-between mb-8">
+<div>
+<h2 class="text-2xl font-bold">Database Schema</h2>
+<p class="text-[#606b8a] text-sm">Visual ERD for PostgreSQL <code class="bg-[#f0f1f5] dark:bg-[#2a2f3e] px-1 rounded">product_db</code></p>
+</div>
+<div class="flex gap-2">
+<button class="p-2 border border-[#e2e4eb] rounded-lg hover:bg-gray-50 transition-all"><span class="material-symbols-outlined">zoom_in</span></button>
+<button class="p-2 border border-[#e2e4eb] rounded-lg hover:bg-gray-50 transition-all"><span class="material-symbols-outlined">zoom_out</span></button>
+<button class="p-2 border border-[#e2e4eb] rounded-lg hover:bg-gray-50 transition-all"><span class="material-symbols-outlined">fullscreen</span></button>
+</div>
+</div>
+<!-- ERD Canvas Simulation -->
+<div class="relative bg-[#f8f9fb] dark:bg-[#151929] border border-dashed border-[#dbdee6] rounded-2xl p-10 min-h-[500px] overflow-hidden">
+<!-- Table: Products -->
+<div class="absolute top-10 left-10 w-64 bg-white dark:bg-[#1a1f2e] border border-primary/40 rounded-xl shadow-xl z-10 overflow-hidden">
+<div class="bg-primary px-4 py-2 flex items-center justify-between">
+<span class="text-white text-sm font-bold">products</span>
+<span class="material-symbols-outlined text-white/70 text-sm">table_view</span>
+</div>
+<div class="p-2 space-y-1 text-xs">
+<div class="flex items-center gap-2 p-2 rounded hover:bg-gray-50">
+<span class="text-amber-500 font-black">PK</span>
+<span class="font-bold">id</span>
+<span class="ml-auto text-[#606b8a]">uuid</span>
+</div>
+<div class="flex items-center gap-2 p-2 rounded hover:bg-gray-50">
+<span class="opacity-0">PK</span>
+<span>name</span>
+<span class="ml-auto text-[#606b8a]">varchar(255)</span>
+</div>
+<div class="flex items-center gap-2 p-2 rounded hover:bg-gray-50">
+<span class="text-primary font-black">FK</span>
+<span class="font-bold">category_id</span>
+<span class="ml-auto text-[#606b8a]">uuid</span>
+</div>
+<div class="flex items-center gap-2 p-2 rounded hover:bg-gray-50">
+<span class="opacity-0">PK</span>
+<span>price</span>
+<span class="ml-auto text-[#606b8a]">numeric(10,2)</span>
+</div>
+<div class="flex items-center gap-2 p-2 rounded hover:bg-gray-50">
+<span class="opacity-0">PK</span>
+<span>created_at</span>
+<span class="ml-auto text-[#606b8a]">timestamp</span>
+</div>
+</div>
+</div>
+<!-- Connection Line (Visual Mockup) -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none">
+<path class="erd-line" d="M274 152 C 350 152, 350 152, 440 152" stroke-dasharray="4"></path>
+</svg>
+<!-- Table: Categories -->
+<div class="absolute top-28 right-20 w-64 bg-white dark:bg-[#1a1f2e] border border-[#e2e4eb] dark:border-[#2a2f3e] rounded-xl shadow-xl z-10 overflow-hidden">
+<div class="bg-[#111318] px-4 py-2 flex items-center justify-between">
+<span class="text-white text-sm font-bold">categories</span>
+<span class="material-symbols-outlined text-white/70 text-sm">category</span>
+</div>
+<div class="p-2 space-y-1 text-xs">
+<div class="flex items-center gap-2 p-2 rounded hover:bg-gray-50">
+<span class="text-amber-500 font-black">PK</span>
+<span class="font-bold">id</span>
+<span class="ml-auto text-[#606b8a]">uuid</span>
+</div>
+<div class="flex items-center gap-2 p-2 rounded hover:bg-gray-50">
+<span class="opacity-0">PK</span>
+<span>slug</span>
+<span class="ml-auto text-[#606b8a]">varchar(100)</span>
+</div>
+<div class="flex items-center gap-2 p-2 rounded hover:bg-gray-50">
+<span class="opacity-0">PK</span>
+<span>display_name</span>
+<span class="ml-auto text-[#606b8a]">varchar(100)</span>
+</div>
+</div>
+</div>
+<!-- Table: Inventory -->
+<div class="absolute bottom-10 left-48 w-60 bg-white dark:bg-[#1a1f2e] border border-[#e2e4eb] dark:border-[#2a2f3e] rounded-xl shadow-xl z-10 overflow-hidden">
+<div class="bg-[#606b8a] px-4 py-2 flex items-center justify-between">
+<span class="text-white text-sm font-bold">inventory</span>
+<span class="material-symbols-outlined text-white/70 text-sm">inventory</span>
+</div>
+<div class="p-2 space-y-1 text-xs">
+<div class="flex items-center gap-2 p-2 rounded hover:bg-gray-50">
+<span class="text-primary font-black">FK</span>
+<span class="font-bold">product_id</span>
+<span class="ml-auto text-[#606b8a]">uuid</span>
+</div>
+<div class="flex items-center gap-2 p-2 rounded hover:bg-gray-50">
+<span class="opacity-0">PK</span>
+<span class="font-bold">quantity</span>
+<span class="ml-auto text-[#606b8a]">integer</span>
+</div>
+</div>
+</div>
+<!-- Background Grid Pattern -->
+<div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#111318 1px, transparent 1px); background-size: 20px 20px;"></div>
+</div>
+<div class="mt-8 flex gap-4">
+<div class="flex-1 p-6 rounded-xl border border-[#f0f1f5] bg-white">
+<h4 class="font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">description</span>
+                                Entity Description
+                            </h4>
+<p class="text-sm text-[#606b8a] leading-relaxed">
+                                The Product Entity represents the core commercial unit within NEXCART. All items must be assigned a unique UUID and belong to exactly one Category for indexing and SEO routing.
+                            </p>
+</div>
+<div class="flex-1 p-6 rounded-xl border border-[#f0f1f5] bg-white">
+<h4 class="font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">rule</span>
+                                Business Logic
+                            </h4>
+<ul class="text-sm text-[#606b8a] space-y-2">
+<li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span> Soft-deletes are handled via <code>is_archived</code>.</li>
+<li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span> Price cannot be negative or zero.</li>
+</ul>
+</div>
+</div>
+</section>
+</div>
+<footer class="mt-20 px-10 py-8 border-t border-[#f0f1f5] dark:border-[#2a2f3e] flex justify-between items-center text-[#606b8a] text-xs">
+<p>© 2024 NEXCART Microservices Architecture. Documentation generated from OAS 3.1 Spec.</p>
+<div class="flex gap-6">
+<a class="hover:text-primary" href="#">Release Notes</a>
+<a class="hover:text-primary" href="#">Support Desk</a>
+<a class="hover:text-primary" href="#">Security Policy</a>
+</div>
+</footer>
+</main>
+</div>
+</body></html>

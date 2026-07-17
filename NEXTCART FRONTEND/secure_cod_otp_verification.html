@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Secure COD OTP Verification | NEXCART</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2547f4",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101322",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Space Grotesk', sans-serif; }
+        .glass-morphism {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen relative overflow-hidden">
+<!-- Background Layer (Blurred Checkout Summary) -->
+<div class="absolute inset-0 z-0 blur-xl opacity-50 pointer-events-none flex flex-col items-center">
+<div class="w-full max-w-[1440px] px-40 py-10">
+<header class="flex items-center justify-between border-b border-solid border-slate-200 py-3 mb-10">
+<div class="flex items-center gap-4 text-slate-800">
+<div class="size-6 bg-slate-800 rounded"></div>
+<h2 class="text-lg font-bold">NEXCART</h2>
+</div>
+</header>
+<div class="grid grid-cols-3 gap-10">
+<div class="col-span-2 space-y-6">
+<div class="h-40 bg-white rounded-xl shadow-sm"></div>
+<div class="h-60 bg-white rounded-xl shadow-sm"></div>
+</div>
+<div class="h-80 bg-white rounded-xl shadow-sm"></div>
+</div>
+</div>
+</div>
+<!-- Overlay / Main Content -->
+<div class="relative z-10 min-h-screen flex flex-col items-center justify-center p-4">
+<!-- Navbar (Standalone for the modal context) -->
+<div class="fixed top-0 w-full flex justify-center py-5">
+<header class="w-full max-w-[1280px] flex items-center justify-between px-10 py-3 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md rounded-xl shadow-sm border border-slate-200/50">
+<div class="flex items-center gap-4 text-[#111218] dark:text-white">
+<div class="size-6 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-tight font-display">NEXCART</h2>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2 text-slate-500">
+<span class="material-symbols-outlined text-lg">lock</span>
+<span class="text-xs font-medium uppercase tracking-widest">Secure Checkout</span>
+</div>
+</div>
+</header>
+</div>
+<!-- Verification Modal -->
+<div class="w-full max-w-[560px] glass-morphism rounded-3xl shadow-2xl p-8 md:p-12 border border-white dark:border-slate-800 flex flex-col items-center">
+<!-- Security Icon -->
+<div class="mb-6 w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-4xl font-bold">verified_user</span>
+</div>
+<!-- Headline -->
+<h1 class="text-[#111218] dark:text-white tracking-tight text-2xl md:text-3xl font-bold leading-tight text-center pb-4 font-display">
+                Security Verification Required
+            </h1>
+<!-- Body Text -->
+<p class="text-slate-600 dark:text-slate-300 text-base font-normal leading-relaxed text-center pb-8 max-w-[420px]">
+                For high-value Cash on Delivery orders, please enter the 6-digit OTP sent to your registered mobile 
+                <span class="font-bold text-[#111218] dark:text-white">+91 ******4567</span>
+</p>
+<!-- OTP Input Field -->
+<div class="w-full mb-8">
+<div class="flex justify-center gap-3 md:gap-4">
+<fieldset class="relative flex gap-3 md:gap-4">
+<input autofocus="" class="flex h-16 w-12 md:w-14 text-center text-xl font-bold rounded-lg border-2 border-slate-200 bg-white focus:border-primary focus:ring-0 transition-all dark:bg-slate-900 dark:border-slate-700 dark:text-white" max="9" maxlength="1" type="number"/>
+<input class="flex h-16 w-12 md:w-14 text-center text-xl font-bold rounded-lg border-2 border-slate-200 bg-white focus:border-primary focus:ring-0 transition-all dark:bg-slate-900 dark:border-slate-700 dark:text-white" max="9" maxlength="1" type="number"/>
+<input class="flex h-16 w-12 md:w-14 text-center text-xl font-bold rounded-lg border-2 border-slate-200 bg-white focus:border-primary focus:ring-0 transition-all dark:bg-slate-900 dark:border-slate-700 dark:text-white" max="9" maxlength="1" type="number"/>
+<input class="flex h-16 w-12 md:w-14 text-center text-xl font-bold rounded-lg border-2 border-slate-200 bg-white focus:border-primary focus:ring-0 transition-all dark:bg-slate-900 dark:border-slate-700 dark:text-white" max="9" maxlength="1" type="number"/>
+<input class="flex h-16 w-12 md:w-14 text-center text-xl font-bold rounded-lg border-2 border-slate-200 bg-white focus:border-primary focus:ring-0 transition-all dark:bg-slate-900 dark:border-slate-700 dark:text-white" max="9" maxlength="1" type="number"/>
+<input class="flex h-16 w-12 md:w-14 text-center text-xl font-bold rounded-lg border-2 border-slate-200 bg-white focus:border-primary focus:ring-0 transition-all dark:bg-slate-900 dark:border-slate-700 dark:text-white" max="9" maxlength="1" type="number"/>
+</fieldset>
+</div>
+</div>
+<!-- Timer / Resend -->
+<div class="flex flex-col items-center gap-2 mb-10">
+<div class="flex items-center gap-4">
+<div class="flex flex-col items-center px-4 py-2 bg-slate-100 dark:bg-slate-800 rounded-lg min-w-[60px]">
+<p class="text-[#111218] dark:text-white text-lg font-bold leading-tight">00</p>
+<p class="text-slate-500 text-[10px] uppercase font-bold tracking-tighter">Min</p>
+</div>
+<span class="text-xl font-bold text-slate-400">:</span>
+<div class="flex flex-col items-center px-4 py-2 bg-slate-100 dark:bg-slate-800 rounded-lg min-w-[60px]">
+<p class="text-[#111218] dark:text-white text-lg font-bold leading-tight tracking-tight">45</p>
+<p class="text-slate-500 text-[10px] uppercase font-bold tracking-tighter">Sec</p>
+</div>
+</div>
+<p class="text-slate-500 text-sm mt-3">Didn't receive the code? <button class="text-primary font-bold hover:underline">Resend OTP</button></p>
+</div>
+<!-- Primary Action -->
+<button class="w-full h-14 bg-primary hover:bg-blue-700 text-white rounded-xl font-bold text-lg shadow-lg shadow-primary/30 transition-all flex items-center justify-center gap-3">
+<span>Verify &amp; Place Order</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<!-- Trust Badge -->
+<div class="mt-8 flex items-center gap-2 text-slate-400 dark:text-slate-500">
+<span class="material-symbols-outlined text-lg">verified</span>
+<span class="text-xs font-semibold uppercase tracking-widest">Secure COD Protection</span>
+</div>
+<!-- Footer Links -->
+<div class="mt-6 flex gap-6">
+<a class="text-slate-400 dark:text-slate-500 text-xs hover:text-primary transition-colors" href="#">Change Number</a>
+<a class="text-slate-400 dark:text-slate-500 text-xs hover:text-red-500 transition-colors" href="#">Cancel Order</a>
+</div>
+</div>
+<!-- Bottom Support Info -->
+<div class="mt-8 text-center text-slate-400 text-xs">
+<p>© 2024 NEXCART Marketplace. All transactions are SSL encrypted.</p>
+</div>
+</div>
+<!-- Script to handle basic OTP focusing -->
+<script>
+        const inputs = document.querySelectorAll('input[type="number"]');
+        inputs.forEach((input, index) => {
+            input.addEventListener('keyup', (e) => {
+                if (e.key >= 0 && e.key <= 9) {
+                    if (index < inputs.length - 1) {
+                        inputs[index + 1].focus();
+                    }
+                } else if (e.key === 'Backspace') {
+                    if (index > 0) {
+                        inputs[index - 1].focus();
+                    }
+                }
+            });
+        });
+    </script>
+</body></html>

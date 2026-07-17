@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEXCART Checkout &amp; Trust Hub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1f68f9",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#0f1623",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .fraud-pulse {
+            position: relative;
+        }
+        .fraud-pulse::after {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #10b981;
+            border-radius: 50%;
+            right: -12px;
+            top: 50%;
+            transform: translateY(-50%);
+            box-shadow: 0 0 0 rgba(16, 185, 129, 0.4);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0px rgba(16, 185, 129, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+            100% { box-shadow: 0 0 0 0px rgba(16, 185, 129, 0); }
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111318] transition-colors duration-300">
+<!-- Top Navigation Bar -->
+<header class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 sticky top-0 z-50">
+<div class="max-w-[1440px] mx-auto px-10 py-4 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="size-8 text-primary">
+<svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z"></path>
+</svg>
+</div>
+<h2 class="text-xl font-bold tracking-tight dark:text-white">NEXCART</h2>
+</div>
+<div class="flex items-center gap-8">
+<nav class="hidden md:flex gap-8 text-sm font-medium dark:text-gray-300">
+<a class="hover:text-primary transition-colors" href="#">Shop</a>
+<a class="hover:text-primary transition-colors" href="#">Support</a>
+<a class="hover:text-primary transition-colors" href="#">Track Order</a>
+</nav>
+<div class="size-10 rounded-full bg-cover bg-center border-2 border-primary/20" data-alt="User profile avatar circle" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAGMja71LhRrhCUlhPGtNSK359HHeSf58ghUXRHORjxDa34V_-CHkqwg-seSMpd54gjYjjj4fNmIEwDN08GNWzgePjlv1Dob4bFeRCTB-YEsei7-1NJ6q0J9ve2VGWuILPRQig4OBR-Jqr7Jt6z9vrzeOX0UWebNpTU-6t6CBbVNlX6AuTgvisW-XaTUCffSZiZY2COWjU-L4MzjC45LH2TPjCNScEVajCaBoSCZX00baLnQBXJ6HmUGu4iutcg7dBebLpSbw2g6Wuq')"></div>
+</div>
+</div>
+</header>
+<main class="max-w-[1200px] mx-auto px-6 py-8">
+<!-- Breadcrumbs -->
+<div class="flex items-center gap-2 mb-8 text-sm font-medium text-gray-500 dark:text-gray-400">
+<a class="hover:text-primary transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-sm">shopping_cart</span> Cart
+            </a>
+<span class="text-gray-300">/</span>
+<a class="hover:text-primary transition-colors" href="#">Shipping</a>
+<span class="text-gray-300">/</span>
+<span class="text-primary dark:text-white font-bold">Payment</span>
+</div>
+<div class="flex flex-col lg:flex-row gap-12">
+<!-- Left Side: Payment & Trust -->
+<div class="flex-1 space-y-8">
+<div class="space-y-2">
+<h1 class="text-3xl font-extrabold tracking-tight dark:text-white">Secure Checkout</h1>
+<p class="text-gray-500 dark:text-gray-400">Choose your preferred payment method and complete your purchase.</p>
+</div>
+<!-- Fraud Shield Badge -->
+<div class="bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-100 dark:border-emerald-900 rounded-xl p-5 flex items-center gap-4">
+<div class="bg-emerald-500 text-white p-2 rounded-lg">
+<span class="material-symbols-outlined">shield</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-bold text-emerald-900 dark:text-emerald-400">Fraud Shield Active</span>
+<span class="fraud-pulse"></span>
+</div>
+<p class="text-sm text-emerald-700 dark:text-emerald-500">ML-driven real-time fraud detection is monitoring this transaction for your safety.</p>
+</div>
+</div>
+<!-- Payment Methods Section -->
+<div class="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden">
+<div class="p-6 border-b border-gray-200 dark:border-gray-800 flex justify-between items-center">
+<h3 class="font-bold text-lg dark:text-white">Payment Methods</h3>
+<div class="flex items-center gap-2">
+<span class="text-xs text-gray-400 uppercase font-bold tracking-widest">Powered By</span>
+<div class="h-6 w-24 bg-contain bg-no-repeat bg-center" data-alt="Razorpay brand logo" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBCCrZOOG-XY8PYb0QjGzs5_bzTbViHWn5KWUZDsCeHMxOPq4LePRv38mbUXBQ2BofkEoR89CZZVEdgjERHjjueDuPnJeZmNJdsX6lN2VwVBdcbdio_JCdsirOmLROQnbbnfhdy6j-JDno2Zou0azsZk-GqApySaFucs8EyTEqXVPFX6UvE-sPwcy5-GMXtmvr6q8lF4zH2oyAWXj-kT01no0OFr_FFvrw1oT4blK3wiBBthAGs3G0P-JSnLwi8HQi7ApAs4gJV-dz5')"></div>
+</div>
+</div>
+<div class="divide-y divide-gray-100 dark:divide-gray-800">
+<!-- UPI Option -->
+<div class="p-6 flex items-center justify-between cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">qr_code_2</span>
+</div>
+<div>
+<p class="font-bold dark:text-white text-base">UPI (GPay, PhonePe, Paytm)</p>
+<p class="text-sm text-gray-500">Pay using your UPI ID or QR code</p>
+</div>
+</div>
+<div class="size-6 rounded-full border-2 border-primary flex items-center justify-center">
+<div class="size-3 bg-primary rounded-full"></div>
+</div>
+</div>
+<!-- Card Option -->
+<div class="p-6 flex items-center justify-between cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-400">
+<span class="material-symbols-outlined">credit_card</span>
+</div>
+<div>
+<p class="font-bold dark:text-white text-base">Debit / Credit Cards</p>
+<p class="text-sm text-gray-500">Visa, Mastercard, Amex, RuPay</p>
+</div>
+</div>
+<div class="size-6 rounded-full border-2 border-gray-200 dark:border-gray-700"></div>
+</div>
+<!-- Netbanking Option -->
+<div class="p-6 flex items-center justify-between cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-400">
+<span class="material-symbols-outlined">account_balance</span>
+</div>
+<div>
+<p class="font-bold dark:text-white text-base">Netbanking</p>
+<p class="text-sm text-gray-500">Secure transfer from 50+ banks</p>
+</div>
+</div>
+<div class="size-6 rounded-full border-2 border-gray-200 dark:border-gray-700"></div>
+</div>
+</div>
+</div>
+<!-- Trust Elements -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="flex items-center gap-3 p-4 bg-white dark:bg-gray-900 rounded-lg border border-gray-100 dark:border-gray-800 shadow-sm">
+<span class="material-symbols-outlined text-primary">lock</span>
+<span class="text-sm font-medium dark:text-gray-300">256-bit AES Encryption</span>
+</div>
+<div class="flex items-center gap-3 p-4 bg-white dark:bg-gray-900 rounded-lg border border-gray-100 dark:border-gray-800 shadow-sm">
+<span class="material-symbols-outlined text-primary">verified_user</span>
+<span class="text-sm font-medium dark:text-gray-300">PCI-DSS Compliant</span>
+</div>
+<div class="flex items-center gap-3 p-4 bg-white dark:bg-gray-900 rounded-lg border border-gray-100 dark:border-gray-800 shadow-sm">
+<span class="material-symbols-outlined text-primary">autorenew</span>
+<span class="text-sm font-medium dark:text-gray-300">Easy 30-day Returns</span>
+</div>
+</div>
+</div>
+<!-- Right Side: Order Summary -->
+<div class="w-full lg:w-[400px]">
+<div class="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-xl overflow-hidden sticky top-24">
+<div class="p-6 border-b border-gray-100 dark:border-gray-800">
+<h3 class="font-bold text-lg dark:text-white">Order Summary</h3>
+</div>
+<!-- Item Table Mini -->
+<div class="px-6 py-4 space-y-4">
+<div class="flex gap-4">
+<div class="size-16 bg-gray-100 dark:bg-gray-800 rounded-lg flex-shrink-0 bg-cover bg-center" data-alt="Premium Wireless Headphones Black" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAL-PCWEQoMT_jbospWPjtdxVJ3HxqZPT-Gx3a5J6s92ub3PS0bVNuEj88OZVWZPQGNz6YtReAbSqn4nc0QrT8oiaEE8ovL7Ud4fzJYe6kRvnG1uwmFGrkOzJWGzHTY4yn8O0j5N9ChortIayi37YiAvYeS-fwjNbotAKzVoW5fDN9cexdS5uOuW5te1PYavZPP_ttEQ5ta6gme88Og0SrRueEMkxv8VWR4jEIcDKnUTMWKzfsn5IVYVIuKBghz9vCfeyXabk24SxQf')"></div>
+<div class="flex-1">
+<p class="text-sm font-bold dark:text-white">Premium Wireless Headphones</p>
+<div class="flex justify-between items-center mt-1">
+<p class="text-xs text-gray-500">Qty: 1 • Midnight Black</p>
+<p class="text-sm font-semibold dark:text-gray-300">$299.00</p>
+</div>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="size-16 bg-gray-100 dark:bg-gray-800 rounded-lg flex-shrink-0 bg-cover bg-center" data-alt="Ergonomic Wireless Mouse Silver" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAqV-UKojAlYM2qGS9FVtA-V8b0Kjv3u0xzPKM9RE9xWD2LiYG2kNjfXWLvJGymfdLzTct245T2KNYAFL5zWHPM8DhZKeNdyGj6bW8b4oUrVqZpekq4HFmmsQIqdytm3C4xP_MTHBJmlHc1Iu1LfUDZXkYdfLINra2KoNCj8az-qMIbv9QSF5AG-tJpNSkRC2JnD2x6JfjHo13JwqREnSaGHkya8EMQwMmXyBg-J-hfj7xZIQAz4kyigFh-aRwVdc2-GJUqzeslG-UU')"></div>
+<div class="flex-1">
+<p class="text-sm font-bold dark:text-white">Ergonomic Wireless Mouse</p>
+<div class="flex justify-between items-center mt-1">
+<p class="text-xs text-gray-500">Qty: 1 • Slate Grey</p>
+<p class="text-sm font-semibold dark:text-gray-300">$49.00</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Price Breakdown -->
+<div class="px-6 py-6 bg-gray-50 dark:bg-gray-800/30 space-y-3">
+<div class="flex justify-between text-sm">
+<span class="text-gray-500 dark:text-gray-400">Subtotal</span>
+<span class="font-medium dark:text-gray-200">$348.00</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-gray-500 dark:text-gray-400">Shipping</span>
+<span class="text-emerald-600 font-bold">FREE</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-gray-500 dark:text-gray-400">Taxes (8%)</span>
+<span class="font-medium dark:text-gray-200">$27.84</span>
+</div>
+<div class="pt-4 mt-4 border-t border-gray-200 dark:border-gray-700 flex justify-between items-end">
+<div>
+<p class="text-xs text-gray-400 uppercase font-bold">Total Amount</p>
+<p class="text-3xl font-extrabold text-primary">$375.84</p>
+</div>
+<div class="text-right pb-1">
+<span class="bg-primary/10 text-primary text-[10px] px-2 py-1 rounded font-bold uppercase">USD</span>
+</div>
+</div>
+</div>
+<div class="p-6">
+<button class="w-full bg-primary hover:bg-primary/90 text-white py-4 rounded-xl font-bold flex items-center justify-center gap-3 transition-all transform active:scale-[0.98] shadow-lg shadow-primary/20">
+                            Complete Order
+                            <span class="material-symbols-outlined text-xl">local_shipping</span>
+</button>
+<p class="text-center text-[11px] text-gray-400 mt-4 leading-relaxed">
+                            By clicking "Complete Order", you agree to NEXCART's <a class="underline" href="#">Terms of Service</a> and <a class="underline" href="#">Refund Policy</a>.
+                        </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Recommendations Section -->
+<div class="mt-20 border-t border-gray-200 dark:border-gray-800 pt-10">
+<h3 class="text-xl font-bold mb-6 dark:text-white">You might also like...</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+<div class="group cursor-pointer">
+<div class="aspect-square bg-gray-100 dark:bg-gray-800 rounded-xl mb-3 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="Leather laptop sleeve brown" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDrLzJbTAeRI0PvmYceafbwTSx5ADJC3W6a_D9FAiAqwpa5lIb5XQMj8oziirq0zeKu5wDcS3L7myHLIBZLREmPtVPRO9VhxU67N04z8ut5P12xCxxodAs2kJ7iHwn9hZlFCslBuPgF7lZL-Biyy_xU6wjAoR3YpoQYsBi0UcVN9NPG6QdK7xFbikhxIAwp75vwniUaV6x7ZDjIAOl9X3gDVabzRFQHLlTsaoLUkmJ99Zp8tUusDKBaMSTduhkcfFjAsbHzftdSXrQF')"></div>
+</div>
+<p class="font-bold text-sm dark:text-gray-200">Leather Laptop Sleeve</p>
+<p class="text-primary text-sm font-bold">$59.00</p>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-square bg-gray-100 dark:bg-gray-800 rounded-xl mb-3 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="Tech organizer pouch grey" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAVVMFHT71QustQggMUJMMmZQuJf0ijtmyCpSxe_EL_bNhmPRZRnUFEKoBlN0H_0oZryuld6UlncZ3lbhrlvZfkTqpJ4Jf9fDJfHyL74carbvwHrE-DVCGgkEOyqEU799RuJ2oeCjisGF4-M5VuT4N_5uHR_uuEmo-gEiKq69gyNxFOSSfy5eBhm3M7Wr2fU9jDgevzaVfN15fP96ReKrMeO5ejJjdAn2WoD0RseMO9px9ZunAEJr-7cDRwNIJ0BWWJPbtUH7VuqdLr')"></div>
+</div>
+<p class="font-bold text-sm dark:text-gray-200">Tech Organizer Pouch</p>
+<p class="text-primary text-sm font-bold">$35.00</p>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-square bg-gray-100 dark:bg-gray-800 rounded-xl mb-3 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="Noise cancelling headphones white" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDbioVcb8dXwsnSWZGfgxx69fyxSzAaoHxYA6RqYOv1RlFpa7qQnHG2GJpgw4dQozqRoKDxD9QH9SJIiSBMZJMRM4pinmfiV_2tgQhg2T3qFITuLnBdYxjvP0PT8bhWBhpOjVSfQjjdwyqW3yd_ocUuiDhhPkbEYE1z_zcpC4i0cRmBXsyZ6wQIVd2i9fDsGedk8UHSV_YVJxAF4mQoyiqbcJAhHAS6qFrazEpCnUbdEnB0d4DzlxapW4TSxsQH0lHQDyMh9WrZ-lbM')"></div>
+</div>
+<p class="font-bold text-sm dark:text-gray-200">Studio Pro Headphones</p>
+<p class="text-primary text-sm font-bold">$189.00</p>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-square bg-gray-100 dark:bg-gray-800 rounded-xl mb-3 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="USB-C Charging Dock hub" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBPz6zvhizYxeAp53zrEzzHWK8HWHg4mvD2aKPm9lnWs8CzZ5nTt0Wwssoie0SKPgzwHEk8C6TaLOq5g-JxY05iBS2v0sXjpLzCXs5jxyH-xROQHcL3JgI7aKvrEf3lSM7q7jtyPnv9en2AupFPbBmTJJ1q4cmoGjRd8SoTXiNa9wn_xslBe3GtTa5nA-Ef2YxFJC0V6uqrJPldI-DhsAs1hru1Y7YAdbM-mNcMUoFvAiuyo9rkqwLiyTJIGep6DftUTOK3_o7igDj6')"></div>
+</div>
+<p class="font-bold text-sm dark:text-gray-200">10-in-1 USB Hub</p>
+<p class="text-primary text-sm font-bold">$79.00</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Razorpay Checkout Overlay Simulation (Centered) -->
+<div class="fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+<div class="bg-white dark:bg-gray-900 w-full max-w-[440px] rounded-2xl shadow-2xl overflow-hidden border border-white/20">
+<!-- Razorpay Modal Header -->
+<div class="bg-[#1f68f9] p-6 text-white flex justify-between items-center">
+<div class="flex items-center gap-3">
+<div class="size-10 bg-white rounded-lg flex items-center justify-center">
+<div class="size-6 bg-contain bg-no-repeat bg-center" data-alt="Small Razorpay icon" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDc5Hnn9Xw8hs7OsjnTBgWnK2Kn0BuwIUfe94sy9AGUBDQWEqqprUIjC1yWE9-d3bVtzUHc8P7W8ewg_NMLNKjYW6hu4AtQKBhQrAKsMVnF94wh64sjlyyuR6wCmf86w1UZSF_T1X1oNg4O-NYT5TAp5-2MTbTmiDbSewH_7YAAfjE17sWgB8RCP74WIi-E0VCaOqiClUXNVoMmDGSBKsMrp1AgSHnZfXS_L318IqRqeWz6hvfQNhKeI-DuctIbeibUWZ5AoKKYKKDt')"></div>
+</div>
+<div>
+<h4 class="font-bold leading-tight">NEXCART</h4>
+<p class="text-xs text-white/70">Payment ID: pay_OX82jK91n</p>
+</div>
+</div>
+<button class="text-white/80 hover:text-white">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Razorpay Modal Body -->
+<div class="p-8">
+<div class="text-center mb-8">
+<p class="text-gray-500 dark:text-gray-400 text-sm font-medium">Scan QR to pay with any UPI App</p>
+<div class="mt-4 inline-block p-4 bg-white border border-gray-100 rounded-xl shadow-md">
+<div class="size-48 bg-gray-100 bg-cover bg-center" data-alt="Razorpay UPI Payment QR Code" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBbizTaF8AzMucZqFXR0wbplT0tYoTapWtSBVjyrF6mygc6IRGQHYC5zOsOx1ISjiLUoSAwyWQ1v7U232vjz8cTmRNAYYOcI27rD55x1IpjAc6-b1RGlVWaud9qPFJYPTAbQLRl2wAtDBeMIKxeLQiLRReYN_rYi_eFqeP-gjM9unYVrOJFXSRum1jRlt31fWOd0ZeJigkDtIcT_PzwGOFWwLsytrn98jyF-btluyYWTJ44CRB_gnT30DAeS9KKDyE-pNhZDSHwF-2B')"></div>
+</div>
+<div class="mt-4 flex justify-center gap-4">
+<div class="h-6 w-12 bg-contain bg-no-repeat bg-center opacity-60" data-alt="GPay logo" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuASiyEaLXwa1AXrzw-hJDQ54zyv72MwDV0Df1MxLjdeoENpLhK0eycvGOgCVeB-zOoYdOkMArH-wf_AWSApu3bkcztl5qs4lUgGq_EBDpPmQXQyQMzPPMAZboEIDXBnoTB3re_HexQTfiHM3lTHQjwHh6C1a_QKZIAFuQyqvR7T7ngWdBAcEpR4Unrl-7fArDQ-BYgEs0eYL8qxe2KcmrSkh4nTq1DQhtlmpCRieJx2yH048FZA3CtLVeKgqn-FAdtHgh4bLx6q2J4N')"></div>
+<div class="h-6 w-12 bg-contain bg-no-repeat bg-center opacity-60" data-alt="PhonePe logo" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCxr79ntSsnuU1TjxD55ASiHHCTdAuXtkGAoWBFD7ACVTmNWcPu1QjPwObKzuT6VDRzlKIVgMckKzg8LXT2EVkBJ70812K2VwUBUj9B7qTuuE9-QmgvKClLrwLNHSw2S5VK3ST4kHt-D88bJTRUn8b5r_mYRN4_R10IKezenEH87RARI86XpJQn4uTE9N9WwS0KnoOogstpfiOLnE_vP7hClCdij-4POMRQVtHcy6luYmj3hEsN8lKFS7yK4nkDs_sCIr-yMXtkY_ZF')"></div>
+<div class="h-6 w-12 bg-contain bg-no-repeat bg-center opacity-60" data-alt="Paytm logo" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDaEWLcUW4w1QAQi6xniN3miMsQOlkUVX6Go41ZTZxTgc0-nHFtdXZzDg0G7u6FmCD-5xgpuyOAP7R2aCmfLyw1qfr0MufPGIYxOKJBz23UCdDt0fSVxB1J2Vz4mSNBeMsBiy3pf5o5Tj2i7Dv5ARQ8oV5NKZEN6phsznevagd3CDDF_1VOUaYB9p5TNImTeg8nx9OZluvgXVTYjXVZ7BwtNdAi-HXxQ3IhgDWp26Olj8kRoQtYhutJd7oaty6jEKae9xIc3xz7oJBS')"></div>
+</div>
+</div>
+<div class="relative py-4">
+<div class="absolute inset-0 flex items-center"><div class="w-full border-t border-gray-100 dark:border-gray-800"></div></div>
+<div class="relative flex justify-center text-xs font-bold text-gray-400 uppercase tracking-widest"><span class="bg-white dark:bg-gray-900 px-4">Or use</span></div>
+</div>
+<div class="mt-6 space-y-4">
+<button class="w-full border border-gray-200 dark:border-gray-700 p-4 rounded-xl flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-gray-400 group-hover:text-primary">credit_card</span>
+<span class="text-sm font-bold dark:text-gray-300">Card</span>
+</div>
+<span class="material-symbols-outlined text-gray-300">chevron_right</span>
+</button>
+<button class="w-full border border-gray-200 dark:border-gray-700 p-4 rounded-xl flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-gray-400 group-hover:text-primary">account_balance</span>
+<span class="text-sm font-bold dark:text-gray-300">Netbanking</span>
+</div>
+<span class="material-symbols-outlined text-gray-300">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Razorpay Modal Footer -->
+<div class="p-6 bg-gray-50 dark:bg-gray-800/50 flex flex-col items-center gap-2">
+<div class="flex items-center gap-2 text-[10px] text-gray-400 font-bold uppercase tracking-widest">
+<span class="material-symbols-outlined text-xs">verified</span> Securely Processed by Razorpay
+                </div>
+</div>
+</div>
+</div>
+<footer class="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 mt-20 py-12">
+<div class="max-w-[1440px] mx-auto px-10">
+<div class="flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-4">
+<div class="size-6 text-gray-400">
+<svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z"></path>
+</svg>
+</div>
+<p class="text-sm text-gray-500">© 2024 NEXCART Premium E-commerce. All rights reserved.</p>
+</div>
+<div class="flex gap-8 text-sm font-medium text-gray-500">
+<a class="hover:text-primary" href="#">Privacy Policy</a>
+<a class="hover:text-primary" href="#">Terms of Service</a>
+<a class="hover:text-primary" href="#">Contact Us</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

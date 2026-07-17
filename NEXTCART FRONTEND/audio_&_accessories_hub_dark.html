@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEXCART | Audio &amp; Accessories Hub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0d7ff2",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#0a0c10",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(40, 48, 57, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .neon-glow {
+            box-shadow: 0 0 15px rgba(13, 127, 242, 0.4);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #101922;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #283039;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-white">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 w-full border-b border-[#283039] bg-background-dark/80 backdrop-blur-md px-6 py-3">
+<div class="max-w-[1440px] mx-auto flex items-center justify-between gap-8">
+<div class="flex items-center gap-12">
+<div class="flex items-center gap-3 text-primary">
+<div class="size-8">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-white text-2xl font-bold tracking-tighter">NEXCART</h2>
+</div>
+<nav class="hidden lg:flex items-center gap-8">
+<a class="text-primary text-sm font-semibold border-b-2 border-primary pb-1" href="#">Audio Hub</a>
+<a class="text-[#9cabba] hover:text-white text-sm font-medium transition-colors" href="#">Mobile Cases</a>
+<a class="text-[#9cabba] hover:text-white text-sm font-medium transition-colors" href="#">New Arrivals</a>
+<a class="text-[#9cabba] hover:text-white text-sm font-medium transition-colors" href="#">Technical Filters</a>
+</nav>
+</div>
+<div class="flex-1 max-w-xl">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[#9cabba] group-focus-within:text-primary transition-colors">search</span>
+<input class="w-full bg-[#1a2129] border-none rounded-lg py-2.5 pl-10 pr-4 text-sm focus:ring-1 focus:ring-primary transition-all" placeholder="Search 500+ assets (e.g., 'ANC Headphones', 'iPhone 15 Pro Max Case')" type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-[#283039] rounded-lg transition-colors relative">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="absolute top-1 right-1 size-2 bg-primary rounded-full"></span>
+</button>
+<button class="p-2 hover:bg-[#283039] rounded-lg transition-colors">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+<div class="h-8 w-[1px] bg-[#283039] mx-2"></div>
+<div class="size-10 rounded-full border-2 border-primary/30 p-0.5">
+<div class="w-full h-full rounded-full bg-cover bg-center" data-alt="User profile avatar" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD-7idHNeFdryN2IvzwGK22L51Q2OIeA7YFDTAY3DKJjMvVQTKAg-o5817Wf6EvG_DNd22Os-FjisbB1BlNlZkRcNAvMSRGPZPFDm-Te_r0NZUXAZRelR__OiG30klcfVZ-RXt37s2Q7hfvr5R_YQnebzC_21PEkgyNbKg5r_kHxhlDqcvyQCZqH9_XwRHhDrG5XvCSixWA1B1N9DogWNBq1s-A-TyKw-uEdUC5wi4C_dSbakSKme9LVdx6-kDyEKvmEdARf25vz0FA');"></div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-[1440px] mx-auto flex gap-6 px-6 py-8">
+<!-- Sidebar Navigation & Filters -->
+<aside class="w-72 flex-shrink-0 space-y-8 sticky top-24 self-start h-[calc(100vh-120px)] overflow-y-auto custom-scrollbar pr-2">
+<!-- Category Explorer -->
+<div class="space-y-4">
+<div class="flex flex-col">
+<h3 class="text-white text-lg font-bold">Audio Explorer</h3>
+<p class="text-[#9cabba] text-xs uppercase tracking-widest font-semibold">8 Major Sub-categories</p>
+</div>
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 border border-primary/20 text-primary" href="#">
+<span class="material-symbols-outlined">headphones</span>
+<span class="text-sm font-semibold">TWS Earbuds</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#9cabba] hover:bg-[#1a2129] transition-colors" href="#">
+<span class="material-symbols-outlined">speaker</span>
+<span class="text-sm font-medium">Soundbars</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#9cabba] hover:bg-[#1a2129] transition-colors" href="#">
+<span class="material-symbols-outlined">tv_gen</span>
+<span class="text-sm font-medium">Home Theaters</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#9cabba] hover:bg-[#1a2129] transition-colors" href="#">
+<span class="material-symbols-outlined">headset</span>
+<span class="text-sm font-medium">Over-Ear ANC</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#9cabba] hover:bg-[#1a2129] transition-colors" href="#">
+<span class="material-symbols-outlined">earbuds</span>
+<span class="text-sm font-medium">Wired Earphones</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#9cabba] hover:bg-[#1a2129] transition-colors" href="#">
+<span class="material-symbols-outlined">speaker_group</span>
+<span class="text-sm font-medium">BT Speakers</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#9cabba] hover:bg-[#1a2129] transition-colors" href="#">
+<span class="material-symbols-outlined">nightlife</span>
+<span class="text-sm font-medium">Party Speakers</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#9cabba] hover:bg-[#1a2129] transition-colors" href="#">
+<span class="material-symbols-outlined">settings_input_component</span>
+<span class="text-sm font-medium">Audio Interface</span>
+</a>
+</div>
+</div>
+<!-- Filter by Discount Slider -->
+<div class="pt-6 border-t border-[#283039]">
+<h3 class="text-white text-sm font-bold mb-6">Filter by Discount (%)</h3>
+<div class="px-2">
+<div class="relative h-1 w-full rounded-sm bg-[#283039]">
+<div class="absolute left-0 top-0 h-full w-[65%] bg-primary"></div>
+<div class="absolute left-[65%] -top-1.5 flex flex-col items-center gap-2">
+<div class="size-4 rounded-full bg-white border-2 border-primary neon-glow"></div>
+<span class="text-white text-xs font-bold">50%+</span>
+</div>
+<div class="absolute left-0 -top-1.5">
+<div class="size-4 rounded-full bg-[#9cabba]"></div>
+<span class="absolute top-6 left-1/2 -translate-x-1/2 text-[#9cabba] text-xs font-medium">10%</span>
+</div>
+</div>
+</div>
+<div class="mt-12 flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-[#1a2129] border border-[#283039] rounded-full text-[10px] font-bold text-[#9cabba] cursor-pointer hover:border-primary hover:text-primary transition-all">20% OFF</span>
+<span class="px-3 py-1 bg-primary/20 border border-primary/40 rounded-full text-[10px] font-bold text-primary cursor-pointer">50%+ OFF</span>
+<span class="px-3 py-1 bg-[#1a2129] border border-[#283039] rounded-full text-[10px] font-bold text-[#9cabba] cursor-pointer hover:border-primary hover:text-primary transition-all">DEAL OF DAY</span>
+</div>
+</div>
+<!-- Technical Filters -->
+<div class="pt-6 border-t border-[#283039]">
+<h3 class="text-white text-sm font-bold mb-4">Technical Specs</h3>
+<div class="space-y-3">
+<label class="flex items-center gap-3 cursor-pointer group">
+<div class="size-4 rounded border border-[#3b4754] group-hover:border-primary transition-colors"></div>
+<span class="text-sm text-[#9cabba] group-hover:text-white">Active Noise Cancel</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<div class="size-4 rounded border border-primary bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[12px] text-white font-bold">check</span>
+</div>
+<span class="text-sm text-white">Hi-Res Audio Cert</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<div class="size-4 rounded border border-[#3b4754] group-hover:border-primary transition-colors"></div>
+<span class="text-sm text-[#9cabba] group-hover:text-white">IPX7 Waterproof</span>
+</label>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<div class="flex-1 space-y-10">
+<!-- Hero Heading -->
+<div class="flex justify-between items-end">
+<div class="space-y-2">
+<h1 class="text-5xl font-black tracking-tight">Audio &amp; Accessories <span class="text-primary">Hub</span></h1>
+<p class="text-[#9cabba] text-lg max-w-2xl font-light">Explore 500+ high-fidelity assets. Deep technical filtering and glassmorphic precision for the ultimate shopping experience.</p>
+</div>
+<div class="flex gap-3">
+<button class="px-6 py-2.5 rounded-lg bg-[#1a2129] text-white text-sm font-bold border border-[#283039] hover:border-primary transition-all">
+                        Technical Specs
+                    </button>
+<button class="px-6 py-2.5 rounded-lg bg-primary text-white text-sm font-bold neon-glow transition-transform hover:scale-105 active:scale-95">
+                        Special Offers
+                    </button>
+</div>
+</div>
+<!-- TWS Featured Section -->
+<section class="space-y-6">
+<div class="flex items-center justify-between">
+<h2 class="text-xl font-bold flex items-center gap-2">
+<span class="size-2 bg-primary rounded-full animate-pulse"></span>
+                        Premium TWS Earbuds
+                    </h2>
+<a class="text-primary text-sm font-bold hover:underline" href="#">View All (124)</a>
+</div>
+<div class="grid grid-cols-4 gap-5">
+<!-- Product Card 1 -->
+<div class="glass-card rounded-xl overflow-hidden group">
+<div class="relative aspect-square bg-gradient-to-br from-[#1a2129] to-[#0a0c10] flex items-center justify-center p-8">
+<div class="absolute top-3 left-3 px-2 py-1 bg-primary text-white text-[10px] font-black rounded neon-glow">SPECIAL PRICE</div>
+<div class="w-full h-full bg-contain bg-center bg-no-repeat group-hover:scale-110 transition-transform duration-500" data-alt="High-end TWS earbuds with metallic finish" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBbf-4ERvUrQSy4JhIHatiszz3alzhfYg0xJnLhRcORt6owPvvw9yKM81tlZwXuiIMcszQBeD_t_GAmhFcD2c-yqLQS-SRHDZXOZmc3e1km-k_7ImhJu5m0wBAQtWc1ljgGs9dH3QEj1vkesAIpi9R1Yuc0Z3WczH0Gj096Qh10k7FE0opd_d2uho2BJdFwX-QHxDF6yI_RR89UEetJ9WsWWIP5mRQ015YdOaGhl2furTCyOjMraUxo6diOeVT4bCpSix3eEU-sPQ3j');"></div>
+</div>
+<div class="p-4 space-y-3">
+<div>
+<h3 class="font-bold text-sm truncate uppercase tracking-tight">Sonic Pro Gen 3</h3>
+<p class="text-[#9cabba] text-xs">Hybrid ANC | 40h Battery</p>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-lg font-black">$199.00</span>
+<span class="text-primary text-xs font-bold">-45% OFF</span>
+</div>
+<button class="w-full py-2 bg-[#283039] hover:bg-primary transition-all rounded-lg text-xs font-bold">Add to Deck</button>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="glass-card rounded-xl overflow-hidden group">
+<div class="relative aspect-square bg-gradient-to-br from-[#1a2129] to-[#0a0c10] flex items-center justify-center p-8">
+<div class="absolute top-3 left-3 px-2 py-1 bg-[#1a2129] border border-primary text-primary text-[10px] font-black rounded">BUY MORE, SAVE MORE</div>
+<div class="w-full h-full bg-contain bg-center bg-no-repeat group-hover:scale-110 transition-transform duration-500" data-alt="White modern wireless earbuds" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBkWpiMPpIYHyJW076Ww5uroCTFF6nuYmnA1-DqqIggy1Q2LBPmeeqjaoNCluP8o82BQXxvW9zjcH9O5rQWP8DpS6cXeqBX2FE7BVigVaoNsRi-BW-5rQg2E1Gl5cb-h0OQbLIiD0_pmMhnghyWGtmdkZjjFZK9qoGNj4jrHDwAxz5R86w37bbW6vL_GqCa8mHi99rgRlbhZ81DkM1kaU_8JFj3frkpHC7jYT_B1kxT9BZev-fUwkbn4MudNSY3R-sNvVC-iBufBiD4');"></div>
+</div>
+<div class="p-4 space-y-3">
+<div>
+<h3 class="font-bold text-sm truncate uppercase tracking-tight">PureFlow Air 2</h3>
+<p class="text-[#9cabba] text-xs">Spatial Audio | IPX5</p>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-lg font-black">$89.00</span>
+<span class="text-[#9cabba] text-xs line-through">$149.00</span>
+</div>
+<button class="w-full py-2 bg-[#283039] hover:bg-primary transition-all rounded-lg text-xs font-bold">Add to Deck</button>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="glass-card rounded-xl overflow-hidden group">
+<div class="relative aspect-square bg-gradient-to-br from-[#1a2129] to-[#0a0c10] flex items-center justify-center p-8">
+<div class="w-full h-full bg-contain bg-center bg-no-repeat group-hover:scale-110 transition-transform duration-500" data-alt="Black professional over-ear headphones" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDLphpfiDHMSb0bFAMs-mlew1wsfcUw2lV97VgmIgNv4OeeiwuGXXvq6fR6eyX0uQ5ncdXmG8AdZiX77-bKaqA-uH5ZwR8-eB_Zx6J7hB4cdp0zQguFGX4O-mr3MIr9kkucSndczIKQli3kLvupbHHiwbtHoeRQ7zKV9i2_15QKktkDfQdGkU10fmZeME6NPcTyR7xyxVLU7bHwXXaq4oeGwSmcojEwK7AXenEypF2XSWPv8glfqMQsAlYElrhxFhjYNoEfIliIWDg8');"></div>
+</div>
+<div class="p-4 space-y-3">
+<div>
+<h3 class="font-bold text-sm truncate uppercase tracking-tight">Nexus Studio X</h3>
+<p class="text-[#9cabba] text-xs">Studio Monitor Quality</p>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-lg font-black">$299.00</span>
+<span class="text-primary text-xs font-bold">BEST SELLER</span>
+</div>
+<button class="w-full py-2 bg-[#283039] hover:bg-primary transition-all rounded-lg text-xs font-bold">Add to Deck</button>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="glass-card rounded-xl overflow-hidden group">
+<div class="relative aspect-square bg-gradient-to-br from-[#1a2129] to-[#0a0c10] flex items-center justify-center p-8">
+<div class="absolute top-3 left-3 px-2 py-1 bg-primary text-white text-[10px] font-black rounded neon-glow">NEW TECH</div>
+<div class="w-full h-full bg-contain bg-center bg-no-repeat group-hover:scale-110 transition-transform duration-500" data-alt="Minimalist design gray earbuds" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDGLhwZxEBkcHY9XwPkGkKD-dFZ0ljngt4EocpEQ9S9Ekt3KjHPywfGcr6wR1gSz3dfhbUmRmOkAYzQ_fxka4LXWYT_ndhgzM43rz92Bq2NAc3DQEKMMCT3WO_HSr71j7pyEPKAHPZuoxBmw6NakMI5BJ3P9pBz24KQzAWAWnMe1jghK0-3oDIPbRvoZCOQ5pD0-q_NDGWYuWK0jyKtTdg-UTWd_bNx7tQcUWHTEntTB-Q7Z_wJZFFJyOV2B0LpAxxvifvQMkTKIRX8');"></div>
+</div>
+<div class="p-4 space-y-3">
+<div>
+<h3 class="font-bold text-sm truncate uppercase tracking-tight">EcoBuds Zero</h3>
+<p class="text-[#9cabba] text-xs">Sustainable Material</p>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-lg font-black">$120.00</span>
+<span class="text-primary text-xs font-bold">50% OFF</span>
+</div>
+<button class="w-full py-2 bg-[#283039] hover:bg-primary transition-all rounded-lg text-xs font-bold">Add to Deck</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Mobile Case Covers Mega Gallery -->
+<section class="space-y-6">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="text-xl font-bold uppercase tracking-widest">Mobile Case Gallery</h2>
+<p class="text-xs text-[#9cabba] font-medium">30+ Premium Assets per Brand</p>
+</div>
+<div class="flex gap-2">
+<button class="px-4 py-1.5 rounded-full bg-primary text-white text-[10px] font-black tracking-tighter">APPLE</button>
+<button class="px-4 py-1.5 rounded-full bg-[#1a2129] text-[#9cabba] text-[10px] font-black tracking-tighter border border-[#283039] hover:border-primary transition-all">SAMSUNG</button>
+<button class="px-4 py-1.5 rounded-full bg-[#1a2129] text-[#9cabba] text-[10px] font-black tracking-tighter border border-[#283039] hover:border-primary transition-all">GOOGLE</button>
+<button class="px-4 py-1.5 rounded-full bg-[#1a2129] text-[#9cabba] text-[10px] font-black tracking-tighter border border-[#283039] hover:border-primary transition-all">NOTHING</button>
+</div>
+</div>
+<div class="grid grid-cols-6 gap-3">
+<!-- Gallery Item 1 -->
+<div class="glass-card aspect-[4/5] rounded-lg overflow-hidden group cursor-pointer relative">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-125" data-alt="Elegant leather iPhone case" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAEzpuIm1f5Yuv7x3MKBF_hLF6g2wnYxAO29DE5rY7mDSOpNi7bfcoNyxKqBCL66OTJ4l8wmW05gsQd2Fp6sJmiczQb6An2Ua7BqBw8veq9qmQInV7VcrAY2TwmuJWbJ_OumzlcsXUpEOhmqBY-q6-eqHGFH4u6Y1pd_YPEFx0Dt3rdvjBIDXAbfDYPTFc7cD3i3SqW6eqNcpcZ7390TE13il2BLa97-_bWMV0jdV78nbTHlLjEOJQk1xxxr3k5wR_SiiBklxbyuIaf');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-3">
+<p class="text-[10px] font-bold">Midnight Leather</p>
+<p class="text-primary text-[10px] font-black">$34</p>
+</div>
+</div>
+<!-- Gallery Item 2-12 (Simulated Dense Grid) -->
+<div class="glass-card aspect-[4/5] rounded-lg overflow-hidden group cursor-pointer relative">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-125" data-alt="Clear protective phone case" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDiSy6PM3I0CRDqo_CdEYMnVl3i9xYUWH7Z6CDe-C-sZvw4NgwZ10Jl6Q7RngX-iRijGpf1_LaQE-W7jNLZQ6ZsejN7ld7XHwg0Bga3pHQc6fUAXBexL6E7OahFEZ69SJ5O4xXZxawFeepnvEPqNstBDqeKzWc-M6mj-mf9yf0ho9l4Zc7J4vvZtNQLec9OAtPiY3fvzv-49B99pqKlshofWg2u23goMeTs62WrPNSrKIon0QQTFjqcUd9Py67yprFTObeZQFhIDRe8');"></div>
+</div>
+<div class="glass-card aspect-[4/5] rounded-lg overflow-hidden group cursor-pointer relative border border-primary/40">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-125" data-alt="Cyberpunk style phone case" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD6GsQWgrzuCHBBILMW4KSmxRn89X4ODy8SuFk-QERBHG3gTVcdLb7NGbOCMBeLr5XKIaHNVNFyLCYFMRKDt9udzN2s0GFUJSoclS7SkKku_VYi9lEqs47qjXYKTlb891dfeg9Z3k8x3WVgUMxfDL9DCUKP3JUEBZ_Zh5rZ3hZR0yOP2R-1ed3JuR0Lu609k5RPZ_fBc4Qw55SGnpSHZ3TWVc8Md8fi9MWvtkUZVFkj7JoGqsVffe08UvRqXFy9vNxyCv9jhH18Il9m');"></div>
+<div class="absolute top-2 right-2 size-2 bg-primary rounded-full neon-glow"></div>
+</div>
+<div class="glass-card aspect-[4/5] rounded-lg overflow-hidden group cursor-pointer relative">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-125" data-alt="Carbon fiber texture case" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDcmjbinCa0kCkds1EKc9ttd-9KGvhPoDTdrbohlBRwjQose8hLpEVtDj3Ec7hO1QxpqjL93FBbJOWcyzoQ7oDoonfygMfYsUnueeeq0bDDy8ZLC1BmS9rsOBSRjdhGqtth7zqIJ3HS4B2QR37xQ2d97UU83U8ZEmvckiXb8y13F3nZLWGtkFWiWYgeakSDNZo-LMkiP0x7QxzExob_XA1ITp2XH28WgKCfrmLDvPyERN4gQ7wz-KaFo2bqm10yF5gCKZMgEzmGB7sb');"></div>
+</div>
+<div class="glass-card aspect-[4/5] rounded-lg overflow-hidden group cursor-pointer relative">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-125" data-alt="Abstract art phone case" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDnBjss1s0nAbSiM2EZ90qN5xWa_Tja2HCuf-w6g77ngepHyt3g6gpAWHCgFYrI4odLQiGIPBXOMKCCl8BPHMkQKMQJst646pBi76muvohBFq14RWYO83L-gl_CUwF_IDDFW68ge_heQu5Y02WZ2VNzpCKyOrnVGp_17Q7xvz4BLxqcgye1soOjqCs0MW2Pst55HEG1eoDDBL1eK_BVbbb57yZW_piKj9gbZMVotuzBDimSpM_eNhNcoAU7XYJ5WfdEyqi1ewZaBv5k');"></div>
+</div>
+<div class="glass-card aspect-[4/5] rounded-lg overflow-hidden group cursor-pointer relative">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-125" data-alt="Silicone colorful case" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCmjjzPjklA7EjQJnKC9lE6rWALaTSm9SdLTuB6Uif-SaPW_CQgxzpJZrvFAfQoLLV5J6I6ZZmgrvlh_HXCcIOHBwCWRMjvWIDJ-a2tYN0F4MQ9DPdP1mb9fSU_jEtRB8zBoqO3fCiMDnko6cfc-1DHk41Jh6iGdwz6kwo73HQkZbrn-hDFegIfWvhe7JSrm309F-HG-kwatkrGfZCm1mE2jQ7O5RXLszNzl7Twa3FJPsZ2XSGsV43v3KaVmpDLIM6Aeo03DbxNEgdE');"></div>
+</div>
+<!-- Second row of cases -->
+<div class="glass-card aspect-[4/5] rounded-lg overflow-hidden group cursor-pointer relative">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-125" data-alt="Minimalist white case" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuANPyj58nglOildUdFQEPalL-NwwYpFDnbpXVsUtG9aDNqltEdifYqmfoIzmG1fzf-xemlVUOiSQXZ-dhRCiqphCg0sqGpMDi-2dsegPSE4K7QneMCr-hB_Gf1n8Pu_xamjAjY9RSsJoiosrzOCWdUSwUOrlniZMaxMuy6El7_R8j7MVCJTL8TKyRaP3wTuQolfAw5FYpuD8-8yfe9KnBIQl8BbxfYWty5ApVj-slUTfHMk_HDUsRFROajC0wnhuQfQgrioEoS-n30h');"></div>
+</div>
+<div class="glass-card aspect-[4/5] rounded-lg overflow-hidden group cursor-pointer relative">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-125" data-alt="MagSafe compatible case" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBb2xr2GceEqnChR9m3YpUcRuqNeh7LosAM9uTLt-WpE8mxwaJqXzIx0_Im_qKIhKDTWYf88Mv-gBReliM9E1Z9uujvAEkOvQOrDJire9LlSiLBUjnaVWPtn22NLRT054r5NdSjRJXyQ_OA4hyE2pHeALjHrOCZFxwJwLizUaXz_LZkoC4ucjuKG_wQ0AtDBsV6hgsIT2D0WsP5VWaQV7IyUQO9_KzW-omKH05duO1yZrY9j9o8Sc9fX4kKxrmIi_QFXyawtE9P3mv-');"></div>
+</div>
+<div class="glass-card aspect-[4/5] rounded-lg overflow-hidden group cursor-pointer relative">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-125" data-alt="Rugged armor phone case" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDMxdDg1oNYGsXV9lJzW-Ckh6ST_lG_lpSuvpQJbfWITDhen8T-j1rhyWtAXQnOz4dW-Lsbb09xQrfx5SJBQimCXBzQ6mmQYMhVZh6abbPaZ8QoGfONbS5uJPhuuIczW4GH6S7XzNYxSv_d5EAgOe_xNVtBxPBTR1baaLTek9CMaBJeiOKxGtZF7DO_cwCjCRtYtV6ZuLUEFSeYs-mWp9pPOrhLR4oFSCUb9XXHpYxeWJZ_9vnK9inwuhcjZHlOzAC8MGth0MYtm1EA');"></div>
+</div>
+<div class="glass-card aspect-[4/5] rounded-lg overflow-hidden group cursor-pointer relative border border-primary/20">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-125" data-alt="Limited edition designer case" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDdiEoHqsoNW11cGv6oipoqbSrOvAMyb-V8bvNs4lf0mjGva9Rpb-RYMeuvVi2clR45l6ObfX06D7diL5G8wOgBZfFlAi1RDxXDwcj09KGfna3yaW-N2tqoeTJiX0vhL7pnj4udhbeOeB9CUwZBiERe4ml2R8OksQ8ZiwAaHxSDtLsIaIejlsR7gCyoi_ZLUr3xi-JTu6oyz--eGqVw44egx1hidfhUk0cTFFLe6JnzH028wrEPV4B_NofAxboYlMXddZUXa20XsJOe');"></div>
+</div>
+<div class="glass-card aspect-[4/5] rounded-lg overflow-hidden group cursor-pointer relative">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-125" data-alt="Wooden texture phone case" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB1ckbcVfoXPNU6ZavDSh2xSk6QBlGFHNGQX2SeaQoCKJYLsFi-_Y3jG7clgkaa_cPT-DDjLTwvS1UwUOZePHDS8prFL3mnLFqoeD9qXDUWs3bRJiww0fsIo-v67S4QAJU8O-vwVAA3zG5sGZGRFP1r5RHbleLrNs55DP2LpyMPnw_EwLAfVX30cfj13i8r7Ib8LypPZDFaTCMGjPDtrWNIVjRqTQrKexQ85tCs_4zPOLmOKRV8UF-xOSNTdLGTJZghc2jzYfJLEVUb');"></div>
+</div>
+<div class="glass-card aspect-[4/5] rounded-lg overflow-hidden group cursor-pointer relative">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-125" data-alt="Glittery aesthetic phone case" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAMQ8GcvWT8A6s3WzOFuZHG2xu4vNzBrKAUSlQPaVt-WJNzMokQCWtqYxVselW5H9GG1RwH_pT2Nd4jeYC8zOVQ29bPYYvE-eNebYo_ybggCqP_a5rEhKy98l8QloINnoK_jpVmBMnKWf0-WYUjqoB8yqRzAKvYFp2mxFMwb6m9NsLv79opiK6hshlyFiXegwE0PprwYEYTAJK-0ldo5isSM8hhy-WjG5chITORYEHpfJxNSKjFLiabE_6BcIMzUCiZ3YvT0sMZ5YYs');"></div>
+</div>
+</div>
+<div class="flex justify-center pt-4">
+<button class="flex items-center gap-2 text-primary font-black text-sm uppercase group">
+                        Load More Designs
+                        <span class="material-symbols-outlined group-hover:translate-y-1 transition-transform">keyboard_arrow_down</span>
+</button>
+</div>
+</section>
+<!-- Technical Filter Banner -->
+<div class="glass-card p-6 rounded-2xl flex items-center justify-between border-l-4 border-primary">
+<div class="flex items-center gap-6">
+<div class="size-16 rounded-xl bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-4xl">analytics</span>
+</div>
+<div>
+<h3 class="text-xl font-bold uppercase tracking-tighter">Deep Technical Filtering Active</h3>
+<p class="text-[#9cabba] text-sm">Our AI engine is sorting 500+ assets by frequency response, driver materials, and IP rating.</p>
+</div>
+</div>
+<div class="flex gap-2">
+<div class="px-3 py-1 bg-background-dark/50 rounded text-[10px] font-bold border border-primary/30">BERYLLIUM DRIVERS</div>
+<div class="px-3 py-1 bg-background-dark/50 rounded text-[10px] font-bold border border-primary/30">LOW LATENCY (50ms)</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating UI Elements -->
+<div class="fixed bottom-6 right-6 z-40 flex flex-col gap-3">
+<button class="size-14 bg-primary rounded-full flex items-center justify-center text-white neon-glow shadow-2xl hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">chat_bubble</span>
+</button>
+<button class="size-14 bg-[#1a2129] border border-[#283039] rounded-full flex items-center justify-center text-[#9cabba] hover:text-white transition-all shadow-2xl">
+<span class="material-symbols-outlined">expand_less</span>
+</button>
+</div>
+<!-- Footer Area -->
+<footer class="mt-20 border-t border-[#283039] bg-background-dark/50 py-12 px-6">
+<div class="max-w-[1440px] mx-auto grid grid-cols-4 gap-12">
+<div class="space-y-4">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-3xl">token</span>
+<h2 class="text-white text-xl font-bold">NEXCART</h2>
+</div>
+<p class="text-[#9cabba] text-sm leading-relaxed">The premier destination for high-fidelity audio assets and mobile aesthetics. 500+ products, infinite possibilities.</p>
+</div>
+<div>
+<h4 class="text-white font-bold mb-4 uppercase text-xs tracking-widest">Shop Audio</h4>
+<ul class="space-y-2 text-[#9cabba] text-sm">
+<li><a class="hover:text-primary" href="#">Earbuds</a></li>
+<li><a class="hover:text-primary" href="#">Studio Headphones</a></li>
+<li><a class="hover:text-primary" href="#">Soundbars</a></li>
+<li><a class="hover:text-primary" href="#">Hi-Res Components</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold mb-4 uppercase text-xs tracking-widest">Accessories</h4>
+<ul class="space-y-2 text-[#9cabba] text-sm">
+<li><a class="hover:text-primary" href="#">iPhone Covers</a></li>
+<li><a class="hover:text-primary" href="#">Android Cases</a></li>
+<li><a class="hover:text-primary" href="#">Charging Hubs</a></li>
+<li><a class="hover:text-primary" href="#">Screen Tech</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold mb-4 uppercase text-xs tracking-widest">Connect</h4>
+<div class="flex gap-4">
+<div class="size-8 rounded bg-[#1a2129] border border-[#283039] flex items-center justify-center hover:border-primary cursor-pointer transition-all">
+<span class="material-symbols-outlined text-sm">alternate_email</span>
+</div>
+<div class="size-8 rounded bg-[#1a2129] border border-[#283039] flex items-center justify-center hover:border-primary cursor-pointer transition-all">
+<span class="material-symbols-outlined text-sm">public</span>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

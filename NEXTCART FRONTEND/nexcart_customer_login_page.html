@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEXCART Customer Login</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3625f4",
+                        "background-light": "#f6f5f8",
+                        "background-dark": "#111022",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "2xl": "2rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+        .form-input:focus {
+            border-color: #3625f4 !class;
+            box-shadow: 0 0 0 2px rgba(54, 37, 244, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex flex-col font-display transition-colors duration-300">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[#f0f0f5] dark:border-white/10 px-10 py-4 bg-white dark:bg-background-dark">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-6">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-[#111118] dark:text-white text-xl font-extrabold leading-tight tracking-[-0.015em]">NEXCART</h2>
+</div>
+<div class="flex gap-4">
+<button class="flex min-w-[100px] cursor-pointer items-center justify-center rounded-xl h-10 px-4 bg-[#f0f0f5] dark:bg-white/5 text-[#111118] dark:text-white text-sm font-bold leading-normal">
+<span>Support</span>
+</button>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 flex items-center justify-center p-6">
+<div class="w-full max-w-[480px] bg-white dark:bg-[#1a1932] rounded-2xl shadow-xl border border-gray-100 dark:border-white/5 overflow-hidden">
+<!-- Card Header -->
+<div class="pt-10 px-8">
+<div class="flex flex-col items-center text-center">
+<h4 class="text-primary text-xs font-extrabold uppercase tracking-widest mb-2">Customer Portal</h4>
+<h1 class="text-[#111118] dark:text-white text-3xl font-bold leading-tight mb-2">Sign in to NEXCART</h1>
+<p class="text-[#64608a] dark:text-gray-400 text-base font-normal">Welcome back! Please enter your details.</p>
+</div>
+</div>
+<!-- Login Form -->
+<form class="p-8 space-y-6">
+<!-- Email Field -->
+<div class="flex flex-col gap-2">
+<label class="text-[#111118] dark:text-white text-sm font-bold">Email Address</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-xl">mail</span>
+<input class="form-input w-full pl-12 pr-4 py-4 rounded-xl border border-[#dcdbe6] dark:border-white/10 bg-white dark:bg-[#111022] text-[#111118] dark:text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all" placeholder="e.g. customer@example.com" required="" type="email"/>
+</div>
+</div>
+<!-- Password Field -->
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-center">
+<label class="text-[#111118] dark:text-white text-sm font-bold">Password</label>
+<a class="text-primary text-sm font-bold hover:underline" href="#">Forgot password?</a>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-xl">lock</span>
+<input class="form-input w-full pl-12 pr-12 py-4 rounded-xl border border-[#dcdbe6] dark:border-white/10 bg-white dark:bg-[#111022] text-[#111118] dark:text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Enter your password" required="" type="password"/>
+<button class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-xl">visibility</span>
+</button>
+</div>
+</div>
+<!-- Remember Me -->
+<div class="flex items-center gap-3">
+<input class="w-5 h-5 rounded border-gray-300 text-primary focus:ring-primary" id="remember" type="checkbox"/>
+<label class="text-sm font-medium text-[#64608a] dark:text-gray-400 cursor-pointer" for="remember">Stay signed in for 30 days</label>
+</div>
+<!-- Action Button -->
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl shadow-lg shadow-primary/20 transition-all transform active:scale-[0.98]" type="submit">
+                    Sign In
+                </button>
+<!-- Social Login Divider -->
+<div class="relative flex items-center py-2">
+<div class="flex-grow border-t border-gray-200 dark:border-white/10"></div>
+<span class="flex-shrink mx-4 text-gray-400 text-xs font-bold uppercase tracking-wider">Or continue with</span>
+<div class="flex-grow border-t border-gray-200 dark:border-white/10"></div>
+</div>
+<!-- Social Buttons -->
+<div class="grid grid-cols-2 gap-4">
+<button class="flex items-center justify-center gap-2 py-3 px-4 rounded-xl border border-gray-200 dark:border-white/10 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors" type="button">
+<span class="material-symbols-outlined text-xl">account_circle</span>
+<span class="text-sm font-bold text-[#111118] dark:text-white">Google</span>
+</button>
+<button class="flex items-center justify-center gap-2 py-3 px-4 rounded-xl border border-gray-200 dark:border-white/10 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors" type="button">
+<span class="material-symbols-outlined text-xl">laptop_mac</span>
+<span class="text-sm font-bold text-[#111118] dark:text-white">Apple</span>
+</button>
+</div>
+</form>
+<!-- Card Footer -->
+<div class="pb-10 px-8 text-center">
+<p class="text-sm font-medium text-[#64608a] dark:text-gray-400">
+                    Don't have an account? 
+                    <a class="text-primary font-bold hover:underline ml-1" href="#">Create an account</a>
+</p>
+</div>
+</div>
+</main>
+<!-- Page Footer -->
+<footer class="py-8 px-10 border-t border-gray-100 dark:border-white/5">
+<div class="max-w-[1440px] mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-[#64608a] dark:text-gray-500 text-xs font-medium">© 2024 NEXCART Unified Commerce Platform. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="text-[#64608a] dark:text-gray-500 text-xs font-bold hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-[#64608a] dark:text-gray-500 text-xs font-bold hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="text-[#64608a] dark:text-gray-500 text-xs font-bold hover:text-primary transition-colors" href="#">Security</a>
+</div>
+</div>
+</footer>
+</body></html>

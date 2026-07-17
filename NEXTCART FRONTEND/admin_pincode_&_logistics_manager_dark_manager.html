@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEXCART | Logistics &amp; Pincode Manager</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3899fa",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#0f1923",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #111418;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #27303a;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white min-h-screen flex overflow-hidden">
+<!-- Sidebar Navigation -->
+<aside class="w-64 border-r border-slate-200 dark:border-slate-800 flex flex-col bg-white dark:bg-[#111418] shrink-0">
+<div class="p-6 flex items-center gap-3">
+<div class="size-10 rounded-lg bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined">shopping_cart_checkout</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-lg font-bold leading-none tracking-tight">NEXCART</h1>
+<p class="text-xs text-slate-500 dark:text-[#9babbb]">Enterprise Admin</p>
+</div>
+</div>
+<nav class="flex-1 px-4 py-4 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+<span class="text-sm font-medium">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">local_shipping</span>
+<span class="text-sm font-medium">Logistics</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 bg-primary/10 text-primary rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px] fill-[1]">location_on</span>
+<span class="text-sm font-bold">Pincodes</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">monitoring</span>
+<span class="text-sm font-medium">Analytics</span>
+</a>
+</nav>
+<div class="p-4 border-t border-slate-200 dark:border-slate-800">
+<button class="w-full flex items-center justify-center gap-2 bg-primary text-white py-2 rounded-lg text-sm font-bold hover:bg-primary/90 transition-all">
+<span class="material-symbols-outlined text-[18px]">support_agent</span>
+<span>Support</span>
+</button>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col h-screen overflow-hidden">
+<!-- Top Navigation Bar -->
+<header class="h-16 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between px-8 bg-white dark:bg-[#111418] z-10">
+<div class="flex items-center gap-6 flex-1">
+<h2 class="text-lg font-bold tracking-tight shrink-0">Logistics &amp; Pincode Manager</h2>
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 dark:text-[#9babbb] text-[20px]">search</span>
+<input class="w-full bg-slate-100 dark:bg-[#27303a] border-none rounded-lg pl-10 pr-4 py-2 text-sm focus:ring-2 focus:ring-primary outline-none placeholder:text-slate-500 dark:placeholder:text-[#9babbb]" placeholder="Search pincode, city, or state..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-lg text-sm font-bold shadow-lg shadow-primary/20 hover:scale-[1.02] transition-transform">
+<span class="material-symbols-outlined text-[18px]">upload_file</span>
+<span>Import Pincode CSV</span>
+</button>
+<div class="flex items-center gap-2 ml-2 border-l border-slate-200 dark:border-slate-800 pl-4">
+<button class="size-10 flex items-center justify-center rounded-lg hover:bg-slate-100 dark:hover:bg-[#27303a] text-slate-600 dark:text-slate-400 relative">
+<span class="material-symbols-outlined text-[22px]">notifications</span>
+<span class="absolute top-2.5 right-2.5 size-2 bg-red-500 rounded-full border-2 border-white dark:border-[#111418]"></span>
+</button>
+<button class="size-10 flex items-center justify-center rounded-lg hover:bg-slate-100 dark:hover:bg-[#27303a] text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined text-[22px]">settings</span>
+</button>
+<div class="size-9 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden ml-2 cursor-pointer border-2 border-transparent hover:border-primary transition-colors">
+<img class="w-full h-full object-cover" data-alt="User profile avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlBWBqSqM7ixB5h73y8fR3RtDbPQ95aZlvgyN0UUIDasXfTtnNjUBpjRWRV0L-O0ntuOd717C2ntvHUJAA2zkSPtjOtUSmZDUmvkV44QQcsvD6_bL6DQGo4dXfCHvCxyLYxOnSt_vqdRVdE2BL7dj3zaRNq_Loflct1t6MqXcQhMrNQQkMlf_94L7iLb9QtXQfFW527j9BP4KJM-SKMgCMAvmY0Y0RFA9kIwyvbmI0O25yz1-xuaQG_EVkXllkA0NmL5lCSYqChEiG"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Page Body Scrollable Area -->
+<div class="flex-1 overflow-y-auto custom-scrollbar p-8 space-y-6">
+<!-- Breadcrumbs -->
+<div class="flex items-center gap-2 text-sm">
+<a class="text-slate-500 dark:text-[#9babbb] hover:text-primary" href="#">Dashboard</a>
+<span class="material-symbols-outlined text-slate-400 text-[14px]">chevron_right</span>
+<span class="font-medium">Logistics</span>
+<span class="material-symbols-outlined text-slate-400 text-[14px]">chevron_right</span>
+<span class="font-bold text-primary">Pincode Serviceability</span>
+</div>
+<!-- Page Heading -->
+<div class="flex justify-between items-end">
+<div class="space-y-1">
+<h1 class="text-4xl font-black tracking-tight leading-tight">Pincode Serviceability</h1>
+<p class="text-slate-500 dark:text-[#9babbb] max-w-2xl">Manage delivery zones, COD availability, and service times across all global regions in real-time.</p>
+</div>
+<button class="flex items-center gap-2 bg-slate-100 dark:bg-[#27303a] text-slate-700 dark:text-white px-4 py-2 rounded-lg text-sm font-bold border border-slate-200 dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Export CSV</span>
+</button>
+</div>
+<!-- Stats Overview -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-white dark:bg-[#111418] border border-slate-200 dark:border-[#3a4755] p-6 rounded-xl flex items-center justify-between">
+<div class="space-y-1">
+<p class="text-sm font-medium text-slate-500 dark:text-[#9babbb]">Active Pincodes</p>
+<p class="text-3xl font-bold tracking-tight">12,482</p>
+<div class="flex items-center gap-1 text-green-500 text-xs font-bold">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+<span>+2.4% from last month</span>
+</div>
+</div>
+<div class="size-12 rounded-lg bg-green-500/10 text-green-500 flex items-center justify-center">
+<span class="material-symbols-outlined text-[28px]">map</span>
+</div>
+</div>
+<div class="bg-white dark:bg-[#111418] border border-slate-200 dark:border-[#3a4755] p-6 rounded-xl flex items-center justify-between">
+<div class="space-y-1">
+<p class="text-sm font-medium text-slate-500 dark:text-[#9babbb]">Avg. Delivery Time</p>
+<p class="text-3xl font-bold tracking-tight">3.2 Days</p>
+<div class="flex items-center gap-1 text-orange-500 text-xs font-bold">
+<span class="material-symbols-outlined text-[14px]">trending_down</span>
+<span>-0.4d efficiency gain</span>
+</div>
+</div>
+<div class="size-12 rounded-lg bg-orange-500/10 text-orange-500 flex items-center justify-center">
+<span class="material-symbols-outlined text-[28px]">schedule</span>
+</div>
+</div>
+<div class="bg-white dark:bg-[#111418] border border-slate-200 dark:border-[#3a4755] p-6 rounded-xl flex items-center justify-between">
+<div class="space-y-1">
+<p class="text-sm font-medium text-slate-500 dark:text-[#9babbb]">COD Enabled Zones</p>
+<p class="text-3xl font-bold tracking-tight">88%</p>
+<div class="flex items-center gap-1 text-primary text-xs font-bold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span>Standard Coverage</span>
+</div>
+</div>
+<div class="size-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[28px]">payments</span>
+</div>
+</div>
+</div>
+<!-- Data Table Section -->
+<div class="bg-white dark:bg-[#111418] border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden shadow-sm">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-slate-50 dark:bg-slate-800/50 text-slate-500 dark:text-slate-400 text-xs uppercase font-bold tracking-wider">
+<th class="px-6 py-4 border-b border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-3">
+<input class="rounded border-slate-300 dark:border-slate-700 bg-transparent text-primary focus:ring-primary focus:ring-offset-background-dark" type="checkbox"/>
+                                        Pincode
+                                    </div>
+</th>
+<th class="px-6 py-4 border-b border-slate-200 dark:border-slate-800">Location</th>
+<th class="px-6 py-4 border-b border-slate-200 dark:border-slate-800">Serviceable</th>
+<th class="px-6 py-4 border-b border-slate-200 dark:border-slate-800">Avg. Delivery</th>
+<th class="px-6 py-4 border-b border-slate-200 dark:border-slate-800">COD Available</th>
+<th class="px-6 py-4 border-b border-slate-200 dark:border-slate-800 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-800 text-sm">
+<!-- Row 1 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<input class="rounded border-slate-300 dark:border-slate-700 bg-transparent text-primary focus:ring-primary" type="checkbox"/>
+<span class="font-bold text-primary tracking-wide">110001</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex flex-col">
+<span class="font-medium">Connaught Place</span>
+<span class="text-xs text-slate-500 dark:text-[#9babbb]">New Delhi, DL</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-9 h-5 bg-slate-300 dark:bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-green-500"></div>
+</label>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<input class="w-12 bg-slate-100 dark:bg-slate-800 border-none rounded p-1 text-center text-xs font-bold focus:ring-1 focus:ring-primary" type="number" value="1"/>
+<span class="text-xs text-slate-400">Day(s)</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded bg-green-500/10 text-green-500 text-[10px] font-bold uppercase tracking-tight border border-green-500/20">Active</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="p-1 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<input class="rounded border-slate-300 dark:border-slate-700 bg-transparent text-primary focus:ring-primary" type="checkbox"/>
+<span class="font-bold text-primary tracking-wide">400001</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex flex-col">
+<span class="font-medium">Fort</span>
+<span class="text-xs text-slate-500 dark:text-[#9babbb]">Mumbai, MH</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-9 h-5 bg-slate-300 dark:bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-green-500"></div>
+</label>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<input class="w-12 bg-slate-100 dark:bg-slate-800 border-none rounded p-1 text-center text-xs font-bold focus:ring-1 focus:ring-primary" type="number" value="2"/>
+<span class="text-xs text-slate-400">Day(s)</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded bg-green-500/10 text-green-500 text-[10px] font-bold uppercase tracking-tight border border-green-500/20">Active</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="p-1 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<input class="rounded border-slate-300 dark:border-slate-700 bg-transparent text-primary focus:ring-primary" type="checkbox"/>
+<span class="font-bold text-primary tracking-wide">560001</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex flex-col">
+<span class="font-medium">MG Road</span>
+<span class="text-xs text-slate-500 dark:text-[#9babbb]">Bengaluru, KA</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-9 h-5 bg-slate-300 dark:bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-green-500"></div>
+</label>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<input class="w-12 bg-slate-100 dark:bg-slate-800 border-none rounded p-1 text-center text-xs font-bold focus:ring-1 focus:ring-primary" type="number" value="3"/>
+<span class="text-xs text-slate-400">Day(s)</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded bg-red-500/10 text-red-500 text-[10px] font-bold uppercase tracking-tight border border-red-500/20">Disabled</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="p-1 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<input class="rounded border-slate-300 dark:border-slate-700 bg-transparent text-primary focus:ring-primary" type="checkbox"/>
+<span class="font-bold text-primary tracking-wide">600001</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex flex-col">
+<span class="font-medium">Parry's Corner</span>
+<span class="text-xs text-slate-500 dark:text-[#9babbb]">Chennai, TN</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-9 h-5 bg-slate-300 dark:bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-green-500"></div>
+</label>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<input class="w-12 bg-slate-100 dark:bg-slate-800 border-none rounded p-1 text-center text-xs font-bold focus:ring-1 focus:ring-primary" type="number" value="4"/>
+<span class="text-xs text-slate-400">Day(s)</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded bg-orange-500/10 text-orange-500 text-[10px] font-bold uppercase tracking-tight border border-orange-500/20">Prepaid Only</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="p-1 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination Footer -->
+<div class="px-6 py-4 bg-slate-50 dark:bg-slate-800/30 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between">
+<p class="text-xs text-slate-500 dark:text-[#9babbb]">Showing <span class="font-bold">1-10</span> of <span class="font-bold">12,482</span> entries</p>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded bg-white dark:bg-[#27303a] border border-slate-200 dark:border-slate-700 text-xs font-bold hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors disabled:opacity-50" disabled="">Previous</button>
+<div class="flex items-center gap-1">
+<button class="size-8 rounded bg-primary text-white text-xs font-bold">1</button>
+<button class="size-8 rounded hover:bg-slate-200 dark:hover:bg-slate-700 text-xs font-bold transition-colors">2</button>
+<button class="size-8 rounded hover:bg-slate-200 dark:hover:bg-slate-700 text-xs font-bold transition-colors">3</button>
+<span class="text-slate-400 px-1">...</span>
+<button class="size-8 rounded hover:bg-slate-200 dark:hover:bg-slate-700 text-xs font-bold transition-colors">1248</button>
+</div>
+<button class="px-3 py-1.5 rounded bg-white dark:bg-[#27303a] border border-slate-200 dark:border-slate-700 text-xs font-bold hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">Next</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

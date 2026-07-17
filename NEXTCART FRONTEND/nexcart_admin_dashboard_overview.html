@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEXCART Admin Dashboard Overview</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0606f9",
+                        "background-light": "#f5f5f8",
+                        "background-dark": "#0f0f23",
+                        "indigo-sidebar": "#1e1e4a"
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "2xl": "2rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-size: 24px; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111118] dark:text-white transition-colors duration-200">
+<div class="flex h-screen overflow-hidden">
+<!-- Persistent Sidebar -->
+<aside class="w-72 bg-indigo-sidebar dark:bg-black flex flex-col h-full text-white shrink-0">
+<div class="p-6 flex flex-col h-full">
+<!-- Brand -->
+<div class="flex items-center gap-3 mb-10">
+<div class="bg-primary size-10 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white">shopping_bag</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-lg font-bold leading-tight">NEXCART Admin</h1>
+<p class="text-white/60 text-xs font-normal">Management Portal</p>
+</div>
+</div>
+<!-- Nav Links -->
+<nav class="flex flex-col gap-2 flex-1">
+<div class="flex items-center gap-3 px-4 py-3 rounded-xl bg-primary text-white cursor-pointer shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined fill-1">dashboard</span>
+<p class="text-sm font-medium">Dashboard</p>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/10 text-white/70 hover:text-white cursor-pointer transition-all">
+<span class="material-symbols-outlined">group</span>
+<p class="text-sm font-medium">Users</p>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/10 text-white/70 hover:text-white cursor-pointer transition-all">
+<span class="material-symbols-outlined">shopping_cart</span>
+<p class="text-sm font-medium">Orders</p>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/10 text-white/70 hover:text-white cursor-pointer transition-all">
+<span class="material-symbols-outlined">inventory_2</span>
+<p class="text-sm font-medium">Inventory</p>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/10 text-white/70 hover:text-white cursor-pointer transition-all">
+<span class="material-symbols-outlined">analytics</span>
+<p class="text-sm font-medium">Reports</p>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/10 text-white/70 hover:text-white cursor-pointer transition-all">
+<span class="material-symbols-outlined">settings</span>
+<p class="text-sm font-medium">Settings</p>
+</div>
+</nav>
+<!-- Footer Sidebar -->
+<div class="mt-auto pt-6 border-t border-white/10">
+<button class="w-full flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white rounded-xl py-2.5 transition-colors text-sm font-semibold">
+<span class="material-symbols-outlined text-[20px]">help</span>
+                        Support Center
+                    </button>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col overflow-y-auto">
+<!-- Top Navbar -->
+<header class="sticky top-0 z-10 flex items-center justify-between bg-white dark:bg-background-dark border-b border-[#dbdbe6] dark:border-white/10 px-8 py-4">
+<div class="flex items-center gap-8">
+<h2 class="text-[#111118] dark:text-white text-xl font-bold tracking-tight">Dashboard Overview</h2>
+<div class="relative w-64">
+<div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-[#5f5f8c]">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-2 border-none bg-background-light dark:bg-white/5 rounded-xl text-sm focus:ring-2 focus:ring-primary dark:text-white placeholder:text-[#5f5f8c]" placeholder="Search metrics or users..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<!-- Theme Toggle -->
+<button class="p-2.5 bg-background-light dark:bg-white/5 rounded-xl text-[#111118] dark:text-white hover:bg-[#dbdbe6] dark:hover:bg-white/10 transition-colors" onclick="document.documentElement.classList.toggle('dark')">
+<span class="material-symbols-outlined block dark:hidden">dark_mode</span>
+<span class="material-symbols-outlined hidden dark:block">light_mode</span>
+</button>
+<!-- Notifications -->
+<button class="p-2.5 bg-background-light dark:bg-white/5 rounded-xl text-[#111118] dark:text-white hover:bg-[#dbdbe6] dark:hover:bg-white/10 transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 size-2 bg-red-500 rounded-full border-2 border-white dark:border-background-dark"></span>
+</button>
+<!-- Profile -->
+<div class="flex items-center gap-3 pl-4 border-l border-[#dbdbe6] dark:border-white/10">
+<div class="text-right hidden sm:block">
+<p class="text-sm font-bold dark:text-white">Alex Rivera</p>
+<p class="text-xs text-[#5f5f8c] dark:text-white/60">Admin</p>
+</div>
+<div class="size-10 rounded-full bg-cover bg-center border-2 border-primary/20" data-alt="Admin user profile picture" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAlnwkh6oHxETRhqNDiPs7OBDg6Ub_B3A6FpOLNOt_dZjExVq-QUHweZgn4EtZTCA838lQMh-zSDM0anX1miTdMElR4ksmfkD1IeKF_VI7Dg4w9wk44wcopP4BVEDXM4PqcBICiuUcuzxtX2bejp-vc6wYIEKvL97wyrJk41teiD4__6L6nC3zGp-LILCgjxBvTasNJEULuZIFGglQxtPkPVvbTAsGIshQ2_V49aQBZ51f6WNLR-hTg9jrtFNxN7ttCSncXHUMDtcl4');"></div>
+</div>
+</div>
+</header>
+<!-- Dashboard Content -->
+<div class="p-8 space-y-8">
+<!-- Stats Section -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="bg-white dark:bg-white/5 p-6 rounded-2xl shadow-sm border border-[#dbdbe6] dark:border-white/5 flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<p class="text-[#5f5f8c] dark:text-white/60 text-sm font-medium">Total Users</p>
+<span class="p-2 bg-primary/10 rounded-lg text-primary material-symbols-outlined">person</span>
+</div>
+<p class="text-3xl font-bold dark:text-white">12,450</p>
+<div class="flex items-center gap-1.5 mt-2">
+<span class="text-[#078841] text-xs font-bold bg-[#078841]/10 px-2 py-0.5 rounded-full flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+                                +12%
+                            </span>
+<span class="text-[#5f5f8c] dark:text-white/40 text-xs">vs last month</span>
+</div>
+</div>
+<div class="bg-white dark:bg-white/5 p-6 rounded-2xl shadow-sm border border-[#dbdbe6] dark:border-white/5 flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<p class="text-[#5f5f8c] dark:text-white/60 text-sm font-medium">Total Orders</p>
+<span class="p-2 bg-orange-100 rounded-lg text-orange-600 material-symbols-outlined">local_shipping</span>
+</div>
+<p class="text-3xl font-bold dark:text-white">1,240</p>
+<div class="flex items-center gap-1.5 mt-2">
+<span class="text-[#078841] text-xs font-bold bg-[#078841]/10 px-2 py-0.5 rounded-full flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+                                +5.4%
+                            </span>
+<span class="text-[#5f5f8c] dark:text-white/40 text-xs">vs last month</span>
+</div>
+</div>
+<div class="bg-white dark:bg-white/5 p-6 rounded-2xl shadow-sm border border-[#dbdbe6] dark:border-white/5 flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<p class="text-[#5f5f8c] dark:text-white/60 text-sm font-medium">Total Revenue</p>
+<span class="p-2 bg-green-100 rounded-lg text-green-600 material-symbols-outlined">payments</span>
+</div>
+<p class="text-3xl font-bold dark:text-white">$45,200</p>
+<div class="flex items-center gap-1.5 mt-2">
+<span class="text-[#078841] text-xs font-bold bg-[#078841]/10 px-2 py-0.5 rounded-full flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+                                +8.1%
+                            </span>
+<span class="text-[#5f5f8c] dark:text-white/40 text-xs">vs last month</span>
+</div>
+</div>
+<div class="bg-white dark:bg-white/5 p-6 rounded-2xl shadow-sm border border-[#dbdbe6] dark:border-white/5 flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<p class="text-[#5f5f8c] dark:text-white/60 text-sm font-medium">Pending Vendors</p>
+<span class="p-2 bg-purple-100 rounded-lg text-purple-600 material-symbols-outlined">storefront</span>
+</div>
+<p class="text-3xl font-bold dark:text-white">14</p>
+<div class="flex items-center gap-1.5 mt-2">
+<span class="text-primary text-xs font-bold bg-primary/10 px-2 py-0.5 rounded-full flex items-center gap-0.5">
+                                Action Needed
+                            </span>
+<span class="text-[#5f5f8c] dark:text-white/40 text-xs">Require verification</span>
+</div>
+</div>
+</div>
+<!-- Charts Section -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<!-- Daily Orders Chart -->
+<div class="bg-white dark:bg-white/5 p-8 rounded-2xl shadow-sm border border-[#dbdbe6] dark:border-white/5">
+<div class="flex items-center justify-between mb-8">
+<div>
+<h3 class="text-lg font-bold dark:text-white">Daily Orders</h3>
+<p class="text-sm text-[#5f5f8c] dark:text-white/60">Order volume for the last 7 days</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="size-3 rounded-full bg-primary"></span>
+<span class="text-sm font-medium dark:text-white">1,240 Total</span>
+</div>
+</div>
+<div class="h-64 relative flex flex-col justify-end">
+<svg class="w-full h-48" preserveaspectratio="none" viewbox="0 0 500 150">
+<path d="M0 130 C 50 120, 100 40, 150 60 S 250 140, 300 80 S 400 20, 500 50" fill="none" stroke="#0606f9" stroke-linecap="round" stroke-width="4"></path>
+<path d="M0 130 C 50 120, 100 40, 150 60 S 250 140, 300 80 S 400 20, 500 50 L 500 150 L 0 150 Z" fill="url(#orderGradient)"></path>
+<defs>
+<lineargradient id="orderGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#0606f9" stop-opacity="0.1"></stop>
+<stop offset="100%" stop-color="#0606f9" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+</svg>
+<div class="flex justify-between mt-6 px-1">
+<span class="text-xs font-bold text-[#5f5f8c] dark:text-white/40">Mon</span>
+<span class="text-xs font-bold text-[#5f5f8c] dark:text-white/40">Tue</span>
+<span class="text-xs font-bold text-[#5f5f8c] dark:text-white/40">Wed</span>
+<span class="text-xs font-bold text-[#5f5f8c] dark:text-white/40">Thu</span>
+<span class="text-xs font-bold text-[#5f5f8c] dark:text-white/40">Fri</span>
+<span class="text-xs font-bold text-[#5f5f8c] dark:text-white/40">Sat</span>
+<span class="text-xs font-bold text-[#5f5f8c] dark:text-white/40">Sun</span>
+</div>
+</div>
+</div>
+<!-- Monthly Revenue Chart -->
+<div class="bg-white dark:bg-white/5 p-8 rounded-2xl shadow-sm border border-[#dbdbe6] dark:border-white/5">
+<div class="flex items-center justify-between mb-8">
+<div>
+<h3 class="text-lg font-bold dark:text-white">Monthly Revenue</h3>
+<p class="text-sm text-[#5f5f8c] dark:text-white/60">Comparison across Q1 &amp; Q2</p>
+</div>
+<div class="text-right">
+<p class="text-2xl font-black text-primary">$45.2k</p>
+<p class="text-xs font-medium text-[#078841]">+8.1% vs prev year</p>
+</div>
+</div>
+<div class="h-64 grid grid-cols-6 gap-4 items-end px-2">
+<div class="space-y-2 group">
+<div class="w-full bg-primary/20 hover:bg-primary transition-all rounded-t-lg" style="height: 65%;"></div>
+<p class="text-center text-[11px] font-bold text-[#5f5f8c] dark:text-white/40">Jan</p>
+</div>
+<div class="space-y-2 group">
+<div class="w-full bg-primary transition-all rounded-t-lg" style="height: 90%;"></div>
+<p class="text-center text-[11px] font-bold text-[#5f5f8c] dark:text-white/40">Feb</p>
+</div>
+<div class="space-y-2 group">
+<div class="w-full bg-primary/20 hover:bg-primary transition-all rounded-t-lg" style="height: 50%;"></div>
+<p class="text-center text-[11px] font-bold text-[#5f5f8c] dark:text-white/40">Mar</p>
+</div>
+<div class="space-y-2 group">
+<div class="w-full bg-primary/20 hover:bg-primary transition-all rounded-t-lg" style="height: 75%;"></div>
+<p class="text-center text-[11px] font-bold text-[#5f5f8c] dark:text-white/40">Apr</p>
+</div>
+<div class="space-y-2 group">
+<div class="w-full bg-primary/20 hover:bg-primary transition-all rounded-t-lg" style="height: 40%;"></div>
+<p class="text-center text-[11px] font-bold text-[#5f5f8c] dark:text-white/40">May</p>
+</div>
+<div class="space-y-2 group">
+<div class="w-full bg-primary transition-all rounded-t-lg" style="height: 100%;"></div>
+<p class="text-center text-[11px] font-bold text-[#5f5f8c] dark:text-white/40">Jun</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Recent Activity Table Placeholder -->
+<div class="bg-white dark:bg-white/5 rounded-2xl shadow-sm border border-[#dbdbe6] dark:border-white/5 overflow-hidden">
+<div class="p-6 border-b border-[#dbdbe6] dark:border-white/5 flex items-center justify-between">
+<h3 class="text-lg font-bold dark:text-white">Recent Activity</h3>
+<button class="text-primary text-sm font-bold hover:underline">View All</button>
+</div>
+<div class="p-0">
+<div class="flex items-center gap-4 p-4 border-b border-[#dbdbe6] dark:border-white/5 hover:bg-background-light dark:hover:bg-white/5 transition-colors">
+<div class="size-10 rounded-full bg-background-light dark:bg-white/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold dark:text-white">New order received #5492</p>
+<p class="text-xs text-[#5f5f8c] dark:text-white/60">Customer: Sarah Jenkins • 2 mins ago</p>
+</div>
+<span class="text-xs font-bold text-[#078841] bg-[#078841]/10 px-3 py-1 rounded-full">$124.00</span>
+</div>
+<div class="flex items-center gap-4 p-4 border-b border-[#dbdbe6] dark:border-white/5 hover:bg-background-light dark:hover:bg-white/5 transition-colors">
+<div class="size-10 rounded-full bg-background-light dark:bg-white/10 flex items-center justify-center text-orange-600">
+<span class="material-symbols-outlined">person_add</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold dark:text-white">New vendor registration request</p>
+<p class="text-xs text-[#5f5f8c] dark:text-white/60">Store: Artisan Collective • 15 mins ago</p>
+</div>
+<span class="text-xs font-bold text-orange-600 bg-orange-100 px-3 py-1 rounded-full">Pending</span>
+</div>
+<div class="flex items-center gap-4 p-4 hover:bg-background-light dark:hover:bg-white/5 transition-colors">
+<div class="size-10 rounded-full bg-background-light dark:bg-white/10 flex items-center justify-center text-blue-600">
+<span class="material-symbols-outlined">inventory</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold dark:text-white">Stock alert: 'Quantum Headphones'</p>
+<p class="text-xs text-[#5f5f8c] dark:text-white/60">Inventory level below threshold (2 units left)</p>
+</div>
+<span class="text-xs font-bold text-red-600 bg-red-100 px-3 py-1 rounded-full">Low Stock</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

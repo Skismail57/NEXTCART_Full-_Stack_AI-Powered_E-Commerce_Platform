@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEXCART | Gaming &amp; Music Entertainment Hub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#25f46a",
+                        "background-light": "#f5f8f6",
+                        "background-dark": "#102216",
+                    },
+                    fontFamily: {
+                        "display": ["Be Vietnam Pro", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Be Vietnam Pro', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#111813] dark:text-white min-h-screen">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 bg-white dark:bg-background-dark border-b border-[#e0eadd] dark:border-white/10 px-4 md:px-10 lg:px-40 py-3">
+<div class="max-w-[1280px] mx-auto flex items-center justify-between gap-8">
+<div class="flex items-center gap-8 flex-1">
+<div class="flex items-center gap-2 text-[#111813] dark:text-white">
+<div class="size-8 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-xl font-black leading-tight tracking-[-0.015em]">NEXCART</h2>
+</div>
+<div class="hidden md:flex flex-1 max-w-xl">
+<div class="flex w-full items-stretch rounded-lg h-10 bg-[#f0f5f1] dark:bg-white/5 border border-transparent focus-within:border-primary/50 overflow-hidden">
+<div class="flex items-center justify-center pl-4 text-[#608a6e]">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="w-full bg-transparent border-none focus:ring-0 text-sm placeholder:text-[#608a6e] px-3" placeholder="Search for PS4 games, Guitars, Groceries..."/>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden lg:flex items-center gap-6">
+<a class="text-sm font-bold hover:text-primary transition-colors" href="#">Gaming</a>
+<a class="text-sm font-bold hover:text-primary transition-colors" href="#">Music</a>
+<a class="text-sm font-bold hover:text-primary transition-colors" href="#">Grocery</a>
+</nav>
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-lg bg-[#f0f5f1] dark:bg-white/5 hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-[20px]">location_on</span>
+</button>
+<button class="p-2 rounded-lg bg-[#f0f5f1] dark:bg-white/5 hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-[20px]">shopping_cart</span>
+</button>
+<div class="h-8 w-8 rounded-full bg-cover bg-center border-2 border-primary ml-2" data-alt="User profile avatar" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCZKiSDytgv6-MZUhwUcXi1Kqx_MnDkWlMt_q-25QygdpN3FhcwW8AlmdGuxa_rKI2L_pNGEVUhcxaPQrtdc4nZe7OxAa33YaZRWvW78mEUmxNDfx7ZxG1PgS6vAMD5c2duaHgvRI9pkm5iZJVTHbsUw3lSzjVbZPoqiC104DGblMH7ZN7ZRb4IlVhp9Q2hm8Mkx7i-hipGjyr7QmhWLtNv7t3CzVo03261YcnQDhFkhnA0l_fm8qsK4C21FP5dg99nuzfUtzPR4iHI');"></div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-[1280px] mx-auto px-4 lg:px-10 py-8 flex gap-8">
+<!-- Sidebar Navigation -->
+<aside class="hidden xl:flex flex-col w-64 shrink-0 gap-6">
+<div class="bg-white dark:bg-white/5 p-4 rounded-xl border border-[#e0eadd] dark:border-white/10">
+<div class="mb-6">
+<h3 class="text-xs font-black uppercase tracking-widest text-[#608a6e] mb-4">Marketplace</h3>
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-3 p-3 bg-primary/10 text-[#111813] dark:text-primary rounded-lg font-bold" href="#">
+<span class="material-symbols-outlined">sports_esports</span> Gaming Hub
+                        </a>
+<a class="flex items-center gap-3 p-3 hover:bg-[#f0f5f1] dark:hover:bg-white/5 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">music_note</span> Music Studio
+                        </a>
+<a class="flex items-center gap-3 p-3 hover:bg-[#f0f5f1] dark:hover:bg-white/5 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">local_mall</span> Grocery Store
+                        </a>
+</div>
+</div>
+<div>
+<h3 class="text-xs font-black uppercase tracking-widest text-[#608a6e] mb-4">Account</h3>
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-3 p-3 hover:bg-[#f0f5f1] dark:hover:bg-white/5 rounded-lg" href="#">
+<span class="material-symbols-outlined">history</span> Orders
+                        </a>
+<a class="flex items-center gap-3 p-3 hover:bg-[#f0f5f1] dark:hover:bg-white/5 rounded-lg" href="#">
+<span class="material-symbols-outlined">favorite</span> Wishlist
+                        </a>
+</div>
+</div>
+</div>
+<!-- Ad/Promo Card -->
+<div class="rounded-xl bg-primary p-6 text-black">
+<h4 class="font-black text-lg mb-2">Nexus Pro</h4>
+<p class="text-sm font-medium mb-4">Unlimited free shipping on all grocery orders.</p>
+<button class="w-full bg-black text-white py-2 rounded-lg font-bold text-sm">Join Now</button>
+</div>
+</aside>
+<div class="flex-1 flex flex-col gap-10">
+<!-- Hero Dual Banners -->
+<section class="grid grid-cols-1 @[864px]:grid-cols-2 gap-6">
+<div class="relative group overflow-hidden rounded-xl h-64 bg-black flex items-center">
+<div class="absolute inset-0 bg-cover bg-center opacity-70 transition-transform duration-500 group-hover:scale-105" data-alt="Premium gaming console with controllers" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDCsVo3XVq1oLbF7Q_9kdBXsUaieEGf-MpHQM4EnBM5TCsO1bgPnFsl6iwo00UVPvgAwwcyt4Qnpp2U_yHvRQhSuiBXCX83hV0mDuXrMsZW-O0VBonGLtzDOHcaU9XzQpjZQ510CRGMkpdJE81oxy3UqRsgy5DHZd3XD9Y_3mbnnXN7fBVJ1O_aFrFmh7hcf619L2VUoIFp-bMdr-RO__1FRH_4ggg1rTSPI2PJIsEHDtF0-E4-Hg_8MN0I_wMFpd3pU9OgVEmPCKf8');"></div>
+<div class="relative z-10 p-8">
+<span class="inline-block px-3 py-1 bg-primary text-black text-[10px] font-black uppercase tracking-widest rounded-full mb-3">Limited Edition</span>
+<h2 class="text-3xl font-black text-white mb-4 leading-tight">Gaming<br/>Consoles</h2>
+<button class="bg-white text-black px-6 py-2 rounded-lg font-bold text-sm hover:bg-primary transition-colors">Shop Now</button>
+</div>
+</div>
+<div class="relative group overflow-hidden rounded-xl h-64 bg-black flex items-center">
+<div class="absolute inset-0 bg-cover bg-center opacity-70 transition-transform duration-500 group-hover:scale-105" data-alt="High quality studio headphones and synthesizers" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCwAgfRFjWNABAYEri8gZsm2NF2Go02F8cCQZoOosubxAFUQDMARgm3HNrVQkWpFfRephL62sAUHMD5L6qOUPVeNxjjihxfcAcO6L6Lwsax-_ghsbrB1EFSoeFyuaC330FtNjQEYie_a1hlFZ7O4c4xzPxgir9AohISS-v-qPMiOEcXmhi-kQKbKezWMPqmckfZYR3ofnEowCrQgK8iLFMurROawOs0DJlyXNoralFJTt-6-VU_04Ol94OPj_wPWF_duA1Ar3g9ws38');"></div>
+<div class="relative z-10 p-8">
+<span class="inline-block px-3 py-1 bg-primary text-black text-[10px] font-black uppercase tracking-widest rounded-full mb-3">Studio Grade</span>
+<h2 class="text-3xl font-black text-white mb-4 leading-tight">Music<br/>Specials</h2>
+<button class="bg-white text-black px-6 py-2 rounded-lg font-bold text-sm hover:bg-primary transition-colors">Explore</button>
+</div>
+</div>
+</section>
+<!-- Circular Category discovery -->
+<section>
+<h2 class="text-[22px] font-black tracking-tight mb-6">Explore the Hubs</h2>
+<div class="flex items-center gap-8 overflow-x-auto pb-4 scrollbar-hide">
+<div class="flex flex-col items-center gap-3 shrink-0 group cursor-pointer">
+<div class="size-24 rounded-full bg-white dark:bg-white/5 border-2 border-transparent group-hover:border-primary p-1 transition-all">
+<div class="w-full h-full rounded-full bg-cover bg-center" data-alt="Classic electric guitar category" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAa8GCdaYnaus52d8xp7-Uok5DEL9TC6YWV15bUFBwW_13o7Cldyw0Anb-fkzGtYA4PBGXUavCCErYbgqUgC3lJua2PaMvnGCGN4Ar1ryDKXrsVILxU2qYkAPxrp3a2-CdDlqOhtQPWnYPmxqCr6GfGpJL7Rhm5EwFGfHQdQxMkxJqC0TX8ZmS4SL6gsIM-l7IoP8MNoJJXnv30_IJhixT3xm5k0OKY_duh7C1vfMJyoh8Guis4ivCsY8CJ7o28syyfINMZMkhClAVp');"></div>
+</div>
+<span class="text-sm font-bold">Instruments</span>
+</div>
+<div class="flex flex-col items-center gap-3 shrink-0 group cursor-pointer">
+<div class="size-24 rounded-full bg-white dark:bg-white/5 border-2 border-transparent group-hover:border-primary p-1 transition-all">
+<div class="w-full h-full rounded-full bg-cover bg-center" data-alt="Gaming headset and controllers category" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAQAzpe81Lzm8QrTbKAieN2mYD8Lz8lbxngbm-cJyLlX7cjth-IND3zc0shhrKgABHSrQzO0-YlZMvrPHHwSIOm7H4t00mXLJg378nr18E3ZA4wk95h3h1mqKkMogeMK0NOzkIzmcnnEKKadGi5vu1O6IDYPS9NnvBp1W4k8eOqXj88w8n2XYFfzmGr837_assuLuRzNly1vd5duG_K5ZiwpcR2xacaiWF_Q1F-5z7OfP6sr_KxZZSyX4h1QAxn90mk283y-6NgNS7t');"></div>
+</div>
+<span class="text-sm font-bold">Consoles</span>
+</div>
+<div class="flex flex-col items-center gap-3 shrink-0 group cursor-pointer">
+<div class="size-24 rounded-full bg-white dark:bg-white/5 border-2 border-transparent group-hover:border-primary p-1 transition-all">
+<div class="w-full h-full rounded-full bg-cover bg-center" data-alt="Virtual reality headset category" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBGCFVOOj1nJan5aU50tgLKeDl-VM5or_ZWZ-c5h6Mm2doXl8nwCC8lxGhorjYWu-oaZcUsasHG-wMLhJzIEXCzZNvyEBogjIm3FeYBLCJTIzdIz1bm4ljOPajYSer_3G6rDhSaR1TISxsavQWMvWzqyrjqHXZ3b2Q4ifvJJc2_kcRqbIVJpnuCKQ3btqDS57m9SxfNYWU7vbCqpYjmvXJEc9sJyi7mGzWlk43C1d54UKCSzvV0ljybpTJPuoNTuU1nn2x2oFPYExmy');"></div>
+</div>
+<span class="text-sm font-bold">VR Gear</span>
+</div>
+<div class="flex flex-col items-center gap-3 shrink-0 group cursor-pointer">
+<div class="size-24 rounded-full bg-white dark:bg-white/5 border-2 border-transparent group-hover:border-primary p-1 transition-all">
+<div class="w-full h-full rounded-full bg-cover bg-center" data-alt="Vinyl records and turntables category" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBKyQqNZGbAMMpLAob99wd6U-dJ9YMywldUaWm1aFhUNysJik15fPf5EHvc5mTpw6-FNS0tUmR2D2MXgSEMiw2YqbnKR1COvEKBYKAfzR9ELvfQJFOEQEWuJztYWnYGE3X1FuVK_CPeyZYgiKdvI52arJoISWoWMt1kNOmwQkFlc8oFJrzju73ikvNPTmwJvI0X7Nhx8tgcAUEKARJ239cMH978pV4ITUgjGK449cP4w413rzVBCQZxE4LeRjoj_W3Zx-ZPfobGeu2M');"></div>
+</div>
+<span class="text-sm font-bold">Vinyls</span>
+</div>
+<div class="flex flex-col items-center gap-3 shrink-0 group cursor-pointer">
+<div class="size-24 rounded-full bg-white dark:bg-white/5 border-2 border-transparent group-hover:border-primary p-1 transition-all">
+<div class="w-full h-full rounded-full bg-cover bg-center" data-alt="DJ mixing console category" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDv1Zxjz2j5Fj-WNjIR2z2UqbO9PoFNWLYfbViSOIn18Xw3HYl0chgDlQIGmT0uxrjSEFsROVINRBnyU4xmaLn5dxhYknEUIfT_SW04-ccEJEvHMXEpMi8y5DiZHq4h1CvO0kvf0zzcohL9XU4IsLf-139t9hZwfAAHoJc8n1do4jDz36im5pUDdADz4gUiAz0PoPP72kpQgmiz8VCrZ0enT62rxMQUZCtrtuamWdJrHPaRgc0qmPMG1dY4BWOXK7noRvc9VVS9DuhU');"></div>
+</div>
+<span class="text-sm font-bold">Studio Gear</span>
+</div>
+</div>
+</section>
+<!-- 15 Column Grid (Simulated with Grid Layout) -->
+<section>
+<div class="flex justify-between items-center mb-6">
+<h2 class="text-[22px] font-black tracking-tight">PS4 Games &amp; Accessories</h2>
+<a class="text-primary font-bold text-sm hover:underline" href="#">View All</a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+<!-- Product Card 1 -->
+<div class="bg-white dark:bg-white/5 rounded-xl border border-[#e0eadd] dark:border-white/10 p-3 group transition-all hover:shadow-xl">
+<div class="relative aspect-[3/4] bg-neutral-100 dark:bg-white/10 rounded-lg overflow-hidden mb-3">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="God of War PS4 Game Cover" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD-rSq8_DTGivpL8PpZrmaIQD_HYVqhjEZQ7kM37trPrLa5ZPJiI3sUZXDn88tY0J6uDqBMkPkIdbLOGXFgoBd05HAyoHgEaDXyZxASlXwzGitBHpsjBGb_sPgaQ5VZv4XyfSwVcV3Rs9SuzGSprGZJH4QmC7Y7yVyZju3s33cddTAOC2x5WVOQD6_dZN-NsrZ0j__V-vFXRH57FLhj5MCbr8_NcgIh8G_0p_CVPDLc7DF_OyGjKsevdtnmpzcETEyDVsfI4-VJk6Cp');"></div>
+<div class="absolute top-2 left-2 px-2 py-0.5 bg-primary text-black text-[10px] font-black rounded uppercase">Nexcart Assured</div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-1">
+<span class="bg-primary/20 text-primary-dark dark:text-primary text-[10px] font-black px-1.5 py-0.5 rounded">4.9 ★</span>
+<span class="text-[10px] text-[#608a6e]">1.2k Sold</span>
+</div>
+<h3 class="font-bold text-sm line-clamp-2">God of War Hits - PlayStation 4</h3>
+<div class="flex items-center justify-between mt-2">
+<span class="font-black text-lg">$19.99</span>
+<button class="size-8 rounded-lg bg-[#f0f5f1] dark:bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Repeat for 14 more items... (Truncated for readability, but representing the grid) -->
+<!-- Product Card 2 -->
+<div class="bg-white dark:bg-white/5 rounded-xl border border-[#e0eadd] dark:border-white/10 p-3 group transition-all hover:shadow-xl">
+<div class="relative aspect-[3/4] bg-neutral-100 dark:bg-white/10 rounded-lg overflow-hidden mb-3">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="DualShock 4 Wireless Controller" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuChboq4jtEcW7pzvQWEttnmMI8P9vcl0R0La_gLQ_bB3Kz6yM7etS43iyyPJz8cDyhpRrkvzbN6MpXAPRNeSji0oL9gbdNzkVpL70e8aRiuW7s0VeEeTog2KBTQlpVSm3QwhvCvoTiSRZahTSROFO8_4J2Mmp6wocl1eqc0c-kDlfm5IsP9HLe8O11ms_0FYxBaEQwR1OdnFxuNSTsqEMeTZNdNIUGM6vQgkDlF6FazAIK4qv0SytTxn_F_eD2ELm2OtdcABCY5-Y94');"></div>
+<div class="absolute top-2 left-2 px-2 py-0.5 bg-primary text-black text-[10px] font-black rounded uppercase">Best Seller</div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-1">
+<span class="bg-primary/20 text-primary-dark dark:text-primary text-[10px] font-black px-1.5 py-0.5 rounded">4.8 ★</span>
+<span class="text-[10px] text-[#608a6e]">3k Sold</span>
+</div>
+<h3 class="font-bold text-sm line-clamp-2">DualShock 4 Wireless Controller - Jet Black</h3>
+<div class="flex items-center justify-between mt-2">
+<span class="font-black text-lg">$59.99</span>
+<button class="size-8 rounded-lg bg-[#f0f5f1] dark:bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Additional Grid Items (Placeholder loop) -->
+<div class="bg-white dark:bg-white/5 rounded-xl border border-[#e0eadd] dark:border-white/10 p-3 group transition-all hover:shadow-xl">
+<div class="relative aspect-[3/4] bg-neutral-100 dark:bg-white/10 rounded-lg overflow-hidden mb-3">
+<div class="w-full h-full bg-cover bg-center" data-alt="Gaming Headset with mic" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDKtwobjWgJI4isHoEveuoXTv5hReKaBdW1358a2sFc00Zs0_8SaGtFju8wjxEQ4j1nkIbDuoBc0akQ_5lDMl4cfc8UOJ92f3Ubkt-Vlbz03AMtd3zqZqg4cDigfCcwMOEAKfV-CuCkdRnCQUFGBCOYebazyGNtWyWlXbCaf2x2ACmH4CQkV7WiByzkEOyW5OFBbiqYguv4sr47hk32_nS5ZkyFoWQWIZ4-5oRJhFPP0RxdH1D1dvCID9-tpL8xfpjPmqoLw0-8h_x9');"></div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-1">
+<span class="bg-primary/20 text-primary text-[10px] font-black px-1.5 py-0.5 rounded">4.5 ★</span>
+</div>
+<h3 class="font-bold text-sm line-clamp-2">Pulse 3D Wireless Headset</h3>
+<div class="flex items-center justify-between mt-2">
+<span class="font-black text-lg">$99.00</span>
+<button class="size-8 rounded-lg bg-[#f0f5f1] dark:bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-white/5 rounded-xl border border-[#e0eadd] dark:border-white/10 p-3 group transition-all hover:shadow-xl">
+<div class="relative aspect-[3/4] bg-neutral-100 dark:bg-white/10 rounded-lg overflow-hidden mb-3">
+<div class="w-full h-full bg-cover bg-center" data-alt="Spider-Man PS4 Game Cover" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAXkjw57XKEJgiSgFC1r1tzDL-YCqVx9K7mAAMzITJtMrrQu6jiXuaZi5U0ppNFT8lJnCeTS0IS8aFANG_itUhVqmbnjj_8nYotxrK5iwj0pNhm2uVMMuxJNLQxkzsYShVWg2R4eN6gCycfgJyQQkC9lCvGavVsbvNq_YuC1E5hR15E4SkTrt5eddzpu_pmzw8Ar4IzV8AxYZ5YsR5R3nM-HOQu739e946_YZ0kPTslyTo9B5NP471xxaHTGVtQ5d3OSgI7bV74ukQf');"></div>
+<div class="absolute top-2 left-2 px-2 py-0.5 bg-primary text-black text-[10px] font-black rounded uppercase">Nexcart Assured</div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-1">
+<span class="bg-primary/20 text-primary text-[10px] font-black px-1.5 py-0.5 rounded">4.9 ★</span>
+</div>
+<h3 class="font-bold text-sm line-clamp-2">Marvel's Spider-Man: GOTY Edition</h3>
+<div class="flex items-center justify-between mt-2">
+<span class="font-black text-lg">$39.99</span>
+<button class="size-8 rounded-lg bg-[#f0f5f1] dark:bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-white/5 rounded-xl border border-[#e0eadd] dark:border-white/10 p-3 group transition-all hover:shadow-xl">
+<div class="relative aspect-[3/4] bg-neutral-100 dark:bg-white/10 rounded-lg overflow-hidden mb-3">
+<div class="w-full h-full bg-cover bg-center" data-alt="Electric Guitar and AMP bundle" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA4xXsowGlfQ5y42ulVws9VStZu33n9EEcZ7FMhDqqQFaea0sB2nfKcF9pMDsCXgXK8-0ig3lj1Fq7BJcjf-ePRpU_HK-33Xz2JQfKdMxHK09aDIxQZxUTjy2TuJGahNlGMcVs01bZ0N9ImBylg7WlH6TgxGJXzUAFToGK4Dp9hCCvjDfacYm3IaC7Tl8cK0E6hsF0-w8uyK2Os6jj0V_fY_Ur6nevpY1feRXifYCRaq_rllSFYHbURRMJPUXoTNGWfJ5fjyNZDWZP3');"></div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-1">
+<span class="bg-primary/20 text-primary text-[10px] font-black px-1.5 py-0.5 rounded">5.0 ★</span>
+</div>
+<h3 class="font-bold text-sm line-clamp-2">Stratocaster Electric Bundle</h3>
+<div class="flex items-center justify-between mt-2">
+<span class="font-black text-lg">$499.00</span>
+<button class="size-8 rounded-lg bg-[#f0f5f1] dark:bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Filling up 10 more grid placeholders with similar cards to fulfill requirement of 15 -->
+<!-- Row 2 -->
+<div class="bg-white dark:bg-white/5 rounded-xl border border-[#e0eadd] dark:border-white/10 p-3 hover:shadow-xl transition-all"><div class="aspect-[3/4] bg-neutral-100 dark:bg-white/10 rounded-lg mb-3" data-alt="Product placeholder"></div><div class="h-4 w-3/4 bg-neutral-200 dark:bg-white/10 rounded mb-2"></div><div class="h-4 w-1/2 bg-neutral-200 dark:bg-white/10 rounded"></div></div>
+<div class="bg-white dark:bg-white/5 rounded-xl border border-[#e0eadd] dark:border-white/10 p-3 hover:shadow-xl transition-all"><div class="aspect-[3/4] bg-neutral-100 dark:bg-white/10 rounded-lg mb-3" data-alt="Product placeholder"></div><div class="h-4 w-3/4 bg-neutral-200 dark:bg-white/10 rounded mb-2"></div><div class="h-4 w-1/2 bg-neutral-200 dark:bg-white/10 rounded"></div></div>
+<div class="bg-white dark:bg-white/5 rounded-xl border border-[#e0eadd] dark:border-white/10 p-3 hover:shadow-xl transition-all"><div class="aspect-[3/4] bg-neutral-100 dark:bg-white/10 rounded-lg mb-3" data-alt="Product placeholder"></div><div class="h-4 w-3/4 bg-neutral-200 dark:bg-white/10 rounded mb-2"></div><div class="h-4 w-1/2 bg-neutral-200 dark:bg-white/10 rounded"></div></div>
+<div class="bg-white dark:bg-white/5 rounded-xl border border-[#e0eadd] dark:border-white/10 p-3 hover:shadow-xl transition-all"><div class="aspect-[3/4] bg-neutral-100 dark:bg-white/10 rounded-lg mb-3" data-alt="Product placeholder"></div><div class="h-4 w-3/4 bg-neutral-200 dark:bg-white/10 rounded mb-2"></div><div class="h-4 w-1/2 bg-neutral-200 dark:bg-white/10 rounded"></div></div>
+<div class="bg-white dark:bg-white/5 rounded-xl border border-[#e0eadd] dark:border-white/10 p-3 hover:shadow-xl transition-all"><div class="aspect-[3/4] bg-neutral-100 dark:bg-white/10 rounded-lg mb-3" data-alt="Product placeholder"></div><div class="h-4 w-3/4 bg-neutral-200 dark:bg-white/10 rounded mb-2"></div><div class="h-4 w-1/2 bg-neutral-200 dark:bg-white/10 rounded"></div></div>
+<!-- Row 3 -->
+<div class="bg-white dark:bg-white/5 rounded-xl border border-[#e0eadd] dark:border-white/10 p-3 hover:shadow-xl transition-all"><div class="aspect-[3/4] bg-neutral-100 dark:bg-white/10 rounded-lg mb-3" data-alt="Product placeholder"></div><div class="h-4 w-3/4 bg-neutral-200 dark:bg-white/10 rounded mb-2"></div><div class="h-4 w-1/2 bg-neutral-200 dark:bg-white/10 rounded"></div></div>
+<div class="bg-white dark:bg-white/5 rounded-xl border border-[#e0eadd] dark:border-white/10 p-3 hover:shadow-xl transition-all"><div class="aspect-[3/4] bg-neutral-100 dark:bg-white/10 rounded-lg mb-3" data-alt="Product placeholder"></div><div class="h-4 w-3/4 bg-neutral-200 dark:bg-white/10 rounded mb-2"></div><div class="h-4 w-1/2 bg-neutral-200 dark:bg-white/10 rounded"></div></div>
+<div class="bg-white dark:bg-white/5 rounded-xl border border-[#e0eadd] dark:border-white/10 p-3 hover:shadow-xl transition-all"><div class="aspect-[3/4] bg-neutral-100 dark:bg-white/10 rounded-lg mb-3" data-alt="Product placeholder"></div><div class="h-4 w-3/4 bg-neutral-200 dark:bg-white/10 rounded mb-2"></div><div class="h-4 w-1/2 bg-neutral-200 dark:bg-white/10 rounded"></div></div>
+<div class="bg-white dark:bg-white/5 rounded-xl border border-[#e0eadd] dark:border-white/10 p-3 hover:shadow-xl transition-all"><div class="aspect-[3/4] bg-neutral-100 dark:bg-white/10 rounded-lg mb-3" data-alt="Product placeholder"></div><div class="h-4 w-3/4 bg-neutral-200 dark:bg-white/10 rounded mb-2"></div><div class="h-4 w-1/2 bg-neutral-200 dark:bg-white/10 rounded"></div></div>
+<div class="bg-white dark:bg-white/5 rounded-xl border border-[#e0eadd] dark:border-white/10 p-3 hover:shadow-xl transition-all"><div class="aspect-[3/4] bg-neutral-100 dark:bg-white/10 rounded-lg mb-3" data-alt="Product placeholder"></div><div class="h-4 w-3/4 bg-neutral-200 dark:bg-white/10 rounded mb-2"></div><div class="h-4 w-1/2 bg-neutral-200 dark:bg-white/10 rounded"></div></div>
+</div>
+</section>
+</div>
+</main>
+<!-- Simple Modern Footer -->
+<footer class="bg-white dark:bg-background-dark border-t border-[#e0eadd] dark:border-white/10 mt-20 py-12 px-4 lg:px-40">
+<div class="max-w-[1280px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-10">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-2">
+<div class="size-6 bg-primary rounded-sm"></div>
+<h2 class="text-lg font-black tracking-tight">NEXCART</h2>
+</div>
+<p class="text-xs text-[#608a6e] max-w-[200px]">Premium entertainment and lifestyle platform. Delivering next-gen tech to your doorstep.</p>
+</div>
+<div class="flex flex-col gap-3 text-sm">
+<h4 class="font-black uppercase tracking-widest text-[10px] text-[#608a6e]">Categories</h4>
+<a class="hover:text-primary" href="#">PlayStation</a>
+<a class="hover:text-primary" href="#">Audio Studio</a>
+<a class="hover:text-primary" href="#">Grocery Hub</a>
+</div>
+<div class="flex flex-col gap-3 text-sm">
+<h4 class="font-black uppercase tracking-widest text-[10px] text-[#608a6e]">Support</h4>
+<a class="hover:text-primary" href="#">Help Center</a>
+<a class="hover:text-primary" href="#">Delivery Areas</a>
+<a class="hover:text-primary" href="#">Returns</a>
+</div>
+<div class="flex flex-col gap-3 text-sm">
+<h4 class="font-black uppercase tracking-widest text-[10px] text-[#608a6e]">Company</h4>
+<a class="hover:text-primary" href="#">About NEXCART</a>
+<a class="hover:text-primary" href="#">Contact Us</a>
+<div class="flex gap-4 mt-2">
+<span class="material-symbols-outlined text-[20px]">hub</span>
+<span class="material-symbols-outlined text-[20px]">share</span>
+</div>
+</div>
+</div>
+<div class="max-w-[1280px] mx-auto mt-12 pt-6 border-t border-[#f0f5f1] dark:border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] text-[#608a6e] font-bold uppercase tracking-widest">
+<p>© 2024 NEXCART GLOBAL. ALL RIGHTS RESERVED.</p>
+<div class="flex gap-6">
+<a href="#">Privacy Policy</a>
+<a href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+</body></html>

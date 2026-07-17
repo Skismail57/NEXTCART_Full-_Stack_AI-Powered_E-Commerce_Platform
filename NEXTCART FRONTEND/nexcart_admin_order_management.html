@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEXCART Admin Order Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1f68f9",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#0f1623",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111318] dark:text-white">
+<div class="flex h-screen overflow-hidden">
+<!-- Sidebar Navigation -->
+<aside class="w-64 flex-shrink-0 bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-800 flex flex-col h-full">
+<div class="p-6">
+<div class="flex items-center gap-3">
+<div class="bg-primary size-10 rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined">shopping_cart</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-[#111318] dark:text-white text-base font-bold leading-normal">NEXCART Admin</h1>
+<p class="text-[#5f6e8c] text-xs font-normal">Premium E-commerce</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-2 overflow-y-auto">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="text-sm font-bold">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="text-sm font-medium">Products</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="text-sm font-medium">Customers</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" href="#">
+<span class="material-symbols-outlined">local_shipping</span>
+<span class="text-sm font-medium">Logistics</span>
+</a>
+<div class="pt-4 pb-2">
+<p class="px-3 text-[10px] font-bold text-gray-400 uppercase tracking-widest">Support</p>
+</div>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" href="#">
+<span class="material-symbols-outlined">help_center</span>
+<span class="text-sm font-medium">Help Center</span>
+</a>
+</nav>
+<div class="p-4 border-t border-gray-200 dark:border-gray-800">
+<div class="flex items-center gap-3 p-2 bg-gray-50 dark:bg-gray-800/50 rounded-xl">
+<div class="size-9 rounded-full bg-cover bg-center" data-alt="Admin user profile avatar" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCby25_KJ4B7GcsUF-GQ3gOW7hN21NOGDumUz2LpQUv3MmYxsXPUvXgsEy4qB4yojBoUxaCLPdFjRLu1BXjSXO8ZVxdqiljKUB4lyuG4BwCca62ThgDOV6INUQR9KjQS2TqfxlwhI9w1Z5xK8vrH1Vd0yssb5Rtn9dfRd1c-qIYQnOoO5_jXsrEF7nj4xSwtkuY4eGlOc78_yN2mGcLMDLXZ6t8RmOfrdDxbUg8GDbns9cnPEUT1LlA-Vw7rkmGVBak55wrHUcjCgrZ')"></div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-bold truncate">James Wilson</p>
+<p class="text-xs text-gray-500 truncate">Store Manager</p>
+</div>
+<span class="material-symbols-outlined text-gray-400 cursor-pointer">logout</span>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col min-w-0 overflow-hidden">
+<!-- Top Navbar -->
+<header class="h-16 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 flex items-center justify-between px-8 z-10">
+<div class="flex items-center gap-6">
+<h2 class="text-lg font-bold tracking-tight">Order Management</h2>
+<div class="hidden md:flex items-center bg-gray-100 dark:bg-gray-800 rounded-lg px-3 py-1.5 w-80">
+<span class="material-symbols-outlined text-gray-400 text-xl">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-full placeholder:text-gray-500" placeholder="Search orders, customers, or SKUs..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 size-2 bg-red-500 rounded-full border-2 border-white dark:border-gray-900"></span>
+</button>
+<div class="h-6 w-[1px] bg-gray-200 dark:bg-gray-700 mx-2"></div>
+<button class="flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-lg text-sm font-bold shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-sm">add</span>
+<span>New Order</span>
+</button>
+</div>
+</header>
+<!-- Page Scrollable Content -->
+<div class="flex-1 overflow-y-auto p-8 space-y-6">
+<!-- Breadcrumbs & Heading -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2 text-sm text-gray-500">
+<a class="hover:text-primary transition-colors" href="#">Dashboard</a>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="text-gray-900 dark:text-gray-300 font-medium">Orders</span>
+</div>
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mt-2">
+<div>
+<h1 class="text-3xl font-black tracking-tight">Platform Transactions</h1>
+<p class="text-gray-500 mt-1">Manage and track all customer orders globally.</p>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-sm font-bold hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+<span class="material-symbols-outlined text-lg">download</span>
+<span>Export CSV</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-sm font-bold hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+<span class="material-symbols-outlined text-lg">filter_list</span>
+<span>Filters</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Stats Overview Row -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="bg-white dark:bg-gray-800 p-5 rounded-xl border border-gray-200 dark:border-gray-700 flex flex-col gap-1">
+<span class="text-xs font-bold text-gray-500 uppercase tracking-wider">Total Orders</span>
+<div class="flex items-end justify-between">
+<span class="text-2xl font-black">12,482</span>
+<span class="text-green-500 text-xs font-bold flex items-center"><span class="material-symbols-outlined text-xs">trending_up</span> 12%</span>
+</div>
+</div>
+<div class="bg-white dark:bg-gray-800 p-5 rounded-xl border border-gray-200 dark:border-gray-700 flex flex-col gap-1">
+<span class="text-xs font-bold text-gray-500 uppercase tracking-wider">Net Revenue</span>
+<div class="flex items-end justify-between">
+<span class="text-2xl font-black">$452,109</span>
+<span class="text-green-500 text-xs font-bold flex items-center"><span class="material-symbols-outlined text-xs">trending_up</span> 8.4%</span>
+</div>
+</div>
+<div class="bg-white dark:bg-gray-800 p-5 rounded-xl border border-gray-200 dark:border-gray-700 flex flex-col gap-1">
+<span class="text-xs font-bold text-gray-500 uppercase tracking-wider">Active Deliveries</span>
+<div class="flex items-end justify-between">
+<span class="text-2xl font-black">243</span>
+<span class="text-primary text-xs font-bold">In transit</span>
+</div>
+</div>
+<div class="bg-white dark:bg-gray-800 p-5 rounded-xl border border-gray-200 dark:border-gray-700 flex flex-col gap-1">
+<span class="text-xs font-bold text-gray-500 uppercase tracking-wider">Returns Rate</span>
+<div class="flex items-end justify-between">
+<span class="text-2xl font-black">1.2%</span>
+<span class="text-red-500 text-xs font-bold flex items-center"><span class="material-symbols-outlined text-xs">trending_down</span> 0.5%</span>
+</div>
+</div>
+</div>
+<!-- Main Interactive Content: Table + Side Info -->
+<div class="flex flex-col lg:flex-row gap-6">
+<!-- Transactions Table -->
+<div class="flex-1 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden">
+<div class="p-5 border-b border-gray-100 dark:border-gray-700 flex items-center justify-between">
+<h3 class="font-bold">Recent Orders</h3>
+<div class="flex gap-2">
+<span class="px-3 py-1 text-xs font-bold rounded-full bg-primary/10 text-primary">All</span>
+<span class="px-3 py-1 text-xs font-bold rounded-full text-gray-500 hover:bg-gray-100 cursor-pointer">Processing</span>
+<span class="px-3 py-1 text-xs font-bold rounded-full text-gray-500 hover:bg-gray-100 cursor-pointer">Shipped</span>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-gray-50 dark:bg-gray-800/50">
+<tr>
+<th class="px-6 py-4 text-xs font-bold text-gray-400 uppercase tracking-wider">Order ID</th>
+<th class="px-6 py-4 text-xs font-bold text-gray-400 uppercase tracking-wider">User</th>
+<th class="px-6 py-4 text-xs font-bold text-gray-400 uppercase tracking-wider">Amount</th>
+<th class="px-6 py-4 text-xs font-bold text-gray-400 uppercase tracking-wider">Date</th>
+<th class="px-6 py-4 text-xs font-bold text-gray-400 uppercase tracking-wider">Status</th>
+<th class="px-6 py-4 text-xs font-bold text-gray-400 uppercase tracking-wider">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-gray-100 dark:divide-gray-700">
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors cursor-pointer group bg-primary/5">
+<td class="px-6 py-4 text-sm font-bold text-primary">#NX-8821</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-cover" data-alt="User avatar for Alex Rivera" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDI84KtfuB9ub1yqxPCVHVxByNWsa_Qv9q1ihreF6gFf85vTGhWVLIowVwIY9UFdNzG1gjIgoYWFyvHkeY6lNSEjAVS35CahqsT1BleyHF6ddI_A1emOxAGeKHB7VsNSgnNMVQ6wWFmUiVPGcaF94SJR47STFymdjLTD58pG7iPNIGaaiy-iftvxG9D1Tsc9S-b-bq6x4XvTQbo2WtX8U7p7vANrci2e64BOOOglL7NltM9gxcsoTVJtTIsv-fiq8VJWEZj8hp5qUVB')"></div>
+<span class="text-sm font-medium">Alex Rivera</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm font-bold">$240.00</td>
+<td class="px-6 py-4 text-sm text-gray-500">Oct 24, 2023</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 rounded-lg text-[10px] font-black uppercase tracking-wider bg-primary/20 text-primary">Shipped</span>
+</td>
+<td class="px-6 py-4 text-sm font-bold text-gray-400 group-hover:text-primary">Details</td>
+</tr>
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors cursor-pointer group">
+<td class="px-6 py-4 text-sm font-bold text-gray-900 dark:text-gray-300">#NX-8822</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-cover" data-alt="User avatar for Sarah Chen" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCs82KgQUSPTnbLgVNFudAHOmYMTJswWSDJnGXn5geZs974jfvwtOvIeWkXbp5NjI6TrxOYkuJ72C_UImm4SLaHSdrqx19JqXMLmPrORgnDZjskKxT6GaLhB0z5b8jLK03ut-YHruYpgSvs8iZ6baH5jIETr-RkS_1I66hvdzMsWdDXPRfzTJQZLYcAP_hFUq_1_PIVvVTV6yKadZqLErBghcO62t9VF6Cs8oadZbN8y_18qkw1Kw8hu8TqOHum_6y23FMkB8GR4J9f')"></div>
+<span class="text-sm font-medium">Sarah Chen</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm font-bold">$1,150.00</td>
+<td class="px-6 py-4 text-sm text-gray-500">Oct 24, 2023</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 rounded-lg text-[10px] font-black uppercase tracking-wider bg-yellow-100 text-yellow-700">Paid</span>
+</td>
+<td class="px-6 py-4 text-sm font-bold text-gray-400 group-hover:text-primary">Details</td>
+</tr>
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors cursor-pointer group">
+<td class="px-6 py-4 text-sm font-bold text-gray-900 dark:text-gray-300">#NX-8823</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-cover" data-alt="User avatar for Marcus Vane" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC5o0dKNUXyDCryv6ahzsrBgduplWTjgNZw41b9Zcuait0oOchGtH6rboBWlFfAoOZZH5aPp4VTV3uKMFlUUyYo3dZfm7s1MW2Mpdow8EJssDRrLWLJ3eZHTgqXVcAzKYuQuCs4ITu8J6YLCei8lWKWq0tPEjrHhHDjMSmH8xVWGQkaC9sU5vOYZzxj9djJLAMKcXkJC-ckIgU5aEpO2OZyuHyfZK8O6EVPq8JVWsAsKqQZEE7ZjulI6f-kyBB3wS28r2oXobCTKg4z')"></div>
+<span class="text-sm font-medium">Marcus Vane</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm font-bold">$89.99</td>
+<td class="px-6 py-4 text-sm text-gray-500">Oct 23, 2023</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 rounded-lg text-[10px] font-black uppercase tracking-wider bg-gray-100 text-gray-600">Placed</span>
+</td>
+<td class="px-6 py-4 text-sm font-bold text-gray-400 group-hover:text-primary">Details</td>
+</tr>
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors cursor-pointer group">
+<td class="px-6 py-4 text-sm font-bold text-gray-900 dark:text-gray-300">#NX-8824</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-cover" data-alt="User avatar for Elena Rossi" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB8q_J00VZhdMm51FnMyw4viHHKFyJSubT6xX-BhymCV2YNrPmL_HNlFVsS0wmSw6I_7NV2jKK6GEHyem-DEwP0eDWtEEFH2J7Mp5Pp_M6Dgf0HhqTa0WsusSjlWpk4TKgXtbmBDfZahbeMYRuPN6hNlpor3V0o580gso94OUBxi2RME67aJpS4IfS7dojdLwrANLUQmOkL_vqcwoT_vgrDi-h_UcdrJNrrdgKjnog8jmolCZonMDopzutQGsdI1h0yuW8vcSBRa6bY')"></div>
+<span class="text-sm font-medium">Elena Rossi</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm font-bold">$450.50</td>
+<td class="px-6 py-4 text-sm text-gray-500">Oct 23, 2023</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 rounded-lg text-[10px] font-black uppercase tracking-wider bg-green-100 text-green-700">Delivered</span>
+</td>
+<td class="px-6 py-4 text-sm font-bold text-gray-400 group-hover:text-primary">Details</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Order Detail Panel -->
+<div class="w-full lg:w-96 space-y-6">
+<!-- Selected Order Header & Actions -->
+<div class="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 flex flex-col gap-6">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-xs font-bold text-gray-400 uppercase tracking-widest">Selected Order</p>
+<h3 class="text-xl font-black">#NX-8821</h3>
+</div>
+<button class="text-red-500 text-xs font-bold bg-red-50 px-3 py-1 rounded-lg hover:bg-red-100 transition-colors">Refund</button>
+</div>
+<!-- Action Toolbar -->
+<div class="flex gap-2">
+<button class="flex-1 flex items-center justify-center gap-2 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 py-2.5 rounded-lg text-sm font-bold transition-colors">
+<span class="material-symbols-outlined text-lg">picture_as_pdf</span>
+<span>PDF</span>
+</button>
+<button class="flex-1 flex items-center justify-center gap-2 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 py-2.5 rounded-lg text-sm font-bold transition-colors">
+<span class="material-symbols-outlined text-lg">print</span>
+<span>Print</span>
+</button>
+</div>
+<!-- Stepper Status -->
+<div class="space-y-6 pt-2">
+<div class="relative flex flex-col gap-6">
+<!-- Placed -->
+<div class="flex items-center gap-4 relative z-10">
+<div class="size-8 rounded-full bg-primary flex items-center justify-center text-white ring-4 ring-primary/10">
+<span class="material-symbols-outlined text-sm">check</span>
+</div>
+<div>
+<p class="text-xs font-bold uppercase tracking-wider">Placed</p>
+<p class="text-[10px] text-gray-500">Oct 24, 09:12 AM</p>
+</div>
+</div>
+<!-- Vertical line 1 -->
+<div class="absolute left-4 top-8 w-[2px] h-6 bg-primary"></div>
+<!-- Paid -->
+<div class="flex items-center gap-4 relative z-10">
+<div class="size-8 rounded-full bg-primary flex items-center justify-center text-white ring-4 ring-primary/10">
+<span class="material-symbols-outlined text-sm">check</span>
+</div>
+<div>
+<p class="text-xs font-bold uppercase tracking-wider">Paid</p>
+<p class="text-[10px] text-gray-500">Oct 24, 09:15 AM</p>
+</div>
+</div>
+<!-- Vertical line 2 -->
+<div class="absolute left-4 top-[72px] w-[2px] h-6 bg-primary"></div>
+<!-- Shipped -->
+<div class="flex items-center gap-4 relative z-10">
+<div class="size-8 rounded-full bg-primary flex items-center justify-center text-white ring-4 ring-primary/10 animate-pulse">
+<span class="material-symbols-outlined text-sm">local_shipping</span>
+</div>
+<div>
+<p class="text-xs font-bold uppercase tracking-wider text-primary">Shipped</p>
+<p class="text-[10px] text-gray-500">In transit (Est. Oct 26)</p>
+</div>
+</div>
+<!-- Vertical line 3 -->
+<div class="absolute left-4 top-[136px] w-[2px] h-6 bg-gray-200"></div>
+<!-- Delivered -->
+<div class="flex items-center gap-4 relative z-10">
+<div class="size-8 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-gray-400">
+<span class="material-symbols-outlined text-sm">home</span>
+</div>
+<div>
+<p class="text-xs font-bold uppercase tracking-wider text-gray-400">Delivered</p>
+<p class="text-[10px] text-gray-500">Pending</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Live Tracking Map Placeholder -->
+<div class="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden">
+<div class="p-4 border-b border-gray-100 dark:border-gray-700 flex items-center justify-between">
+<h4 class="text-sm font-bold">Delivery Route</h4>
+<span class="material-symbols-outlined text-gray-400 cursor-pointer text-lg">fullscreen</span>
+</div>
+<div class="relative h-48 bg-gray-200 dark:bg-gray-700 overflow-hidden">
+<!-- Mock Map UI -->
+<div class="absolute inset-0 bg-cover bg-center opacity-70 grayscale" data-alt="Stylized map showing logistics route" data-location="Chicago, USA" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBBavRgwrduUr-B1DhHxTpJaiHh1JlN3cOPJCn2wjiPTnekRx3Syo25DDxcpD1mmJxP2rQHAchMfa7_FI4igqPFR7epsCTxghQKANlgKduv8cJsfzZ9Nc23ZMZGEj05b7k3TBJwz1JYTypaxSzO5PInQUlF4aWGE3p5tZE7-QE6IPEpk1kkUrYUQyiuCV8snxdo8MPsVvK3CyLAUzIoyaJNEz4SuswjbbHGsVWGuSlOo5f_z3_YICLV4S32YF8M_IKrSY7KyUDFCLNR')"></div>
+<!-- Path Visualization (CSS Gradient Path) -->
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="relative w-40 h-24 border-t-2 border-r-2 border-dashed border-primary rounded-tr-3xl">
+<div class="absolute -left-1 -top-1 size-3 bg-primary rounded-full ring-4 ring-primary/20"></div>
+<div class="absolute -right-1 -bottom-1 size-3 bg-red-500 rounded-full ring-4 ring-red-500/20"></div>
+</div>
+</div>
+<!-- Map Pins Floating Labels -->
+<div class="absolute top-8 left-8 bg-white/90 dark:bg-gray-900/90 px-2 py-1 rounded text-[9px] font-bold shadow-sm">WH-Chicago A</div>
+<div class="absolute bottom-8 right-8 bg-white/90 dark:bg-gray-900/90 px-2 py-1 rounded text-[9px] font-bold shadow-sm">Customer Residence</div>
+</div>
+<div class="p-4 bg-gray-50 dark:bg-gray-800/80 flex items-center gap-3">
+<div class="size-8 rounded-lg bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-lg">location_on</span>
+</div>
+<div class="flex-1">
+<p class="text-[10px] text-gray-500 uppercase font-bold tracking-wider">Destination</p>
+<p class="text-xs font-bold truncate">210 Baker St, Chicago, IL 60611</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

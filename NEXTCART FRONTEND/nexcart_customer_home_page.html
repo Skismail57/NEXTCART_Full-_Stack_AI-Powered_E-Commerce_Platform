@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEXCART | Premium E-commerce Experience</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1f68f9",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#0f1623",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased font-display">
+<!-- Promotional Ribbon -->
+<div class="w-full bg-primary py-2 text-center">
+<p class="text-white text-sm font-medium">Free shipping on all premium orders over $100. <span class="underline ml-2 cursor-pointer">Details</span></p>
+</div>
+<!-- Sticky Navigation -->
+<header class="sticky top-0 z-50 w-full bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+<nav class="max-w-[1440px] mx-auto px-6 h-20 flex items-center justify-between gap-8">
+<!-- Logo -->
+<div class="flex items-center gap-2">
+<div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-icons-outlined">shopping_bag</span>
+</div>
+<span class="text-2xl font-bold tracking-tight">NEX<span class="text-primary">CART</span></span>
+</div>
+<!-- Search Bar -->
+<div class="flex-1 max-w-2xl relative">
+<span class="material-icons-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+<input class="w-full pl-12 pr-4 py-3 bg-slate-100 dark:bg-slate-800 border-none rounded-xl focus:ring-2 focus:ring-primary transition-all outline-none" placeholder="Search premium products..." type="text"/>
+</div>
+<!-- Nav Actions -->
+<div class="flex items-center gap-6">
+<button class="flex items-center gap-2 font-medium hover:text-primary transition-colors">
+<span class="material-icons-outlined">explore</span>
+<span>Browse</span>
+</button>
+<button class="relative p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-all">
+<span class="material-icons-outlined">shopping_cart</span>
+<span class="absolute top-0 right-0 w-5 h-5 bg-primary text-white text-[10px] flex items-center justify-center rounded-full font-bold">2</span>
+</button>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-slate-200 dark:border-slate-700 cursor-pointer">
+<img alt="Profile" class="w-full h-full object-cover" data-alt="Close up portrait of a smiling man" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgtNcaj_zp3HCPk7RPUrrEf0YTGOYKjRhoL1t3RAdIXHn9tOFHFs18txE_lUnSNy-XfDlbrUGr8Cd8HFiIT9n9727Rg153oCQ1It7UqRujIKvPpuHgAVhffR7DruIhIFi6zzHb9mkMuOOGreF7LsF1fAXE9Waikmu_z7oDZZa-RGiw8JN1q5G8YURAD2kjnPA8ESbkfntatRwoxzyYylmbjC40q1T_QOEfh-gOt3G55GnEH7YSSofEhkvijz6BvHkNwYR1HGAdRKfz"/>
+</div>
+</div>
+</nav>
+</header>
+<main class="max-w-[1440px] mx-auto px-6 py-8 space-y-16">
+<!-- Hero Section -->
+<section class="relative w-full h-[500px] rounded-xl overflow-hidden group">
+<img alt="Hero Lifestyle" class="absolute inset-0 w-full h-full object-cover" data-alt="Minimalist modern interior with premium fashion items" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFUc4tprxt46d4uu0hFpjdfzpbR2jydziK-lvygCgdPhp3GVUa4tKSqv2bbhonoMsrGkAxnlNGqvE73SR1RtbmFo3sL9JRBNousiiIa7k4_pSOl4nRuBSrFvA_QIL_DGEIiHFYkj_3T_XbtYVeJbYx2pnQ6EEIwrZDqo_kkK9BLyq6lSTTEO-yGJBd2-OJruXVjeazRl7Fb5X_Uw3eEJmowhF7Jmg7kNLl6drBJ40IkoNjmIIH2PPa-J2mQvt974e8KHSxdsuJchds"/>
+<div class="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent flex flex-col justify-center px-16">
+<span class="text-primary font-bold tracking-widest uppercase mb-4">New Collection 2024</span>
+<h1 class="text-6xl font-bold text-white mb-6 leading-tight max-w-2xl">Elevate Your<br/>Lifestyle Selection</h1>
+<p class="text-slate-200 text-xl mb-8 max-w-lg leading-relaxed">Experience the intersection of luxury and utility with our curated premium essentials.</p>
+<div class="flex gap-4">
+<button class="px-8 py-4 bg-primary text-white rounded-lg font-bold hover:bg-blue-700 transition-all shadow-lg shadow-primary/20">Shop Collection</button>
+<button class="px-8 py-4 bg-white/10 backdrop-blur-md text-white border border-white/20 rounded-lg font-bold hover:bg-white/20 transition-all">View Lookbook</button>
+</div>
+</div>
+</section>
+<!-- Categories Section -->
+<section class="space-y-8">
+<div class="flex justify-between items-end">
+<div>
+<h2 class="text-3xl font-bold">Shop by Category</h2>
+<p class="text-slate-500 dark:text-slate-400 mt-2">Explore our wide range of premium products</p>
+</div>
+<button class="text-primary font-bold flex items-center gap-1 hover:underline">
+                    View All Categories <span class="material-icons-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-5 gap-6">
+<!-- Category Item -->
+<div class="group cursor-pointer text-center space-y-4">
+<div class="aspect-square bg-white dark:bg-slate-800 rounded-2xl flex items-center justify-center shadow-sm border border-slate-100 dark:border-slate-800 group-hover:border-primary group-hover:shadow-xl group-hover:shadow-primary/5 transition-all">
+<span class="material-icons-outlined text-4xl text-slate-700 dark:text-slate-300 group-hover:text-primary transition-colors">devices</span>
+</div>
+<p class="font-bold">Electronics</p>
+</div>
+<div class="group cursor-pointer text-center space-y-4">
+<div class="aspect-square bg-white dark:bg-slate-800 rounded-2xl flex items-center justify-center shadow-sm border border-slate-100 dark:border-slate-800 group-hover:border-primary group-hover:shadow-xl group-hover:shadow-primary/5 transition-all">
+<span class="material-icons-outlined text-4xl text-slate-700 dark:text-slate-300 group-hover:text-primary transition-colors">checkroom</span>
+</div>
+<p class="font-bold">Fashion</p>
+</div>
+<div class="group cursor-pointer text-center space-y-4">
+<div class="aspect-square bg-white dark:bg-slate-800 rounded-2xl flex items-center justify-center shadow-sm border border-slate-100 dark:border-slate-800 group-hover:border-primary group-hover:shadow-xl group-hover:shadow-primary/5 transition-all">
+<span class="material-icons-outlined text-4xl text-slate-700 dark:text-slate-300 group-hover:text-primary transition-colors">laptop_mac</span>
+</div>
+<p class="font-bold">Home Office</p>
+</div>
+<div class="group cursor-pointer text-center space-y-4">
+<div class="aspect-square bg-white dark:bg-slate-800 rounded-2xl flex items-center justify-center shadow-sm border border-slate-100 dark:border-slate-800 group-hover:border-primary group-hover:shadow-xl group-hover:shadow-primary/5 transition-all">
+<span class="material-icons-outlined text-4xl text-slate-700 dark:text-slate-300 group-hover:text-primary transition-colors">face</span>
+</div>
+<p class="font-bold">Beauty</p>
+</div>
+<div class="group cursor-pointer text-center space-y-4">
+<div class="aspect-square bg-white dark:bg-slate-800 rounded-2xl flex items-center justify-center shadow-sm border border-slate-100 dark:border-slate-800 group-hover:border-primary group-hover:shadow-xl group-hover:shadow-primary/5 transition-all">
+<span class="material-icons-outlined text-4xl text-slate-700 dark:text-slate-300 group-hover:text-primary transition-colors">watch</span>
+</div>
+<p class="font-bold">Accessories</p>
+</div>
+</div>
+</section>
+<!-- Featured Products Grid -->
+<section class="space-y-8">
+<div class="flex justify-between items-end">
+<div>
+<h2 class="text-3xl font-bold">Featured Arrivals</h2>
+<p class="text-slate-500 dark:text-slate-400 mt-2">The latest and greatest from NEXCART</p>
+</div>
+<div class="flex gap-2">
+<button class="p-2 border border-slate-200 dark:border-slate-800 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<span class="material-icons-outlined">chevron_left</span>
+</button>
+<button class="p-2 border border-slate-200 dark:border-slate-800 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<span class="material-icons-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-4 gap-8">
+<!-- Product Card 1 -->
+<div class="group bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-slate-100 dark:border-slate-800">
+<div class="relative aspect-[4/5] overflow-hidden">
+<img alt="Headphones" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="High-end wireless noise-cancelling headphones on white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0xDbqNugesz-ef3-23sr1LX8mwsz3SoJ1wv9TUOWJMim9EknIzpkUDKeRRNTa89E7JuPiH6GLqJEtIHWVeIY5fK5y-I4i82ybmhB0tcu0_5SRIkrZu8UvrFbneDJ8RfY_Lf4nhCjIbV0NSfPvi_3rbaPL2zxYbUMtVEnLZFYVjiG_m3dnBx_njTLBHQ7mu2AK8rtp5LZxPnY9XoZuvpaINPSCWw434O5OrJsWHZh-0MbuyOyr75pIcNTeSbcVo5IfW4S9UglyNdoB"/>
+<button class="absolute top-4 right-4 p-2 bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm rounded-full text-slate-400 hover:text-red-500 transition-colors">
+<span class="material-icons-outlined">favorite_border</span>
+</button>
+</div>
+<div class="p-5 space-y-4">
+<div>
+<div class="flex items-center gap-1 text-yellow-400 mb-1">
+<span class="material-icons text-sm">star</span>
+<span class="material-icons text-sm">star</span>
+<span class="material-icons text-sm">star</span>
+<span class="material-icons text-sm">star</span>
+<span class="material-icons text-sm">star_half</span>
+<span class="text-slate-400 text-xs ml-1">(124)</span>
+</div>
+<h3 class="font-bold text-lg group-hover:text-primary transition-colors">Acoustic Pro Headphones</h3>
+<p class="text-slate-500 text-sm dark:text-slate-400">Noise Cancelling Wireless</p>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-2xl font-bold text-primary">$299.00</span>
+<button class="p-3 bg-primary/10 text-primary rounded-lg hover:bg-primary hover:text-white transition-all">
+<span class="material-icons-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-slate-100 dark:border-slate-800">
+<div class="relative aspect-[4/5] overflow-hidden">
+<img alt="Watch" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Luxury minimalist gold wrist watch on plain background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA67tLpQkBJSy-m4ADTAk7p3rszI2DxfuLXx68yEP6VjM1poRN0c48R9VX8vGebXJrcnKuSHevoDV0BG6k8KYmOVla6BQXt7C9FoaxwVPV4BAGyZFAJvjO5eNnFG8q2Q8GHomaj5YJX2ggqQxbVF56yjfDWz5I15pKvyVb_qrG6pk7qwmWSivlMB2IvLRSqLegHvFHZTyp8jNEMfSAKfMTkXpK764bPhhMnG3i3ta8lUuNbj3I3eXmVyRQaBUFywwA_xtInlEmBTrEf"/>
+<button class="absolute top-4 right-4 p-2 bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm rounded-full text-slate-400 hover:text-red-500 transition-colors">
+<span class="material-icons-outlined">favorite_border</span>
+</button>
+</div>
+<div class="p-5 space-y-4">
+<div>
+<div class="flex items-center gap-1 text-yellow-400 mb-1">
+<span class="material-icons text-sm">star</span>
+<span class="material-icons text-sm">star</span>
+<span class="material-icons text-sm">star</span>
+<span class="material-icons text-sm">star</span>
+<span class="material-icons text-sm">star</span>
+<span class="text-slate-400 text-xs ml-1">(89)</span>
+</div>
+<h3 class="font-bold text-lg group-hover:text-primary transition-colors">Chronos Gold Series</h3>
+<p class="text-slate-500 text-sm dark:text-slate-400">Limited Edition Timepiece</p>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-2xl font-bold text-primary">$450.00</span>
+<button class="p-3 bg-primary/10 text-primary rounded-lg hover:bg-primary hover:text-white transition-all">
+<span class="material-icons-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-slate-100 dark:border-slate-800">
+<div class="relative aspect-[4/5] overflow-hidden">
+<img alt="Backpack" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Urban waterproof tech backpack in charcoal grey" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVxLX2VADrF5Uw4tA5tQeZd4LGCc6FVBElf1t9vCBBsLKCL0vxEoZ0fqsKZpytU_Vub6rBe7gKrh2sXgYD5C1EcNk2cJ6JS8Ul22T98MV2lep-AFzPApHZoE-fiLLZopM1wXzKchY1_GfCtSEmwDSeRS6ooqHxhonqU8u-2Fyv-vGavh4QYURf5pj_zqXHQ3fxdhY6oJElj5o7QSVrx_zdrEb4xKuJI1ffnDsc_CUjJd3aDCWASaoeVfmBndUTA45anALhL1UQudoR"/>
+<button class="absolute top-4 right-4 p-2 bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm rounded-full text-slate-400 hover:text-red-500 transition-colors">
+<span class="material-icons-outlined">favorite_border</span>
+</button>
+</div>
+<div class="p-5 space-y-4">
+<div>
+<div class="flex items-center gap-1 text-yellow-400 mb-1">
+<span class="material-icons text-sm">star</span>
+<span class="material-icons text-sm">star</span>
+<span class="material-icons text-sm">star</span>
+<span class="material-icons text-sm">star</span>
+<span class="material-icons text-sm text-slate-200">star</span>
+<span class="text-slate-400 text-xs ml-1">(210)</span>
+</div>
+<h3 class="font-bold text-lg group-hover:text-primary transition-colors">Nomad Tech Pack</h3>
+<p class="text-slate-500 text-sm dark:text-slate-400">Waterproof Urban Utility</p>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-2xl font-bold text-primary">$180.00</span>
+<button class="p-3 bg-primary/10 text-primary rounded-lg hover:bg-primary hover:text-white transition-all">
+<span class="material-icons-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-slate-100 dark:border-slate-800">
+<div class="relative aspect-[4/5] overflow-hidden">
+<img alt="Camera" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Compact vintage style digital camera on wooden table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMOkT0SCuBpE9mV3n0C3vtOWRFyn_so0VKEivivXtFltgdQYGMq_rWIXBZLZmClwNNxRWu6A3VnTTdZ-eSaw9h5RjrF8FSU7uJnpFlZrrRVvdH2YoeDoWSYP5lzIgOoMb1dTOqUBlJWDnepm7K-3LoYb2rJwTNucQGz2AIjLITh8bh4rhv4vDE7DQNRC0xcQofbPpXhwuDGldFLYQvm7XzdB1szD7_rvEzDmHva3B9YBPjZy_FZ-LQ-S3YfXQFI_FT9QyppYhOtUI4"/>
+<button class="absolute top-4 right-4 p-2 bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm rounded-full text-slate-400 hover:text-red-500 transition-colors">
+<span class="material-icons-outlined">favorite_border</span>
+</button>
+</div>
+<div class="p-5 space-y-4">
+<div>
+<div class="flex items-center gap-1 text-yellow-400 mb-1">
+<span class="material-icons text-sm">star</span>
+<span class="material-icons text-sm">star</span>
+<span class="material-icons text-sm">star</span>
+<span class="material-icons text-sm">star</span>
+<span class="material-icons text-sm">star</span>
+<span class="text-slate-400 text-xs ml-1">(56)</span>
+</div>
+<h3 class="font-bold text-lg group-hover:text-primary transition-colors">Lumina X-1 Camera</h3>
+<p class="text-slate-500 text-sm dark:text-slate-400">Mirrorless Compact 4K</p>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-2xl font-bold text-primary">$1,299.00</span>
+<button class="p-3 bg-primary/10 text-primary rounded-lg hover:bg-primary hover:text-white transition-all">
+<span class="material-icons-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter Section -->
+<section class="bg-slate-900 rounded-2xl p-16 text-center text-white relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-primary/10 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2"></div>
+<div class="relative z-10 max-w-2xl mx-auto space-y-6">
+<h2 class="text-4xl font-bold tracking-tight">Stay in the Loop</h2>
+<p class="text-slate-400 text-lg">Join our newsletter to receive updates on new collections, exclusive offers, and premium insights.</p>
+<div class="flex gap-4 max-w-md mx-auto">
+<input class="flex-1 bg-white/10 border-white/20 rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary outline-none text-white" placeholder="Your email address" type="email"/>
+<button class="bg-primary hover:bg-blue-600 px-6 py-3 rounded-lg font-bold transition-all">Subscribe</button>
+</div>
+<p class="text-slate-500 text-xs">By subscribing, you agree to our Terms of Service and Privacy Policy.</p>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-white dark:bg-background-dark border-t border-slate-200 dark:border-slate-800 mt-20 pt-16 pb-8">
+<div class="max-w-[1440px] mx-auto px-6 grid grid-cols-4 gap-12 mb-16">
+<div class="space-y-6">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-icons-outlined text-sm">shopping_bag</span>
+</div>
+<span class="text-xl font-bold tracking-tight">NEX<span class="text-primary">CART</span></span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 leading-relaxed">
+                    Premium unified e-commerce platform delivering exceptional shopping experiences worldwide.
+                </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 hover:text-primary transition-colors" href="#">
+<span class="material-icons-outlined">facebook</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 hover:text-primary transition-colors" href="#">
+<span class="material-icons-outlined">camera_alt</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 hover:text-primary transition-colors" href="#">
+<span class="material-icons-outlined">alternate_email</span>
+</a>
+</div>
+</div>
+<div class="space-y-6">
+<h4 class="font-bold uppercase tracking-widest text-sm">Quick Links</h4>
+<ul class="space-y-4 text-slate-500 dark:text-slate-400">
+<li><a class="hover:text-primary transition-colors" href="#">New Arrivals</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Best Sellers</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Gift Cards</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Sale Items</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h4 class="font-bold uppercase tracking-widest text-sm">Support</h4>
+<ul class="space-y-4 text-slate-500 dark:text-slate-400">
+<li><a class="hover:text-primary transition-colors" href="#">Shipping Policy</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Returns &amp; Exchanges</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">FAQ</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Contact Us</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h4 class="font-bold uppercase tracking-widest text-sm">Legal</h4>
+<ul class="space-y-4 text-slate-500 dark:text-slate-400">
+<li><a class="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Cookie Policy</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Compliance</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-[1440px] mx-auto px-6 pt-8 border-t border-slate-200 dark:border-slate-800 flex justify-between text-slate-400 text-sm">
+<p>© 2024 NEXCART Inc. All rights reserved.</p>
+<div class="flex gap-6">
+<span class="cursor-pointer hover:text-slate-600">English (US)</span>
+<span class="cursor-pointer hover:text-slate-600">USD</span>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,10 @@
+CREATE TABLE IF NOT EXISTS daily_analytics (
+    analytics_id INT PRIMARY KEY AUTO_INCREMENT,
+    date DATE NOT NULL UNIQUE,
+    total_revenue DECIMAL(15, 2) NOT NULL,
+    total_orders INT NOT NULL,
+    total_items_sold INT NOT NULL,
+    average_order_value DECIMAL(15, 2) NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

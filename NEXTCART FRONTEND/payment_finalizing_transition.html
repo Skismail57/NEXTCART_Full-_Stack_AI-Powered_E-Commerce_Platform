@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Payment Finalizing Transition</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0d59f2",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        @keyframes spin-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .animate-spin-slow {
+            animation: spin-slow 2s linear infinite;
+        }
+        .glow-effect {
+            box-shadow: 0 0 20px 2px rgba(13, 89, 242, 0.4);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-white overflow-hidden">
+<!-- Main Container (Mobile Viewport) -->
+<div class="relative flex h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden">
+<!-- TopAppBar / Status Bar Space -->
+<div class="flex items-center bg-transparent p-4 pb-2 justify-end h-12">
+<!-- iOS Status Bar Elements would go here -->
+</div>
+<!-- Discreet Top Progress Bar -->
+<div class="px-6 pt-2">
+<div class="h-1 w-full bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 78%;"></div>
+</div>
+</div>
+<!-- Central Loading State -->
+<div class="flex-1 flex flex-col items-center justify-center px-8 text-center">
+<!-- Branded Spinner Wrapper -->
+<div class="relative flex items-center justify-center mb-12">
+<!-- Outer Glowing Ring -->
+<div class="absolute w-48 h-48 rounded-full border-2 border-primary/20"></div>
+<!-- Rotating Fragment Ring -->
+<div class="absolute w-48 h-48 rounded-full border-t-2 border-primary animate-spin-slow glow-effect"></div>
+<!-- Static NEXCART Branded Core -->
+<div class="relative w-32 h-32 bg-background-dark border border-white/10 rounded-full flex items-center justify-center shadow-2xl">
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-primary text-5xl mb-1" data-icon="lock">lock</span>
+<span class="text-[10px] font-bold tracking-[0.2em] text-white/60 uppercase">Nexcart</span>
+</div>
+</div>
+</div>
+<!-- Transaction Status -->
+<div class="space-y-3">
+<div class="flex items-center justify-center gap-2">
+<p class="text-white text-lg font-medium tracking-wide">Securing your transaction...</p>
+</div>
+<p class="text-white/40 text-sm font-normal leading-relaxed max-w-[240px] mx-auto">
+                    Encrypting payment data and validating with your bank
+                </p>
+</div>
+</div>
+<!-- Bottom Security Branding -->
+<div class="pb-12 px-6">
+<div class="flex flex-col items-center gap-6">
+<!-- Progress Indicator from components -->
+<div class="w-full flex flex-col gap-3">
+<div class="flex gap-6 justify-between items-end">
+<p class="text-white/30 text-[10px] font-semibold uppercase tracking-[0.2em]">Processing Layer</p>
+<p class="text-primary text-[10px] font-bold">78%</p>
+</div>
+<div class="rounded-full bg-white/5 h-1.5 overflow-hidden">
+<div class="h-full rounded-full bg-primary" style="width: 78%;"></div>
+</div>
+</div>
+<!-- Meta Text Footer -->
+<div class="flex items-center gap-2 text-white/20">
+<span class="material-symbols-outlined text-sm" data-icon="verified_user">verified_user</span>
+<p class="text-[11px] font-medium tracking-wider uppercase">NEXCART Secure Payment Gateway</p>
+</div>
+</div>
+</div>
+<!-- Decorative background elements -->
+<div class="fixed top-0 left-0 w-full h-full pointer-events-none overflow-hidden -z-10">
+<div class="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] bg-primary/5 rounded-full blur-[100px]"></div>
+<div class="absolute -bottom-[10%] -right-[10%] w-[50%] h-[50%] bg-primary/10 rounded-full blur-[120px]"></div>
+</div>
+</div>
+</body></html>

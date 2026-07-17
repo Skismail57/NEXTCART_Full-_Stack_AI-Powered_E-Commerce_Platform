@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEXCART Flash Sale Manager</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#06a8f9",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#0f1c23",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #e2e8f0;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#111618] min-h-screen">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 bg-white dark:bg-[#1a2a33] border-b border-[#f0f3f5] dark:border-[#2a3a43] px-6 lg:px-10 py-3 flex items-center justify-between whitespace-nowrap">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-6">
+<svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z"></path>
+</svg>
+</div>
+<h2 class="text-[#111618] dark:text-white text-xl font-black leading-tight tracking-tight">NEXCART</h2>
+</div>
+<div class="hidden md:flex items-center gap-6">
+<a class="text-[#111618] dark:text-gray-300 text-sm font-medium hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="text-[#111618] dark:text-gray-300 text-sm font-medium hover:text-primary transition-colors border-b-2 border-primary pb-1" href="#">Marketing</a>
+<a class="text-[#111618] dark:text-gray-300 text-sm font-medium hover:text-primary transition-colors" href="#">Inventory</a>
+<a class="text-[#111618] dark:text-gray-300 text-sm font-medium hover:text-primary transition-colors" href="#">Analytics</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<label class="hidden sm:flex flex-col min-w-40 h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-[#5f7d8c] flex bg-[#f0f3f5] dark:bg-[#2a3a43] items-center justify-center pl-4 rounded-l-lg">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 border-none bg-[#f0f3f5] dark:bg-[#2a3a43] text-[#111618] dark:text-white focus:ring-0 h-full placeholder:text-[#5f7d8c] px-4 rounded-r-lg text-sm" placeholder="Search events..."/>
+</div>
+</label>
+<button class="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg text-sm font-bold transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">rocket_launch</span>
+<span>Launch Campaign</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary/20" data-alt="User profile avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCL8W05SHFfDrCD1wptSD5hvMDl0FHr9qm-Qu_yTVJOOGZS2FE7mMi6yJRROGTfwg6GmCN7DFeR7U291XKjmXusKJuCdbwcRbUEnTlaQ8Sipi_ErXEEi6hlR15U6WhZ_STrPXKyuiFmc-UE8watxzI4cAiPoEMNxS2O8QEqKqtaZw52eDb9-iIDLg_m1TaM13lMRiVGbOJXo6iuI_PGFRw9YZKs-CFIIfrG-p4shhJQRC3lbUas1DpaogspLAQaMsYvU20sqgSa0RU8");'></div>
+</div>
+</header>
+<div class="flex h-[calc(100vh-64px)] overflow-hidden">
+<!-- Left Sidebar: Inventory Selection -->
+<aside class="w-80 bg-white dark:bg-[#1a2a33] border-r border-[#f0f3f5] dark:border-[#2a3a43] flex flex-col">
+<div class="p-6">
+<h3 class="text-lg font-bold text-[#111618] dark:text-white mb-1">Select Products</h3>
+<p class="text-sm text-[#5f7d8c]">Pick items for flash sale</p>
+<div class="mt-4 flex gap-2">
+<div class="flex-1 bg-[#f0f3f5] dark:bg-[#2a3a43] px-3 py-2 rounded-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-gray-400 text-lg">search</span>
+<input class="bg-transparent border-none text-xs w-full focus:ring-0 p-0 text-[#111618] dark:text-white" placeholder="Search inventory..." type="text"/>
+</div>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto custom-scrollbar px-4 pb-6">
+<div class="space-y-2">
+<!-- Inventory Item 1 -->
+<div class="flex items-center gap-3 p-3 rounded-xl border border-transparent hover:border-primary/30 hover:bg-primary/5 transition-all cursor-pointer group">
+<div class="relative size-14 rounded-lg bg-gray-100 flex-shrink-0 bg-center bg-cover border border-gray-100" data-alt="High-end headphones thumbnail" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD6Yy8y5DGeBHgmor9EU3PhedMZ-BSCijPv8ZKx1k3vvoE0HHsHDoFGeA8XV1vPK98ejQx0yNCp2d0ZrYxXqKwKiJJMygmNp9c2AZHG_1NquW0EVLdDm6hcu5A9HS4mtCvUxmsvF5--qo8dwGD16wRHwAwj4N1KWzB_vGfEfrbJCs1X1SqY3VJGxfZjmXSWZhUuZ9qU68KhLuCsHruLsTJ9i76jp9hxa9ikOXCKIcUxmOrgCl0xp0Tnswsks6dulK_UtCr0C350zsuG');"></div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-semibold text-[#111618] dark:text-white truncate">Sony WH-1000XM5</p>
+<p class="text-xs text-[#5f7d8c]">Stock: 142 units</p>
+<p class="text-xs font-bold text-primary mt-0.5">$349.00</p>
+</div>
+<input checked="" class="rounded text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+</div>
+<!-- Inventory Item 2 -->
+<div class="flex items-center gap-3 p-3 rounded-xl border border-transparent hover:border-primary/30 hover:bg-primary/5 transition-all cursor-pointer group">
+<div class="relative size-14 rounded-lg bg-gray-100 flex-shrink-0 bg-center bg-cover border border-gray-100" data-alt="Smart watch thumbnail" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCnfjcxPISWN2rN23Bp3nZ3qsr84VWKdZqmkv59HI-kL-ZuIVeIriCpKQxxUJOD5VBpu2Y0AD8SNtxe5qywu1L90uWy4KLuhGkKrI-ggLVMtrM20NHhietaCC_MzI8qppAGHYLpBiHYQQGGTjtaHdhwfggF-uY2HPE85Ihrc9h2fCqAq2NmJvxvkBab_lPJ045o1Plfemu7SacrK8D-wk7nLgeT2fnlFJM-8Zcz4SLyYTNi8HUzeTEKfmuJmzz18HXox23XNZrtenyv');"></div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-semibold text-[#111618] dark:text-white truncate">Apple Watch Ultra 2</p>
+<p class="text-xs text-[#5f7d8c]">Stock: 48 units</p>
+<p class="text-xs font-bold text-primary mt-0.5">$799.00</p>
+</div>
+<input class="rounded text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+</div>
+<!-- Inventory Item 3 -->
+<div class="flex items-center gap-3 p-3 rounded-xl border border-transparent hover:border-primary/30 hover:bg-primary/5 transition-all cursor-pointer group bg-primary/5 border-primary/20">
+<div class="relative size-14 rounded-lg bg-gray-100 flex-shrink-0 bg-center bg-cover border border-gray-100" data-alt="Gaming mouse thumbnail" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuABEm0Jar7JvxlxlEA7PCkdQbQWFhYrVtWLwI9YcmUUuG1-7EGJpLNphyjMwnga0I1OEa2LHvY8lPDXTrmsPpTWsQwCUI_5YSOCpe0nxy_SOFYgI7thxC7JDlOmwm1zTCVJznwnkRRf1I-sXBU_AsYGnS_oB-p4hHxu9P8u6tHi-LpgJuCc6y0GZNgwzvQENa6kRw89QGRG_q7R07PIzGXbQoA_pVcGt61Rj0A2RA3mCE-XCjG_nasze08jtW9sVEjZQpwV8lw29ayE');"></div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-semibold text-[#111618] dark:text-white truncate">Logitech G Pro X Superlight</p>
+<p class="text-xs text-[#5f7d8c]">Stock: 230 units</p>
+<p class="text-xs font-bold text-primary mt-0.5">$129.00</p>
+</div>
+<input checked="" class="rounded text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+</div>
+<!-- Inventory Item 4 -->
+<div class="flex items-center gap-3 p-3 rounded-xl border border-transparent hover:border-primary/30 hover:bg-primary/5 transition-all cursor-pointer group">
+<div class="relative size-14 rounded-lg bg-gray-100 flex-shrink-0 bg-center bg-cover border border-gray-100" data-alt="Mechanical keyboard thumbnail" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBKgGVYRa-f5SzQtyAXrrEw66bqEBaGlRrFt7DGY_J3LVHnfb2-YAjvjS9AP89wIT3KMZ-ephmFqY2vaEEFjsgWyUv_TMGg2CERwtUpcUxQOdf4_OPtxpujdx0iWOSjRPEFntNI-f2pti8y6E68HO2wbj0IqoRE89HRmDAqS3mu-XkVsmr09psKggEcJArUA7wycU7C0btIDSp8eVOpxfop_MFsq9KpGWMrH36mwewPU6QjBGSwY3hcb1-SIcKv4YXwdlXlVSEdkAXR');"></div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-semibold text-[#111618] dark:text-white truncate">Keychron Q1 Pro</p>
+<p class="text-xs text-[#5f7d8c]">Stock: 15 units</p>
+<p class="text-xs font-bold text-primary mt-0.5">$199.00</p>
+</div>
+<input class="rounded text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+</div>
+</div>
+</div>
+<div class="p-4 border-t border-[#f0f3f5] dark:border-[#2a3a43]">
+<button class="w-full py-2 bg-[#f0f3f5] dark:bg-[#2a3a43] text-[#111618] dark:text-white rounded-lg text-sm font-medium hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                    Load More Items
+                </button>
+</div>
+</aside>
+<!-- Main Workspace -->
+<main class="flex-1 bg-background-light dark:bg-background-dark overflow-y-auto custom-scrollbar">
+<!-- Workspace Header: Calendar Schedule -->
+<div class="p-8 pb-0">
+<div class="bg-white dark:bg-[#1a2a33] rounded-2xl p-6 border border-[#f0f3f5] dark:border-[#2a3a43] shadow-sm">
+<div class="flex items-center justify-between mb-6">
+<div>
+<h1 class="text-3xl font-black text-[#111618] dark:text-white leading-tight">Flash Sale Manager</h1>
+<p class="text-[#5f7d8c]">Configure urgency and scheduling for maximum conversion.</p>
+</div>
+<div class="flex items-center gap-3 bg-[#f0f3f5] dark:bg-[#2a3a43] p-1 rounded-xl">
+<button class="px-4 py-2 bg-white dark:bg-[#1a2a33] shadow-sm rounded-lg text-xs font-bold text-primary">Scheduler</button>
+<button class="px-4 py-2 text-xs font-medium text-[#5f7d8c]">Configurator</button>
+<button class="px-4 py-2 text-xs font-medium text-[#5f7d8c]">Recurrence</button>
+</div>
+</div>
+<div class="grid grid-cols-7 gap-4">
+<div class="flex flex-col gap-2 opacity-50">
+<span class="text-[11px] font-bold text-center uppercase tracking-wider text-[#5f7d8c]">Mon 14</span>
+<div class="h-24 rounded-xl border-2 border-dashed border-gray-100 dark:border-gray-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-gray-300">block</span>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<span class="text-[11px] font-bold text-center uppercase tracking-wider text-primary">Tue 15</span>
+<div class="h-24 rounded-xl bg-primary/10 border-2 border-primary border-dashed flex flex-col items-center justify-center group cursor-pointer hover:bg-primary/20 transition-all">
+<span class="material-symbols-outlined text-primary mb-1">add_circle</span>
+<span class="text-[10px] font-bold text-primary">SCHEDULE</span>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<span class="text-[11px] font-bold text-center uppercase tracking-wider text-[#5f7d8c]">Wed 16</span>
+<div class="h-24 rounded-xl bg-white dark:bg-[#111c23] border border-[#f0f3f5] dark:border-[#2a3a43] p-3 shadow-sm">
+<div class="w-full h-1 bg-orange-400 rounded-full mb-2"></div>
+<p class="text-[10px] font-bold truncate">Tech Surge</p>
+<p class="text-[9px] text-[#5f7d8c]">14:00 - 16:00</p>
+<div class="mt-2 flex -space-x-2">
+<div class="size-4 rounded-full bg-gray-200 border border-white" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDOUX-EjByT_iF6ADwmUAiuDGLixLTBbG1AAnEfn480o8tK1OkjVBVhbQTnYKDkIL5wPbG9xRHsBK5AzjZfBtMPTYqgp6IfRdaD4xgyc5n9vZAwxc4NNCyP34itMynfwk3yPUhkFWkfMsq9_mUG44etm0Na8QHE8-mOprBKzlCAvALpzhNi7wr5Dbvar6r_akf1DwxYXJhtz8Q2z_QR7DFc5y0gZEr8X-dYYYESKpzZUvLdOE-U4zUulCxONOXZBzAodBIDWRo1drgW'); background-size: cover;"></div>
+<div class="size-4 rounded-full bg-gray-300 border border-white" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB0TL958RHgYClu_zH9lgzorft3s9W4itKNzyEBFhlynIKsm7KjRwN3CgOXH00bO8HV0XghFQhCXl6bQD9bCyWu8RkyxkfmuTcaGfE6G6kIzwyCvjcqm-g-qncmFb9-fopwt478mIzlRr8E3cAVXjXRbrDYkThghDK-OadUD4SbtxUgAPbxMbE987JC9Hvvlo-maYrTqfMajdLAFMasLBA0CxKYsPEjL48DHD7Gg4sW8r4LnOaXMHCYwMKcFswQc0tT-Au0pdhYBjjq'); background-size: cover;"></div>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<span class="text-[11px] font-bold text-center uppercase tracking-wider text-[#5f7d8c]">Thu 17</span>
+<div class="h-24 rounded-xl bg-primary/5 border border-primary/20 p-3 shadow-sm relative overflow-hidden">
+<div class="absolute top-0 right-0 p-1">
+<span class="material-symbols-outlined text-[12px] text-primary">star</span>
+</div>
+<div class="w-full h-1 bg-primary rounded-full mb-2"></div>
+<p class="text-[10px] font-bold truncate">Flash Frenzy</p>
+<p class="text-[9px] text-[#5f7d8c]">10:00 - 12:00</p>
+<div class="mt-2 flex -space-x-2">
+<div class="size-4 rounded-full bg-blue-200 border border-white" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAKt91eciJhzKFYsP5BXJqIjdpr7krwOEKkf6NAXeBro7Fs3bjE3_9ZpFSkqYbDVMDVDSXNBlJakJ-urmMeWsDn9NavuMqkLgqmjCltuZvXLy-BcrCRbkrYzGgIFUlc_2xdp3rKBoK7rj998jREHJPu4YLueKXPmPzRkLTLeG0RE1oDDqKle5vh12ycf79jMbHSL9GjYPDTs24SpHZ3e9PbLp41g1IiTKSOal9yV6JERx94AHCyoW4lvXBcoAu-5fOHWEfi1-r2XBna'); background-size: cover;"></div>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<span class="text-[11px] font-bold text-center uppercase tracking-wider text-[#5f7d8c]">Fri 18</span>
+<div class="h-24 rounded-xl border border-gray-100 dark:border-gray-800"></div>
+</div>
+<div class="flex flex-col gap-2">
+<span class="text-[11px] font-bold text-center uppercase tracking-wider text-[#5f7d8c]">Sat 19</span>
+<div class="h-24 rounded-xl border border-gray-100 dark:border-gray-800"></div>
+</div>
+<div class="flex flex-col gap-2">
+<span class="text-[11px] font-bold text-center uppercase tracking-wider text-[#5f7d8c]">Sun 20</span>
+<div class="h-24 rounded-xl border border-gray-100 dark:border-gray-800"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="p-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
+<!-- Sale Configuration -->
+<div class="space-y-6">
+<div class="bg-white dark:bg-[#1a2a33] rounded-2xl p-6 border border-[#f0f3f5] dark:border-[#2a3a43] shadow-sm">
+<h3 class="text-lg font-bold text-[#111618] dark:text-white mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">settings_suggest</span>
+                            Campaign Configuration
+                        </h3>
+<div class="space-y-4">
+<div>
+<label class="text-sm font-semibold text-[#111618] dark:text-white mb-2 block">Discount Percentage</label>
+<div class="flex items-center gap-4">
+<input class="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-lg appearance-none cursor-pointer accent-primary" max="90" min="5" type="range" value="45"/>
+<span class="text-2xl font-black text-primary">45%</span>
+</div>
+<p class="text-[11px] text-[#5f7d8c] mt-1">Recommended: 30% - 50% for high conversion.</p>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="text-sm font-semibold text-[#111618] dark:text-white mb-2 block">Flash Quantity</label>
+<div class="flex items-center border border-[#f0f3f5] dark:border-[#2a3a43] rounded-lg overflow-hidden">
+<input class="w-full border-none bg-transparent focus:ring-0 text-sm py-2 px-3 dark:text-white" type="number" value="100"/>
+<span class="bg-[#f0f3f5] dark:bg-[#2a3a43] px-3 py-2 text-xs font-bold text-[#5f7d8c]">units</span>
+</div>
+</div>
+<div>
+<label class="text-sm font-semibold text-[#111618] dark:text-white mb-2 block">Purchase Limit</label>
+<div class="flex items-center border border-[#f0f3f5] dark:border-[#2a3a43] rounded-lg overflow-hidden">
+<input class="w-full border-none bg-transparent focus:ring-0 text-sm py-2 px-3 dark:text-white" type="number" value="2"/>
+<span class="bg-[#f0f3f5] dark:bg-[#2a3a43] px-3 py-2 text-xs font-bold text-[#5f7d8c]">per user</span>
+</div>
+</div>
+</div>
+<div>
+<label class="text-sm font-semibold text-[#111618] dark:text-white mb-2 block">Urgency Triggers</label>
+<div class="flex flex-wrap gap-2">
+<button class="px-3 py-1.5 rounded-full border border-primary bg-primary/5 text-xs font-bold text-primary">Countdown Timer</button>
+<button class="px-3 py-1.5 rounded-full border border-[#f0f3f5] dark:border-[#2a3a43] text-xs font-medium text-[#5f7d8c]">"Only X Left" Label</button>
+<button class="px-3 py-1.5 rounded-full border border-[#f0f3f5] dark:border-[#2a3a43] text-xs font-medium text-[#5f7d8c]">People Watching</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Selected Items Summary -->
+<div class="bg-white dark:bg-[#1a2a33] rounded-2xl p-6 border border-[#f0f3f5] dark:border-[#2a3a43] shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-sm font-bold text-[#111618] dark:text-white">Selected (2)</h3>
+<button class="text-xs text-primary font-bold">Clear All</button>
+</div>
+<div class="space-y-3">
+<div class="flex items-center justify-between p-2 rounded-lg bg-background-light dark:bg-[#111c23]">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded bg-gray-200 bg-center bg-cover" data-alt="Sony headphones thumbnail" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB6Qrw3GO-SdhX1Wu1U0OOFaui4OGmX6bGvTELnmckBeqkA1eJ72Qq-Z7pSMkYqcCFEpvTF3VLQTYW3DLX0-t1dPzyia2fv1LAvdUNOLIxQ4JfODQpXKe2T0Vdjrhk6Wdy5vg9-nInqjbVyWqBz0qxxx1H2guOO11hm6_cace2wBChMeSBr_L5BIypo9r6qRupVMkVCM5bYVfcrG4A_rUiNlC7CHATiIMA5NCnfYcx1W8DYYBbqoswxQt_ivW8Yx0RjWT0p1lNfSbm3');"></div>
+<p class="text-xs font-medium dark:text-white">Sony WH-1000XM5</p>
+</div>
+<div class="text-right">
+<p class="text-xs font-bold text-primary">$191.95</p>
+<p class="text-[10px] text-gray-400 line-through">$349.00</p>
+</div>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg bg-background-light dark:bg-[#111c23]">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded bg-gray-200 bg-center bg-cover" data-alt="Gaming mouse thumbnail" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDwJxVpkpg40Cb2NKLlMaTygw5r5LMSWQe-QVLl9EY0pmDb-Cw9HE-nxYH3qgGj-a1QYg-vh5ODPeOAjQuN9bxtmEz5CcpfohAIzJ3SkfKUaCUuFtHG1n1LvvLQ3aWB378ndSnOkv_mT68jCMDk08aFB86WVH438RQIAsfRAE6TGeLBvdi9itM9CuC8pOkC06H6LzlbVp4r9u9rlRcCvKZMEWN_f7CU7iBnTjjUtA_cgvLXUiaPY9GUANI8NSbFvakUMFcWAA350i3C');"></div>
+<p class="text-xs font-medium dark:text-white">Logitech G Pro X</p>
+</div>
+<div class="text-right">
+<p class="text-xs font-bold text-primary">$70.95</p>
+<p class="text-[10px] text-gray-400 line-through">$129.00</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Urgency Preview (The Live Look) -->
+<div class="space-y-6">
+<div class="bg-white dark:bg-[#1a2a33] rounded-2xl border border-[#f0f3f5] dark:border-[#2a3a43] shadow-xl overflow-hidden">
+<div class="bg-primary/10 border-b border-primary/20 px-6 py-3 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="size-2 rounded-full bg-red-500 animate-pulse"></span>
+<span class="text-xs font-black text-primary uppercase tracking-widest">Urgency Preview</span>
+</div>
+<span class="text-[10px] font-bold text-[#5f7d8c]">Live rendering on customer app</span>
+</div>
+<div class="p-8">
+<div class="max-w-[280px] mx-auto bg-white dark:bg-[#111c23] rounded-2xl border border-gray-100 dark:border-gray-800 shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-500">
+<div class="relative aspect-square bg-gray-50 dark:bg-gray-900 bg-center bg-cover" data-alt="Flash sale product main image" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBI6Q_P4VQbEsTnnr1yVyeXBrOwEROJiLpBOwIiLo1vBOPEvJkA7dOWCSuPYicbLzjgSHkqwiXecmysCkJZheOIUmd5nofr9-SSRSrzdcEuqkNCxsEa47JMth1IYPcYi06y4O6K8uICNGIc_TvBNGVDcibtDmly21456khPIRQy5jy24CSpr-3f-I_ql_QvNldF2114DMZ8PKzAyxdV2QH-B0UVEB3ncV8kPYFvf6PqDjTaGPmUR0GQml6r_1UWebxoZPKvkx2D6DzF');">
+<div class="absolute top-3 left-3 bg-red-600 text-white text-[10px] font-black px-2 py-1 rounded shadow-lg uppercase italic">
+                                        Flash Deal -45%
+                                    </div>
+<div class="absolute bottom-3 right-3 bg-white/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold text-gray-800 flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[14px]">visibility</span>
+                                        124 watching
+                                    </div>
+</div>
+<div class="p-5">
+<p class="text-[10px] font-bold text-primary uppercase mb-1 tracking-tight">Tech &amp; Electronics</p>
+<h4 class="text-sm font-bold text-[#111618] dark:text-white mb-2 leading-snug">Sony WH-1000XM5 Premium Noise Canceling</h4>
+<div class="flex items-baseline gap-2 mb-4">
+<span class="text-xl font-black text-[#111618] dark:text-white">$191.95</span>
+<span class="text-xs text-gray-400 line-through">$349.00</span>
+</div>
+<div class="space-y-3">
+<div class="bg-red-50 dark:bg-red-900/20 border border-red-100 dark:border-red-800 p-2 rounded-lg flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-[9px] font-bold text-red-600 uppercase">Ends In</span>
+<span class="text-xs font-black text-red-600 font-mono">01:42:09</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-[9px] font-bold text-red-600 uppercase">Left</span>
+<span class="text-xs font-black text-red-600">12/100</span>
+</div>
+</div>
+<div class="w-full bg-gray-100 dark:bg-gray-800 h-1.5 rounded-full overflow-hidden">
+<div class="bg-red-500 h-full w-[88%]" style="box-shadow: 0 0 10px rgba(239, 68, 68, 0.4)"></div>
+</div>
+<button class="w-full py-3 bg-primary text-white rounded-xl text-xs font-black uppercase tracking-widest shadow-lg shadow-primary/20">
+                                            Claim Offer Now
+                                        </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Deal Strength Meter -->
+<div class="bg-white dark:bg-[#1a2a33] rounded-2xl p-6 border border-[#f0f3f5] dark:border-[#2a3a43] shadow-sm">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold text-[#5f7d8c]">DEAL STRENGTH</span>
+<span class="text-xs font-bold text-green-500">EXCELLENT</span>
+</div>
+<div class="flex gap-1 h-2">
+<div class="flex-1 bg-green-500 rounded-l-full"></div>
+<div class="flex-1 bg-green-500"></div>
+<div class="flex-1 bg-green-500"></div>
+<div class="flex-1 bg-green-500"></div>
+<div class="flex-1 bg-gray-200 dark:bg-gray-800 rounded-r-full"></div>
+</div>
+<p class="text-[11px] text-[#5f7d8c] mt-3">This configuration is 84% more likely to sell out within 2 hours compared to your last campaign.</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Right Sidebar: Analytics -->
+<aside class="w-80 bg-white dark:bg-[#1a2a33] border-l border-[#f0f3f5] dark:border-[#2a3a43] flex flex-col">
+<div class="p-6 border-b border-[#f0f3f5] dark:border-[#2a3a43]">
+<h3 class="text-lg font-bold text-[#111618] dark:text-white mb-1 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">insights</span>
+                    Event Forecast
+                </h3>
+<p class="text-sm text-[#5f7d8c]">Real-time predictive data</p>
+</div>
+<div class="flex-1 overflow-y-auto custom-scrollbar p-6 space-y-8">
+<!-- Stat Card 1 -->
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="text-xs font-bold text-[#5f7d8c] uppercase">Projected Revenue</span>
+<span class="text-[10px] font-bold text-green-500">+12% vs last</span>
+</div>
+<div class="text-3xl font-black text-[#111618] dark:text-white mb-2">$18.4k</div>
+<div class="h-16 flex items-end gap-1">
+<div class="flex-1 bg-primary/20 h-[40%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary/20 h-[55%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary/20 h-[35%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary/20 h-[70%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary/20 h-[60%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary/20 h-[85%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary h-[95%] rounded-t-sm"></div>
+</div>
+</div>
+<!-- Stat Card 2 -->
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="text-xs font-bold text-[#5f7d8c] uppercase">Expected Traffic</span>
+<span class="text-[10px] font-bold text-blue-500">+3.4k users</span>
+</div>
+<div class="text-3xl font-black text-[#111618] dark:text-white mb-2">12,500</div>
+<div class="flex flex-col gap-3">
+<div class="space-y-1">
+<div class="flex justify-between text-[10px] font-bold text-[#5f7d8c]">
+<span>Organic Reach</span>
+<span>65%</span>
+</div>
+<div class="w-full bg-gray-100 dark:bg-gray-800 h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[65%]"></div>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between text-[10px] font-bold text-[#5f7d8c]">
+<span>Push Notifications</span>
+<span>35%</span>
+</div>
+<div class="w-full bg-gray-100 dark:bg-gray-800 h-1.5 rounded-full overflow-hidden">
+<div class="bg-orange-400 h-full w-[35%]"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Past Insights -->
+<div class="bg-background-light dark:bg-[#111c23] p-4 rounded-xl border border-[#f0f3f5] dark:border-[#2a3a43]">
+<h4 class="text-xs font-black text-[#111618] dark:text-white uppercase mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">history</span>
+                        Smart Benchmark
+                    </h4>
+<p class="text-[11px] text-[#5f7d8c] leading-relaxed">
+                        Last month, similar items with <span class="text-primary font-bold">45% discount</span> saw a <span class="font-bold text-[#111618] dark:text-white">92% sell-through rate</span> within 45 minutes of launch.
+                    </p>
+<div class="mt-4 pt-4 border-t border-[#f0f3f5] dark:border-[#2a3a43]">
+<button class="w-full text-center text-xs font-bold text-primary py-1">View Full History</button>
+</div>
+</div>
+</div>
+<!-- Footer Action Sidebar -->
+<div class="p-6 border-t border-[#f0f3f5] dark:border-[#2a3a43]">
+<div class="bg-gray-50 dark:bg-[#111c23] rounded-xl p-4 mb-4">
+<div class="flex justify-between text-xs font-bold mb-2">
+<span class="text-[#5f7d8c]">Marketing Fee (3%)</span>
+<span class="text-[#111618] dark:text-white">$552.00</span>
+</div>
+<div class="flex justify-between text-sm font-black">
+<span class="text-[#111618] dark:text-white">Est. Net Profit</span>
+<span class="text-primary">$17,848.00</span>
+</div>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-white py-4 rounded-xl font-black uppercase tracking-widest transition-all shadow-lg shadow-primary/30 flex items-center justify-center gap-3">
+<span class="material-symbols-outlined">send</span>
+                    Go Live Now
+                </button>
+</div>
+</aside>
+</div>
+</body></html>

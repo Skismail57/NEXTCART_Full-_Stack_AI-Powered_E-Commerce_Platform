@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEXCART | Admin Fraud Review Hub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f42547",
+                        "background-light": "#f8f5f6",
+                        "background-dark": "#0d0d0d",
+                        "panel-dark": "#181112",
+                        "border-dark": "#39282b",
+                        "text-muted": "#ba9ca1"
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .glass {
+            background: rgba(24, 17, 18, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(84, 59, 63, 0.3);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #39282b;
+            border-radius: 10px;
+        }
+        .neon-shadow {
+            box-shadow: 0 0 15px rgba(244, 37, 71, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-white selection:bg-primary/30">
+<div class="flex h-screen overflow-hidden">
+<!-- Side Navigation -->
+<aside class="w-64 border-r border-border-dark bg-panel-dark flex flex-col justify-between p-4">
+<div class="flex flex-col gap-8">
+<div class="flex items-center gap-3 px-2">
+<div class="bg-primary size-8 rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-white">shield_with_heart</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-white text-base font-bold leading-none">NEXCART</h1>
+<p class="text-text-muted text-xs font-medium uppercase tracking-widest mt-1">Security Div.</p>
+</div>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-white/5 transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">grid_view</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary text-white neon-shadow transition-all" href="#">
+<span class="material-symbols-outlined text-[20px] fill-1">gpp_maybe</span>
+<span class="text-sm font-medium">Fraud Review</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-white/5 transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">person_off</span>
+<span class="text-sm font-medium">Blacklist</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-white/5 transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">receipt_long</span>
+<span class="text-sm font-medium">Orders</span>
+</a>
+<div class="h-px bg-border-dark my-4"></div>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-white/5 transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+</nav>
+</div>
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3 p-2 bg-white/5 rounded-lg">
+<div class="size-8 rounded-full bg-cover bg-center" data-alt="Admin user profile avatar" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA8qWawsnXMQ5clExDij5SvGWXLl7bOZQCD26dozYMjjv9fNmFaNJYS_VvIbieIxc-hqNhuZOzDL-zhqB1dOWbFflZ5-y3Fc4k0z1juEka0r_sg_jJJTobdarCzTK8uhFS33I97CnPGlCWwbJWDILlBYL-Q5rQpkgY69WZedRAJoaOaLnvWrJW8ZBPu55RHQ3__sLsZIDrxSWG5GX1QuPC6BMDtc4SN4pXb6E9RrpqJYZEw8AaeDZst6y3iLcCrYKdCZnw8dY85wcTK')"></div>
+<div class="flex-1 overflow-hidden">
+<p class="text-xs font-bold text-white truncate">Marcus Thorne</p>
+<p class="text-[10px] text-text-muted uppercase">Senior Analyst</p>
+</div>
+</div>
+<button class="w-full py-2 bg-white/5 text-text-muted text-xs font-bold rounded-lg border border-border-dark hover:border-primary/50 transition-all uppercase tracking-tighter">
+                    System Active
+                </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col overflow-hidden bg-background-dark">
+<!-- Top Navbar -->
+<header class="h-16 border-b border-border-dark flex items-center justify-between px-8 bg-panel-dark/50 backdrop-blur-md">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-muted text-[20px]">search</span>
+<input class="w-full bg-border-dark/50 border-none rounded-lg py-2 pl-10 pr-4 text-sm text-white focus:ring-1 focus:ring-primary placeholder:text-text-muted/50" placeholder="Search suspicious transactions, IPs or User IDs..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4 text-text-muted text-sm font-medium">
+<a class="hover:text-white" href="#">Reports</a>
+<a class="hover:text-white" href="#">Audit Log</a>
+</div>
+<div class="h-6 w-px bg-border-dark"></div>
+<div class="flex items-center gap-3">
+<button class="p-2 rounded-lg bg-border-dark text-text-muted hover:text-white transition-colors relative">
+<span class="material-symbols-outlined text-[22px]">notifications</span>
+<span class="absolute top-2 right-2.5 size-2 bg-primary rounded-full border-2 border-panel-dark"></span>
+</button>
+</div>
+</div>
+</header>
+<!-- Workspace -->
+<div class="flex-1 flex overflow-hidden">
+<!-- Flagged List (Master) -->
+<div class="w-80 border-r border-border-dark flex flex-col bg-panel-dark/20">
+<div class="p-4 border-b border-border-dark flex items-center justify-between">
+<h2 class="text-xs font-bold uppercase tracking-widest text-text-muted">High Risk Queue</h2>
+<span class="bg-primary/20 text-primary text-[10px] font-bold px-2 py-0.5 rounded-full">12 Alerts</span>
+</div>
+<div class="flex-1 overflow-y-auto custom-scrollbar">
+<!-- Queue Items -->
+<div class="p-4 border-b border-border-dark bg-primary/5 border-l-4 border-l-primary cursor-pointer">
+<div class="flex justify-between items-start mb-1">
+<span class="text-[10px] font-mono text-primary font-bold">ORD-9921</span>
+<span class="text-[10px] text-text-muted">2m ago</span>
+</div>
+<p class="text-sm font-bold text-white mb-2">John Doe</p>
+<div class="flex items-center gap-2">
+<span class="text-xs text-text-muted">$1,240.00</span>
+<span class="px-2 py-0.5 rounded bg-border-dark text-[10px] text-white font-bold">Score 98</span>
+</div>
+</div>
+<div class="p-4 border-b border-border-dark hover:bg-white/5 cursor-pointer transition-colors">
+<div class="flex justify-between items-start mb-1">
+<span class="text-[10px] font-mono text-text-muted font-bold">ORD-8812</span>
+<span class="text-[10px] text-text-muted">15m ago</span>
+</div>
+<p class="text-sm font-bold text-white mb-2">Sarah Smith</p>
+<div class="flex items-center gap-2">
+<span class="text-xs text-text-muted">$450.00</span>
+<span class="px-2 py-0.5 rounded bg-border-dark text-[10px] text-text-muted font-bold">Score 85</span>
+</div>
+</div>
+<div class="p-4 border-b border-border-dark hover:bg-white/5 cursor-pointer transition-colors">
+<div class="flex justify-between items-start mb-1">
+<span class="text-[10px] font-mono text-text-muted font-bold">ORD-7721</span>
+<span class="text-[10px] text-text-muted">42m ago</span>
+</div>
+<p class="text-sm font-bold text-white mb-2">Alex Ross</p>
+<div class="flex items-center gap-2">
+<span class="text-xs text-text-muted">$2,100.00</span>
+<span class="px-2 py-0.5 rounded bg-border-dark text-[10px] text-text-muted font-bold">Score 82</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Forensic Detail (Detail) -->
+<div class="flex-1 overflow-y-auto p-8 bg-[#0a0a0a] custom-scrollbar">
+<div class="max-w-5xl mx-auto space-y-8">
+<!-- Page Title & Risk Banner -->
+<div class="flex justify-between items-end">
+<div>
+<div class="flex items-center gap-3 mb-2">
+<h1 class="text-3xl font-black tracking-tight">Reviewing Case #9921</h1>
+<span class="px-3 py-1 bg-primary text-white text-xs font-black rounded-lg uppercase tracking-tighter neon-shadow">Critical Threat</span>
+</div>
+<p class="text-text-muted">Transaction ID: <span class="text-white font-mono">TXN_9921_X0449_B</span> | Flagged at 2023-11-24 14:22:01 UTC</p>
+</div>
+<div class="flex gap-2">
+<button class="px-4 py-2 border border-border-dark rounded-lg text-sm font-bold hover:bg-white/5">Export Forensic Report</button>
+<button class="px-4 py-2 bg-white/5 border border-border-dark rounded-lg text-sm font-bold hover:border-white transition-colors">Mark as False Positive</button>
+</div>
+</div>
+<!-- Top Grid: Fraud Indicators -->
+<div class="grid grid-cols-3 gap-6">
+<div class="glass p-6 rounded-xl relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-primary"></div>
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary">warning</span>
+<h3 class="text-sm font-bold uppercase tracking-widest text-text-muted">Risk Reason</h3>
+</div>
+<p class="text-xl font-bold text-white mb-2">IMEI Reused</p>
+<p class="text-sm text-text-muted leading-relaxed">This device ID has been linked to 14 separate accounts in the last 48 hours.</p>
+</div>
+<div class="glass p-6 rounded-xl relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-amber-500"></div>
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-amber-500">location_on</span>
+<h3 class="text-sm font-bold uppercase tracking-widest text-text-muted">Geo Mismatch</h3>
+</div>
+<p class="text-xl font-bold text-white mb-2">IP: Lagos, NG</p>
+<p class="text-sm text-text-muted leading-relaxed">Shipping Address is in New York, US. 12,000km discrepancy detected.</p>
+</div>
+<div class="glass p-6 rounded-xl relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-primary"></div>
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary">vpn_lock</span>
+<h3 class="text-sm font-bold uppercase tracking-widest text-text-muted">Network Risk</h3>
+</div>
+<p class="text-xl font-bold text-white mb-2">Proxy Detected</p>
+<p class="text-sm text-text-muted leading-relaxed">User is routing through a known residential proxy network (BrightData).</p>
+</div>
+</div>
+<!-- Main Grid: Technical Details -->
+<div class="grid grid-cols-2 gap-8">
+<!-- User DNA -->
+<div class="space-y-4">
+<h2 class="text-lg font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-text-muted">fingerprint</span>
+                                    User Transaction DNA
+                                </h2>
+<div class="border border-border-dark rounded-xl overflow-hidden bg-panel-dark/30">
+<table class="w-full text-sm">
+<thead>
+<tr class="bg-border-dark/50 text-text-muted text-[10px] uppercase font-bold tracking-widest">
+<th class="px-4 py-3 text-left">Date</th>
+<th class="px-4 py-3 text-left">Order</th>
+<th class="px-4 py-3 text-left">Status</th>
+<th class="px-4 py-3 text-right">Value</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-dark">
+<tr>
+<td class="px-4 py-4 text-text-muted">2023-11-22</td>
+<td class="px-4 py-4 font-mono">ORD-9801</td>
+<td class="px-4 py-4"><span class="text-red-400">Blocked</span></td>
+<td class="px-4 py-4 text-right">$840.00</td>
+</tr>
+<tr>
+<td class="px-4 py-4 text-text-muted">2023-11-20</td>
+<td class="px-4 py-4 font-mono">ORD-9122</td>
+<td class="px-4 py-4"><span class="text-green-400">Delivered</span></td>
+<td class="px-4 py-4 text-right">$12.50</td>
+</tr>
+<tr>
+<td class="px-4 py-4 text-text-muted">2023-11-18</td>
+<td class="px-4 py-4 font-mono">ORD-9011</td>
+<td class="px-4 py-4"><span class="text-text-muted">Refunded</span></td>
+<td class="px-4 py-4 text-right">$112.00</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Hardware Fingerprint -->
+<div class="space-y-4">
+<h2 class="text-lg font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-text-muted">devices</span>
+                                    Device Fingerprinting
+                                </h2>
+<div class="glass rounded-xl p-6 grid grid-cols-2 gap-y-6 gap-x-4">
+<div>
+<p class="text-[10px] uppercase font-bold text-text-muted tracking-widest mb-1">IMEI Number</p>
+<p class="font-mono text-sm text-white">3542 0908 1122 344</p>
+</div>
+<div>
+<p class="text-[10px] uppercase font-bold text-text-muted tracking-widest mb-1">OS / Browser</p>
+<p class="text-sm text-white">iOS 17.1 (Safari)</p>
+</div>
+<div>
+<p class="text-[10px] uppercase font-bold text-text-muted tracking-widest mb-1">Canvas Hash</p>
+<p class="font-mono text-[10px] text-white break-all">f29e1c4b7d301019a2e8c...</p>
+</div>
+<div>
+<p class="text-[10px] uppercase font-bold text-text-muted tracking-widest mb-1">Battery Level</p>
+<p class="text-sm text-white">100% (Plugged In)</p>
+</div>
+<div class="col-span-2 p-3 bg-red-500/10 border border-primary/20 rounded-lg flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">security_update_warning</span>
+<p class="text-[11px] text-white">Suspicious behavior: Device reported as "Emulated Environment" by hardware agent.</p>
+</div>
+</div>
+</div>
+<!-- Map Visualization -->
+<div class="col-span-2 space-y-4">
+<h2 class="text-lg font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-text-muted">map</span>
+                                    Network Topology
+                                </h2>
+<div class="h-64 rounded-xl border border-border-dark bg-cover bg-center overflow-hidden relative" data-alt="World map showing network hops from Lagos to New York" data-location="Lagos, Nigeria" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuANF_V-5t_d-jZBrUfTPukgM56_NT7Lf_BRQnnIrDXl4lkb3SSUCEwaVeHVTs9tYwr5QjQnS810D5Sijk6QUH7IYx-2KIJSBcBg20YhqYtIkwWAWLiYpObBqDWssfm0wYQwdVlBQ2z0uZh0oeSzNt-lwqtZda8CKZxwCuhc6ZmUgFJ4lM4v-Emy7bPV5rbCM3Cq5lh9TEUZTLZaafHDb-WhV66AnZrtVHyiVdupymCWMRhFunocN_DJKnXQpYFQfJxNebNte56pIuDP')">
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4 flex gap-4">
+<div class="bg-panel-dark/80 px-3 py-2 rounded border border-border-dark flex items-center gap-2">
+<span class="size-2 bg-primary rounded-full animate-pulse"></span>
+<span class="text-xs font-mono">Origin: 102.89.2.14</span>
+</div>
+<div class="bg-panel-dark/80 px-3 py-2 rounded border border-border-dark flex items-center gap-2">
+<span class="size-2 bg-green-400 rounded-full"></span>
+<span class="text-xs font-mono">Target: 4.23.111.90</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Sidebar -->
+<div class="w-72 border-l border-border-dark bg-panel-dark p-6 flex flex-col gap-8">
+<div class="space-y-4">
+<h2 class="text-xs font-bold uppercase tracking-widest text-text-muted">Decision Center</h2>
+<div class="p-4 rounded-xl bg-white/5 border border-border-dark">
+<label class="block text-[10px] font-bold text-text-muted uppercase mb-2">Resolution Status</label>
+<select class="w-full bg-border-dark border-none rounded-lg text-sm focus:ring-1 focus:ring-primary">
+<option>Awaiting Forensic Evidence</option>
+<option>Confirmed Fraud</option>
+<option>Merchant Error</option>
+<option>Identity Verified</option>
+</select>
+</div>
+<div class="space-y-3">
+<button class="w-full py-4 bg-primary text-white font-black rounded-xl neon-shadow hover:bg-primary/90 transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px] fill-1">block</span>
+                                PERMANENT BLOCK
+                            </button>
+<button class="w-full py-3 bg-white/5 border border-primary/40 text-primary text-xs font-bold rounded-xl hover:bg-primary/10 transition-all uppercase">
+                                Blacklist Device IMEI
+                            </button>
+<button class="w-full py-3 bg-white/5 border border-border-dark text-white text-xs font-bold rounded-xl hover:bg-white/10 transition-all uppercase">
+                                Approve Order
+                            </button>
+</div>
+</div>
+<div class="space-y-4">
+<h2 class="text-xs font-bold uppercase tracking-widest text-text-muted">Internal Notes</h2>
+<textarea class="w-full h-32 bg-border-dark/30 border border-border-dark rounded-xl text-sm p-3 focus:ring-1 focus:ring-primary placeholder:text-text-muted/30" placeholder="Add forensic notes here..."></textarea>
+<button class="w-full py-2 bg-white/5 border border-border-dark text-text-muted text-[10px] font-bold rounded-lg uppercase">Save Note</button>
+</div>
+<div class="mt-auto p-4 rounded-xl bg-primary/10 border border-primary/20">
+<div class="flex items-center gap-2 mb-2 text-primary">
+<span class="material-symbols-outlined text-sm">emergency_home</span>
+<p class="text-[10px] font-bold uppercase">SLA Countdown</p>
+</div>
+<p class="text-2xl font-mono font-black text-white">04:12:09</p>
+<p class="text-[10px] text-text-muted mt-1">Remaining until auto-release</p>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

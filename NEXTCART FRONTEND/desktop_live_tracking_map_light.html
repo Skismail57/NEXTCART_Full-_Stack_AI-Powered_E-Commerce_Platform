@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEXCART | Live Order Tracking</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#25c0f4",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#101e22",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>body {
+    font-family: "Inter", sans-serif
+    }
+.map-container {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuAc_zISbQIJvv8rymKb0Z1w7V1uPAdVYswo0OyKRx7gXJfCEf2jqXv_skmfUhJby_DhaMJs9IYp9rUijmmvDLhUDjrl3IKFzAnnCUetrfRqU36XpwZ_icpPFiuo4_p8AmzdrroLheGyTisi8wr3cpNCqannCm6OnKny1dMWGxAI5pV4uySO52edGJd2Iokn7Ud_5P6bHf64RWixhXZ3dzWddjvGucMCn2i3JOMFM9OUmUrSplDkYvcWg660sWleRSAHH22o-IMucfUe);
+    background-size: cover;
+    background-position: center
+    }
+.glass-panel {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(12px)
+    }
+.pulse-animation {
+    box-shadow: 0 0 0 0 rgba(37, 192, 244, 0.7);
+    animation: pulse 2s infinite
+    }
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(37, 192, 244, 0.7);
+        } 70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(37, 192, 244, 0);
+        } 100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(37, 192, 244, 0);
+        }
+    }
+.route-path {
+    stroke-dasharray: 10;
+    animation: dash 20s linear infinite
+    }
+@keyframes dash {
+    to {
+        stroke-dashoffset: -200;
+        }
+    }</style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display h-screen overflow-hidden">
+<!-- Main Map Background -->
+<div class="fixed inset-0 z-0 map-container" data-location="New York City" style="https://lh3.googleusercontent.com/aida-public/AB6AXuDiwKQhYVruxLzc5ewgKlg_eD5nwO5wH9RxKot2uK4vBlt12QbKNFcznyHSLNMcz48T75FGoGH1kCZJFYbS24l6ANL_Tyfe61YypSPptUIwF1_IORaesoLlUAQ7LdzCC3b8F02DcrMvUTsaPfpfOmxEjKwk9lPngu3rgPoBIIJHYd6FC7MOfnmcu2Ps0Ov6TVYYEQFBDHt0wT1Dos9-LReQIunuGh6-E_2LqXqX7s6r44_82F7UgV_eh8lTCvS4LVvd6LtlUN0VH0ef">
+<!-- SVG Overlays for Map Features -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none" viewbox="0 0 1440 900">
+<!-- Delivery Route Line -->
+<path class="route-path opacity-80" d="M400 600 L600 500 L850 480 L1100 350" fill="none" stroke="#25c0f4" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"></path>
+<!-- Map Markers -->
+<circle cx="400" cy="600" fill="#25c0f4" r="8" stroke="white" stroke-width="3"></circle> <!-- Destination -->
+</svg>
+<!-- Moving Truck Icon -->
+<div class="absolute" style="top: 480px; left: 850px;">
+<div class="relative flex items-center justify-center">
+<div class="absolute w-12 h-12 bg-primary/30 rounded-full pulse-animation"></div>
+<div class="z-10 bg-primary p-3 rounded-full shadow-xl">
+<span class="material-icons text-white">local_shipping</span>
+</div>
+<div class="absolute top-14 bg-white px-3 py-1 rounded-lg shadow-lg text-xs font-bold whitespace-nowrap">
+                    Nexcart Delivery • Alex Johnson
+                </div>
+</div>
+</div>
+</div>
+<!-- UI Overlay Layer -->
+<div class="relative z-10 flex h-full w-full pointer-events-none">
+<!-- Left Sidebar: Tracking Pane -->
+<aside class="w-[400px] h-full glass-panel border-r border-white/20 p-8 shadow-2xl pointer-events-auto flex flex-col gap-8">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+<span class="material-icons text-white">explore</span>
+</div>
+<h1 class="text-2xl font-bold text-slate-800 dark:text-white tracking-tight">Track Order</h1>
+</div>
+<!-- Live ETA Header -->
+<div class="bg-white/50 p-6 rounded-xl border border-slate-100 dark:border-slate-800">
+<p class="text-slate-500 text-sm font-medium uppercase tracking-widest mb-1">Estimated Arrival</p>
+<div class="flex items-baseline gap-2">
+<span class="text-5xl font-black text-slate-900 dark:text-white">12</span>
+<span class="text-xl font-semibold text-slate-600 dark:text-slate-400">minutes</span>
+</div>
+<p class="text-primary font-medium mt-2 flex items-center gap-1">
+<span class="material-icons text-sm">trending_up</span> On time for 4:45 PM
+                </p>
+</div>
+<!-- Vertical Stepper -->
+<div class="flex-1 overflow-y-auto pr-4">
+<div class="space-y-0 relative">
+<!-- Progress Line -->
+<div class="absolute left-6 top-6 bottom-6 w-0.5 bg-slate-200 dark:bg-slate-700"></div>
+<div class="absolute left-6 top-6 h-1/2 w-0.5 bg-primary"></div>
+<!-- Step 1: Completed -->
+<div class="relative flex gap-6 pb-10">
+<div class="z-10 w-12 h-12 rounded-full bg-primary flex items-center justify-center border-4 border-white dark:border-slate-900">
+<span class="material-icons text-white text-xl">check</span>
+</div>
+<div>
+<h3 class="font-bold text-slate-800 dark:text-white">Order Confirmed</h3>
+<p class="text-sm text-slate-500">2:30 PM, Today</p>
+</div>
+</div>
+<!-- Step 2: Completed -->
+<div class="relative flex gap-6 pb-10">
+<div class="z-10 w-12 h-12 rounded-full bg-primary flex items-center justify-center border-4 border-white dark:border-slate-900">
+<span class="material-icons text-white text-xl">inventory_2</span>
+</div>
+<div>
+<h3 class="font-bold text-slate-800 dark:text-white">Package Picked Up</h3>
+<p class="text-sm text-slate-500">3:15 PM, Today</p>
+</div>
+</div>
+<!-- Step 3: Active -->
+<div class="relative flex gap-6 pb-10">
+<div class="z-10 w-12 h-12 rounded-full bg-primary flex items-center justify-center border-4 border-white dark:border-slate-900 pulse-animation">
+<span class="material-icons text-white text-xl">delivery_dining</span>
+</div>
+<div>
+<h3 class="font-bold text-primary">Out for Delivery</h3>
+<p class="text-sm text-slate-500">Alex is 2.4 miles away</p>
+</div>
+</div>
+<!-- Step 4: Pending -->
+<div class="relative flex gap-6">
+<div class="z-10 w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center border-4 border-white dark:border-slate-900">
+<span class="material-icons text-slate-400 text-xl">home</span>
+</div>
+<div>
+<h3 class="font-bold text-slate-400">Arriving</h3>
+<p class="text-sm text-slate-400">Expected at your door</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Driver Profile Card -->
+<div class="bg-white dark:bg-slate-800 p-5 rounded-xl shadow-lg border border-slate-100 dark:border-slate-700 pointer-events-auto">
+<div class="flex items-center gap-4">
+<img alt="Alex Johnson" class="w-14 h-14 rounded-full object-cover border-2 border-primary" data-alt="Portrait of a friendly delivery driver" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2eWh-29j05KOreHJxhgIYgw7eNbz7DdTLxhChZcVZp8BLESVd_0qoxNdkr4FiB_qjfXTIlWcWyq6Cnb1Qdqq1d_Wda9L7gvShLl1QIHrtSkpFKR19qApIpPncNMebuc3sN96kUvpbTksqnzXjeOKtMchXv0dicRiS9DQZjcsJ22YdqfPNy7SWZtmy_0npEW2nIp0GtoGUZyj7pA20QVuYu5yLIfEJy-3eqVH0AMRFkyI-tz9MaFGD8oC3JIvPOX6t8awzhqNNVA35"/>
+<div class="flex-1">
+<h4 class="font-bold text-slate-800 dark:text-white">Alex Johnson</h4>
+<div class="flex items-center gap-1 text-amber-500">
+<span class="material-icons text-sm">star</span>
+<span class="text-sm font-bold">4.9</span>
+<span class="text-xs text-slate-400 ml-1 font-normal">(1.2k deliveries)</span>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="w-10 h-10 bg-primary/10 text-primary rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+<span class="material-icons text-xl">chat</span>
+</button>
+<button class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center shadow-lg shadow-primary/30 hover:bg-primary/90 transition-colors">
+<span class="material-icons text-xl">phone</span>
+</button>
+</div>
+</div>
+</div>
+</aside>
+<!-- Right Side Overlays -->
+<main class="flex-1 h-full relative pointer-events-none">
+<!-- Top Right Info Card -->
+<div class="absolute top-8 right-8 pointer-events-auto">
+<div class="flex items-center gap-4">
+<div class="glass-panel px-6 py-4 rounded-xl shadow-xl flex items-center gap-6 border border-white/30">
+<div>
+<p class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Order ID</p>
+<p class="font-bold text-slate-800 dark:text-white">#NX-99201</p>
+</div>
+<div class="w-px h-8 bg-slate-200"></div>
+<div>
+<p class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Items</p>
+<p class="font-bold text-slate-800 dark:text-white">4 Items</p>
+</div>
+</div>
+<button class="bg-white dark:bg-slate-800 px-6 py-4 rounded-xl shadow-xl border border-white/30 font-bold text-slate-700 dark:text-white flex items-center gap-2 hover:bg-slate-50 transition-colors">
+<span class="material-icons text-primary">help_outline</span>
+                        Support
+                    </button>
+</div>
+</div>
+<!-- Bottom Right Map Controls -->
+<div class="absolute bottom-8 right-8 flex flex-col gap-3 pointer-events-auto">
+<button class="w-12 h-12 bg-white dark:bg-slate-800 rounded-xl shadow-xl flex items-center justify-center text-slate-600 dark:text-white hover:text-primary transition-colors">
+<span class="material-icons">my_location</span>
+</button>
+<div class="bg-white dark:bg-slate-800 rounded-xl shadow-xl flex flex-col overflow-hidden">
+<button class="w-12 h-12 flex items-center justify-center text-slate-600 dark:text-white border-b border-slate-100 dark:border-slate-700 hover:bg-slate-50 transition-colors">
+<span class="material-icons">add</span>
+</button>
+<button class="w-12 h-12 flex items-center justify-center text-slate-600 dark:text-white hover:bg-slate-50 transition-colors">
+<span class="material-icons">remove</span>
+</button>
+</div>
+<button class="w-12 h-12 bg-primary text-white rounded-xl shadow-xl flex items-center justify-center hover:bg-primary/90 transition-colors">
+<span class="material-icons text-2xl">layers</span>
+</button>
+</div>
+<!-- Address Floating Label -->
+<div class="absolute bottom-12 left-12 pointer-events-none">
+<div class="glass-panel px-6 py-4 rounded-xl shadow-xl border border-white/30 inline-flex items-center gap-4">
+<div class="w-10 h-10 bg-slate-900 dark:bg-white rounded-full flex items-center justify-center">
+<span class="material-icons text-white dark:text-slate-900">home</span>
+</div>
+<div>
+<p class="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Delivery To</p>
+<p class="font-bold text-slate-800 dark:text-white">452 West 19th St, New York</p>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Navigation Bar Overlay (Top Left) -->
+<div class="fixed top-8 left-8 z-20 pointer-events-auto">
+<button class="bg-white dark:bg-slate-800 p-3 rounded-xl shadow-xl text-slate-700 dark:text-white hover:text-primary transition-all">
+<span class="material-icons">arrow_back</span>
+</button>
+</div>
+</body></html>

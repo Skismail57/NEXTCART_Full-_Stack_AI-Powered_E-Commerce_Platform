@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEXCART Minutes Delivery Hub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#256af4",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Space Grotesk', sans-serif; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#111318] dark:text-white transition-colors duration-200">
+<!-- Top Navigation Bar (NEXCART Style) -->
+<header class="sticky top-0 z-50 bg-primary text-white shadow-md">
+<div class="max-w-[1440px] mx-auto px-6 lg:px-10 h-16 flex items-center gap-8">
+<!-- Logo -->
+<div class="flex items-center gap-3 shrink-0">
+<div class="size-8 bg-white text-primary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined font-bold">bolt</span>
+</div>
+<h1 class="text-xl font-bold tracking-tight">NEXCART<span class="font-light">Minutes</span></h1>
+</div>
+<!-- Location Selector -->
+<div class="hidden md:flex items-center gap-2 bg-white/10 px-3 py-1.5 rounded-lg cursor-pointer hover:bg-white/20 transition-all">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<div class="text-xs">
+<p class="font-bold leading-tight">Deliver to 560001</p>
+<p class="opacity-80 leading-tight">Indiranagar, Bangalore</p>
+</div>
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</div>
+<!-- Search Bar -->
+<div class="flex-1 max-w-2xl relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-gray-400">search</span>
+</div>
+<input class="w-full bg-[#f0f1f5] border-none rounded-lg py-2.5 pl-10 pr-4 text-[#111318] focus:ring-2 focus:ring-white/50 text-sm" placeholder="Search for snacks, tech, or daily essentials..." type="text"/>
+</div>
+<!-- Auth & Cart -->
+<div class="flex items-center gap-6 shrink-0">
+<button class="flex items-center gap-2 font-medium hover:opacity-80">
+<span class="material-symbols-outlined">person</span>
+<span>Login</span>
+</button>
+<button class="flex items-center gap-2 bg-white text-primary px-4 py-2 rounded-lg font-bold shadow-sm hover:bg-blue-50">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span>Cart</span>
+<span class="bg-primary text-white text-[10px] rounded-full px-1.5 py-0.5">0</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="max-w-[1440px] mx-auto px-6 lg:px-10 py-6 flex gap-8">
+<!-- Left Sidebar: Quick Categories & Live Status -->
+<aside class="hidden lg:flex flex-col gap-6 w-64 shrink-0">
+<!-- Categories List -->
+<div class="bg-white dark:bg-slate-900 p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800">
+<h3 class="text-sm font-bold uppercase tracking-wider text-gray-400 mb-4">Categories</h3>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 p-2 rounded-lg bg-primary/10 text-primary font-bold" href="#">
+<span class="material-symbols-outlined">fastfood</span>
+<span class="text-sm">Snacks &amp; Drinks</span>
+</a>
+<a class="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">egg</span>
+<span class="text-sm">Daily Dairy</span>
+</a>
+<a class="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">devices</span>
+<span class="text-sm">Instant Tech</span>
+</a>
+<a class="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">cleaning_services</span>
+<span class="text-sm">Home Essentials</span>
+</a>
+<a class="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">stroller</span>
+<span class="text-sm">Baby Care</span>
+</a>
+</nav>
+</div>
+<!-- Live Status Widget -->
+<div class="bg-white dark:bg-slate-900 p-5 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800">
+<div class="flex items-center gap-2 mb-4">
+<span class="relative flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+</span>
+<h3 class="text-sm font-bold uppercase tracking-wider text-gray-400">Live Status</h3>
+</div>
+<div class="space-y-4">
+<div>
+<p class="text-2xl font-bold">3,420</p>
+<p class="text-xs text-gray-500">Active Deliveries</p>
+</div>
+<div class="h-px bg-gray-100 dark:bg-gray-800"></div>
+<div>
+<p class="text-lg font-bold">9 min</p>
+<p class="text-xs text-gray-500">Avg. Delivery in your area</p>
+</div>
+<button class="w-full mt-2 py-2 border-2 border-primary text-primary font-bold rounded-lg text-sm hover:bg-primary hover:text-white transition-all">
+                        Track Orders
+                    </button>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<div class="flex-1 min-w-0">
+<!-- Hero Section -->
+<section class="relative h-[360px] rounded-2xl overflow-hidden mb-8 bg-cover bg-center flex items-end" data-alt="Modern grocery items displayed with delivery motion blur" style='background-image: linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 70%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCiTogjhWCLQUfdr2WQr6TXkVYO9YXtvJsnNtLhB4GrCF-jnIAzhUOHgHCO6Dvh55xP3s2AV68yFcKmw-LEcL4Fwpx2nJtbWX7dpzgnFON51lat4hEinkzPv5ACFXD-cByLWzmB2Hc3v1UNE-_YXngqdzoP96q_ARJ1LS8TOD5DiQpTDgj2GcY1fDiLG2z8VzL76IZjQ5W_V93e0rUJxZ3a-C6FYA3bXeY5dro9u87-TiGj65TXX4ZMxlc44lL3qrTFP-mQiC2xRG0r");'>
+<div class="p-10 max-w-lg">
+<div class="inline-flex items-center gap-2 bg-primary text-white px-3 py-1 rounded-full text-xs font-bold mb-4">
+<span class="material-symbols-outlined text-sm">bolt</span>
+                        ULTRA-FAST
+                    </div>
+<h2 class="text-5xl font-black text-white leading-tight mb-4">Everything in 15 Minutes.</h2>
+<p class="text-white/80 text-lg mb-6">Fresh groceries, instant tech, and daily essentials at your doorstep before you even know it.</p>
+<button class="bg-primary hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-xl transition-transform active:scale-95">
+                        Shop Collection
+                    </button>
+</div>
+</section>
+<!-- Quick Chips -->
+<div class="flex gap-3 mb-8 overflow-x-auto hide-scrollbar pb-2">
+<div class="flex h-10 shrink-0 items-center gap-2 rounded-xl bg-white dark:bg-slate-900 px-4 border border-gray-100 dark:border-gray-800 cursor-pointer hover:border-primary transition-all shadow-sm">
+<span class="material-symbols-outlined text-primary">lunch_dining</span>
+<p class="text-sm font-bold">Party Snacks</p>
+</div>
+<div class="flex h-10 shrink-0 items-center gap-2 rounded-xl bg-white dark:bg-slate-900 px-4 border border-gray-100 dark:border-gray-800 cursor-pointer hover:border-primary transition-all shadow-sm">
+<span class="material-symbols-outlined text-primary">coffee</span>
+<p class="text-sm font-bold">Breakfast Special</p>
+</div>
+<div class="flex h-10 shrink-0 items-center gap-2 rounded-xl bg-white dark:bg-slate-900 px-4 border border-gray-100 dark:border-gray-800 cursor-pointer hover:border-primary transition-all shadow-sm">
+<span class="material-symbols-outlined text-primary">charger</span>
+<p class="text-sm font-bold">Top Tech</p>
+</div>
+<div class="flex h-10 shrink-0 items-center gap-2 rounded-xl bg-white dark:bg-slate-900 px-4 border border-gray-100 dark:border-gray-800 cursor-pointer hover:border-primary transition-all shadow-sm">
+<span class="material-symbols-outlined text-primary">medication</span>
+<p class="text-sm font-bold">Pharma</p>
+</div>
+<div class="flex h-10 shrink-0 items-center gap-2 rounded-xl bg-white dark:bg-slate-900 px-4 border border-gray-100 dark:border-gray-800 cursor-pointer hover:border-primary transition-all shadow-sm">
+<span class="material-symbols-outlined text-primary">icecream</span>
+<p class="text-sm font-bold">Frozen Delights</p>
+</div>
+</div>
+<!-- Product Grid -->
+<section class="mb-12">
+<div class="flex justify-between items-end mb-6">
+<div>
+<h2 class="text-2xl font-bold">Popular Right Now</h2>
+<p class="text-gray-500 text-sm">Trending items in Indiranagar</p>
+</div>
+<a class="text-primary font-bold text-sm hover:underline" href="#">View All</a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
+<!-- Product Card 1 -->
+<div class="group bg-white dark:bg-slate-900 rounded-2xl p-4 border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-xl transition-all relative">
+<div class="absolute top-3 left-3 z-10 bg-green-500 text-white text-[10px] font-black px-2 py-1 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">bolt</span>
+                            15 MIN
+                        </div>
+<div class="relative aspect-square mb-4 bg-gray-50 dark:bg-slate-800 rounded-xl overflow-hidden">
+<div class="w-full h-full bg-center bg-cover transition-transform group-hover:scale-110" data-alt="Pack of sea salt potato chips" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAvJHIM9eQhhBHiBFiGBeh8jw1axL2qyfg4OETdB80M-313Rh9hKpSn9tb5GO9JXi7Wp2IXjb1JkoOV_zZ6C0vKQviNIwZey8yBI8PDLaUuTBTXoXE-R-3PKi7jNwt-LFdrPHeMCilotLPrKHX0L4Sfi1e_T841bxBWsW8BfCEGkIlrKjsDCjmopS45qgRXW5frjcEGMrXr_B-_HbJkU6aQ3DXb3f31Vr2NkHJGUNFeNtlNtzUtw7LylRmtMz_WpCLOr0e1-facIoWl");'></div>
+</div>
+<p class="text-xs text-gray-400 font-medium mb-1">SNACKS</p>
+<h3 class="font-bold text-sm leading-tight mb-2 h-10 line-clamp-2">Premium Kettle Cooked Sea Salt Chips (150g)</h3>
+<div class="flex items-center justify-between mt-auto">
+<div>
+<p class="text-lg font-black leading-none">$3.99</p>
+<p class="text-[10px] text-gray-400 line-through leading-none mt-1">$4.50</p>
+</div>
+<button class="size-10 bg-primary text-white rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group bg-white dark:bg-slate-900 rounded-2xl p-4 border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-xl transition-all relative">
+<div class="absolute top-3 left-3 z-10 bg-green-500 text-white text-[10px] font-black px-2 py-1 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">bolt</span>
+                            15 MIN
+                        </div>
+<div class="relative aspect-square mb-4 bg-gray-50 dark:bg-slate-800 rounded-xl overflow-hidden">
+<div class="w-full h-full bg-center bg-cover transition-transform group-hover:scale-110" data-alt="Fresh organic whole milk bottle" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD-hb_E8zWnJgOFaoWrGx7xBSeCsXDF-qhqwyz05GoeBEmFUo7QXgLVtQzJCwNFodNx1dB6tYRzp4whSJ56u2nda5rxRccKfn6YcnHKLVgZlr4WH4MadX20RFVL1BuB6BtZB9bOZMDIZL3bMjbasn_WEOK5_gapF4kD5ScPOAZ4jxJbre3Dt3pcjoq39FRQt59d40jMFcHlEeAJiTHV00Niy_wfJVLI2ytrUMUUUpg96ZK7GB7h8epp5y3hXkmfQ2GlSixq-p9G_uC-");'></div>
+</div>
+<p class="text-xs text-gray-400 font-medium mb-1">DAIRY</p>
+<h3 class="font-bold text-sm leading-tight mb-2 h-10 line-clamp-2">Fresh Organic Whole Milk (1L)</h3>
+<div class="flex items-center justify-between mt-auto">
+<div>
+<p class="text-lg font-black leading-none">$2.49</p>
+</div>
+<button class="size-10 bg-primary text-white rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group bg-white dark:bg-slate-900 rounded-2xl p-4 border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-xl transition-all relative">
+<div class="absolute top-3 left-3 z-10 bg-green-500 text-white text-[10px] font-black px-2 py-1 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">bolt</span>
+                            15 MIN
+                        </div>
+<div class="relative aspect-square mb-4 bg-gray-50 dark:bg-slate-800 rounded-xl overflow-hidden">
+<div class="w-full h-full bg-center bg-cover transition-transform group-hover:scale-110" data-alt="Modern noise cancelling headphones" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCwgG8105EsMDGZ-Ne8v-M57HvH2XTfJUYM2rC8pvxmqCh_cmWM9C7pjuN4DaCBhLmr2J644ArJMNplaMbuW8Os9tIZ1Tv_begBLQD7JbwQjkJABPzU0XOsHWVR2dZLNVAiszRPSN-Z6qDs9SAVywMVUzGK9U7pK97NgJJA_9eMnrABauXkJ20O9mBW8FubZHgJGPWrcQn-fYp-F2qvUoQlszpi0Xe6QOF9lf_z6rFdagn5I1CALhScv0mLpjbBRY8dOeKv4bKWXY6j");'></div>
+</div>
+<p class="text-xs text-gray-400 font-medium mb-1">TECH</p>
+<h3 class="font-bold text-sm leading-tight mb-2 h-10 line-clamp-2">Pro-Connect Noise Cancelling Headphones</h3>
+<div class="flex items-center justify-between mt-auto">
+<div>
+<p class="text-lg font-black leading-none">$89.00</p>
+</div>
+<button class="size-10 bg-primary text-white rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group bg-white dark:bg-slate-900 rounded-2xl p-4 border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-xl transition-all relative">
+<div class="absolute top-3 left-3 z-10 bg-green-500 text-white text-[10px] font-black px-2 py-1 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">bolt</span>
+                            15 MIN
+                        </div>
+<div class="relative aspect-square mb-4 bg-gray-50 dark:bg-slate-800 rounded-xl overflow-hidden">
+<div class="w-full h-full bg-center bg-cover transition-transform group-hover:scale-110" data-alt="Eco-friendly liquid dish soap bottle" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD3MZWr4DuxwYL7NLCfqT-xU9yTujioHNANv1QX8XmyV-5p6_487-ikno1m6O2khEZNhnV4j-AuwR6qVzqcneGM385eo3_E5p9xhg48_AeqrL5ll6PuHdj0rxvvHjYvytcDJ5IgG3WoZiR0_VeG-0DX8c--kX3AgDVFz6SmldljJjUUwo0KL002waK12BOlo2LkXPV5Sw3tVrWoWifziTw7ww7JERR039E0VVmQBLxcEIhrFJ-jYTXFWPMjLKHVmxBDP1LFdEzSHl-h");'></div>
+</div>
+<p class="text-xs text-gray-400 font-medium mb-1">CLEANING</p>
+<h3 class="font-bold text-sm leading-tight mb-2 h-10 line-clamp-2">Eco-Clean Liquid Dish Soap (Lemon 500ml)</h3>
+<div class="flex items-center justify-between mt-auto">
+<div>
+<p class="text-lg font-black leading-none">$5.25</p>
+</div>
+<button class="size-10 bg-primary text-white rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Bottom Highlights -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-6 pb-12">
+<div class="bg-blue-50 dark:bg-slate-800 p-8 rounded-2xl border border-blue-100 dark:border-slate-700 flex items-center gap-6">
+<div class="size-20 bg-primary/20 rounded-full flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-4xl">verified_user</span>
+</div>
+<div>
+<h4 class="text-xl font-bold mb-2">Safe &amp; Trusted Delivery</h4>
+<p class="text-sm text-gray-600 dark:text-gray-400">All our partners undergo verified background checks and follow strict hygiene protocols.</p>
+</div>
+</div>
+<div class="bg-orange-50 dark:bg-slate-800 p-8 rounded-2xl border border-orange-100 dark:border-slate-700 flex items-center gap-6">
+<div class="size-20 bg-orange-200 rounded-full flex items-center justify-center text-orange-600 shrink-0">
+<span class="material-symbols-outlined text-4xl">shopping_basket</span>
+</div>
+<div>
+<h4 class="text-xl font-bold mb-2">No Minimum Order</h4>
+<p class="text-sm text-gray-600 dark:text-gray-400">Order just a single chocolate or a full grocery list. No restrictions on order size.</p>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Simple Footer -->
+<footer class="bg-white dark:bg-slate-900 border-t border-gray-100 dark:border-gray-800 py-10">
+<div class="max-w-[1440px] mx-auto px-6 lg:px-10 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-3">
+<div class="size-6 bg-primary text-white rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-sm font-bold">bolt</span>
+</div>
+<h2 class="text-lg font-bold tracking-tight">NEXCART <span class="font-light">Minutes</span></h2>
+</div>
+<div class="flex gap-8 text-sm font-medium text-gray-500">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-primary transition-colors" href="#">Partner With Us</a>
+<a class="hover:text-primary transition-colors" href="#">Help Center</a>
+</div>
+<div class="text-xs text-gray-400">
+                © 2024 NEXCART Minutes. Ultra-fast delivery platform.
+            </div>
+</div>
+</footer>
+</body></html>

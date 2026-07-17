@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEXCART Mobile Home Dark</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ef4343",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#121212",
+                        "surface-dark": "#1e1e1e",
+                        "accent-dark": "#2a2a2a",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .glass-nav {
+            background: rgba(30, 30, 30, 0.8);
+            backdrop-filter: blur(12px);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-slate-900 font-display text-white">
+<!-- Desktop Wrapper to simulate Mobile (375px) -->
+<div class="min-h-screen flex items-center justify-center p-4">
+<div class="w-[375px] h-[812px] bg-background-dark relative overflow-hidden shadow-2xl rounded-[3rem] border-[8px] border-slate-800 flex flex-col">
+<!-- Top Status Bar Simulation -->
+<div class="h-6 w-full bg-background-dark px-6 pt-2 flex justify-between items-center text-[10px] font-bold">
+<span>9:41</span>
+<div class="flex gap-1 items-center">
+<span class="material-symbols-outlined text-[12px]">signal_cellular_alt</span>
+<span class="material-symbols-outlined text-[12px]">wifi</span>
+<span class="material-symbols-outlined text-[12px]">battery_full</span>
+</div>
+</div>
+<!-- Header Component -->
+<header class="flex items-center justify-between px-5 py-3 bg-background-dark/80 backdrop-blur-md sticky top-0 z-50">
+<div class="flex items-center gap-2">
+<div class="size-8 bg-primary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white">shopping_bag</span>
+</div>
+<h1 class="text-lg font-bold tracking-tight">NEXCART</h1>
+</div>
+<div class="flex items-center gap-3">
+<button class="p-2 bg-surface-dark rounded-full text-white/80">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</button>
+<div class="relative">
+<button class="p-2 bg-surface-dark rounded-full text-white/80">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</button>
+<span class="absolute top-1 right-1 size-2 bg-primary rounded-full border-2 border-background-dark"></span>
+</div>
+</div>
+</header>
+<!-- Scrollable Content Area -->
+<div class="flex-1 overflow-y-auto no-scrollbar pb-24">
+<!-- Hero Carousel -->
+<div class="px-4 py-2">
+<div class="flex overflow-x-auto gap-3 no-scrollbar snap-x">
+<div class="min-w-full snap-start relative rounded-xl overflow-hidden aspect-[16/9] group">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10"></div>
+<div class="absolute inset-0 bg-center bg-cover" data-alt="Cyberpunk themed tech setup with neon lights" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDbQNDGygPbFuwhIAL6HdnRals2Rdqy9cfliEvcaVRpCthkXwHYQPY_sBOngU0FuGoXzi9Sw8dEojbfKS_5OSaaN5rlMcj6tgPgAF3jGl-OPsrKROyLh5TJAx5N2nUt1Y7g652jHQV3yISCXvnYKLyLriRHbCzBvz8jaauaacXPh07VVOZ0bUvozScvV-zhAF9H5WRA82nJu2-SoGVupVELbeDmHhXiAh4SvxwcTOEsNSqvFpMOKLKh4buTkyBLNCIYRLSacSY3NVuB");'></div>
+<div class="absolute bottom-4 left-4 z-20">
+<h3 class="text-xl font-bold leading-tight">Nexus Drops</h3>
+<p class="text-sm text-white/70 mb-3">Limited edition items</p>
+<button class="bg-primary text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg shadow-primary/20">Shop Now</button>
+</div>
+</div>
+<div class="min-w-full snap-start relative rounded-xl overflow-hidden aspect-[16/9]">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10"></div>
+<div class="absolute inset-0 bg-center bg-cover" data-alt="High fashion model in dark urban setting" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCT0eWO5X-YBc_MmPZTuRU4f1ECZHSMN6ZFpb0cYrGTcSUMpEJXc7nemCxR8l8ZhLgFHp4I7P7uoRCvvJdH8cmBwlrMG9A4h2m8HFIUgYxma1tqii5B3uTnTHXLou53jTgHYTo4J1JhxVTlArGXnlMiP7-g3R7zqTje4ghqHJXdXOVCknX-REs4xUOW6WP1ujpbeyQfhHFbLXSTzFYJjSVlYndv4qzQFKF0wpI7G8yZMp_7YY9DsGstOFrBUO4uzI1tenDVl6Rr6cTP");'></div>
+<div class="absolute bottom-4 left-4 z-20">
+<h3 class="text-xl font-bold leading-tight">Neon Fashion</h3>
+<p class="text-sm text-white/70 mb-3">New arrivals collection</p>
+<button class="bg-primary text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg shadow-primary/20">Explore</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Stats/Gamification Section -->
+<div class="flex gap-3 px-4 py-4">
+<div class="flex-1 bg-surface-dark p-4 rounded-xl border border-white/5 flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-primary mb-1">local_fire_department</span>
+<p class="text-[10px] uppercase tracking-wider text-white/50 font-bold">Streak</p>
+<p class="text-lg font-bold">15 Days</p>
+</div>
+<div class="flex-1 bg-surface-dark p-4 rounded-xl border border-white/5 flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-yellow-500 mb-1">token</span>
+<p class="text-[10px] uppercase tracking-wider text-white/50 font-bold">Balance</p>
+<p class="text-lg font-bold">2,450 <span class="text-[10px] text-white/40">PTS</span></p>
+</div>
+</div>
+<!-- Flash Sale Timer -->
+<div class="mx-4 bg-primary/10 border border-primary/20 rounded-xl p-4 flex items-center justify-between">
+<div>
+<div class="flex items-center gap-1.5 mb-1">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-primary">Flash Sale Live</span>
+</div>
+<p class="text-sm font-medium">Ends in:</p>
+</div>
+<div class="flex gap-2">
+<div class="flex flex-col items-center">
+<div class="bg-surface-dark size-10 rounded-lg flex items-center justify-center font-bold text-lg border border-white/5">02</div>
+<span class="text-[8px] mt-1 text-white/50 uppercase">Hrs</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="bg-surface-dark size-10 rounded-lg flex items-center justify-center font-bold text-lg border border-white/5">45</div>
+<span class="text-[8px] mt-1 text-white/50 uppercase">Min</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="bg-surface-dark size-10 rounded-lg flex items-center justify-center font-bold text-lg border border-white/5">12</div>
+<span class="text-[8px] mt-1 text-white/50 uppercase">Sec</span>
+</div>
+</div>
+</div>
+<!-- Categories Chips -->
+<div class="flex gap-3 px-4 py-6 overflow-x-auto no-scrollbar">
+<div class="flex flex-col items-center gap-2 shrink-0">
+<div class="size-14 rounded-full bg-primary flex items-center justify-center shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-white">devices</span>
+</div>
+<span class="text-[10px] font-medium text-white/80">Tech</span>
+</div>
+<div class="flex flex-col items-center gap-2 shrink-0">
+<div class="size-14 rounded-full bg-surface-dark flex items-center justify-center border border-white/5">
+<span class="material-symbols-outlined text-white/60">apparel</span>
+</div>
+<span class="text-[10px] font-medium text-white/60">Style</span>
+</div>
+<div class="flex flex-col items-center gap-2 shrink-0">
+<div class="size-14 rounded-full bg-surface-dark flex items-center justify-center border border-white/5">
+<span class="material-symbols-outlined text-white/60">redeem</span>
+</div>
+<span class="text-[10px] font-medium text-white/60">Drops</span>
+</div>
+<div class="flex flex-col items-center gap-2 shrink-0">
+<div class="size-14 rounded-full bg-surface-dark flex items-center justify-center border border-white/5">
+<span class="material-symbols-outlined text-white/60">self_care</span>
+</div>
+<span class="text-[10px] font-medium text-white/60">Beauty</span>
+</div>
+<div class="flex flex-col items-center gap-2 shrink-0">
+<div class="size-14 rounded-full bg-surface-dark flex items-center justify-center border border-white/5">
+<span class="material-symbols-outlined text-white/60">home</span>
+</div>
+<span class="text-[10px] font-medium text-white/60">Living</span>
+</div>
+</div>
+<!-- Section Title -->
+<div class="flex items-center justify-between px-4 pb-4">
+<h2 class="text-lg font-bold">Recommended</h2>
+<button class="text-primary text-xs font-bold">See All</button>
+</div>
+<!-- 2-Column Product Grid -->
+<div class="grid grid-cols-2 gap-4 px-4">
+<!-- Product Card 1 -->
+<div class="bg-surface-dark rounded-xl overflow-hidden border border-white/5 group">
+<div class="relative aspect-square">
+<div class="absolute inset-0 bg-center bg-cover" data-alt="Minimalist black wireless headphones" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA9oScx5ONBTlmbLqAiDs2bMM6FD7eG0pOLrN3hzB9ICkDgxPs01xpG8AsMmWrG0EnV5s9ItEGnbo--usMAwaVZMI7BxM-iUJnH4CgeuQoco3RJW5YdRGTm3TB36XwsUwl9MK5R632tjl0NkWngUS7nRoaDIFMK4aRl6rGxhcQxSfBYSeWfAcLu_pY9ptz5MFx-k--3MJ87Ky6OYRUQ7zB57Yv29fmLHTi-mGF4NArAXmslOrtADqtWyUJUk3XYPxgQJJUv8LrCT466");'></div>
+<button class="absolute top-2 right-2 size-8 bg-black/40 backdrop-blur-md rounded-full flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+<div class="absolute bottom-2 left-2 bg-primary text-[8px] font-bold px-2 py-1 rounded-full uppercase tracking-tighter">New</div>
+</div>
+<div class="p-3">
+<p class="text-xs text-white/60 truncate">Nexus Audio</p>
+<h4 class="font-bold text-sm truncate mb-1">Sonic-X Headphones</h4>
+<div class="flex items-center justify-between mt-2">
+<span class="text-primary font-bold">$299.00</span>
+<div class="flex items-center gap-0.5">
+<span class="material-symbols-outlined text-yellow-500 text-[12px] fill-current">star</span>
+<span class="text-[10px] text-white/50">4.9</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-surface-dark rounded-xl overflow-hidden border border-white/5 group">
+<div class="relative aspect-square">
+<div class="absolute inset-0 bg-center bg-cover" data-alt="Modern minimal white wrist watch" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDPwmxs-iTfhUQGGrpLnkhoGgthswdD-cd6_o4-kp9cwOhKOR0IszG8sug8f2_B6CPVQFS91PQZe0z9Y1bGYbbLrW50ee54B_-mg4wFLOCHRCf5JLeHDZHJ_C_QcnnyfpWVx-aajDO0AuCsr1TYQI2kZj6HoC1ELH1ijeyf4rHD5KcwiI674HCEzoS_Z9Ur8UqnN8aprxQSFMDM3f1zgL8E92jd3ncYaUsSfuHLIc_eREC8lRBAkJbPvbUzWB7TfIFa1I5NQyIPqVDE");'></div>
+<button class="absolute top-2 right-2 size-8 bg-black/40 backdrop-blur-md rounded-full flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-3">
+<p class="text-xs text-white/60 truncate">Chronos Wear</p>
+<h4 class="font-bold text-sm truncate mb-1">Vector V1 Watch</h4>
+<div class="flex items-center justify-between mt-2">
+<span class="text-primary font-bold">$185.00</span>
+<div class="flex items-center gap-0.5">
+<span class="material-symbols-outlined text-yellow-500 text-[12px] fill-current">star</span>
+<span class="text-[10px] text-white/50">4.7</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="bg-surface-dark rounded-xl overflow-hidden border border-white/5 group">
+<div class="relative aspect-square">
+<div class="absolute inset-0 bg-center bg-cover" data-alt="Vibrant red sports running shoes" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD7rAXn4RyjegF6fZAQRmmI5nor-ZSCmEWSf_R-VLQ6AA0OsX_VnJab6Xy59TrIESiCzWB1zUuhAlxfuVwSaM0bsP__LWtSmozFakiQ3DlPA12XIa9H638gDxNQzmQwskYsr10TRFxa6rvTN5F3d7Z9EN9_0aKO958Ns69OrAlL8SvVtJJPjmNrd371tsPl0TVWBlAz6gO_h4kk85r16f2qZ5yRzuQ6CpOU8bzGWpZTdZORw3Z-0GdGNhoOuwfi-W24xfQ8q0dcV-6c");'></div>
+<button class="absolute top-2 right-2 size-8 bg-black/40 backdrop-blur-md rounded-full flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-3">
+<p class="text-xs text-white/60 truncate">Pulse Fitness</p>
+<h4 class="font-bold text-sm truncate mb-1">Velocity Runners</h4>
+<div class="flex items-center justify-between mt-2">
+<div class="flex flex-col">
+<span class="text-white/30 text-[10px] line-through">$120</span>
+<span class="text-primary font-bold">$89.00</span>
+</div>
+<div class="flex items-center gap-0.5">
+<span class="material-symbols-outlined text-yellow-500 text-[12px] fill-current">star</span>
+<span class="text-[10px] text-white/50">4.8</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="bg-surface-dark rounded-xl overflow-hidden border border-white/5 group">
+<div class="relative aspect-square">
+<div class="absolute inset-0 bg-center bg-cover" data-alt="Portable smart speaker in gray" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBTrN4nxofneySbomfArAm2JAdnvPszoqj0z2048HYjNpmlcd-jJ3wEfZRkx4vlN2m1Oy_67gke2TZwCMNUFwag5RvsAGJU1cobhn5wxp1RV1SfOw_RqDeIal2dhDf5xkN_3mxXVqkqaYz5QNrZl6Gy7LL8d2vS000aQ04vLIDKMkdKI14VGYGQV5lBPvhy6gV62VVpBYM85P2GHByTB7xHhElNAzzVryyYklAlzhipIlIX3OTX2sJjSKB6ybra3tCtr6J2N_jz7E0g");'></div>
+<button class="absolute top-2 right-2 size-8 bg-black/40 backdrop-blur-md rounded-full flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-3">
+<p class="text-xs text-white/60 truncate">Vox Lab</p>
+<h4 class="font-bold text-sm truncate mb-1">Mini Orb Speaker</h4>
+<div class="flex items-center justify-between mt-2">
+<span class="text-primary font-bold">$55.00</span>
+<div class="flex items-center gap-0.5">
+<span class="material-symbols-outlined text-yellow-500 text-[12px] fill-current">star</span>
+<span class="text-[10px] text-white/50">5.0</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Spacer -->
+<div class="h-10"></div>
+</div>
+<!-- Persistent Bottom Navigation -->
+<nav class="glass-nav absolute bottom-0 left-0 right-0 px-6 py-4 flex justify-between items-center z-50">
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined fill-current">home</span>
+<span class="text-[10px] font-bold">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-white/40">
+<span class="material-symbols-outlined">explore</span>
+<span class="text-[10px] font-medium">Feed</span>
+</button>
+<button class="relative -mt-10 size-14 bg-primary rounded-full flex items-center justify-center shadow-xl shadow-primary/40 border-[4px] border-background-dark">
+<span class="material-symbols-outlined text-white text-[28px]">shopping_cart</span>
+<span class="absolute -top-1 -right-1 bg-white text-primary text-[10px] font-black size-5 rounded-full flex items-center justify-center border-2 border-primary">3</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-white/40">
+<span class="material-symbols-outlined">loyalty</span>
+<span class="text-[10px] font-medium">Rewards</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-white/40">
+<div class="size-6 rounded-full bg-center bg-cover border border-white/10" data-alt="User profile avatar circle" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCnPYutyq06jZRnJeqgII6tJjNZIKXFo93od-OEX3UZCE1XhVplgZ9Avj3bONTVgOnsNjSfP3zx-BteWVnKu5uJMXnlqIO8PVI30s8rKn939ad6HTMz9s7A23HlL3cxU9wUXmnGFPAAEltr8raj8lnOJM1fL502tfYYj36riiOpWP_mNR8AfgZO5lsBpQVdpt-EIHweAmuCvGCL97scE0ETM1DlRVAuA8DVjuTJKVcZjKh8vpIbGCKWJ42fefVnIG8hstF-rVbzu0nO");'></div>
+<span class="text-[10px] font-medium">Profile</span>
+</button>
+</nav>
+<!-- Bottom Home Indicator Simulation -->
+<div class="absolute bottom-1 left-1/2 -translate-x-1/2 w-32 h-1.5 bg-white/20 rounded-full z-[60]"></div>
+</div>
+</div>
+</body></html>

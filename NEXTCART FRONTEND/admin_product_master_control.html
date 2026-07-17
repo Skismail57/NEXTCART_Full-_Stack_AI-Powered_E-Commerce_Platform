@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEXCART Admin - Product Master Control</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111418] antialiased">
+<div class="flex h-screen overflow-hidden">
+<!-- Sidebar Navigation -->
+<aside class="w-64 border-r border-[#dbe0e6] bg-white flex flex-col shrink-0">
+<div class="p-6">
+<div class="flex items-center gap-3">
+<div class="bg-primary size-10 rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-2xl">shopping_bag</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-[#111418] text-base font-bold leading-tight">NEXCART Admin</h1>
+<p class="text-[#617589] text-xs font-medium">Premium E-commerce</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#617589] hover:bg-[#f0f2f4] transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-[#f0f2f4] text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">inventory_2</span>
+<span class="text-sm font-bold">Products</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#617589] hover:bg-[#f0f2f4] transition-colors" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="text-sm font-medium">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#617589] hover:bg-[#f0f2f4] transition-colors" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="text-sm font-medium">Customers</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#617589] hover:bg-[#f0f2f4] transition-colors" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-sm font-medium">Reports</span>
+</a>
+<div class="pt-4 mt-4 border-t border-[#dbe0e6]">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#617589] hover:bg-[#f0f2f4] transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+</div>
+</nav>
+<div class="p-4 border-t border-[#dbe0e6] bg-slate-50">
+<div class="flex items-center gap-3">
+<div class="bg-cover bg-center size-10 rounded-full border border-gray-200" data-alt="Admin profile photo of Shaikh" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBM1mvv-rTGy8PfNAhy-sEPV8MsgztPXbtUQY7WJP4gQIi5lmZSEube6y1y-VTb1pihNDv8YsZsJwSq8m4DVq88_TFjEc-IwnIHCOnkwEkTKwxAHAV-6WfvkUwqizyKVbOzEL-VdxMaCZbqn7QawP9wlKHnb-8n0fh1v6rIbw2hWoE4sJ3agvWQ9awgxDav0Yir8D3iSLEEhOR9Xo7ZHnExYSe62cpQQQbACb7BnGxfvlLuJoKXkv3p3Atb8378ZcsI2Zx6MfXgtnwT')"></div>
+<div class="flex flex-col">
+<p class="text-sm font-bold text-[#111418]">Shaikh</p>
+<p class="text-[10px] uppercase tracking-wider text-[#617589] font-bold">Super Admin</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col overflow-hidden">
+<!-- Top Navigation Bar -->
+<header class="h-16 border-b border-[#dbe0e6] bg-white px-8 flex items-center justify-between shrink-0">
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2 text-[#617589]">
+<span class="text-sm font-medium">Admin</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span class="text-sm font-bold text-[#111418]">Product Control</span>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[#617589] text-lg">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-[#f0f2f4] border-none rounded-lg text-sm focus:ring-2 focus:ring-primary/20 placeholder:text-[#617589]" placeholder="Search SKU or name..." type="text"/>
+</div>
+<button class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-blue-600 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-lg">add</span>
+<span>Add New Product</span>
+</button>
+<div class="h-8 w-px bg-[#dbe0e6]"></div>
+<button class="text-[#617589] hover:text-[#111418]">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+</header>
+<!-- Scrollable Content -->
+<div class="flex-1 overflow-y-auto p-8">
+<!-- Page Heading & Stats -->
+<div class="mb-8">
+<div class="flex items-end justify-between mb-6">
+<div>
+<h2 class="text-3xl font-black tracking-tight text-[#111418]">Product Master Control</h2>
+<p class="text-[#617589] mt-1">Real-time inventory orchestration and global localization.</p>
+</div>
+<div class="flex gap-2">
+<button class="p-2 text-[#617589] border border-[#dbe0e6] rounded-lg hover:bg-white transition-all">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+<button class="p-2 text-[#617589] border border-[#dbe0e6] rounded-lg hover:bg-white transition-all">
+<span class="material-symbols-outlined">download</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-4 gap-4">
+<div class="bg-white p-5 rounded-xl border border-[#dbe0e6] flex flex-col gap-1">
+<p class="text-[#617589] text-xs font-bold uppercase tracking-wider">Total Products</p>
+<p class="text-2xl font-black text-[#111418]">1,284</p>
+<div class="flex items-center gap-1 text-green-600 text-xs font-bold mt-2">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span>+12.5%</span>
+</div>
+</div>
+<div class="bg-white p-5 rounded-xl border border-[#dbe0e6] flex flex-col gap-1">
+<p class="text-[#617589] text-xs font-bold uppercase tracking-wider">Active Stock Value</p>
+<p class="text-2xl font-black text-[#111418]">₹84.2L</p>
+<div class="flex items-center gap-1 text-[#617589] text-xs font-medium mt-2">
+<span>Across 12 warehouses</span>
+</div>
+</div>
+<div class="bg-white p-5 rounded-xl border border-[#dbe0e6] flex flex-col gap-1">
+<p class="text-[#617589] text-xs font-bold uppercase tracking-wider">Revenue Today</p>
+<p class="text-2xl font-black text-[#111418]">₹1.2L</p>
+<div class="flex items-center gap-1 text-green-600 text-xs font-bold mt-2">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span>+8.2%</span>
+</div>
+</div>
+<div class="bg-white p-5 rounded-xl border border-[#dbe0e6] flex flex-col gap-1">
+<p class="text-[#617589] text-xs font-bold uppercase tracking-wider">Out of Stock</p>
+<p class="text-2xl font-black text-red-500">24</p>
+<div class="flex items-center gap-1 text-red-500 text-xs font-bold mt-2">
+<span class="material-symbols-outlined text-sm">warning</span>
+<span>Action Required</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Tabs -->
+<div class="mb-4 border-b border-[#dbe0e6]">
+<div class="flex gap-8">
+<button class="pb-3 text-sm font-bold text-[#111418] border-b-2 border-primary">All Products (1,284)</button>
+<button class="pb-3 text-sm font-medium text-[#617589] hover:text-[#111418] transition-colors">Low Stock (42)</button>
+<button class="pb-3 text-sm font-medium text-[#617589] hover:text-[#111418] transition-colors">Out of Stock (24)</button>
+<button class="pb-3 text-sm font-medium text-[#617589] hover:text-[#111418] transition-colors">Drafts</button>
+</div>
+</div>
+<!-- Product Table Container -->
+<div class="bg-white rounded-xl border border-[#dbe0e6] shadow-sm overflow-hidden">
+<table class="w-full text-left border-collapse">
+<thead class="bg-[#f8fafc] border-b border-[#dbe0e6]">
+<tr>
+<th class="px-6 py-4 text-xs font-bold text-[#617589] uppercase tracking-wider">Product ID</th>
+<th class="px-6 py-4 text-xs font-bold text-[#617589] uppercase tracking-wider">Product Detail</th>
+<th class="px-6 py-4 text-xs font-bold text-[#617589] uppercase tracking-wider">Brand</th>
+<th class="px-6 py-4 text-xs font-bold text-[#617589] uppercase tracking-wider">Category</th>
+<th class="px-6 py-4 text-xs font-bold text-[#617589] uppercase tracking-wider text-center">Stock</th>
+<th class="px-6 py-4 text-xs font-bold text-[#617589] uppercase tracking-wider text-right">Price (₹)</th>
+<th class="px-6 py-4 text-xs font-bold text-[#617589] uppercase tracking-wider text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#f0f2f4]">
+<!-- Row 1 -->
+<tr class="hover:bg-blue-50/30 transition-colors group">
+<td class="px-6 py-4 text-sm font-medium text-[#617589]">NX-9421</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-lg bg-gray-100 bg-cover bg-center shrink-0 border border-gray-100" data-alt="Product thumbnail for MacBook Pro" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBbnnbl7V4GMB0lA5iH6_6IjWMMyZhyQEgM0jvnh3I9-xZrPJ5tkGxx8D-IiM0F94JkgV9j3cPH7WW78Y3P7crhgyEkWkv7Zbn1OKEbVc4GJpulgzTVBYVLxYrPpFoFc6FCCaNbpeK_CDEKzQEZzPA1yUsWta2iGhgLp_Y6oU2VWPQK2z23eHfAxxftV8_LPjZeQ3__pRvyhvf5Ni2V45C7WIQD8V9pEdA6-tA8NJ6c4PUyCisdrmwSXR7rBH7jH3hr54bPP2lSxiVY')"></div>
+<span class="text-sm font-bold text-[#111418]">MacBook Pro M3 Max</span>
+</div>
+</td>
+<td class="px-6 py-4"><span class="px-2 py-1 rounded bg-slate-100 text-[#111418] text-xs font-bold">Apple</span></td>
+<td class="px-6 py-4 text-sm text-[#617589]">Electronics</td>
+<td class="px-6 py-4 text-center">
+<span class="inline-flex items-center gap-1.5 py-0.5 px-2.5 rounded-full text-xs font-bold bg-green-100 text-green-700">
+<span class="size-1.5 rounded-full bg-green-600"></span>
+                                        In Stock (45)
+                                    </span>
+</td>
+<td class="px-6 py-4 text-sm font-black text-[#111418] text-right">₹3,49,900.00</td>
+<td class="px-6 py-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1.5 text-primary hover:bg-primary/10 rounded transition-colors" title="Edit Product">
+<span class="material-symbols-outlined text-xl">edit</span>
+</button>
+<button class="p-1.5 text-red-500 hover:bg-red-50 rounded transition-colors" title="Delete Product">
+<span class="material-symbols-outlined text-xl">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-blue-50/30 transition-colors group">
+<td class="px-6 py-4 text-sm font-medium text-[#617589]">NX-1102</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-lg bg-gray-100 bg-cover bg-center shrink-0 border border-gray-100" data-alt="Product thumbnail for Sony Headphones" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBhU_QldEAboEHxZle5Jk9mD0fw1VP_-IN0tK-49wDVAQZnPDC8QtEO3uRWXWn7_TeU6Ay0Scd1k12ldBPOyvJbNqxn7MFyhjKbVQmtm981TnsY0mcdCQStddT7yPyro0UqtLbsqahog1pNqADQkdFTjnqXKlHn8NDBY89lNTGqnpjEq49roIQGXv_YaVx2fgJ3yd-9x2HNaANRdeIqsIVgXGjssCOJIqtR-do0UfQMYout1byKfp_hb1CFz7kmdg--ilgCb3FKWQSC')"></div>
+<span class="text-sm font-bold text-[#111418]">Sony WH-1000XM5</span>
+</div>
+</td>
+<td class="px-6 py-4"><span class="px-2 py-1 rounded bg-slate-100 text-[#111418] text-xs font-bold">Sony</span></td>
+<td class="px-6 py-4 text-sm text-[#617589]">Audio</td>
+<td class="px-6 py-4 text-center">
+<span class="inline-flex items-center gap-1.5 py-0.5 px-2.5 rounded-full text-xs font-bold bg-amber-100 text-amber-700">
+<span class="size-1.5 rounded-full bg-amber-600"></span>
+                                        Low Stock (8)
+                                    </span>
+</td>
+<td class="px-6 py-4 text-sm font-black text-[#111418] text-right">₹29,990.00</td>
+<td class="px-6 py-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1.5 text-primary hover:bg-primary/10 rounded transition-colors">
+<span class="material-symbols-outlined text-xl">edit</span>
+</button>
+<button class="p-1.5 text-red-500 hover:bg-red-50 rounded transition-colors">
+<span class="material-symbols-outlined text-xl">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-blue-50/30 transition-colors group">
+<td class="px-6 py-4 text-sm font-medium text-[#617589]">NX-3345</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-lg bg-gray-100 bg-cover bg-center shrink-0 border border-gray-100" data-alt="Product thumbnail for Dyson Purifier" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAwSebW4b49ArGMB-d_qe6mlh3wJD9Bz5zspLi6AEQzQo-EiDRKreRxb1JcSfO_dhVxGN5m4ZKMdX9Y1LX5usalTIGcKFEhcAG9nZCPEaXYVmHaE34-9tVk1FnmDKmXticXY7cto3PXPwZYhvztEJchJScLhtU8kHV476v7nLpK9oZvziJT8_-KBqpbVbn-9Z8e9L6-ElVaw5qsOEso3XknFGZM6XhPtBSH49VOxo_pKi-allda5SQW0-lzvvCJ7q_-luOjnNG2Ie6_')"></div>
+<span class="text-sm font-bold text-[#111418]">Dyson Pure Cool TP07</span>
+</div>
+</td>
+<td class="px-6 py-4"><span class="px-2 py-1 rounded bg-slate-100 text-[#111418] text-xs font-bold">Dyson</span></td>
+<td class="px-6 py-4 text-sm text-[#617589]">Home Appliances</td>
+<td class="px-6 py-4 text-center">
+<span class="inline-flex items-center gap-1.5 py-0.5 px-2.5 rounded-full text-xs font-bold bg-green-100 text-green-700">
+<span class="size-1.5 rounded-full bg-green-600"></span>
+                                        In Stock (15)
+                                    </span>
+</td>
+<td class="px-6 py-4 text-sm font-black text-[#111418] text-right">₹45,900.00</td>
+<td class="px-6 py-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1.5 text-primary hover:bg-primary/10 rounded transition-colors">
+<span class="material-symbols-outlined text-xl">edit</span>
+</button>
+<button class="p-1.5 text-red-500 hover:bg-red-50 rounded transition-colors">
+<span class="material-symbols-outlined text-xl">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-blue-50/30 transition-colors group">
+<td class="px-6 py-4 text-sm font-medium text-[#617589]">NX-0021</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-lg bg-gray-100 bg-cover bg-center shrink-0 border border-gray-100" data-alt="Product thumbnail for Herman Miller Chair" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCsCYBc_GPT4QNqjCRAlQTxHGSxmUGe3fNg7d-6lqBwTlC3XZcQJxEQT7tQ5geZwC2F1_biddy-N5BjP0WoMdX5FzGKQd6r6hM4zjl33fk8kKzFjB8Vx8HHWamykPdGFqM8_A6f4JGENaJ75BPvOym3WCHpGRBN5HOsoAoFiZtUhyfLsCRjbieuG-mHcExUpE2W_e-582o920HMcX_GI--MEGtILd0gbhKHQXg1NToj2sbuktgeJaX93HJY2sNZ_s9J7vN3BQvbIC2R')"></div>
+<span class="text-sm font-bold text-[#111418]">Aeron Ergonomic Chair</span>
+</div>
+</td>
+<td class="px-6 py-4"><span class="px-2 py-1 rounded bg-slate-100 text-[#111418] text-xs font-bold">Herman Miller</span></td>
+<td class="px-6 py-4 text-sm text-[#617589]">Furniture</td>
+<td class="px-6 py-4 text-center">
+<span class="inline-flex items-center gap-1.5 py-0.5 px-2.5 rounded-full text-xs font-bold bg-red-100 text-red-700">
+<span class="size-1.5 rounded-full bg-red-600"></span>
+                                        Out of Stock
+                                    </span>
+</td>
+<td class="px-6 py-4 text-sm font-black text-[#111418] text-right">₹1,85,000.00</td>
+<td class="px-6 py-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1.5 text-primary hover:bg-primary/10 rounded transition-colors">
+<span class="material-symbols-outlined text-xl">edit</span>
+</button>
+<button class="p-1.5 text-red-500 hover:bg-red-50 rounded transition-colors">
+<span class="material-symbols-outlined text-xl">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-blue-50/30 transition-colors group">
+<td class="px-6 py-4 text-sm font-medium text-[#617589]">NX-8821</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-lg bg-gray-100 bg-cover bg-center shrink-0 border border-gray-100" data-alt="Product thumbnail for Garmin Watch" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAyhJFAThDc3IMsbSEB_P9UHUKYcCcVhUcAcHp2hJ58ovB5ZPYxx42sjOJD7XHELPV-baJtX9061-9jTeG0YaVSv-J7crD1gFH5_t-G5ZgCuzJg_Tg8Y5OiIimuHkJzWpDtOWsMKFAkGm5F-6ozb0FLDlmX_CDTSL5XOzyauh1PhU7MkJ18PolUFJ5i6gydh1lzp5WxlvEYioG5MlOy14RIb5vl7RUklVaa5ssgKtU7HVb-S_AFzxw3RAH-JgTMq-H-wim_Xg_jDsX_')"></div>
+<span class="text-sm font-bold text-[#111418]">Garmin Epix Pro (Gen 2)</span>
+</div>
+</td>
+<td class="px-6 py-4"><span class="px-2 py-1 rounded bg-slate-100 text-[#111418] text-xs font-bold">Garmin</span></td>
+<td class="px-6 py-4 text-sm text-[#617589]">Wearables</td>
+<td class="px-6 py-4 text-center">
+<span class="inline-flex items-center gap-1.5 py-0.5 px-2.5 rounded-full text-xs font-bold bg-green-100 text-green-700">
+<span class="size-1.5 rounded-full bg-green-600"></span>
+                                        In Stock (12)
+                                    </span>
+</td>
+<td class="px-6 py-4 text-sm font-black text-[#111418] text-right">₹89,490.00</td>
+<td class="px-6 py-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1.5 text-primary hover:bg-primary/10 rounded transition-colors">
+<span class="material-symbols-outlined text-xl">edit</span>
+</button>
+<button class="p-1.5 text-red-500 hover:bg-red-50 rounded transition-colors">
+<span class="material-symbols-outlined text-xl">delete</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- Pagination -->
+<div class="px-6 py-4 bg-[#f8fafc] border-t border-[#dbe0e6] flex items-center justify-between">
+<p class="text-xs font-medium text-[#617589]">Showing <span class="text-[#111418]">1 to 10</span> of <span class="text-[#111418]">1,284</span> products</p>
+<div class="flex gap-2">
+<button class="px-3 py-1 text-xs font-bold border border-[#dbe0e6] rounded bg-white text-[#617589] disabled:opacity-50">Previous</button>
+<button class="px-3 py-1 text-xs font-bold bg-primary text-white rounded">1</button>
+<button class="px-3 py-1 text-xs font-bold border border-[#dbe0e6] rounded bg-white text-[#111418] hover:bg-slate-50 transition-colors">2</button>
+<button class="px-3 py-1 text-xs font-bold border border-[#dbe0e6] rounded bg-white text-[#111418] hover:bg-slate-50 transition-colors">3</button>
+<span class="text-[#617589] px-1">...</span>
+<button class="px-3 py-1 text-xs font-bold border border-[#dbe0e6] rounded bg-white text-[#111418] hover:bg-slate-50 transition-colors">128</button>
+<button class="px-3 py-1 text-xs font-bold border border-[#dbe0e6] rounded bg-white text-[#111418] hover:bg-slate-50 transition-colors">Next</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

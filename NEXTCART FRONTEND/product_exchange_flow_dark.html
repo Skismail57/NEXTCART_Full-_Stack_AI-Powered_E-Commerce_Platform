@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEXCART | Product Exchange Flow</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#256af4",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101622",
+                        "accent-green": "#00f5a0",
+                        "glass-border": "rgba(255, 255, 255, 0.1)",
+                        "glass-bg": "rgba(255, 255, 255, 0.05)",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(27, 31, 39, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .neon-glow-blue {
+            box-shadow: 0 0 15px rgba(37, 106, 244, 0.4);
+        }
+        .neon-glow-green {
+            box-shadow: 0 0 20px rgba(0, 245, 160, 0.3);
+            text-shadow: 0 0 10px rgba(0, 245, 160, 0.5);
+        }
+        .custom-radio:checked + label {
+            border-color: #256af4;
+            background: rgba(37, 106, 244, 0.1);
+            box-shadow: inset 0 0 10px rgba(37, 106, 244, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-white min-h-screen">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-white/10 bg-background-dark/80 backdrop-blur-md px-10 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-white">
+<div class="size-6 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-white text-xl font-bold leading-tight tracking-[-0.015em] uppercase">NEXCART</h2>
+</div>
+<div class="flex items-center gap-9">
+<a class="text-white/70 hover:text-white text-sm font-medium transition-colors" href="#">Mobiles</a>
+<a class="text-white/70 hover:text-white text-sm font-medium transition-colors" href="#">Electronics</a>
+<a class="text-white/70 hover:text-white text-sm font-medium transition-colors" href="#">Fashion</a>
+<a class="text-white/70 hover:text-white text-sm font-medium transition-colors" href="#">Deals</a>
+</div>
+</div>
+<div class="flex flex-1 justify-end gap-6 items-center">
+<label class="flex flex-col min-w-40 !h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full glass-panel">
+<div class="text-[#9ca6ba] flex border-none items-center justify-center pl-4 rounded-l-lg">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 border-none bg-transparent text-white focus:ring-0 h-full placeholder:text-[#9ca6ba] px-4 text-sm" placeholder="Search products..." value=""/>
+</div>
+</label>
+<div class="flex gap-3">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-white/5 hover:bg-white/10 text-white transition-all">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-white/5 hover:bg-white/10 text-white transition-all">
+<span class="material-symbols-outlined">person</span>
+</button>
+</div>
+<div class="flex items-center gap-2 px-3 py-1 bg-primary/10 border border-primary/20 rounded-full">
+<span class="material-symbols-outlined text-primary text-sm">verified_user</span>
+<span class="text-[10px] font-bold text-primary uppercase tracking-wider">Secure Exchange</span>
+</div>
+</div>
+</header>
+<main class="max-w-[1200px] mx-auto px-6 py-10 grid grid-cols-12 gap-8">
+<!-- Left Content: Flow Steps -->
+<div class="col-span-12 lg:col-span-8 flex flex-col gap-8">
+<!-- Page Heading -->
+<div class="flex flex-col gap-2">
+<p class="text-primary text-sm font-bold tracking-[0.2em] uppercase">Step 2 of 4</p>
+<h1 class="text-white text-4xl font-black leading-tight tracking-tight">Exchange My Product</h1>
+<p class="text-[#9ca6ba] text-lg font-normal">Assess your device condition for an instant valuation.</p>
+</div>
+<!-- Progress Bar -->
+<div class="glass-panel p-6 rounded-xl flex flex-col gap-4">
+<div class="flex justify-between items-center">
+<div class="flex gap-2 items-center">
+<span class="material-symbols-outlined text-primary">analytics</span>
+<p class="text-white text-base font-medium">Exchange Progress</p>
+</div>
+<p class="text-primary text-sm font-bold">50% Complete</p>
+</div>
+<div class="rounded-full bg-white/5 h-2 overflow-hidden">
+<div class="h-full rounded-full bg-primary neon-glow-blue transition-all duration-500" style="width: 50%;"></div>
+</div>
+<div class="flex justify-between text-[11px] font-bold text-[#9ca6ba] uppercase tracking-widest">
+<span>Selection</span>
+<span class="text-primary">Condition Check</span>
+<span>Verification</span>
+<span>Final Offer</span>
+</div>
+</div>
+<!-- Step 1: Selection (Collapsed View) -->
+<div class="glass-panel p-6 rounded-xl border-l-4 border-l-primary/50 opacity-80">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-4">
+<div class="size-10 rounded-lg bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">smartphone</span>
+</div>
+<div>
+<p class="text-white font-bold">Apple iPhone 14 Pro</p>
+<p class="text-xs text-[#9ca6ba]">256GB • Deep Purple • Working Condition</p>
+</div>
+</div>
+<button class="text-primary text-xs font-bold uppercase hover:underline">Change</button>
+</div>
+</div>
+<!-- Step 2: Condition Check (Active Step) -->
+<div class="glass-panel p-8 rounded-xl flex flex-col gap-8 border border-primary/20 bg-primary/[0.02]">
+<h2 class="text-white text-2xl font-bold leading-tight flex items-center gap-3">
+<span class="size-8 rounded-full bg-primary text-white flex items-center justify-center text-sm">2</span>
+                    Detailed Condition Check
+                </h2>
+<!-- Condition Options Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Flawless -->
+<div class="relative">
+<input checked="" class="hidden custom-radio" id="cond-1" name="condition" type="radio"/>
+<label class="flex flex-col gap-4 p-5 rounded-xl border border-white/10 bg-white/5 cursor-pointer transition-all hover:border-primary/50" for="cond-1">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-primary size-10 flex items-center justify-center bg-primary/10 rounded-lg">verified</span>
+<div class="size-5 rounded-full border-2 border-white/20 flex items-center justify-center radio-circle">
+<div class="size-2.5 rounded-full bg-primary scale-0 transition-transform"></div>
+</div>
+</div>
+<div>
+<p class="font-bold text-white text-lg">Flawless</p>
+<p class="text-sm text-[#9ca6ba]">No scratches, dents, or signs of use. Looks brand new.</p>
+</div>
+</label>
+</div>
+<!-- Good -->
+<div class="relative">
+<input class="hidden custom-radio" id="cond-2" name="condition" type="radio"/>
+<label class="flex flex-col gap-4 p-5 rounded-xl border border-white/10 bg-white/5 cursor-pointer transition-all hover:border-primary/50" for="cond-2">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-[#9ca6ba] size-10 flex items-center justify-center bg-white/5 rounded-lg">check_circle</span>
+<div class="size-5 rounded-full border-2 border-white/20 flex items-center justify-center"></div>
+</div>
+<div>
+<p class="font-bold text-white text-lg">Good</p>
+<p class="text-sm text-[#9ca6ba]">Minor scratches on body, but screen is perfect.</p>
+</div>
+</label>
+</div>
+<!-- Minor Wear -->
+<div class="relative">
+<input class="hidden custom-radio" id="cond-3" name="condition" type="radio"/>
+<label class="flex flex-col gap-4 p-5 rounded-xl border border-white/10 bg-white/5 cursor-pointer transition-all hover:border-primary/50" for="cond-3">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-[#9ca6ba] size-10 flex items-center justify-center bg-white/5 rounded-lg">history_edu</span>
+<div class="size-5 rounded-full border-2 border-white/20 flex items-center justify-center"></div>
+</div>
+<div>
+<p class="font-bold text-white text-lg">Minor Scratches</p>
+<p class="text-sm text-[#9ca6ba]">Visible scratches on screen or body. No cracks.</p>
+</div>
+</label>
+</div>
+<!-- Cracked -->
+<div class="relative">
+<input class="hidden custom-radio" id="cond-4" name="condition" type="radio"/>
+<label class="flex flex-col gap-4 p-5 rounded-xl border border-white/10 bg-white/5 cursor-pointer transition-all hover:border-primary/50" for="cond-4">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-red-500 size-10 flex items-center justify-center bg-red-500/10 rounded-lg">shutter_speed</span>
+<div class="size-5 rounded-full border-2 border-white/20 flex items-center justify-center"></div>
+</div>
+<div>
+<p class="font-bold text-white text-lg">Cracked/Damaged</p>
+<p class="text-sm text-[#9ca6ba]">Cracked screen, broken buttons, or camera issues.</p>
+</div>
+</label>
+</div>
+</div>
+</div>
+<!-- Step 3: IMEI Verification -->
+<div class="glass-panel p-8 rounded-xl flex flex-col gap-6">
+<h2 class="text-white text-2xl font-bold leading-tight flex items-center gap-3">
+<span class="size-8 rounded-full bg-white/10 text-white flex items-center justify-center text-sm">3</span>
+                    Device Verification
+                </h2>
+<div class="flex flex-col gap-4">
+<label class="flex flex-col gap-2">
+<div class="flex justify-between">
+<span class="text-white text-sm font-medium">IMEI Number</span>
+<a class="text-primary text-xs font-bold hover:underline" href="#">How to find IMEI?</a>
+</div>
+<div class="relative group">
+<input class="w-full bg-[#1b1f27] border border-white/10 rounded-lg h-14 px-5 text-lg font-mono tracking-widest focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all outline-none" placeholder="Enter 15-digit IMEI number" type="text" value="358291048220..."/>
+<div class="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-3">
+<div class="flex items-center gap-2 px-3 py-1 bg-primary/20 rounded-full">
+<div class="size-2 rounded-full bg-primary animate-pulse"></div>
+<span class="text-[10px] font-bold text-primary uppercase">Verifying</span>
+</div>
+</div>
+</div>
+</label>
+</div>
+</div>
+<div class="flex justify-between items-center py-4">
+<button class="px-8 py-3 rounded-lg border border-white/10 text-white font-bold hover:bg-white/5 transition-all">Back</button>
+<button class="px-10 py-4 rounded-lg bg-primary text-white font-bold hover:bg-primary/90 transition-all neon-glow-blue flex items-center gap-2">
+                    Proceed to Valuation
+                    <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Right Content: Valuation Dashboard (Sticky) -->
+<div class="col-span-12 lg:col-span-4">
+<div class="sticky top-28 flex flex-col gap-6">
+<!-- Exchange Card -->
+<div class="glass-panel rounded-2xl overflow-hidden border border-white/10">
+<div class="bg-primary/10 p-6 border-b border-white/10">
+<p class="text-[10px] font-black text-primary uppercase tracking-[0.2em] mb-1">Estimated Value</p>
+<div class="flex items-end gap-2">
+<span class="text-4xl font-black text-accent-green neon-glow-green">$450.00</span>
+<span class="text-[#9ca6ba] text-sm mb-1">for your device</span>
+</div>
+</div>
+<div class="p-6 flex flex-col gap-5">
+<div class="flex flex-col gap-3">
+<p class="text-xs font-bold text-[#9ca6ba] uppercase tracking-wider">Price Breakdown</p>
+<div class="flex justify-between text-sm">
+<span class="text-white/70">New iPhone 15 Pro</span>
+<span class="text-white">$1,099.00</span>
+</div>
+<div class="flex justify-between text-sm font-bold text-accent-green">
+<span>Exchange Discount</span>
+<span>- $450.00</span>
+</div>
+<div class="h-px bg-white/10 my-1"></div>
+<div class="flex justify-between items-center">
+<span class="text-lg font-bold">Final Price</span>
+<span class="text-2xl font-black text-white">$649.00</span>
+</div>
+</div>
+<div class="bg-white/5 rounded-xl p-4 flex gap-4">
+<div class="size-10 shrink-0 bg-background-dark rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">security</span>
+</div>
+<div>
+<p class="text-xs font-bold text-white mb-1">NEXCART Shield</p>
+<p class="text-[10px] text-[#9ca6ba] leading-normal">Your data is wiped using military-grade standards upon collection.</p>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<button class="w-full py-4 rounded-xl bg-white text-background-dark font-black uppercase text-sm tracking-widest hover:bg-white/90 transition-all">Confirm Exchange</button>
+<p class="text-[10px] text-center text-[#9ca6ba]">Price valid for next 48 hours. Terms apply.</p>
+</div>
+</div>
+</div>
+<!-- Trusted Badge Section -->
+<div class="flex flex-col gap-4 px-2">
+<p class="text-xs font-bold text-white/50 uppercase tracking-widest text-center">Certified Partners</p>
+<div class="flex justify-between items-center opacity-40 grayscale hover:grayscale-0 transition-all cursor-pointer">
+<img alt="Partner brand logo 1" class="h-6" data-alt="Abstract corporate partner logo placeholder" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATA-zmOXastaXpDcgaKbz_g1sp62zuaY6bYIv629c9iRcgiXMtJVoEpq9zuMdcb08a-apGNEz7xhrxHfSQcwQhK-uxevLEcD7VDYol2e15cxh1oXZ_lSJPvLe5ebpVXjQ5qdfvQ9Ei6SL0aqsp0UYmU7pM7oxoUZYDwBLFTofLZQKSbLiqh7q1KxmRGaPODr3wj7rd38mf7IdG9XPXVje4802d1RXVW7maCq847tlafFXx5Rr2Kln_f9PezwdiFl689m3PfZow3KlY"/>
+<img alt="Partner brand logo 2" class="h-6" data-alt="Abstract technology partner logo placeholder" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnL3jaS3d7PTzZO5E8u4CVpr6-hH5VJIKGa4Pq8_Qp0M8gVcJsjo_J71nVuTTEQ6ssPWzsP2S7HznX2XMpxbQoE77lV6g4otH7UWM2es43QLfbxpVdEaOchxvc_iG2FU5GgYmLc_JD5uiwNFhsiuy9Df1GLUvUjkmy9Ot2HgWkcrHFQkJj1nr8MXqEslwu25ynnNvZcEz0mgobZRLX3-c25xlDBoHyTzPZr84hZ2AY0WAWDTirJ4Ncs0XX6xZAB7tvMtN-QUV3QTam"/>
+<img alt="Partner brand logo 3" class="h-6" data-alt="Abstract security partner logo placeholder" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8hTC2ZipcGQJFfKqiwrln8DX39bRKehzTQYxcqh_VSSNXv1p23aqyfllnd-Ro13zIsbEvKMFjCsAUq5q6GyGa3ehYEn1qUgY7wxgDoPM8_9ICqLsebN9MW1VI2K0NXerfeFULtk0QuP_wM0-XqniSniGjcf20vpiT-doAUFw9RXMPoU2eerS0s1BtMo4Xybl3kF3huX919z6pD63wvY6iZXCzj1-PN7Ajhzt9qqRMWMxkOquvzRdpUs92qM-RZ4a00ld9cTm9hXX6"/>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Stats -->
+<footer class="mt-auto border-t border-white/10 bg-background-dark/50 py-10">
+<div class="max-w-[1200px] mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+<div class="flex flex-col gap-2">
+<span class="material-symbols-outlined text-primary text-3xl mx-auto md:mx-0">handshake</span>
+<h4 class="text-white font-bold">1M+ Exchanges</h4>
+<p class="text-sm text-[#9ca6ba]">Trusted by over a million customers for fair valuations.</p>
+</div>
+<div class="flex flex-col gap-2">
+<span class="material-symbols-outlined text-primary text-3xl mx-auto md:mx-0">local_shipping</span>
+<h4 class="text-white font-bold">Doorstep Pickup</h4>
+<p class="text-sm text-[#9ca6ba]">Instant verification and pickup at your convenience.</p>
+</div>
+<div class="flex flex-col gap-2">
+<span class="material-symbols-outlined text-primary text-3xl mx-auto md:mx-0">lock_reset</span>
+<h4 class="text-white font-bold">Data Privacy</h4>
+<p class="text-sm text-[#9ca6ba]">Certified data destruction for every exchanged device.</p>
+</div>
+</div>
+</footer>
+</body></html>

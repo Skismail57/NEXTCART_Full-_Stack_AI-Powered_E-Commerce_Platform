@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEXCART | Advanced Search Results</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#258cf4",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(40, 48, 57, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            border-color: #258cf4;
+            box-shadow: 0 0 20px rgba(37, 140, 244, 0.2);
+        }
+        .active-filter-glow {
+            box-shadow: 0 0 10px rgba(37, 140, 244, 0.3);
+            border: 1px solid #258cf4;
+        }
+        .quick-view-overlay {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .glass-card:hover .quick-view-overlay {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-white min-h-screen">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 w-full border-b border-white/10 bg-background-dark/80 backdrop-blur-md px-6 lg:px-20 py-3">
+<div class="max-w-[1440px] mx-auto flex items-center justify-between gap-8">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3 text-primary">
+<div class="size-8 flex items-center justify-center">
+<svg class="w-full h-full" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-white text-2xl font-bold tracking-tight">NEXCART</h2>
+</div>
+<div class="hidden md:flex flex-1 min-w-[400px]">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-white/50">search</span>
+<input class="w-full h-11 bg-white/5 border border-white/10 rounded-lg pl-11 pr-4 text-white focus:outline-none focus:border-primary transition-colors placeholder:text-white/30" placeholder="Search premium tech &amp; fashion..." value="High-end Headphones"/>
+</div>
+</div>
+</div>
+<nav class="hidden xl:flex items-center gap-8">
+<a class="text-white/70 hover:text-primary transition-colors text-sm font-medium" href="#">Tech</a>
+<a class="text-white/70 hover:text-primary transition-colors text-sm font-medium" href="#">Fashion</a>
+<a class="text-white/70 hover:text-primary transition-colors text-sm font-medium" href="#">New Arrivals</a>
+<a class="text-white/70 hover:text-primary transition-colors text-sm font-medium" href="#">Deals</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="p-2.5 rounded-lg bg-white/5 hover:bg-primary/20 text-white transition-all">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+<button class="p-2.5 rounded-lg bg-white/5 hover:bg-primary/20 text-white transition-all">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+<div class="h-10 w-10 rounded-full border-2 border-primary/50 overflow-hidden cursor-pointer">
+<img class="w-full h-full object-cover" data-alt="User profile avatar portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAb7aSQAHLTV_kKvldAwfZJhaNtoyKTAigvzijSm_Axgd9JXukA2aA1x9lxIONez2MUISyiMXT1ObjYavKJuJjLGUwcVuIJOhrUZHeE1dvojqq-LpUgLoxY4h0Cf2d_HBBfHWlFPT8W6ExwdIH6kE_dMcQd8fuCmQLYZmYNbSigU8-WdTU3fxHmVlkj2cPFhcCTu8FTiuQsgUtZR9hQo83Fuirtx8MJQHPdzVtUE8HtqJu5P6mF-jTf1YcCKs-4meruvQefzTdlyUcR"/>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-[1440px] mx-auto px-6 lg:px-20 py-8">
+<!-- Breadcrumbs -->
+<nav class="flex items-center gap-2 mb-6">
+<a class="text-white/50 hover:text-primary transition-colors text-sm font-medium" href="#">Home</a>
+<span class="material-symbols-outlined text-white/30 text-sm">chevron_right</span>
+<a class="text-white/50 hover:text-primary transition-colors text-sm font-medium" href="#">Search Results</a>
+<span class="material-symbols-outlined text-white/30 text-sm">chevron_right</span>
+<span class="text-white text-sm font-medium">High-end Headphones</span>
+</nav>
+<!-- PageHeading -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
+<div class="space-y-2">
+<h1 class="text-4xl lg:text-5xl font-bold tracking-tight text-white italic underline decoration-primary/40 underline-offset-8">
+                    'High-end Headphones'
+                </h1>
+<p class="text-white/50 text-lg">Showing 1–24 of 1,240 results for your elite collection</p>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-2 px-5 py-2.5 bg-white/5 border border-white/10 rounded-lg text-white text-sm font-bold hover:bg-white/10 transition-all">
+<span class="material-symbols-outlined text-sm">swap_vert</span>
+                    Sort by: Relevance
+                </button>
+<button class="md:hidden flex items-center gap-2 px-5 py-2.5 bg-primary text-white rounded-lg text-sm font-bold">
+<span class="material-symbols-outlined text-sm">filter_list</span>
+                    Filters
+                </button>
+</div>
+</div>
+<!-- Chips / Active Filters -->
+<div class="flex flex-wrap gap-3 mb-8">
+<button class="flex h-9 items-center gap-2 rounded-full bg-primary/20 border border-primary/50 pl-4 pr-2 text-primary hover:bg-primary/30 transition-all">
+<span class="text-sm font-semibold tracking-wide uppercase">Wireless</span>
+<span class="material-symbols-outlined text-sm">close</span>
+</button>
+<button class="flex h-9 items-center gap-2 rounded-full bg-primary/20 border border-primary/50 pl-4 pr-2 text-primary hover:bg-primary/30 transition-all">
+<span class="text-sm font-semibold tracking-wide uppercase">Over-ear</span>
+<span class="material-symbols-outlined text-sm">close</span>
+</button>
+<button class="flex h-9 items-center gap-2 rounded-full bg-white/5 border border-white/10 pl-4 pr-3 text-white/70 hover:text-white transition-all">
+<span class="text-sm font-medium">Noise Cancelling</span>
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<button class="flex h-9 items-center gap-2 rounded-full bg-white/5 border border-white/10 pl-4 pr-3 text-white/70 hover:text-white transition-all">
+<span class="text-sm font-medium">$500 - $2500</span>
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<button class="text-primary hover:underline text-sm font-bold px-3">Clear all</button>
+</div>
+<div class="flex flex-col lg:flex-row gap-10">
+<!-- SideNavBar (Filters) -->
+<aside class="w-full lg:w-72 shrink-0 space-y-8">
+<div class="space-y-6">
+<div>
+<h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">category</span>
+                            Categories
+                        </h3>
+<div class="space-y-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<div class="w-5 h-5 rounded border border-white/20 flex items-center justify-center group-hover:border-primary transition-colors bg-white/5">
+<span class="material-symbols-outlined text-xs text-primary hidden group-hover:block">check</span>
+</div>
+<span class="text-white/70 group-hover:text-white">Studio Reference</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<div class="w-5 h-5 rounded border border-primary bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-xs text-white">check</span>
+</div>
+<span class="text-white">Audiophile Wireless</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<div class="w-5 h-5 rounded border border-white/20 flex items-center justify-center group-hover:border-primary transition-colors bg-white/5">
+<span class="material-symbols-outlined text-xs text-primary hidden group-hover:block">check</span>
+</div>
+<span class="text-white/70 group-hover:text-white">Open Back</span>
+</label>
+</div>
+</div>
+<div class="pt-6 border-t border-white/10">
+<h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">payments</span>
+                            Price Range
+                        </h3>
+<div class="px-2">
+<div class="h-1.5 w-full bg-white/10 rounded-full relative mb-6">
+<div class="absolute h-full left-[20%] right-[10%] bg-primary"></div>
+<div class="absolute h-4 w-4 bg-white border-2 border-primary rounded-full top-1/2 -translate-y-1/2 left-[20%] shadow-[0_0_10px_rgba(37,140,244,0.5)]"></div>
+<div class="absolute h-4 w-4 bg-white border-2 border-primary rounded-full top-1/2 -translate-y-1/2 right-[10%] shadow-[0_0_10px_rgba(37,140,244,0.5)]"></div>
+</div>
+<div class="flex justify-between items-center text-sm font-medium">
+<span class="bg-white/5 px-3 py-1 rounded border border-white/10">$200</span>
+<span class="text-white/30">to</span>
+<span class="bg-white/5 px-3 py-1 rounded border border-white/10">$2,500</span>
+</div>
+</div>
+</div>
+<div class="pt-6 border-t border-white/10">
+<h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">verified</span>
+                            Brands
+                        </h3>
+<div class="space-y-2">
+<label class="flex items-center gap-3 cursor-pointer">
+<div class="w-5 h-5 rounded border border-white/20 bg-white/5"></div>
+<span class="text-white/70">Sennheiser</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer">
+<div class="w-5 h-5 rounded border border-primary bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-xs text-white">check</span>
+</div>
+<span class="text-white">Sony Signature</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer">
+<div class="w-5 h-5 rounded border border-white/20 bg-white/5"></div>
+<span class="text-white/70">Bose Master</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer">
+<div class="w-5 h-5 rounded border border-white/20 bg-white/5"></div>
+<span class="text-white/70">Focal Utopia</span>
+</label>
+</div>
+</div>
+<div class="pt-6 border-t border-white/10">
+<h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">palette</span>
+                            Finish &amp; Color
+                        </h3>
+<div class="flex flex-wrap gap-3">
+<button class="w-8 h-8 rounded-full bg-neutral-900 border-2 border-primary ring-2 ring-primary/20"></button>
+<button class="w-8 h-8 rounded-full bg-neutral-400 border border-white/20"></button>
+<button class="w-8 h-8 rounded-full bg-blue-900 border border-white/20"></button>
+<button class="w-8 h-8 rounded-full bg-amber-200 border border-white/20"></button>
+</div>
+</div>
+</div>
+</aside>
+<!-- Product Grid -->
+<div class="flex-1">
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+<!-- Product Card 1 -->
+<div class="glass-card rounded-xl overflow-hidden group relative">
+<div class="relative aspect-square overflow-hidden bg-neutral-800">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="High-end studio monitoring headphones black" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvzkb9zo4WB2dxF37JV4w6YfkSbEWMTprVUE_K63wGxUYm7WT33ejLXJBkJTEYUvSR2KBsveY3go0Qg6Nou6uxmhO3-J40Kbu5Tgv8k3nTCIJyrhg76RDTJL9si7oIx4i5oSl1VwMih0gq1048VT-YHt_qIQSFlD0hFTZsf0xzOISXOAVevy_pPLp6pqQTrFt3bAjrDtQgdi_l7HLOIOyUdEk2xPDIhg6LJ3d4MKzyG4Qmo1XJ_DFqtXLxBaXyd0Szq0WRMiz1_Boc"/>
+<div class="absolute top-3 left-3 px-2 py-1 bg-primary text-[10px] font-bold tracking-widest uppercase rounded">Premium Choice</div>
+<!-- Quick View Overlay -->
+<div class="quick-view-overlay absolute inset-0 bg-background-dark/80 backdrop-blur-md p-6 flex flex-col justify-center gap-4">
+<h4 class="text-primary font-bold text-sm uppercase">Quick Specs</h4>
+<ul class="text-xs space-y-2 text-white/80">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">equalizer</span> 10Hz - 40kHz Response</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">battery_full</span> 60h Battery Life</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">noise_control_on</span> Hybrid ANC 2.0</li>
+</ul>
+<button class="w-full py-2 bg-primary text-white text-xs font-bold rounded-lg hover:bg-primary/80 transition-all uppercase tracking-wider mt-2">Add to Collection</button>
+</div>
+</div>
+<div class="p-5">
+<p class="text-primary text-[10px] font-bold uppercase tracking-wider mb-1">Sony Signature</p>
+<h3 class="font-bold text-lg mb-2 leading-tight group-hover:text-primary transition-colors">WH-1000XM5 Elite</h3>
+<div class="flex items-center gap-1 mb-4">
+<span class="material-symbols-outlined text-amber-400 text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-amber-400 text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-amber-400 text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-amber-400 text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-amber-400 text-sm fill-current">star</span>
+<span class="text-white/40 text-xs ml-1">(428)</span>
+</div>
+<div class="flex items-center justify-between">
+<p class="text-2xl font-black text-white">$549.00</p>
+<button class="p-2 bg-white/5 hover:bg-primary rounded-lg transition-all">
+<span class="material-symbols-outlined text-sm">shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="glass-card rounded-xl overflow-hidden group relative">
+<div class="relative aspect-square overflow-hidden bg-neutral-800">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Minimalist white wireless over-ear headphones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNrB5-NR_2I6_JKeg3jKdykQq675bVjUKsG7MvEDXF6eg0ZlDczB1oOuM6lKAqKzJWWB4dX-m4hnvLtByJkTEL8Ul0BKv-nquJdvDcEcQaV3eJ-7jWRjZFc4xqg5bYBAf8p5WZNwigbMD14nHA4TxNBYm8G4KL1y9-MBsiUqm31aSRKcEExtpmpogk4xiAl3yoVIE5wEYA6-qsnXC0_Mlj7gluKP0-1oNJweD6HBHg_jtoIlyRhuCpcDJhCH2cerDde8t7GHZPHfRV"/>
+<div class="quick-view-overlay absolute inset-0 bg-background-dark/80 backdrop-blur-md p-6 flex flex-col justify-center gap-4">
+<h4 class="text-primary font-bold text-sm uppercase">Quick Specs</h4>
+<ul class="text-xs space-y-2 text-white/80">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">bluetooth</span> Lossless Wireless</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">mic</span> Beamforming Mics</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">cloud</span> Adaptive EQ</li>
+</ul>
+<button class="w-full py-2 bg-primary text-white text-xs font-bold rounded-lg hover:bg-primary/80 transition-all uppercase tracking-wider mt-2">Add to Collection</button>
+</div>
+</div>
+<div class="p-5">
+<p class="text-primary text-[10px] font-bold uppercase tracking-wider mb-1">Bose Master</p>
+<h3 class="font-bold text-lg mb-2 leading-tight group-hover:text-primary transition-colors">QuietComfort Ultra</h3>
+<div class="flex items-center gap-1 mb-4">
+<span class="material-symbols-outlined text-amber-400 text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-amber-400 text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-amber-400 text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-amber-400 text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-white/20 text-sm">star</span>
+<span class="text-white/40 text-xs ml-1">(156)</span>
+</div>
+<div class="flex items-center justify-between">
+<p class="text-2xl font-black text-white">$429.00</p>
+<button class="p-2 bg-white/5 hover:bg-primary rounded-lg transition-all">
+<span class="material-symbols-outlined text-sm">shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="glass-card rounded-xl overflow-hidden group relative active-filter-glow">
+<div class="relative aspect-square overflow-hidden bg-neutral-800">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Audiophile open back headphones wood finish" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADpxTYYqItXEsO9CveHGbjrzrqQX8JG14sGS8tv4rI-pZZ63ZfdFSb_pVNy69lbfnTMjk-byK_suVpakf8icOzy6hp_tjf_SqW_I212Yc41k7NwF56uATT6WvF4Bci_ICDiQeAG_LdjUZ4n8qa3lffgNIcqK42Os1qPDJarQ7HH1VVOozP-LLMa4zmI_3YvGbColuQ22DX2jOavKIVPnlxhm8GvBJ8l7tmqmtE7E52dN5W9sYfZFim6-ymcVkQSATuM_y2Su21HLEA"/>
+<div class="absolute top-3 left-3 px-2 py-1 bg-amber-500 text-[10px] font-bold tracking-widest uppercase rounded">Limited Edition</div>
+<div class="quick-view-overlay absolute inset-0 bg-background-dark/80 backdrop-blur-md p-6 flex flex-col justify-center gap-4">
+<h4 class="text-primary font-bold text-sm uppercase">Quick Specs</h4>
+<ul class="text-xs space-y-2 text-white/80">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">nature</span> Zebrawood Casing</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">settings_input_hdmi</span> Balanced XLR Cable</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">headphones</span> Planar Magnetic</li>
+</ul>
+<button class="w-full py-2 bg-primary text-white text-xs font-bold rounded-lg hover:bg-primary/80 transition-all uppercase tracking-wider mt-2">Add to Collection</button>
+</div>
+</div>
+<div class="p-5">
+<p class="text-primary text-[10px] font-bold uppercase tracking-wider mb-1">Focal Utopia</p>
+<h3 class="font-bold text-lg mb-2 leading-tight group-hover:text-primary transition-colors">Radiance Limited</h3>
+<div class="flex items-center gap-1 mb-4">
+<span class="material-symbols-outlined text-amber-400 text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-amber-400 text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-amber-400 text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-amber-400 text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-amber-400 text-sm fill-current">star</span>
+<span class="text-white/40 text-xs ml-1">(52)</span>
+</div>
+<div class="flex items-center justify-between">
+<p class="text-2xl font-black text-white">$1,299.00</p>
+<button class="p-2 bg-primary rounded-lg transition-all shadow-[0_0_10px_rgba(37,140,244,0.4)]">
+<span class="material-symbols-outlined text-sm">shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="glass-card rounded-xl overflow-hidden group relative">
+<div class="relative aspect-square overflow-hidden bg-neutral-800">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="High-end silver headphones on studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDD7tR8AWL0le2ecmUk94rwtJrzxa2f4PSZ2ALMjgCN36ghRByjQjuRyYATShGGQCYwZ4z6FifZBt0eNynEzAXoKsr0RCkH5muOsCxCHGEmzEDAWhaeE-o9p2MRU8yKn92Rp8LGmp0ktAOAiY_hFOptBg9FG20i2KTExNZtJ4iwf0XROGXJUZS8ZJEYXbgIoU_vJlVH3heFyh9p2zkRhDwFG1OP6VGX50Gn93I34ywEFknh8_LTCFqOfIhWN260TwZniYWh1tKW1zuT"/>
+<div class="quick-view-overlay absolute inset-0 bg-background-dark/80 backdrop-blur-md p-6 flex flex-col justify-center gap-4">
+<h4 class="text-primary font-bold text-sm uppercase">Quick Specs</h4>
+<ul class="text-xs space-y-2 text-white/80">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">waves</span> Spatial Audio Support</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">timer</span> 40h Playtime</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">auto_awesome</span> Transparency Mode</li>
+</ul>
+<button class="w-full py-2 bg-primary text-white text-xs font-bold rounded-lg hover:bg-primary/80 transition-all uppercase tracking-wider mt-2">Add to Collection</button>
+</div>
+</div>
+<div class="p-5">
+<p class="text-primary text-[10px] font-bold uppercase tracking-wider mb-1">Sennheiser</p>
+<h3 class="font-bold text-lg mb-2 leading-tight group-hover:text-primary transition-colors">Momentum 4 Wireless</h3>
+<div class="flex items-center gap-1 mb-4">
+<span class="material-symbols-outlined text-amber-400 text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-amber-400 text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-amber-400 text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-amber-400 text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-white/20 text-sm">star</span>
+<span class="text-white/40 text-xs ml-1">(281)</span>
+</div>
+<div class="flex items-center justify-between">
+<p class="text-2xl font-black text-white">$379.00</p>
+<button class="p-2 bg-white/5 hover:bg-primary rounded-lg transition-all">
+<span class="material-symbols-outlined text-sm">shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Repeat for more items or add a promotional banner -->
+<div class="col-span-full py-4">
+<div class="relative h-48 rounded-2xl overflow-hidden group">
+<img class="w-full h-full object-cover" data-alt="Abstract neon blue technology background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoQ0E2ashytLl2NghT9Z0cKru_6s-oFeVV0D6bjp81-YIRwx5drfOIjgzOypcJr-ruoCZ2Eqc0xEycv1tjN8AfZGTqcaVQZUazqt3ARxwBT43VqWeSAiVp5noR2RWvmGPu46lmSqOiqRl3itpPfcFvR_2Hio--x3M7YRB1Q2acjrr6xzmQ-niJsM5V5p7g85CJGZdVQhKZ_XYFFL5ZH0S_fa5xjRl4x0JhRgYma012s4vwPRRm3PFN-D5n0TfNYoJeUmr1-4vtAfB3"/>
+<div class="absolute inset-0 bg-gradient-to-r from-primary/80 to-transparent flex flex-col justify-center p-10">
+<h2 class="text-3xl font-black mb-2 italic">UPGRADE YOUR STUDIO</h2>
+<p class="text-white/80 max-w-md mb-4 font-medium">Join NEXCART Premium and get 15% off your first high-end audio purchase.</p>
+<button class="w-fit px-8 py-3 bg-white text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all">Join NEXCART +</button>
+</div>
+</div>
+</div>
+<!-- More grid items can follow here... -->
+</div>
+<!-- Pagination -->
+<div class="flex items-center justify-center gap-4 mt-16 pb-20">
+<button class="flex items-center justify-center w-12 h-12 rounded-lg bg-white/5 border border-white/10 hover:border-primary transition-all disabled:opacity-30" disabled="">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<div class="flex items-center gap-2">
+<button class="w-12 h-12 rounded-lg bg-primary text-white font-bold">1</button>
+<button class="w-12 h-12 rounded-lg bg-white/5 border border-white/10 hover:border-primary transition-all">2</button>
+<button class="w-12 h-12 rounded-lg bg-white/5 border border-white/10 hover:border-primary transition-all">3</button>
+<span class="text-white/30 px-2">...</span>
+<button class="w-12 h-12 rounded-lg bg-white/5 border border-white/10 hover:border-primary transition-all">52</button>
+</div>
+<button class="flex items-center justify-center w-12 h-12 rounded-lg bg-white/5 border border-white/10 hover:border-primary transition-all">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Filter Icon for Mobile -->
+<div class="fixed bottom-6 right-6 lg:hidden z-50">
+<button class="w-14 h-14 bg-primary rounded-full flex items-center justify-center shadow-lg shadow-primary/40">
+<span class="material-symbols-outlined text-white">filter_list</span>
+</button>
+</div>
+</body></html>

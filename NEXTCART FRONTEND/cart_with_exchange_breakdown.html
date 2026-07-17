@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEXCART | Shopping Cart</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2547f4",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101322",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Space Grotesk', sans-serif; }
+        .material-symbols-outlined { font-size: 20px; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen">
+<!-- Header Navigation -->
+<header class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 sticky top-0 z-50">
+<div class="max-w-[1280px] mx-auto px-6 h-16 flex items-center justify-between">
+<div class="flex items-center gap-12">
+<div class="flex items-center gap-2 text-primary">
+<div class="size-8 bg-primary rounded-lg flex items-center justify-center">
+<svg class="text-white size-5" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor"></path>
+</svg>
+</div>
+<h1 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">NEXCART</h1>
+</div>
+<!-- Checkout Progress -->
+<nav class="hidden md:flex items-center gap-4">
+<span class="text-primary font-semibold">Cart</span>
+<span class="text-gray-300">/</span>
+<span class="text-gray-400">Address</span>
+<span class="text-gray-300">/</span>
+<span class="text-gray-400">Payment</span>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2 text-gray-600 dark:text-gray-300">
+<span class="material-symbols-outlined">shield_with_heart</span>
+<span class="text-sm font-medium">100% Safe Payments</span>
+</div>
+<button class="bg-gray-100 dark:bg-gray-800 p-2 rounded-full hover:bg-gray-200 transition-colors">
+<span class="material-symbols-outlined text-gray-600 dark:text-gray-300">person</span>
+</button>
+</div>
+</div>
+</header>
+<main class="max-w-[1280px] mx-auto px-6 py-8">
+<!-- Breadcrumbs -->
+<div class="flex items-center gap-2 mb-6 text-sm">
+<a class="text-gray-500 hover:text-primary transition-colors" href="#">Home</a>
+<span class="text-gray-300 material-symbols-outlined !text-[14px]">chevron_right</span>
+<a class="text-gray-500 hover:text-primary transition-colors" href="#">Electronics</a>
+<span class="text-gray-300 material-symbols-outlined !text-[14px]">chevron_right</span>
+<span class="text-gray-900 dark:text-white font-medium">Cart</span>
+</div>
+<div class="flex flex-col lg:flex-row gap-8">
+<!-- Left Column: Cart Items -->
+<div class="flex-1 space-y-4">
+<!-- Delivery Pincode Widget -->
+<div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-sm border border-gray-100 dark:border-gray-800 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2 text-gray-900 dark:text-white">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<span class="font-medium">Deliver to: <span class="font-bold">560001</span></span>
+</div>
+<div class="flex items-center gap-2 text-xs text-green-600 font-medium bg-green-50 px-2 py-1 rounded">
+<span class="material-symbols-outlined !text-[16px]">verified</span>
+                            Serviceable
+                        </div>
+</div>
+<button class="text-primary font-bold text-sm hover:underline">Change</button>
+</div>
+<!-- Product Card with Exchange -->
+<div class="bg-white dark:bg-gray-900 rounded-lg shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden">
+<div class="p-6">
+<div class="flex gap-6">
+<!-- Product Image -->
+<div class="w-40 h-40 bg-gray-50 dark:bg-gray-800 rounded-lg relative overflow-hidden flex-shrink-0">
+<img alt="Premium Smartphone" class="w-full h-full object-contain p-2" data-alt="Modern premium smartphone with sleek glass finish" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCr48D-QN4FTSfxcLpXCmjdEKCbMrOGvAYiJ94cmxZqg-ylxPsZxUGK--nnm3Wjh2ZJsgiLdBTPqq4ZZ-jPfwAyoQigRZMA_WFPCM2z_Kz-354LpwCvbCeueufsZbRL4QfOR2YM95cynuy1QwQfPdjAP95Oh5PFLYpbibI1WfPjKAuGDYN_wIQOR9JHieMeh7E6-wm5oR4xl1qfTZhTZORLfdbiPzZ17rNdrQkVStBH3CoFP5RHjbNpOmtdytRfrQePG70tN3IP-3PG"/>
+<div class="absolute top-2 left-2 bg-primary/10 text-primary text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wider">Top Rated</div>
+</div>
+<!-- Product Info -->
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<div>
+<h2 class="text-xl font-bold text-gray-900 dark:text-white mb-1">New Smartphone (Model X)</h2>
+<p class="text-gray-500 text-sm mb-2">Space Grey | 8GB RAM | 128GB Storage</p>
+<div class="flex items-center gap-2 mb-4">
+<div class="bg-green-100 text-green-700 text-[11px] font-bold px-2 py-0.5 rounded flex items-center gap-1">
+<span class="material-symbols-outlined !text-[14px]">swap_horiz</span>
+                                                EXCHANGE APPLIED
+                                            </div>
+<span class="text-xs text-gray-400">Seller: NexCart Retail</span>
+</div>
+</div>
+<div class="text-right">
+<p class="text-2xl font-bold text-gray-900 dark:text-white">₹29,999</p>
+<p class="text-sm text-gray-400 line-through">₹34,999</p>
+<p class="text-xs text-green-600 font-semibold">14% Off</p>
+</div>
+</div>
+<!-- Exchange Breakdown -->
+<div class="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-4 mb-4 border border-dashed border-gray-200 dark:border-gray-700">
+<h3 class="text-sm font-bold text-gray-900 dark:text-white mb-3">Exchange Breakdown</h3>
+<div class="space-y-2">
+<div class="flex justify-between text-sm">
+<span class="text-gray-600 dark:text-gray-400">Buy New Price</span>
+<span class="font-medium text-gray-900 dark:text-white">₹29,999</span>
+</div>
+<div class="flex justify-between text-sm items-center">
+<span class="text-gray-600 dark:text-gray-400">Exchange Value (iPhone 11)</span>
+<span class="font-bold text-green-600">-₹14,400</span>
+</div>
+<div class="pt-2 mt-2 border-t border-gray-200 dark:border-gray-700 flex justify-between text-sm">
+<span class="font-bold text-gray-900 dark:text-white">Effective Price</span>
+<span class="font-black text-gray-900 dark:text-white">₹15,599</span>
+</div>
+</div>
+</div>
+<!-- Delivery & Actions -->
+<div class="flex items-center justify-between">
+<div class="space-y-1">
+<div class="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300">
+<span class="material-symbols-outlined !text-[18px] text-green-600">local_shipping</span>
+<span>Delivery by <strong>Tomorrow, 11 AM</strong></span>
+</div>
+<div class="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300">
+<span class="material-symbols-outlined !text-[18px] text-blue-500">payments</span>
+<span>Cash on Delivery Available</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 text-sm font-bold text-gray-500 hover:text-red-500 transition-colors uppercase tracking-tight">
+<span class="material-symbols-outlined">delete</span>
+                                            Remove
+                                        </button>
+<button class="flex items-center gap-2 text-sm font-bold text-primary hover:text-primary/80 transition-colors uppercase tracking-tight">
+<span class="material-symbols-outlined">favorite</span>
+                                            Save for later
+                                        </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Secure Checkout Badge -->
+<div class="flex items-center justify-center gap-8 py-4 border-t border-gray-200 dark:border-gray-800 mt-8 opacity-60">
+<div class="flex items-center gap-2 text-xs font-medium grayscale">
+<span class="material-symbols-outlined">verified_user</span>
+                        Genuine Products
+                    </div>
+<div class="flex items-center gap-2 text-xs font-medium grayscale">
+<span class="material-symbols-outlined">sync</span>
+                        Easy Returns
+                    </div>
+<div class="flex items-center gap-2 text-xs font-medium grayscale">
+<span class="material-symbols-outlined">lock</span>
+                        Secure Payment
+                    </div>
+</div>
+</div>
+<!-- Right Column: Price Summary (Sticky) -->
+<div class="w-full lg:w-[380px]">
+<div class="sticky top-24 space-y-4">
+<div class="bg-white dark:bg-gray-900 rounded-lg shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden">
+<div class="px-6 py-4 border-b border-gray-100 dark:border-gray-800">
+<h2 class="text-gray-500 font-bold uppercase text-xs tracking-widest">Price Details</h2>
+</div>
+<div class="p-6 space-y-4">
+<div class="flex justify-between text-base">
+<span class="text-gray-700 dark:text-gray-300">Price (1 item)</span>
+<span class="text-gray-900 dark:text-white">₹29,999</span>
+</div>
+<div class="flex justify-between text-base">
+<span class="text-gray-700 dark:text-gray-300">Discount</span>
+<span class="text-green-600 font-medium">−₹5,000</span>
+</div>
+<div class="flex justify-between text-base">
+<span class="text-gray-700 dark:text-gray-300">Exchange Credit</span>
+<span class="text-green-600 font-medium">−₹14,400</span>
+</div>
+<div class="flex justify-between text-base">
+<span class="text-gray-700 dark:text-gray-300">Delivery Charges</span>
+<span class="text-green-600 font-medium uppercase text-sm">Free</span>
+</div>
+<div class="pt-4 mt-4 border-t border-dashed border-gray-200 dark:border-gray-700">
+<div class="flex justify-between items-center mb-1">
+<span class="text-lg font-bold text-gray-900 dark:text-white">Total Payable</span>
+<span class="text-2xl font-black text-gray-900 dark:text-white">₹15,599</span>
+</div>
+<p class="text-green-600 text-sm font-bold">You will save ₹19,400 on this order</p>
+</div>
+</div>
+</div>
+<!-- Place Order Button -->
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-lg shadow-lg shadow-primary/20 transition-all flex items-center justify-center gap-2 text-lg">
+                        PLACE ORDER
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<!-- Trust Factor -->
+<div class="bg-primary/5 border border-primary/10 rounded-lg p-4 flex gap-3">
+<span class="material-symbols-outlined text-primary">verified</span>
+<div>
+<p class="text-sm font-bold text-primary">NEXCART Trust</p>
+<p class="text-xs text-primary/80">Every exchange is verified at your doorstep. No hidden deductions.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Help -->
+<footer class="mt-auto py-12 px-6 border-t border-gray-200 dark:border-gray-800">
+<div class="max-w-[1280px] mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex gap-8 text-sm text-gray-500">
+<a class="hover:text-primary" href="#">Contact Us</a>
+<a class="hover:text-primary" href="#">Returns Policy</a>
+<a class="hover:text-primary" href="#">Privacy Policy</a>
+<a class="hover:text-primary" href="#">Terms of Use</a>
+</div>
+<p class="text-sm text-gray-400">© 2024 NEXCART Retail Ltd. All rights reserved.</p>
+</div>
+</footer>
+</body></html>

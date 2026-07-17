@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEXCART | My Wallet Hub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2bee7c",
+                        "gold": "#d4af37",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#102218",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-row {
+            background: rgba(40, 57, 47, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(157, 185, 168, 0.1);
+        }
+        .neon-glow {
+            box-shadow: 0 0 15px rgba(43, 238, 124, 0.3);
+        }
+        .metallic-card {
+            background: linear-gradient(135deg, #1c2720 0%, #28392f 50%, #1c2720 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .metallic-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent 45%, rgba(255,255,255,0.05) 50%, transparent 55%);
+            transform: rotate(30deg);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-white selection:bg-primary/30">
+<!-- Main Layout Container -->
+<div class="relative flex h-screen w-full flex-col overflow-hidden">
+<!-- Top Navigation -->
+<header class="flex items-center justify-between border-b border-solid border-[#28392f] px-10 py-4 bg-background-dark/80 backdrop-blur-md z-50">
+<div class="flex items-center gap-12">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-8">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 -42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-white text-2xl font-bold leading-tight tracking-tight">NEXCART</h2>
+</div>
+<div class="flex items-center gap-8">
+<a class="text-white/70 hover:text-primary transition-colors text-sm font-medium" href="#">Marketplace</a>
+<a class="text-white/70 hover:text-primary transition-colors text-sm font-medium" href="#">Dashboard</a>
+<a class="text-primary text-sm font-medium border-b-2 border-primary pb-1" href="#">Wallet</a>
+<a class="text-white/70 hover:text-primary transition-colors text-sm font-medium" href="#">Analytics</a>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<label class="flex flex-col min-w-64 !h-10">
+<div class="flex w-full flex-1 items-stretch rounded-xl h-full bg-[#28392f]/50 border border-[#3b5445]">
+<div class="text-[#9db9a8] flex items-center justify-center pl-4">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 border-none bg-transparent focus:ring-0 text-white placeholder:text-[#9db9a8] px-4 text-base font-normal" placeholder="Search transactions..."/>
+</div>
+</label>
+<div class="flex gap-3">
+<button class="flex items-center justify-center rounded-xl h-10 w-10 bg-[#28392f] text-white hover:bg-primary/20 transition-all">
+<span class="material-symbols-outlined text-xl">notifications</span>
+</button>
+<button class="flex items-center justify-center rounded-xl h-10 w-10 bg-[#28392f] text-white hover:bg-primary/20 transition-all">
+<span class="material-symbols-outlined text-xl">settings</span>
+</button>
+</div>
+<div class="flex items-center gap-3 pl-4 border-l border-[#28392f]">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary/50" data-alt="User profile avatar with green border" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAs1Zrd80aWYkwxDmgXnwj1FWKpXlljVG6R0lwqwuswNBtpur7xcrXItsqQNUPubX0CDbeLqjH-PwqzgrdzGGthdxt9r43EOLIZVur7Z2eNHduyjOpXLv8A-Z0I1GG1D-Fv1Y9QuB8Dg1k-vXnu0Datfh-FG7rceGOTpIg_iFd55sxrwPk4CqTX8LLmqTQyaEk9Olp1AWtW4bLQaBlct5M6dUfZQUrq4OpKn-AtOjQIfcZylxNE7bWmUbzlXrLTBY9_h8CACtPPVVNS");'></div>
+</div>
+</div>
+</header>
+<div class="flex flex-1 overflow-hidden">
+<!-- Sidebar Navigation -->
+<aside class="w-72 flex flex-col justify-between border-r border-[#28392f] bg-background-dark p-6">
+<div class="flex flex-col gap-8">
+<div class="flex flex-col gap-1">
+<p class="text-[#9db9a8] text-xs font-bold uppercase tracking-widest mb-2">Personal</p>
+<div class="flex items-center gap-3 px-4 py-3 rounded-xl bg-primary/10 text-primary border border-primary/20 cursor-pointer">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<p class="text-sm font-semibold">My Wallet</p>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 rounded-xl text-white/60 hover:bg-[#28392f] hover:text-white transition-all cursor-pointer">
+<span class="material-symbols-outlined">receipt_long</span>
+<p class="text-sm font-medium">Transactions</p>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 rounded-xl text-white/60 hover:bg-[#28392f] hover:text-white transition-all cursor-pointer">
+<span class="material-symbols-outlined">monitoring</span>
+<p class="text-sm font-medium">Budgets</p>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 rounded-xl text-white/60 hover:bg-[#28392f] hover:text-white transition-all cursor-pointer">
+<span class="material-symbols-outlined">credit_card</span>
+<p class="text-sm font-medium">My Cards</p>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-[#9db9a8] text-xs font-bold uppercase tracking-widest mb-2">Commerce</p>
+<div class="flex items-center gap-3 px-4 py-3 rounded-xl text-white/60 hover:bg-[#28392f] hover:text-white transition-all cursor-pointer">
+<span class="material-symbols-outlined">storefront</span>
+<p class="text-sm font-medium">Seller Center</p>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 rounded-xl text-white/60 hover:bg-[#28392f] hover:text-white transition-all cursor-pointer">
+<span class="material-symbols-outlined">redeem</span>
+<p class="text-sm font-medium">Rewards</p>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<div class="p-4 rounded-xl bg-gradient-to-br from-[#28392f] to-[#102218] border border-primary/10">
+<div class="flex items-center gap-2 text-gold mb-1">
+<span class="material-symbols-outlined text-sm">workspace_premium</span>
+<p class="text-[10px] font-bold uppercase">NEXCART Pro</p>
+</div>
+<p class="text-xs text-[#9db9a8] mb-3">Earn 5% cashback on all marketplace purchases.</p>
+<button class="w-full py-2 bg-primary/20 text-primary text-xs font-bold rounded-lg hover:bg-primary transition-all hover:text-background-dark">UPGRADE</button>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 rounded-xl text-[#fa5538] hover:bg-[#fa5538]/10 transition-all cursor-pointer">
+<span class="material-symbols-outlined">logout</span>
+<p class="text-sm font-medium">Logout</p>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto bg-background-dark px-12 py-10">
+<!-- Page Heading -->
+<div class="flex justify-between items-end mb-10">
+<div class="flex flex-col gap-2">
+<h1 class="text-5xl font-black tracking-tight">Financial Hub</h1>
+<p class="text-[#9db9a8] text-lg max-w-lg">Advanced management for your e-commerce earnings and shopping portfolio.</p>
+</div>
+<div class="flex gap-4">
+<button class="flex items-center gap-2 px-6 h-12 bg-[#28392f] hover:bg-[#3b5445] transition-all rounded-xl text-white font-bold">
+<span class="material-symbols-outlined">download</span>
+                            Statement
+                        </button>
+<button class="flex items-center gap-2 px-6 h-12 bg-primary text-background-dark hover:neon-glow transition-all rounded-xl font-bold">
+<span class="material-symbols-outlined">add_circle</span>
+                            Add Funds
+                        </button>
+</div>
+</div>
+<!-- Dashboard Grid -->
+<div class="grid grid-cols-12 gap-8">
+<!-- Left Column: Balance & Stats -->
+<div class="col-span-12 xl:col-span-8 flex flex-col gap-8">
+<!-- Premium 3D Card Section -->
+<div class="metallic-card rounded-2xl p-8 flex flex-col md:flex-row gap-8 items-center border border-white/5 shadow-2xl">
+<div class="relative w-full md:w-80 aspect-[1.586/1] rounded-xl shadow-2xl transform hover:rotate-2 hover:-translate-y-2 transition-transform duration-500 overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black p-6 flex flex-col justify-between border border-white/10 group">
+<!-- Card Visual Inner -->
+<div class="flex justify-between items-start">
+<div class="size-10 bg-gradient-to-tr from-gold to-yellow-200 rounded-lg opacity-80"></div>
+<span class="material-symbols-outlined text-white/20 text-4xl">contactless</span>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-white/40 text-[10px] tracking-[0.2em] font-bold uppercase">NEXCART PLATINUM</p>
+<p class="text-white text-xl font-medium tracking-widest">**** **** **** 8842</p>
+</div>
+<div class="flex justify-between items-end">
+<div class="flex flex-col">
+<p class="text-white/40 text-[8px] font-bold uppercase">Card Holder</p>
+<p class="text-white text-sm font-bold">ALEXANDER VANCE</p>
+</div>
+<div class="size-8 bg-white/10 rounded-full flex items-center justify-center">
+<div class="size-4 bg-primary/80 rounded-full blur-[2px]"></div>
+</div>
+</div>
+<!-- Overlay shine effect -->
+<div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+</div>
+<div class="flex flex-1 flex-col justify-center gap-4">
+<div class="flex flex-col">
+<p class="text-primary text-sm font-bold uppercase tracking-widest mb-1">Available Balance</p>
+<h2 class="text-6xl font-black text-white">$12,450.80</h2>
+</div>
+<div class="flex gap-4 mt-4">
+<div class="px-4 py-2 bg-white/5 border border-white/10 rounded-lg flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">arrow_upward</span>
+<div>
+<p class="text-[10px] text-white/40 font-bold uppercase">Total Income</p>
+<p class="text-sm font-bold">$4,250.00</p>
+</div>
+</div>
+<div class="px-4 py-2 bg-white/5 border border-white/10 rounded-lg flex items-center gap-3">
+<span class="material-symbols-outlined text-[#fa5538]">arrow_downward</span>
+<div>
+<p class="text-[10px] text-white/40 font-bold uppercase">Total Spend</p>
+<p class="text-sm font-bold">$1,842.12</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Stats Row -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="flex flex-col gap-2 rounded-2xl p-6 bg-[#1c2720] border border-[#3b5445] hover:border-primary/50 transition-all group">
+<div class="flex justify-between items-start mb-2">
+<div class="p-2 bg-primary/10 rounded-lg text-primary">
+<span class="material-symbols-outlined">savings</span>
+</div>
+<p class="text-primary text-sm font-bold">+12%</p>
+</div>
+<p class="text-white/60 text-sm font-medium">Total Saved</p>
+<p class="text-3xl font-bold">$1,200.00</p>
+</div>
+<div class="flex flex-col gap-2 rounded-2xl p-6 bg-[#1c2720] border border-[#3b5445] hover:border-primary/50 transition-all">
+<div class="flex justify-between items-start mb-2">
+<div class="p-2 bg-gold/10 rounded-lg text-gold">
+<span class="material-symbols-outlined">stars</span>
+</div>
+<p class="text-primary text-sm font-bold">+5%</p>
+</div>
+<p class="text-white/60 text-sm font-medium">Cashback Earned</p>
+<p class="text-3xl font-bold">$342.50</p>
+</div>
+<div class="flex flex-col gap-2 rounded-2xl p-6 bg-[#1c2720] border border-[#3b5445] hover:border-primary/50 transition-all">
+<div class="flex justify-between items-start mb-2">
+<div class="p-2 bg-[#fa5538]/10 rounded-lg text-[#fa5538]">
+<span class="material-symbols-outlined">speed</span>
+</div>
+<p class="text-[#fa5538] text-sm font-bold">-2%</p>
+</div>
+<p class="text-white/60 text-sm font-medium">Monthly Limit</p>
+<p class="text-3xl font-bold">$5,000.00</p>
+</div>
+</div>
+<!-- Transactions List -->
+<div class="flex flex-col gap-4">
+<div class="flex justify-between items-center px-2">
+<h3 class="text-xl font-bold">Recent Activity</h3>
+<button class="text-primary text-sm font-bold hover:underline">View All</button>
+</div>
+<div class="flex flex-col gap-3">
+<!-- Row 1 -->
+<div class="glass-row p-4 rounded-xl flex items-center justify-between group hover:bg-white/5 transition-all">
+<div class="flex items-center gap-4">
+<div class="size-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-white">shopping_bag</span>
+</div>
+<div>
+<p class="font-bold">Apple Store Marketplace</p>
+<p class="text-xs text-white/40">24 Oct, 2023 • 2:45 PM</p>
+</div>
+</div>
+<div class="flex items-center gap-12">
+<div class="text-right">
+<p class="font-bold text-[#fa5538]">-$1,299.00</p>
+<p class="text-[10px] text-white/40 font-bold uppercase">Personal Gear</p>
+</div>
+<div class="w-24 px-3 py-1 bg-primary/20 text-primary border border-primary/30 rounded-full text-center text-[10px] font-bold">
+                                            DELIVERED
+                                        </div>
+</div>
+</div>
+<!-- Row 2 -->
+<div class="glass-row p-4 rounded-xl flex items-center justify-between group hover:bg-white/5 transition-all">
+<div class="flex items-center gap-4">
+<div class="size-12 rounded-full bg-primary/20 border border-primary/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">payments</span>
+</div>
+<div>
+<p class="font-bold">Affiliate Commission</p>
+<p class="text-xs text-white/40">23 Oct, 2023 • 10:15 AM</p>
+</div>
+</div>
+<div class="flex items-center gap-12">
+<div class="text-right">
+<p class="font-bold text-primary">+$450.25</p>
+<p class="text-[10px] text-white/40 font-bold uppercase">Seller Earnings</p>
+</div>
+<div class="w-24 px-3 py-1 bg-gold/20 text-gold border border-gold/30 rounded-full text-center text-[10px] font-bold">
+                                            PENDING
+                                        </div>
+</div>
+</div>
+<!-- Row 3 -->
+<div class="glass-row p-4 rounded-xl flex items-center justify-between group hover:bg-white/5 transition-all opacity-80">
+<div class="flex items-center gap-4">
+<div class="size-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-white">bolt</span>
+</div>
+<div>
+<p class="font-bold">Tesla Charging Network</p>
+<p class="text-xs text-white/40">22 Oct, 2023 • 6:12 PM</p>
+</div>
+</div>
+<div class="flex items-center gap-12">
+<div class="text-right">
+<p class="font-bold text-[#fa5538]">-$42.00</p>
+<p class="text-[10px] text-white/40 font-bold uppercase">Utilities</p>
+</div>
+<div class="w-24 px-3 py-1 bg-red-500/20 text-red-500 border border-red-500/30 rounded-full text-center text-[10px] font-bold">
+                                            FAILED
+                                        </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Analytics & Quick Actions -->
+<div class="col-span-12 xl:col-span-4 flex flex-col gap-8">
+<!-- Monthly Spending Chart (Mockup) -->
+<div class="rounded-2xl bg-[#1c2720] border border-[#3b5445] p-6">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-lg font-bold">Spending Analysis</h3>
+<select class="bg-transparent border-none text-xs text-primary font-bold focus:ring-0 cursor-pointer">
+<option>This Month</option>
+<option>Last Month</option>
+</select>
+</div>
+<!-- Custom Bar Chart Visualization -->
+<div class="h-48 flex items-end justify-between gap-2 px-2">
+<div class="w-full flex flex-col items-center gap-2 group">
+<div class="w-full bg-white/5 rounded-t-lg h-12 group-hover:bg-primary/20 transition-all"></div>
+<p class="text-[8px] text-white/40 font-bold">MON</p>
+</div>
+<div class="w-full flex flex-col items-center gap-2 group">
+<div class="w-full bg-white/5 rounded-t-lg h-24 group-hover:bg-primary/20 transition-all"></div>
+<p class="text-[8px] text-white/40 font-bold">TUE</p>
+</div>
+<div class="w-full flex flex-col items-center gap-2 group">
+<div class="w-full bg-primary/40 rounded-t-lg h-36 border-x border-t border-primary/50 group-hover:bg-primary transition-all"></div>
+<p class="text-[8px] text-primary font-bold">WED</p>
+</div>
+<div class="w-full flex flex-col items-center gap-2 group">
+<div class="w-full bg-white/5 rounded-t-lg h-16 group-hover:bg-primary/20 transition-all"></div>
+<p class="text-[8px] text-white/40 font-bold">THU</p>
+</div>
+<div class="w-full flex flex-col items-center gap-2 group">
+<div class="w-full bg-white/5 rounded-t-lg h-28 group-hover:bg-primary/20 transition-all"></div>
+<p class="text-[8px] text-white/40 font-bold">FRI</p>
+</div>
+<div class="w-full flex flex-col items-center gap-2 group">
+<div class="w-full bg-white/5 rounded-t-lg h-40 group-hover:bg-primary/20 transition-all"></div>
+<p class="text-[8px] text-white/40 font-bold">SAT</p>
+</div>
+<div class="w-full flex flex-col items-center gap-2 group">
+<div class="w-full bg-white/5 rounded-t-lg h-20 group-hover:bg-primary/20 transition-all"></div>
+<p class="text-[8px] text-white/40 font-bold">SUN</p>
+</div>
+</div>
+<div class="mt-8 pt-6 border-t border-white/5">
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="size-2 rounded-full bg-primary"></div>
+<p class="text-xs text-white/60">Marketplace Shopping</p>
+</div>
+<p class="text-xs font-bold">$1,240.00</p>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="size-2 rounded-full bg-gold"></div>
+<p class="text-xs text-white/60">Subscription Services</p>
+</div>
+<p class="text-xs font-bold">$340.00</p>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="size-2 rounded-full bg-blue-500"></div>
+<p class="text-xs text-white/60">Direct Transfers</p>
+</div>
+<p class="text-xs font-bold">$842.12</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Security & Quick Actions -->
+<div class="flex flex-col gap-4">
+<h3 class="text-lg font-bold px-2">Wallet Control</h3>
+<div class="grid grid-cols-2 gap-4">
+<button class="flex flex-col items-center justify-center p-4 rounded-xl glass-row hover:border-primary transition-all gap-2 group">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">lock</span>
+<span class="text-xs font-bold">Freeze Card</span>
+</button>
+<button class="flex flex-col items-center justify-center p-4 rounded-xl glass-row hover:border-primary transition-all gap-2 group">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">password</span>
+<span class="text-xs font-bold">Change PIN</span>
+</button>
+<button class="flex flex-col items-center justify-center p-4 rounded-xl glass-row hover:border-primary transition-all gap-2 group">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">qr_code_2</span>
+<span class="text-xs font-bold">QR Pay</span>
+</button>
+<button class="flex flex-col items-center justify-center p-4 rounded-xl glass-row hover:border-primary transition-all gap-2 group">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">support_agent</span>
+<span class="text-xs font-bold">Live Support</span>
+</button>
+</div>
+</div>
+<!-- Card Promotion -->
+<div class="mt-auto relative rounded-2xl overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10"></div>
+<div class="w-full h-48 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Futuristic data network pattern with golden sparks" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCJCQmEdTc3yLnsRo6oIhqRI9DrPgYYONHF_jHwRuc34eXmkVA6wWeSmlqyABRN2HOKS-vRUIkNuSLBWZGf04pLRE7SvzgZaHttjA1qIkS1G5X1n15b2fpFJJDrITIwffQ2MBUs-pkdvHFftRUa56HjYvb2airercY3L9zNIz4--GMpUbl1U6hgMDTVeTffix3DeZ2vF7h_TY_oAR7qP2aDDMdepGoAryYykb2KFZHOaXJbmwmf_Kag9JfDgbnKsWzVmwm7u7GYEham');"></div>
+<div class="absolute bottom-4 left-4 right-4 z-20">
+<p class="text-primary text-[10px] font-bold uppercase mb-1">Coming Soon</p>
+<h4 class="text-lg font-bold text-white mb-2">NEXCART Crypto Bridge</h4>
+<p class="text-xs text-white/70">Seamlessly trade and spend digital assets directly from your wallet.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEXCART - Order Cancellation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3899fa",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#0f1923",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen">
+<div class="relative flex h-auto w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f0f2f5] dark:border-b-gray-800 bg-white dark:bg-background-dark px-10 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-[#111418] dark:text-white">
+<div class="size-6 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em] font-display">NEXCART</h2>
+</div>
+<label class="flex flex-col min-w-40 h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-[#5f758c] flex border-none bg-[#f0f2f5] dark:bg-gray-800 items-center justify-center pl-4 rounded-l-lg border-r-0">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 border-none bg-[#f0f2f5] dark:bg-gray-800 text-[#111418] dark:text-white focus:ring-0 h-full placeholder:text-[#5f758c] px-4 rounded-r-lg pl-2 text-base font-normal" placeholder="Search orders, products..." value=""/>
+</div>
+</label>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<div class="flex items-center gap-9">
+<a class="text-[#111418] dark:text-gray-300 text-sm font-medium hover:text-primary transition-colors" href="#">Mobiles</a>
+<a class="text-[#111418] dark:text-gray-300 text-sm font-medium hover:text-primary transition-colors" href="#">Electronics</a>
+<a class="text-[#111418] dark:text-gray-300 text-sm font-medium hover:text-primary transition-colors" href="#">Fashion</a>
+<a class="text-[#111418] dark:text-gray-300 text-sm font-medium hover:text-primary transition-colors" href="#">Home</a>
+</div>
+<div class="flex gap-2">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-[#f0f2f5] dark:bg-gray-800 text-[#111418] dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 transition-all">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-[#f0f2f5] dark:bg-gray-800 text-[#111418] dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 transition-all">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<main class="max-w-[1200px] mx-auto w-full px-4 lg:px-10 py-8">
+<!-- Breadcrumbs -->
+<nav class="flex flex-wrap gap-2 mb-6">
+<a class="text-[#5f758c] text-sm font-medium hover:text-primary" href="#">Home</a>
+<span class="text-[#5f758c] text-sm font-medium">/</span>
+<a class="text-[#5f758c] text-sm font-medium hover:text-primary" href="#">My Orders</a>
+<span class="text-[#5f758c] text-sm font-medium">/</span>
+<span class="text-[#111418] dark:text-white text-sm font-medium">Cancellation</span>
+</nav>
+<!-- Page Heading -->
+<div class="flex flex-wrap justify-between items-end gap-3 mb-8">
+<div class="flex min-w-72 flex-col gap-1">
+<h1 class="text-[#111418] dark:text-white text-4xl font-black leading-tight tracking-[-0.033em]">Cancel Order</h1>
+<p class="text-[#5f758c] text-base font-normal">Request cancellation for Order ID: <span class="font-mono font-bold text-[#111418] dark:text-gray-300">NX-882910293</span></p>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Left Column: Process -->
+<div class="lg:col-span-2 space-y-6">
+<!-- Timeline/Stepper Card -->
+<div class="bg-white dark:bg-gray-900 rounded-xl p-6 shadow-sm border border-[#f0f2f5] dark:border-gray-800">
+<div class="grid grid-cols-[40px_1fr] gap-x-2">
+<div class="flex flex-col items-center gap-1 pt-1">
+<div class="text-primary">
+<span class="material-symbols-outlined fill-1">check_circle</span>
+</div>
+<div class="w-[1.5px] bg-primary h-8 grow"></div>
+</div>
+<div class="flex flex-1 flex-col pb-6">
+<p class="text-[#111418] dark:text-white text-base font-bold">Reason for Cancellation</p>
+<p class="text-[#5f758c] text-sm font-normal">Active Step</p>
+</div>
+<div class="flex flex-col items-center gap-1">
+<div class="w-[1.5px] bg-[#dbe0e6] dark:bg-gray-700 h-2"></div>
+<div class="text-gray-300 dark:text-gray-600">
+<span class="material-symbols-outlined">circle</span>
+</div>
+<div class="w-[1.5px] bg-[#dbe0e6] dark:bg-gray-700 h-8 grow"></div>
+</div>
+<div class="flex flex-1 flex-col pb-6">
+<p class="text-gray-400 dark:text-gray-600 text-base font-medium">Refund Destination</p>
+<p class="text-gray-400 dark:text-gray-600 text-sm font-normal">Pending</p>
+</div>
+<div class="flex flex-col items-center gap-1 pb-1">
+<div class="w-[1.5px] bg-[#dbe0e6] dark:bg-gray-700 h-2"></div>
+<div class="text-gray-300 dark:text-gray-600">
+<span class="material-symbols-outlined">circle</span>
+</div>
+</div>
+<div class="flex flex-1 flex-col">
+<p class="text-gray-400 dark:text-gray-600 text-base font-medium">Confirmation</p>
+<p class="text-gray-400 dark:text-gray-600 text-sm font-normal">Final Step</p>
+</div>
+</div>
+</div>
+<!-- Step 1 Content: Reason -->
+<div class="bg-white dark:bg-gray-900 rounded-xl p-6 shadow-sm border border-[#f0f2f5] dark:border-gray-800">
+<h2 class="text-[#111418] dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] mb-6 flex items-center gap-2">
+<span class="bg-primary/10 text-primary w-8 h-8 rounded-full flex items-center justify-center text-sm">1</span>
+                                Why are you canceling?
+                            </h2>
+<div class="space-y-4">
+<div class="relative group">
+<select class="form-select w-full rounded-lg border-[#dbe0e6] dark:border-gray-700 dark:bg-gray-800 dark:text-white text-base py-3 px-4 focus:ring-primary focus:border-primary transition-all appearance-none">
+<option disabled="" selected="" value="">Select a reason</option>
+<option value="price">Price has decreased</option>
+<option value="mistake">Ordered by mistake</option>
+<option value="delay">Delayed Delivery</option>
+<option value="change">Changed my mind</option>
+<option value="better">Found better price elsewhere</option>
+</select>
+<div class="absolute inset-y-0 right-3 flex items-center pointer-events-none text-gray-400">
+<span class="material-symbols-outlined">keyboard_arrow_down</span>
+</div>
+</div>
+<div class="p-4 bg-primary/5 rounded-lg border border-primary/20">
+<p class="text-sm text-gray-600 dark:text-gray-400">
+<strong>Note:</strong> Once cancelled, the promotional discounts applied to this order may not be reusable.
+                                    </p>
+</div>
+</div>
+</div>
+<!-- Step 2 Content: Refund (Preview State) -->
+<div class="bg-white dark:bg-gray-900 rounded-xl p-6 shadow-sm border border-[#f0f2f5] dark:border-gray-800">
+<h2 class="text-[#111418] dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] mb-6 flex items-center gap-2 opacity-100">
+<span class="bg-gray-100 dark:bg-gray-800 text-gray-500 w-8 h-8 rounded-full flex items-center justify-center text-sm">2</span>
+                                Refund Destination
+                            </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Option 1 -->
+<div class="relative border-2 border-primary rounded-xl p-5 cursor-pointer bg-primary/5 transition-all">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-3xl text-primary">account_balance_wallet</span>
+<div class="bg-green-100 text-green-700 text-[10px] uppercase font-bold px-2 py-0.5 rounded-full">Instant</div>
+</div>
+<p class="text-[#111418] dark:text-white font-bold text-lg mb-1">NEXCART Wallet</p>
+<p class="text-[#5f758c] text-xs leading-relaxed">Refunded within seconds. Ready for your next purchase instantly.</p>
+<div class="absolute top-4 right-4 text-primary">
+<span class="material-symbols-outlined text-xl">check_circle</span>
+</div>
+</div>
+<!-- Option 2 -->
+<div class="relative border border-[#dbe0e6] dark:border-gray-700 rounded-xl p-5 cursor-pointer hover:border-gray-300 dark:hover:border-gray-600 transition-all">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-3xl text-gray-400">payments</span>
+<div class="bg-gray-100 dark:bg-gray-800 text-gray-500 text-[10px] uppercase font-bold px-2 py-0.5 rounded-full">3-5 Days</div>
+</div>
+<p class="text-[#111418] dark:text-white font-bold text-lg mb-1">Original Payment Method</p>
+<p class="text-[#5f758c] text-xs leading-relaxed">Returns to your bank account or card used for payment.</p>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-4 pt-4">
+<button class="flex-1 lg:flex-none lg:min-w-[200px] h-12 bg-primary hover:bg-primary/90 text-white rounded-lg font-bold text-base transition-all shadow-lg shadow-primary/20">
+                                Confirm Cancellation
+                            </button>
+<button class="flex-1 lg:flex-none lg:min-w-[200px] h-12 bg-transparent border border-[#dbe0e6] dark:border-gray-700 text-[#111418] dark:text-white rounded-lg font-bold text-base hover:bg-gray-50 dark:hover:bg-gray-800 transition-all">
+                                Keep My Order
+                            </button>
+</div>
+</div>
+<!-- Right Column: Summary -->
+<div class="space-y-6">
+<!-- Order Item Card -->
+<div class="bg-white dark:bg-gray-900 rounded-xl p-5 shadow-sm border border-[#f0f2f5] dark:border-gray-800">
+<p class="text-[#5f758c] text-xs font-bold uppercase tracking-wider mb-4">Order Item</p>
+<div class="flex gap-4">
+<div class="w-20 h-20 bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden shrink-0">
+<img alt="Premium Smartphone" class="w-full h-full object-cover" data-alt="Modern smartphone with sleek camera module" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkwKkF8t1PLICtHKEDQjT9DwUiTlZkxmSqEl7U698ni_wRASm00lonkC7wqZilhtJe94XnCPiP9u_bNCeNBuKYX71Vs9KqWNo3YHV0Gk9CJqNItinstaIfRfIaeo0reI1ei6ZY_6o4LBPDH-pKwlIET5w2RbenhUlbE9YulO2cLYBtupW53OmNPzOxyhWUcf0sxoq50WMPcCLdf8dVtRyRmYwaKd1rgXd7fNYs4wc4l7_fFKh2vcUGJRDdLHWkcTtNX5sXycPeEf9_"/>
+</div>
+<div>
+<h3 class="text-[#111418] dark:text-white text-sm font-bold leading-tight">Nexus Pro 15 Smartphone, 256GB Black</h3>
+<p class="text-[#5f758c] text-xs mt-1">Quantity: 1</p>
+<p class="text-[#111418] dark:text-white font-bold mt-2">$899.00</p>
+</div>
+</div>
+</div>
+<!-- Refund Summary -->
+<div class="bg-white dark:bg-gray-900 rounded-xl p-6 shadow-sm border border-[#f0f2f5] dark:border-gray-800">
+<h3 class="text-[#111418] dark:text-white text-lg font-bold mb-6">Refund Summary</h3>
+<div class="space-y-4">
+<div class="flex justify-between text-sm">
+<span class="text-[#5f758c]">Item Price</span>
+<span class="text-[#111418] dark:text-white font-medium">$899.00</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-[#5f758c]">Shipping Fee</span>
+<span class="text-green-600 font-medium">FREE</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-[#5f758c]">Discount Applied</span>
+<span class="text-[#111418] dark:text-white font-medium">-$50.00</span>
+</div>
+<div class="pt-4 border-t border-[#f0f2f5] dark:border-gray-800">
+<div class="flex justify-between items-end">
+<div>
+<p class="text-[#111418] dark:text-white text-lg font-bold">Total Refund</p>
+<p class="text-[#5f758c] text-[10px] uppercase font-bold tracking-tight">Status: Pending</p>
+</div>
+<span class="text-2xl font-black text-green-600">$849.00</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Trust Shield -->
+<div class="flex items-center gap-3 p-4 rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-800">
+<span class="material-symbols-outlined text-primary text-3xl">verified_user</span>
+<div>
+<p class="text-[#111418] dark:text-white text-xs font-bold">Secure Refund Guarantee</p>
+<p class="text-[#5f758c] text-[10px]">Your money is protected by NEXCART's trust seal.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Simple Footer -->
+<footer class="mt-auto border-t border-[#f0f2f5] dark:border-gray-800 py-6 px-10">
+<div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-[#5f758c] text-xs">© 2024 NEXCART Marketplace. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="text-[#5f758c] text-xs hover:text-primary" href="#">Help Center</a>
+<a class="text-[#5f758c] text-xs hover:text-primary" href="#">Refund Policy</a>
+<a class="text-[#5f758c] text-xs hover:text-primary" href="#">Privacy Policy</a>
+</div>
+</div>
+</footer>
+</div>
+</div>
+</body></html>

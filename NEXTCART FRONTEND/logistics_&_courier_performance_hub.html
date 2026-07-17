@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Logistics &amp; Courier Performance Hub | NEXCART</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2547f4",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101322",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111218] dark:text-white min-h-screen">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 dark:border-gray-800 bg-white dark:bg-background-dark px-10 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-6">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-[#111218] dark:text-white text-xl font-black leading-tight tracking-tight">NEXCART</h2>
+</div>
+<label class="flex flex-col min-w-40 h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-[#60678a] flex border-none bg-gray-100 dark:bg-gray-800 items-center justify-center pl-4 rounded-l-lg">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 border-none bg-gray-100 dark:bg-gray-800 focus:ring-0 h-full placeholder:text-[#60678a] px-4 rounded-r-lg text-base font-normal" placeholder="Search orders, AWB..." value=""/>
+</div>
+</label>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<nav class="flex items-center gap-9">
+<a class="text-[#111218] dark:text-gray-300 text-sm font-medium hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="text-[#111218] dark:text-gray-300 text-sm font-medium hover:text-primary transition-colors" href="#">Orders</a>
+<a class="text-primary text-sm font-bold border-b-2 border-primary py-4" href="#">Logistics</a>
+<a class="text-[#111218] dark:text-gray-300 text-sm font-medium hover:text-primary transition-colors" href="#">Analytics</a>
+</nav>
+<div class="flex gap-2">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-gray-100 dark:bg-gray-800 text-[#111218] dark:text-white">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-gray-100 dark:bg-gray-800 text-[#111218] dark:text-white">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border border-gray-200" data-alt="User profile avatar image" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAqB4YxxpyY9_oXRWKsm0JN77I3wz7U1XeMBCoFnt0rTU3G7pcopt53BqTIwe5ur6oWks_tyRal5w0105KDmuuc6WCtbhh0wZVUvz3YokagHkYecTa96scqY34ord8vHEIrN871ZoJsLjOWo2MVltNf9V0VWpagyY36uFpC1SgIkXxyXGcXb6H0hYbGfVnMyy8bzMI-N9DaTGQ5_IXS2um0y2T8tgfhtbSxeywHw9Rls5SAxFAbsS5_lktDSpnANkvFPUd0mswYVj7l");'></div>
+</div>
+</header>
+<main class="flex-1 flex flex-col max-w-7xl mx-auto w-full px-10 py-8 gap-8">
+<!-- Page Heading -->
+<div class="flex flex-wrap justify-between items-end gap-3">
+<div class="flex flex-col gap-2">
+<h1 class="text-[#111218] dark:text-white text-4xl font-black leading-tight tracking-tight">Logistics &amp; Courier Performance Hub</h1>
+<p class="text-[#60678a] dark:text-gray-400 text-base font-normal">Manage smart allocations, monitor courier health, and verify serviceability across India.</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center justify-center rounded-lg h-10 px-4 bg-gray-100 dark:bg-gray-800 text-[#111218] dark:text-white text-sm font-bold border border-gray-200 dark:border-gray-700">
+<span class="material-symbols-outlined mr-2 text-lg">sync</span>Sync API Status
+                    </button>
+<button class="flex items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined mr-2 text-lg">add</span>New Integration
+                    </button>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Smart Courier Allocation Section -->
+<div class="lg:col-span-2 bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden">
+<div class="p-6 border-b border-gray-100 dark:border-gray-800 flex justify-between items-center">
+<h2 class="text-lg font-bold">Smart Courier Allocation Weights</h2>
+<span class="bg-primary/10 text-primary text-xs font-bold px-2 py-1 rounded uppercase tracking-wider">AI Powered</span>
+</div>
+<div class="p-6 space-y-8">
+<!-- Weight Grid -->
+<div class="grid grid-cols-3 gap-4">
+<div class="flex flex-col gap-3 rounded-xl border border-primary/20 bg-primary/5 p-4">
+<span class="material-symbols-outlined text-primary">speed</span>
+<div class="flex flex-col">
+<h3 class="text-sm font-bold">Speed Priority</h3>
+<p class="text-primary text-2xl font-black">40%</p>
+</div>
+</div>
+<div class="flex flex-col gap-3 rounded-xl border border-gray-200 dark:border-gray-800 p-4">
+<span class="material-symbols-outlined text-gray-500">payments</span>
+<div class="flex flex-col">
+<h3 class="text-sm font-bold">Cost Efficiency</h3>
+<p class="text-gray-900 dark:text-white text-2xl font-black">30%</p>
+</div>
+</div>
+<div class="flex flex-col gap-3 rounded-xl border border-gray-200 dark:border-gray-800 p-4">
+<span class="material-symbols-outlined text-gray-500">verified</span>
+<div class="flex flex-col">
+<h3 class="text-sm font-bold">Pincode Success</h3>
+<p class="text-gray-900 dark:text-white text-2xl font-black">30%</p>
+</div>
+</div>
+</div>
+<!-- Allocation Slider -->
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<p class="text-sm font-medium text-gray-600 dark:text-gray-400">Current Distribution Profile</p>
+<button class="text-primary text-xs font-bold flex items-center gap-1"><span class="material-symbols-outlined text-sm">edit</span> Adjust Weights</button>
+</div>
+<div class="h-3 w-full bg-gray-100 dark:bg-gray-800 rounded-full flex overflow-hidden">
+<div class="h-full bg-primary" style="width: 40%"></div>
+<div class="h-full bg-blue-400" style="width: 30%"></div>
+<div class="h-full bg-indigo-300" style="width: 30%"></div>
+</div>
+<div class="flex gap-6 text-xs text-gray-500 font-medium">
+<div class="flex items-center gap-2"><div class="size-2 rounded-full bg-primary"></div> Speed</div>
+<div class="flex items-center gap-2"><div class="size-2 rounded-full bg-blue-400"></div> Cost</div>
+<div class="flex items-center gap-2"><div class="size-2 rounded-full bg-indigo-300"></div> Success</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Pincode Serviceability Tool -->
+<div class="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm p-6 flex flex-col gap-6">
+<div class="flex items-center gap-3">
+<div class="p-2 bg-gray-100 dark:bg-gray-800 rounded-lg">
+<span class="material-symbols-outlined text-primary">location_on</span>
+</div>
+<h2 class="text-lg font-bold">Pincode Serviceability</h2>
+</div>
+<p class="text-sm text-gray-500">Quickly verify if your couriers cover a specific zone before dispatch.</p>
+<div class="flex flex-col gap-4">
+<div class="flex gap-2">
+<input class="flex-1 rounded-lg border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-sm focus:ring-primary focus:border-primary" placeholder="Enter 6-digit Pincode" type="text"/>
+<button class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-bold">Check</button>
+</div>
+<div class="bg-green-50 dark:bg-green-900/20 border border-green-100 dark:border-green-800 p-4 rounded-lg flex items-start gap-3">
+<span class="material-symbols-outlined text-green-600 mt-0.5">check_circle</span>
+<div>
+<p class="text-sm font-bold text-green-800 dark:text-green-400">Serviced by 4 Couriers</p>
+<p class="text-xs text-green-700 dark:text-green-500">Delhivery (Express), Blue Dart, Ecom Express, XpressBees.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Active Integrations Grid -->
+<div class="space-y-4">
+<h2 class="text-xl font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-gray-400">hub</span>
+                    Active Courier Integrations
+                </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Delhivery Card -->
+<div class="bg-white dark:bg-gray-900 p-5 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<div class="h-10 w-24 bg-gray-50 dark:bg-gray-800 rounded flex items-center justify-center font-bold text-gray-400" data-alt="Delhivery Logo placeholder">Delhivery</div>
+<div class="flex h-6 w-12 items-center bg-green-100 dark:bg-green-900/30 rounded-full p-1 cursor-pointer">
+<div class="h-4 w-4 rounded-full bg-green-600 translate-x-6"></div>
+</div>
+</div>
+<div class="flex flex-col">
+<div class="flex justify-between items-center text-xs mb-1">
+<span class="text-gray-500 uppercase tracking-wider">Status</span>
+<span class="text-green-600 font-bold">Connected</span>
+</div>
+<div class="flex justify-between items-center text-xs">
+<span class="text-gray-500 uppercase tracking-wider">API Health</span>
+<span class="text-gray-900 dark:text-white">99.8%</span>
+</div>
+</div>
+</div>
+<!-- Blue Dart Card -->
+<div class="bg-white dark:bg-gray-900 p-5 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<div class="h-10 w-24 bg-gray-50 dark:bg-gray-800 rounded flex items-center justify-center font-bold text-gray-400" data-alt="Blue Dart Logo placeholder">Blue Dart</div>
+<div class="flex h-6 w-12 items-center bg-green-100 dark:bg-green-900/30 rounded-full p-1 cursor-pointer">
+<div class="h-4 w-4 rounded-full bg-green-600 translate-x-6"></div>
+</div>
+</div>
+<div class="flex flex-col">
+<div class="flex justify-between items-center text-xs mb-1">
+<span class="text-gray-500 uppercase tracking-wider">Status</span>
+<span class="text-green-600 font-bold">Connected</span>
+</div>
+<div class="flex justify-between items-center text-xs">
+<span class="text-gray-500 uppercase tracking-wider">API Health</span>
+<span class="text-gray-900 dark:text-white">98.2%</span>
+</div>
+</div>
+</div>
+<!-- Ecom Express -->
+<div class="bg-white dark:bg-gray-900 p-5 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<div class="h-10 w-24 bg-gray-50 dark:bg-gray-800 rounded flex items-center justify-center font-bold text-gray-400" data-alt="Ecom Express Logo placeholder">Ecom Express</div>
+<div class="flex h-6 w-12 items-center bg-gray-200 dark:bg-gray-800 rounded-full p-1 cursor-pointer">
+<div class="h-4 w-4 rounded-full bg-white dark:bg-gray-400"></div>
+</div>
+</div>
+<div class="flex flex-col">
+<div class="flex justify-between items-center text-xs mb-1">
+<span class="text-gray-500 uppercase tracking-wider">Status</span>
+<span class="text-gray-500 font-bold">Disabled</span>
+</div>
+<div class="flex justify-between items-center text-xs">
+<span class="text-gray-500 uppercase tracking-wider">API Health</span>
+<span class="text-gray-900 dark:text-white">--</span>
+</div>
+</div>
+</div>
+<!-- Shadowfax Card -->
+<div class="bg-white dark:bg-gray-900 p-5 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm flex flex-col gap-4 relative">
+<div class="absolute top-2 right-2 flex items-center gap-1 bg-yellow-100 text-yellow-700 px-2 py-0.5 rounded-full text-[10px] font-bold">
+<span class="material-symbols-outlined text-xs">warning</span> UNSTABLE
+                        </div>
+<div class="flex justify-between items-start">
+<div class="h-10 w-24 bg-gray-50 dark:bg-gray-800 rounded flex items-center justify-center font-bold text-gray-400" data-alt="Shadowfax Logo placeholder">Shadowfax</div>
+<div class="flex h-6 w-12 items-center bg-green-100 dark:bg-green-900/30 rounded-full p-1 cursor-pointer">
+<div class="h-4 w-4 rounded-full bg-green-600 translate-x-6"></div>
+</div>
+</div>
+<div class="flex flex-col">
+<div class="flex justify-between items-center text-xs mb-1">
+<span class="text-gray-500 uppercase tracking-wider">Status</span>
+<span class="text-green-600 font-bold">Connected</span>
+</div>
+<div class="flex justify-between items-center text-xs">
+<span class="text-gray-500 uppercase tracking-wider">API Health</span>
+<span class="text-yellow-600 font-bold">74.5%</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Performance Table Section -->
+<div class="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden">
+<div class="p-6 border-b border-gray-100 dark:border-gray-800 flex justify-between items-center">
+<h2 class="text-lg font-bold">Courier Performance Metrics (Last 30 Days)</h2>
+<div class="flex gap-2">
+<button class="text-sm font-medium text-gray-500 px-3 py-1 border border-gray-200 dark:border-gray-700 rounded-lg hover:bg-gray-50">Filter</button>
+<button class="text-sm font-medium text-gray-500 px-3 py-1 border border-gray-200 dark:border-gray-700 rounded-lg hover:bg-gray-50">Export CSV</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-gray-50 dark:bg-gray-800/50 text-[#60678a] text-xs font-bold uppercase tracking-wider">
+<tr>
+<th class="px-6 py-4">Courier Partner</th>
+<th class="px-6 py-4 text-center">Success Rate %</th>
+<th class="px-6 py-4 text-center">RTO Rate %</th>
+<th class="px-6 py-4 text-center">Avg Delivery Time</th>
+<th class="px-6 py-4 text-center">Active Orders</th>
+<th class="px-6 py-4 text-right">Trend</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-gray-100 dark:divide-gray-800">
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-xs font-bold text-gray-400">DL</div>
+<span class="text-sm font-bold">Delhivery Express</span>
+</div>
+</td>
+<td class="px-6 py-4 text-center">
+<div class="flex flex-col gap-1 items-center">
+<span class="text-sm font-bold">94.8%</span>
+<div class="w-16 h-1 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+<div class="h-full bg-green-500" style="width: 94.8%"></div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-center">
+<span class="text-sm text-red-600 font-medium">3.2%</span>
+</td>
+<td class="px-6 py-4 text-center text-sm">2.4 Days</td>
+<td class="px-6 py-4 text-center text-sm font-medium">1,284</td>
+<td class="px-6 py-4 text-right">
+<span class="material-symbols-outlined text-green-500">trending_up</span>
+</td>
+</tr>
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-xs font-bold text-gray-400">BD</div>
+<span class="text-sm font-bold">Blue Dart Prime</span>
+</div>
+</td>
+<td class="px-6 py-4 text-center">
+<div class="flex flex-col gap-1 items-center">
+<span class="text-sm font-bold">97.1%</span>
+<div class="w-16 h-1 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+<div class="h-full bg-green-500" style="width: 97.1%"></div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-center">
+<span class="text-sm text-red-600 font-medium">1.8%</span>
+</td>
+<td class="px-6 py-4 text-center text-sm">1.8 Days</td>
+<td class="px-6 py-4 text-center text-sm font-medium">842</td>
+<td class="px-6 py-4 text-right">
+<span class="material-symbols-outlined text-green-500">trending_up</span>
+</td>
+</tr>
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-xs font-bold text-gray-400">XB</div>
+<span class="text-sm font-bold">XpressBees</span>
+</div>
+</td>
+<td class="px-6 py-4 text-center">
+<div class="flex flex-col gap-1 items-center">
+<span class="text-sm font-bold">88.2%</span>
+<div class="w-16 h-1 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+<div class="h-full bg-yellow-500" style="width: 88.2%"></div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-center">
+<span class="text-sm text-red-600 font-medium">6.4%</span>
+</td>
+<td class="px-6 py-4 text-center text-sm">3.1 Days</td>
+<td class="px-6 py-4 text-center text-sm font-medium">492</td>
+<td class="px-6 py-4 text-right">
+<span class="material-symbols-outlined text-red-500">trending_down</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- AI Fraud Insights & Routing Alerts -->
+<div class="bg-primary/5 dark:bg-primary/10 border border-primary/20 rounded-xl p-4 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="p-2 bg-primary/20 rounded-lg text-primary">
+<span class="material-symbols-outlined">psychology</span>
+</div>
+<div>
+<p class="text-sm font-bold text-primary">AI Insights: Route Optimization Suggested</p>
+<p class="text-xs text-gray-600 dark:text-gray-400">Anomalous RTO spike detected in Maharashtra zone. Switching high-value orders to Blue Dart recommended.</p>
+</div>
+</div>
+<button class="text-xs font-bold bg-primary text-white px-3 py-1.5 rounded hover:bg-primary/90">Apply Automation</button>
+</div>
+</main>
+<footer class="border-t border-gray-200 dark:border-gray-800 py-6 px-10 flex justify-between items-center text-xs text-gray-500">
+<p>© 2024 NEXCART Logistics Platform. All systems operational.</p>
+<div class="flex gap-4">
+<a class="hover:text-primary" href="#">API Documentation</a>
+<a class="hover:text-primary" href="#">Terms of Service</a>
+<a class="hover:text-primary" href="#">Support</a>
+</div>
+</footer>
+</div>
+</body></html>

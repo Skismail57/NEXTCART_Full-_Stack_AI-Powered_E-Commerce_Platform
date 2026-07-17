@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEXCART | Mobiles &amp; Tablets</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ef4343",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221010",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white transition-colors duration-200">
+<!-- Global Sticky Header -->
+<header class="sticky top-0 z-50 w-full bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-white/10">
+<div class="max-w-[1440px] mx-auto px-6 h-16 flex items-center justify-between gap-8">
+<!-- Logo -->
+<div class="flex items-center gap-2 shrink-0">
+<div class="size-8 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined">bolt</span>
+</div>
+<h1 class="text-xl font-bold tracking-tight">NEXCART</h1>
+</div>
+<!-- Search Bar -->
+<div class="flex-1 max-w-2xl relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+<input class="w-full bg-slate-100 dark:bg-white/5 border-none rounded-full py-2 pl-10 pr-4 focus:ring-2 focus:ring-primary text-sm" placeholder="Search for iPhones, Galaxy S24, tablets..." type="text"/>
+</div>
+<!-- Navigation Actions -->
+<div class="flex items-center gap-4">
+<nav class="hidden xl:flex items-center gap-6 mr-4 text-sm font-medium">
+<a class="hover:text-primary transition-colors" href="#">Smartphones</a>
+<a class="hover:text-primary transition-colors" href="#">Tablets</a>
+<a class="hover:text-primary transition-colors" href="#">Refurbished</a>
+</nav>
+<button class="p-2 hover:bg-slate-200 dark:hover:bg-white/10 rounded-full relative">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+<button class="p-2 hover:bg-slate-200 dark:hover:bg-white/10 rounded-full relative">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="absolute top-1 right-1 size-4 bg-primary text-[10px] text-white rounded-full flex items-center justify-center font-bold">3</span>
+</button>
+<div class="size-10 rounded-full bg-slate-300 dark:bg-white/20 overflow-hidden cursor-pointer border-2 border-transparent hover:border-primary transition-all">
+<img class="w-full h-full object-cover" data-alt="User avatar portrait for profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKw0Jg6k7vuSI9vxivCIhnYkAARj3I9nfwnWa6VPWVkzKXeN06DMv56IjaUPqoE2KvQNuHU0KUq2EKHlexg1BBNIF1k8C67gjVY1IBqU2SuRqYMr3fylrKhTYn16CtkdH98r_5AK6rjyphZ7cgkMYENZ3V_6p8KUJDs86OKkELD-vi2pvR59pBu9vIOfov8uc-SQoIlbfkB3CP2QKZuytNyUzI_bZowTsslQzgNlY3rFrRvAYC9Q63zFUrDplyywzp3x5ls5Zr2WLd"/>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-[1440px] mx-auto px-6 py-4">
+<!-- Breadcrumbs -->
+<div class="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400 mb-6">
+<a class="hover:text-primary" href="#">Home</a>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<a class="hover:text-primary" href="#">Electronics</a>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="text-slate-900 dark:text-white font-medium">Mobiles &amp; Tablets</span>
+</div>
+<!-- Category Tabs -->
+<div class="flex border-b border-slate-200 dark:border-white/10 mb-8 gap-8">
+<a class="border-b-2 border-primary text-primary pb-4 font-semibold text-sm" href="#">All Mobiles</a>
+<a class="border-b-2 border-transparent text-slate-500 hover:text-slate-900 dark:hover:text-white pb-4 font-medium text-sm transition-all" href="#">Apple</a>
+<a class="border-b-2 border-transparent text-slate-500 hover:text-slate-900 dark:hover:text-white pb-4 font-medium text-sm transition-all" href="#">Samsung</a>
+<a class="border-b-2 border-transparent text-slate-500 hover:text-slate-900 dark:hover:text-white pb-4 font-medium text-sm transition-all" href="#">OnePlus</a>
+<a class="border-b-2 border-transparent text-slate-500 hover:text-slate-900 dark:hover:text-white pb-4 font-medium text-sm transition-all" href="#">Google Pixel</a>
+</div>
+<div class="flex gap-8">
+<!-- Sidebar Filters -->
+<aside class="w-64 shrink-0 hidden lg:block sticky top-24 self-start h-[calc(100vh-8rem)] overflow-y-auto pr-2 custom-scrollbar">
+<div class="space-y-8">
+<div class="flex items-center justify-between">
+<h2 class="font-bold text-lg">Filters</h2>
+<button class="text-xs text-primary font-bold uppercase tracking-wider">Clear All</button>
+</div>
+<!-- Filter Section: Brand -->
+<section>
+<button class="flex items-center justify-between w-full mb-3 text-sm font-semibold uppercase tracking-wide">
+                            Brand
+                            <span class="material-symbols-outlined text-sm">keyboard_arrow_up</span>
+</button>
+<div class="space-y-3">
+<label class="flex items-center gap-3 cursor-pointer group">
+<div class="size-5 rounded border-2 border-slate-300 dark:border-white/20 group-hover:border-primary flex items-center justify-center bg-primary">
+<span class="material-symbols-outlined text-white text-xs">check</span>
+</div>
+<span class="text-sm">Apple</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<div class="size-5 rounded border-2 border-slate-300 dark:border-white/20 group-hover:border-primary flex items-center justify-center"></div>
+<span class="text-sm">Samsung</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<div class="size-5 rounded border-2 border-slate-300 dark:border-white/20 group-hover:border-primary flex items-center justify-center"></div>
+<span class="text-sm">OnePlus</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<div class="size-5 rounded border-2 border-slate-300 dark:border-white/20 group-hover:border-primary flex items-center justify-center"></div>
+<span class="text-sm">Google</span>
+</label>
+</div>
+</section>
+<!-- Filter Section: Price Slider -->
+<section>
+<button class="flex items-center justify-between w-full mb-4 text-sm font-semibold uppercase tracking-wide">
+                            Price Range
+                            <span class="material-symbols-outlined text-sm">keyboard_arrow_up</span>
+</button>
+<div class="px-2">
+<div class="h-1.5 w-full bg-slate-200 dark:bg-white/10 rounded-full relative">
+<div class="absolute left-1/4 right-0 h-full bg-primary rounded-full"></div>
+<div class="absolute left-1/4 top-1/2 -translate-y-1/2 size-4 bg-white border-2 border-primary rounded-full shadow-lg cursor-pointer"></div>
+<div class="absolute right-0 top-1/2 -translate-y-1/2 size-4 bg-white border-2 border-primary rounded-full shadow-lg cursor-pointer"></div>
+</div>
+<div class="flex justify-between mt-4">
+<span class="text-xs bg-slate-100 dark:bg-white/5 px-2 py-1 rounded">$499</span>
+<span class="text-xs bg-slate-100 dark:bg-white/5 px-2 py-1 rounded">$2000+</span>
+</div>
+</div>
+</section>
+<!-- Filter Section: RAM -->
+<section>
+<button class="flex items-center justify-between w-full mb-3 text-sm font-semibold uppercase tracking-wide">
+                            RAM
+                            <span class="material-symbols-outlined text-sm">keyboard_arrow_down</span>
+</button>
+<div class="flex flex-wrap gap-2">
+<button class="px-3 py-1.5 rounded-full border border-slate-200 dark:border-white/10 text-xs hover:border-primary hover:text-primary transition-all">4 GB</button>
+<button class="px-3 py-1.5 rounded-full border border-primary text-primary bg-primary/10 text-xs font-semibold">8 GB</button>
+<button class="px-3 py-1.5 rounded-full border border-slate-200 dark:border-white/10 text-xs hover:border-primary hover:text-primary transition-all">12 GB</button>
+<button class="px-3 py-1.5 rounded-full border border-slate-200 dark:border-white/10 text-xs hover:border-primary hover:text-primary transition-all">16 GB</button>
+</div>
+</section>
+<!-- Filter Section: Battery -->
+<section>
+<button class="flex items-center justify-between w-full mb-3 text-sm font-semibold uppercase tracking-wide">
+                            Battery
+                            <span class="material-symbols-outlined text-sm">keyboard_arrow_down</span>
+</button>
+</section>
+</div>
+</aside>
+<!-- Main Content Grid -->
+<div class="flex-1">
+<!-- Toolbar -->
+<div class="flex items-center justify-between mb-8">
+<div class="flex items-center gap-4">
+<h2 class="text-2xl font-bold">Smartphones</h2>
+<p class="text-slate-500 text-sm">2,410 results</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center bg-slate-100 dark:bg-white/5 p-1 rounded-full border border-slate-200 dark:border-white/10">
+<button class="p-1.5 rounded-full bg-white dark:bg-white/10 shadow-sm">
+<span class="material-symbols-outlined text-sm">grid_view</span>
+</button>
+<button class="p-1.5 rounded-full text-slate-400">
+<span class="material-symbols-outlined text-sm">view_list</span>
+</button>
+</div>
+<select class="bg-slate-100 dark:bg-white/5 border-none rounded-full py-2 px-4 text-sm font-medium focus:ring-primary ring-offset-background-dark">
+<option>Sort by: Newest Arrivals</option>
+<option>Price: Low to High</option>
+<option>Price: High to Low</option>
+<option>Most Popular</option>
+</select>
+</div>
+</div>
+<!-- 4-Column Product Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+<!-- Product 1 -->
+<div class="group relative flex flex-col bg-slate-50 dark:bg-white/5 rounded-2xl overflow-hidden border border-transparent hover:border-primary/40 hover:bg-white dark:hover:bg-white/[0.08] transition-all duration-300">
+<div class="absolute top-3 left-3 z-10">
+<span class="bg-primary text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-widest">New</span>
+</div>
+<button class="absolute top-3 right-3 z-10 text-slate-300 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+<div class="aspect-square w-full overflow-hidden bg-white dark:bg-white/10 p-8 flex items-center justify-center">
+<img class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500" data-alt="Titanium Apple iPhone 15 Pro Max" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFGJshR9pM6KInLF_gBA9R5mE6DAra3qbI59knQKs0vyHZacQyXY14MKmtbgzkSG2keE_dqC1b_7I2G55u1t_Hws2UnfAOjdKI4JQ5yePz2Is0ZgybHi-V-3OOc3Yp1pCk4uv5nobkWGrMntBNmSnNw1oKwW1I5AOOTqSYpQoySIWXpkGfj86X3P451gGGsqtVfsjDLNUaSEOfp8mDA-krXpP3fWN7r_lcYG6ycLek5LUI0__EffBdHNxt9lXUMRsDzFH6dUR1AO_u"/>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<p class="text-xs text-slate-500 dark:text-slate-400 mb-1">Apple</p>
+<h3 class="font-bold text-sm mb-2 line-clamp-2">iPhone 15 Pro Max - Titanium Black, 256GB</h3>
+<div class="flex items-center gap-2 mb-4">
+<div class="flex text-amber-400">
+<span class="material-symbols-outlined text-xs fill-1">star</span>
+<span class="material-symbols-outlined text-xs fill-1">star</span>
+<span class="material-symbols-outlined text-xs fill-1">star</span>
+<span class="material-symbols-outlined text-xs fill-1">star</span>
+<span class="material-symbols-outlined text-xs fill-1">star</span>
+</div>
+<span class="text-[10px] font-bold text-slate-400">(4.9)</span>
+</div>
+<div class="mt-auto flex items-center justify-between">
+<span class="text-xl font-bold text-primary">$1,199</span>
+<button class="size-10 bg-primary/10 text-primary rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all group/btn">
+<span class="material-symbols-outlined text-lg">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="group relative flex flex-col bg-slate-50 dark:bg-white/5 rounded-2xl overflow-hidden border border-transparent hover:border-primary/40 hover:bg-white dark:hover:bg-white/[0.08] transition-all duration-300">
+<div class="absolute top-3 left-3 z-10">
+<span class="bg-blue-600 text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-widest">Bestseller</span>
+</div>
+<div class="aspect-square w-full overflow-hidden bg-white dark:bg-white/10 p-8 flex items-center justify-center">
+<img class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500" data-alt="Samsung Galaxy S24 Ultra front view" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQ0f83gVbJPJ-UzYw0rY-A1_Wja8pwufeZ0tYLZvke8bUHVczDCIkTVHHFkjTG6cK68CEO04LS5Tow0wLbj3BOsck4xRv2LB3aSQ2U1BeAq2PSMSESOwxjxIwe0SNzkDpSbfMy4R1YXEofseeqTnkd8fXdjfbI2FMgTzxwZEjxeMN7BAREfXb-epIJiFm8L7PLz18y5Ih2P83FJIWtZs9goeowfGYuGwNCOv-EAfGoM7rpxaAHvnDMMxBY-8NcCFdJay-2S03bR09r"/>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<p class="text-xs text-slate-500 dark:text-slate-400 mb-1">Samsung</p>
+<h3 class="font-bold text-sm mb-2 line-clamp-2">Galaxy S24 Ultra - Titanium Gray, 512GB</h3>
+<div class="flex items-center gap-2 mb-4">
+<div class="flex text-amber-400">
+<span class="material-symbols-outlined text-xs fill-1">star</span>
+<span class="material-symbols-outlined text-xs fill-1">star</span>
+<span class="material-symbols-outlined text-xs fill-1">star</span>
+<span class="material-symbols-outlined text-xs fill-1">star</span>
+<span class="material-symbols-outlined text-xs">star_half</span>
+</div>
+<span class="text-[10px] font-bold text-slate-400">(4.8)</span>
+</div>
+<div class="mt-auto flex items-center justify-between">
+<span class="text-xl font-bold text-primary">$1,299</span>
+<button class="size-10 bg-primary/10 text-primary rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all group/btn">
+<span class="material-symbols-outlined text-lg">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="group relative flex flex-col bg-slate-50 dark:bg-white/5 rounded-2xl overflow-hidden border border-transparent hover:border-primary/40 hover:bg-white dark:hover:bg-white/[0.08] transition-all duration-300">
+<div class="aspect-square w-full overflow-hidden bg-white dark:bg-white/10 p-8 flex items-center justify-center">
+<img class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500" data-alt="OnePlus 12 Flowy Emerald Edition" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpVZ6WKDpLczabzoRg6sd_OTcIPgYWUGKW8G3A_viXzdqVC5_Bhln6Rzxf1UYGlFwFHBKPHh-PTbg7wyGPNQsQWOSw8_rzllzFhhdiEkaBp6xIIKglRmPpLz-WnHRNpVNA18MJGpwJmF2Ww5vOyjDZ-ESUrvOlT2sAsOLjNtbY7-CBj03kCUpECQasO-JeV6OdQyC5NAHC1wryf3cPefwj0CWW5RpmCU2kHg84e1wWQ0nBZPJSuvs-WqANnLO5qO6gaOwRrUs-5ZC9"/>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<p class="text-xs text-slate-500 dark:text-slate-400 mb-1">OnePlus</p>
+<h3 class="font-bold text-sm mb-2 line-clamp-2">OnePlus 12 - Flowy Emerald, 16GB RAM</h3>
+<div class="flex items-center gap-2 mb-4">
+<div class="flex text-amber-400">
+<span class="material-symbols-outlined text-xs fill-1">star</span>
+<span class="material-symbols-outlined text-xs fill-1">star</span>
+<span class="material-symbols-outlined text-xs fill-1">star</span>
+<span class="material-symbols-outlined text-xs fill-1">star</span>
+<span class="material-symbols-outlined text-xs">star</span>
+</div>
+<span class="text-[10px] font-bold text-slate-400">(4.5)</span>
+</div>
+<div class="mt-auto flex items-center justify-between">
+<span class="text-xl font-bold text-primary">$799</span>
+<button class="size-10 bg-primary/10 text-primary rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all group/btn">
+<span class="material-symbols-outlined text-lg">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product 4 -->
+<div class="group relative flex flex-col bg-slate-50 dark:bg-white/5 rounded-2xl overflow-hidden border border-transparent hover:border-primary/40 hover:bg-white dark:hover:bg-white/[0.08] transition-all duration-300">
+<div class="absolute top-3 left-3 z-10">
+<span class="bg-emerald-500 text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-widest">Sale</span>
+</div>
+<div class="aspect-square w-full overflow-hidden bg-white dark:bg-white/10 p-8 flex items-center justify-center">
+<img class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500" data-alt="Google Pixel 8 Pro porcelain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDlwhm6L7WfTneHY6oT8tst8eD9bZwZc_Sie8JQfg02e8gUUU5WI8fH24N405ha4HCKpNc-Wk6JpD29zUx9dkrlH7cOmy2-ehDmrF3aqnIpIKOM7jsfglux13grgEiXoSsVyilUcxNHHwhrH0B56AsE0jJmBZgXw0-tJ43ORJ7VVtgdgZMwgUBfpF459rKJGX-Q4zvKAPDb0u4L7_mVijOjPdHQ_RBPk1NqutZAtEeV37ona43ybMc0wqRw3qdVqw93UkKo5uyUQf7"/>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<p class="text-xs text-slate-500 dark:text-slate-400 mb-1">Google</p>
+<h3 class="font-bold text-sm mb-2 line-clamp-2">Google Pixel 8 Pro - Porcelain, 128GB</h3>
+<div class="flex items-center gap-2 mb-4">
+<div class="flex text-amber-400">
+<span class="material-symbols-outlined text-xs fill-1">star</span>
+<span class="material-symbols-outlined text-xs fill-1">star</span>
+<span class="material-symbols-outlined text-xs fill-1">star</span>
+<span class="material-symbols-outlined text-xs fill-1">star</span>
+<span class="material-symbols-outlined text-xs fill-1">star</span>
+</div>
+<span class="text-[10px] font-bold text-slate-400">(4.7)</span>
+</div>
+<div class="mt-auto flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-xl font-bold text-primary">$899</span>
+<span class="text-xs text-slate-400 line-through">$999</span>
+</div>
+<button class="size-10 bg-primary/10 text-primary rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all group/btn">
+<span class="material-symbols-outlined text-lg">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Repeat Products for 2nd row (Mocking more data) -->
+<!-- Product 5 (iPad) -->
+<div class="group relative flex flex-col bg-slate-50 dark:bg-white/5 rounded-2xl overflow-hidden border border-transparent hover:border-primary/40 hover:bg-white dark:hover:bg-white/[0.08] transition-all duration-300">
+<div class="aspect-square w-full overflow-hidden bg-white dark:bg-white/10 p-8 flex items-center justify-center">
+<img class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500" data-alt="Apple iPad Pro 12.9 inch space gray" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqrXp5aQMoSn34dfrJedhU95T7Zb2e65-u2n9J5QwAntuF3KdG2DqDMSgEbtyQptJtyWJS3aGNXBaD03SwEhkaqfBQp9coUkuXonAxRdy387oCFLFiLKqkT41NoD13rSAoUL-fScI_TwXmj3qTV-vj8dozYbNp_wRjEkNCFD5yrrfI-rYphyAKc37v03jspeKZ4f2IPThuM_5BsfGo_A9uZtVROXHJhDTrcgl2JD87QNUoP-fYuZJ0d75DPi4PbO9WpnDeI6YSnJvT"/>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<p class="text-xs text-slate-500 dark:text-slate-400 mb-1">Apple</p>
+<h3 class="font-bold text-sm mb-2 line-clamp-2">iPad Pro 12.9" - M2 Chip, Wi-Fi, 128GB</h3>
+<div class="flex items-center gap-2 mb-4">
+<div class="flex text-amber-400">
+<span class="material-symbols-outlined text-xs fill-1">star</span>
+<span class="material-symbols-outlined text-xs fill-1">star</span>
+<span class="material-symbols-outlined text-xs fill-1">star</span>
+<span class="material-symbols-outlined text-xs fill-1">star</span>
+<span class="material-symbols-outlined text-xs fill-1">star</span>
+</div>
+<span class="text-[10px] font-bold text-slate-400">(4.9)</span>
+</div>
+<div class="mt-auto flex items-center justify-between">
+<span class="text-xl font-bold text-primary">$1,099</span>
+<button class="size-10 bg-primary/10 text-primary rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all group/btn">
+<span class="material-symbols-outlined text-lg">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product 6 -->
+<div class="group relative flex flex-col bg-slate-50 dark:bg-white/5 rounded-2xl overflow-hidden border border-transparent hover:border-primary/40 hover:bg-white dark:hover:bg-white/[0.08] transition-all duration-300">
+<div class="aspect-square w-full overflow-hidden bg-white dark:bg-white/10 p-8 flex items-center justify-center">
+<img class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500" data-alt="Samsung Galaxy Tab S9 Ultra" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLWXSoKZrHfYAlK64sNiSF8MOlaKqExQ8RK6N2K8nTEhB99MdchOx-d2CsYYbCbFQhDnRWbEwfpuI5C3WcIyiaFVETicQEt_lq65J3NzAS8gQOwxKuLD79siuyyTXCnXZ0NqOgBVSl1Z99nvRj5CBKwUpMksSCCTOHUdRRc0GGZIF6GykWijkOGW5ikOVxGXWXPUcAcEiqjrr_hafxycp0wo1ikkGGTa9HwHz4KcswmAcRzBzf6V3Ibfen_NApiEZTURWb0gqKlv09"/>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<p class="text-xs text-slate-500 dark:text-slate-400 mb-1">Samsung</p>
+<h3 class="font-bold text-sm mb-2 line-clamp-2">Galaxy Tab S9 Ultra - Dynamic AMOLED, 256GB</h3>
+<div class="flex items-center gap-2 mb-4">
+<div class="flex text-amber-400">
+<span class="material-symbols-outlined text-xs fill-1">star</span>
+<span class="material-symbols-outlined text-xs fill-1">star</span>
+<span class="material-symbols-outlined text-xs fill-1">star</span>
+<span class="material-symbols-outlined text-xs fill-1">star</span>
+<span class="material-symbols-outlined text-xs">star</span>
+</div>
+<span class="text-[10px] font-bold text-slate-400">(4.6)</span>
+</div>
+<div class="mt-auto flex items-center justify-between">
+<span class="text-xl font-bold text-primary">$1,199</span>
+<button class="size-10 bg-primary/10 text-primary rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all group/btn">
+<span class="material-symbols-outlined text-lg">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product 7 (Nothing Phone) -->
+<div class="group relative flex flex-col bg-slate-50 dark:bg-white/5 rounded-2xl overflow-hidden border border-transparent hover:border-primary/40 hover:bg-white dark:hover:bg-white/[0.08] transition-all duration-300">
+<div class="absolute top-3 left-3 z-10">
+<span class="bg-slate-900 text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-widest">Aesthetic</span>
+</div>
+<div class="aspect-square w-full overflow-hidden bg-white dark:bg-white/10 p-8 flex items-center justify-center">
+<img class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500" data-alt="Nothing Phone (2) Glyph interface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1-WFmd45NaKdCiX1_9y-IKKv8hT9d2CwBRz77ckiw9lGq4VmfmL1AdAzR4OjakZT8eyQcFI88lMZMyWP2uRYavef10co_GSN5jUnuB5JJ8U0IGfiHzC6dSW__zs4PnbjGghFSiAcsY0hFLBru51GuZXcsszyN5t00I4e4u2LBCTdyw2XMCdTdMNVxJWRZ43biu7nJ-DSLPmz0JHIs-O_p9lapOb_fV1ij6oaiqDWFbOHftrtS-CDDqUCVOuU5_sLxsMbPzztlhoiT"/>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<p class="text-xs text-slate-500 dark:text-slate-400 mb-1">Nothing</p>
+<h3 class="font-bold text-sm mb-2 line-clamp-2">Nothing Phone (2) - Dark Grey, 256GB</h3>
+<div class="flex items-center gap-2 mb-4">
+<div class="flex text-amber-400">
+<span class="material-symbols-outlined text-xs fill-1">star</span>
+<span class="material-symbols-outlined text-xs fill-1">star</span>
+<span class="material-symbols-outlined text-xs fill-1">star</span>
+<span class="material-symbols-outlined text-xs fill-1">star</span>
+<span class="material-symbols-outlined text-xs">star_half</span>
+</div>
+<span class="text-[10px] font-bold text-slate-400">(4.4)</span>
+</div>
+<div class="mt-auto flex items-center justify-between">
+<span class="text-xl font-bold text-primary">$649</span>
+<button class="size-10 bg-primary/10 text-primary rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all group/btn">
+<span class="material-symbols-outlined text-lg">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product 8 -->
+<div class="group relative flex flex-col bg-slate-50 dark:bg-white/5 rounded-2xl overflow-hidden border border-transparent hover:border-primary/40 hover:bg-white dark:hover:bg-white/[0.08] transition-all duration-300">
+<div class="aspect-square w-full overflow-hidden bg-white dark:bg-white/10 p-8 flex items-center justify-center">
+<img class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500" data-alt="iPhone 15 pink color option" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArPZmpucFHQsc-tP7uiIz-ioDplWY_K4T0lxQy5nVQ7eoHaUR_vuNwpGKxVJaeSeci37IgGt2RcPAjrXjGV46aewfEErLCbvTLXLriMgax0Akb84GZyoNrW54clyLrOyl5mVu6B9FdqpHXfG9lHEXNEsHyydQ04ZjdPWG6HoLVJYVwkf9J9TTBJpheipWup8lgtAvQ7rs1xywArAL3F6nB6QxqjDQMQNlHnsDh0eisP2D0rAPWrFmXl9np1PfnQAdItV3SmY8bBicO"/>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<p class="text-xs text-slate-500 dark:text-slate-400 mb-1">Apple</p>
+<h3 class="font-bold text-sm mb-2 line-clamp-2">iPhone 15 - Pink Edition, 128GB</h3>
+<div class="flex items-center gap-2 mb-4">
+<div class="flex text-amber-400">
+<span class="material-symbols-outlined text-xs fill-1">star</span>
+<span class="material-symbols-outlined text-xs fill-1">star</span>
+<span class="material-symbols-outlined text-xs fill-1">star</span>
+<span class="material-symbols-outlined text-xs fill-1">star</span>
+<span class="material-symbols-outlined text-xs fill-1">star</span>
+</div>
+<span class="text-[10px] font-bold text-slate-400">(4.8)</span>
+</div>
+<div class="mt-auto flex items-center justify-between">
+<span class="text-xl font-bold text-primary">$799</span>
+<button class="size-10 bg-primary/10 text-primary rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all group/btn">
+<span class="material-symbols-outlined text-lg">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="flex items-center justify-center gap-2 mt-16">
+<button class="size-10 rounded-full border border-slate-200 dark:border-white/10 flex items-center justify-center hover:bg-white dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="size-10 rounded-full bg-primary text-white font-bold text-sm">1</button>
+<button class="size-10 rounded-full border border-slate-200 dark:border-white/10 flex items-center justify-center text-sm font-medium hover:bg-white dark:hover:bg-white/10 transition-colors">2</button>
+<button class="size-10 rounded-full border border-slate-200 dark:border-white/10 flex items-center justify-center text-sm font-medium hover:bg-white dark:hover:bg-white/10 transition-colors">3</button>
+<span class="px-2 text-slate-400">...</span>
+<button class="size-10 rounded-full border border-slate-200 dark:border-white/10 flex items-center justify-center text-sm font-medium hover:bg-white dark:hover:bg-white/10 transition-colors">12</button>
+<button class="size-10 rounded-full border border-slate-200 dark:border-white/10 flex items-center justify-center hover:bg-white dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Mockup -->
+<footer class="mt-20 border-t border-slate-200 dark:border-white/10 py-12 bg-slate-100 dark:bg-background-dark/50">
+<div class="max-w-[1440px] mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="space-y-4">
+<div class="flex items-center gap-2">
+<div class="size-6 bg-primary rounded flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-xs">bolt</span>
+</div>
+<h3 class="text-lg font-bold">NEXCART</h3>
+</div>
+<p class="text-sm text-slate-500 dark:text-slate-400">Experience premium shopping with our gamified e-commerce platform.</p>
+</div>
+<div>
+<h4 class="font-bold text-sm mb-4 uppercase tracking-widest">Shop</h4>
+<ul class="space-y-2 text-sm text-slate-500 dark:text-slate-400">
+<li><a class="hover:text-primary" href="#">Mobiles</a></li>
+<li><a class="hover:text-primary" href="#">Tablets</a></li>
+<li><a class="hover:text-primary" href="#">Laptops</a></li>
+<li><a class="hover:text-primary" href="#">Accessories</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-sm mb-4 uppercase tracking-widest">Support</h4>
+<ul class="space-y-2 text-sm text-slate-500 dark:text-slate-400">
+<li><a class="hover:text-primary" href="#">Track Order</a></li>
+<li><a class="hover:text-primary" href="#">Returns</a></li>
+<li><a class="hover:text-primary" href="#">Contact Us</a></li>
+<li><a class="hover:text-primary" href="#">FAQ</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-sm mb-4 uppercase tracking-widest">Newsletter</h4>
+<div class="flex gap-2">
+<input class="flex-1 bg-white dark:bg-white/5 border-none rounded-full px-4 text-xs focus:ring-primary" placeholder="Email address" type="text"/>
+<button class="bg-primary text-white px-4 py-2 rounded-full text-xs font-bold">Join</button>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

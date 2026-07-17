@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Payment Success - NEXCART</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0df259",
+                        "background-light": "#f5f8f6",
+                        "background-dark": "#102216",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .receipt-shadow {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+        .zigzag-bottom {
+            background-image: linear-gradient(135deg, #fff 25%, transparent 25%), linear-gradient(225deg, #fff 25%, transparent 25%);
+            background-position: left bottom;
+            background-repeat: repeat-x;
+            background-size: 16px 16px;
+            height: 16px;
+            width: 100%;
+        }
+        .confetti {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: #0df259;
+            opacity: 0.6;
+            border-radius: 2px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased">
+<div class="relative flex min-h-screen w-full flex-col overflow-hidden max-w-[430px] mx-auto bg-white dark:bg-background-dark shadow-2xl">
+<!-- Top App Bar -->
+<div class="flex items-center bg-white dark:bg-background-dark p-4 pb-2 justify-between z-10">
+<div class="text-[#111813] dark:text-white flex size-12 shrink-0 items-center">
+<span class="material-symbols-outlined text-2xl">close</span>
+</div>
+<h2 class="text-[#111813] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-12">Payment Success</h2>
+</div>
+<!-- Confetti Background (Visual Decoration) -->
+<div class="absolute inset-0 pointer-events-none overflow-hidden h-1/2">
+<div class="confetti" style="top: 10%; left: 10%; transform: rotate(45deg);"></div>
+<div class="confetti" style="top: 15%; left: 80%; transform: rotate(-15deg); background-color: #fbbf24;"></div>
+<div class="confetti" style="top: 25%; left: 40%; transform: rotate(30deg);"></div>
+<div class="confetti" style="top: 35%; left: 20%; transform: rotate(60deg); background-color: #34d399;"></div>
+<div class="confetti" style="top: 40%; left: 70%; transform: rotate(-45deg);"></div>
+<div class="confetti" style="top: 50%; left: 50%; transform: rotate(10deg); background-color: #0df259;"></div>
+</div>
+<!-- Animated Success Section -->
+<div class="flex flex-col items-center pt-8 pb-4 z-10">
+<div class="bg-primary/20 p-6 rounded-full mb-6">
+<div class="bg-primary h-20 w-20 rounded-full flex items-center justify-center text-black shadow-lg shadow-primary/30">
+<span class="material-symbols-outlined text-5xl font-bold">check</span>
+</div>
+</div>
+<h1 class="text-[#111813] dark:text-white tracking-tight text-3xl font-bold leading-tight px-4 text-center">Payment Successful!</h1>
+<p class="text-[#608a6e] text-sm font-medium mt-1">Your order has been placed successfully</p>
+</div>
+<!-- Receipt Sliding Out Effect Container -->
+<div class="px-6 py-4 flex-1">
+<div class="bg-white dark:bg-zinc-900 rounded-t-xl receipt-shadow overflow-hidden flex flex-col relative">
+<!-- Receipt Paper Texture Top Border -->
+<div class="h-1 bg-zinc-100 dark:bg-zinc-800 w-full"></div>
+<!-- Receipt Header Card -->
+<div class="p-6 pb-2">
+<div class="flex justify-between items-start mb-4">
+<div class="flex flex-col">
+<p class="text-[#608a6e] text-xs font-bold uppercase tracking-widest">NEXCART Official Receipt</p>
+<p class="text-[#111813] dark:text-white text-xl font-bold leading-tight mt-1">Receipt Summary</p>
+</div>
+<div class="size-10 bg-primary/10 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">receipt_long</span>
+</div>
+</div>
+<!-- Transaction ID & Amount Card Component -->
+<div class="bg-background-light dark:bg-background-dark rounded-lg p-4 mb-4">
+<div class="flex justify-between items-center mb-1">
+<p class="text-[#608a6e] text-sm font-normal">Transaction ID</p>
+<p class="text-[#111813] dark:text-white text-sm font-semibold">#NX-99283</p>
+</div>
+<div class="flex justify-between items-center">
+<p class="text-[#608a6e] text-sm font-normal">Total Paid</p>
+<p class="text-primary text-lg font-bold">$1,240.00</p>
+</div>
+</div>
+<div class="border-t border-dashed border-gray-200 dark:border-zinc-700 my-4"></div>
+<!-- Description List Component -->
+<div class="space-y-3">
+<div class="flex justify-between gap-x-6">
+<p class="text-[#608a6e] text-sm font-normal">Date</p>
+<p class="text-[#111813] dark:text-white text-sm font-medium text-right">Oct 24, 2023</p>
+</div>
+<div class="flex justify-between gap-x-6">
+<p class="text-[#608a6e] text-sm font-normal">Payment Method</p>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">credit_card</span>
+<p class="text-[#111813] dark:text-white text-sm font-medium text-right">Visa **** 4242</p>
+</div>
+</div>
+<div class="flex justify-between gap-x-6">
+<p class="text-[#608a6e] text-sm font-normal">Items</p>
+<p class="text-[#111813] dark:text-white text-sm font-medium text-right">3 Items</p>
+</div>
+<div class="flex justify-between gap-x-6">
+<p class="text-[#608a6e] text-sm font-normal">Status</p>
+<div class="bg-primary/10 px-2 py-0.5 rounded text-primary text-xs font-bold uppercase">Success</div>
+</div>
+</div>
+</div>
+<!-- Featured Image placeholder for the main item -->
+<div class="px-6 py-2">
+<div class="flex items-center gap-4 bg-background-light/50 dark:bg-background-dark/50 rounded-lg p-3 border border-gray-100 dark:border-zinc-800">
+<div class="size-14 bg-center bg-no-repeat bg-cover rounded-md flex-shrink-0" data-alt="high-end smartphone in cosmic grey color" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCTr4LcYGwC49r_DnbjduGpbdN8wfl_kkIZvEGjAP5P2NNDgl9dKgGR6D2Zm1pQbeTDAboPXn3QUniyZ3trt8cEj3rD-IflTGHJspLY3TcwVctIkeeBcHcmfX0EYiI9-Ak6dZbBM4e7SmSRdtwxTIZMCvrwbENQuz0FeHOGtljxKxjksSE6UY6KtWxmJDahsTP4Y4APeutceNlW3VJBzsPg0KOoDu2yuWhU2y_SVDFuatXuwAV812Cgi9CRNJXcpUwSsvPX7GAeyXU");'></div>
+<div class="flex flex-col">
+<p class="text-[#111813] dark:text-white text-sm font-bold truncate max-w-[180px]">iPhone 15 Pro Max</p>
+<p class="text-[#608a6e] text-xs font-normal">Quantity: 1 • 256GB</p>
+</div>
+<p class="ml-auto text-[#111813] dark:text-white text-sm font-bold">$1,199.00</p>
+</div>
+</div>
+<div class="h-6"></div>
+<div class="zigzag-bottom"></div>
+</div>
+</div>
+<!-- Sticky Footer Buttons -->
+<div class="mt-auto bg-white dark:bg-background-dark p-6 pt-2 z-10">
+<div class="flex flex-col gap-3">
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-14 px-5 bg-primary text-[#111813] text-base font-bold leading-normal tracking-[0.015em] w-full shadow-lg shadow-primary/20 active:scale-[0.98] transition-transform">
+<span class="truncate">Go to My Orders</span>
+</button>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-14 px-5 bg-[#f0f5f1] dark:bg-zinc-800 text-[#111813] dark:text-white text-base font-bold leading-normal tracking-[0.015em] w-full active:scale-[0.98] transition-transform">
+<span class="material-symbols-outlined mr-2 text-xl">download</span>
+<span class="truncate">Download PDF</span>
+</button>
+</div>
+<div class="h-2 bg-white dark:bg-background-dark mt-4 mx-auto w-32 rounded-full opacity-20"></div>
+</div>
+</div>
+</body></html>

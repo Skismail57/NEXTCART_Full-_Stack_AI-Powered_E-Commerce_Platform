@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEXCART Admin Master Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#5048e5",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#121121",
+                        "success": "#22c55e",
+                        "danger": "#e74008"
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="flex h-screen overflow-hidden">
+<!-- Sidebar Navigation -->
+<aside class="w-64 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex flex-col shrink-0">
+<div class="p-6 flex items-center gap-3">
+<div class="h-8 w-8 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined">shopping_cart</span>
+</div>
+<h1 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white uppercase">NEXCART</h1>
+</div>
+<nav class="flex-1 px-4 py-4 space-y-1 overflow-y-auto">
+<div class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined">dashboard</span>
+<p class="text-sm font-semibold">Dashboard</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors rounded-lg cursor-pointer">
+<span class="material-symbols-outlined">shopping_bag</span>
+<p class="text-sm font-medium">Orders</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors rounded-lg cursor-pointer">
+<span class="material-symbols-outlined">package_2</span>
+<p class="text-sm font-medium">Products</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors rounded-lg cursor-pointer">
+<span class="material-symbols-outlined">storefront</span>
+<p class="text-sm font-medium">Vendors</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors rounded-lg cursor-pointer">
+<span class="material-symbols-outlined">group</span>
+<p class="text-sm font-medium">Customers</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors rounded-lg cursor-pointer">
+<span class="material-symbols-outlined">analytics</span>
+<p class="text-sm font-medium">Analytics</p>
+</div>
+<div class="pt-4 mt-4 border-t border-slate-100 dark:border-slate-800">
+<div class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors rounded-lg cursor-pointer">
+<span class="material-symbols-outlined">settings</span>
+<p class="text-sm font-medium">Settings</p>
+</div>
+</div>
+</nav>
+<div class="p-4 border-t border-slate-100 dark:border-slate-800">
+<div class="flex items-center gap-3 p-2 bg-slate-50 dark:bg-slate-800/50 rounded-xl">
+<div class="h-10 w-10 rounded-full bg-cover bg-center bg-no-repeat" data-alt="Admin user profile picture portrait" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA2TAoSsY26jhYt0eRdgxRucWsV40ykyKwRmlxaf5Mhg1spKhzl8yVjTZeV3mc1lk4J8SclCKeXfn2XqdY8g5dEyNVQFZ0BFS-wavOGcF24dkm5y_hkAmwpoJ2GU70lhcB6NeWKBFMP6ZjQX0r__F9MDddMqH0aCWeo9KIkR_aywRCmLhympom8RTEjzyFkH79aheQqjFoDcTKfQ1KynCNmG08h3PYEj3ts18CLU3y2ZGcdG0bDCizt0GxYswFQeYiz1yjDTbJ9QQVk");'></div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-semibold text-slate-900 dark:text-white truncate">Marcus Lynch</p>
+<p class="text-xs text-slate-500 truncate">Master Admin</p>
+</div>
+<span class="material-symbols-outlined text-slate-400 text-sm">unfold_more</span>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col overflow-hidden bg-background-light dark:bg-background-dark">
+<!-- Top Navigation Bar -->
+<header class="h-16 flex items-center justify-between px-8 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 shrink-0">
+<div class="flex items-center flex-1 max-w-xl">
+<div class="relative w-full">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+<span class="material-symbols-outlined text-lg">search</span>
+</span>
+<input class="block w-full pl-10 pr-3 py-2 border-none bg-slate-100 dark:bg-slate-800 rounded-lg text-sm focus:ring-2 focus:ring-primary focus:bg-white dark:focus:bg-slate-700 transition-all placeholder-slate-400" placeholder="Search analytics, orders, or customers..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4 ml-4">
+<button class="p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2.5 h-2 w-2 bg-danger rounded-full border-2 border-white dark:border-slate-900"></span>
+</button>
+<button class="p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">
+<span class="material-symbols-outlined">help</span>
+</button>
+<div class="h-8 w-[1px] bg-slate-200 dark:bg-slate-800 mx-2"></div>
+<div class="flex items-center gap-2 px-3 py-1.5 bg-slate-100 dark:bg-slate-800 rounded-full">
+<span class="text-xs font-bold text-slate-600 dark:text-slate-400">v2.4.0</span>
+</div>
+</div>
+</header>
+<!-- Workspace Scrollable Area -->
+<div class="flex-1 overflow-y-auto p-8 space-y-8">
+<!-- Page Title & Breadcrumbs -->
+<div>
+<div class="flex items-center gap-2 text-sm text-slate-500 mb-1">
+<span>Admin</span>
+<span class="text-xs">/</span>
+<span class="font-medium text-primary">Dashboard</span>
+</div>
+<div class="flex items-center justify-between">
+<h2 class="text-2xl font-bold text-slate-900 dark:text-white">Admin Overview</h2>
+<button class="flex items-center gap-2 px-4 py-2 bg-primary text-white text-sm font-semibold rounded-lg shadow-sm hover:bg-primary/90 transition-all">
+<span class="material-symbols-outlined text-sm">download</span>
+                            Export Report
+                        </button>
+</div>
+</div>
+<!-- Stats Metric Row -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Total Users Card -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<div class="p-2 bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 rounded-lg">
+<span class="material-symbols-outlined">group</span>
+</div>
+<span class="text-xs font-bold text-success flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">trending_up</span>
+                                +12%
+                            </span>
+</div>
+<p class="text-sm font-medium text-slate-500 mb-1">Total Users</p>
+<h3 class="text-2xl font-bold text-slate-900 dark:text-white">12,482</h3>
+</div>
+<!-- Total Orders Card -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<div class="p-2 bg-primary/10 text-primary rounded-lg">
+<span class="material-symbols-outlined">shopping_cart</span>
+</div>
+<span class="text-xs font-bold text-success flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">trending_up</span>
+                                +5%
+                            </span>
+</div>
+<p class="text-sm font-medium text-slate-500 mb-1">Total Orders</p>
+<h3 class="text-2xl font-bold text-slate-900 dark:text-white">1,205</h3>
+</div>
+<!-- Total Revenue Card -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<div class="p-2 bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 dark:text-emerald-400 rounded-lg">
+<span class="material-symbols-outlined">monetization_on</span>
+</div>
+<span class="text-xs font-bold text-success flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">trending_up</span>
+                                +18%
+                            </span>
+</div>
+<p class="text-sm font-medium text-slate-500 mb-1">Total Revenue</p>
+<h3 class="text-2xl font-bold text-slate-900 dark:text-white">$45,230</h3>
+</div>
+<!-- Pending Vendors Card -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<div class="p-2 bg-orange-50 dark:bg-orange-900/20 text-orange-600 dark:text-orange-400 rounded-lg">
+<span class="material-symbols-outlined">person_search</span>
+</div>
+<span class="px-2 py-0.5 bg-danger/10 text-danger text-[10px] font-bold rounded-full uppercase">Action Required</span>
+</div>
+<p class="text-sm font-medium text-slate-500 mb-1">Pending Vendors</p>
+<h3 class="text-2xl font-bold text-slate-900 dark:text-white">14</h3>
+</div>
+</div>
+<!-- Charts Row -->
+<div class="grid grid-cols-1 xl:grid-cols-2 gap-8">
+<!-- Orders per Day Line Chart -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-center justify-between mb-8">
+<div>
+<h4 class="text-base font-bold text-slate-900 dark:text-white">Orders per Day</h4>
+<p class="text-sm text-slate-500">Sales performance over the last 7 days</p>
+</div>
+<select class="text-xs font-semibold bg-slate-50 dark:bg-slate-800 border-none rounded-lg focus:ring-0">
+<option>Last 7 Days</option>
+<option>Last 30 Days</option>
+</select>
+</div>
+<div class="relative h-[240px] w-full">
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 478 150">
+<path d="M0 109C18 109 18 21 36 21C54 21 54 41 72 41C90 41 90 93 108 93C127 93 127 33 145 33C163 33 163 101 181 101C199 101 199 61 217 61C236 61 236 45 254 45C272 45 272 121 290 121C308 121 308 149 326 149C344 149 344 1 363 1C381 1 381 81 399 81C417 81 417 129 435 129C453 129 453 25 472 25" fill="none" stroke="#5048e5" stroke-linecap="round" stroke-width="3"></path>
+<path d="M0 109C18 109 18 21 36 21C54 21 54 41 72 41C90 41 90 93 108 93C127 93 127 33 145 33C163 33 163 101 181 101C199 101 199 61 217 61C236 61 236 45 254 45C272 45 272 121 290 121C308 121 308 149 326 149C344 149 344 1 363 1C381 1 381 81 399 81C417 81 417 129 435 129C453 129 453 25 472 25V150H0V109Z" fill="url(#blueGradient)" opacity="0.1"></path>
+<defs>
+<lineargradient id="blueGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#5048e5"></stop>
+<stop offset="100%" stop-color="#5048e5" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+</svg>
+<div class="flex justify-between mt-4 px-1">
+<span class="text-[11px] font-bold text-slate-400 tracking-wider">MON</span>
+<span class="text-[11px] font-bold text-slate-400 tracking-wider">TUE</span>
+<span class="text-[11px] font-bold text-slate-400 tracking-wider">WED</span>
+<span class="text-[11px] font-bold text-slate-400 tracking-wider">THU</span>
+<span class="text-[11px] font-bold text-slate-400 tracking-wider">FRI</span>
+<span class="text-[11px] font-bold text-slate-400 tracking-wider">SAT</span>
+<span class="text-[11px] font-bold text-slate-400 tracking-wider">SUN</span>
+</div>
+</div>
+</div>
+<!-- Revenue Trends Bar Chart -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-center justify-between mb-8">
+<div>
+<h4 class="text-base font-bold text-slate-900 dark:text-white">Revenue Trends</h4>
+<p class="text-sm text-slate-500">Weekly revenue growth comparison</p>
+</div>
+<div class="flex gap-2">
+<div class="flex items-center gap-1.5 px-2 py-1 rounded-md bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-100 dark:border-emerald-800">
+<div class="h-2 w-2 rounded-full bg-success"></div>
+<span class="text-[10px] font-bold text-emerald-600 dark:text-emerald-400">CURRENT WEEK</span>
+</div>
+</div>
+</div>
+<div class="h-[240px] flex items-end justify-between gap-4 px-2">
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full bg-success/20 rounded-t-lg transition-all hover:bg-success group-hover:scale-105" style="height: 40%"></div>
+<span class="text-[11px] font-bold text-slate-400">MON</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full bg-success/20 rounded-t-lg transition-all hover:bg-success group-hover:scale-105" style="height: 65%"></div>
+<span class="text-[11px] font-bold text-slate-400">TUE</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full bg-success/20 rounded-t-lg transition-all hover:bg-success group-hover:scale-105" style="height: 35%"></div>
+<span class="text-[11px] font-bold text-slate-400">WED</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full bg-success rounded-t-lg transition-all hover:brightness-110 group-hover:scale-105 shadow-lg shadow-success/20" style="height: 95%"></div>
+<span class="text-[11px] font-bold text-slate-400">THU</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full bg-success/20 rounded-t-lg transition-all hover:bg-success group-hover:scale-105" style="height: 75%"></div>
+<span class="text-[11px] font-bold text-slate-400">FRI</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full bg-success/20 rounded-t-lg transition-all hover:bg-success group-hover:scale-105" style="height: 20%"></div>
+<span class="text-[11px] font-bold text-slate-400">SAT</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full bg-success/20 rounded-t-lg transition-all hover:bg-success group-hover:scale-105" style="height: 55%"></div>
+<span class="text-[11px] font-bold text-slate-400">SUN</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Recent Activity Table Section -->
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
+<div class="p-6 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between">
+<h4 class="text-base font-bold text-slate-900 dark:text-white">Recent Transactions</h4>
+<button class="text-sm font-semibold text-primary hover:underline">View All Orders</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left text-sm">
+<thead class="bg-slate-50 dark:bg-slate-800/50 text-slate-500 font-medium">
+<tr>
+<th class="px-6 py-4">Order ID</th>
+<th class="px-6 py-4">Customer</th>
+<th class="px-6 py-4">Status</th>
+<th class="px-6 py-4">Amount</th>
+<th class="px-6 py-4">Date</th>
+<th class="px-6 py-4 text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<td class="px-6 py-4 font-semibold">#NC-8492</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="h-6 w-6 rounded-full bg-slate-200" data-alt="Customer avatar headshot" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB4tAcW1mJqK05D-oKiMIXB_y-Kue7o9XZRqoKjxXPdB7c8JZjkB_gDk_mzRLp2CwCMSHbmBdPn1wtPLQGq2T61JpFP3EJrjC8qgZMGO8s246kA9kpnZeaZlZIs4KHi2gdwmwUAt2tgQYn_VJVmf54rFWzkFT_gcGXNJX6_cEB9qXn1l_xGXdigm-WzncSZHBQgIeZSE_uuUuCpFgcU1Vx_6a0uaEu0qSKHCE8-hJjC4Jp0RGYadUKgy8JMij5Lm4bzqtBSziWk7Pdv"); background-size: cover;'></div>
+<span>Alex Rivera</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400">Paid</span>
+</td>
+<td class="px-6 py-4 font-medium">$240.00</td>
+<td class="px-6 py-4 text-slate-500">Oct 24, 2023</td>
+<td class="px-6 py-4 text-right">
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<td class="px-6 py-4 font-semibold">#NC-8491</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="h-6 w-6 rounded-full bg-slate-200" data-alt="Female customer profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAnw6hmwfot5GskK6QoNCioBsP2VWxDXTRx52R7kiImYM5VdsoIC954WesahyXTflXdb3kLAq8HRT0r9CmuKHRDZ3ote20nuyiCXCH9vdnEKuDoMFCuq5PAARl_7xezoFY1Bnq9mWeWHYMbfd9tTIbwaSUDgVnBQ_0DSdL4w1aqs3lhcFjRRY8dskQVf5SZDMXWfaewO1P_tV6-mZIiRVMDugG98WFI_X4eYMtEzNUhcXUXS75XUagsosh-paJ959Tki5IkbGZfjlTJ"); background-size: cover;'></div>
+<span>Sarah Chen</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-amber-50 text-amber-600 dark:bg-amber-900/30 dark:text-amber-400">Processing</span>
+</td>
+<td class="px-6 py-4 font-medium">$1,120.50</td>
+<td class="px-6 py-4 text-slate-500">Oct 23, 2023</td>
+<td class="px-6 py-4 text-right">
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<td class="px-6 py-4 font-semibold">#NC-8490</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="h-6 w-6 rounded-full bg-slate-200" data-alt="Male customer headshot" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA4V5vdLeUh1LIo92cfz5xpI_UL3_4KdNkorFiSGIh4TX1VK2kX7CHQhe-NRitf3yr0noToKzwys64R5-M5sqvWVAWQMaftzd34NvJFdTCkrBLSmDaVhL6z13iyNvNioWTTjLLHGH_VGu_ciex5dXVBuWn0x76tC89ZzDaEOm_YeSTZdaSuM-6eL-Y_Vf80kvnEx7SED62tt5DiYMUIT-YknJexhu62dgin1TB0pXswtiroXyx8UD-458YDZcFmXKUtVQV3MEySx1EO"); background-size: cover;'></div>
+<span>David Miller</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300">Shipped</span>
+</td>
+<td class="px-6 py-4 font-medium">$45.00</td>
+<td class="px-6 py-4 text-slate-500">Oct 23, 2023</td>
+<td class="px-6 py-4 text-right">
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

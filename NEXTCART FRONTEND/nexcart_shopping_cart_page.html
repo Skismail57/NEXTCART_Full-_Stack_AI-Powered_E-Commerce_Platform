@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEXCART Shopping Cart Page</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1f68f9",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#0f1623",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "2xl": "2rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            font-size: 20px;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen">
+<div class="relative flex h-auto w-full flex-col group/design-root overflow-x-hidden font-display">
+<!-- Navigation Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[#f0f1f5] dark:border-gray-800 bg-white dark:bg-background-dark px-10 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-[#111318] dark:text-white">
+<div class="size-6 text-primary">
+<svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z"></path>
+</svg>
+</div>
+<h2 class="text-xl font-bold leading-tight tracking-[-0.015em]">NEXCART</h2>
+</div>
+<div class="hidden md:flex items-center gap-6">
+<a class="text-[#111318] dark:text-gray-300 text-sm font-medium hover:text-primary transition-colors" href="#">Shop</a>
+<a class="text-[#111318] dark:text-gray-300 text-sm font-medium hover:text-primary transition-colors" href="#">Deals</a>
+<a class="text-[#111318] dark:text-gray-300 text-sm font-medium hover:text-primary transition-colors" href="#">New Arrivals</a>
+</div>
+</div>
+<div class="flex flex-1 justify-end gap-4 items-center">
+<label class="hidden lg:flex flex-col min-w-40 !h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-xl h-full">
+<div class="text-[#5f6e8c] flex border-none bg-[#f0f1f5] dark:bg-gray-800 items-center justify-center pl-4 rounded-l-xl">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 border-none bg-[#f0f1f5] dark:bg-gray-800 focus:ring-0 h-full text-[#111318] dark:text-white placeholder:text-[#5f6e8c] px-4 rounded-r-xl text-sm" placeholder="Search products..." value=""/>
+</div>
+</label>
+<div class="flex gap-2">
+<button class="flex size-10 items-center justify-center rounded-xl bg-[#f0f1f5] dark:bg-gray-800 text-[#111318] dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+<button class="flex size-10 items-center justify-center rounded-xl bg-primary/10 text-primary hover:bg-primary/20 transition-colors relative">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="absolute -top-1 -right-1 bg-primary text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">3</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 ml-2 border-2 border-primary/20" data-alt="User profile avatar with a friendly face" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDFZWnI8K1AbjEKFb9J5xtX7HN5ZMWl2vMDxQNiSqFTzOtlOrieOOs93xUmvUchpoRmmVFH3_MW7pRb1AGhOH91wiTjBUlhEqZIa2GHN3oLObnkt1Q4P-qsWhvfWY7aY8LGK5WUUYdQDfc43oQ-d-vlsFRa7hblmYHhdThqxZL1fCulPcjymaBlB_z2VvoOsXyP_t2QzUR5NQk7XlIyJTjTWmqvQHUrxjGa6rpo8CdSacrXzmImp8QaRqUZSPspchXZ0alYcmZnXsBr");'></div>
+</div>
+</div>
+</header>
+<main class="max-w-[1440px] mx-auto w-full px-6 lg:px-10 py-10">
+<!-- Page Heading -->
+<div class="flex flex-wrap justify-between gap-3 pb-8">
+<div>
+<h1 class="text-[#111318] dark:text-white text-4xl font-black leading-tight tracking-[-0.033em]">Your Shopping Cart</h1>
+<p class="text-[#5f6e8c] dark:text-gray-400 mt-1">You have 3 items in your cart</p>
+</div>
+</div>
+<div class="flex flex-col lg:flex-row gap-8">
+<!-- Left Column: Cart Items -->
+<div class="flex-[2] flex flex-col gap-4">
+<!-- Item 1 -->
+<div class="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-sm border border-[#f0f1f5] dark:border-gray-800">
+<div class="flex gap-6">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-xl size-[120px] shrink-0" data-alt="Premium wireless headphones in midnight black" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB4jUbuOf0B9DaIJ7W8l90dw_IS2dpx_bGvQCfZD0KiG3_BKSaoOq8R22VPEXX2unQveGQ-uaiAoFHBg2NqZ5Z0657Jjfzxwu0NWgBeYMYYp4Pyb0ZSM26bV88OoJX6VESVyg-5UInw9EQ8zVJ9X5YEK60_ZHao46Y6fQntD6MBVae2zXfEk8b7yyz53dXDXC5lUBzUBYLem97ZACmX2vKBMoju8V2i4w7o9vSj6hr6iUv_-Abaq8VQn1BRajtteb-TT7_8Y4ktBH00");'></div>
+<div class="flex flex-1 flex-col">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-[#111318] dark:text-white text-lg font-bold leading-normal">Premium Wireless Headphones</p>
+<p class="text-[#5f6e8c] dark:text-gray-400 text-sm mt-1">Midnight Black | Noise Cancelling</p>
+</div>
+<p class="text-[#111318] dark:text-white text-xl font-bold">$299.00</p>
+</div>
+<div class="mt-auto flex items-center justify-between">
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-3 bg-[#f0f1f5] dark:bg-gray-800 p-1 rounded-xl">
+<button class="flex h-8 w-8 items-center justify-center rounded-lg bg-white dark:bg-gray-700 text-[#111318] dark:text-white shadow-sm hover:bg-gray-50">-</button>
+<span class="text-base font-bold w-6 text-center text-[#111318] dark:text-white">1</span>
+<button class="flex h-8 w-8 items-center justify-center rounded-lg bg-white dark:bg-gray-700 text-[#111318] dark:text-white shadow-sm hover:bg-gray-50">+</button>
+</div>
+<div class="flex gap-4">
+<button class="flex items-center gap-1.5 text-sm font-medium text-primary hover:underline">
+<span class="material-symbols-outlined text-sm">bookmark</span> Save
+                                            </button>
+<button class="flex items-center gap-1.5 text-sm font-medium text-red-500 hover:underline">
+<span class="material-symbols-outlined text-sm text-red-500">delete</span> Remove
+                                            </button>
+</div>
+</div>
+<div class="text-right">
+<p class="text-xs text-[#5f6e8c] dark:text-gray-400 uppercase tracking-wider">Stock</p>
+<p class="text-xs font-bold text-green-500">In Stock</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-sm border border-[#f0f1f5] dark:border-gray-800">
+<div class="flex gap-6">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-xl size-[120px] shrink-0" data-alt="Tan minimalist leather wallet" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCO-qB3ske0Jy6t5uzFt9trBHjGax11sfRTM9XUAq1sOns_VZ2vfM2XmelBmCEeMgKb8l5Jn7hGOTUbRTvntaVkyX8pEKioz3X0XD0a24pcVKwzEKdzjn8_3jFcnhJC1xVNW-dmvoAwX7oSPOAGHbeqVhU8ol3EJxKnjmoExCHVac2qSttmQ8kpmUA1V9r-Ir8jmhytQWWVswdbi05RQEXghs3dYP37Fe4yQt2Xs8a6zsVPYpSvYO_sr1jgUrelS9N5xI2oMmlGCOjN");'></div>
+<div class="flex flex-1 flex-col">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-[#111318] dark:text-white text-lg font-bold leading-normal">Minimalist Leather Wallet</p>
+<p class="text-[#5f6e8c] dark:text-gray-400 text-sm mt-1">Full-Grain Tan Leather</p>
+</div>
+<p class="text-[#111318] dark:text-white text-xl font-bold">$170.00</p>
+</div>
+<div class="mt-auto flex items-center justify-between">
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-3 bg-[#f0f1f5] dark:bg-gray-800 p-1 rounded-xl">
+<button class="flex h-8 w-8 items-center justify-center rounded-lg bg-white dark:bg-gray-700 text-[#111318] dark:text-white shadow-sm hover:bg-gray-50">-</button>
+<span class="text-base font-bold w-6 text-center text-[#111318] dark:text-white">2</span>
+<button class="flex h-8 w-8 items-center justify-center rounded-lg bg-white dark:bg-gray-700 text-[#111318] dark:text-white shadow-sm hover:bg-gray-50">+</button>
+</div>
+<div class="flex gap-4">
+<button class="flex items-center gap-1.5 text-sm font-medium text-primary hover:underline">
+<span class="material-symbols-outlined text-sm">bookmark</span> Save
+                                            </button>
+<button class="flex items-center gap-1.5 text-sm font-medium text-red-500 hover:underline">
+<span class="material-symbols-outlined text-sm text-red-500">delete</span> Remove
+                                            </button>
+</div>
+</div>
+<div class="text-right">
+<p class="text-xs text-[#5f6e8c] dark:text-gray-400 uppercase tracking-wider">Stock</p>
+<p class="text-xs font-bold text-orange-500">Only 2 left</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-sm border border-[#f0f1f5] dark:border-gray-800">
+<div class="flex gap-6">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-xl size-[120px] shrink-0" data-alt="Mechanical keyboard with RGB lighting" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAJTKDhYFQRVss8EdDUHT-LHABWaEJTcAlNR1kmgUe1xP67vgFNY6JSsPOvcq9wd6-Ymw2m0Iq1zUhppwMA3U0VXiP0s8yF5EfJ_fzCgf1Q2MDXHwGF0UA67WvRSnfOK8Yty62vIg3kq6gdttXJ9DWBwqce6d8oWku0b6ZGLhV1acxT4V-taer0Q8_4JGItco30Udj_XO7v35qmZ7eRFzHs-rW1mGdqOqPrw184SCA8dtXwWAYXhx8qoNq-9egCeD3jKAQvnwSrKGOd");'></div>
+<div class="flex flex-1 flex-col">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-[#111318] dark:text-white text-lg font-bold leading-normal">Precision Mechanical Keyboard</p>
+<p class="text-[#5f6e8c] dark:text-gray-400 text-sm mt-1">Silver Case | Brown Switches</p>
+</div>
+<p class="text-[#111318] dark:text-white text-xl font-bold">$185.00</p>
+</div>
+<div class="mt-auto flex items-center justify-between">
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-3 bg-[#f0f1f5] dark:bg-gray-800 p-1 rounded-xl">
+<button class="flex h-8 w-8 items-center justify-center rounded-lg bg-white dark:bg-gray-700 text-[#111318] dark:text-white shadow-sm hover:bg-gray-50">-</button>
+<span class="text-base font-bold w-6 text-center text-[#111318] dark:text-white">1</span>
+<button class="flex h-8 w-8 items-center justify-center rounded-lg bg-white dark:bg-gray-700 text-[#111318] dark:text-white shadow-sm hover:bg-gray-50">+</button>
+</div>
+<div class="flex gap-4">
+<button class="flex items-center gap-1.5 text-sm font-medium text-primary hover:underline">
+<span class="material-symbols-outlined text-sm">bookmark</span> Save
+                                            </button>
+<button class="flex items-center gap-1.5 text-sm font-medium text-red-500 hover:underline">
+<span class="material-symbols-outlined text-sm text-red-500">delete</span> Remove
+                                            </button>
+</div>
+</div>
+<div class="text-right">
+<p class="text-xs text-[#5f6e8c] dark:text-gray-400 uppercase tracking-wider">Stock</p>
+<p class="text-xs font-bold text-green-500">In Stock</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Order Summary -->
+<div class="flex-1">
+<div class="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-md border border-[#f0f1f5] dark:border-gray-800 sticky top-24">
+<h3 class="text-[#111318] dark:text-white text-xl font-bold mb-6">Order Summary</h3>
+<div class="space-y-4 mb-8">
+<div class="flex justify-between items-center text-[#5f6e8c] dark:text-gray-400">
+<span class="text-sm font-medium">Subtotal</span>
+<span class="text-base text-[#111318] dark:text-white font-medium">$654.00</span>
+</div>
+<div class="flex justify-between items-center text-[#5f6e8c] dark:text-gray-400">
+<span class="text-sm font-medium">Shipping (Standard)</span>
+<span class="text-base text-[#111318] dark:text-white font-medium">$0.00</span>
+</div>
+<div class="flex justify-between items-center text-[#5f6e8c] dark:text-gray-400">
+<span class="text-sm font-medium">Tax</span>
+<span class="text-base text-[#111318] dark:text-white font-medium">$52.32</span>
+</div>
+<div class="pt-4 border-t border-[#f0f1f5] dark:border-gray-800 flex justify-between items-center">
+<span class="text-lg font-bold text-[#111318] dark:text-white">Total</span>
+<span class="text-2xl font-black text-primary">$706.32</span>
+</div>
+</div>
+<!-- Promo Code -->
+<div class="mb-6">
+<p class="text-sm font-medium text-[#111318] dark:text-white mb-2">Discount Code</p>
+<div class="flex gap-2">
+<input class="form-input flex-1 border border-[#f0f1f5] dark:border-gray-800 bg-transparent rounded-xl text-sm focus:ring-primary focus:border-primary px-4 py-2.5 dark:text-white" placeholder="Enter code" value=""/>
+<button class="bg-background-light dark:bg-gray-800 text-[#111318] dark:text-white px-4 rounded-xl text-sm font-bold hover:bg-gray-200 transition-colors">Apply</button>
+</div>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl shadow-lg shadow-primary/20 flex items-center justify-center gap-2 transition-transform active:scale-[0.98]">
+                            Proceed to Checkout
+                            <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<!-- Trust Elements -->
+<div class="mt-8 pt-8 border-t border-[#f0f1f5] dark:border-gray-800">
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-primary mb-2">lock</span>
+<p class="text-[10px] font-bold uppercase tracking-widest text-[#5f6e8c] dark:text-gray-500">Secure Checkout</p>
+</div>
+<div class="flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-primary mb-2">assignment_return</span>
+<p class="text-[10px] font-bold uppercase tracking-widest text-[#5f6e8c] dark:text-gray-500">Easy Returns</p>
+</div>
+</div>
+</div>
+<div class="mt-6 flex flex-wrap justify-center gap-4 grayscale opacity-50">
+<span class="material-symbols-outlined">credit_card</span>
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="material-symbols-outlined">contactless</span>
+</div>
+</div>
+<!-- Continue Shopping Link -->
+<div class="mt-6 text-center">
+<a class="text-sm font-bold text-[#5f6e8c] dark:text-gray-400 hover:text-primary transition-colors flex items-center justify-center gap-2" href="#">
+<span class="material-symbols-outlined text-base">arrow_back</span>
+                            Continue Shopping
+                        </a>
+</div>
+</div>
+</div>
+</main>
+<footer class="mt-auto py-10 border-t border-[#f0f1f5] dark:border-gray-800 bg-white dark:bg-background-dark px-10">
+<div class="max-w-[1440px] mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-2 text-[#5f6e8c] dark:text-gray-400 text-sm">
+<span>© 2024 NEXCART Unified Commerce. All rights reserved.</span>
+</div>
+<div class="flex gap-8">
+<a class="text-sm font-medium text-[#5f6e8c] dark:text-gray-400 hover:text-primary" href="#">Privacy Policy</a>
+<a class="text-sm font-medium text-[#5f6e8c] dark:text-gray-400 hover:text-primary" href="#">Terms of Service</a>
+<a class="text-sm font-medium text-[#5f6e8c] dark:text-gray-400 hover:text-primary" href="#">Help Center</a>
+</div>
+</div>
+</footer>
+</div>
+</body></html>
