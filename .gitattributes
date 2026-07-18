@@ -1,8 +1,9 @@
 # Ignore these directories for language statistics
-NEXTCART FRONTEND/* linguist-vendored
-nextcart-backend/uploads/* linguist-vendored
-project screenshots/* linguist-vendored
+NEXTCART FRONTEND/** linguist-vendored
+nextcart-backend/uploads/** linguist-vendored
+project screenshots/** linguist-vendored
 
 # Treat .tsx and .jsx as JavaScript/TypeScript
 *.tsx linguist-language=TypeScript
 *.jsx linguist-language=JavaScript
+
