@@ -115,164 +115,194 @@ A complete, production-ready full-stack e-commerce platform built with modern te
 
 ## 📸 Feature Gallery
 
-Here are screenshots of the NEXTCART platform in action!
+Here are all 111 screenshots of the NEXTCART platform organized by category! Screenshots are displayed in a responsive grid layout for easy viewing!
 
 ---
 
-### 👤 Customer Features
+### 🏠 Home Page & Landing Screens
 
-#### 🏠 Home Page & Theme
-![Nextcart Mobile Home Page](project%20screenshots/Nextcart%20mobile%20home%20page.jpg)
-![Nextcart Mobile Home Page Dark Theme](project%20screenshots/nextcart%20mobile%20home%20page%20dark%20theme.jpg)
-![NEXTCART Customer Home Page](project%20screenshots/nexcart_customer_home_page.jpg)
-![NEXTCART Desktop Home V1](project%20screenshots/nexcart_desktop_home_v1.jpg)
-![NEXTCART Desktop Home V2](project%20screenshots/nexcart_desktop_home_v2.jpg)
-![NEXTCART Home Screen V1 4](project%20screenshots/nexcart_home_screen_v1_4.jpg)
-![NEXTCART Home Screen V1 5](project%20screenshots/nexcart_home_screen_v1_5.jpg)
-![NEXTCART Mobile Home Dark](project%20screenshots/nexcart_mobile_home_dark.jpg)
-![Flipkart Style Homepage Dark Mode](project%20screenshots/flipkart-style_homepage_dark_mode.jpg)
-
-#### 🔐 Authentication & Profile
-![Login Lamp](project%20screenshots/login%20lamp.jpg)
-![Login Lapmp](project%20screenshots/login%20lapmp%20.jpg)
-![NEXTCART Customer Login Page](project%20screenshots/nexcart_customer_login_page.jpg)
-![Reset Password](project%20screenshots/Reset%20Password.jpg)
-![Set New Password Screen](project%20screenshots/set_new_password_screen.jpg)
-![User Profile Page](project%20screenshots/user%20profile%20page.jpg)
-![NEXTCART Customer Profile Dark](project%20screenshots/nexcart_customer_profile_dark.jpg)
-![Add Address Dark Mode](project%20screenshots/add_address_(dark_mode).jpg)
-
-#### 🛒 Shopping & Cart
-![NEXTCART Shopping Cart Page](project%20screenshots/nexcart_shopping_cart_page.jpg)
-![Cart With Exchange Breakdown](project%20screenshots/cart_with_exchange_breakdown.jpg)
-![Desktop My Wallet Dark](project%20screenshots/desktop_my_wallet_dark.jpg)
-
-#### 📦 Product Details & Exchange
-![Product Details Page](project%20screenshots/product%20deatils%20page.jpg)
-![Project Details Page 2](project%20screenshots/project%20deatails%20page%202.jpg)
-![NEXTCART Product Detail Page](project%20screenshots/nexcart_product_detail_page.jpg)
-![Product Details Screen 4](project%20screenshots/product_details_screen_4.jpg)
-![Mobile Product Page With Exchange Wizard](project%20screenshots/mobile_product_page_with_exchange_wizard.jpg)
-![Product Exchange Flow Dark](project%20screenshots/product_exchange_flow_dark.gif)
-![Size Chart Dark Mode](project%20screenshots/size_chart_(dark_mode).jpg)
-![Clothes Size Guide](project%20screenshots/clothes%20size%20guide.jpg)
-![Clothes Size Guide 2](project%20screenshots/clothes%20size%20guide%202.jpg)
-
-#### 🔍 Search & Browse
-![Desktop Advanced Search Results Dark](project%20screenshots/desktop_advanced_search_results_dark.jpg)
-![NEXTCART Desktop Category Listing](project%20screenshots/nexcart_desktop_category_listing.jpg)
-![Audio & Accessories Hub Dark](project%20screenshots/audio_&_accessories_hub_dark.jpg)
-![Gaming & Music Entertainment Hub](project%20screenshots/gaming_&_music_entertainment_hub.jpg)
-![Home Appliances Dark Gallery Dark](project%20screenshots/home_appliances_dark_gallery_dark.jpg)
-![Lifestyle & Living Dark Mode](project%20screenshots/lifestyle_&_living_dark_mode.jpg)
-![Sports, Auto & Industrial Hub](project%20screenshots/sports,_auto_&_industrial_hub.jpg)
-![Toys & School Supplies Hub](project%20screenshots/toys_&_school_supplies_hub.jpg)
-![TV & Appliances Superstore Hub](project%20screenshots/tv_&_appliances_superstore_hub.jpg)
-![TV & Home Entertainment Flagship Store](project%20screenshots/tv_&_home_entertainment_flagship_store.jpg)
-
-#### 💰 Payment & Checkout
-![Desktop Payment & UPI Dark](project%20screenshots/desktop_payment_&_upi_dark.png)
-![Desktop Payment & UPI Light](project%20screenshots/desktop_payment_&_upi_light.jpg)
-![Desktop 3D Card Payment Light](project%20screenshots/desktop_3d_card_payment_light.jpg)
-![Desktop Razorpay Checkout & Trust Hub](project%20screenshots/desktop_razorpay_checkout_&_trust_hub.jpg)
-![Payment Finalizing Transition](project%20screenshots/payment_finalizing_transition.jpg)
-![Securing Transaction Animation](project%20screenshots/Securing%20Transaction%20animation.jpg)
-![Secure COD OTP Verification](project%20screenshots/secure_cod_otp_verification.jpg)
-![Security Verification OTP Page](project%20screenshots/security%20verification%20otp%20page.jpg)
-![Payment Receipt](project%20screenshots/payment%20reciept.jpg)
-![Payment Success Receipt Animation](project%20screenshots/payment_success_receipt_animation.jpg)
-![Order Success Page](project%20screenshots/order%20success%20page.jpg)
-![Order Success 2](project%20screenshots/order%20success2.jpg)
-![Order Success Screen 2](project%20screenshots/order_success_screen_2.jpg)
-
-#### 📦 Orders & Delivery
-![Desktop Order Cancellation Flow](project%20screenshots/desktop_order_cancellation_flow.jpg)
-![Desktop Return Step 2 Light](project%20screenshots/desktop_return_step_2_light.jpg)
-![Desktop My Exchange Requests Tracker](project%20screenshots/desktop_my_exchange_requests_tracker.jpg)
-![Desktop Live Tracking Map Light](project%20screenshots/desktop_live_tracking_map_light.jpg)
-![Location Tracker](project%20screenshots/location%20tracker.jpg)
-![Select Delivery Zone Page](project%20screenshots/select%20delivery%20zone%20page.jpg)
-![NEXTCART Minutes Delivery Hub](project%20screenshots/nexcart_minutes_delivery_hub.jpg)
-
-#### 🤖 AI & Help
-![Desktop Help Center & AI Chatbot Dark](project%20screenshots/desktop_help_center_&_ai_chatbot_dark.jpg)
-![NEXTCART Help Center Home](project%20screenshots/nexcart_help_center_home.jpg)
-![NEXTA AI Commerce Assistant Hub](project%20screenshots/nexa_ai_commerce_assistant_hub.jpg)
-![NEXTA AI Voice & Multilingual Assistant](project%20screenshots/nexa_ai_voice_&_multilingual_assistant.jpg)
-![Desktop Price History Analysis Dark](project%20screenshots/desktop_price_history_analysis_dark.jpg)
-![Grocery Availability Logic UI Logic & Checker](project%20screenshots/grocery_availability_logic_ui_logic_&_checker.jpg)
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px;">
+  <img src="project screenshots/_homepage_dark_mode2.jpg" alt="Homepage Dark Mode 2" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/homepage_dark_mode.jpg" alt="Homepage Dark Mode" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/homepage_dark_mode3.jpg" alt="Homepage Dark Mode 3" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/nexcart_customer_home_page.jpg" alt="NEXTCART Customer Home Page" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/nexcart_customer_home_page1.jpg" alt="NEXTCART Customer Home Page 2" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/nexcart_desktop_home_v1.jpg" alt="NEXTCART Desktop Home V1" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/desktop desktop home v2.jpg" alt="Desktop Home V2" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/mobile nexcart_home_screen_v1_4.jpg" alt="Mobile Home Screen V1.4" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/nexcart_home_screen_v1_5.jpg" alt="Home Screen V1.5" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/nextcart mobile home dark .jpg" alt="Nextcart Mobile Home Dark" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+</div>
 
 ---
 
-### 🛡️ Admin Features
+### 🔐 Authentication & Account Management
 
-#### 🏢 Dashboard & Login
-![NEXTCART Admin Login Hub](project%20screenshots/nexcart_admin_login_hub.jpg)
-![NEXTCART Admin Dashboard Dark](project%20screenshots/nexcart_admin_dashboard_dark.jpg)
-![NEXTCART Admin Dashboard Overview](project%20screenshots/nexcart_admin_dashboard_overview.jpg)
-![NEXTCART Admin Master Dashboard](project%20screenshots/nexcart_admin_master_dashboard.jpg)
-
-#### 📦 Product Management
-![Product Admin](project%20screenshots/product-admin.jpg)
-![Admin Add New Product Form](project%20screenshots/admin_add_new_product_form.jpg)
-![Admin Product Master Control](project%20screenshots/admin_product_master_control.jpg)
-![Add Product Step 1 Light 2](project%20screenshots/add_product_step_1_light_2.jpg)
-![Seller Storefront Editor Light](project%20screenshots/seller_storefront_editor_light.jpg)
-
-#### 📂 Category & Banner Management
-![Category Admin](project%20screenshots/category-admin.jpg)
-![Desktop Admin Category Manager Dark](project%20screenshots/desktop_admin_category_manager_dark.jpg)
-![Desktop Admin Category Manager Light](project%20screenshots/desktop_admin_category_manager_light.jpg)
-![Hero Banner Admin](project%20screenshots/hero-banner-admin.jpg)
-![Admin Content & Hero Editor Dark](project%20screenshots/admin_content_&_hero_editor_dark.jpg)
-![Admin Content & Hero Editor Light](project%20screenshots/admin_content_&_hero_editor_light.jpg)
-![NEXTCART Admin Hero & Content Editor](project%20screenshots/nexcart_admin_hero_&_content_editor.jpg)
-![NEXTCART Admin Hero Editor Dark](project%20screenshots/nexcart_admin_hero_editor_dark.jpg)
-![Desktop Flash Sale Manager Light](project%20screenshots/desktop_flash_sale_manager_light.jpg)
-
-#### 📋 Order & Logistics Management
-![NEXTCART Admin Order Management](project%20screenshots/nexcart_admin_order_management.jpg)
-![NEXTCART Admin Order Manager](project%20screenshots/nexcart_admin_order_manager.jpg)
-![Admin Exchange Audit & Pickup Hub](project%20screenshots/admin_exchange_audit_&_pickup_hub.jpg)
-![Admin Exchange Verification Tool](project%20screenshots/admin_exchange_verification_tool.jpg)
-![Logistics & Courier Performance Hub](project%20screenshots/logistics_&_courier_performance_hub.jpg)
-![Admin Pincode & Logistics Manager Dark Manager](project%20screenshots/admin_pincode_&_logistics_manager_dark_manager.jpg)
-![Shipment Fulfillment & AWB Label](project%20screenshots/shipment_fulfillment_&_awb_label.jpg)
-
-#### 🛡️ Fraud & Security Management
-![Admin Fraud Control Center](project%20screenshots/admin_fraud_control_center.jpg)
-![Admin Fraud Review Hub Dark](project%20screenshots/admin_fraud_review_hub_dark.jpg)
-![Admin Fraud & Rules Manager Light](project%20screenshots/admin_fraud_&_rules_manager_light.jpg)
-![Desktop Admin Security Center Dark](project%20screenshots/desktop_admin_security_center_dark.jpg)
-
-#### 🤖 AI & Advanced Features
-![Desktop AI Recommendation Engine Monitor](project%20screenshots/desktop_ai_recommendation_engine_monitor.jpg)
-![Desktop API & Service Explorer](project%20screenshots/desktop_api_&_service_explorer.jpg)
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px;">
+  <img src="project screenshots/Login Lamp login and Registration.jpg" alt="Login & Registration" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/nexcart_customer_login_page.jpg" alt="Customer Login" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/forgot_password_success.jpg" alt="Forgot Password Success" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/set_new_password_screen.jpg" alt="Set New Password" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/secure_cod_otp_verification.jpg" alt="Secure COD OTP Verification" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/nexcart_customer_profile_dark.jpg" alt="Customer Profile Dark" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/add_address_(dark_mode).jpg" alt="Add Address Dark Mode" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+</div>
 
 ---
 
-### 📦 Extra Screenshots
-![Extra 01](project%20screenshots/extra_01.jpg)
-![Extra 02](project%20screenshots/extra_02.jpg)
-![Extra 03](project%20screenshots/extra_03.jpg)
-![Extra 04](project%20screenshots/extra_04.jpg)
-![Extra 05](project%20screenshots/extra_05.jpg)
-![Extra 06](project%20screenshots/extra_06.jpg)
-![Extra 07](project%20screenshots/extra_07.jpg)
-![Extra 08](project%20screenshots/extra_08.jpg)
-![Extra 09](project%20screenshots/extra_09.jpg)
-![Extra 10](project%20screenshots/extra_10.jpg)
-![Extra 11](project%20screenshots/extra_11.jpg)
-![Extra 12](project%20screenshots/extra_12.jpg)
-![Extra 13](project%20screenshots/extra_13.jpg)
-![Extra 14](project%20screenshots/extra_14.jpg)
-![Extra 15](project%20screenshots/extra_15.jpg)
-![Extra 16](project%20screenshots/extra_16.jpg)
-![Extra 17](project%20screenshots/extra_17.jpg)
-![Extra 18](project%20screenshots/extra_18.jpg)
-![Extra 19](project%20screenshots/extra_19.jpg)
-![Extra 20](project%20screenshots/extra_20.jpg)
-![Extra 21](project%20screenshots/extra_21.jpg)
+### 🔍 Product Browsing & Details
+
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px;">
+  <img src="project screenshots/Audio Accessories and hub.jpg" alt="Audio & Accessories Hub" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/Audio Accessories and hub 2.jpg" alt="Audio & Accessories Hub 2" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/gaming_&_music_entertainment_hub.jpg" alt="Gaming & Music Entertainment Hub" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/gaming_&_music_entertainment_hub2.jpg" alt="Gaming & Music Entertainment Hub 2" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/grocery_availability_logic_ui_logic_&_checker.jpg" alt="Grocery Availability Logic" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/home_appliances_dark_gallery_dark.jpg" alt="Home Appliances Gallery Dark" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/home_appliances_dark_gallery_dark1.jpg" alt="Home Appliances Gallery Dark 2" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/lifestyle and living dark theme.jpg" alt="Lifestyle & Living Dark Theme" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/nexcart_desktop_category_listing.jpg" alt="Category Listing Desktop" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/nexcart_desktop_category_listing2.jpg" alt="Category Listing Desktop 2" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/nexcart_product_detail_page.jpg" alt="Product Detail Page" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/nexcart_product_detail_page1.jpg" alt="Product Detail Page 2" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/mobile product_details_screen_.jpg" alt="Mobile Product Details" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/mobile product_details_screen_2.jpg" alt="Mobile Product Details 2" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/mobile_product_page_with_exchange_wizard.jpg" alt="Mobile Exchange Wizard" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/mobile_product_page_with_exchange_wizard2.jpg" alt="Mobile Exchange Wizard 2" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/product exchnage flow dark.jpg" alt="Product Exchange Flow Dark" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/product exchnage flow dark2 .jpg" alt="Product Exchange Flow Dark 2" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/size_chart_(dark_mode).jpg" alt="Size Chart Dark" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/size_chart_(dark_mode)1.jpg" alt="Size Chart Dark 2" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/sports,_auto_&_industrial_hub.jpg" alt="Sports & Industrial Hub" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/sports,_auto_&_industrial_hub2.jpg" alt="Sports & Industrial Hub 2" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/sports,_auto_&_industrial_hub3.jpg" alt="Sports & Industrial Hub 3" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/toys and school supplies.jpg" alt="Toys & School Supplies" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/toys and school supplies2.jpg" alt="Toys & School Supplies 2" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/toys and school supplies3.jpg" alt="Toys & School Supplies 3" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/tv_&_appliances_superstore_hub.jpg" alt="TV & Appliances Hub" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/tv_&_appliances_superstore_hub1.jpg" alt="TV & Appliances Hub 2" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/tv_&_appliances_superstore_hub2.jpg" alt="TV & Appliances Hub 3" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/tv_&_appliances_superstore_hub3.jpg" alt="TV & Appliances Hub 4" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/tv_&_home_entertainment_flagship_store.jpg" alt="Home Entertainment Flagship" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/tv_&_home_entertainment_flagship_store1.jpg" alt="Home Entertainment Flagship 2" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/desktop_advanced_search_results_dark.jpg" alt="Advanced Search Results" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+</div>
+
+---
+
+### 🛒 Shopping Cart & Checkout
+
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px;">
+  <img src="project screenshots/cart_with_exchange_breakdown.jpg" alt="Cart with Exchange Breakdown" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/nextcart shopping cart page.jpg" alt="Shopping Cart" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/desktop my wallet dark.jpg" alt="My Wallet Dark" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/desktop 3d card payment.jpg" alt="3D Card Payment" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/desktop_payment_&_upi_dark.jpg" alt="Payment & UPI Dark" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/desktop_payment_&_upi_light.jpg" alt="Payment & UPI Light" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/desktop razropay checkout.jpg" alt="Razorpay Checkout" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/payment_finalizing_transition.jpg" alt="Payment Finalizing" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/payment_success_receipt_animation.jpg" alt="Payment Success Receipt" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/order_success_screen.jpg" alt="Order Success" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/order_success_screen_2.jpg" alt="Order Success 2" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/desktop_api_&_service_explorer.jpg" alt="API & Service Explorer" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/desktop_api_&_service_explorer1.jpg" alt="API & Service Explorer 2" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+</div>
+
+---
+
+### 📦 Orders & Delivery
+
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px;">
+  <img src="project screenshots/desktop my exchange requests tracker.jpg" alt="Exchange Requests Tracker" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/desktop_order_cancellation_flow.jpg" alt="Order Cancellation Flow" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/desktop_order_cancellation_flow1.jpg" alt="Order Cancellation Flow 2" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/desktop return step light .jpg" alt="Return Step Light" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/desktop return step light 2.jpg" alt="Return Step Light 2" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/desktop_live_tracking_map_light.jpg" alt="Live Tracking Map" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/logistics_&_courier_performance_hub.jpg" alt="Logistics Performance Hub" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/logistics_&_courier_performance_hub1.jpg" alt="Logistics Performance Hub 2" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/shipment_fulfillment_&_awb_label.jpg" alt="Shipment Fulfillment AWB" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/nextcart minutes delivery hub.jpg" alt="Minutes Delivery Hub" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/nextcart minutes delivery hub2.jpg" alt="Minutes Delivery Hub 2" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+</div>
+
+---
+
+### 🤖 Customer Support & AI Help
+
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px;">
+  <img src="project screenshots/desktop help center and AI Chatbot .jpg" alt="Help Center & AI Chatbot" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/desktop help center and AI Chatbot 2 .jpg" alt="Help Center & AI Chatbot 2" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/nexcart_help_center_home.jpg" alt="Help Center Home" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/nexcart_help_center_home1.jpg" alt="Help Center Home 2" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/nexa_ai_commerce_assistant_hub.jpg" alt="NEXA AI Commerce Assistant" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/nexa_ai_voice_&_multilingual_assistant.jpg" alt="AI Voice & Multilingual" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/desktop_price_history_analysis_dark_theme.jpg" alt="Price History Analysis" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/desktop_price_history_analysis_dark_theme2.jpg" alt="Price History Analysis 2" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+</div>
+
+---
+
+### 🏢 Admin Dashboard
+
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px;">
+  <img src="project screenshots/nextcart admin login hub .jpg" alt="Admin Login Hub" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/desktop admin dashboard.jpg" alt="Admin Dashboard" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/desktop admin dashboard2.jpg" alt="Admin Dashboard 2" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/nexcart_admin_dashboard_overview.jpg" alt="Admin Dashboard Overview" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/nexcart_admin_dashboard_overview1.jpg" alt="Admin Dashboard Overview 2" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/nexcart_admin_master_dashboard.jpg" alt="Master Dashboard" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+</div>
+
+---
+
+### 📦 Admin Product Management
+
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px;">
+  <img src="project screenshots/admin_add_new_product_form.jpg" alt="Add New Product Form" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/admin_add_new_product_form1.jpg" alt="Add New Product Form 2" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/add product step 1 light.jpg" alt="Add Product Step 1" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/add product step 1 light 2.jpg" alt="Add Product Step 1 2" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/admin product master control.jpg" alt="Product Master Control" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/seller_storefront_editor_light.jpg" alt="Seller Storefront Editor" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+</div>
+
+---
+
+### 📋 Admin Order & Logistics
+
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px;">
+  <img src="project screenshots/nexcart_admin_order_management.jpg" alt="Admin Order Management" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/nextcart admin order management.jpg" alt="Admin Order Management 2" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/admin exchange audit and pickup hub .jpg" alt="Exchange Audit & Pickup Hub" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/admin_exchange_verification_tool.jpg" alt="Exchange Verification Tool" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/admin_exchange_verification_tool1.jpg" alt="Exchange Verification Tool 2" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/admin_pincode_&_logistics_manager_dark_manager.jpg" alt="Pincode & Logistics Manager" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+</div>
+
+---
+
+### 📂 Admin Content & Promotions
+
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px;">
+  <img src="project screenshots/admin_content_&_hero_editor_dark.jpg" alt="Content & Hero Editor Dark" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/admin_content_&_hero_editor_light.jpg" alt="Content & Hero Editor Light" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/nexcart_admin_hero_&_content_editor.jpg" alt="Hero & Content Editor" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/nextcart admin hero editor dark theme.jpg" alt="Hero Editor Dark Theme" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/desktop_flash_sale_manager_light.jpg" alt="Flash Sale Manager" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+</div>
+
+---
+
+### 🛡️ Admin Fraud & Security
+
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px;">
+  <img src="project screenshots/admin_fraud_control_center.jpg" alt="Fraud Control Center" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/admin_fraud_review_dark.jpg" alt="Fraud Review Dark" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/admin_fraud_&_rules_manager_light.jpg" alt="Fraud & Rules Manager" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/desktop admin security center .jpg" alt="Admin Security Center" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <img src="project screenshots/desktop_ai_recommendation_engine_monitor.jpg" alt="AI Recommendation Monitor" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+</div>
 
 
 ---
