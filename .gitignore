@@ -62,3 +62,6 @@ config.properties
 *.swp
 *.swo
 *~
+
+# Uploads directory
+nextcart-backend/uploads/
