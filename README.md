@@ -115,49 +115,46 @@ A complete, production-ready full-stack e-commerce platform built with modern te
 
 ## 📸 Feature Gallery
 
-Here are some screenshots of the NEXTCART platform in action!
+Here are screenshots of the NEXTCART platform in action!
 
 ### Customer Features
 
-#### 🏠 Home Page
-![NEXTCART Home Page](project%20screenshots/Screenshot%202026-07-17%20204620.jpg)
+#### 🏠 Mobile Home Page
+![Nextcart Mobile Home Page](project%20screenshots/Nextcart%20mobile%20home%20page.jpg)
+![Nextcart Mobile Home Page Dark Theme](project%20screenshots/nextcart%20mobile%20home%20page%20dark%20theme.jpg)
 
-#### 🔐 Customer Login & Registration
-![Customer Login](project%20screenshots/login%20lapmp%20.jpg)
+#### 🔐 Login & Password Reset
+![Login Page](project%20screenshots/login%20lapmp%20.jpg)
+![Reset Password Page](project%20screenshots/Reset%20Password.jpg)
 
-#### 🛒 Shopping Cart
-![Shopping Cart](project%20screenshots/Screenshot%202026-07-17%20210649.jpg)
+#### � User Profile
+![User Profile Page](project%20screenshots/user%20profile%20page.jpg)
 
 #### 📦 Product Details
-![Product Details](project%20screenshots/Screenshot%202026-07-17%20210218.jpg)
+![Product Details Page](project%20screenshots/product%20deatils%20page.jpg)
+![Product Details Page 2](project%20screenshots/project%20deatails%20page%202.jpg)
 
-#### 💳 Payment (UPI & Card)
-![Payment Page](project%20screenshots/Screenshot%202026-07-17%20203101.jpg)
+#### 📏 Size Guide
+![Clothes Size Guide](project%20screenshots/clothes%20size%20guide.jpg)
+![Clothes Size Guide 2](project%20screenshots/clothes%20size%20guide%202.jpg)
+
+#### � Delivery & Location
+![Select Delivery Zone Page](project%20screenshots/select%20delivery%20zone%20page.jpg)
+![Location Tracker](project%20screenshots/location%20tracker.jpg)
+
+#### � OTP & Security
+![Security Verification OTP Page](project%20screenshots/security%20verification%20otp%20page.jpg)
+![Securing Transaction Animation](project%20screenshots/Securing%20Transaction%20animation.jpg)
+
+#### � Payment & Receipts
+![Order Success Page](project%20screenshots/order%20success%20page.jpg)
+![Order Success Page 2](project%20screenshots/order%20success2.jpg)
+![Payment Receipt](project%20screenshots/payment%20reciept.jpg)
 
 ---
 
-### Admin Features
+### Admin Features (Coming Soon: Full Gallery of Admin Screens)
 
-#### 📊 Admin Dashboard
-![Admin Dashboard](project%20screenshots/Screenshot%202026-07-17%20200534.jpg)
-
-#### 📦 Product Management
-![Product Management](project%20screenshots/Screenshot%202026-07-17%20204328.jpg)
-
-#### 📂 Category Management
-![Category Management](project%20screenshots/Screenshot%202026-07-17%20195119.jpg)
-
-#### 📋 Order Management
-![Order Management](project%20screenshots/Screenshot%202026-07-17%20210725.jpg)
-
-#### 🎨 Banner & Hero Banner Management
-![Banner Management](project%20screenshots/Screenshot%202026-07-17%20205828.jpg)
-
-#### 🛡️ Fraud Detection & Rules Manager
-![Fraud Detection](project%20screenshots/Screenshot%202026-07-17%20211438.jpg)
-
-#### 🤖 AI Recommendation Engine Monitor
-![AI Recommendations](project%20screenshots/Screenshot%202026-07-17%20211114.jpg)
 
 ---
 
