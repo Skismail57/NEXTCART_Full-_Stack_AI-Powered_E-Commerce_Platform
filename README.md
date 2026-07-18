@@ -45,9 +45,12 @@ A complete, production-ready full-stack e-commerce platform built with modern te
 ## 🛠️ Tech Stack
 
 ### Frontend
+- **React 18** - UI library for building interactive user interfaces
+- **Next.js 14** - React framework with App Router for production-grade applications
+- **TypeScript** - Typed JavaScript for better developer experience and fewer bugs
+- **Tailwind CSS** - Utility-first CSS framework for rapid UI development
 - **HTML5 & CSS3** - Core web technologies
 - **Modern UI/UX Templates** - Responsive, feature-rich HTML templates with dark/light mode support
-- **Tailwind CSS** (planned for Next.js version) - Utility-first CSS framework
 
 ### Backend (Monolith)
 - **Core Java 17** - Programming language
@@ -362,7 +365,7 @@ NEXTCART E-COMMERCE/
 
 Make sure you have the following installed on your system:
 
-- **Node.js 18+** (for future Next.js frontend)
+- **Node.js 18+** - For Next.js frontend
 - **Java 17+** - [Download from Oracle](https://www.oracle.com/java/technologies/downloads/) or [OpenJDK](https://adoptium.net/)
 - **Maven 3.8+** - [Download Maven](https://maven.apache.org/download.cgi)
 - **MySQL 8+** - [Download MySQL](https://dev.mysql.com/downloads/mysql/)
