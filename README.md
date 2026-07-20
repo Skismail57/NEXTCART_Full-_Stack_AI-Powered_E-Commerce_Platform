@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Skismail57/NEXTCART_Full_Stack_AI-Powered_E-Commerce_Platform/main/Nextcart-E-Commerce-Banner.png" alt="NEXTCART Banner" width="100%">
+  <img src="./Nextcart-E-Commerce-Banner.png" alt="NEXTCART Banner" width="100%">
 </p>
 
 <div align="center">
