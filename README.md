@@ -1,3 +1,9 @@
+<p align="center">
+  <img src="Nextcart-E-Commece-Banner.png" alt="Nextcart-E-Commece-Banner" width="100%">
+</p>
+
+
+
 <div align="center">
 
 # 🛍️ NEXTCART - Full Stack AI-Powered E-Commerce Platform
