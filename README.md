@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="Nextcart-E-Commece-Banner.png" alt="Nextcart-E-Commece-Banner" width="100%">
+  <img src="Nextcart-E-Commerce-Banner.png" alt="Nextcart-E-Commerce-Banner" width="100%">
 </p>
 
 
