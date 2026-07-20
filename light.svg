@@ -1,0 +1,221 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 610" width="1180" height="610">
+  <!-- Background -->
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="lightAccent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2563EB"/>
+      <stop offset="50%" stop-color="#06B6D4"/>
+      <stop offset="100%" stop-color="#10B981"/>
+      <animate attributeName="x1" values="0;1;0" dur="15s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="1;0;1" dur="15s" repeatCount="indefinite"/>
+    </linearGradient>
+    <linearGradient id="lightAscii" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2563EB"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+      <animate attributeName="x1" values="0;1;0" dur="10s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="1;0;1" dur="10s" repeatCount="indefinite"/>
+    </linearGradient>
+    <radialGradient id="lightBg" cx="50%" cy="50%">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#FFFFFF"/>
+    </radialGradient>
+    <!-- Filters -->
+    <filter id="lightGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="lightNoise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.015"/>
+      </feComponentTransfer>
+    </filter>
+    <!-- Scanline -->
+    <mask id="lightScanlineMask">
+      <rect x="0" y="0" width="1180" height="610" fill="white"/>
+      <rect x="0" y="0" width="1180" height="2" fill="black" opacity="0.1">
+        <animate attributeName="y" values="0;610" dur="3s" repeatCount="indefinite"/>
+      </rect>
+    </mask>
+  </defs>
+  <!-- Base -->
+  <rect x="0" y="0" width="1180" height="610" fill="url(#lightBg)" rx="24"/>
+  <!-- Noise Overlay -->
+  <rect x="0" y="0" width="1180" height="610" fill="url(#lightBg)" filter="url(#lightNoise)" mask="url(#lightScanlineMask)"/>
+  <!-- Floating Particles -->
+  <g opacity="0.2">
+    <circle cx="100" cy="100" r="2" fill="#2563EB">
+      <animate attributeName="cy" values="100;120;100" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1050" cy="500" r="1.5" fill="#06B6D4">
+      <animate attributeName="cy" values="500;480;500" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="600" cy="300" r="1" fill="#10B981">
+      <animate attributeName="cx" values="600;620;600" dur="6s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  <!-- Main Container (Glassmorphism) -->
+  <g transform="translate(20,20)">
+    <rect x="0" y="0" width="1140" height="570" rx="20" fill="#F8FAFC" stroke="rgba(15,23,42,0.08)" stroke-width="1"/>
+    <!-- Border Shimmer -->
+    <rect x="0" y="0" width="1140" height="570" rx="20" fill="none" stroke="url(#lightAccent)" stroke-width="1" opacity="0.3">
+      <animate attributeName="opacity" values="0.3;0.5;0.3" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    <!-- LEFT SECTION: ASCII Portrait -->
+    <g transform="translate(30,30)">
+      <rect x="0" y="0" width="430" height="510" rx="16" fill="rgba(255,255,255,0.8)" stroke="rgba(15,23,42,0.06)" stroke-width="1" filter="url(#lightGlow)"/>
+      <g transform="translate(15,20)">
+        <text font-family="monospace" font-size="12" fill="url(#lightAscii)" opacity="0.9">
+          <tspan x="0" dy="20">   ███████╗██╗  ██╗ █████╗ ██╗   ██╗</tspan>
+          <tspan x="0" dy="20">  ██╔════╝██║ ██╔╝██╔══██╗██║   ██║</tspan>
+          <tspan x="0" dy="20">  ██║     █████╔╝ ███████║██║   ██║</tspan>
+          <tspan x="0" dy="20">  ██║     ██╔═██╗ ██╔══██║╚██╗ ██╔╝</tspan>
+          <tspan x="0" dy="20">  ╚██████╗██║  ██╗██║  ██║ ╚████╔╝</tspan>
+          <tspan x="0" dy="20">   ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝  ╚═══╝</tspan>
+          <animateTransform attributeName="transform" type="translate" values="0 0;0 -3;0 0" dur="6s" repeatCount="indefinite"/>
+        </text>
+        <!-- Blinking Cursor -->
+        <rect x="380" y="120" width="8" height="18" fill="#2563EB" opacity="0.8">
+          <animate attributeName="opacity" values="0.8;0;0.8" dur="1s" repeatCount="indefinite"/>
+        </rect>
+      </g>
+    </g>
+    <!-- RIGHT SECTION: Terminal -->
+    <g transform="translate(480,30)">
+      <rect x="0" y="0" width="630" height="510" rx="16" fill="rgba(255,255,255,0.8)" stroke="rgba(15,23,42,0.06)" stroke-width="1" filter="url(#lightGlow)"/>
+      <!-- Terminal Header -->
+      <g transform="translate(20,20)">
+        <circle cx="10" cy="10" r="5" fill="#EF4444"/>
+        <circle cx="28" cy="10" r="5" fill="#F59E0B"/>
+        <circle cx="46" cy="10" r="5" fill="#10B981"/>
+      </g>
+      <!-- Terminal Content -->
+      <g transform="translate(20,60)">
+        <!-- Greeting -->
+        <text font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="600" fill="#0F172A">
+          Hi 👋 I'm Skismail57
+        </text>
+        <!-- Animated Roles -->
+        <g transform="translate(0,45)">
+          <text font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="500" fill="#475569">
+            <animate attributeName="opacity" values="1;0;0;0;0" dur="10s" repeatCount="indefinite"/>
+            <tspan>Frontend Engineer</tspan>
+          </text>
+          <text font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="500" fill="#475569">
+            <animate attributeName="opacity" values="0;1;0;0;0" dur="10s" repeatCount="indefinite"/>
+            <tspan>Full Stack Developer</tspan>
+          </text>
+          <text font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="500" fill="#475569">
+            <animate attributeName="opacity" values="0;0;1;0;0" dur="10s" repeatCount="indefinite"/>
+            <tspan>Open Source Contributor</tspan>
+          </text>
+          <text font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="500" fill="#475569">
+            <animate attributeName="opacity" values="0;0;0;1;0" dur="10s" repeatCount="indefinite"/>
+            <tspan>UI Engineer</tspan>
+          </text>
+          <text font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="500" fill="#475569">
+            <animate attributeName="opacity" values="0;0;0;0;1" dur="10s" repeatCount="indefinite"/>
+            <tspan>AI Enthusiast</tspan>
+          </text>
+          <!-- Cursor -->
+          <rect x="260" y="-2" width="3" height="26" fill="#2563EB">
+            <animate attributeName="opacity" values="1;0;1" dur="0.8s" repeatCount="indefinite"/>
+          </rect>
+        </g>
+        <!-- Details -->
+        <g transform="translate(0,110)">
+          <text font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#475569">
+            <tspan x="0" dy="26">📍 Location: World Wide</tspan>
+            <tspan x="0" dy="26">🎓 Education: Self-Taught</tspan>
+            <tspan x="0" dy="26">🚀 Current Focus: Full Stack & AI</tspan>
+            <tspan x="0" dy="26">🌐 Portfolio: Coming Soon</tspan>
+            <tspan x="0" dy="26">📧 Email: Let's Connect!</tspan>
+          </text>
+        </g>
+        <!-- Skills Pills -->
+        <g transform="translate(0,280)">
+          <text font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="600" fill="#0F172A" opacity="0.9">Skills</text>
+          <g transform="translate(0,30)">
+            <!-- Skill 1: React -->
+            <rect x="0" y="0" width="80" height="36" rx="18" fill="rgba(37,99,235,0.1)" stroke="rgba(37,99,235,0.25)" stroke-width="1">
+              <animate attributeName="rx" values="18;20;18" dur="2s" repeatCount="indefinite"/>
+            </rect>
+            <text x="40" y="24" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="500" fill="#1D4ED8" text-anchor="middle">React</text>
+            <!-- Skill 2: Next.js -->
+            <rect x="90" y="0" width="90" height="36" rx="18" fill="rgba(6,182,212,0.1)" stroke="rgba(6,182,212,0.25)" stroke-width="1">
+              <animate attributeName="rx" values="18;20;18" dur="2s" begin="0.2s" repeatCount="indefinite"/>
+            </rect>
+            <text x="135" y="24" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="500" fill="#0E7490" text-anchor="middle">Next.js</text>
+            <!-- Skill 3: TypeScript -->
+            <rect x="190" y="0" width="100" height="36" rx="18" fill="rgba(16,185,129,0.1)" stroke="rgba(16,185,129,0.25)" stroke-width="1">
+              <animate attributeName="rx" values="18;20;18" dur="2s" begin="0.4s" repeatCount="indefinite"/>
+            </rect>
+            <text x="240" y="24" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="500" fill="#059669" text-anchor="middle">TypeScript</text>
+            <!-- Skill 4: Tailwind -->
+            <rect x="300" y="0" width="90" height="36" rx="18" fill="rgba(37,99,235,0.1)" stroke="rgba(37,99,235,0.25)" stroke-width="1">
+              <animate attributeName="rx" values="18;20;18" dur="2s" begin="0.6s" repeatCount="indefinite"/>
+            </rect>
+            <text x="345" y="24" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="500" fill="#1D4ED8" text-anchor="middle">Tailwind</text>
+            <!-- Skill 5: Node.js -->
+            <rect x="400" y="0" width="90" height="36" rx="18" fill="rgba(16,185,129,0.1)" stroke="rgba(16,185,129,0.25)" stroke-width="1">
+              <animate attributeName="rx" values="18;20;18" dur="2s" begin="0.8s" repeatCount="indefinite"/>
+            </rect>
+            <text x="445" y="24" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="500" fill="#059669" text-anchor="middle">Node.js</text>
+            <!-- Skill 6: Python -->
+            <rect x="0" y="46" width="85" height="36" rx="18" fill="rgba(6,182,212,0.1)" stroke="rgba(6,182,212,0.25)" stroke-width="1">
+              <animate attributeName="rx" values="18;20;18" dur="2s" begin="1s" repeatCount="indefinite"/>
+            </rect>
+            <text x="42.5" y="70" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="500" fill="#0E7490" text-anchor="middle">Python</text>
+            <!-- Skill 7: Docker -->
+            <rect x="95" y="46" width="85" height="36" rx="18" fill="rgba(37,99,235,0.1)" stroke="rgba(37,99,235,0.25)" stroke-width="1">
+              <animate attributeName="rx" values="18;20;18" dur="2s" begin="1.2s" repeatCount="indefinite"/>
+            </rect>
+            <text x="137.5" y="70" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="500" fill="#1D4ED8" text-anchor="middle">Docker</text>
+            <!-- Skill 8: Postgres -->
+            <rect x="190" y="46" width="100" height="36" rx="18" fill="rgba(16,185,129,0.1)" stroke="rgba(16,185,129,0.25)" stroke-width="1">
+              <animate attributeName="rx" values="18;20;18" dur="2s" begin="1.4s" repeatCount="indefinite"/>
+            </rect>
+            <text x="240" y="70" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="500" fill="#059669" text-anchor="middle">Postgres</text>
+            <!-- Skill 9: AWS -->
+            <rect x="300" y="46" width="75" height="36" rx="18" fill="rgba(6,182,212,0.1)" stroke="rgba(6,182,212,0.25)" stroke-width="1">
+              <animate attributeName="rx" values="18;20;18" dur="2s" begin="1.6s" repeatCount="indefinite"/>
+            </rect>
+            <text x="337.5" y="70" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="500" fill="#0E7490" text-anchor="middle">AWS</text>
+            <!-- Skill 10: Git -->
+            <rect x="385" y="46" width="70" height="36" rx="18" fill="rgba(37,99,235,0.1)" stroke="rgba(37,99,235,0.25)" stroke-width="1">
+              <animate attributeName="rx" values="18;20;18" dur="2s" begin="1.8s" repeatCount="indefinite"/>
+            </rect>
+            <text x="420" y="70" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="500" fill="#1D4ED8" text-anchor="middle">Git</text>
+            <!-- Skill 11: Figma -->
+            <rect x="465" y="46" width="85" height="36" rx="18" fill="rgba(16,185,129,0.1)" stroke="rgba(16,185,129,0.25)" stroke-width="1">
+              <animate attributeName="rx" values="18;20;18" dur="2s" begin="2s" repeatCount="indefinite"/>
+            </rect>
+            <text x="507.5" y="70" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="500" fill="#059669" text-anchor="middle">Figma</text>
+          </g>
+        </g>
+        <!-- Social Icons -->
+        <g transform="translate(20,430)">
+          <text font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="600" fill="#0F172A" opacity="0.9">Social</text>
+          <g transform="translate(0,30)">
+            <!-- GitHub -->
+            <rect x="0" y="0" width="40" height="40" rx="12" fill="rgba(15,23,42,0.03)" stroke="rgba(15,23,42,0.06)" stroke-width="1"/>
+            <text x="20" y="27" font-family="monospace" font-size="20" font-weight="bold" fill="#0F172A" text-anchor="middle">G</text>
+            <!-- LinkedIn -->
+            <rect x="55" y="0" width="40" height="40" rx="12" fill="rgba(15,23,42,0.03)" stroke="rgba(15,23,42,0.06)" stroke-width="1"/>
+            <text x="75" y="27" font-family="monospace" font-size="18" font-weight="bold" fill="#0F172A" text-anchor="middle">in</text>
+            <!-- Twitter -->
+            <rect x="110" y="0" width="40" height="40" rx="12" fill="rgba(15,23,42,0.03)" stroke="rgba(15,23,42,0.06)" stroke-width="1"/>
+            <text x="130" y="27" font-family="monospace" font-size="18" font-weight="bold" fill="#0F172A" text-anchor="middle">X</text>
+            <!-- Portfolio -->
+            <rect x="165" y="0" width="40" height="40" rx="12" fill="rgba(15,23,42,0.03)" stroke="rgba(15,23,42,0.06)" stroke-width="1"/>
+            <text x="185" y="27" font-family="monospace" font-size="18" font-weight="bold" fill="#0F172A" text-anchor="middle">🌐</text>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
